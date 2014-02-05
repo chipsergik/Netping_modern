@@ -19,7 +19,9 @@ namespace NetPing
 
             routes.MapRoute("dealers_aspx", "dealer.aspx", new { controller = "InnerPages", action = "Dealers" });
 
-            routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Idex" });
+            routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Index" });
+
+            routes.MapRoute("catalog_aspx", "catalog.aspx", new { controller = "Catalog", action = "Index" });
 
             routes.MapRoute(
                name: "ASPX",
