@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/Inner_master.cshtml";
+    ViewBag.Title = "Дилеры компании Netping";
+}
+
+@section Head_Css {
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+}
+
+
+@model  IEnumerable<NetPing.Models.SiteText>  
+
+@section Content_left {
+    @foreach (var grp in ViewBag.DealerGroups)
+    {
+        var dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
+        if (dealers_in_grp.Any()) 
+        {     
+            <h1>@grp.Name</h1>
+            foreach (var item in dealers_in_grp)
+            {
+                @Html.Raw(item.Text)
+            }
+        }
+        
+    }
+  
+}
+

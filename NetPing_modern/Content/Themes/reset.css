@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	padding:0px;
+	margin:0px;
+}
+ul, li, ol {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+.clear {
+	clear:both;
+	height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+.abs{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+}
