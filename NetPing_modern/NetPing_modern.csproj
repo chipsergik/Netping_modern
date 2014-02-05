@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\InnerPagesController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\Product_itemController.cs" />
@@ -215,6 +216,7 @@
     <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\View\Index.cshtml" />
     <Content Include="Views\Product_item\Index.cshtml" />
+    <Content Include="Views\Catalog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
