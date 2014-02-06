@@ -13,6 +13,11 @@ using System.Web.Mvc;
 using Ninject;
 using System.Diagnostics;
 
+using System.Collections;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+
 namespace NetPing.DAL
 {
     public class SPOnlineRepository : IRepository
@@ -36,19 +41,17 @@ namespace NetPing.DAL
         {
             get
             {
-
-                if (HttpRuntime.Cache.Get("SiteTexts") != null)
-                    return HttpRuntime.Cache.Get("SiteTexts") as IEnumerable<SiteText>;
+                var result = (List<SiteText>)(PullFromCache("SiteTexts"));
+                if (result != null) return result;
+                result = new List<SiteText>();
 
                 var list = context.Web.Lists.GetByTitle("Site_texts");
                 CamlQuery camlquery = new CamlQuery();
                 var items = list.GetItems(camlquery);
-
                 context.Load(list);
                 context.Load(items);
                 context.ExecuteQuery();
 
-                var result = new List<SiteText>();
                 foreach (var item in items)
                 {
                     result.Add(new SiteText
@@ -59,7 +62,7 @@ namespace NetPing.DAL
                     });
                 }
 
-                HttpRuntime.Cache.Insert("SiteTexts", result, new TimerCacheDependency());
+                PushToCache("SiteTexts",result);
 
                 return result;
             }
@@ -70,9 +73,10 @@ namespace NetPing.DAL
         {
             get
             {
+                var result = (List<DeviceParameter>)(PullFromCache("DevicesParameters"));
+                if (result != null) return result;
+                result = new List<DeviceParameter>();
 
-                if (HttpRuntime.Cache.Get("DevicesParameters") != null)
-                    return HttpRuntime.Cache.Get("DevicesParameters") as IEnumerable<DeviceParameter>;
 
                 var list = context.Web.Lists.GetByTitle("Device_parameters");
                 CamlQuery camlquery = new CamlQuery();
@@ -82,7 +86,6 @@ namespace NetPing.DAL
                 context.Load(items);
                 context.ExecuteQuery();
 
-                var result = new List<DeviceParameter>();
                 foreach (var item in items)
                 {
                     result.Add(new DeviceParameter
@@ -97,18 +100,22 @@ namespace NetPing.DAL
                     });
                 }
 
-                HttpRuntime.Cache.Insert("DevicesParameters", result, new TimerCacheDependency());
+                PushToCache("DevicesParameters", result);
 
                 return result;
             }
         }
 
+
+
+
         public IEnumerable<Device> Devices
         {
             get
             {
-                if (HttpRuntime.Cache.Get("Devices") != null)
-                    return HttpRuntime.Cache.Get("Devices") as IEnumerable<Device>;
+                var devices = (List<Device>)(PullFromCache("Devices"));
+                if (devices!=null) return devices;
+                devices = new List<Device>();
 
                 var list    = context.Web.Lists.GetByTitle("Device keys");
                 CamlQuery camlquery = new CamlQuery();
@@ -123,7 +130,7 @@ namespace NetPing.DAL
                 var allPosts = Posts;
                 var allFiles = SFiles;
 
-                var devices = new List<Device>();
+               // var devices = new List<Device>();
                 foreach (var item in items)
                 {
                     var device = new Device 
@@ -142,6 +149,7 @@ namespace NetPing.DAL
                 }
 
                 HttpRuntime.Cache.Insert("Devices", devices, new TimerCacheDependency());
+
                 
                 SPTerm dest_russia = TermsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
                 foreach (var dev in devices)
@@ -184,6 +192,8 @@ namespace NetPing.DAL
                     dev.DeviceParameters = DevicesParameters.Where(par => par.Device==dev.Name).ToList();
                 }
 
+                PushToCache("Devices", devices);
+
                 return devices;
             }
         }
@@ -192,21 +202,19 @@ namespace NetPing.DAL
         {
             get
             {
-
-                if (HttpRuntime.Cache.Get("SFiles") != null)
-                    return HttpRuntime.Cache.Get("SFiles") as IEnumerable<SFile>;
-
+                var result = (List<SFile>)(PullFromCache("SFiles"));
+                if (result != null) return result;
+                result = new List<SFile>();
+  
                 var list = context.Web.Lists.GetByTitle("Pub files");
                 CamlQuery camlquery = new CamlQuery();
                 camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Pub_files;
                 camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
                 var items = list.GetItems(camlquery);
-
                 context.Load(list);
                 context.Load(items);
                 context.ExecuteQuery();
 
-                var result = new List<SFile>();
                 foreach (var item in items)
                 {
 
@@ -228,7 +236,7 @@ namespace NetPing.DAL
                     });
                 }
 
-                HttpRuntime.Cache.Insert("Sfiles", result, new TimerCacheDependency());
+                PushToCache("Sfiles", result);
 
                 return result;
             }
@@ -238,21 +246,19 @@ namespace NetPing.DAL
         {
             get 
             {
-
-                if (HttpRuntime.Cache.Get("Posts") != null)
-                    return HttpRuntime.Cache.Get("Posts") as IEnumerable<Post>;
+                var result = (List<Post>)(PullFromCache("Posts"));
+                if (result != null) return result;
+                result = new List<Post>();
 
                 var list = context.Web.Lists.GetByTitle("Posts");
                 CamlQuery camlquery = new CamlQuery();
                 camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Posts;
                 camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
                 var items   = list.GetItems(camlquery);
-
                 context.Load(list);
                 context.Load(items);
                 context.ExecuteQuery();
 
-                var result = new List<Post>();
                 foreach (var item in items)
                 {
                     result.Add(new Post
@@ -273,17 +279,65 @@ namespace NetPing.DAL
                              });
                 }
 
-                HttpRuntime.Cache.Insert("Posts", result, new TimerCacheDependency());
+                PushToCache("Posts", result);
 
                 return result;      
             }
         }
         #endregion
 
+
+        private object PullFromCache(string cache_name)
+        {
+            object obj = HttpRuntime.Cache.Get(cache_name);
+            if (obj != null) return obj;
+#if DEBUG
+            // Check file cache
+            Stream streamRead = null;
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + ".dat");
+            try
+            {
+                streamRead = System.IO.File.OpenRead(file_name);
+                BinaryFormatter binaryRead = new BinaryFormatter();
+                obj = (object)binaryRead.Deserialize(streamRead);
+                streamRead.Close();
+            }
+            catch (Exception ex)
+            {
+                if (streamRead!=null) streamRead.Close();
+                return null;
+            }
+            HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
+            
+#endif
+            return obj;
+        }
+
+        private void PushToCache(string cache_name, object obj)
+        {
+            HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
+
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + ".dat");
+            Stream streamWrite = null;
+            try
+            {
+                streamWrite = System.IO.File.Create(file_name);
+                BinaryFormatter binaryWrite = new BinaryFormatter();
+                binaryWrite.Serialize(streamWrite, obj);
+                streamWrite.Close();
+            }
+            catch (Exception ex)
+            {
+                if (streamWrite!=null) streamWrite.Close();
+                //toDo log exception to log file
+            }
+        }
+
         private IEnumerable<SPTerm> GetTermsFromSP(string setname, int lcid)
         {
-            if (HttpRuntime.Cache.Get("Terms" + setname) != null)
-                return HttpRuntime.Cache.Get("Terms" + setname) as IEnumerable<SPTerm>;
+            var terms = (List<SPTerm>)(PullFromCache("Terms" + setname));
+            if (terms != null) return terms;
+            terms = new List<SPTerm>();
 
             var session = TaxonomySession.GetTaxonomySession(context);
             var termSets = session.GetTermSetsByName(setname, 1033);
@@ -295,7 +349,6 @@ namespace NetPing.DAL
             context.Load(allTerms);
             context.ExecuteQuery();
 
-            List<SPTerm> terms = new List<SPTerm>();
             foreach (var term in allTerms)
             {
                 string name = term.Name;
@@ -317,7 +370,9 @@ namespace NetPing.DAL
                 });
 
             }
-            HttpRuntime.Cache.Insert("Terms" + setname, terms, new TimerCacheDependency());
+            
+            PushToCache("Terms" + setname, terms);
+
             return terms;
         }
 

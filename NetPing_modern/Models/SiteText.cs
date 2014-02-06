@@ -5,6 +5,7 @@ using System.Web;
 
 namespace NetPing.Models
 {
+    [Serializable]
     public class SiteText
     {
         public  SPTerm Tag { get; set; }

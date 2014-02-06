@@ -5,6 +5,7 @@ using System.Web;
 
 namespace NetPing.Models
 {
+    [Serializable]
     public class DeviceParameter
     {
         public int Id { get; set; }

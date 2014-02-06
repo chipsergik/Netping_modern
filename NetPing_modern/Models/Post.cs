@@ -8,6 +8,7 @@ namespace NetPing.Models
     /// <summary>
     /// Stores information about the post and related devices
     /// </summary>
+    [Serializable]
     public class Post
     {
         public int Id { get; set; }

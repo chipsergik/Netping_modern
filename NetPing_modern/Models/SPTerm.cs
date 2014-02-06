@@ -8,6 +8,7 @@ namespace NetPing.Models
     /// <summary>
     /// For store the values of taxonomy
     /// </summary>
+    [Serializable]
     public class SPTerm
     {
         public Guid Id { get; set; }

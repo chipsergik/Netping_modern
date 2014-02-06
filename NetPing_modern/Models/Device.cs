@@ -8,6 +8,7 @@ namespace NetPing.Models
     /// <summary>
     /// Store information of device
     /// </summary>
+    [Serializable]
     public class Device
     {
         public int Id { get; set; }

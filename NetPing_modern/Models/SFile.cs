@@ -6,6 +6,7 @@ using System.Web;
 namespace NetPing.Models
 {
     // Store information about File
+    [Serializable]
     public class SFile
     {
         public int Id { get; set; }
