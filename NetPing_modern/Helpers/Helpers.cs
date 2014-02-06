@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security;
 using System.Web;
+using System.Web.Mvc;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -14,6 +15,15 @@ namespace NetPing.Helpers
 {
     public static class Helpers
     {
+
+        public static bool IsDebug(this HtmlHelper htmlHelper)
+        {
+#if DEBUG
+      return true;
+#else
+            return false;
+#endif
+        }
 
         public static string ToFileUrlStr(this FieldUrlValue url, string file_name)
         {
@@ -36,6 +46,8 @@ namespace NetPing.Helpers
         public static string ToShortTextHTML(this string str,string url)
         {
             str=Regex.Replace(str, @"<(.|n)*?>", string.Empty).Replace("&nbsp", " ").Replace("&#160;"," "); // To clear text from HTML
+
+
     	    
             string[] words = str.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);		
 		    StringBuilder sb = new StringBuilder();
