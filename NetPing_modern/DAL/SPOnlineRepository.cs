@@ -380,7 +380,7 @@ namespace NetPing.DAL
             context.Load(termSets);
             context.ExecuteQuery();
 
-            var allTerms = termSets.First().GetAllTerms();
+            var allTerms = termSets[0].GetAllTerms();
             context.Load(allTerms);
             context.ExecuteQuery();
 
@@ -393,7 +393,7 @@ namespace NetPing.DAL
                     context.Load(lang_label);
                     context.ExecuteQuery();
 
-                    if (lang_label.FirstOrDefault() != null) name = lang_label.FirstOrDefault().Value;
+                    if (lang_label.Count!=0) name = lang_label[0].Value;
                 }
                 terms.Add(new SPTerm
                 {
