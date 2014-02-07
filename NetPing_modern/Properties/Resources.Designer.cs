@@ -100,6 +100,24 @@ namespace NetPing_modern.Properties {
         ///                                                    &lt;FieldRef Name=&apos;Language&apos; /&gt;
         ///                            [rest of string was truncated]&quot;;.
         /// </summary>
+        internal static string caml_Photos_to_pub {
+            get {
+                return ResourceManager.GetString("caml_Photos_to_pub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 								&lt;View&gt;&lt;OrderBy&gt;
+        ///                                            &lt;FieldRef Name=&apos;Created&apos; Ascending=&apos;FALSE&apos; /&gt;
+        ///                                  &lt;/OrderBy&gt;
+        ///                                    &lt;Query&gt;
+        ///                                    &lt;Where&gt;
+        ///                                        &lt;And&gt;
+        ///                                            &lt;Or&gt;
+        ///                                                &lt;In&gt;
+        ///                                                    &lt;FieldRef Name=&apos;Language&apos; /&gt;
+        ///                            [rest of string was truncated]&quot;;.
+        /// </summary>
         internal static string caml_Posts {
             get {
                 return ResourceManager.GetString("caml_Posts", resourceCulture);

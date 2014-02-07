@@ -154,6 +154,7 @@
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\DeviceParameter.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PubFiles.cs" />
     <Compile Include="Models\SFile.cs" />
     <Compile Include="Models\SiteText.cs" />
     <Compile Include="Models\SPTerm.cs" />
@@ -201,6 +202,7 @@
     <None Include="Resources\caml_Posts.txt" />
     <None Include="Resources\caml_Pub_files.txt" />
     <None Include="Resources\caml_Device_keys.txt" />
+    <Content Include="Resources\caml_Photos_to_pub.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

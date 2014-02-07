@@ -154,4 +154,7 @@
   <data name="Guid_SiteTexts_OfficeAddress" xml:space="preserve">
     <value>d1121469-b2ad-4f73-a2a2-f738cd043520</value>
   </data>
+  <data name="caml_Photos_to_pub" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\caml_photos_to_pub.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

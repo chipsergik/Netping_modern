@@ -1,0 +1,28 @@
+								<View><OrderBy>
+                                            <FieldRef Name='Created' Ascending='FALSE' />
+                                  </OrderBy>
+                                    <Query>
+                                    <Where>
+                                        <And>
+                                            <Or>
+                                                <In>
+                                                    <FieldRef Name='Language' />
+                                                    <Values>
+                                                        <Value Type='TaxonomyFieldType'>Russian</Value>
+                                                    </Values>
+                                                </In>
+                                                <In>
+                                                    <FieldRef Name='Language' />
+                                                    <Values>
+                                                        <Value Type='TaxonomyFieldType'>ALL</Value>
+                                                    </Values>                                                
+                                                </In>
+                                            </Or>
+                                            <Neq>
+                                                <FieldRef Name='Active' />
+                                                <Value Type='Boolean'>True</Value>
+                                            </Neq>
+                                        </And>
+                                    </Query>
+                                    </Where>
+                                  </View>"

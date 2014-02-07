@@ -13,6 +13,19 @@
 @using NetPing.Models
 
 
+@section Head {
+<!-- Main page banner data -->
+<script type='text/javascript'>
+    var Banners = new Array(@Html.Raw(ViewBag.Banners));
+
+</script>
+ }
+
+
+
+
+
+
 @helper GetPrice(double? price){
     if (price != null && price > 0) {
         var str= string.Format(new System.Globalization.CultureInfo(1035), "{0:N0}р.",price);

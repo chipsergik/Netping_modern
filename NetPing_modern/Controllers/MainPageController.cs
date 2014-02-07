@@ -27,6 +27,15 @@ namespace NetPing.Controllers
             devices = devices.OrderByDescending(dev => dev.Created);
             ViewBag.Devices = devices;
 
+
+            //Main page banners list
+            var Banners = repository.PubFiles;
+            string banner_string = "";
+            foreach (var banner in Banners )
+            {
+                banner_string = banner_string + '"'+banner.Url+'"'+",";
+            }
+            ViewBag.Banners = banner_string.TrimEnd(',');
             //devices.FirstOrDefault().Russian_price
 
             return View();

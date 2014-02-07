@@ -198,6 +198,41 @@ namespace NetPing.DAL
             }
         }
 
+        public IEnumerable<PubFiles> PubFiles
+        {
+            get
+            {
+                var result = (List<PubFiles>)(PullFromCache("PubFiles"));
+                if (result != null) return result;
+                result = new List<PubFiles>();
+
+                var list = context.Web.Lists.GetByTitle("Photos_to_pub");
+                CamlQuery camlquery = new CamlQuery();
+                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Photos_to_pub;
+                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
+                var items = list.GetItems(camlquery);
+                context.Load(list);
+                context.Load(items);
+                context.ExecuteQuery();
+
+                foreach (var item in items)
+                {
+                    result.Add(new PubFiles
+                    {
+                        Name = item["FileLeafRef"] as string
+                       ,
+                        File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(TermsFileTypes)
+                       ,
+                        Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/"+(item["FileLeafRef"] as string)
+                    });
+                }
+
+                PushToCache("PubFiles", result);
+
+                return result;
+            }
+        }
+
         public IEnumerable<SFile> SFiles
         {
             get
