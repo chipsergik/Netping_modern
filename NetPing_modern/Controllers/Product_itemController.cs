@@ -22,15 +22,19 @@ namespace NetPing.Controllers
             if (device == null) return View("Error", new Errors("Неверный параметр!"));
 
             //Create list of connected devices
-            ViewBag.Connected_devices = device.Connected_devices.Select(d =>
+            var connected_devices = device.Connected_devices.Select(d =>
                                                                            repository.Devices.Where(dv => dv.Name == d).FirstOrDefault()
                                                                       ).ToList();
+            ViewBag.Connected_devices_accessuars = connected_devices.Where(d => !d.Name.Path.Contains("Sensors")).ToList();
+            ViewBag.Connected_devices_sensors = connected_devices.Where(d => d.Name.Path.Contains("Sensors")).ToList();
 
             ViewBag.Parameter_groups = repository.TermsDeviceParameters.Where(par => par.Level == 0).ToList();
 
-            if (device.Key.Contains("_solut_")) return View("Solutions", device);
-
-
+            //Device group
+            var dev_path = device.Name.Path.Split(';');
+            var grp = dev_path[dev_path.Length - 2];
+            ViewBag.grp_name = repository.Terms.FirstOrDefault(t => t.OwnNameFromPath == grp).Name;
+            //if (device.Key.Contains("_solut_")) return View("Solutions", device);
 
             return View(device);
         }

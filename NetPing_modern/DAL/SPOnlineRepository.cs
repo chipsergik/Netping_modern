@@ -129,6 +129,7 @@ namespace NetPing.DAL
 
                 var allPosts = Posts;
                 var allFiles = SFiles;
+                var allDevicePhotos=DevicePhotos;
 
                // var devices = new List<Device>();
                 foreach (var item in items)
@@ -148,8 +149,7 @@ namespace NetPing.DAL
                     devices.Add(device);
                 }
 
-                HttpRuntime.Cache.Insert("Devices", devices, new TimerCacheDependency());
-
+                PushToCache("Devices", devices);
                 
                 SPTerm dest_russia = TermsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
                 foreach (var dev in devices)
@@ -190,11 +190,53 @@ namespace NetPing.DAL
 
                     // collect device parameters 
                     dev.DeviceParameters = DevicesParameters.Where(par => par.Device==dev.Name).ToList();
+
+                    // Get device photos
+                    dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
                 }
 
                 PushToCache("Devices", devices);
 
                 return devices;
+            }
+        }
+
+        public IEnumerable<DevicePhoto> DevicePhotos
+        {
+            get
+            {
+                var result = (List<DevicePhoto>)(PullFromCache("DevicePhotos"));
+                if (result != null) return result;
+                result = new List<DevicePhoto>();
+
+                var list = context.Web.Lists.GetByTitle("Device_photos");
+                CamlQuery camlquery = new CamlQuery();
+//                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Photos_to_pub;
+//                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
+                var items = list.GetItems(camlquery);
+                context.Load(list);
+                context.Load(items);
+                context.ExecuteQuery();
+
+                foreach (var item in items)
+                {
+                    result.Add(new DevicePhoto
+                    {
+                        Name = item["FileLeafRef"] as string
+                       ,
+                        Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(Terms)
+                       ,
+                        Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + (item["FileLeafRef"] as string)
+                       ,
+                        IsBig = (item["FileLeafRef"] as string).Contains("big") ? true : false 
+                       ,
+                        IsCover = Convert.ToBoolean(item["Cover"])
+                    });
+                }
+
+                PushToCache("DevicePhotos", result);
+
+                return result;
             }
         }
 

@@ -24,6 +24,8 @@ namespace NetPing.Models
         public List<SFile> SFiles { get; set; }
         public List<DeviceParameter> DeviceParameters { get; set; }
 
+        public List<DevicePhoto> DevicePhotos { get; set; }
+
         public Device()
         {
             SFiles = new List<SFile>();
@@ -33,5 +35,10 @@ namespace NetPing.Models
         public string Short_description { get; set; }
 
         public string Long_description { get; set; }
+
+        public DevicePhoto GetCoverPhoto(bool isBig)
+        {
+            return DevicePhotos.FirstOrDefault(p => p.IsBig == isBig && p.IsCover);
+        }
     }
 }

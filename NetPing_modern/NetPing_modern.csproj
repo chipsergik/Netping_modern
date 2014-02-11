@@ -155,6 +155,7 @@
     <Compile Include="Models\DeviceParameter.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PubFiles.cs" />
+    <Compile Include="Models\DevicePhoto.cs" />
     <Compile Include="Models\SFile.cs" />
     <Compile Include="Models\SiteText.cs" />
     <Compile Include="Models\SPTerm.cs" />
