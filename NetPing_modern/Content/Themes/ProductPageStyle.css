@@ -221,6 +221,9 @@ input:focus { outline: none; }
     background: #144e5a;
     cursor: pointer;
     border-left: 1px solid #43717b;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .content .tabs-desc .tab:hover { color: #73bf68; }
