@@ -40,7 +40,7 @@ input:focus { outline: none; }
 /* --- .header - START --- */
 .header { background: #d0efcc; }
 
-.header .inner { background: url(../img/header_logo.png) center center no-repeat; }
+.header .inner { background: url(../Images/ProductPageImg/header_logo.png) center center no-repeat; }
 .header .wrapper { padding: 0 0 52px; }
 
 .header .lang {
@@ -64,7 +64,7 @@ input:focus { outline: none; }
   padding: 4px 40px 5px 26px;
   color: #2f2f2f;
   font: 400 12px 'Corbel', sans-serif;
-  background: url(../img/header_input_bg.png) no-repeat;
+  background: url(../Images/ProductPageImg/header_input_bg.png) no-repeat;
 }
 
 .header ul {
@@ -77,7 +77,7 @@ input:focus { outline: none; }
   width: 127px;
   text-align: center;
   position: relative;
-  background: url(../img/header_li_sep.png) right center no-repeat;
+  background: url(../Images/ProductPageImg/header_li_sep.png) right center no-repeat;
 }
 .header ul li:last-of-type { background: none; }
 .header ul li a {
@@ -108,7 +108,7 @@ input:focus { outline: none; }
 .header ul li ul li,
 .header ul li ul li:last-of-type {
   float: none;
-  background: url(../img/submenu_circle.png) 7px center no-repeat;
+  background: url(../Images/ProductPageImg/submenu_circle.png) 7px center no-repeat;
   text-align: left;
   white-space: nowrap;
   width: 100%;
@@ -182,7 +182,7 @@ input:focus { outline: none; }
 
   display: inline-block;
   width: 20px; height: 20px;
-  background: url(../img/item_big_zoom.png) no-repeat;
+  background: url(../Images/ProductPageImg/item_big_zoom.png) no-repeat;
 }
 .content .item .gallery .small-images .image {
   border: 1px solid #e7e7e7;
@@ -200,10 +200,10 @@ input:focus { outline: none; }
 }
 .content .item .gallery .small-images .navi.prev {
   margin: 0 5px 0 0;
-  background-image: url(../img/item_gallery_navi_prev.png);
+  background-image: url(../Images/ProductPageImg/item_gallery_navi_prev.png);
 }
 .content .item .gallery .small-images .navi.next {
-  background-image: url(../img/item_gallery_navi_next.png);
+  background-image: url(../Images/ProductPageImg/item_gallery_navi_next.png);
 }
 .content .item .gallery .small-images .navi:hover { opacity: 0.9; }
 .content .item .gallery .small-images .navi:active { opacity: 0.8; }
@@ -216,7 +216,7 @@ input:focus { outline: none; }
   max-height: 50px;
   text-decoration: none;
   color: #fefefe;
-  background: #208e34 url(../img/item_cart.png) right top no-repeat;
+  background: #208e34 url(../Images/ProductPageImg/item_cart.png) right top no-repeat;
   text-align: center;
   display: block;
   padding: 0 50px 0 0;
@@ -236,7 +236,7 @@ input:focus { outline: none; }
   line-height: 1.4;
 }
 .content .item .seporator {
-  background: url(../img/item_text_seporator.png) no-repeat;
+  background: url(../Images/ProductPageImg/item_text_seporator.png) no-repeat;
   height: 2px;
 }
 
@@ -251,7 +251,7 @@ input:focus { outline: none; }
   line-height: 16px;
   background-repeat: no-repeat;
 }
-.content .item .files li.pdf { background-image: url(../img/item_files_pdf.png); }
+.content .item .files li.pdf { background-image: url(../Images/ProductPageImg/item_files_pdf.png); }
 .content .item .files li a { color: #144e5a; }
 .content .item .files li a:hover { text-decoration: none; }
 
@@ -290,7 +290,7 @@ input:focus { outline: none; }
   padding: 23px 9px 0;
 }
 .content .tabs-desc .tab-c .t-title {
-  background: url(../img/tabs_title_bg.png) repeat-y;
+  background: url(../Images/ProductPageImg/tabs_title_bg.png) repeat-y;
   font-size: 18px;
   line-height: 28px;
   font-weight: 700;
@@ -306,7 +306,7 @@ input:focus { outline: none; }
   padding: 0 0 0 24px;
   line-height: 25px;
   color: #2f2f2f;
-  background: url(../img/tabs_li_arrow.png) 11px 8px no-repeat;
+  background: url(../Images/ProductPageImg/tabs_li_arrow.png) 11px 8px no-repeat;
 }
 .content .tabs-desc .tab-c ul li span {
   font-weight: 700;
@@ -354,7 +354,7 @@ input:focus { outline: none; }
 
 /* --- .footer - START --- */
 .footer {
-  background: url(~/Content/Images/ProductPageImg/footer_bg.png) center center repeat-x;
+  background: url(../Images/ProductPageImg/footer_bg.png) center center repeat-x;
   margin: 30px 0 0;
   color: #ffffff;
   padding: 16px 0 40px;

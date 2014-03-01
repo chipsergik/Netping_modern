@@ -1,170 +1,194 @@
-﻿@{
-    Layout = "~/Views/Shared/Inner_master.cshtml";
-    ViewBag.Title = "Устройство";
-}
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>netping</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="~/Content/Themes/ProductPageStyle.css">
+  </head>
+  <body>
 
-@section Head_Css {
-    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
-    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
-    
-     }
+    <div class="header">
+      <div class="inner">
+        <div class="wrapper clearfix">
 
+          <div class="left clearfix"><a href="#" class="lang">RUS</a><a href="#" class="lang active">ENG</a></div>
+          <div class="right">
+            <form action="/" method="POST" class="clearfix">
+              <div class="right"><input type="text" value="Search..." onblur="if(value=='') value = 'Search...'" onfocus="if(value=='Search...') value = ''" /></div>
+            </form>
 
-@using NetPing.Models
-
-@model Device
-
-@section Content {
-
-    <!-- N1 -->
-    N1 Главная > @ViewBag.grp_name >  @Model.Name.Name
-    <br/>
-    <!-- ** N1 ** -->
-
-    <!-- N2 -->
-    N2 @Model.Name.Name
-    <br />
-    <!-- ** N2 ** -->
-
-    <!-- N3 -->
-    N3 @Model.Label.Name
-    <br />
-    <!-- ** N3 ** -->
-
-    <!-- N4 -->
-    N4 @Html.Raw(Model.Long_description)
-    <br />
-    <!-- ** N4 ** -->
-
-    <!-- N5 -->
-    N5
-    <p> @Model.DevicePhotos.FirstOrDefault(p => !p.IsBig && p.IsCover).Url </p>
-    @foreach (NetPing.Models.DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig && !p.IsCover))
-    {
-        <p> @photo.Url </p>
-    }
-
-    <br />
-    <!-- ** N5 ** -->
-
-    <!-- N6 -->
-    N6
-    @{
-    var user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
-    foreach (var file in user_guides)
-    {
-     <p> <a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name</p>
-    }
-        
-    }
-    <br />
-    <!-- ** N6 ** -->
-
-
-    <!-- N7 -->
-    N7 @Model.Russian_price
-    <br />
-    <!-- ** N7 ** -->
-
-    <!-- N8 -->
-    N8
-    @foreach (NetPing.Models.Device dev in ViewBag.Connected_devices_accessuars)
-    {   
-        <a href="~/product_item?id=@dev.Key">@dev.Name.Name</a>
-        <p>@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key);</p>
-        <br />
-    }
-    <br />
-    <!-- ** N8 ** -->
-
-    <!-- N9 -->
-    N9
-    @foreach (NetPing.Models.Device dev in ViewBag.Connected_devices_sensors)
-    {
-        <a href="~/product_item?id=@dev.Key">@dev.Name.Name</a>
-        <p>@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key);</p>
-        <br />
-    }
-    <br />
-    <!-- ** N9 ** -->
-
-    <!-- N10 -->
-    N10
-
-    @{
-        if (Model.DeviceParameters.Count != 0)
-        {
-            <h1>Параметры устройства</h1>
-
-            foreach (var grp in ViewBag.Parameter_groups)
-            {
-                var parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
-                if (parameters.Any())
-                {
-                    <p>@grp.Name.Substring(2)</p>
-                }
-                <div>
+            <ul class="clearfix">
+              <li class="active"><a href="#">Products</a></li>
+              <li>
+                <a href="#">Customers</a>
                 <ul>
-                    @foreach (var par in parameters.ToList())
-                    {
-                        <li>@par.Name.Name   <b> @par.Value </b> </li>
-                    }
+                  <li><a href="#">Customers</a></li>
+                  <li><a href="#">Customers Customers</a></li>
+                  <li><a href="#">Customers</a></li>
+                  <li><a href="#">Customers</a></li>
                 </ul>
+              </li>
+              <li><a href="#">Sales</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="wrapper clearfix">
+        
+        <div class="left main">
+          <ul class="bread clearfix">
+            <li><a href="#">Главная</a></li>
+            <li>&gt;</li>
+            <li><a href="#">Категория</a></li>
+            <li>&gt;</li>
+            <li class="active"><span>Товар</span></li>
+          </ul>
+
+          <div class="item">
+            <div class="i-title">NetPing PWR-220 v3<span>archive</span></div>
+            <div class="i-cont clearfix">
+
+              <div class="left sub">
+                <div class="gallery">
+                  <div class="big-image"><img src="http://placehold.it/195x195/ffffff" alt="" title="" /><span class="search"></span></div>
+                  <div class="small-images clearfix">
+                    <div class="left navi prev"></div>
+                    <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>
+                    <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>
+                    <div class="left image last"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>
+                    <div class="left navi next"></div>
+                  </div>
                 </div>
-            }
-        }
-    }
-    <br />
-    <!-- ** N10 ** -->
 
-    <!-- N11 -->
-    N11
-    @{
-        var files = Model.SFiles;
-        foreach (var file in files)
-        {
-            <p> <a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name</p>
-        }
-    }
-    <br />
-    <!-- ** N11 ** -->
+                <a href="#" class="cart">2 640<span>руб.</span></a>
+              </div>
 
-    <!-- N12 -->
-    N12
+              <div class="right sub">
+                <div class="text">
+                  <p>Устройство <strong>NetPing /PWR-220 v3</strong> предназначено для удалённого управления розетками питания 220В по сети <strong>Ethernet/Internet</strong>.</p>
+                  <p><strong>NetPing /PWR-220 v3</strong> позволяет не только удалённо включать/выключать питание, но и автоматически контролировать работоспособность и перезагружать подключенное к «умной розетке» оборудование с помощью функции <strong>«Сторожа»</strong>. В режиме, «Сторож» устройство постоянно опрашивает указанные ему IP адреса и автоматически перезагрузит, подключенную нагрузку, если удаленные IP адреса не отвечают. </p>
+                </div>
 
-    @{
-    var posts_faq = Model.Posts.Where(pst => pst.Cathegory == "FAQ");
-    <p> Ответы на вопросы</p>
-    <div >
-    @foreach (var post in posts_faq)
-    {
-        <p>
-            <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-        </p>
-    }
+                <div class="seporator"></div>
+
+                <ul class="files">
+                  <li class="pdf"><a href="#">file_name.pdf</a></li>
+                  <li class="pdf"><a href="#">file_type.pdf</a></li>
+                  <li class="pdf"><a href="#">file_description.pdf</a></li>
+                  <li class="pdf"><a href="#">file_date.pdf</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="tabs-desc">
+            <div class="tabs clearfix">
+              <div class="tab active" data-tab-id="1">Specification</div>
+              <div class="tab" data-tab-id="2">Downloads</div>
+              <div class="tab" data-tab-id="3">FAQ</div>
+              <div class="tab" data-tab-id="4">Solutions</div>
+            </div>
+
+            <div class="tabs-cont">
+
+              <div class="tab-c shown" data-tab-id="1">
+                <div class="t-title">Базовые параметры</div>
+                <ul>
+                  <li>Возможность: <span>Да</span></li>
+                  <li>Возможность: <span>Нет</span></li>
+                </ul>
+
+                <div class="t-title">Не базовые параметры</div>
+                <ul>
+                  <li>Возможность: <span>Да</span></li>
+                  <li>Возможность: <span>Нет</span></li>
+                </ul>
+              </div>
+
+              <div class="tab-c" data-tab-id="2">
+                <div class="t-title">Руководство</div>
+                <ul>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+
+                <div class="t-title">Пользователя</div>
+                <ul>
+                  <li><a href="#">Link</a> Description</li>
+                  <li><a href="#">Link</a> Описание</li>
+                </ul>
+              </div>
+
+              <div class="tab-c" data-tab-id="3">
+                <ul>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </div>
+
+              <div class="tab-c" data-tab-id="4">
+                <ul>
+                  <li><a href="#">Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="right main">
+          <div class="widget">
+            <div class="w-title">К устройству подключаются:</div>
+            <div class="w-cont">
+              <div class="clearfix">
+
+                <div class="left">
+                  <div class="w-sub-title">Аксессуары</div>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название</a>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название в две<br>длинные строки</a>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название</a>
+                </div>
+
+                <div class="right dotted">
+                  <div class="w-sub-title">Сенсоры</div>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название</a>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название в две<br>длинные строки</a>
+                  <a href="#" class="item"><img src="http://placehold.it/120x70/ffffff" alt="" title="" />Название</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    }
 
-    <br />
-    <!-- ** N12 ** -->
-
-    <!-- N13 -->
-    N13
-    @{
-     var post_solutions = Model.Posts.Where(pst => pst.Cathegory == "Typical solution");
-     <p>Примеры применения</p>
-     <div >
-     @foreach (var post in post_solutions)
-        {
-            <p>
-            <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-            </p>
-        }
+    <div class="footer">
+      <div class="wrapper clearfix">
+        <div class="left">Copyright &copy; NetPing east Co Ltd. All rights reserved</div>
+        <div class="right"><a href="#">Privacy policy</a><br><a href="#">Terms &amp; conditions</a></div>
+      </div>
     </div>
-    }
-    <br />
-    <!-- ** N13 ** -->
 
+    <script src="~/Content/JavaScript/jquery1.8.3min.js" type="text/javascript"></script>
+    <script src="~/Content/JavaScript/ProductItem.js" type="text/javascript"></script>
 
-}
-
+  </body>
+</html>
