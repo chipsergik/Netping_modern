@@ -3,13 +3,12 @@
     ViewBag.Title = "Статья";
 }
 @section Head_Css {
-    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
 }
 
-@model NetPing.Models.Post 
+@model NetPing.Models.Post
 
 @section Content_left {
     <h1>@Model.Title</h1>
-        @Html.Raw(Model.Body)
- }
+    @Html.Raw(Model.Body)
+}

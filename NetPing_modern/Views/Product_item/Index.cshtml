@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 @using NetPing.Models
-@model Device
+@model NetPing.Models.Device
 <html>
     <head>
         @{
@@ -8,216 +8,182 @@
         }
         <title>@ViewBag.Title</title>
         <meta charset="utf-8">
+        <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/header-footer.css">
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/ProductPageStyle.css">
-        <style>
-            .persent50 { width: 50%; }
-        </style>
     </head>
     <body>
-
-        <div class="header">
-            <div class="inner">
-                <div class="wrapper clearfix">
-
-                    <div class="left clearfix"><a href="#" class="lang">RUS</a><a href="#" class="lang active">ENG</a></div>
-                    <div class="right">
-                        <form action="/" method="POST" class="clearfix">
-                            <div class="right"><input type="text" value="Search..." onblur=" if (value == '') value = 'Search...'; " onfocus=" if (value == 'Search...') value = ''; " /></div>
-                        </form>
-
-                        <ul class="clearfix">
-                            <li class="active"><a href="#">Products</a></li>
-                            <li>
-                                <a href="#">Customers</a>
-                                <ul>
-                                    <li><a href="#">Customers</a></li>
-                                    <li><a href="#">Customers Customers</a></li>
-                                    <li><a href="#">Customers</a></li>
-                                    <li><a href="#">Customers</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Sales</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="wrapper clearfix">
+        <div class="page">
+            <div class="main">
+                @RenderPage("../Shared/Header.cshtml")
+                <div class="content">
+                    <div class="wrapper clearfix">
         
-                <div class="left main">
-                    <ul class="bread clearfix">
-                        <li><a href="#">Главная</a></li>
-                        <li>&gt;</li>
-                        <li><a href="#">@ViewBag.grp_name</a></li>
-                        <li>&gt;</li>
-                        <li class="active"><span>@Model.Name.Name</span></li>
-                    </ul>
+                        <div class="left main">
+                            <ul class="bread clearfix">
+                                <li><a href="#">Главная</a></li>
+                                <li>&gt;</li>
+                                <li><a href="#">@ViewBag.grp_name</a></li>
+                                <li>&gt;</li>
+                                <li class="active"><span>@Model.Name.Name</span></li>
+                            </ul>
 
-                    <div class="item">
-                        <div class="i-title">@Model.Name.Name<span>@Model.Label.Name</span></div>
-                        <div class="i-cont clearfix">
+                            <div class="item">
+                                <div class="i-title">@Model.Name.Name<span>@Model.Label.Name</span></div>
+                                <div class="i-cont clearfix">
 
-                            <div class="left sub">
-                                <div class="gallery">
-                                    <div class="big-image" style="background: url('@Model.DevicePhotos.FirstOrDefault(p => !p.IsBig && p.IsCover).Url') no-repeat; background-size: cover; height: 195px; width: 195px;"><span class="search"></span></div>
-                                    <div class="small-images clearfix">
-                                        <div class="left navi prev"></div>
-                                        @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig && !p.IsCover))
-                                        {
-                                            <div class="left image"><img style="width: 48px; height: 48px" src="@photo.Url" alt="" title="" /></div>
+                                    <div class="left sub">
+                                        <div class="gallery">
+                                            <div class="big-image" style="background: url('@Model.DevicePhotos.FirstOrDefault(p => !p.IsBig && p.IsCover).Url') no-repeat; background-size: cover; height: 195px; width: 195px;"><span class="search"></span></div>
+                                            <div class="small-images clearfix">
+                                                <div class="left navi prev"></div>
+                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig && !p.IsCover))
+                                                {
+                                                    <div class="left image"><img style="height: 48px; width: 48px;" src="@photo.Url" alt="" title="" /></div>
+                                                }
+                                                @*                                        <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
+                                                @*                                        <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
+                                                @*                                        <div class="left image last"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
+                                                <div class="left navi next"></div>
+                                            </div>
+                                        </div>
+
+                                        <a href="#" class="cart">@Model.Russian_price<span>руб.</span></a>
+                                    </div>
+
+                                    <div class="right sub">
+                                        <div class="text">
+                                            @Html.Raw(Model.Long_description)
+                                        </div>
+
+                                        <div class="seporator"></div>
+
+                                        <ul class="files">
+                                            @{
+                                                IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
+                                                foreach (SFile file in user_guides)
+                                                {
+                                                    <li class="pdf"><a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name</li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="tabs-desc">
+                                <div class="tabs clearfix">
+                                    <div class="tab active" data-tab-id="1">Specification</div>
+                                    <div class="tab" data-tab-id="2">Downloads</div>
+                                    <div class="tab" data-tab-id="3">FAQ</div>
+                                    <div class="tab" data-tab-id="4">Solutions</div>
+                                </div>
+
+                                <div class="tabs-cont">
+
+
+                                    <div class="tab-c shown" data-tab-id="1">
+                                        @{
+                                            if (Model.DeviceParameters.Count != 0)
+                                            {
+                                                foreach (dynamic grp in ViewBag.Parameter_groups)
+                                                {
+                                                    IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
+                                                    if (parameters.Any())
+                                                    {
+                                                        <div class="t-title">@grp.Name.Substring(2)</div>
+                                                    }
+                                                    <div>
+                                                        <ul>
+                                                            @foreach (DeviceParameter par in parameters.ToList())
+                                                            {
+                                                                <li>@par.Name.Name   <span> @par.Value </span> </li>
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                }
+                                            }
                                         }
-                                        @*                                        <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
-                                        @*                                        <div class="left image"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
-                                        @*                                        <div class="left image last"><img src="http://placehold.it/48x48/ffffff" alt="" title="" /></div>*@
-                                        <div class="left navi next"></div>
+                                    </div>
+
+                                    <div class="tab-c" data-tab-id="2">
+                                        <ul>
+                                            @{
+                                                List<SFile> files = Model.SFiles;
+
+                                                foreach (SFile file in files)
+                                                {
+                                                    <li> <a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name </li>
+                                                }
+                                            }
+
+                                        </ul>
+                               
+                                    </div>
+
+                                    <div class="tab-c" data-tab-id="3">
+                                        <ul>
+                                            @{
+                                                IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Cathegory == "FAQ");
+                                                foreach (Post post in posts_faq)
+                                                {
+                                                    <li>
+                                                        <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    
+                                    </div>
+
+                                    <div class="tab-c" data-tab-id="4">
+                                        <ul>
+                                            @{
+                                                IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Cathegory == "Typical solution");
+
+                                                foreach (Post post in post_solutions)
+                                                {
+                                                    <li>
+                                                        <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right main">
+                            <div class="widget">
+                                <div class="w-title">К устройству подключаются:</div>
+                                <div class="w-cont">
+                                    <div class="clearfix">
+                                        <div class="left persent50">
+                                            <div class="w-sub-title">Аксессуары</div>
+                                            @foreach (Device dev in ViewBag.Connected_devices_accessuars)
+                                            {
+                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
+                                            }
+                                        </div>
+                                        <div class="right dotted persent50">
+                                            <div class="w-sub-title">Сенсоры</div>
+                                            @foreach (Device dev in ViewBag.Connected_devices_sensors)
+                                            {
+                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
+                                            }
+                                        </div>
+
                                     </div>
                                 </div>
-
-                                <a href="#" class="cart">@Model.Russian_price<span>руб.</span></a>
                             </div>
-
-                            <div class="right sub">
-                                <div class="text">
-                                    @Html.Raw(Model.Long_description)
-                                </div>
-
-                                <div class="seporator"></div>
-
-                                <ul class="files">
-                                    @{
-                                        IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
-                                        foreach (SFile file in user_guides)
-                                        {
-                                            <li class="pdf"><a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name</li>
-                                        }
-                                    }
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="tabs-desc">
-                        <div class="tabs clearfix">
-                            <div class="tab active" data-tab-id="1">Specification</div>
-                            <div class="tab" data-tab-id="2">Downloads</div>
-                            <div class="tab" data-tab-id="3">FAQ</div>
-                            <div class="tab" data-tab-id="4">Solutions</div>
                         </div>
 
-                        <div class="tabs-cont">
-
-
-                            <div class="tab-c shown" data-tab-id="1">
-                                @{
-                                    if (Model.DeviceParameters.Count != 0)
-                                    {
-                                        foreach (dynamic grp in ViewBag.Parameter_groups)
-                                        {
-                                            IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
-                                            if (parameters.Any())
-                                            {
-                                                <div class="t-title">@grp.Name.Substring(2)</div>
-                                            }
-                                            <div>
-                                                <ul>
-                                                    @foreach (DeviceParameter par in parameters.ToList())
-                                                    {
-                                                        <li>@par.Name.Name   <span> @par.Value </span> </li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        }
-                                    }
-                                }
-                            </div>
-
-                            <div class="tab-c" data-tab-id="2">
-                                <ul>
-                                    @{
-                                        List<SFile> files = Model.SFiles;
-
-                                        foreach (SFile file in files)
-                                        {
-                                            <li> <a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name </li>
-                                        }
-                                    }
-
-                                </ul>
-                               
-                            </div>
-
-                            <div class="tab-c" data-tab-id="3">
-                                <ul>
-                                    @{
-                                        IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Cathegory == "FAQ");
-                                        foreach (Post post in posts_faq)
-                                        {
-                                            <li>
-                                                <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-                                            </li>
-                                        }
-                                    }
-                                </ul>
-                                    
-                            </div>
-
-                            <div class="tab-c" data-tab-id="4">
-                                <ul>
-                                    @{
-                                        var post_solutions = Model.Posts.Where(pst => pst.Cathegory == "Typical solution");
-
-                                        foreach (var post in post_solutions)
-                                        {
-                                            <li>
-                                                <a href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-                                            </li>
-                                        }
-                                    }
-                                </ul>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
-
-                <div class="right main">
-                    <div class="widget">
-                        <div class="w-title">К устройству подключаются:</div>
-                        <div class="w-cont">
-                            <div class="clearfix">
-                                <div class="left persent50">
-                                    <div class="w-sub-title">Аксессуары</div>
-                                    @foreach (Device dev in ViewBag.Connected_devices_accessuars)
-                                    {
-                                        <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
-                                    }
-                                </div>
-                                <div class="right dotted persent50">
-                                    <div class="w-sub-title">Сенсоры</div>
-                                    @foreach (Device dev in ViewBag.Connected_devices_sensors)
-                                    {
-                                        <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
-                                    }
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer">
-            <div class="wrapper clearfix">
-                <div class="left">Copyright &copy; NetPing east Co Ltd. All rights reserved</div>
-                <div class="right"><a href="#">Privacy policy</a><br><a href="#">Terms &amp; conditions</a></div>
+                @RenderPage("../Shared/Footer.cshtml")
             </div>
         </div>
 

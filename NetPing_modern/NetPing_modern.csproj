@@ -213,6 +213,7 @@
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider.js" />
+    <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\main.css" />
     <Content Include="Content\Themes\main_mainpage.css" />
     <Content Include="Content\Themes\ProductPageStyle.css" />
@@ -242,6 +243,8 @@
     <Content Include="Views\View\Index.cshtml" />
     <Content Include="Views\Product_item\Index.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
