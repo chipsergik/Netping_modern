@@ -354,7 +354,7 @@ input:focus { outline: none; }
 
 /* --- .footer - START --- */
 .footer {
-  background: url(~/Content/Images/ProductPageImg/footer_bg.png) center center repeat-x;
+  background: url(../img/footer_bg.png) center center repeat-x;
   margin: 30px 0 0;
   color: #ffffff;
   padding: 16px 0 40px;

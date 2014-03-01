@@ -210,6 +210,7 @@
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
+    <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider.js" />
     <Content Include="Content\Themes\main.css" />
