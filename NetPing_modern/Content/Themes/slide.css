@@ -71,7 +71,7 @@
 .rslides_tabs li {
     display: inline;
     float: none;
-    margin-right: 1px;
+    margin: 0 3px;
 }
 
 .rslides_tabs a {
@@ -83,7 +83,7 @@
     width: auto;
 }
 
-.rslides_tabs li:first-child { margin-left: 0; }
+.rslides_tabs li:first-child { margin-left: 15px; }
 
 .rslides_tabs .rslides_here a {
     background: rgba(255, 255, 255, .1);
