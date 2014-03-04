@@ -1,0 +1,52 @@
+﻿@using NetPing.Helpers
+@{
+    Layout = null;
+}
+<div class="header">
+    <!-- Debug sign   -->
+    @if (Html.IsDebug())
+    {
+        <span style="color: red">#Debug !!!</span>
+    }
+
+    <!--    	
+        <ul>
+            <li><a  class="language" href="#">RUS</a></li>
+            <li><a class="language_active" href="#">ENG</a></li>
+        </ul> 
+        -->
+    <form class="search" name="search" method="post" action="">                	
+        <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
+        <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
+    </form>
+    <div class="clear"></div>
+    <a class="logo" href="#">
+        <img src="~/Content/Images/logo_text.png"></img>
+    </a>
+    <div class="nav">
+        <ul>
+            <li class="nav_li">
+                <a class="nav_element_active" href="#">Продукты</a>
+                <div class="nav_element_border"></div>
+            </li>
+            <li class="nav_li">
+                <a class="nav_element" href="/about.aspx">О компании</a>
+                <div class="nav_element_border"></div>
+            </li>
+            <li class="nav_li">
+                <a class="nav_element" href="/dealer.aspx">Дилеры</a>
+                <div class="nav_element_border"></div>
+            </li>
+            <li class="nav_li">
+                <a class="nav_element" href="/contacts.aspx">Контакты</a>
+                <div class="nav_element_border"></div>
+            </li>
+            <li class="nav_li">
+                <a class="nav_element" target="_blank" href="http://ideas.netping.ru">Идеи!</a>
+                <div class="nav_element_border"></div>
+            </li>
+        </ul>                         		
+                        							
+    </div>
+    <div class="clear"></div>
+</div>

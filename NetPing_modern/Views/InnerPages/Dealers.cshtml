@@ -4,27 +4,24 @@
 }
 
 @section Head_Css {
-    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
 }
 
-
-@model  IEnumerable<NetPing.Models.SiteText>  
+@using NetPing.Models
+@model  IEnumerable<NetPing.Models.SiteText>
 
 @section Content_left {
-    @foreach (var grp in ViewBag.DealerGroups)
+    @foreach (dynamic grp in ViewBag.DealerGroups)
     {
-        var dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
-        if (dealers_in_grp.Any()) 
-        {     
+        IEnumerable<SiteText> dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
+        if (dealers_in_grp.Any())
+        {
             <h1>@grp.Name</h1>
-            foreach (var item in dealers_in_grp)
+            foreach (SiteText item in dealers_in_grp)
             {
                 @Html.Raw(item.Text)
             }
         }
-        
     }
   
 }
-
