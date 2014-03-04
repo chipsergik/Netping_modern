@@ -1,45 +1,57 @@
-﻿@{
+﻿@using System.Globalization
+@using NetPing.Helpers
+@using NetPing.Models
+@{
     Layout = "~/Views/Shared/Inner_master.cshtml";
     ViewBag.Title = "Устройства NetPing";
 }
 
 @section Head_Css {
-    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
     <link href="~/Content/Themes/main_mainpage.css" rel="stylesheet" type="text/css" /> 
     <link href="~/Content/Themes/responsiveslides.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/slide.css" rel="stylesheet" type="text/css" />
 }
 
 
-@using NetPing.Helpers
-@using NetPing.Models
-
-
 @section Head {
+<<<<<<< HEAD
 <!-- Main page banner data -->
+=======
+    <!-- Main page banner data -->
+>>>>>>> 3569a1cf153106e4a038878953218f49fd391ce1
     <script type='text/javascript'>
         var Banners = new Array(@Html.Raw(ViewBag.Banners));
 
     </script>
+<<<<<<< HEAD
     <script type="text/javascript" src="~/Content/JavaScript/jquery1.8.3min.js"></script>
     <script type="text/javascript" src="~/Content/JavaScript/responsiveslides.min.js"></script>
     <script type="text/javascript" src="~/Content/JavaScript/slider.js"></script>
  }
+=======
+    <script type="text/javascript" src="~/Content/JavaScript/jquery1.8.3min.js"> </script>
+    <script type="text/javascript" src="~/Content/JavaScript/responsiveslides.min.js"> </script>
+    <script type="text/javascript" src="~/Content/JavaScript/slider.js"> </script>
+}
+>>>>>>> 3569a1cf153106e4a038878953218f49fd391ce1
 
 
 
 
 
 
-@helper GetPrice(double? price){
-    if (price != null && price > 0) {
-        var str= string.Format(new System.Globalization.CultureInfo(1035), "{0:N0}р.",price);
+@helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0}р.", price);
         @str
     }
 }
 
 @section Under_menu{
 
+<<<<<<< HEAD
 <div id="wrapper" class="present">
     <div class="callbacks_container">
         <ul class="rslides" id="slider1">
@@ -74,6 +86,39 @@
                                         <span class="present_left_s">Модельный ряд...</span>
                                    </a>
                                    <div class="clear"></div>
+=======
+    <div id="wrapper" class="present">
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider1">
+            </ul>
+        </div>
+    </div>
+    <a class="present_left" href="/catalog.aspx?id=_nping_bases">
+        <div class="present_left_image1"></div>
+        <h2 class="present_left_h2">МОНИТОРИНГ</h2>
+        <h2 class="present_left_h2">ДАТЧИКОВ</h2>
+        <br />
+        <p class="present_left_p">Удалённый мониторинг датчиков температуры, влажности, открытия двери и других по сети Internet/Ethernet</p>
+        <span class="present_left_s">Модельный ряд...</span> 
+    </a>
+    <a class="present_left" href="/catalog.aspx?id=_nping_power">
+        <div class="present_left_image2"></div>
+        <h2 class="present_left_h2">УПРАВЛЕНИЕ</h2>
+        <h2 class="present_left_h2">ЭЛЕКТРОПИТАНИЕМ</h2>
+        <br />
+        <p class="present_left_p">Устройства удалённого управления питанием (PDU), серверов, роутеров и других устройств по сети Internet/Ethernet</p>
+        <span class="present_left_s">Модельный ряд...</span>
+    </a>
+    <a class="present_left" href="/catalog.aspx?id=_swtch_poee">
+        <div class="present_left_image3"></div>
+        <h2 class="present_left_h2">КОММУТАТОРЫ ETHERNET</h2>
+        <h2 class="present_left_h2">И POE УСРОЙСТВА</h2>
+        <br />
+        <p class="present_left_p">Управляемые и неуправляемые коммутаторы Ethernet, и POE устройства</p>
+        <span class="present_left_s">Модельный ряд...</span>
+    </a>
+    <div class="clear"></div>
+>>>>>>> 3569a1cf153106e4a038878953218f49fd391ce1
 
 }
 
@@ -82,38 +127,39 @@
         <div class="content_best_sales"><span>НОВИНКИ</span></div>
         <div class="content_best_sales_border"></div>
        
-            @foreach ( Device device in ViewBag.Devices)
-            {
-                <div class="content_best_sales_description" style="background-image :url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));" >
-                    <a class="content_best_sales_description_a"href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
-                    <p class="content_best_sales_description_p"> 
+        @foreach (Device device in ViewBag.Devices)
+        {
+            <div class="content_best_sales_description" style="background-image: url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));" >
+                <a class="content_best_sales_description_a"href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                <p class="content_best_sales_description_p"> 
                     
-                        @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
                         
-                        <br />
-                        Цена: <span class="price">@GetPrice(device.Russian_price)</span>
-                    </p>                        
+                    <br />
+                    Цена: <span class="price">@GetPrice(device.Russian_price)</span>
+                </p>                        
+            </div>
+        }
+    </div>
+    <div class="content_news">
+        <div class="content_news_latest">НОВОСТИ</div>
+        <a href="#" class="content_news_latest_rrs"></a> 
+        <div class="clear"></div>
+        <div class="content_news_latest_border"></div>
+        @{
+            int i = 0;
+            foreach (Post post in ViewBag.posts)
+            {
+                <div class="content_news_latest_date">
+                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                    <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
+
                 </div>
-                
+                if (++i == 5)
+                {
+                    break;
+                }
             }
-         </div>
-        <div class="content_news">
-	        <div class="content_news_latest">НОВОСТИ</div>
-                <a href="#" class="content_news_latest_rrs"></a> 
-                <div class="clear"></div>
-                <div class="content_news_latest_border"></div>
-                @{
-                int i=0;
-                foreach (Post post in ViewBag.posts)
-                    {
-                        <div class="content_news_latest_date">
-                            <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                            <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-
-                        </div>
-                        if (++i == 5) { break; }
-                    }
-                } 
-        </div>
+        } 
+    </div>
 }
-

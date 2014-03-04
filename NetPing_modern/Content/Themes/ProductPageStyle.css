@@ -1,0 +1,286 @@
+/* --- defaults - START --- */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    /*    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;*/
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after { clear: both; }
+
+.clearfix { *zoom: 1; }
+
+.left { float: left; }
+
+.right { float: right; }
+
+body {
+    background: #ffffff;
+    font: 14px 'Corbel', sans-serif;
+    min-width: 1000px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+
+input:focus { outline: none; }
+
+/* --- defaults - END --- */
+
+/* SERGO S.*/
+
+.page { background: url(../Images/background.png) repeat-x; }
+
+.page .main {
+    background-color: #ffffff;
+    font-family: Corbel;
+    margin: 0px auto;
+    width: 1000px;
+}
+
+.header { background: url(../Images/backround_main.png) no-repeat; }
+
+.persent50 { width: 49%; }
+
+#searchIcon {
+    background: url(../Images/item_big_zoom.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    right: 4px;
+    top: 170px;
+    width: 20px;
+}
+
+/* end SERGO S*/
+
+/* --- .content - START --- */
+
+.content .left.main { width: 632px; }
+
+.content .left.main .bread {
+    list-style: none;
+    padding: 26px 0 34px;
+}
+
+.content .left.main .bread li {
+    color: #a7a7a7;
+    float: left;
+    font: 700 12px 'Corbel', sans-serif;
+    margin: 0 5px 0 0;
+}
+
+.content .left.main .bread li.active span { color: #3ca03d; }
+
+.content .left.main .bread li a { color: #2f2f2f; }
+
+.content .left.main .bread li a:hover { text-decoration: none; }
+
+.content .item .i-title {
+    color: #144e5a;
+    font-size: 30px;
+    line-height: 20px;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+
+.content .item .i-title span {
+    background: #eb6e0e;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    margin: -10px 0 0 18px;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+
+.content .item .cart {
+    background: #208e34 url(../Images/ProductPageImg/item_cart.png) right top no-repeat;
+    color: #fefefe;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    max-height: 50px;
+    padding: 0 50px 0 0;
+    text-align: center;
+    text-decoration: none;
+    width: 151px;
+}
+
+.content .item .cart span {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 0 6px;
+}
+
+.content .item .cart:hover { opacity: 0.9; }
+
+.content .item .cart:active { opacity: 0.8; }
+
+.content .item .right.sub { width: 412px; }
+
+.content .item .text { color: #2f2f2f; }
+
+.content .item .text p {
+    line-height: 1.4;
+    margin: 0 0 20px;
+}
+
+.content .item .seporator {
+    background: url(../Images/ProductPageImg/item_text_seporator.png) no-repeat;
+    height: 2px;
+}
+
+.content .item .files {
+    list-style: none;
+    padding: 9px 0 0;
+}
+
+.content .item .files li {
+    background-repeat: no-repeat;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 13px 0 0;
+    padding: 0 0 0 25px;
+}
+
+.content .item .files li.pdf { background-image: url(../Images/ProductPageImg/item_files_pdf.png); }
+
+.content .item .files li a { color: #144e5a; }
+
+.content .item .files li a:hover { text-decoration: none; }
+
+.content .tabs-desc { margin: 30px 0 0; }
+
+.content .tabs-desc .tab {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #144e5a;
+    border-left: 1px solid #43717b;
+    box-sizing: border-box;
+    color: #a5d49e;
+    cursor: pointer;
+    float: left;
+    font-weight: 700;
+    line-height: 39px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    width: 25%;
+}
+
+.content .tabs-desc .tab:hover { color: #73bf68; }
+
+.content .tabs-desc .tab:active { color: #3ca03d; }
+
+.content .tabs-desc .tab.active {
+    background: #bddfc1;
+    border: none;
+    color: #144e5a;
+    cursor: default;
+    font-size: 18px;
+    margin: -5px 0 0;
+    padding: 5px 0 0;
+    text-decoration: none;
+}
+
+.content .tabs-desc .tab-c {
+    border: 3px solid #bddfc1;
+    border-top: 2px solid #bddfc1;
+    display: none;
+    padding: 23px 9px 0;
+}
+
+.content .tabs-desc .tab-c .t-title {
+    background: url(../Images/ProductPageImg/tabs_title_bg.png) repeat-y;
+    color: #144e5a;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0 0 12px;
+    padding: 0 11px;
+}
+
+.content .tabs-desc .tab-c ul {
+    list-style: none;
+    padding: 0 0 16px;
+}
+
+.content .tabs-desc .tab-c ul li {
+    background: url(../Images/ProductPageImg/tabs_li_arrow.png) 11px 8px no-repeat;
+    color: #2f2f2f;
+    line-height: 25px;
+    padding: 0 0 0 24px;
+}
+
+.content .tabs-desc .tab-c ul li span {
+    color: #f37021;
+    font-weight: 700;
+}
+
+.content .tabs-desc .tab-c ul li a { color: #144e5a; }
+
+.content .tabs-desc .tab-c ul li a:hover { text-decoration: none; }
+
+.content .tabs-desc .tab-c.shown { display: block; }
+
+
+.content .right.main { width: 307px; }
+
+.content .right.main .widget { margin: 30px 0 0; }
+
+.content .right.main .widget .w-title {
+    background: #144e5a;
+    border-left: 21px solid #208e34;
+    color: #a5d49e;
+    font: 700 18px/37px 'Corbel', sans-serif;
+    padding: 0 10px;
+}
+
+.content .right.main .widget .w-cont {
+    background: #eaf6e8;
+    padding: 18px 0 20px;
+    text-align: center;
+}
+
+.content .right.main .widget .w-cont .dotted { border-left: 1px dotted #7c7f7c; }
+
+.content .right.main .widget .w-cont .w-sub-title {
+    color: #144e5a;
+    font: 700 16px/10px 'Corbel', sans-serif;
+    text-transform: uppercase;
+}
+
+.content .right.main .widget .w-cont .item {
+    color: #208e34;
+    display: block;
+    font: 700 12px 'Corbel', sans-serif;
+    margin: 24px 0 0;
+    width: 153px;
+}
+
+.content .right.main .widget .w-cont .item:hover { text-decoration: none; }
+
+.content .right.main .widget .w-cont .item img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* --- .content - END --- */
