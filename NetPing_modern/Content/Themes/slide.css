@@ -1,47 +1,4 @@
 #wrapper {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    max-width: 585px;
-    width: 585px;
-    height: 425px;
-    float: left;
-}
-
-.callbacks_container {
-  margin-bottom: 50px;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-
-.callbacks_nav {
-  display: none;
-  position: absolute;
-  top: 52%;
-  left: 0;
-  opacity: 0.6;
-  z-index: 5;
-  text-indent: -9999px;
-  overflow: hidden;
-  text-decoration: none;
-  height: 61px;
-  width: 38px;
-  background: transparent url("../Images/themes.gif") no-repeat left top;
-  margin-top: -45px;
-}
-
-.callbacks_nav:active {
-  opacity: 1.0;
-}
-
-.callbacks_nav.next {
-  left: auto;
-  background-position: right top;
-  right: 0;
-}
-=======
-=======
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
     float: left;
     height: 425px;
     max-width: 585px;
@@ -187,9 +144,4 @@
     position: absolute;
     top: 208px;
     text-indent: -999px;
-<<<<<<< HEAD
 }
->>>>>>> 3569a1cf153106e4a038878953218f49fd391ce1
-=======
-}
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291

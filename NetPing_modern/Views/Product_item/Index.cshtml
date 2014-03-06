@@ -1,10 +1,6 @@
 ﻿<!DOCTYPE html>
 @using NetPing.Models
-<<<<<<< HEAD
-@model NetPing.Models.Device
-=======
 @model Device
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
 <html>
     <head>
         @{
@@ -27,7 +23,7 @@
         
                         <div class="left main">
                             <ul class="bread clearfix">
-                                <li><a href="#">Главная</a></li>
+                                <li><a href="/">Главная</a></li>
                                 <li>&gt;</li>
                                 <li><a href="#">@ViewBag.grp_name</a></li>
                                 <li>&gt;</li>
@@ -36,49 +32,22 @@
 
                             <div class="item">
                                 <div class="i-title">@Model.Name.Name<span>@Model.Label.Name</span></div>
-<<<<<<< HEAD
-                                <div class="i-cont clearfix">
-=======
                                 <div class="clearfix">
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
 
                                     <div class="left sub">
                                         <div id="wrapper1">
                                             <ul class="rslides" id="slider3">
                                                 @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
                                                 {
-<<<<<<< HEAD
-                                                    <li><img style="height: 195px; width: 195px;" src="@photo.Url" alt="" title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_POE_UniPing_big.png" alt="" title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_POE_UniPing_big.png" alt="" title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""     title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""     title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""     title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""     title="" /></li>
-                                                    <li><img style="height: 195px; width: 195px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""     title="" /></li>
-=======
                                                     <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
                                                 }
                                             </ul>
                                             <div id="slider3-pager-nav">
                                                 <ul id="slider3-pager">
                                                     @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
                                                     {
-<<<<<<< HEAD
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="@photo.Url" alt="">                           </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_POE_UniPing_big.png" alt=""      />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_POE_UniPing_big.png" alt=""      />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""          />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""          />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""          />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""          />                      </a></li>
-                                                        <li><a href="#"><img style="height: 48px; width: 48px;" src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png" alt=""          />                      </a></li>
-                                                    }
-=======
                                                         <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt="">                           </a></li>
                                                      }
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
                                                 </ul>
                                             </div>
                                             <a href="#" class="cart">@Model.Russian_price<span>руб.</span></a>
@@ -88,7 +57,7 @@
 
                                     <div class="right sub">
                                         <div class="text">
-                                            @Html.Raw(Model.Long_description)
+                                            @Html.Raw(Model.Short_description)
                                         </div>
 
                                         <div class="seporator"></div>
@@ -109,10 +78,10 @@
 
                             <div class="tabs-desc">
                                 <div class="tabs clearfix">
-                                    <div class="tab active" data-tab-id="1">Specification</div>
-                                    <div class="tab" data-tab-id="2">Downloads</div>
-                                    <div class="tab" data-tab-id="3">FAQ</div>
-                                    <div class="tab" data-tab-id="4">Solutions</div>
+                                    <div class="tab active" data-tab-id="1">Спецификация</div>
+                                    <div class="tab" data-tab-id="2">Файлы</div>
+                                    <div class="tab" data-tab-id="3">Вопросы</div>
+                                    <div class="tab" data-tab-id="4">Примеры</div>
                                 </div>
 
                                 <div class="tabs-cont">
@@ -204,7 +173,7 @@
                                             }
                                         </div>
                                         <div class="right dotted persent50">
-                                            <div class="w-sub-title">Сенсоры</div>
+                                            <div class="w-sub-title">Датчики</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
@@ -220,16 +189,12 @@
                 </div>
                 @RenderPage("../Shared/Footer.cshtml")
             </div>
-<<<<<<< HEAD
-        </div>
-=======
 
             <div class="overlay"></div>
             <div class="popup" id="popup1">
             </div>
         </div>
 
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
 
         <script src="~/Content/JavaScript/jquery1.8.3min.js" type="text/javascript"> </script>
         <script src="~/Content/JavaScript/ProductItem.js" type="text/javascript"> </script>

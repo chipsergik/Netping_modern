@@ -63,10 +63,6 @@ input:focus { outline: none; }
     right: 4px;
     top: 170px;
     width: 20px;
-<<<<<<< HEAD
-}
-
-=======
     z-index: 3;
 }
 
@@ -134,7 +130,6 @@ input:focus { outline: none; }
     width: 24px;
 }
 /*--end popup--*/
->>>>>>> 771ea6a2f60392232546330798e92f08e2358291
 /* end SERGO S*/
 
 /* --- .content - START --- */
