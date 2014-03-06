@@ -1,0 +1,213 @@
+﻿.header { padding-left: 45px; }
+
+.header .language {
+    color: #144e5a;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding-top: 13px;
+    text-decoration: underline;
+}
+
+.header .language_active {
+    color: #3ca03d;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding-top: 13px;
+}
+
+.header .search {
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: inset 0px 0px 3px 2px rgba(1, 1, 1, 0.1);
+    background-color: #FFF;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 3px 2px rgba(1, 1, 1, 0.1);
+    float: right;
+    height: 23px;
+    margin-right: 43px;
+    margin-top: 9px;
+    padding-left: 26px;
+    width: 233px;
+}
+
+.header .search .search_text {
+    float: left;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.header .search .search_text_vvod {
+    border: none;
+    color: #000 !important;
+    outline: none;
+}
+
+.header .search .search_img {
+    padding-left: 5px;
+    padding-top: 4px;
+}
+
+.header .logo {
+    background: url(../Images/logo_bg.png) no-repeat;
+    float: left;
+    height: 86px;
+    margin-left: -45px;
+    width: 510px;
+}
+
+.header .logo img {
+    border: none;
+    margin-left: 70px;
+    margin-top: 22px;
+}
+
+.header .nav {
+    float: right;
+    margin-right: 23px;
+    margin-top: -83px;
+}
+
+.header .nav_li { float: left; }
+
+.header .nav_element {
+    background-color: #144e5a;
+    color: #a5d49e;
+    float: left;
+    font-size: 14px;
+    line-height: 37px;
+    margin-top: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.header .nav_element_active {
+    background-color: #144e5a;
+    color: #3ca03d;
+    float: left;
+    font-size: 14px;
+    line-height: 37px;
+    margin-top: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.header .nav .nav_element_border {
+    background-color: transparent;
+    background-image: url(../Images/nav_element_border.png);
+    display: inline;
+    float: left;
+    margin-top: 20px;
+    width: 1px;
+}
+
+.header .nav_element:hover {
+    background: -moz-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, rgba(63, 76, 107, 0.51)), color-stop(16%, rgba(63, 76, 107, 0.51)), color-stop(47%, rgba(63, 76, 107, 0.88)), color-stop(100%, rgba(63, 76, 107, 0.88))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* W3C */
+    color: #a5d49e;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#823f4c6b', endColorstr='#e03f4c6b', GradientType=0); /* IE6-9 */
+    float: left;
+    font-size: 14px;
+    line-height: 37px;
+    margin-top: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.header .nav_element_costumer {
+    background-color: #144e5a;
+    color: #a5d49e;
+    float: left;
+    font-size: 14px;
+    line-height: 37px;
+    margin-top: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+    position: relative;
+}
+
+.header .nav_element_costumer:hover {
+    background: -moz-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* FF3.6+ */
+    background: -moz-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, rgba(63, 76, 107, 0.51)), color-stop(16%, rgba(63, 76, 107, 0.51)), color-stop(47%, rgba(63, 76, 107, 0.88)), color-stop(100%, rgba(63, 76, 107, 0.88))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(63, 76, 107, 0.51) 7%, rgba(63, 76, 107, 0.51) 16%, rgba(63, 76, 107, 0.88) 47%, rgba(63, 76, 107, 0.88) 100%); /* IE10+ */
+    color: #a5d49e;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#823f4c6b', endColorstr='#e03f4c6b', GradientType=0); /* IE6-9 */
+    float: left;
+    font-size: 14px;
+    line-height: 37px;
+    margin-top: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+    position: relative;
+}
+
+.header .nav_element_costumer_hover_list {
+    background-color: #e1e6e0;
+    position: absolute;
+    top: 38px;
+    width: 191px;
+}
+
+.header .nav ul .nav_li .down_list {
+    background-image: url(../Images/bg_down_list.png);
+    border: 1px solid #c9d9c8;
+    list-style: disc;
+    padding: 10px 0 10px 30px;
+    position: relative;
+    top: 57px;
+    width: 130px;
+    z-index: 999;
+}
+
+.header .nav ul .nav_li .down_list .item_list {
+    list-style-image: url(../Images/list-style.png);
+    padding: 5px 0;
+}
+
+.header .nav ul .nav_li .down_list .item_list .link_item_list {
+    color: #9d9f9d;
+    font-size: 14px;
+}
+
+/*footer*/
+
+.page .main .footer { background-color: #1c4947; }
+
+.page .main .footer_left {
+    background-image: url(../Images/footer_left.png);
+    background-repeat: no-repeat;
+    float: left;
+    padding-bottom: 57px;
+    padding-top: 17px;
+    width: 590px;
+}
+
+.page .main .footer_left p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 43px;
+}
+
+.page .main .footer_right {
+    float: left;
+    margin-left: 100px;
+    padding-top: 17px;
+}
+
+.page .main .footer_right_a {
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+	
+/*end footer*/

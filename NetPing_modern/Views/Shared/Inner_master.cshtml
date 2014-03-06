@@ -2,110 +2,48 @@
     Layout = null;
 }
 
-@using NetPing.Helpers
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>@ViewBag.Title</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <title>@ViewBag.Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
+        <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
+        <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" /> 
 
+        @RenderSection("Head_Css", false)
+        @RenderSection("Head", false)
 
-@RenderSection("Head_Css",required: false)
-@RenderSection("Head",required: false)
+    </head>
 
-</head>
-
-<body>
-<div class="page">
-<div class="main">
-<!--header-->
-	<div class="header">
-        
-        <!-- Debug sign   -->
-        @if (Html.IsDebug())
-        {
-            <span style="color:red">#Debug !!!</span>
-        }
-
-        <!--    	
-        <ul>
-        	<li><a  class="language" href="#">RUS</a></li>
-            <li><a class="language_active" href="#">ENG</a></li>
-        </ul> 
-        -->
-            	<form class="search" name="search" method="post" action="">                	
-                    <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
-                    <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
-                </form>
-                		<div class="clear"></div>
-                        <a class="logo" href="#">
-                        					<img src="~/Content/Images/logo_text.png"/></img>
-                         </a>
-                		 <div class="nav">
-                        		<ul>
-                                <li class="nav_li">
-                                	<a class="nav_element_active" href="#">Продукты</a>
-                                	<div class="nav_element_border"></div>
-                                </li>
-                                <li class="nav_li">
-                                    <a class="nav_element" href="/about.aspx">О компании</a>
-                                    <div class="nav_element_border"></div>
-                                </li>
-                                <li class="nav_li">
-                                    <a class="nav_element" href="/dealer.aspx">Дилеры</a>
-                                    <div class="nav_element_border"></div>
-                                </li>
-                                <li class="nav_li">
-                                    <a class="nav_element" href="/contacts.aspx">Контакты</a>
-                                    <div class="nav_element_border"></div>
-                                </li>
-                                <li class="nav_li">
-                                    <a class="nav_element" target="_blank" href="http://ideas.netping.ru">Идеи!</a>
-                                    <div class="nav_element_border"></div>
-                                </li>
-                         </ul>                         		
-                        							
-            </div>
-            <div class="clear"></div>
-            </div>
-<!--end header-->
-@RenderSection("Under_menu",required: false)
+    <body>
+        <div class="page">
+            <div class="main">
+                @RenderPage("Header.cshtml")
+                @RenderSection("Under_menu", false)
     
-<!--content-->
-<div class="content">
-    @{if ( !IsSectionDefined("Content") ) {
-    	<div class="content_left">
-            @RenderSection("Content_left",required: false)
+                <!--content-->
+                <div class="content">
+                    @{
+                        if (!IsSectionDefined("Content"))
+                        {
+                            <div class="content_left">
+                                @RenderSection("Content_left", false)
+                            </div>
+                            <div class="content_right">
+                                @RenderSection("Content_right", false)
+                            </div>
+                        }
+                        else
+                        {
+                            @RenderSection("Content", false)
+                        }
+                    }
+                    <div class="clear"></div>
+                </div>
+                <!--end content-->
+                @RenderPage("Footer.cshtml")
+            </div>
         </div>
-        <div class="content_right">
-            @RenderSection("Content_right",required: false)
-        </div>
-     } else
-        {
-            @RenderSection("Content",required: false)
-        }
-    }
-    <div class="clear"></div>
-    </div>
-<!--end content-->
-<!--footer-->
-<div class="footer">
-	<div class="footer_left">
-    	<p>Copyright © NetPing east Co Ltd. All rights reserved</p>
-    </div>
-    <div class="footer_right">
-    	<ul>
-        	<li><a href="#" class="footer_right_a">Privacy policy</a></li>
-            <li><a href="#" class="footer_right_a">Terms & conditions</a></li>
-        </ul>
-    </div>
-    <div class="clear"></div>    
-    </div>
-<!--end footer-->
-    </div>
-</div>
-</body>
+    </body>
 </html>
