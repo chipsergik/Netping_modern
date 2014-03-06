@@ -20,7 +20,7 @@
                 @RenderPage("../Shared/Header.cshtml")
                 <div class="content">
                     <div class="wrapper clearfix">
-        
+
                         <div class="left main">
                             <ul class="bread clearfix">
                                 <li><a href="/">Главная</a></li>
@@ -37,20 +37,20 @@
                                     <div class="left sub">
                                         <div id="wrapper1">
                                             <ul class="rslides" id="slider3">
-                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
+                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
                                                 {
                                                     <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
                                                 }
                                             </ul>
                                             <div id="slider3-pager-nav">
                                                 <ul id="slider3-pager">
-                                                    @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
+                                                    @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
                                                     {
-                                                        <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt="">                           </a></li>
-                                                     }
+                                                        <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt=""></a></li>
+                                                    }
                                                 </ul>
                                             </div>
-                                            <a href="#" class="cart">@Model.Russian_price<span>руб.</span></a>
+                                            <a href="#" class="cart price">@Model.Russian_price<span>руб.</span></a>
                                             <span id="searchIcon"></span>
                                         </div>
                                     </div>
