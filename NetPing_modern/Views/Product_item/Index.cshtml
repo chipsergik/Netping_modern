@@ -20,10 +20,10 @@
                 @RenderPage("../Shared/Header.cshtml")
                 <div class="content">
                     <div class="wrapper clearfix">
-        
+
                         <div class="left main">
                             <ul class="bread clearfix">
-                                <li><a href="#">Главная</a></li>
+                                <li><a href="/">Главная</a></li>
                                 <li>&gt;</li>
                                 <li><a href="#">@ViewBag.grp_name</a></li>
                                 <li>&gt;</li>
@@ -37,27 +37,27 @@
                                     <div class="left sub">
                                         <div id="wrapper1">
                                             <ul class="rslides" id="slider3">
-                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
+                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
                                                 {
                                                     <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
                                                 }
                                             </ul>
                                             <div id="slider3-pager-nav">
                                                 <ul id="slider3-pager">
-                                                    @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig && p.IsCover))
+                                                    @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
                                                     {
-                                                        <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt="">                           </a></li>
-                                                     }
+                                                        <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt=""></a></li>
+                                                    }
                                                 </ul>
                                             </div>
-                                            <a href="#" class="cart">@Model.Russian_price<span>руб.</span></a>
+                                            <a href="#" class="cart price">@Model.Russian_price<span>руб.</span></a>
                                             <span id="searchIcon"></span>
                                         </div>
                                     </div>
 
                                     <div class="right sub">
                                         <div class="text">
-                                            @Html.Raw(Model.Long_description)
+                                            @Html.Raw(Model.Short_description)
                                         </div>
 
                                         <div class="seporator"></div>
@@ -78,10 +78,10 @@
 
                             <div class="tabs-desc">
                                 <div class="tabs clearfix">
-                                    <div class="tab active" data-tab-id="1">Specification</div>
-                                    <div class="tab" data-tab-id="2">Downloads</div>
-                                    <div class="tab" data-tab-id="3">FAQ</div>
-                                    <div class="tab" data-tab-id="4">Solutions</div>
+                                    <div class="tab active" data-tab-id="1">Спецификация</div>
+                                    <div class="tab" data-tab-id="2">Файлы</div>
+                                    <div class="tab" data-tab-id="3">Вопросы</div>
+                                    <div class="tab" data-tab-id="4">Примеры</div>
                                 </div>
 
                                 <div class="tabs-cont">
@@ -173,7 +173,7 @@
                                             }
                                         </div>
                                         <div class="right dotted persent50">
-                                            <div class="w-sub-title">Сенсоры</div>
+                                            <div class="w-sub-title">Датчики</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
