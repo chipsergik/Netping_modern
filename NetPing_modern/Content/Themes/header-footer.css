@@ -208,6 +208,9 @@
     font-size: 14px;
     text-decoration: underline;
 }
-
 	
 /*end footer*/
+
+.page .main {
+    font-family: 'Helvetica';
+}
