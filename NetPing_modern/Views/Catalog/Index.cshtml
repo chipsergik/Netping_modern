@@ -29,7 +29,7 @@
     -->
 
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 @using System.Globalization
 @using NetPing.Models
 @model IEnumerable<Device>
@@ -106,17 +106,31 @@
                             const string title2 = "Удалённое управление элекропитанием и перезагрузкой устройств";
                             const string title3 = "Коммутаторы Ethernet POE устройства";
 
+                            string selectedSectionBigImageUrl = "";
+                            string selectedSectionSmallImageUrl = "";
+                            string section2ImgUrl = "";
+                            string section3ImgUrl = "";
+
+                            string p312_342 = "http://placehold.it/312x342";    
+                            string p45_45 = "http://placehold.it/45x45";
+                            string p312_195 = "http://placehold.it/313x195";
+
                             string s1 = "";
                             string l1 = "";
                             string s2 = "";
                             string l2 = "";
                             string t1 = "";
                             string t2 = "";
+                            
 
                             switch ((string) ViewBag.id)
                             {
                                 case "_nping_bases":
                                 {
+                                    selectedSectionBigImageUrl = p312_342; // TODO _nping_bases big img URL
+                                    selectedSectionSmallImageUrl = p45_45; // TODO _nping_bases small img URL
+                                    section2ImgUrl = p312_195; // TODO _nping_power middle img URL
+                                    section3ImgUrl = p312_195; // TODO _swtch middle img URL
                                     titTitle = title1;
                                     titDesc = desc1;
                                     t1 = title2;
@@ -131,6 +145,10 @@
                                 }
                                 case "_nping_power":
                                 {
+                                    selectedSectionBigImageUrl = p312_342; // TODO _nping_power big img URL                                  
+                                    selectedSectionSmallImageUrl = p45_45; // TODO _nping_power small img URL                                    
+                                    section2ImgUrl = p312_195; // TODO _nping_bases middle img URL
+                                    section3ImgUrl = p312_195; // TODO _swtch middle img URL
                                     titTitle = title2;
                                     titDesc = desc2;
                                     t1 = title1;
@@ -145,6 +163,10 @@
                                 }
                                 case "_swtch":
                                 {
+                                    selectedSectionBigImageUrl = p312_342; // TODO _swtch get big img URL
+                                    selectedSectionSmallImageUrl = p45_45; // TODO _swtch get Small img URL
+                                    section2ImgUrl = p312_195; // TODO _nping_bases middle img URL
+                                    section3ImgUrl = p312_195; // TODO _nping_power middle img URL
                                     titTitle = title3;
                                     titDesc = desc3;
                                     t1 = title1;
@@ -163,7 +185,7 @@
                     </div>
                     <div class="wrapper clearfix">
                         <div class="left main catalog">
-                            <div class="cat_tit">
+                            <div class="cat_tit" style="background: url(@selectedSectionBigImageUrl)">
                                 <div class="cat_tit_title">@Html.Raw(titTitle)</div>
                                 <div class="cat_tit_desc">@Html.Raw(titDesc)</div>
                                 <ul>
@@ -186,13 +208,12 @@
 
                         <div class="right main catalog">
                             <div class="catalog_sub clearfix">
-                                @*TODO correct background*@
-                                <a href="@l1" class="left"><span class="title">@Html.Raw(t1)</span><span class="desc">@s1</span></a>
-                                <a href="@l2" class="right"><span class="title">@Html.Raw(t2)</span><span class="desc">@s2</span></a>
+                                <a href="@l1" style="background: url(@section2ImgUrl)" class="left"><span class="title">@Html.Raw(t1)</span><span class="desc">@s1</span></a>
+                                <a href="@l2" style="background: url(@section3ImgUrl)" class="right"><span class="title">@Html.Raw(t2)</span><span class="desc">@s2</span></a>
                             </div>
 
                             <div class="catalog_cat_tit clearfix">
-                                <div class="left"><img src="~/Content/Images/CatalogPageImg/ico_sample.png" @*TODO write correct link*@  alt="" title="" /></div>
+                                <div class="left"><img src="@selectedSectionSmallImageUrl"  alt="" title="" /></div>
                                 <div class="right">@titTitle.Replace("<br>", " ")</div>
                             </div>
 
@@ -225,7 +246,7 @@
                                                         className = "eol";
                                                         break;
                                                     }
-                                                    case "ARCHIVE": /*TODO*/
+                                                    case "Архив":
                                                     {
                                                         className = "archive";
                                                         break;
@@ -240,8 +261,8 @@
                                         }
                                         <div class="compare left">
                                             <form action="/" method="POST" class="clearfix">
-                                                <div class="left"><input type="checkbox" name="compare" /><label>Сравнить устройство</label></div>
-                                                <div><input type="submit" value="Сравнить" /></div>
+                                                <div class="left"><input type="checkbox" disabled name="compare" /><label>Сравнить устройство</label></div>
+                                                <div><input type="submit" disabled value="Сравнить"/></div>
                                             </form>
                                         </div>
                                         <div class="price right">Цена: <span>@GetPrice(device.Russian_price)</span></div>

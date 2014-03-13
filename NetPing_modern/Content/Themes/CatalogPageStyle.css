@@ -95,7 +95,7 @@ input:focus { outline: none; }
 .content .big_link:active { opacity: 0.8; }
 
 .content .cat_tit {
-    background: url(../Images/CatalogPageImg/catalog_main.png) no-repeat;
+    background: no-repeat;
     margin: 0 0 7px;
     padding: 0 0 24px;
 }
@@ -131,7 +131,7 @@ input:focus { outline: none; }
 .content .cat_tit ul li a:hover { text-decoration: underline; }
 
 .content .catalog_sub a {
-    background: url(../Images/CatalogPageImg/catalog_sub.png) no-repeat;
+    background: no-repeat;
     color: #2f2f2f;
     height: 195px;
     text-decoration: none;
