@@ -25,7 +25,8 @@
 
 body {
     background: #ffffff;
-    font: 14px 'Corbel', sans-serif;
+    /*font: 14px 'Corbel', sans-serif;*/
+    font: 14px sans-serif;
     min-width: 1000px;
 }
 
@@ -45,7 +46,7 @@ input:focus { outline: none; }
 
 .page .main {
     background-color: #ffffff;
-    font-family: Corbel;
+    /*font-family: Corbel;*/
     margin: 0px auto;
     width: 1000px;
 }
@@ -53,6 +54,12 @@ input:focus { outline: none; }
 .header { background: url(../Images/backround_main.png) no-repeat; }
 
 .persent50 { width: 49%; }
+
+.price {
+    font: 14px sans-serif;
+    font: 14px 'Corbel', sans-serif;
+    margin: 0 15px 0 0;
+}
 
 #searchIcon {
     background: url(../Images/item_big_zoom.png) no-repeat;
@@ -144,7 +151,8 @@ input:focus { outline: none; }
 .content .left.main .bread li {
     color: #a7a7a7;
     float: left;
-    font: 700 12px 'Corbel', sans-serif;
+    font: 700 12px sans-serif;
+    /*font: 700 12px 'Corbel', sans-serif;*/
     margin: 0 5px 0 0;
 }
 
@@ -315,7 +323,8 @@ input:focus { outline: none; }
     background: #144e5a;
     border-left: 21px solid #208e34;
     color: #a5d49e;
-    font: 700 18px/37px 'Corbel', sans-serif;
+    /*font: 700 18px/37px 'Corbel', sans-serif;*/
+    font: 700 18px/37px sans-serif;
     padding: 0 10px;
 }
 
@@ -329,14 +338,16 @@ input:focus { outline: none; }
 
 .content .right.main .widget .w-cont .w-sub-title {
     color: #144e5a;
-    font: 700 16px/10px 'Corbel', sans-serif;
+    /*font: 700 16px/10px 'Corbel', sans-serif;*/
+    font: 700 16px/10px sans-serif;
     text-transform: uppercase;
 }
 
 .content .right.main .widget .w-cont .item {
     color: #208e34;
     display: block;
-    font: 700 12px 'Corbel', sans-serif;
+    /*font: 700 12px 'Corbel', sans-serif;*/
+    font: 700 12px sans-serif;
     margin: 24px 0 0;
     width: 153px;
 }
