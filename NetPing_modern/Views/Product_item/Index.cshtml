@@ -169,14 +169,14 @@
                                             <div class="w-sub-title">Аксессуары</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                                             {
-                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
+                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
                                             }
                                         </div>
                                         <div class="right dotted persent50">
                                             <div class="w-sub-title">Датчики</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
-                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@string.Format("http://office.alentis.ru/web/catalog/SPhoto/{0}_small.png", @dev.Key)" alt="" title="" />@dev.Name.Name</a>
+                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
                                             }
                                         </div>
 

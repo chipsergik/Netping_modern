@@ -38,7 +38,9 @@ namespace NetPing.Models
 
         public DevicePhoto GetCoverPhoto(bool isBig)
         {
-            return DevicePhotos.FirstOrDefault(p => p.IsBig == isBig && p.IsCover);
+            DevicePhoto dp=DevicePhotos.FirstOrDefault(p => p.IsBig == isBig && p.IsCover);
+            if (dp != null) return dp;
+            return new DevicePhoto();
         }
     }
 }

@@ -1,14 +1,279 @@
-﻿@{
-    Layout = "~/Views/Shared/Inner_master.cshtml";
-    ViewBag.Title = "Каталог";
+﻿<!--
+    Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
+    Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
+    Устройства  ViewBags.sub=_nping_bases                   /catalog.aspx?id=_nping_bases&sub=_nping_bases
+    Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_bases&sub=_acces_sensr
+    Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_bases&sub=_acces_mains
+    Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_bases&sub=_solut_sensr
+
+    Удалённое управление элекропитанием и перезагрузкой устройств - VieBags.id=_nping_power   /catalog.aspx?id=_nping_power
+    Устройства  ViewBags.sub=_nping_power                   /catalog.aspx?id=_nping_power&sub=_nping_power
+    Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_power&sub=_acces_sensr
+    Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_power&sub=_acces_mains
+    Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_power&sub=_solut_sensr
+
+    Коммутаторы Ethernet POE устройства - VieBags.id=_swtch   /catalog.aspx?id=_swtch
+    Устройства  ViewBags.sub=_swtch                         /catalog.aspx?id=_swtch&sub=_swtch
+    Аксессуары  ViewBags.sub=_acces_mains                    /catalog.aspx?id=_swtch&sub=_acces_mains
+
+    При переходе от одного раздела или подраздела к другому, страница перезагружается с сервера.
+
+    В зависимости от того какой из разделов активен, он отображается как крайний левый с раскрытыми под разделами
+
+    Активный подраздел нужно выделить визуально
+
+    Серверная часть передаёт на страницу список устройств в зависимости от активного раздела и под раздела.
+
+    !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
+
+    -->
+
+
+<!DOCTYPE HTML>
+@using System.Globalization
+@using NetPing.Models
+@model IEnumerable<Device>
+
+    @section Head_Css {
+        <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    }
+
+
+    <!--
+    Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
+        Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
+            Устройства  ViewBags.sub=_nping_bases                   /catalog.aspx?id=_nping_bases&sub=_nping_bases
+            Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_bases&sub=_acces_sensr
+            Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_bases&sub=_acces_mains
+            Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_bases&sub=_solut_sensr
+
+        Удалённое управление элекропитанием и перезагрузкой устройств - VieBags.id=_nping_power   /catalog.aspx?id=_nping_power
+            Устройства  ViewBags.sub=_nping_power                   /catalog.aspx?id=_nping_power&sub=_nping_power
+            Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_power&sub=_acces_sensr
+            Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_power&sub=_acces_mains
+            Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_power&sub=_solut_sensr
+
+        Коммутаторы Ethernet POE устройства - VieBags.id=_swtch   /catalog.aspx?id=_swtch
+            Устройства  ViewBags.sub=_swtch                         /catalog.aspx?id=_swtch&sub=_swtch
+            Аксессуары  ViewBags.sub=_acces_mains                    /catalog.aspx?id=_swtch&sub=_acces_mains
+
+    При переходе от одного раздела или подраздела к другому, страница перезагружается с сервера.
+
+    В зависимости от того какой из разделов активен, он отображается как крайний левый с раскрытыми под разделами
+
+    Активный подраздел нужно выделить визуально
+
+    Серверная часть передаёт на страницу список устройств в зависимости от активного раздела и под раздела.
+
+    !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
+
+    -->
+    @helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0}р.", price);
+        @str
+    }
 }
+<html>
+    <head>
+        @{
+            ViewBag.Title = "Каталог";
+        }
+        <title>@ViewBag.Title</title>
+        <meta charset="utf-8">
+        <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/header-footer.css">
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/CatalogPageStyle.css">
+    </head>
+    <body>
+        <div class="page">
+            <div class="main">
+                @RenderPage("../Shared/Header.cshtml")
+                <div class="content">
+                        @{
+                            string titTitle = "";
+                            string titDesc = "";
+                            string[] names = null;
+                            string[] links = null;
+                            const string desc1 = "Устройства удалённого мониторинга датчиков, температуры, влажности, доступа в помещение и других, по сети Internet";
+                            const string desc2 = "Устройства удалённого управления и перезагрузки по питанию (PDU), коммутаторов, роутеров, компьютеров и других устойств";
+                            const string desc3 = "Управляемые и не управляемые коммутаторы Ethernet, устройства с питанием POE";
 
-@section Head_Css {
-    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
-}
+                            const string title1 = "Удалённый<br>мониторинг датчиков";
+                            const string title2 = "Удалённое управление элекропитанием и перезагрузкой устройств";
+                            const string title3 = "Коммутаторы Ethernet POE устройства";
 
+                            const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
+                            const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
+                            const string _swtchURL = "../../Content/Images/present_left_img3.png";
+                            const string bgURL = "../../Content/Images/present_left.png";
 
+                            string selectedSectionImage = "";
+                            string section2ImgUrl = "";
+                            string section3ImgUrl = "";
 
-@section Content {
-    catalog here
-}
+                            string s1 = "";
+                            string l1 = "";
+                            string s2 = "";
+                            string l2 = "";
+                            string t1 = "";
+                            string t2 = "";
+                            
+
+                            switch ((string) ViewBag.id)
+                            {
+                                case "_nping_bases":
+                                {
+                                    selectedSectionImage = _nping_basesURL;
+                                    section2ImgUrl = _nping_powerURL; 
+                                    section3ImgUrl = _swtchURL; 
+
+                                    titTitle = title1;
+                                    titDesc = desc1;
+                                    t1 = title2;
+                                    t2 = title3;
+                                    s1 = desc2;
+                                    s2 = desc3;
+                                    l1 = "?id=_nping_power";
+                                    l2 = "?id=_swtch";
+                                    names = new[] {"Устройства", "Датчики", "Аксессуары", "Готовые решения"};
+                                    links = new[] {"_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr"};
+                                    break;
+                                }
+                                case "_nping_power":
+                                {
+                                    selectedSectionImage = _nping_powerURL;                                
+                                    section2ImgUrl = _nping_basesURL;
+                                    section3ImgUrl = _swtchURL; 
+
+                                    titTitle = title2;
+                                    titDesc = desc2;
+                                    t1 = title1;
+                                    t2 = title3;
+                                    s1 = desc1;
+                                    s2 = desc3;
+                                    l1 = "?id=_nping_bases";
+                                    l2 = "?id=_swtch";
+                                    names = new[] {"Устройства", "Датчики", "Аксессуары", "Готовые решения"};
+                                    links = new[] {"_nping_power", "_acces_sensr", "_acces_mains", "_solut_power"};
+                                    break;
+                                }
+                                case "_swtch":
+                                {
+                                    selectedSectionImage = _swtchURL;
+                                    section2ImgUrl = _nping_basesURL; 
+                                    section3ImgUrl = _nping_powerURL; 
+
+                                    titTitle = title3;
+                                    titDesc = desc3;
+                                    t1 = title1;
+                                    t2 = title2;
+                                    s1 = desc1;
+                                    s2 = desc2;
+                                    l1 = "?id=_nping_bases";
+                                    l2 = "?id=_nping_power";
+                                    names = new[] {"Устройства", "Аксессуары"};
+                                    links = new[] {"_swtch", "_acces_mains"};
+                                    break;
+                                }
+                            }
+                        }
+                    <div class="wrapper clearfix">
+                        <div class="left main catalog">
+                            <div class="cat_tit" style="background: url(@bgURL) no-repeat; -ms-background-size: 100% 100%; background-size: 100% 100%">
+                                <img class="sectionImage" src="@selectedSectionImage"/>
+                                <div class="cat_tit_title">@Html.Raw(titTitle)</div>
+                                <div class="cat_tit_desc">@Html.Raw(titDesc)</div>
+                                <ul>
+                                    @{
+                                        if (names != null)
+                                        {
+                                            for (int i = 0; i < names.Length; i++)
+                                            {
+                                                dynamic link = String.Format("?id={0}&sub={1}", ViewBag.id, links[i]);
+                                                <li><a href="@link">@names[i]</a></li>
+                                            }
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+                            <a href="#" class="big_link pdf">Загрузить каталог продукции в PDF</a>
+                            <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>
+                        </div>
+
+                        <div class="right main catalog">
+                            <div class="catalog_sub clearfix">
+                                <a href="@l1" style="background-image: url(@bgURL)"><img src="@section2ImgUrl" class="sectionImage"/><span class="title">@Html.Raw(t1)</span><span class="desc">@s1</span></a>
+                                <a href="@l2" style="background-image: url(@bgURL)"><img src="@section3ImgUrl" class="sectionImage"/><span class="title">@Html.Raw(t2)</span><span class="desc">@s2</span></a>
+                            </div>
+
+                            <div class="catalog_cat_tit clearfix">
+                                <div class="left"><img src="@selectedSectionImage" style="width: 45px; height: 45px" alt="" title="" /></div>
+                                <div class="right">@titTitle.Replace("<br>", " ")</div>
+                            </div>
+
+                            @foreach (Device device in Model)
+                            {
+                                <div class="cat_item">
+                                    <div class="desc clearfix">
+                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(false).Url" alt="" title="" /></div>
+                                        <div class="right">
+                                            <a href="#" class="title">@device.Name.Name</a>
+                                            <div class="text">
+                                                <p> @Html.Raw(device.Short_description)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="action clearfix">
+                                        @{
+                                            string className = "new";
+                                            if (!String.IsNullOrWhiteSpace(device.Label.Name))
+                                            {
+                                                switch (device.Label.Name)
+                                                {
+                                                    case "Новинка":
+                                                    {
+                                                        className = "new";
+                                                        break;
+                                                    }
+                                                    case "Снимается с производства":
+                                                    {
+                                                        className = "eol";
+                                                        break;
+                                                    }
+                                                    case "Архив":
+                                                    {
+                                                        className = "archive";
+                                                        break;
+                                                    }
+                                                }
+                                                <div class="type left"><span class="@className">@device.Label.Name</span></div>
+                                            }
+                                            else
+                                            {
+                                                <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
+                                            }
+                                        }
+                                        <div class="compare left">
+                                            <form action="/" method="POST" class="clearfix">
+                                                <div class="left"><input type="checkbox" disabled name="compare" /><label>Сравнить устройство</label></div>
+                                                <div><input type="submit" disabled value="Сравнить"/></div>
+                                            </form>
+                                        </div>
+                                        <div class="price right">Цена: <span>@GetPrice(device.Russian_price)</span></div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                @RenderPage("../Shared/Footer.cshtml")
+            </div>
+        </div>
+        <script> </script>
+    </body>
+</html>
