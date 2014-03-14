@@ -21,6 +21,7 @@ build/
 [Bb]in/
 [Oo]bj/
 
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
@@ -48,5 +49,7 @@ build/
 *.pidb
 *.log
 *.scc
+*.dll
+*.pbd
 
 
