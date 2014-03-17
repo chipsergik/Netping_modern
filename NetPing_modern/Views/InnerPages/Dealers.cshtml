@@ -5,6 +5,12 @@
 
 @section Head_Css {
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <style>
+        .partnyor {
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+    </style>
 }
 
 @using NetPing.Models
@@ -16,11 +22,13 @@
         IEnumerable<SiteText> dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
         if (dealers_in_grp.Any())
         {
-            <h1>@grp.Name</h1>
-            foreach (SiteText item in dealers_in_grp)
-            {
-                @Html.Raw(item.Text)
-            }
+            <div class="partnyor">
+                <h1>@grp.Name</h1>
+                @foreach (SiteText item in dealers_in_grp)
+                {
+                    @Html.Raw(item.Text);
+                }
+            </div>
         }
     }
   

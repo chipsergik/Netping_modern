@@ -43,7 +43,7 @@
 
 .sectionImage {
     float: left;
-    margin: -11px 5px;
+    margin: -15px 5px;
 }
 
 /* end SERGO S*/
@@ -126,8 +126,8 @@ input:focus { outline: none; }
 
 .content .cat_tit ul li {
     background: url(../Images/CatalogPageImg/catalog_main_li.png) 20px center no-repeat;
-    margin: 9px 0 0;
-    padding: 2px 0 2px 56px;
+    margin: 9px 0;
+    padding: 2px 0 2px 64px;
 }
 
 .content .cat_tit ul li a {
@@ -253,8 +253,8 @@ input:focus { outline: none; }
 }
 
 .cat_item .action .price {
-    font: 14px sans-serif;
-    font: 14px 'Corbel', sans-serif;
+/*    font: 14px sans-serif;
+    font: 14px 'Corbel', sans-serif;*/
     margin: 0 15px 0 0;
 }
 
@@ -262,4 +262,16 @@ input:focus { outline: none; }
     color: #eb6e0e;
     font-size: 32px;
     line-height: 10px;
+}
+
+#selectedSection {
+
+    font-size: 21px;
+    background-color: #c5c2be;
+    background-color: rgba(197, 194, 190, 0.5);
+}
+
+#selectedSection a {
+    color: rgb(139, 0, 0);
+    margin-left: -3px;
 }

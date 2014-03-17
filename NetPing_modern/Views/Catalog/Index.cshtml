@@ -1,36 +1,7 @@
-﻿<!--
-    Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
-    Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
-    Устройства  ViewBags.sub=_nping_bases                   /catalog.aspx?id=_nping_bases&sub=_nping_bases
-    Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_bases&sub=_acces_sensr
-    Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_bases&sub=_acces_mains
-    Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_bases&sub=_solut_sensr
-
-    Удалённое управление элекропитанием и перезагрузкой устройств - VieBags.id=_nping_power   /catalog.aspx?id=_nping_power
-    Устройства  ViewBags.sub=_nping_power                   /catalog.aspx?id=_nping_power&sub=_nping_power
-    Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_power&sub=_acces_sensr
-    Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_power&sub=_acces_mains
-    Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_power&sub=_solut_sensr
-
-    Коммутаторы Ethernet POE устройства - VieBags.id=_swtch   /catalog.aspx?id=_swtch
-    Устройства  ViewBags.sub=_swtch                         /catalog.aspx?id=_swtch&sub=_swtch
-    Аксессуары  ViewBags.sub=_acces_mains                    /catalog.aspx?id=_swtch&sub=_acces_mains
-
-    При переходе от одного раздела или подраздела к другому, страница перезагружается с сервера.
-
-    В зависимости от того какой из разделов активен, он отображается как крайний левый с раскрытыми под разделами
-
-    Активный подраздел нужно выделить визуально
-
-    Серверная часть передаёт на страницу список устройств в зависимости от активного раздела и под раздела.
-
-    !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
-
-    -->
-
-
+﻿
 <!DOCTYPE HTML>
 @using System.Globalization
+@using NetPing.DAL
 @using NetPing.Models
 @model IEnumerable<Device>
 
@@ -39,35 +10,7 @@
     }
 
 
-    <!--
-    Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
-        Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
-            Устройства  ViewBags.sub=_nping_bases                   /catalog.aspx?id=_nping_bases&sub=_nping_bases
-            Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_bases&sub=_acces_sensr
-            Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_bases&sub=_acces_mains
-            Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_bases&sub=_solut_sensr
-
-        Удалённое управление элекропитанием и перезагрузкой устройств - VieBags.id=_nping_power   /catalog.aspx?id=_nping_power
-            Устройства  ViewBags.sub=_nping_power                   /catalog.aspx?id=_nping_power&sub=_nping_power
-            Датчики     ViewBags.sub=_acces_sensr                   /catalog.aspx?id=_nping_power&sub=_acces_sensr
-            Аксессуары  ViewBags.sub=_acces_mains                   /catalog.aspx?id=_nping_power&sub=_acces_mains
-            Готовые решения ViewBags.sub=_solut_sensr               /catalog.aspx?id=_nping_power&sub=_solut_sensr
-
-        Коммутаторы Ethernet POE устройства - VieBags.id=_swtch   /catalog.aspx?id=_swtch
-            Устройства  ViewBags.sub=_swtch                         /catalog.aspx?id=_swtch&sub=_swtch
-            Аксессуары  ViewBags.sub=_acces_mains                    /catalog.aspx?id=_swtch&sub=_acces_mains
-
-    При переходе от одного раздела или подраздела к другому, страница перезагружается с сервера.
-
-    В зависимости от того какой из разделов активен, он отображается как крайний левый с раскрытыми под разделами
-
-    Активный подраздел нужно выделить визуально
-
-    Серверная часть передаёт на страницу список устройств в зависимости от активного раздела и под раздела.
-
-    !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
-
-    -->
+    
     @helper GetPrice(double? price)
 {
     if (price != null && price > 0)
@@ -186,14 +129,22 @@
                                 <img class="sectionImage" src="@selectedSectionImage"/>
                                 <div class="cat_tit_title">@Html.Raw(titTitle)</div>
                                 <div class="cat_tit_desc">@Html.Raw(titDesc)</div>
-                                <ul>
+                                <ul style="margin-top: 22px;">
                                     @{
                                         if (names != null)
                                         {
                                             for (int i = 0; i < names.Length; i++)
                                             {
-                                                dynamic link = String.Format("?id={0}&sub={1}", ViewBag.id, links[i]);
-                                                <li><a href="@link">@names[i]</a></li>
+                                                var link = String.Format("?id={0}&sub={1}", ViewBag.id, links[i]);
+                                                if (i == 0 && String.IsNullOrWhiteSpace(ViewBag.sub) || links[i] != null && links[i].Equals(ViewBag.sub))
+                                                {
+                                                    <li id="selectedSection"><a href="@link">@names[i]</a></li>    
+                                                }
+                                                else
+                                                {
+                                                    <li><a href="@link">@names[i]</a></li>    
+                                                }
+                                                
                                             }
                                         }
                                     }
@@ -219,9 +170,9 @@
                             {
                                 <div class="cat_item">
                                     <div class="desc clearfix">
-                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(false).Url" alt="" title="" /></div>
+                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
                                         <div class="right">
-                                            <a href="#" class="title">@device.Name.Name</a>
+                                            <a href="@device.GetURLDevicePage()" class="title">@device.Name.Name</a>
                                             <div class="text">
                                                 <p> @Html.Raw(device.Short_description)</p>
                                             </div>

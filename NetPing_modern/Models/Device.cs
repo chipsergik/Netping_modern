@@ -42,5 +42,10 @@ namespace NetPing.Models
             if (dp != null) return dp;
             return new DevicePhoto();
         }
+
+        public string GetURLDevicePage()
+        {
+            return "/product_item.aspx?id=" + Key;
+        }
     }
 }
