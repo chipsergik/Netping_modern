@@ -31,13 +31,14 @@ namespace NetPing.Helpers
               else return url.Url;
         }
 
-        public static List<SPTerm> ListNamesToListDesitnations(this List<SPTerm> names)
+        public static List<SPTerm> ListNamesToListDesitnations(this List<SPTerm> names,IEnumerable<Device> devices)
         {
             List<SPTerm> result = new List<SPTerm>();
-            var repository = new SPOnlineRepository();
+            //var repository = new SPOnlineRepository();
             foreach (var name in names)
             {
-                var device= repository.Devices.FirstOrDefault(dev => dev.Name == name);
+                //var device= repository.Devices.FirstOrDefault(dev => dev.Name == name);
+                var device= devices.FirstOrDefault(dev => dev.Name == name);
                 if (device != null)  result=result.Union(device.Destination).ToList();
             }
             return result;
