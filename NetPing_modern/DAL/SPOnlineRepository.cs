@@ -23,152 +23,114 @@ namespace NetPing.DAL
     public class SPOnlineRepository : IRepository
     {
         #region Properties
-          
-        public IEnumerable<SPTerm> TermsLabels { get  { return GetTermsFromSP("Labels", 1049); }      }
 
-        public IEnumerable<SPTerm> TermsDeviceParameters { get  { return GetTermsFromSP("Device parameters", 1049); }      }
-
-        public IEnumerable<SPTerm> TermsFileTypes { get  { return GetTermsFromSP("Documents types", 1049); }      }
-
-        public IEnumerable<SPTerm> TermsDestinations { get  { return GetTermsFromSP("Destinations", 1049); }      }
-
-        public IEnumerable<SPTerm> Terms{ get  { return GetTermsFromSP("Names", 1049); }      }
-
-        public IEnumerable<SPTerm> TermsSiteTexts { get { return GetTermsFromSP("Site texts", 1049); } }
+        public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
+        private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels", 1049); }
 
 
-        public IEnumerable<SiteText> SiteTexts
+        public IEnumerable<SPTerm> TermsDeviceParameters { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDeviceParameters")); } }
+        private IEnumerable<SPTerm> TermsDeviceParameters_Read() { return GetTermsFromSP("Device parameters", 1049); }
+
+        public IEnumerable<SPTerm> TermsFileTypes { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsFileTypes")); } }
+        private IEnumerable<SPTerm> TermsFileTypes_Read() { return GetTermsFromSP("Documents types", 1049); }
+        
+        public IEnumerable<SPTerm> TermsDestinations { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDestinations")); } }
+        private IEnumerable<SPTerm> TermsDestinations_Read() { return GetTermsFromSP("Destinations", 1049); }
+
+        public IEnumerable<SPTerm> Terms { get { return (IEnumerable<SPTerm>)(PullFromCache("Terms")); } }
+        private IEnumerable<SPTerm> Terms_Read() { return GetTermsFromSP("Names", 1049); }
+
+        public IEnumerable<SPTerm> TermsSiteTexts { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsSiteTexts")); } }
+        private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts", 1049); }
+
+
+        public IEnumerable<SiteText> SiteTexts    {  get  {return (IEnumerable<SiteText>)(PullFromCache("SiteTexts"));} }
+        private IEnumerable<SiteText> SiteTexts_Read(IEnumerable<SPTerm> termsSiteTexts) 
         {
-            get
-            {
-                var result = (List<SiteText>)(PullFromCache("SiteTexts"));
-                if (result != null) return result;
-                result = new List<SiteText>();
-
-                var list = context.Web.Lists.GetByTitle("Site_texts");
-                CamlQuery camlquery = new CamlQuery();
-                var items = list.GetItems(camlquery);
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                var result = new List<SiteText>();
+            
+                foreach (var item in (ListItemCollection)ReadSPList("Site_texts",""))
                 {
                     result.Add(new SiteText
                     {
-                        Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(TermsSiteTexts)
+                        Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(termsSiteTexts)
                        ,
                         Text = (item["Text_RUS"] as string).ReplaceInternalLinks()
                     });
                 }
-
-                PushToCache("SiteTexts",result);
-
+                if (result.Count == 0) throw new Exception("No one SiteText was readed!");
                 return result;
-            }
         }
 
 
-        public IEnumerable<DeviceParameter> DevicesParameters
+        public IEnumerable<DeviceParameter> DevicesParameters { get { return (IEnumerable<DeviceParameter>)(PullFromCache("DevicesParameters")); } }
+        private IEnumerable<DeviceParameter> DevicesParameters_Read(IEnumerable<SPTerm> termsDeviceParameters, IEnumerable<SPTerm> terms) 
         {
-            get
-            {
-                var result = (List<DeviceParameter>)(PullFromCache("DevicesParameters"));
-                if (result != null) return result;
-                result = new List<DeviceParameter>();
+                var result = new List<DeviceParameter>();
 
-
-                var list = context.Web.Lists.GetByTitle("Device_parameters");
-                CamlQuery camlquery = new CamlQuery();
-                var items = list.GetItems(camlquery);
-
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Device_parameters",""))
                 {
                     result.Add(new DeviceParameter
                     {
                         Id = item.Id
                        ,
-                        Name = (item["Parameter"] as TaxonomyFieldValue).ToSPTerm(TermsDeviceParameters)
+                        Name = (item["Parameter"] as TaxonomyFieldValue).ToSPTerm(termsDeviceParameters)
                        ,
-                        Device = (item["Device"] as TaxonomyFieldValue).ToSPTerm(Terms)
+                        Device = (item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                        ,
                         Value = item["Title"] as string
                     });
                 }
-
-                PushToCache("DevicesParameters", result);
-
+                if (result.Count == 0) throw new Exception("No one deviceparameter was readed!");
                 return result;
-            }
         }
 
 
 
 
-        public IEnumerable<Device> Devices
+        public IEnumerable<Device> Devices  {  get  {return (IEnumerable<Device>)(PullFromCache("Devices"));} }
+        private IEnumerable<Device> Devices_Read(IEnumerable<Post> allPosts, IEnumerable<SFile> allFiles, IEnumerable<DevicePhoto> allDevicePhotos, IEnumerable<DeviceParameter> allDevicesParameters, IEnumerable<SPTerm> terms, IEnumerable<SPTerm> termsDestinations, IEnumerable<SPTerm> termsLabels)
         {
-            get
-            {
-                var devices = (List<Device>)(PullFromCache("Devices"));
-                if (devices!=null) return devices;
-                devices = new List<Device>();
+                var devices = new List<Device>();
 
                 var list    = context.Web.Lists.GetByTitle("Device keys");
-                CamlQuery camlquery = new CamlQuery();
-                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Device_keys;
-                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
-                var items = list.GetItems(camlquery);
-
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                var allPosts = Posts;
-                var allFiles = SFiles;
-                var allDevicePhotos=DevicePhotos;
 
                // var devices = new List<Device>();
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Device keys",NetPing_modern.Properties.Resources.caml_Device_keys))
                 {
                     var device = new Device 
                              {
                                 Id              = item.Id
                                 , Key           = item["Title"] as string
-                                , Name          = (item["Name"] as TaxonomyFieldValue).ToSPTerm(Terms)
-                                , Destination = (item["Destination"] as TaxonomyFieldValueCollection).ToSPTermList(TermsDestinations)
-                                , Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(Terms)
+                                , Name          = (item["Name"] as TaxonomyFieldValue).ToSPTerm(terms)
+                                , Destination = (item["Destination"] as TaxonomyFieldValueCollection).ToSPTermList(termsDestinations)
+                                , Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                                 , Russian_price = item["Russian_price"] as double?
-                                , Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(TermsLabels)
+                                , Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
                                 , Created = (DateTime)item["Created"]
                              };
 
                     devices.Add(device);
                 }
-
-                PushToCache("Devices", devices);
                 
-                SPTerm dest_russia = TermsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
+                SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
                 foreach (var dev in devices)
                 {
                     // Collect Posts for corresponded to device
                     if (dev.Name.Level == 3)  // it is not group
                     {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
-                            dev.Posts=Posts.Where(pst => 
+                            dev.Posts=allPosts.Where(pst => 
                                          pst.Devices.FirstOrDefault( d => dev.Name.Path.Contains(d.OwnNameFromPath))!=null
                                          &&
-                                         pst.Devices.ListNamesToListDesitnations().Contains(dest_russia)
+                                         pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                                 ).ToList();
                     }
                     else                      // it is group
                     {                         // Collect all posts where any Device from post path contains dev.Name
-                        dev.Posts = Posts.Where(pst =>
+                        dev.Posts = allPosts.Where(pst =>
                                      pst.Devices.FirstOrDefault(d => d.Path.Contains(dev.Name.OwnNameFromPath))!=null
                                      &&
-                                     pst.Devices.ListNamesToListDesitnations().Contains(dest_russia)
+                                     pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                             ).ToList();
                     }
 
@@ -189,42 +151,27 @@ namespace NetPing.DAL
                                             ).ToList();
 
                     // collect device parameters 
-                    dev.DeviceParameters = DevicesParameters.Where(par => par.Device==dev.Name).ToList();
+                    dev.DeviceParameters = allDevicesParameters.Where(par => par.Device==dev.Name).ToList();
 
                     // Get device photos
                     dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
                 }
-
-                PushToCache("Devices", devices);
-
+                if (devices.Count == 0) throw new Exception("No one devices was readed!");
                 return devices;
-            }
         }
 
-        public IEnumerable<DevicePhoto> DevicePhotos
+        public IEnumerable<DevicePhoto> DevicePhotos {  get  {return (IEnumerable<DevicePhoto>)(PullFromCache("DevicePhotos"));} }
+        private IEnumerable<DevicePhoto> DevicePhotos_Read(IEnumerable<SPTerm> terms)
         {
-            get
-            {
-                var result = (List<DevicePhoto>)(PullFromCache("DevicePhotos"));
-                if (result != null) return result;
-                result = new List<DevicePhoto>();
+                var result = new List<DevicePhoto>();
 
-                var list = context.Web.Lists.GetByTitle("Device_photos");
-                CamlQuery camlquery = new CamlQuery();
-//                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Photos_to_pub;
-//                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
-                var items = list.GetItems(camlquery);
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Device_photos",""))
                 {
                     result.Add(new DevicePhoto
                     {
                         Name = item["FileLeafRef"] as string
                        ,
-                        Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(Terms)
+                        Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                        ,
                         Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + (item["FileLeafRef"] as string)
                        ,
@@ -233,66 +180,36 @@ namespace NetPing.DAL
                         IsCover = Convert.ToBoolean(item["Cover"])
                     });
                 }
-
-                PushToCache("DevicePhotos", result);
-
+                if (result.Count == 0) throw new Exception("No one DevicePhoto was readed!");
                 return result;
-            }
         }
 
-        public IEnumerable<PubFiles> PubFiles
+        public IEnumerable<PubFiles> PubFiles {  get  {return (IEnumerable<PubFiles>)(PullFromCache("PubFiles"));} }
+        private IEnumerable<PubFiles> PubFiles_Read(IEnumerable<SPTerm> termsFileTypes)
         {
-            get
-            {
-                var result = (List<PubFiles>)(PullFromCache("PubFiles"));
-                if (result != null) return result;
-                result = new List<PubFiles>();
+                var result = new List<PubFiles>();
 
-                var list = context.Web.Lists.GetByTitle("Photos_to_pub");
-                CamlQuery camlquery = new CamlQuery();
-                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Photos_to_pub;
-                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
-                var items = list.GetItems(camlquery);
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub",NetPing_modern.Properties.Resources.caml_Photos_to_pub))
                 {
                     result.Add(new PubFiles
                     {
                         Name = item["FileLeafRef"] as string
                        ,
-                        File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(TermsFileTypes)
+                        File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
                        ,
                         Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/"+(item["FileLeafRef"] as string)
                     });
                 }
-
-                PushToCache("PubFiles", result);
-
+                if (result.Count == 0) throw new Exception("No one PubFiles was readed!");
                 return result;
-            }
         }
 
-        public IEnumerable<SFile> SFiles
+        public IEnumerable<SFile> SFiles  {  get  {return (IEnumerable<SFile>)(PullFromCache("SFiles"));} }
+        private IEnumerable<SFile> SFiles_Read(IEnumerable<SPTerm> termsFileTypes, IEnumerable<SPTerm> terms)
         {
-            get
-            {
-                var result = (List<SFile>)(PullFromCache("SFiles"));
-                if (result != null) return result;
-                result = new List<SFile>();
+                var result = new List<SFile>();
   
-                var list = context.Web.Lists.GetByTitle("Pub files");
-                CamlQuery camlquery = new CamlQuery();
-                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Pub_files;
-                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
-                var items = list.GetItems(camlquery);
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Pub files",NetPing_modern.Properties.Resources.caml_Pub_files))
                 {
 
                     result.Add(new SFile
@@ -303,40 +220,25 @@ namespace NetPing.DAL
                        ,
                         Title = item["Title"] as string
                        ,
-                        Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(Terms)
+                        Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                        ,
-                        File_type  = (item["File_x0020_type0"] as TaxonomyFieldValue).ToSPTerm(TermsFileTypes)
+                        File_type  = (item["File_x0020_type0"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
                        ,
                         Created = (DateTime)item["Created"]
                        ,
                         Url = (item["Public_url"] as FieldUrlValue).ToFileUrlStr(item["FileLeafRef"] as string)
                     });
                 }
-
-                PushToCache("Sfiles", result);
-
+                if (result.Count == 0) throw new Exception("No one SFile was readed!");
                 return result;
-            }
         }
 
-        public IEnumerable<Post> Posts 
+        public IEnumerable<Post> Posts {  get  {return (IEnumerable<Post>)(PullFromCache("Posts"));} }
+        private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms)
         {
-            get 
-            {
-                var result = (List<Post>)(PullFromCache("Posts"));
-                if (result != null) return result;
-                result = new List<Post>();
+                var result = new List<Post>();
 
-                var list = context.Web.Lists.GetByTitle("Posts");
-                CamlQuery camlquery = new CamlQuery();
-                camlquery.ViewXml = NetPing_modern.Properties.Resources.caml_Posts;
-                camlquery.ViewXml = Regex.Replace(camlquery.ViewXml, @"\s{2,}", string.Empty);
-                var items   = list.GetItems(camlquery);
-                context.Load(list);
-                context.Load(items);
-                context.ExecuteQuery();
-
-                foreach (var item in items)
+                foreach (var item in (ListItemCollection)ReadSPList("Posts",NetPing_modern.Properties.Resources.caml_Posts))
                 {
                     result.Add(new Post
                              {
@@ -344,7 +246,7 @@ namespace NetPing.DAL
                                 ,
                                  Title = item["Title"] as string
                                 ,
-                                 Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(Terms)
+                                 Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                                 ,
                                  Body = (item["Body"] as string).ReplaceInternalLinks()
                                 ,
@@ -355,20 +257,60 @@ namespace NetPing.DAL
                                  Created = (DateTime)item["Created"]
                              });
                 }
-
-                PushToCache("Posts", result);
-
+                if (result.Count == 0) throw new Exception("No one post was readed!");
                 return result;      
-            }
         }
         #endregion
 
+
+        public string UpdateAll()
+        {
+            try
+            {
+                var termsLabels = TermsLabels_Read();
+                var termsDeviceParameters=TermsDeviceParameters_Read();
+                var termsFileTypes = TermsFileTypes_Read();
+                var termsDestinations = TermsDestinations_Read();
+                var terms = Terms_Read();
+                var termsSiteTexts = TermsSiteTexts_Read();
+                var siteTexts = SiteTexts_Read(termsSiteTexts);
+                var devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
+                var devicePhotos = DevicePhotos_Read(terms);
+                var pubFiles = PubFiles_Read(termsFileTypes);
+                var sFiles = SFiles_Read(termsFileTypes, terms);
+                var posts = Posts_Read(terms);
+                var devices = Devices_Read(posts, sFiles, devicePhotos,devicesParameters, terms, termsDestinations, termsLabels);
+
+                PushToCache("SiteTexts", siteTexts);
+                PushToCache("TermsLabels", termsLabels);
+                PushToCache("TermsDeviceParameters", termsDeviceParameters);
+                PushToCache("TermsFileTypes", termsFileTypes);
+                PushToCache("TermsDestinations", termsDestinations);
+                PushToCache("Terms", terms);
+                PushToCache("TermsSiteTexts", termsSiteTexts);
+                PushToCache("DevicesParameters", devicesParameters);
+                PushToCache("DevicePhotos", devicePhotos);
+                PushToCache("PubFiles", pubFiles);
+                PushToCache("SFiles", sFiles);
+                PushToCache("Posts", posts);
+                PushToCache("Devices", devices);
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+
+            return "OK!";
+            
+        }
+
+        
 
         private object PullFromCache(string cache_name)
         {
             object obj = HttpRuntime.Cache.Get(cache_name);
             if (obj != null) return obj;
-#if DEBUG
+
             // Check file cache
             Stream streamRead = null;
             string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + ".dat");
@@ -382,11 +324,11 @@ namespace NetPing.DAL
             catch (Exception ex)
             {
                 if (streamRead!=null) streamRead.Close();
-                return null;
+                UpdateAll();
+                return HttpRuntime.Cache.Get(cache_name);
             }
             HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
             
-#endif
             return obj;
         }
 
@@ -412,9 +354,7 @@ namespace NetPing.DAL
 
         private IEnumerable<SPTerm> GetTermsFromSP(string setname, int lcid)
         {
-            var terms = (List<SPTerm>)(PullFromCache("Terms" + setname));
-            if (terms != null) return terms;
-            terms = new List<SPTerm>();
+            var terms = new List<SPTerm>();
 
             var session = TaxonomySession.GetTaxonomySession(context);
             var termSets = session.GetTermSetsByName(setname, 1033);
@@ -447,9 +387,7 @@ namespace NetPing.DAL
                 });
 
             }
-            
-            PushToCache("Terms" + setname, terms);
-
+            if (terms.Count==0) throw new Exception("No terms was readed!");
             return terms;
         }
 
@@ -471,6 +409,20 @@ namespace NetPing.DAL
         }
 
         #region SharePoint Context 
+
+
+        private ListItemCollection ReadSPList(string list_name, string caml_query)
+        {
+            var list = context.Web.Lists.GetByTitle(list_name);
+            CamlQuery camlquery = new CamlQuery();
+            camlquery.ViewXml = caml_query;
+            var items = list.GetItems(camlquery);
+            context.Load(list);
+            context.Load(items);
+            context.ExecuteQuery();
+            return items;
+        }
+
         private static IConfig _config
         {
             get

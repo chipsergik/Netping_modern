@@ -14,6 +14,15 @@ namespace NetPing.Controllers
         //
         // GET: /InnerPages/
 
+
+        public ActionResult UCache()
+        {
+            var repository = new SPOnlineRepository();
+            ViewBag.result=repository.UpdateAll();
+
+            return View("UCache");
+        }
+
         public ActionResult Dealers()
         {
             var repository = new SPOnlineRepository();
