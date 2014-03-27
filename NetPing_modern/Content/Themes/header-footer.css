@@ -81,17 +81,6 @@
     padding-right: 28px;
 }
 
-.header .nav_element_active {
-    background-color: #144e5a;
-    color: #3ca03d;
-    float: left;
-    font-size: 14px;
-    line-height: 37px;
-    margin-top: 20px;
-    padding-left: 28px;
-    padding-right: 28px;
-}
-
 .header .nav .nav_element_border {
     background-color: transparent;
     background-image: url(../Images/nav_element_border.png);
