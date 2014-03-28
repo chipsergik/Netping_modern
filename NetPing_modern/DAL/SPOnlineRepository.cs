@@ -108,6 +108,7 @@ namespace NetPing.DAL
                                 , Russian_price = item["Russian_price"] as double?
                                 , Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
                                 , Created = (DateTime)item["Created"]
+                                , GroupUrl=item["Group_url"] as string
                              };
 
                     devices.Add(device);
@@ -116,46 +117,50 @@ namespace NetPing.DAL
                 SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
                 foreach (var dev in devices)
                 {
-                    // Collect Posts for corresponded to device
-                    if (dev.Name.Level == 3)  // it is not group
-                    {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
-                            dev.Posts=allPosts.Where(pst => 
-                                         pst.Devices.FirstOrDefault( d => dev.Name.Path.Contains(d.OwnNameFromPath))!=null
+                   
+                        Debug.WriteLine(dev.Name.Name);
+                        // Collect Posts for corresponded to device
+                        if (dev.Name.Level == 3)  // it is not group
+                        {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
+                            dev.Posts = allPosts.Where(pst =>
+                                         pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
                                          &&
                                          pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                                 ).ToList();
+                        }
+                        else                      // it is group
+                        {                         // Collect all posts where any Device from post path contains dev.Name
+                            dev.Posts = allPosts.Where(pst =>
+                                         pst.Devices.FirstOrDefault(d => d!=null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
+                                         &&
+                                         pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
+                                ).ToList();
+                        }
+
+                        //Set Short description
+                        var post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, short description");
+                        if (post == null) dev.Short_description = "#error";
+                        else dev.Short_description = post.Body;
+
+                        //Set Long description
+                        post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
+                        if (post == null) dev.Long_description = "#error";
+                        else dev.Long_description = post.Body;
+
+                        //Collect SFiles according device
+                        // get all files where dev.Name.Path contains Device name of any device from SFile
+                        dev.SFiles = allFiles.Where(fl =>
+                                         fl.Devices.FirstOrDefault(d => dev.Name.Path.Contains(d.OwnNameFromPath)) != null
+                                                ).ToList();
+
+                        // collect device parameters 
+                        dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
+
+                        // Get device photos
+                        dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
+
                     }
-                    else                      // it is group
-                    {                         // Collect all posts where any Device from post path contains dev.Name
-                        dev.Posts = allPosts.Where(pst =>
-                                     pst.Devices.FirstOrDefault(d => d.Path.Contains(dev.Name.OwnNameFromPath))!=null
-                                     &&
-                                     pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
-                            ).ToList();
-                    }
-
-                    //Set Short description
-                    var post    = dev.Posts.FirstOrDefault(pst => pst.Cathegory=="Catalog, short description");
-                    if (post == null) dev.Short_description="#error";
-                        else dev.Short_description=post.Body;
-
-                    //Set Long description
-                    post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
-                    if (post == null) dev.Long_description = "#error";
-                    else dev.Long_description = post.Body;
-                
-                    //Collect SFiles according device
-                    // get all files where dev.Name.Path contains Device name of any device from SFile
-                    dev.SFiles = allFiles.Where(fl =>
-                                     fl.Devices.FirstOrDefault(d => dev.Name.Path.Contains(d.OwnNameFromPath)) != null
-                                            ).ToList();
-
-                    // collect device parameters 
-                    dev.DeviceParameters = allDevicesParameters.Where(par => par.Device==dev.Name).ToList();
-
-                    // Get device photos
-                    dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
-                }
+                    
                 if (devices.Count == 0) throw new Exception("No one devices was readed!");
                 return devices;
         }
@@ -267,19 +272,19 @@ namespace NetPing.DAL
         {
             try
             {
-                var termsLabels = TermsLabels_Read();
-                var termsDeviceParameters=TermsDeviceParameters_Read();
-                var termsFileTypes = TermsFileTypes_Read();
-                var termsDestinations = TermsDestinations_Read();
-                var terms = Terms_Read();
+                var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
+                var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
+                var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
+                var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
+                var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
                 var termsSiteTexts = TermsSiteTexts_Read();
                 var siteTexts = SiteTexts_Read(termsSiteTexts);
                 var devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
-                var devicePhotos = DevicePhotos_Read(terms);
+                var devicePhotos = DevicePhotos_Read(terms); Debug.WriteLine("DevicePhotos_Read OK");
                 var pubFiles = PubFiles_Read(termsFileTypes);
-                var sFiles = SFiles_Read(termsFileTypes, terms);
-                var posts = Posts_Read(terms);
-                var devices = Devices_Read(posts, sFiles, devicePhotos,devicesParameters, terms, termsDestinations, termsLabels);
+                var sFiles = SFiles_Read(termsFileTypes, terms); Debug.WriteLine("SFiles_Read OK");
+                var posts = Posts_Read(terms); Debug.WriteLine("Posts_Read OK");
+                var devices = Devices_Read(posts, sFiles, devicePhotos, devicesParameters, terms, termsDestinations, termsLabels); Debug.WriteLine("Devices_Read OK");
 
                 PushToCache("SiteTexts", siteTexts);
                 PushToCache("TermsLabels", termsLabels);

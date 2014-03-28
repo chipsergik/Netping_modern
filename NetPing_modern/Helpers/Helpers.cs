@@ -34,6 +34,9 @@ namespace NetPing.Helpers
         public static List<SPTerm> ListNamesToListDesitnations(this List<SPTerm> names,IEnumerable<Device> devices)
         {
             List<SPTerm> result = new List<SPTerm>();
+
+     
+     
             //var repository = new SPOnlineRepository();
             foreach (var name in names)
             {

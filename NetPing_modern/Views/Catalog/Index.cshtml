@@ -15,7 +15,7 @@
 {
     if (price != null && price > 0)
     {
-        string str = string.Format(new CultureInfo(1035), "{0:N0}р.", price);
+        string str = string.Format(new CultureInfo(1035), "{0:N0} руб.", price);
         @str
     }
 }
@@ -150,9 +150,10 @@
                                     }
                                 </ul>
                             </div>
-
+                            <!--
                             <a href="#" class="big_link pdf">Загрузить каталог продукции в PDF</a>
                             <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>
+                            -->
                         </div>
 
                         <div class="right main catalog">
@@ -214,7 +215,7 @@
                                                 <div><input type="submit" disabled value="Сравнить"/></div>
                                             </form>
                                         </div>
-                                        <div class="price right">Цена: <span>@GetPrice(device.Russian_price)</span></div>
+                                        <div class="price right"><span>@GetPrice(device.Russian_price)</span></div>
                                     </div>
                                 </div>
                             }

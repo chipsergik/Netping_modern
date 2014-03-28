@@ -33,7 +33,10 @@ namespace NetPing.Controllers
             //Device group
             var dev_path = device.Name.Path.Split(';');
             var grp = dev_path[dev_path.Length - 2];
-            ViewBag.grp_name = repository.Terms.FirstOrDefault(t => t.OwnNameFromPath == grp).Name;
+            var group_dev=repository.Devices.FirstOrDefault(dev => dev.Name.OwnNameFromPath == grp);
+            ViewBag.grp_name = group_dev.Name.Name;
+            ViewBag.grp_url = group_dev.GroupUrl;
+
             //if (device.Key.Contains("_solut_")) return View("Solutions", device);
 
             return View(device);
