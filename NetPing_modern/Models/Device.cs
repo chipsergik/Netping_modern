@@ -19,6 +19,7 @@ namespace NetPing.Models
         public SPTerm Label { get; set; }
         public DateTime Created { get; set; }
         public List<SPTerm> Connected_devices { get; set; }
+        public string GroupUrl;
 
         public List<Post> Posts { get; set; }
         public List<SFile> SFiles { get; set; }
