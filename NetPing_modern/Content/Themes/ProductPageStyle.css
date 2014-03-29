@@ -165,7 +165,7 @@ input:focus { outline: none; }
 .content .item .i-title {
     color: #144e5a;
     font-size: 30px;
-    line-height: 20px;
+    line-height: 32px;
     margin: 0 0 24px;
     text-transform: uppercase;
 }
@@ -176,8 +176,9 @@ input:focus { outline: none; }
     color: #ffffff;
     display: inline-block;
     font-size: 10px;
+    line-height: 20px;
     font-weight: 700;
-    margin: -10px 0 0 18px;
+    margin: -1px 0 0 18px;
     padding: 0 10px;
     vertical-align: top;
 }

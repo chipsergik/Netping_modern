@@ -139,6 +139,7 @@ input:focus { outline: none; }
 
 .content .catalog_sub a {
     background-repeat: no-repeat;
+    background-image: url(/Content/Images/present_left.png);
     -ms-background-size: 98% 100%;
     background-size: 98% 100%;
     color: #2f2f2f;
@@ -146,6 +147,10 @@ input:focus { outline: none; }
     text-decoration: none;
     width: 50%;
     float: left;
+}
+
+.content .catalog_sub a:hover {
+    background-image: url(/Content/Images/present_left_hover.png);
 }
 
 .content .catalog_sub a .title {
