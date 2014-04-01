@@ -196,6 +196,7 @@
     <Content Include="Content\Images\CatalogPageImg\tabs_title_bg.png" />
     <Content Include="Content\Images\content_news.png" />
     <Content Include="Content\Images\content_news_latest_rrs.png" />
+    <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\footer_left.png" />
     <Content Include="Content\Images\item_big_zoom.png" />
     <Content Include="Content\Images\item_cart.png" />
