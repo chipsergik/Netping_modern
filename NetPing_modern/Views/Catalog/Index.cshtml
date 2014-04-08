@@ -193,16 +193,17 @@
 
                             @foreach (Device device in Model)
                             {
+                                string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
-                                    <div class="desc clearfix">
+                                        <div class="desc clearfix" onclick="window.location.href='@link'" style="cursor: pointer">
                                         <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(false).Url" alt="" title="" /></div>
-                                        <div class="right">
-                                            <a href="#" class="title">@device.Name.Name</a>
-                                            <div class="text">
-                                                <p> @Html.Raw(device.Short_description)</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            <div class="right">
+                                                <a href="@link" class="title">@device.Name.Name</a>
+                                                <div class="text">
+                                                    <p> @Html.Raw(device.Short_description)</p>
+                                                </div>
+                                            </div>                                  
+                                        </div> 
                                     <div class="action clearfix">
                                         @{
                                             string className = "new";
@@ -242,6 +243,7 @@
                                         <div class="price right">Цена: <span>@GetPrice(device.Russian_price)</span></div>
                                     </div>
                                 </div>
+                                
                             }
                         </div>
 
