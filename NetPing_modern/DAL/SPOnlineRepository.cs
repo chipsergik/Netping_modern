@@ -123,7 +123,7 @@ namespace NetPing.DAL
                         if (dev.Name.Level == 3)  // it is not group
                         {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
                             dev.Posts = allPosts.Where(pst =>
-                                         pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
+                                         pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n==d.OwnNameFromPath)!=null) !=null
                                          &&
                                          pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                                 ).ToList();
@@ -150,7 +150,7 @@ namespace NetPing.DAL
                         //Collect SFiles according device
                         // get all files where dev.Name.Path contains Device name of any device from SFile
                         dev.SFiles = allFiles.Where(fl =>
-                                         fl.Devices.FirstOrDefault(d => dev.Name.Path.Contains(d.OwnNameFromPath)) != null
+                                         fl.Devices.FirstOrDefault(d =>d!=null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
                                                 ).ToList();
 
                         // collect device parameters 
