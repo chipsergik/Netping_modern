@@ -172,19 +172,9 @@
                             {
                                 string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
-<<<<<<< HEAD
-                                    <div class="desc clearfix">
-                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
-                                        <div class="right">
-                                            <a href="@device.GetURLDevicePage()" class="title">@device.Name.Name</a>
-                                            <div class="text">
-                                                <p> @Html.Raw(device.Short_description)</p>
-                                            </div>
-                                        </div>
-                                    </div>
-=======
+
                                         <div class="desc clearfix" onclick="window.location.href='@link'" style="cursor: pointer">
-                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(false).Url" alt="" title="" /></div>
+                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
                                             <div class="right">
                                                 <a href="@link" class="title">@device.Name.Name</a>
                                                 <div class="text">
@@ -192,7 +182,7 @@
                                                 </div>
                                             </div>                                  
                                         </div> 
->>>>>>> 922da3ace36699fe0806ea22ac0086e27c35899e
+
                                     <div class="action clearfix">
                                         @{
                                             string className = "new";
