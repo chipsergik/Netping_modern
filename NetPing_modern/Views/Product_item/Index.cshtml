@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 @using NetPing.Models
+@using NetPing_modern.Resources.Views.Product_item
 @model Device
 <html>
     <head>
         @{
-            ViewBag.Title = "Устройство";
+            ViewBag.Title = Index.Page_title;
         }
         <title>@ViewBag.Title</title>
         <meta charset="utf-8">
@@ -24,7 +25,7 @@
 
                         <div class="left main">
                             <ul class="bread clearfix">
-                                <li><a href="/">Главная</a></li>
+                                <li><a href="/">@Index.Path_main</a></li>
                                 <li>&gt;</li>
                                 <li><a href="@ViewBag.grp_url">@ViewBag.grp_name</a></li>
                                 <li>&gt;</li>
@@ -50,7 +51,7 @@
                                                     }
                                                 </ul>
                                             </div>
-                                            <a href="#" class="cart price">@Model.Russian_price<span>руб.</span></a>
+                                            <a href="#" class="cart price">@Model.Price<span>&nbsp;@Model.GetCurrency</span></a>
                                             <span id="searchIcon"></span>
                                         </div>
                                     </div>
@@ -78,10 +79,10 @@
 
                             <div class="tabs-desc">
                                 <div class="clearfix">
-                                    <div class="tab active" data-tab-id="1">Спецификация</div>
-                                    <div class="tab" data-tab-id="2">Файлы</div>
-                                    <div class="tab" data-tab-id="3">Вопросы</div>
-                                    <div class="tab" data-tab-id="4">Примеры</div>
+                                    <div class="tab active" data-tab-id="1">@Index.Sec_spec</div>
+                                    <div class="tab" data-tab-id="2">@Index.Sec_files</div>
+                                    <div class="tab" data-tab-id="3">@Index.Sec_faq</div>
+                                    <div class="tab" data-tab-id="4">@Index.Sec_examples</div>
                                 </div>
 
                                 <div class="tabs-cont">
@@ -162,18 +163,18 @@
 
                         <div class="right main">
                             <div class="widget">
-                                <div class="w-title">К устройству подключаются:</div>
+                                <div class="w-title">@Index.Title_connected</div>
                                 <div class="w-cont">
                                     <div class="clearfix">
                                         <div class="left persent50">
-                                            <div class="w-sub-title">Аксессуары</div>
+                                            <div class="w-sub-title">@Index.Title_connected_acces</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
                                             }
                                         </div>
                                         <div class="right dotted persent50">
-                                            <div class="w-sub-title">Датчики</div>
+                                            <div class="w-sub-title">@Index.Title_connected_sensors</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>

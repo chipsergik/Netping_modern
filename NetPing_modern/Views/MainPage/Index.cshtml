@@ -1,9 +1,10 @@
 ﻿@using System.Globalization
-@using NetPing.Helpers
+@using NetpingHelpers
 @using NetPing.Models
+@using NetPing_modern.Resources.Views.MainPage
 @{
     Layout = "~/Views/Shared/Inner_master.cshtml";
-    ViewBag.Title = "Устройства NetPing";
+    ViewBag.Title = Index.Page_title;
 }
 
 @section Head_Css {
@@ -34,7 +35,7 @@
 {
     if (price != null && price > 0)
     {
-        string str = string.Format(new CultureInfo(1035), "{0:N0} руб.", price);
+        string str = string.Format(new CultureInfo(1035), "{0:N0}", price);
         @str
     }
 }
@@ -49,24 +50,24 @@
     </div>
     <a class="present_left" href="/catalog.aspx?id=_nping_bases">
         <div class="present_left_image1"></div>
-        <h2 class="present_left_h2">МОНИТОРИНГ<br/>ДАТЧИКОВ</h2>
+        <h2 class="present_left_h2">@Html.Raw(Index.Sec_monitoring)</h2>
         <br />
-        <p class="present_left_p">Удалённый мониторинг датчиков температуры, влажности, открытия двери и других по сети Internet/Ethernet</p>
-        <span class="present_left_s">Модельный ряд...</span> 
+        <p class="present_left_p">@Index.Sec_monitoring_descr</p>
+        <span class="present_left_s">@Index.Txt_models</span> 
     </a>
     <a class="present_left" href="/catalog.aspx?id=_nping_power">
         <div class="present_left_image2"></div>
-        <h2 class="present_left_h2">УПРАВЛЕНИЕ<br/>ЭЛЕКТРОПИТАНИЕМ</h2>
+        <h2 class="present_left_h2">@Html.Raw(Index.Sec_power)</h2>
         <br />
-        <p class="present_left_p">Устройства удалённого управления питанием (PDU), серверов, роутеров и других устройств по сети Internet/Ethernet</p>
-        <span class="present_left_s">Модельный ряд...</span>
+        <p class="present_left_p">@Index.Sec_power_descr</p>
+        <span class="present_left_s">@Index.Txt_models</span>
     </a>
     <a class="present_left" href="/catalog.aspx?id=_swtch">
         <div class="present_left_image3"></div>
-        <h2 class="present_left_h2">КОММУТАТОРЫ ETHERNET<br/>И POE УСРОЙСТВА</h2>
+        <h2 class="present_left_h2">@Html.Raw(Index.Sec_switch)</h2>
         <br />
-        <p class="present_left_p">Управляемые и неуправляемые коммутаторы Ethernet,<br/>и POE устройства</p>
-        <span class="present_left_s">Модельный ряд...</span>
+        <p class="present_left_p">@Index.Sec_switch_descr</p>
+        <span class="present_left_s">@Index.Txt_models</span>
     </a>
     <div class="clear"></div>
 
@@ -74,7 +75,7 @@
 
 @section Content {
     <div class="content_sales">          
-        <div class="content_best_sales"><span>НОВИНКИ</span></div>
+        <div class="content_best_sales"><span>@Index.Title_new_devices</span></div>
         <div class="content_best_sales_border"></div>
        
         @foreach (Device device in ViewBag.Devices)
@@ -86,13 +87,13 @@
                     @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
                         
                     <br />
-                    Цена: <span class="price">@GetPrice(device.Russian_price)</span>
+                    Цена: <span class="price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span>
                 </p>                        
             </div>
         }
     </div>
     <div class="content_news">
-        <div class="content_news_latest">НОВОСТИ</div>
+        <div class="content_news_latest">@Index.Title_news</div>
         <a href="#" class="content_news_latest_rrs"></a> 
         <div class="clear"></div>
         <div class="content_news_latest_border"></div>

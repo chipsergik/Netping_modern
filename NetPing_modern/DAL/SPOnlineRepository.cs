@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using NetPing.Helpers;
+using NetpingHelpers;
 using NetPing.Tools;
 using NetPing.Global.Config;
 using System.Web.Mvc;
@@ -25,23 +25,23 @@ namespace NetPing.DAL
         #region Properties
 
         public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
-        private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels", 1049); }
+        private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels"); }
 
 
         public IEnumerable<SPTerm> TermsDeviceParameters { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDeviceParameters")); } }
-        private IEnumerable<SPTerm> TermsDeviceParameters_Read() { return GetTermsFromSP("Device parameters", 1049); }
+        private IEnumerable<SPTerm> TermsDeviceParameters_Read() { return GetTermsFromSP("Device parameters"); }
 
         public IEnumerable<SPTerm> TermsFileTypes { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsFileTypes")); } }
-        private IEnumerable<SPTerm> TermsFileTypes_Read() { return GetTermsFromSP("Documents types", 1049); }
+        private IEnumerable<SPTerm> TermsFileTypes_Read() { return GetTermsFromSP("Documents types"); }
         
         public IEnumerable<SPTerm> TermsDestinations { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDestinations")); } }
-        private IEnumerable<SPTerm> TermsDestinations_Read() { return GetTermsFromSP("Destinations", 1049); }
+        private IEnumerable<SPTerm> TermsDestinations_Read() { return GetTermsFromSP("Destinations"); }
 
         public IEnumerable<SPTerm> Terms { get { return (IEnumerable<SPTerm>)(PullFromCache("Terms")); } }
-        private IEnumerable<SPTerm> Terms_Read() { return GetTermsFromSP("Names", 1049); }
+        private IEnumerable<SPTerm> Terms_Read() { return GetTermsFromSP("Names"); }
 
         public IEnumerable<SPTerm> TermsSiteTexts { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsSiteTexts")); } }
-        private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts", 1049); }
+        private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts"); }
 
 
         public IEnumerable<SiteText> SiteTexts    {  get  {return (IEnumerable<SiteText>)(PullFromCache("SiteTexts"));} }
@@ -49,13 +49,13 @@ namespace NetPing.DAL
         {
                 var result = new List<SiteText>();
             
-                foreach (var item in (ListItemCollection)ReadSPList("Site_texts",""))
+                foreach (var item in (ListItemCollection)ReadSPList("Site_texts",NetPing_modern.Resources.Camls.Caml_SiteTexts))
                 {
                     result.Add(new SiteText
                     {
                         Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(termsSiteTexts)
                        ,
-                        Text = (item["Text_RUS"] as string).ReplaceInternalLinks()
+                        Text =(Helpers.IsCultureEng) ? (item["Text_Eng"] as string).ReplaceInternalLinks() : (item["Text_RUS"] as string).ReplaceInternalLinks()
                     });
                 }
                 if (result.Count == 0) throw new Exception("No one SiteText was readed!");
@@ -78,7 +78,7 @@ namespace NetPing.DAL
                        ,
                         Device = (item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                        ,
-                        Value = item["Title"] as string
+                        Value = (Helpers.IsCultureEng) ?  item["ENG_value"] as string : item["Title"] as string 
                     });
                 }
                 if (result.Count == 0) throw new Exception("No one deviceparameter was readed!");
@@ -95,8 +95,7 @@ namespace NetPing.DAL
 
                 var list    = context.Web.Lists.GetByTitle("Device keys");
 
-               // var devices = new List<Device>();
-                foreach (var item in (ListItemCollection)ReadSPList("Device keys",NetPing_modern.Properties.Resources.caml_Device_keys))
+                foreach (var item in (ListItemCollection)ReadSPList("Device keys",NetPing_modern.Resources.Camls.Caml_Device_keys))
                 {
                     var device = new Device 
                              {
@@ -105,7 +104,7 @@ namespace NetPing.DAL
                                 , Name          = (item["Name"] as TaxonomyFieldValue).ToSPTerm(terms)
                                 , Destination = (item["Destination"] as TaxonomyFieldValueCollection).ToSPTermList(termsDestinations)
                                 , Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
-                                , Russian_price = item["Russian_price"] as double?
+                                , Price = (Helpers.IsCultureEng) ?  item["Global_price"] as double? : item["Russian_price"] as double?
                                 , Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
                                 , Created = (DateTime)item["Created"]
                                 , GroupUrl=item["Group_url"] as string
@@ -170,7 +169,7 @@ namespace NetPing.DAL
         {
                 var result = new List<DevicePhoto>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Device_photos",""))
+                foreach (var item in (ListItemCollection)ReadSPList("Device_photos",NetPing_modern.Resources.Camls.Caml_DevicePhotos))
                 {
                     result.Add(new DevicePhoto
                     {
@@ -194,7 +193,7 @@ namespace NetPing.DAL
         {
                 var result = new List<PubFiles>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub",NetPing_modern.Properties.Resources.caml_Photos_to_pub))
+                foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub",NetPing_modern.Resources.Camls.Caml_Photos_to_pub))
                 {
                     result.Add(new PubFiles
                     {
@@ -205,7 +204,7 @@ namespace NetPing.DAL
                         Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/"+(item["FileLeafRef"] as string)
                     });
                 }
-                if (result.Count == 0) throw new Exception("No one PubFiles was readed!");
+                //if (result.Count == 0) throw new Exception("No one PubFiles was readed!");
                 return result;
         }
 
@@ -214,7 +213,7 @@ namespace NetPing.DAL
         {
                 var result = new List<SFile>();
   
-                foreach (var item in (ListItemCollection)ReadSPList("Pub files",NetPing_modern.Properties.Resources.caml_Pub_files))
+                foreach (var item in (ListItemCollection)ReadSPList("Pub files",NetPing_modern.Resources.Camls.Caml_Pub_files))
                 {
 
                     result.Add(new SFile
@@ -243,7 +242,7 @@ namespace NetPing.DAL
         {
                 var result = new List<Post>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Posts",NetPing_modern.Properties.Resources.caml_Posts))
+                foreach (var item in (ListItemCollection)ReadSPList("Posts",NetPing_modern.Resources.Camls.Caml_Posts))
                 {
                     result.Add(new Post
                              {
@@ -318,7 +317,7 @@ namespace NetPing.DAL
 
             // Check file cache
             Stream streamRead = null;
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name +"_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             try
             {
                 streamRead = System.IO.File.OpenRead(file_name);
@@ -341,7 +340,7 @@ namespace NetPing.DAL
         {
             HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
 
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name+"_" +System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             Stream streamWrite = null;
             try
             {
@@ -357,8 +356,10 @@ namespace NetPing.DAL
             }
         }
 
-        private IEnumerable<SPTerm> GetTermsFromSP(string setname, int lcid)
+        private IEnumerable<SPTerm> GetTermsFromSP(string setname)
         {
+            var lcid = System.Globalization.CultureInfo.CurrentCulture.LCID;
+
             var terms = new List<SPTerm>();
 
             var session = TaxonomySession.GetTaxonomySession(context);

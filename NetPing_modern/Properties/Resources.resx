@@ -117,16 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="caml_Device_keys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caml_Device_keys.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="caml_Posts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caml_Posts.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="caml_Pub_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caml_Pub_files.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Guid_Destination_Global" xml:space="preserve">
     <value>b033f769-447f-41ca-aea9-b5fdd4f08c51</value>
   </data>
@@ -153,8 +143,5 @@
   </data>
   <data name="Guid_SiteTexts_OfficeAddress" xml:space="preserve">
     <value>d1121469-b2ad-4f73-a2a2-f738cd043520</value>
-  </data>
-  <data name="caml_Photos_to_pub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\caml_photos_to_pub.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

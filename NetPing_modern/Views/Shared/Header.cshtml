@@ -1,7 +1,8 @@
-﻿@using NetPing.Helpers
+﻿@using NetpingHelpers
 @{
     Layout = null;
 }
+@using  NetPing_modern.Resources.Views.Shared
 <div class="header">
    
     <!--    	
@@ -21,28 +22,28 @@
     <div class="nav">
         <ul>
             <li class="nav_li">
-                <a class="nav_element" href="/catalog.aspx">Продукты</a>
+                <a class="nav_element" href="/catalog.aspx">@Header.Products</a>
                 <ul>
-                  <li><a href="/catalog.aspx?id=_nping_bases">Мониторинг Датчиков</a></li>
-                  <li><a href="/catalog.aspx?id=_nping_power">Управление Элекропитанием</a></li>
-                  <li><a href="/catalog.aspx?id=_swtch">Коммутаторы Ethernet POE устройства</a></li>
+                  <li><a href="/catalog.aspx?id=_nping_bases">@Header.Category_monitoring</a></li>
+                  <li><a href="/catalog.aspx?id=_nping_power">@Header.Category_power_control</a></li>
+                  <li><a href="/catalog.aspx?id=_swtch">@Header.Category_switch</a></li>
                 </ul>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class="nav_element" href="/about.aspx">О&nbsp;компании</a>
+                <a class="nav_element" href="/about.aspx">@Header.Menu_about</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class="nav_element" href="/dealer.aspx">Дилеры</a>
+                <a class="nav_element" href="/dealer.aspx">@Header.Menu_dealers</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class="nav_element" href="/contacts.aspx">Контакты</a>
+                <a class="nav_element" href="/contacts.aspx">@Header.Menu_contacts</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class="nav_element" target="_blank" href="http://ideas.netping.ru">Идеи!</a>
+                <a class="nav_element" target="_blank" href="http://ideas.netping.ru">@Header.Menu_ideas</a>
                 <div class="nav_element_border"></div>
             </li>
         </ul>                         		

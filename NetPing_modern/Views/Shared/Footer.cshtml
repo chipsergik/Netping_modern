@@ -1,15 +1,16 @@
 ﻿@{
     Layout = null;
 }
+@using NetPing_modern.Resources.Views.Shared
 
 <div class="footer">
     <div class="footer_left">
-        <p>Copyright © NetPing east Co Ltd. All rights reserved</p>
+        <p>@Footer.Copyright</p>
     </div>
     <div class="footer_right">
         <ul>
-            <li><a href="#" class="footer_right_a">Privacy policy</a></li>
-            <li><a href="#" class="footer_right_a">Terms & conditions</a></li>
+            <li><a href="#" class="footer_right_a">@Footer.Privacy_policy</a></li>
+            <li><a href="#" class="footer_right_a">@Footer.Terms_conditions</a></li>
         </ul>
     </div>
     <div class="clear"></div>    

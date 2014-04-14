@@ -25,8 +25,8 @@ namespace NetPing.Controllers
             var connected_devices = device.Connected_devices.Select(d =>
                                                                            repository.Devices.Where(dv => dv.Name == d).FirstOrDefault()
                                                                       ).ToList();
-            ViewBag.Connected_devices_accessuars = connected_devices.Where(d => !d.Name.Path.Contains("Sensors")).ToList();
-            ViewBag.Connected_devices_sensors = connected_devices.Where(d => d.Name.Path.Contains("Sensors")).ToList();
+            ViewBag.Connected_devices_accessuars = connected_devices.Where(d => d!=null && !d.Name.Path.Contains("Sensors")).ToList();
+            ViewBag.Connected_devices_sensors = connected_devices.Where(d => d!=null &&  d.Name.Path.Contains("Sensors")).ToList();
 
             ViewBag.Parameter_groups = repository.TermsDeviceParameters.Where(par => par.Level == 0).ToList();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using NetpingHelpers;
 
 namespace NetPing.Models
 {
@@ -15,7 +16,14 @@ namespace NetPing.Models
         public string Key { get; set; }
         public SPTerm Name { get; set; }
         public List<SPTerm> Destination { get; set; }
-        public double? Russian_price { get; set; }
+        public double? Price { get; set; }
+        public string GetCurrency
+        { get
+            {
+                if (Helpers.IsCultureEng) return "usd";
+                return "руб.";
+            }
+        }
         public SPTerm Label { get; set; }
         public DateTime Created { get; set; }
         public List<SPTerm> Connected_devices { get; set; }

@@ -10,11 +10,29 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
-namespace NetPing.Helpers
+namespace NetpingHelpers
 {
     public static class Helpers
     {
+        public static bool IsCultureEng
+        {
+            get { 
+                if (System.Globalization.CultureInfo.CurrentCulture.LCID==1033)  return true;
+                return false;
+            }
+        }
+
+        public static bool IsCultureRus
+        {
+            get
+            {
+                if (System.Globalization.CultureInfo.CurrentCulture.LCID == 1049) return true;
+                return false;
+            }
+        }
+
 
         public static bool IsDebug(this HtmlHelper htmlHelper)
         {

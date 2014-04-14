@@ -3,6 +3,8 @@
 @using System.Globalization
 @using NetPing.DAL
 @using NetPing.Models
+@using NetPing_modern.Resources.Views.Catalog
+
 @model IEnumerable<Device>
 
     @section Head_Css {
@@ -15,14 +17,14 @@
 {
     if (price != null && price > 0)
     {
-        string str = string.Format(new CultureInfo(1035), "{0:N0} руб.", price);
+        string str = string.Format(new CultureInfo(1035), "{0:N0} ", price);
         @str
     }
 }
 <html>
     <head>
         @{
-            ViewBag.Title = "Каталог";
+            ViewBag.Title = Index.Page_title;
         }
         <title>@ViewBag.Title</title>
         <meta charset="utf-8">
@@ -41,13 +43,13 @@
                             string titDesc = "";
                             string[] names = null;
                             string[] links = null;
-                            const string desc1 = "Устройства удалённого мониторинга датчиков, температуры, влажности, доступа в помещение и других, по сети Internet";
-                            const string desc2 = "Устройства удалённого управления и перезагрузки по питанию (PDU), коммутаторов, роутеров, компьютеров и других устойств";
-                            const string desc3 = "Управляемые и не управляемые коммутаторы Ethernet, устройства с питанием POE";
+                            string desc1 = Index.Sec_monitoring_descr;
+                            string desc2 = Index.Sec_power_descr;
+                            string desc3 = Index.Sec_switch_descr;
 
-                            const string title1 = "Удалённый<br>мониторинг датчиков";
-                            const string title2 = "Удалённое управление элекропитанием и перезагрузкой устройств";
-                            const string title3 = "Коммутаторы Ethernet POE устройства";
+                            string title1 = Index.Sec_monitoring;
+                            string title2 = Index.Sec_power;
+                            string title3 = Index.Sec_switch;
 
                             const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
                             const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
@@ -82,7 +84,7 @@
                                     s2 = desc3;
                                     l1 = "?id=_nping_power";
                                     l2 = "?id=_swtch";
-                                    names = new[] {"Устройства", "Датчики", "Аксессуары", "Готовые решения"};
+                                    names = new[] {Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions};
                                     links = new[] {"_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr"};
                                     break;
                                 }
@@ -100,7 +102,7 @@
                                     s2 = desc3;
                                     l1 = "?id=_nping_bases";
                                     l2 = "?id=_swtch";
-                                    names = new[] {"Устройства", "Датчики", "Аксессуары", "Готовые решения"};
+                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
                                     links = new[] {"_nping_power", "_acces_sensr", "_acces_mains", "_solut_power"};
                                     break;
                                 }
@@ -118,7 +120,7 @@
                                     s2 = desc2;
                                     l1 = "?id=_nping_bases";
                                     l2 = "?id=_nping_power";
-                                    names = new[] {"Устройства", "Аксессуары"};
+                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access };
                                     links = new[] {"_swtch", "_acces_mains"};
                                     break;
                                 }
@@ -165,7 +167,7 @@
 
                             <div class="catalog_cat_tit clearfix">
                                 <div class="left"><img src="@selectedSectionImage" style="width: 45px; height: 45px" alt="" title="" /></div>
-                                <div class="right">@titTitle.Replace("<br>", " ")</div>
+                                <div class="right">@titTitle.Replace("<br/>", " ")</div>
                             </div>
 
                             @foreach (Device device in Model)
@@ -185,19 +187,19 @@
                                             string className = "new";
                                             if (!String.IsNullOrWhiteSpace(device.Label.Name))
                                             {
-                                                switch (device.Label.Name)
+                                                switch (device.Label.OwnNameFromPath)
                                                 {
-                                                    case "Новинка":
+                                                    case "New":
                                                     {
                                                         className = "new";
                                                         break;
                                                     }
-                                                    case "Снимается с производства":
+                                                    case "EOL":
                                                     {
                                                         className = "eol";
                                                         break;
                                                     }
-                                                    case "Архив":
+                                                    case "Archive":
                                                     {
                                                         className = "archive";
                                                         break;
@@ -212,11 +214,11 @@
                                         }
                                         <div class="compare left">
                                             <form action="/" method="POST" class="clearfix">
-                                                <div class="left"><input type="checkbox" disabled name="compare" /><label>Сравнить устройство</label></div>
-                                                <div><input type="submit" disabled value="Сравнить"/></div>
+                                                <div class="left"><input type="checkbox" disabled name="compare" /><label>@Index.Txt_compare_dev</label></div>
+                                                <div><input type="submit" disabled value="@Index.Txt_compare"/></div>
                                             </form>
                                         </div>
-                                        <div class="price right"><span>@GetPrice(device.Russian_price)</span></div>
+                                        <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
                                     </div>
                                 </div>
                             }
