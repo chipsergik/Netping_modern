@@ -172,9 +172,14 @@
                             {
                                 string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
+<<<<<<< HEAD
 
                                         <div class="desc clearfix" onclick="window.location.href='@link'" style="cursor: pointer">
                                         <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
+=======
+                                        <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
+                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(false).Url" alt="" title="" /></div>
+>>>>>>> 6f97104a0023eeeb7c8eaea87220a1106d93dc8a
                                             <div class="right">
                                                 <a href="@link" class="title">@device.Name.Name</a>
                                                 <div class="text">

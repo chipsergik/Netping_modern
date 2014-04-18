@@ -187,7 +187,7 @@ input:focus { outline: none; }
 
 .cat_item {
     border-bottom: 1px solid #181818;
-    margin: 30px 0 0;
+    margin: 10px 0 0;
 }
 
 .cat_item .desc .left { width: 148px; }
@@ -238,6 +238,20 @@ input:focus { outline: none; }
 .cat_item .action .type span.new { background-color: #82c488; }
 
 .cat_item .action .type span.eol { background-color: #eb6e0e; }
+
+.cat_item .cat_pr:hover {
+    background-color: #f6fcfb;
+}
+
+.cat_item .cat_pr:hover a{
+    text-decoration: underline;
+}
+
+.cat_item .cat_pr {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
 
 .cat_item .action .compare { width: 300px; }
 
