@@ -41,7 +41,6 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\Ne
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.csproj.GenerateResource.Cache
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.pdb
-C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.csprojResolveAssemblyReference.cache
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\bin\ru\NetPing_modern.resources.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Camls.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.Catalog.Index.resources
