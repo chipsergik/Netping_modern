@@ -118,6 +118,11 @@
 
 #slider3 { border: 2px solid #e7e7e7 }
 
+#slider3 li {
+    width: 195px;
+    height: 195px;
+}
+
 .rslides_nav.rslides1_nav.next {
     display: block;
     width: 13px;

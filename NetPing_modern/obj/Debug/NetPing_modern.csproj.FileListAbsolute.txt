@@ -42,6 +42,7 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetP
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Camls.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Camls.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\bin\ru\NetPing_modern.resources.dll
@@ -62,3 +63,5 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetP
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Catalog.Index.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.InnerPages.About.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.InnerPages.Contacts.ru.resources
+=======
+>>>>>>> origin/S2-Bugs
