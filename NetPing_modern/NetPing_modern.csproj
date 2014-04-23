@@ -196,6 +196,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Contacts.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\InnerPages\Question.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Question.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Question.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Question.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\MainPage\Index.ru.Designer.cs">
       <DependentUpon>Index.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -346,6 +356,7 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\InnerPages\Ucache.cshtml" />
     <None Include="Properties\PublishProfiles\Test2_eng.pubxml" />
+    <Content Include="Views\InnerPages\Question.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +399,14 @@
     <EmbeddedResource Include="Resources\Views\InnerPages\Contacts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Contacts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Question.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Question.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Question.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Question.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\MainPage\Index.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
