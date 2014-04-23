@@ -186,15 +186,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>About.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Views\InnerPages\Contacts.ru.Designer.cs">
-      <DependentUpon>Contacts.ru.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Resources\Views\InnerPages\Contacts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Contacts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Contacts.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contacts.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Dealers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dealers.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Views\InnerPages\Question.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -393,13 +398,18 @@
       <LastGenOutput>About.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Contacts.ru.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Contacts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Contacts.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Dealers.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dealers.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Dealers.ru.resx" />
     <EmbeddedResource Include="Resources\Views\InnerPages\Question.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Question.Designer.cs</LastGenOutput>
