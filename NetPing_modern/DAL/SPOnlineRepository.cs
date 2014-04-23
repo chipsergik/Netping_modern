@@ -49,8 +49,6 @@ namespace NetPing.DAL
         {
                 var result = new List<SiteText>();
 
-                var rrr = NetPing_modern.Resources.Camls.Caml_SiteTexts;
-            
                 foreach (var item in (ListItemCollection)ReadSPList("Site_texts",NetPing_modern.Resources.Camls.Caml_SiteTexts))
                 {
                     result.Add(new SiteText

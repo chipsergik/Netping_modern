@@ -163,8 +163,8 @@ namespace NetPing_modern.Resources {
         ///                                                &lt;In&gt;
         ///                                                    &lt;FieldRef Name=&apos;Language&apos; /&gt;
         ///                                                    &lt;Values&gt;
-        ///                                                        &lt;Value Type=&apos;TaxonomyFieldType&apos;&gt;English1&lt;/Value&gt;
-        ///                                                    &lt;/Values [rest of string was truncated]&quot;;.
+        ///                                                        &lt;Value Type=&apos;TaxonomyFieldType&apos;&gt;English&lt;/Value&gt;
+        ///                                                    &lt;/Values&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Caml_SiteTexts {
             get {
