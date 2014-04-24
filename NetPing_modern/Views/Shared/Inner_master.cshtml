@@ -2,6 +2,22 @@
     Layout = null;
 }
 
+@using NetPing.Models;
+@using System.Globalization
+@using NetpingHelpers
+
+@helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0}", price);
+        @str
+    }
+}
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -25,22 +41,37 @@
     
                 <!--content-->
                 <div class="content">
-                    @{
-                        if (!IsSectionDefined("Content"))
+                        
+                        @if (!IsSectionDefined("Content"))
                         {
+                          
+                          
                             <div class="content_left">
                                 @RenderSection("Content_left", false)
                             </div>
+                       
                             <div class="content_right">
                                 @RenderSection("Content_right", false)
-                                aaaaaa
-                            </div>
-                        }
-                        else
-                        {
-                            @RenderSection("Content", false)
-                        }
-                    }
+                                <p>Новинки:</p>
+                                <br />
+                                @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
+                                  {
+                                      <img src="@device.GetCoverPhoto(false).Url" />
+                                     <a href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                                    <br/>
+                                     @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                                    <br />
+                                   <p>Цена: @GetPrice(device.Price)&nbsp;@device.GetCurrency</p>
+                                    <br />
+                                    <br />
+                                  }
+                                }
+                            </div>         
+                            } 
+                            else
+                             {
+                                @RenderSection("Content", false)
+                            }
                     <div class="clear"></div>
                 </div>
                 <!--end content-->
