@@ -1,0 +1,33 @@
+﻿.popupK, .popupK * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.overlayKorzina {
+    background: #000;
+    bottom: 0;
+    display: none;
+    filter: alpha(opacity=50);
+    left: 0;
+    -ms-opacity: 0.5;
+    opacity: 0.5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#korzinaPopup {
+    background: #fff;
+    border: 1px solid #999;
+    display: none;
+    height: 500px;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    width: 500px;
+    z-index: 10001;
+}

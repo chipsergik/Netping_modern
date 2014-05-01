@@ -228,15 +228,17 @@
     <Content Include="Content\Images\search.png" />
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
+    <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
+    <Content Include="Content\JavaScript\korzina.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider.js" />
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
-    <Content Include="Content\JavaScript\slider.js" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
+    <Content Include="Content\Themes\korzina.css" />
     <Content Include="Content\Themes\main.css" />
     <Content Include="Content\Themes\main_mainpage.css" />
     <Content Include="Content\Themes\ProductPageStyle.css" />
@@ -267,6 +269,7 @@
     <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Korzina.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
