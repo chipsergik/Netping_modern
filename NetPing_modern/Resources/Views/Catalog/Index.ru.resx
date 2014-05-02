@@ -133,7 +133,7 @@
     <value>Устройства удалённого управления питанием (PDU), серверов, роутеров и других устройств по сети Internet/Ethernet</value>
   </data>
   <data name="Sec_switch" xml:space="preserve">
-    <value>КОММУТАТОРЫ ETHERNET&lt;br/&gt;И POE УСРОЙСТВА</value>
+    <value>КОММУТАТОРЫ ETHERNET&lt;br/&gt;И POE УСТРОЙСТВА</value>
   </data>
   <data name="Sec_switch_descr" xml:space="preserve">
     <value>Управляемые и неуправляемые коммутаторы Ethernet, и POE устройства</value>
