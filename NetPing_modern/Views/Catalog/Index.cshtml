@@ -172,6 +172,7 @@
 
                             @foreach (Device device in Model)
                             {
+                                string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
                                     <div class="desc clearfix">
                                         <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
@@ -221,6 +222,7 @@
                                         <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
                                     </div>
                                 </div>
+                                
                             }
                         </div>
 
