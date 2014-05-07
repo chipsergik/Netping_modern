@@ -2,20 +2,18 @@
     Layout = "~/Views/Shared/Inner_master.cshtml";
     ViewBag.Title = NetPing_modern.Resources.Views.InnerPages.Contacts.Page_title;
 }
-
 @section Head_Css {
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
 }
-
 @section Content_left {
-    <h1>@ViewBag.Contacts.Tag.Name</h1>
+    <h1 class="content_left_h1">@ViewBag.Contacts.Tag.Name</h1>
+    <div class="border"></div>
     @Html.Raw(ViewBag.Contacts.Text)
-
-    <h1>@ViewBag.BankDetails.Tag.Name</h1>
+    <h1 class="content_left_h1">@ViewBag.BankDetails.Tag.Name</h1>
+    <div class="border"></div>
     @Html.Raw(ViewBag.BankDetails.Text)
-
-    <h1>@ViewBag.OfficeAddress.Tag.Name</h1>
+    <h1 class="content_left_h1">@ViewBag.OfficeAddress.Tag.Name</h1>
+    <div class="border"></div>
     @Html.Raw(ViewBag.OfficeAddress.Text)
 
-  
 }
