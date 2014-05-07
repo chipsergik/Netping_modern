@@ -67,6 +67,12 @@
         display: block;
     }
 
+    .page .main .content .content_right .content_right_price {
+        color: #f00;
+        font-family: sans-serif;
+    }
+
+
     .page .main .content .content_right .content_right_item_text {
         float: left;
         width:58%;
