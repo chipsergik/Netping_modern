@@ -12,10 +12,21 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
+
 namespace NetpingHelpers
 {
     public static class Helpers
     {
+        public static IEnumerable<Device> GetNewDevices()
+        {
+            var repository = new SPOnlineRepository();
+            var devices = repository.Devices.Where(dev =>
+                                    dev.Label.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Label_New)
+                            );
+            devices = devices.OrderByDescending(dev => dev.Created);
+            return devices;
+        }
+
         public static bool IsCultureEng
         {
             get { 

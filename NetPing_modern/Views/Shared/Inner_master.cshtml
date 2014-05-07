@@ -1,51 +1,83 @@
 ﻿@{
     Layout = null;
 }
+@using NetPing.Models;
+@using System.Globalization
+@using NetpingHelpers
+@helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0}", price);
+        @str
+    }
+}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>@ViewBag.Title</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
-        <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
-        <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" /> 
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        @RenderSection("Head_Css", false)
-        @RenderSection("Head", false)
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
+    <script src="~/Content/JavaScript/modernizr.js"></script>
+    <script src="~/Content/JavaScript/main.js"></script>
+    @RenderSection("Head_Css", false)
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="page">
+        <div class="main">
+            @RenderPage("Header.cshtml")
+            @RenderSection("Under_menu", false)
 
-    </head>
+            <!--content-->
+            <div class="content">
 
-    <body>
-        <div class="page">
-            <div class="main">
-                @RenderPage("Header.cshtml")
-                @RenderSection("Under_menu", false)
-    
-                <!--content-->
-                <div class="content">
-                    @{
-                        if (!IsSectionDefined("Content"))
+                @if (!IsSectionDefined("Content"))
+                {
+
+
+                    <div class="content_left">
+                        @RenderSection("Content_left", false)
+                    </div>
+
+                    <div class="content_right">
+                        @RenderSection("Content_right", false)
+                        <div class="title">
+                            <div class="title_left"></div>
+                            <div class="title_right">НОВИНКИ</div>
+                            <div class="clear"></div>
+                        </div>
+                        @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
                         {
-                            <div class="content_left">
-                                @RenderSection("Content_left", false)
-                            </div>
-                            <div class="content_right">
-                                @RenderSection("Content_right", false)
-                                aaaaaa
+                            <div class="content_right_item">
+                                <a class="content_right_item_title" href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                                <img src="@device.GetCoverPhoto(false).Url" />
+                                <div class="content_right_item_text">
+                                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                                    <br />
+                                    <p>Цена: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
+                                </div>
+                                <div class="clear"></div>
                             </div>
                         }
-                        else
-                        {
-                            @RenderSection("Content", false)
                         }
-                    }
-                    <div class="clear"></div>
-                </div>
-                <!--end content-->
-                @RenderPage("Footer.cshtml")
+                    </div>
+                }
+                else
+                {
+                    @RenderSection("Content", false)
+                }
+                <div class="clear"></div>
             </div>
+            <!--end content-->
+            @RenderPage("Footer.cshtml")
         </div>
-    </body>
+    </div>
+</body>
 </html>
