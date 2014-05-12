@@ -1,8 +1,8 @@
 #wrapper {
     float: left;
-    height: 425px;
-    max-width: 585px;
-    width: 585px;
+    /*height: 425px;*/
+    /* max-width: 585px; */
+    width: 636px;
 }
 
 #wrapper1 {
@@ -36,17 +36,21 @@
     z-index: 5;
 }
 
-.callbacks_nav:active { opacity: 1.0; }
+    .callbacks_nav:active {
+        opacity: 1.0;
+    }
 
-.callbacks_nav.next {
-    background-position: right top;
-    left: auto;
-    right: 0;
-}
+    .callbacks_nav.next {
+        background-position: right top;
+        left: auto;
+        right: 0;
+    }
 
 /*111111111*/
 
-.rslides { margin: 0 auto 40px; }
+.rslides {
+    margin: 0 auto 40px;
+}
 
 #slider3 {
     -moz-box-shadow: none;
@@ -68,30 +72,34 @@
     width: 100%;
 }
 
-.rslides_tabs li {
-    display: inline;
-    float: none;
-    margin: 0 3px;
+    .rslides_tabs li {
+        display: inline;
+        float: none;
+        margin: 0 3px;
+    }
+
+    .rslides_tabs a {
+        background: transparent;
+        display: inline;
+        height: auto;
+        line-height: 20px;
+        padding: 9px 20px;
+        width: auto;
+    }
+
+    .rslides_tabs li:first-child {
+        margin-left: 15px;
+    }
+
+    .rslides_tabs .rslides_here a {
+        background: rgba(255, 255, 255, .1);
+        color: #fff;
+        font-weight: bold;
+    }
+
+#slider3-pager a {
+    display: inline-block;
 }
-
-.rslides_tabs a {
-    background: transparent;
-    display: inline;
-    height: auto;
-    line-height: 20px;
-    padding: 9px 20px;
-    width: auto;
-}
-
-.rslides_tabs li:first-child { margin-left: 15px; }
-
-.rslides_tabs .rslides_here a {
-    background: rgba(255, 255, 255, .1);
-    color: #fff;
-    font-weight: bold;
-}
-
-#slider3-pager a { display: inline-block; }
 
 #slider3-pager {
     border: 2px solid #ffffff;
@@ -107,21 +115,27 @@
     margin-bottom: 35px;
 }
 
-#slider3-pager img { float: left; }
+#slider3-pager img {
+    float: left;
+}
 
 #slider3-pager .rslides_here a {
     background: transparent;
     box-shadow: 0 0 0 1px #e7e7e7;
 }
 
-#slider3-pager a { padding: 0; }
-
-#slider3 { border: 2px solid #e7e7e7 }
-
-#slider3 li {
-    width: 195px;
-    height: 195px;
+#slider3-pager a {
+    padding: 0;
 }
+
+#slider3 {
+    border: 2px solid #e7e7e7;
+}
+
+    #slider3 li {
+        width: 195px;
+        height: 195px;
+    }
 
 .rslides_nav.rslides1_nav.next {
     display: block;
@@ -137,6 +151,7 @@
     top: 208px;
     text-indent: -9999px;
 }
+
 .rslides_nav.rslides1_nav.prev {
     display: block;
     width: 13px;

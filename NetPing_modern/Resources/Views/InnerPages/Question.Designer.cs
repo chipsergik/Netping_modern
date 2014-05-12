@@ -22,14 +22,14 @@ namespace NetPing_modern.Resources.Views.InnerPages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Dealers {
+    public class Question {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Dealers() {
+        internal Question() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.InnerPages.Dealers", typeof(Dealers).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.InnerPages.Question", typeof(Question).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dealers.
+        ///   Looks up a localized string similar to Ask question.
         /// </summary>
         public static string Page_title {
             get {

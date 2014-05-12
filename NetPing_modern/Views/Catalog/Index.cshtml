@@ -32,6 +32,9 @@
         <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/header-footer.css">
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/CatalogPageStyle.css">
+        <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
+        <script src="~/Content/JavaScript/modernizr.js"></script>
+        <script src="~/Content/JavaScript/main.js"></script>
     </head>
     <body>
         <div class="page">
@@ -120,8 +123,8 @@
                                     s2 = desc2;
                                     l1 = "?id=_nping_bases";
                                     l2 = "?id=_nping_power";
-                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access };
-                                    links = new[] {"_swtch", "_acces_mains"};
+                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access, Index.Sec_sub_solutions };
+                                    links = new[] {"_swtch", "_acces_mains","_solut_poe"};
                                     break;
                                 }
                             }
@@ -174,15 +177,18 @@
                             {
                                 string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
-                                    <div class="desc clearfix">
+
+                                        <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
                                         <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
-                                        <div class="right">
-                                            <a href="@device.GetURLDevicePage()" class="title">@device.Name.Name</a>
-                                            <div class="text">
-                                                <p> @Html.Raw(device.Short_description)</p>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                            <div class="right">
+                                                <a href="@link" class="title">@device.Name.Name</a>
+                                                <div class="text">
+                                                    <p> @Html.Raw(device.Short_description)</p>
+                                                </div>
+                                            </div>                                  
+                                        </div> 
+
                                     <div class="action clearfix">
                                         @{
                                             string className = "new";
@@ -213,12 +219,14 @@
                                                 <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
                                             }
                                         }
+                                        <!--
                                         <div class="compare left">
                                             <form action="/" method="POST" class="clearfix">
                                                 <div class="left"><input type="checkbox" disabled name="compare" /><label>@Index.Txt_compare_dev</label></div>
                                                 <div><input type="submit" disabled value="@Index.Txt_compare"/></div>
                                             </form>
                                         </div>
+                                            -->
                                         <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
                                     </div>
                                 </div>

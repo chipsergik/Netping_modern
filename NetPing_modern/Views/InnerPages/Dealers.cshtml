@@ -1,9 +1,13 @@
-﻿@{
+﻿@using NetPing.Models
+@using NetPing_modern.Resources.Views.InnerPages
+
+@{
     Layout = "~/Views/Shared/Inner_master.cshtml";
-    ViewBag.Title = NetPing_modern.Resources.Views.InnerPages.Dealers.Page_title;
+    ViewBag.Title = Dealers.Page_title;
 }
 
 @section Head_Css {
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
     <style>
         .partnyor {
@@ -13,23 +17,22 @@
     </style>
 }
 
-@using NetPing.Models
-@model  IEnumerable<NetPing.Models.SiteText>
+@model  IEnumerable<SiteText>
 
-@section Content_left {
-    @foreach (dynamic grp in ViewBag.DealerGroups)
-    {
-        IEnumerable<SiteText> dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
-        if (dealers_in_grp.Any())
+    @section Content_left {
+        @foreach (dynamic grp in ViewBag.DealerGroups)
         {
-            <div class="partnyor">
-                <h1>@grp.Name</h1>
-                @foreach (SiteText item in dealers_in_grp)
-                {
-                    @Html.Raw(item.Text);
-                }
-            </div>
+            IEnumerable<SiteText> dealers_in_grp = Model.Where(i => i.Tag.Path.Contains(grp.Path));
+            if (dealers_in_grp.Any())
+            {
+                <div class="partnyor">
+                    <h1 class="content_left_h1">@grp.Name</h1>
+                    <div class="border"></div>
+                    @foreach (SiteText item in dealers_in_grp)
+                    {
+                        @Html.Raw(item.Text);
+                    }
+                </div>
+            }
         }
     }
-  
-}

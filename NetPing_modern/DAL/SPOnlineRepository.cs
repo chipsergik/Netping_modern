@@ -48,7 +48,7 @@ namespace NetPing.DAL
         private IEnumerable<SiteText> SiteTexts_Read(IEnumerable<SPTerm> termsSiteTexts) 
         {
                 var result = new List<SiteText>();
-            
+
                 foreach (var item in (ListItemCollection)ReadSPList("Site_texts",NetPing_modern.Resources.Camls.Caml_SiteTexts))
                 {
                     result.Add(new SiteText

@@ -20,12 +20,7 @@ namespace NetPing.Controllers
             posts = posts.OrderByDescending(item => item.Created);
             ViewBag.posts = posts;
 
-            var devices = repository.Devices;
-            devices = devices.Where(dev =>
-                                            dev.Label.IsEqualStrId(Resources.Guid_Label_New)
-                                    );
-            devices = devices.OrderByDescending(dev => dev.Created);
-            ViewBag.Devices = devices;
+            ViewBag.Devices = NetpingHelpers.Helpers.GetNewDevices();
 
 
             //Main page banners list

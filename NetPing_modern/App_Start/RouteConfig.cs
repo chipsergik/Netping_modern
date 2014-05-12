@@ -19,6 +19,8 @@ namespace NetPing
 
             routes.MapRoute("dealers_aspx", "dealer.aspx", new { controller = "InnerPages", action = "Dealers" });
 
+            routes.MapRoute("zakaz_aspx", "zakaz.aspx", new { controller = "InnerPages", action = "Question" });
+
             routes.MapRoute("cache_updated", "cache_updated", new { controller = "InnerPages", action = "UCache" });
 
             routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Index" });
