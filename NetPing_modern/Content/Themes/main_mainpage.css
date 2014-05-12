@@ -44,7 +44,7 @@
             background-repeat: no-repeat;
             margin-left: 17px;
             margin-right: 22px;
-            margin-top: 5px;
+            margin-top: 17px;
             padding-bottom: 5px;
         }
 
@@ -267,6 +267,7 @@
         margin-top: 14px;
         padding-left: 26px;
         width: 233px;
+        display: none;
     }
 
         .page .search .search_text {

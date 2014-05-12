@@ -2,6 +2,10 @@
     padding-left: 45px;
 }
 
+    .header a {
+        color: inherit;
+    }
+
     .header .language {
         color: #144e5a;
         float: left;
@@ -81,6 +85,10 @@
         margin-top: 20px;
         padding-left: 28px;
         padding-right: 28px;
+    }
+
+    .header .nav_element.active{
+
     }
 
     .header .nav .nav_element_border {

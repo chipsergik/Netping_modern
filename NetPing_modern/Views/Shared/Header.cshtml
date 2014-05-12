@@ -24,7 +24,7 @@
            </div>
            <div class="header_contacts_content">
                <span>тел.:</span>+7(495)646-8537<br />
-               <span>e-mail:</span>support@netping.ru
+               <span>e-mail:</span><a href="mailto:support@netping.ru">support@netping.ru</a>
            </div>
        </div>
         <div class="header_contacts_item">
@@ -35,7 +35,7 @@
             </div>
             <div class="header_contacts_content">
                 <span>тел.:</span>+7(495)646-8537<br />
-                <span>e-mail:</span>sales@netping.ru
+                <span>e-mail:</span><a href="mailto:sales@netping.ru">sales@netping.ru</a>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
     <div class="nav">
         <ul>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/catalog.aspx") == true ? "nav_element_active" : "nav_element") href="/catalog.aspx">@Header.Products</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/catalog.aspx") == true ? "nav_element active" : "nav_element") href="/catalog.aspx">@Header.Products</a>
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
@@ -61,15 +61,15 @@
                 </div>
             </li>
             <li class="nav_li">
-                <a class= @(Request.RawUrl.ToLower().Contains("/about.aspx") == true ? "nav_element_active" : "nav_element") href="/about.aspx">@Header.Menu_about</a>
+                <a class= @(Request.RawUrl.ToLower().Contains("/about.aspx") == true ? "nav_element active" : "nav_element") href="/about.aspx">@Header.Menu_about</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/dealer.aspx") == true ? "nav_element_active" : "nav_element") href="/dealer.aspx">@Header.Menu_dealers</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/dealer.aspx") == true ? "nav_element active" : "nav_element") href="/dealer.aspx">@Header.Menu_dealers</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/contacts.aspx") == true ? "nav_element_active" : "nav_element") href="/contacts.aspx">@Header.Menu_contacts</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/contacts.aspx") == true ? "nav_element active" : "nav_element") href="/contacts.aspx">@Header.Menu_contacts</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">

@@ -6,9 +6,13 @@
 
 .page .main {
     background: url(../Images/backround_main.png) no-repeat;
-    font-family: Corbel;
+    /*font-family: Corbel;*/
     margin: 0px auto;
     width: 1000px;
+}
+
+.page .main .header{
+    font-family: "Helvetica";
 }
 
 /*content*/
