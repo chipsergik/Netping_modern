@@ -125,3 +125,8 @@ C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release
 C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\ru\NetPing_modern.resources.dll
 C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.dll
 C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.pdb
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.csprojResolveAssemblyReference.cache
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.ru.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.ru.resources
