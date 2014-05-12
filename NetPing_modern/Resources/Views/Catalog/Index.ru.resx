@@ -121,19 +121,19 @@
     <value>Устройства NetPing, каталог</value>
   </data>
   <data name="Sec_monitoring" xml:space="preserve">
-    <value>МОНИТОРИНГ&lt;br/&gt;ДАТЧИКОВ</value>
+    <value>Мониторинг&lt;br/&gt;датчиков</value>
   </data>
   <data name="Sec_monitoring_descr" xml:space="preserve">
     <value>Удалённый мониторинг датчиков температуры, влажности, открытия двери и других по сети Internet/Ethernet</value>
   </data>
   <data name="Sec_power" xml:space="preserve">
-    <value>УПРАВЛЕНИЕ&lt;br/&gt;ЭЛЕКТРОПИТАНИЕМ</value>
+    <value>Управление&lt;br/&gt;электропитанием</value>
   </data>
   <data name="Sec_power_descr" xml:space="preserve">
     <value>Устройства удалённого управления питанием (PDU), серверов, роутеров и других устройств по сети Internet/Ethernet</value>
   </data>
   <data name="Sec_switch" xml:space="preserve">
-    <value>КОММУТАТОРЫ ETHERNET&lt;br/&gt;И POE УСТРОЙСТВА</value>
+    <value>Коммутаторы Ethernet&lt;br/&gt;и POE устройства</value>
   </data>
   <data name="Sec_switch_descr" xml:space="preserve">
     <value>Управляемые и неуправляемые коммутаторы Ethernet, и POE устройства</value>

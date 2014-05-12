@@ -121,13 +121,13 @@
     <value>NetPing devices catalog</value>
   </data>
   <data name="Sec_monitoring" xml:space="preserve">
-    <value>IP SENSORS&lt;br/&gt;MONITORING</value>
+    <value>IP sensors&lt;br/&gt;monitoring</value>
   </data>
   <data name="Sec_monitoring_descr" xml:space="preserve">
     <value>Remoutly, by IP network  monitoring temperature, humidity, doors and other sensors</value>
   </data>
   <data name="Sec_power" xml:space="preserve">
-    <value>REMOTE POWER&lt;br/&gt;CONTROL</value>
+    <value>Remote power&lt;br/&gt;control</value>
   </data>
   <data name="Sec_power_descr" xml:space="preserve">
     <value>IP PDU devices for remote power control servers, routers and other network devices</value>
@@ -145,7 +145,7 @@
     <value>Ready solutions</value>
   </data>
   <data name="Sec_switch" xml:space="preserve">
-    <value>ETHERNET SWITCH&lt;br/&gt;AND POE DEVICES</value>
+    <value>Ethernet switch&lt;br/&gt;and POE devices</value>
   </data>
   <data name="Sec_switch_descr" xml:space="preserve">
     <value>Ethernet switchs, and POE (pover over Ethernet) devices</value>
