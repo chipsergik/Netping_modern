@@ -343,6 +343,7 @@
     <Content Include="Content\Themes\responsiveslides.css" />
     <Content Include="Content\Themes\slide.css" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
