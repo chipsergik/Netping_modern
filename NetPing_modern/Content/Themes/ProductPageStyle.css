@@ -141,7 +141,7 @@ input:focus { outline: none; }
 
 /* --- .content - START --- */
 
-.content .left.main { width: 632px; }
+.content .left.main { width: 739px; }
 
 .content .left.main .bread {
     list-style: none;
@@ -208,7 +208,7 @@ input:focus { outline: none; }
 
 .content .item .cart:active { opacity: 0.8; }
 
-.content .item .right.sub { width: 412px; }
+.content .item .right.sub { width: 519px; }
 
 .content .item .text { color: #2f2f2f; }
 
@@ -257,7 +257,7 @@ input:focus { outline: none; }
     text-align: center;
     text-decoration: underline;
     text-transform: uppercase;
-    width: 25%;
+    width: 20%;
 }
 
 .content .tabs-desc .tab:hover { color: #73bf68; }
@@ -269,7 +269,7 @@ input:focus { outline: none; }
     border: none;
     color: #144e5a;
     cursor: default;
-    font-size: 18px;
+    font-size: 17px;
     margin: -5px 0 0;
     padding: 5px 0 0;
     text-decoration: none;
@@ -290,6 +290,10 @@ input:focus { outline: none; }
     line-height: 28px;
     margin: 0 0 12px;
     padding: 0 11px;
+}
+
+.content .tabs-desc .tab-c p {
+    margin-bottom: 10px;
 }
 
 .content .tabs-desc .tab-c ul {
@@ -316,7 +320,7 @@ input:focus { outline: none; }
 .content .tabs-desc .tab-c.shown { display: block; }
 
 
-.content .right.main { width: 307px; }
+.content .right.main { width: 200px; }
 
 .content .right.main .widget { margin: 30px 0 0; }
 
@@ -342,6 +346,7 @@ input:focus { outline: none; }
     /*font: 700 16px/10px 'Corbel', sans-serif;*/
     font: 700 16px/10px sans-serif;
     text-transform: uppercase;
+    margin: 10px 0px;
 }
 
 .content .right.main .widget .w-cont .item {
