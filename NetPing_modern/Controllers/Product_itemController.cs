@@ -19,7 +19,9 @@ namespace NetPing.Controllers
 
             var device = repository.Devices.Where(dev => dev.Key.Replace("#", "") == id).FirstOrDefault();
 
-            if (device == null) return View("Error", new Errors("Неверный параметр!"));
+            //if (device == null) return View("Error", new Errors("Неверный параметр!"));
+            if (device == null) return Redirect("/catalog.aspx");  // if key incorrect go to /catalog.aspx
+
 
             //Create list of connected devices
             var connected_devices = device.Connected_devices.Select(d =>
