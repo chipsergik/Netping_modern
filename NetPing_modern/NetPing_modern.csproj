@@ -437,6 +437,7 @@
     <EmbeddedResource Include="Resources\Views\Product_item\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\Footer.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

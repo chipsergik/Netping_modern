@@ -63,7 +63,7 @@
                                         <div class="text">
                                             @Html.Raw(Model.Short_description)
                                         </div>
-
+                                        <br/>
                                         <div class="seporator"></div>
 
                                         <ul class="files">
@@ -71,7 +71,7 @@
                                                 IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
                                                 foreach (SFile file in user_guides)
                                                 {
-                                                    <li class="pdf"><a target="_blank" href="@file.Url">@file.Name</a> - @file.File_type.Name</li>
+                                                    <li><a target="_blank" href="@file.Url"><b>@file.Name.Replace(".docx","").Replace(".doc","")</b></a> </li>
                                                 }
                                             }
                                         </ul>
@@ -82,7 +82,8 @@
 
                             <div class="tabs-desc">
                                 <div class="clearfix">
-                                    <div class="tab active" data-tab-id="1">@Index.Sec_spec</div>
+                                    <div class="tab active" data-tab-id="5">@Index.Sec_description</div>
+                                    <div class="tab" data-tab-id="1">@Index.Sec_spec</div>
                                     <div class="tab" data-tab-id="2">@Index.Sec_files</div>
                                     <div class="tab" data-tab-id="3">@Index.Sec_faq</div>
                                     <div class="tab" data-tab-id="4">@Index.Sec_examples</div>
@@ -90,8 +91,11 @@
 
                                 <div class="tabs-cont">
 
+                                    <div class="tab-c shown" data-tab-id="5">
+                                        @Html.Raw(Model.Long_description)
+                                    </div>
 
-                                    <div class="tab-c shown" data-tab-id="1">
+                                    <div class="tab-c" data-tab-id="1">
                                         @{
                                             if (Model.DeviceParameters.Count != 0)
                                             {
@@ -169,21 +173,20 @@
                                 <div class="w-title">@Index.Title_connected</div>
                                 <div class="w-cont">
                                     <div class="clearfix">
-                                        <div class="left persent50">
-                                            <div class="w-sub-title">@Index.Title_connected_acces</div>
-                                            @foreach (Device dev in ViewBag.Connected_devices_accessuars)
-                                            {
-                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
-                                            }
-                                        </div>
-                                        <div class="right dotted persent50">
+                                        <div>
                                             <div class="w-sub-title">@Index.Title_connected_sensors</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
                                             }
                                         </div>
-
+                                        <div>
+                                            <div class="w-sub-title">@Index.Title_connected_acces</div>
+                                            @foreach (Device dev in ViewBag.Connected_devices_accessuars)
+                                            {
+                                                <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>

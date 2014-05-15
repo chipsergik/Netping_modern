@@ -123,6 +123,9 @@
   <data name="Path_main" xml:space="preserve">
     <value>Main</value>
   </data>
+  <data name="Sec_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="Sec_examples" xml:space="preserve">
     <value>Examples</value>
   </data>
