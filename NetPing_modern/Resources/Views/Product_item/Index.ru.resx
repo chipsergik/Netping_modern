@@ -123,6 +123,9 @@
   <data name="Path_main" xml:space="preserve">
     <value>Главная</value>
   </data>
+  <data name="Sec_description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
   <data name="Sec_examples" xml:space="preserve">
     <value>Примеры</value>
   </data>
@@ -136,7 +139,7 @@
     <value>Спецификация</value>
   </data>
   <data name="Title_connected" xml:space="preserve">
-    <value>К устройству подключаются:</value>
+    <value>Подключаются:</value>
   </data>
   <data name="Title_connected_acces" xml:space="preserve">
     <value>Аксессуары</value>
