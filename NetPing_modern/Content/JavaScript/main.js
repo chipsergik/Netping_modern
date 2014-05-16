@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function($){
 	$('.down_list').hide();
 	$('.nav_li').hover(function(){
 			$(this).find('.down_list').stop(true).slideDown(200);
@@ -32,4 +32,6 @@ $(document).ready(function(){
 	  })
 	});
 	};
+
+    $('.tab-c.longdescription h3').sshutter();
 });

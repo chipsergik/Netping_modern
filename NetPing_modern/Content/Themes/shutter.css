@@ -1,0 +1,17 @@
+.shutter {
+    display: block;
+    cursor: pointer;
+    margin: 3px 0;
+}
+
+.shutter + div {
+    margin: 0 5px;
+}
+
+.shutter.collapsed {
+    background: url("../Images/ProductPageImg/plus.png") no-repeat right center;
+}
+
+.shutter.expanded {
+    background: url("../Images/ProductPageImg/minus.png") no-repeat right center;
+}

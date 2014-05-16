@@ -239,6 +239,15 @@ input:focus { outline: none; }
 
 .content .item .files li a { color: #144e5a; }
 
+.content .item .files li a.doc {
+    background-image: url(../Images/ProductPageImg/item_files_doc.gif);
+    background-repeat: no-repeat;
+    line-height: 44px;
+    display: block;
+    padding-left: 40px;
+    line-height: 44px;
+}
+
 .content .item .files li a:hover { text-decoration: none; }
 
 .content .tabs-desc { margin: 30px 0 0; }
@@ -319,6 +328,9 @@ input:focus { outline: none; }
 
 .content .tabs-desc .tab-c.shown { display: block; }
 
+.content .tabs-desc .tab-c.longdescription h2 {
+    margin: 10px 0;
+}
 
 .content .right.main { width: 200px; }
 

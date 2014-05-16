@@ -12,6 +12,7 @@
 *.user
 *.sln.docstates
 *.dat
+.idea/
 
 # Build results
 
@@ -52,5 +53,3 @@ build/
 *.scc
 *.dll
 *.pbd
-
-
