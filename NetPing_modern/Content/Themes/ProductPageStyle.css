@@ -328,6 +328,9 @@ input:focus { outline: none; }
 
 .content .tabs-desc .tab-c.shown { display: block; }
 
+.content .tabs-desc .tab-c.longdescription h2 {
+    margin: 10px 0;
+}
 
 .content .right.main { width: 200px; }
 
