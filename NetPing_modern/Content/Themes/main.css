@@ -40,9 +40,15 @@
 	font-size:18px;
 	font-weight:bold;
 }
+
+.page .main .content .content_left h1,
+.page .main .content .content_left h2,
+.page .main .content .content_left h3 {
+    margin: 10px 0;
+}
+
 .page .main .content .content_left img {
-	float:left;
-	margin-right:23px;
+    margin: 15px 0;
 }
 .page .main .content .content_left .warning {
 	color:#f37021;
