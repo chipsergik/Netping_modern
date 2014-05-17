@@ -33,5 +33,10 @@ $(document).ready(function($){
 	});
 	};
 
-    $('.tab-c.longdescription h3').sshutter();
+
+    var headers3 = $('.tab-c.longdescription h3');
+    if (headers3.length > 0)
+    {
+        headers3.sshutter();
+    }
 });
