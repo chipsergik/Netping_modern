@@ -35,7 +35,7 @@ $(document).ready(function($){
 
 
     var headers3 = $('.tab-c.longdescription h3');
-    if (headers3.length > 0)
+    if (headers3.length > 0 && $.fn.sshutter)
     {
         headers3.sshutter();
     }
