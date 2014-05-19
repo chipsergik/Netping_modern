@@ -1,0 +1,7 @@
+﻿.text .wiki-content ul {
+    margin-left: 15px;
+}
+
+.text .wiki-content ul, .text .wiki-content ul li {
+    list-style: square outside;
+}
