@@ -335,6 +335,7 @@
     <Content Include="Content\JavaScript\slider.js" />
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\main.css" />
