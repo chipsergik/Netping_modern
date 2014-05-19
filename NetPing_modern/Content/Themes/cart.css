@@ -11,7 +11,7 @@
 }
 
 #cartPopup{
-    font: sans-serif;
+    font-family: sans-serif;
 }
 
 
@@ -155,4 +155,8 @@ input.accept {
 
 #userInfo input[type="text"].invalid{
     border: 1px solid #f00;
+}
+
+#closeCartButton{
+    margin-right: 1px;
 }
