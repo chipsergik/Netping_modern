@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<link rel="stylesheet" type="text/css" href="~/Content/Themes/cart.css">
+<script src="~/Content/JavaScript/jquery.cookies.2.2.0.min.js" type="text/javascript"> </script>
+<script src="~/Content/JavaScript/cart.js" type="text/javascript"> </script>
+
+<div style="display: none">
+    <div class="shopPopupItem" id="cartItemTemplate">
+        <p class="hiddenID"></p>
+        <div class="shopItemImgContainer">
+            <img class="shopPopupItemImg" src="" alt="" />
+        </div>
+        <div class="shopItemC2">
+            <p class="shopItemName"></p>
+            <table>
+                <tr>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Стоимость</th>
+                </tr>
+                <tr>
+                    <td><span class="shopItemPrice"></span> руб.</td>
+                    <td><input type="number" class="shopItemCountInput" value="" /></td>
+                    <td><span class="shopItemPriceSum"></span> руб.</td>
+                </tr>
+            </table>
+            <input type="button" class="remove" value="Удалить" />
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="overlayCart"></div>
+<div id="cartPopup">
+    <input type="button" class="remove left" id="clearCartButton" value="Очистить корзину" />
+    <input type="button" class="remove left" id="backCartButton" value="Назад" style="display: none;" />
+    <input type="button" class="accept right" id="continueCartButton" value="Оформить" />
+    <input type="button" class="accept right" id="sendDataCartButton" value="Готово" style="display: none;" />
+    <div class="clear"></div>
+    <div id="cartCost"><h1>Итого: <div id="cartCostValue"></div> руб.</h1></div>
+    <div class="clear"></div>
+    <div id="cartAbout" class="k1">
+        <div id="userInfo">
+            <h2>Данные о заказе</h2>
+            <input type="text" id="FIOK" placeholder="ФИО" />
+            <input type="text" id="emailK" placeholder="E-Mail" />
+            <input type="text" id="addressK" placeholder="Адрес доставки" />
+            <input type="text" id="requisites" placeholder="Реквизиты для выставления счета(для юр. лиц)" />
+            <div class="clear"></div>
+            <h2>Способ доставки</h2>
+            <label><input type="radio" value="Почта России" name="shipping" checked="checked"/>Почта России</label>
+            <label><input type="radio" value="EMS" name="shipping" />EMS</label>
+            <label><input type="radio" value="Гарантпост" name="shipping" />Гарантпост</label>
+        </div>
+    </div>
+    <div id="cartItems" class="k1"></div>
+</div>
+

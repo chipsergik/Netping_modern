@@ -25,16 +25,19 @@
                 @RenderPage("../Shared/Header.cshtml")
 
             <div style="display: none">
-                <p id="kPrice">
+                <p id="Price">
                     @Model.Price
                 </p>
-                <p id="kID">
+                <p id="ID">
                     @Model.Name.Id
                 </p>
-                <p id="kName">
+                <p id="Key">
+                    @Model.Key.Replace("#", "")
+                </p>
+                <p id="Name">
                     @Model.Name.Name
                 </p>
-                <p id="kPhotoURL">
+                <p id="PhotoURL">
                     @{
                         var photo1 = Model.DevicePhotos.FirstOrDefault(p => p.IsBig);
                         if (photo1 != null)
@@ -225,6 +228,6 @@
         <script src="~/Content/JavaScript/responsiveslides.min.js" type="text/javascript"> </script>
         <script src="~/Content/JavaScript/slider1.js" type="text/javascript"> </script>
         
-        @RenderPage("../Shared/Korzina.cshtml")
+        @RenderPage("../Shared/Cart.cshtml")
     </body>
 </html>

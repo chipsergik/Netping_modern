@@ -1,0 +1,158 @@
+﻿#cartPopup *{
+    border: 0;
+}
+
+#cartPopup .left {
+    float: left;
+}
+
+#cartPopup .right {
+    float: right;
+}
+
+#cartPopup{
+    font: sans-serif;
+}
+
+
+
+.overlayCart {
+    background: #000;
+    bottom: 0;
+    display: none;
+    filter: alpha(opacity=50);
+    left: 0;
+    -ms-opacity: 0.5;
+    opacity: 0.5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
+div#cartPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: none;
+    background: #fff;
+    z-index: 10000;
+    border: 2px groov #000;
+    width: 600px;
+    margin: -300px 0 0 -300px;
+    height: 600px;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: overlay;
+}
+
+#cartAbout {
+    display: none;
+}
+
+p.hiddenID {
+    display: none;
+}
+
+div.shopItemImgContainer {
+    display: inline-block;
+    /* max-height: 200px; */
+    overflow-y: hidden;
+    vertical-align: middle;
+}
+
+div.shopItemC2 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 295px;
+    margin-left: 20px;
+}
+
+img.shopPopupItemImg {
+    display: block;
+    max-width: 200px;
+}
+
+#cartPopup div.shopPopupItem {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+.shopItemName {
+    color: #144e5a;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+input.shopItemCountInput {
+    width: 100%;
+}
+
+.shopItemC2 > table {
+    width: 100%;
+    margin: 10px auto;
+}
+
+    .shopItemC2 > table td, .shopItemC2 > table th {
+        width: 33%;
+        text-align: left;
+        line-height: 20px;
+    }
+
+input.remove {
+    background: #f37021;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+    input.remove:hover {
+        background: #d95302;
+    }
+
+input.accept {
+    background: #208e34;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+    input.accept:hover {
+        background: #0c7d21;
+    }
+
+.noscroll {
+    overflow: hidden;
+}
+
+#cartCost {
+    float: right;
+    margin: 20px 0 0px;
+}
+
+#cartCostValue {
+    display: inline-block;
+}
+
+#userInfo input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    width: 300px;
+    margin: 10px 0;
+}
+
+#userInfo label {
+    display: block;
+    margin: 10px 0px;
+}
+
+#userInfo input[type="radio"] {
+    margin-right: 10px;
+}
+
+#cartPopup .shopItemCountInput {
+    border: 1px solid #ccc;
+}
+
+#userInfo input[type="text"].invalid{
+    border: 1px solid #f00;
+}
