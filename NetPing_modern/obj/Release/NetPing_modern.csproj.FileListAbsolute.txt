@@ -130,3 +130,7 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\Ne
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.ru.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.ru.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.ru.resources
