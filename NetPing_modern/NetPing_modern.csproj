@@ -144,7 +144,6 @@
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SPOnlineRepository.cs" />
-    <Compile Include="DAL\SPTermComparerByCustomSortOrder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

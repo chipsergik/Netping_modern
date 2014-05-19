@@ -10,7 +10,6 @@ using NetpingHelpers;
 using NetPing.Tools;
 using NetPing.Global.Config;
 using System.Web.Mvc;
-using NetPing_modern.DAL;
 using Ninject;
 using System.Diagnostics;
 
@@ -384,7 +383,6 @@ namespace NetPing.DAL
 
                     if (lang_label.Count!=0) name = lang_label[0].Value;
                 }
-
                 terms.Add(new SPTerm
                 {
                     Id = term.Id
@@ -393,9 +391,6 @@ namespace NetPing.DAL
                    ,
                     Path = term.PathOfTerm
                 });
-
-                if (term.CustomSortOrder != null)
-                    terms.Sort(new SPTermComparerByCustomSortOrder(term.CustomSortOrder));
 
             }
             if (terms.Count==0) throw new Exception("No terms was readed!");
