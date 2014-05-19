@@ -53,3 +53,4 @@ build/
 *.scc
 *.dll
 *.pbd
+*.dll
