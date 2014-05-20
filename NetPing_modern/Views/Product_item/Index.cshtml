@@ -25,25 +25,25 @@
                 @RenderPage("../Shared/Header.cshtml")
 
             <div style="display: none">
-                <p id="Price">
+                <p class="Price">
                     @Model.Price
                 </p>
-                <p id="ID">
+                <p class="ID">
                     @Model.Name.Id
                 </p>
-                <p id="Key">
+                <p class="Key">
                     @Model.Key.Replace("#", "")
                 </p>
-                <p id="Name">
+                <p class="Name">
                     @Model.Name.Name
                 </p>
-                <p id="PhotoURL">
+                <p class="PhotoURL">
                     @{
                         var photo1 = Model.DevicePhotos.FirstOrDefault(p => p.IsBig);
                         if (photo1 != null)
                         {
                             @photo1.Url;
-                        }    
+                        }
                     }
                 </p>
             </div>

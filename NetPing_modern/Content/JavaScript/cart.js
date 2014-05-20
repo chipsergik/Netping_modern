@@ -2,20 +2,24 @@
     updateCartCount();
 
     $("#shopItem").on("click", function () {
-        addTovar();
-        showPopup();
+        addProduct('body');
     });
 
-    $("a.cart").on("click", function () {
+    $('.cat_item .action .price span').on("click", function () {
+        var item = $(this).parents('.cat_item');
+        addProduct(item);
+    });
+
+    $(".header a.cart").on("click", function () {
         showPopup();
     })
 
     $("#clearCartButton").click(function () {
-        $(".hiddenID").each(function () {
-            C.del(this.innerHTML);
-        });
-        hidePopup();
+        clearCart();
+    });
 
+    $("#closeCartButton").click(function () {
+        hidePopup();
     });
 
     $("#continueCartButton").click(function () {
@@ -76,7 +80,8 @@
             url: "/cart/SendCartMail",
             data: requestData,
             success: function () {
-                alert("Ваш заказ успешно отправлен на обработку");
+                clearCart();
+                alert("Ваш заказ отправлен в обработку");
             },
             error: function () {
                 alert("Что-то пошло не так");
@@ -94,16 +99,20 @@ var isCartPopupOpened = false;
 
 function updateCartCount() {
     console.log('upd');
-    var cartcount = getData().length
+    var data = getData() || [];
+    var cartcount = 0;
+    for (i = 0; i < data.length; i++) {
+        cartcount += data[i].count;
+    }
     $('.cart_count').text(cartcount);
 }
 
-function addTovar() {
-    var ID = $("#ID")[0].innerHTML.trim();
-    var name = $("#Name")[0].innerHTML.trim();
-    var price = $("#Price")[0].innerHTML.trim();
-    var photoURL = $("#PhotoURL")[0].innerHTML.trim();
-    var key = $("#Key")[0].innerHTML.trim();
+function addProduct(itemcontainer) {
+    var ID = $(itemcontainer).find(".ID")[0].innerHTML.trim();
+    var name = $(itemcontainer).find(".Name")[0].innerHTML.trim();
+    var price = $(itemcontainer).find(".Price")[0].innerHTML.trim();
+    var photoURL = $(itemcontainer).find(".PhotoURL")[0].innerHTML.trim();
+    var key = $(itemcontainer).find(".Key")[0].innerHTML.trim();
     var data = getData() || [];
     var item = data.filter(function (element) {
         return element.ID == ID;
@@ -123,6 +132,13 @@ function addTovar() {
         }));
     }
     updateCartCount();
+}
+
+function clearCart() {
+    $(".hiddenID").each(function () {
+        C.del(this.innerHTML);
+    });
+    hidePopup();
 }
 
 
