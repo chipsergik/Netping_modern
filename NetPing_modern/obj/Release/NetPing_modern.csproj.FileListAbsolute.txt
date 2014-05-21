@@ -130,6 +130,7 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\Ne
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.ru.resources
+<<<<<<< HEAD
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\NetPing_modern.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\NetPing_modern.pdb
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\ru\NetPing_modern.resources.dll
@@ -197,3 +198,9 @@ C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\ru\NetPing_modern.resources.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.pdb
+=======
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Dealers.ru.resources
+C:\Users\Сергей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Release\NetPing_modern.Resources.Views.InnerPages.Question.ru.resources
+>>>>>>> origin/S2-Buy

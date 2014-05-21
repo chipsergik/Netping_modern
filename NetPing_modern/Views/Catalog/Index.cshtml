@@ -177,6 +177,30 @@
                             {
                                 string link="/product_item.aspx?id=" + @device.Key;
                                 <div class="cat_item">
+                                        
+                                    <div style="display: none">
+                                        <p class="Price">
+                                            @device.Price
+                                        </p>
+                                        <p class="ID">
+                                            @device.Name.Id
+                                        </p>
+                                        <p class="Key">
+                                            @device.Key.Replace("#", "")
+                                        </p>
+                                        <p class="Name">
+                                            @device.Name.Name
+                                        </p>
+                                        <p class="PhotoURL">
+                                            @{
+                                var photo1 = device.DevicePhotos.FirstOrDefault(p => p.IsBig);
+                                if (photo1 != null)
+                                {
+                                    @photo1.Url;
+                                }
+                                            }
+                                        </p>
+                                    </div>    
 
                                         <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
                                         <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
@@ -237,6 +261,9 @@
                     </div>
                 </div>
                 @RenderPage("../Shared/Footer.cshtml")
+                @RenderPage("../Shared/cart.cshtml")
+
+
             </div>
         </div>
         <script> </script>

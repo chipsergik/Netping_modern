@@ -23,7 +23,6 @@
 
     $('#searchIcon').click(function () {
         var img = $($('.rslides1_on').find('img')[0]);
-        console.log(img);
         if (img) {
             img = img.clone();
             img.removeClass();

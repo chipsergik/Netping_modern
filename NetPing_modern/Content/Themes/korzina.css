@@ -1,0 +1,115 @@
+﻿#korzinaPopup, #korzinaPopup * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.overlayKorzina {
+    background: #000;
+    bottom: 0;
+    display: none;
+    filter: alpha(opacity=50);
+    left: 0;
+    -ms-opacity: 0.5;
+    opacity: 0.5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#korzinaPopup {
+    background: #fff;
+    border: 1px solid #999;
+    display: none;
+    height: 500px;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    width: 500px;
+    z-index: 10001;
+    overflow: hidden;
+}
+
+.shopPopupItem {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+    .shopPopupItem p, input {
+        margin-left: 10px;
+    }
+
+.shopItemImgContainer {
+    height: 100%;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.shopPopupItemImg {
+    width: 100%;
+    height: 100%;
+}
+
+.shopItemCountP {
+}
+
+.shopItemC2 {
+    height: 100px;
+}
+
+.shopItemCountInput {
+    width: 50px;
+    display: block;
+    background-color: yellow;
+}
+
+.hiddenID {
+    display: none;
+}
+
+#korzinaItems {
+    background-color: aqua;
+    overflow-y: scroll;
+}
+
+#clearCartButton {
+    left: 0;
+}
+
+#continueCartButton {
+    right: 0;
+}
+#sendDataCartButton {
+    right: 0;
+    display: none;
+}
+
+#backCartButton {
+    display: none;
+    left: 0;
+}
+
+.cartPopupButton {
+    position: absolute;
+    bottom: -10px;
+    margin: 20px;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+}
+
+#userInfo {
+    background-color: greenyellow;
+}
+
+.k1 {
+    position: absolute;
+    left: 25px;
+    width: 450px;
+    height: 400px;    
+}

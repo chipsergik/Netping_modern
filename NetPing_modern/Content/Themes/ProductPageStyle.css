@@ -88,6 +88,7 @@ input:focus { outline: none; }
     display: none;
     filter: alpha(opacity=50);
     left: 0;
+    -ms-opacity: 0.5;
     opacity: 0.5;
     position: fixed;
     right: 0;
@@ -106,7 +107,21 @@ input:focus { outline: none; }
     box-sizing: border-box;
 }
 
-.popup {
+#korzinaPopup {
+    background: #fff;
+    border: 1px solid #999;
+    display: none;
+    height: 500px;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    width: 500px;
+    z-index: 10001;
+}
+
+#popup1 {
     background: #fff;
     border: 1px solid #999;
     display: none;
