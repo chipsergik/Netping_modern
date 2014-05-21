@@ -1,4 +1,5 @@
-﻿/* --- defaults - START --- */
+﻿@import url(base.css);
+/* --- defaults - START --- */
 * {
     border: 0;
     margin: 0;

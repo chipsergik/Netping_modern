@@ -1,0 +1,7 @@
+﻿.text ul {
+    margin-left: 15px;
+}
+
+.text ul, .text ul li {
+    list-style: square outside;
+}

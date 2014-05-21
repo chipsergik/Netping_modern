@@ -15,8 +15,10 @@
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/ProductPageStyle.css">
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/responsiveslides.css">
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/slide.css">
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter.css">
         <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
         <script src="~/Content/JavaScript/modernizr.js"></script>
+        <script src="~/Content/JavaScript/jquery.siblingsshutter.js"></script>
         <script src="~/Content/JavaScript/main.js"></script>
     </head>
     <body>
@@ -96,7 +98,7 @@
                                                 IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
                                                 foreach (SFile file in user_guides)
                                                 {
-                                                    <li><a target="_blank" href="@file.Url"><b>@file.Name.Replace(".docx","").Replace(".doc","")</b></a> </li>
+                                                    <li><a target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx","").Replace(".doc","")</b></a> </li>
                                                 }
                                             }
                                         </ul>
@@ -116,7 +118,7 @@
 
                                 <div class="tabs-cont">
 
-                                    <div class="tab-c shown" data-tab-id="5">
+                                    <div class="tab-c shown longdescription" data-tab-id="5">
                                         @Html.Raw(Model.Long_description)
                                     </div>
 

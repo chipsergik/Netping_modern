@@ -145,6 +145,7 @@
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SPOnlineRepository.cs" />
+    <Compile Include="DAL\SPTermComparerByCustomSortOrder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -293,6 +294,7 @@
     <Content Include="Content\Images\CatalogPageImg\tabs_title_bg.png" />
     <Content Include="Content\Images\content_news.png" />
     <Content Include="Content\Images\content_news_latest_rrs.png" />
+    <Content Include="Content\Images\ProductPageImg\item_files_doc.gif" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\footer_left.png" />
     <Content Include="Content\Images\header_content_border.png" />
@@ -320,6 +322,8 @@
     <Content Include="Content\Images\ProductPageImg\item_gallery_navi_next.png" />
     <Content Include="Content\Images\ProductPageImg\item_gallery_navi_prev.png" />
     <Content Include="Content\Images\ProductPageImg\item_text_seporator.png" />
+    <Content Include="Content\Images\ProductPageImg\minus.png" />
+    <Content Include="Content\Images\ProductPageImg\plus.png" />
     <Content Include="Content\Images\ProductPageImg\submenu_circle.png" />
     <Content Include="Content\Images\ProductPageImg\tabs_li_arrow.png" />
     <Content Include="Content\Images\ProductPageImg\tabs_title_bg.png" />
@@ -328,6 +332,7 @@
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
+    <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
     <Content Include="Content\JavaScript\korzina.js" />
     <Content Include="Content\JavaScript\main.js" />
@@ -338,6 +343,8 @@
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\cart.css" />
+    <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\korzina.css" />
@@ -347,9 +354,11 @@
     <Content Include="Content\Themes\product_item_styles.css" />
     <Content Include="Content\Themes\reset.css" />
     <Content Include="Content\Themes\responsiveslides.css" />
+    <Content Include="Content\Themes\shutter.css" />
     <Content Include="Content\Themes\slide.css" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
+    <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
