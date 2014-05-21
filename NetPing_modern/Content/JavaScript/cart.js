@@ -102,7 +102,7 @@ function updateCartCount() {
     var data = getData() || [];
     var cartcount = 0;
     for (i = 0; i < data.length; i++) {
-        cartcount += data[i].count;
+        cartcount += parseInt(data[i].count);
     }
     $('.cart_count').text(cartcount);
 }

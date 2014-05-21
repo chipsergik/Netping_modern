@@ -322,9 +322,9 @@ input:focus {
             color: #eb6e0e;
             font-size: 32px;
             line-height: 10px;
-            background: url(../Images/ProductPageImg/item_cart.png) left top no-repeat;
+            background: url(../Images/ProductPageImg/item_cart.png) right top no-repeat;
             background-size: contain;
-            padding-left: 40px;
+            padding-right: 40px;
             cursor: pointer;
         }
 
