@@ -14,7 +14,7 @@ $(function () {
         speed: 500,
         timeout: 3000,
         nav: true,
-        random: false,
+        random: true,
         pause: true,
         navContainer: "",
         manualControls: "",
