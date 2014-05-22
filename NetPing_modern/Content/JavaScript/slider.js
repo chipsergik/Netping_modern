@@ -2,11 +2,12 @@ $(function () {
     var banners = window.Banners;
     var slider = document.getElementById("slider1");
     for (var i = 0; i < banners.length; i++) {
-        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = banners[i].Url_link;
         var img = document.createElement('img');
-        img.src = banners[i];
-        li.appendChild(img);
-        slider.appendChild(li);
+        img.src = banners[i].Url;
+        a.appendChild(img);
+        slider.appendChild(a);
     }
     $("#slider1").responsiveSlides({
         auto: true,

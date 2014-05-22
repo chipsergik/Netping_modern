@@ -19,20 +19,21 @@ namespace NetPing.Controllers
             var posts = repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.Where(pst => pst.Cathegory == "News");
             posts = posts.OrderByDescending(item => item.Created);
             ViewBag.posts = posts;
-
+            
             ViewBag.Devices = NetpingHelpers.Helpers.GetNewDevices();
 
 
             //Main page banners list
-            /*
-            var Banners = repository.PubFiles;
-            string banner_string = "";
-            foreach (var banner in Banners )
-            {
-                banner_string = banner_string + '"'+banner.Url+'"'+",";
-            }
-            ViewBag.Banners = banner_string.TrimEnd(',');
-             */
+            
+            // var banners = repository.pubfiles;
+           
+            //string banner_string = "";
+            //foreach (var banner in banners )
+            //{
+            //    banner_string = banner_string + '"'+banner.url+'"'+",";
+            //}
+            //viewbag.banners = banner_string.trimend(',');
+             
             ViewBag.Banners=repository.PubFiles;
 
             return View();
