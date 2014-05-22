@@ -203,6 +203,8 @@ namespace NetPing.DAL
                         File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
                        ,
                         Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/"+(item["FileLeafRef"] as string)
+                       ,
+                        Url_link = (item["Url"] as FieldUrlValue).Url
                     });
                 }
                 //if (result.Count == 0) throw new Exception("No one PubFiles was readed!");

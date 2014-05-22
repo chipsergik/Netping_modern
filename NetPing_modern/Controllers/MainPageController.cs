@@ -24,6 +24,7 @@ namespace NetPing.Controllers
 
 
             //Main page banners list
+            /*
             var Banners = repository.PubFiles;
             string banner_string = "";
             foreach (var banner in Banners )
@@ -31,7 +32,8 @@ namespace NetPing.Controllers
                 banner_string = banner_string + '"'+banner.Url+'"'+",";
             }
             ViewBag.Banners = banner_string.TrimEnd(',');
-            //devices.FirstOrDefault().Russian_price
+             */
+            ViewBag.Banners=repository.PubFiles;
 
             return View();
         }
