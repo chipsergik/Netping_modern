@@ -51,13 +51,16 @@ namespace NetPing.Controllers
             if (id == null) id = id_choice[0];
             if (sub == "" || sub == null) sub = id;
 
+            /*
             var Devices = repository.Devices.Where(dev => dev.Key.Contains(sub) 
                                                    && 
                                                    !dev.Key.Contains("#")
                                                    &&
                                                    dev.Label.OwnNameFromPath != "Archive"
                                                   );
-
+            */
+            var dev_group = repository.Devices.FirstOrDefault(d => d.Key == sub + "#");
+            var Devices = repository.Devices.Where(dev => dev.IsInGroup(dev_group) && !dev.IsGroup() && dev.Label.OwnNameFromPath!="Archive");
             ViewBag.id = id;
             ViewBag.sub = sub;
             return View(Devices);
