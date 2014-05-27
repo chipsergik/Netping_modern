@@ -11,6 +11,7 @@ namespace NetPing_modern.Models
         public String EMail { get; set; }
         public String Address { get; set; }
         public String Requisites { get; set; }
+        public String Phone { get; set; }
         public String Shipping { get; set; }
         public IEnumerable<IDictionary<string, string>> Data { get; set; }
     }

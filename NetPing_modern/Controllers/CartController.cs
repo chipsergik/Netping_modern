@@ -51,12 +51,14 @@ namespace NetPing_modern.Controllers
                     data["html_content"] = String.Format(@"<html><h2>{0}</h2>
                         <h2>Адрес доставки: {1}</h2>
                         <h2>Способ доставки: {2}</h2>
-                        <h2>Сумма заказа: {3} руб.</h2>
+                        <h2>Телефон: {3}</h2>
+                        <h2>Реквизиты: {4}</h2>
+                        <h2>Сумма заказа: {5} руб.</h2>
                         <h2>Состав заказа</h2>
                         <table border=1 style='border: 1px solid #000; width: 100%; border-collapse: collapse'>
                         <tr><th></th><th>Наименование</th><th>Цена</th><th>Количество</th><th>Стоимость</th></tr>
-                        {4}</table>
-                        </html>", cart.Name, cart.Address, cart.Shipping, sum, items);
+                        {6}</table>
+                        </html>", cart.Name, cart.Address, cart.Shipping, cart.Phone, cart.Requisites, sum, items);
                     var response = wb.UploadValues("https://api.turbo-smtp.com/api/mail/send", "POST", data);
                     return null;
                 }

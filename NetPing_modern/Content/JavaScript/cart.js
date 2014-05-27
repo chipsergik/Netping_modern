@@ -65,6 +65,7 @@
         if (!isvalid)
             return;
         var requisites = $("#requisites").val();
+        var phone = $("#phone").val().trim();
         var shipping = $("input:radio[name=shipping]:checked").val();
         var requestData = {
             Name: fio,
@@ -72,7 +73,8 @@
             Address: address,
             Requisites: requisites,
             Shipping: shipping,
-            Data: data
+            Data: data,
+            Phone: phone
         };
         console.log(requestData);
         $.ajax({
