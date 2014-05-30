@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NetPing.DAL;
-
 /*
     Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
         Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
@@ -34,6 +33,8 @@ using NetPing.DAL;
     !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
 
 */
+using NetPing.Models;
+using NetPing_modern.Models;
 
 
 namespace NetPing.Controllers
@@ -64,6 +65,28 @@ namespace NetPing.Controllers
             ViewBag.id = id;
             ViewBag.sub = sub;
             return View(Devices);
+        }
+
+        public ActionResult Compare(int[] compare)
+        {
+            var model = new DevicesCompare();
+
+            if (compare == null || compare.Length < 2)
+                return View(model);
+
+            var repository = new SPOnlineRepository();
+            
+            model.Devices = repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
+            IEnumerable<DeviceParameter> intersect = null;
+            for (int i = 0; i < model.Devices.Count - 1; i++)
+            {
+                var device = model.Devices[i];
+                var next = model.Devices[i + 1];
+                intersect = device.DeviceParameters.Intersect(next.DeviceParameters, new DeviceParameterEqualityComparer());
+            }
+            model.Parameters = new List<DeviceParameter>(intersect);
+
+            return View(model);
         }
 	}
 }

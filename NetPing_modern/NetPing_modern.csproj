@@ -154,6 +154,8 @@
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\DeviceParameterEqualityComparer.cs" />
+    <Compile Include="Models\DevicesCompare.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\DeviceParameter.cs" />
     <Compile Include="Models\Post.cs" />
@@ -383,6 +385,7 @@
     <Content Include="Views\Shared\Korzina.cshtml" />
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
+    <Content Include="Views\Catalog\Compare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
