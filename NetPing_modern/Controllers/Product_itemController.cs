@@ -31,6 +31,7 @@ namespace NetPing.Controllers
             ViewBag.Connected_devices_sensors = connected_devices.Where(d => d!=null &&  d.Name.Path.Contains("Sensors")).ToList();
 
             ViewBag.Parameter_groups = repository.TermsDeviceParameters.Where(par => par.Level == 0).ToList();
+            ViewBag.Files_groups = repository.TermsFileTypes.Where(type => type.Level == 0).ToList();
 
             //Device group
             var dev_path = device.Name.Path.Split(';');
