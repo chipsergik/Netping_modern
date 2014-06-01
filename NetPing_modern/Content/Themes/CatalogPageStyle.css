@@ -85,6 +85,10 @@ input:focus {
     box-sizing: border-box;
 }
 
+.content .row {
+    min-height: 2em;
+}
+
 .content .left.main.catalog {
     padding: 30px 0 0;
     width: 313px;
@@ -294,7 +298,7 @@ input:focus {
     }
 
     .cat_item .action .compare {
-        width: 300px;
+        margin: 0 15px 0 0;
     }
 
         .cat_item .action .compare label {
@@ -322,6 +326,7 @@ input:focus {
         /*    font: 14px sans-serif;
     font: 14px 'Corbel', sans-serif;*/
         margin: 0 15px 0 0;
+        line-height: 70px;
     }
 
         .cat_item .action .price span {
