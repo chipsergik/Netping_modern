@@ -48,7 +48,8 @@
                                 <td>@parameter.Name.Name</td>
                                 @foreach (var device in Model.Devices)
                                 {
-                                    var value = device.DeviceParameters.First(p => p.Name.OwnNameFromPath == parameter.Name.OwnNameFromPath).Value;
+                                    var devParam = device.DeviceParameters.FirstOrDefault(p => p.Name.OwnNameFromPath == parameter.Name.OwnNameFromPath);
+                                    var value = devParam == null ? " - " : devParam.Value;
                                     <td>
                                         @value
                                     </td>

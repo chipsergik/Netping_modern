@@ -77,14 +77,24 @@ namespace NetPing.Controllers
             var repository = new SPOnlineRepository();
             
             model.Devices = repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
-            IEnumerable<DeviceParameter> intersect = null;
+            IEnumerable<DeviceParameter> collection = null;
+            var deviceParameterEqualityComparer = new DeviceParameterEqualityComparer();
             for (int i = 0; i < model.Devices.Count - 1; i++)
             {
                 var device = model.Devices[i];
                 var next = model.Devices[i + 1];
-                intersect = device.DeviceParameters.Intersect(next.DeviceParameters, new DeviceParameterEqualityComparer());
+                if (collection == null)
+                {
+                    collection = device.DeviceParameters.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
+                else
+                {
+                    collection = collection.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
             }
-            model.Parameters = new List<DeviceParameter>(intersect);
+
+            if (collection != null)
+                model.Parameters = new List<DeviceParameter>(collection.Distinct(deviceParameterEqualityComparer));
 
             return View(model);
         }
