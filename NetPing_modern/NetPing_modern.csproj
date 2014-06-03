@@ -333,6 +333,7 @@
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\JavaScript\cart.js" />
+    <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />

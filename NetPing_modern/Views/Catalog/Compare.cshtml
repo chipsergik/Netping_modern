@@ -18,45 +18,65 @@
 
     <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
     <script src="~/Content/JavaScript/modernizr.js"></script>
+    <script src="~/Content/JavaScript/CompareJs.js"></script>
+    <script>
+        $(function() {
+            var compareJs = new CompareJs($('#compareTable'));
+            $('#showDistinct').change(function() {
+                if ($(this).is(':checked')) {
+                    compareJs.showDistinct();
+                } else {
+                    compareJs.showAll();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="page">
         <div class="main">
             @RenderPage("../Shared/Header.cshtml")
             <div class="content">
+                <div class="row">
+                    @Html.ActionLink("<< Назад", "Index")
+                </div>
+                <div class="row">
+                    <div><input type="checkbox" id="showDistinct"/><label>Показывать только отличия</label></div>
+                </div>
                 @if (Model.Devices == null || Model.Devices.Count < 2)
                 {
                     <span>Должно быть выбрано минимум два устройства для сравнения</span>
                 }
                 else
                 {
-                    <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            @foreach (var device in Model.Devices)
-                            {
-                                <th>@device.Name.Name</th>
-                            }
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        @foreach (var parameter in Model.Parameters)
-                        {
+                    <table id="compareTable">
+                        <thead>
                             <tr>
-                                <td>@parameter.Name.Name</td>
+                                <th></th>
                                 @foreach (var device in Model.Devices)
                                 {
-                                    var value = device.DeviceParameters.First(p => p.Name.OwnNameFromPath == parameter.Name.OwnNameFromPath).Value;
-                                    <td>
-                                        @value
-                                    </td>
+                                    <th>@device.Name.Name</th>
                                 }
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        
+                            @foreach (var parameter in Model.Parameters)
+                            {
+                                <tr>
+                                    <td>@parameter.Name.Name</td>
+                                    @foreach (var device in Model.Devices)
+                                    {
+                                        var devParam = device.DeviceParameters.FirstOrDefault(p => p.Name.OwnNameFromPath == parameter.Name.OwnNameFromPath);
+                                        var value = devParam == null ? " - " : devParam.Value;
+                                        <td>
+                                            @value
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 }
                 
             </div>

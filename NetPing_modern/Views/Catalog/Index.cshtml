@@ -249,12 +249,18 @@
                                                 }
                                             }
                                         
-                                            <div class="compare left">
-                                                <div class="left"><input type="checkbox" name="compare" value="@device.Id" /><label>@Index.Txt_compare_dev</label></div>
-                                                <div><input type="submit" class="comparebtn disabled" disabled="disabled" value="@Index.Txt_compare"/></div>
+                                            <div class="row">
+                                                <div class="compare">
+                                                    <div class="right"><input type="submit" class="comparebtn disabled" disabled="disabled" value="@Index.Txt_compare"/></div>
+                                                    <div class="right"><input type="checkbox" name="compare" value="@device.Id" /><label>@Index.Txt_compare_dev</label>
+                                                </div>
+                                            </div>
                                             </div>
                                             
-                                            <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
+                                            <div class="row">
+                                                <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 
