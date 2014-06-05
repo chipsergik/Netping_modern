@@ -89,7 +89,40 @@ namespace NetPing.DAL
 
 
 
-        public IEnumerable<Device> Devices  {  get  {return (IEnumerable<Device>)(PullFromCache("Devices"));} }
+        public IEnumerable<Device> Devices
+        {
+            get
+            {
+                var terms = new List<SPTerm>(Terms);
+                var devices = (IEnumerable<Device>)(PullFromCache("Devices"));
+                var index = BuildIndex(devices, terms);
+                return devices.OrderBy(d => index[d]);
+            }
+        }
+
+        private Dictionary<Device, int> BuildIndex(IEnumerable<Device> list, List<SPTerm> terms)
+        {
+            var result = new Dictionary<Device, int>();
+            foreach (var device in list)
+            {
+                var i = FindIndex(terms, s => s.Id == device.Name.Id);
+                result.Add(device, i > -1 ? i : int.MaxValue);
+            }
+            return result;
+        }
+
+        private static int FindIndex<T>(IEnumerable<T> items, Func<T, bool> predicate)
+        {
+            int index = 0;
+            foreach (var item in items)
+            {
+                if (predicate(item))
+                    return index;
+                index++;
+            }
+            return -1;
+        }
+
         private IEnumerable<Device> Devices_Read(IEnumerable<Post> allPosts, IEnumerable<SFile> allFiles, IEnumerable<DevicePhoto> allDevicePhotos, IEnumerable<DeviceParameter> allDevicesParameters, IEnumerable<SPTerm> terms, IEnumerable<SPTerm> termsDestinations, IEnumerable<SPTerm> termsLabels)
         {
                 var devices = new List<Device>();
