@@ -81,6 +81,8 @@
                                                 }
                                             </ul>
                                         </div>
+                                        <div class="seporator"></div>
+
                                         <a style="cursor: pointer" id="shopItem" class="cart price">@Model.Price<span>&nbsp;@Model.GetCurrency</span></a>
                                         <span id="searchIcon"></span>
                                     </div>
@@ -102,6 +104,8 @@
                                             }
                                         }
                                     </ul>
+                                    <div class="seporator"></div>
+
                                 </div>
 
                             </div>
@@ -211,7 +215,6 @@
                             <div class="w-cont">
                                 <div class="clearfix">
                                     <div>
-                                        <div class="w-sub-title">@Index.Title_connected_sensors</div>
                                         @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                         {
                                             <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
