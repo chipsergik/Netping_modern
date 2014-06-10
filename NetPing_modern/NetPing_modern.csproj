@@ -142,6 +142,7 @@
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\Product_itemController.cs" />
     <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="DAL\CustomTermComparer.cs" />
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SPOnlineRepository.cs" />
