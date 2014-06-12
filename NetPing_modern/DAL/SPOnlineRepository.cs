@@ -420,7 +420,7 @@ namespace NetPing.DAL
 
                     if (lang_label.Count!=0) name = lang_label[0].Value;
                 }
-
+                /*
                 if (term.CustomSortOrder != null)
                 {
                     orderedTerms.Add(term, new SPTerm
@@ -432,7 +432,7 @@ namespace NetPing.DAL
                             Path = term.PathOfTerm
                         });
                 }
-                else
+                else */
                 {
                     terms.Add(new SPTerm
                         {
@@ -444,13 +444,13 @@ namespace NetPing.DAL
                         });
                 }
             }
-
+            /*
             foreach (var termKey in orderedTerms.Keys)
             {
                 terms.Add(orderedTerms[termKey]);
                 terms.Sort(new SPTermComparerByCustomSortOrder(termKey.CustomSortOrder));
             }
-
+            */
             if (terms.Count==0) throw new Exception("No terms was readed!");
 
             return terms;
