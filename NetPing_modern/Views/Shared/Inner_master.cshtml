@@ -50,7 +50,7 @@
                         @RenderSection("Content_right", false)
                         <div class="title">
                             <div class="title_left"></div>
-                            <div class="title_right">НОВИНКИ</div>
+                            <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
                             <div class="clear"></div>
                         </div>
                         @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
@@ -61,7 +61,7 @@
                                 <div class="content_right_item_text">
                                     @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
                                     <br />
-                                    <p>Цена: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
+                                    <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
                                 </div>
                                 <div class="clear"></div>
                             </div>

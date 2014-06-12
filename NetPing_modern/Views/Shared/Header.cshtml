@@ -4,6 +4,7 @@
 }
 @using NetPing_modern.Resources.Views.Shared
 
+
 <!-- Yandex.Metrika counter -->
 <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -33,30 +34,30 @@
     <div class="header_contacts">
        <div class="header_contacts_item">
            <div class="header_contacts_title">
-               <a href="/zakaz.aspx">Задать вопрос</a>
+               <a href="/zakaz.aspx">@Header.Header_ask</a>
            </div>
            <div class="header_content_border">
            </div>
            <div class="header_contacts_content">
-               <span>тел.:</span>+7 /495/ 646-85-37<br />
-               <span>e-mail:</span><a href="mailto:support@netping.ru">support@netping.ru</a>
+               <span>@Header.Phone:</span>@Header.Header_phone<br />
+               <span>e-mail:</span><a href="mailto:@Header.Header_email_support">@Header.Header_email_support</a>
            </div>
        </div>
         <div class="header_contacts_item">
             <div class="header_contacts_title">
-                <a href="/zakaz.aspx">Купить </a>
+                <a href="/zakaz.aspx">@Header.Header_to_buy </a>
             </div>
             <div class="header_content_border">
             </div>
             <div class="header_contacts_content">
-                <span>тел.:</span>+7 /495/ 646-85-37<br />
-                <span>e-mail:</span><a href="mailto:sales@netping.ru">sales@netping.ru</a>
+                <span>@Header.Phone:</span>@Header.Header_phone<br />
+                <span>e-mail:</span><a href="mailto:@Header.Header_email_sales">@Header.Header_email_sales</a>
             </div>
         </div>
     </div>
     
     <a href="#" class="cart">
-        <span class="cart_text">Товаров в корзине</span><span class="cart_count">0</span>
+        <span class="cart_text">@Header.Header_goods_in_basket</span><span class="cart_count">0</span>
     </a>
         
     <div class="clear"></div>

@@ -175,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Camls.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Other.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Other.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Catalog\Index.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -407,6 +412,11 @@
       <LastGenOutput>Camls.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Camls.ru.resx" />
+    <EmbeddedResource Include="Resources\Other.ru.resx" />
+    <EmbeddedResource Include="Resources\Other.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Other.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>

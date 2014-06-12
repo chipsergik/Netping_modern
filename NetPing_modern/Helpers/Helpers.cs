@@ -89,7 +89,7 @@ namespace NetpingHelpers
 	    	    sb.AppendFormat("{0} ", words[i]);
 			    count += words[i].Length + 1; // плюс пробел
 		    }
-            str = sb.ToString() + "<a href=\"" + url + "\"> подробнее...</a>";
+            str = sb.ToString() + "<a href=\"" + url + "\"> " + NetPing_modern.Resources.Other.helpers_details+ "...</a>";
             return str;
         }
 
