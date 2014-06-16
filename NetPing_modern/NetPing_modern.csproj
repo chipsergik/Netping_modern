@@ -144,6 +144,7 @@
     <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="DAL\CustomTermComparer.cs" />
     <Compile Include="DAL\Errors.cs" />
+    <Compile Include="DAL\SortOrdersCollection.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SPOnlineRepository.cs" />
     <Compile Include="DAL\SPTermComparerByCustomSortOrder.cs" />
@@ -361,7 +362,9 @@
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using NetPing.Models;
-using WebGrease.Css.Extensions;
 
 namespace NetPing_modern.DAL
 {
     internal class SPTermComparerByCustomSortOrder : IComparer<SPTerm>
     {
-        private readonly List<Guid> _sortOrder = null;
+        private readonly IList<Guid> _sortOrder = null;
 
-        public SPTermComparerByCustomSortOrder(string customSortOrder)
+        public SPTermComparerByCustomSortOrder(IList<Guid> customSortOrder)
         {
-            if (string.IsNullOrEmpty(customSortOrder)) 
-                return;
-
-            _sortOrder = new List<Guid>();
-            customSortOrder.Split(':').ForEach(id => _sortOrder.Add(new Guid(id)));
+            _sortOrder = customSortOrder;
         }
 
-        private int IndexOf(List<Guid> list, Guid id)
+        private int IndexOf(IList<Guid> list, Guid id)
         {
             return list.IndexOf(id) + 1;
         }
