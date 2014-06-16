@@ -418,7 +418,7 @@ namespace NetPing.DAL
                     context.Load(lang_label);
                     context.ExecuteQuery();
 
-                    if (lang_label.Count!=0) name = lang_label[0].Value;
+                    if (lang_label.Count != 0) name = lang_label[0].Value;
                 }
 
                 terms.Add(new SPTerm
@@ -434,16 +434,11 @@ namespace NetPing.DAL
                     sortOrders.AddSortOrder(term.CustomSortOrder);
                 }
 
-            foreach (var termKey in orderedTerms.Keys)
-            {
-                terms.Add(orderedTerms[termKey]);
-                terms.Sort(new SPTermComparerByCustomSortOrder(termKey.CustomSortOrder));
             }
+                var customSortOrder = sortOrders.GetSortOrders();
 
-            var customSortOrder = sortOrders.GetSortOrders();
-
-            terms.Sort(new SPTermComparerByCustomSortOrder(customSortOrder));
-
+                terms.Sort(new SPTermComparerByCustomSortOrder(customSortOrder));
+            
             if (terms.Count==0) throw new Exception("No terms was readed!");
 
             return terms;
