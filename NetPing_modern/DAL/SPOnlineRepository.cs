@@ -397,7 +397,7 @@ namespace NetPing.DAL
             var lcid = System.Globalization.CultureInfo.CurrentCulture.LCID;
 
             var terms = new List<SPTerm>();
-            var orderedTerms = new SortedList<Term, SPTerm>(new CustomTermComparer());
+            var sortOrders = new SortOrdersCollection<Guid>();
 
             var session = TaxonomySession.GetTaxonomySession(context);
             var termSets = session.GetTermSetsByName(setname, 1033);
@@ -421,9 +421,7 @@ namespace NetPing.DAL
                     if (lang_label.Count!=0) name = lang_label[0].Value;
                 }
 
-                if (term.CustomSortOrder != null)
-                {
-                    orderedTerms.Add(term, new SPTerm
+                terms.Add(new SPTerm
                         {
                             Id = term.Id
                            ,
@@ -431,25 +429,20 @@ namespace NetPing.DAL
                            ,
                             Path = term.PathOfTerm
                         });
-                }
-                else
+                if (!string.IsNullOrEmpty(term.CustomSortOrder))
                 {
-                    terms.Add(new SPTerm
-                        {
-                            Id = term.Id
-                           ,
-                            Name = name
-                           ,
-                            Path = term.PathOfTerm
-                        });
+                    sortOrders.AddSortOrder(term.CustomSortOrder);
                 }
-            }
 
             foreach (var termKey in orderedTerms.Keys)
             {
                 terms.Add(orderedTerms[termKey]);
                 terms.Sort(new SPTermComparerByCustomSortOrder(termKey.CustomSortOrder));
             }
+
+            var customSortOrder = sortOrders.GetSortOrders();
+
+            terms.Sort(new SPTermComparerByCustomSortOrder(customSortOrder));
 
             if (terms.Count==0) throw new Exception("No terms was readed!");
 
