@@ -202,3 +202,4 @@ C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\N
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Other.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Other.ru.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.csprojResolveAssemblyReference.cache
