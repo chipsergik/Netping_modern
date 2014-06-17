@@ -174,7 +174,7 @@ input:focus {
 /* --- .content - START --- */
 
 .content .left.main {
-    width: 739px;
+    width: 785px;
 }
 
     .content .left.main .bread {
@@ -209,18 +209,7 @@ input:focus {
     margin: 0 0 24px;
 }
 
-    .content .item .i-title span {
-        background: #eb6e0e;
-        border-radius: 4px;
-        color: #ffffff;
-        display: inline-block;
-        font-size: 10px;
-        line-height: 20px;
-        font-weight: 700;
-        margin: -1px 0 0 18px;
-        padding: 0 10px;
-        vertical-align: top;
-    }
+
 
 
 .content .item .cart {
@@ -231,10 +220,10 @@ input:focus {
     font-weight: 700;
     line-height: 52px;
     max-height: 50px;
-    padding: 0 44px 0 10px;
+    padding: 0 49px 0 4px;
     text-align: center;
     text-decoration: none;
-    width: 151px;
+    width: 141px;
     margin-top: 24px;
 }
 
@@ -255,7 +244,7 @@ input:focus {
     }
 
 .content .item .right.sub {
-    width: 519px;
+    width: 575px;
 }
 
 .content .item .text {
@@ -295,10 +284,10 @@ input:focus {
             .content .item .files li a.doc {
                 background-image: url(../Images/ProductPageImg/item_files_doc.gif);
                 background-repeat: no-repeat;
-                line-height: 44px;
                 display: block;
-                padding-left: 50px;
-                line-height: 44px;
+                padding-left: 40px;
+                line-height: 40px;
+                background-position-y: center;
             }
 
             .content .item .files li a:hover {
@@ -382,13 +371,17 @@ input:focus {
                     font-weight: 700;
                 }
 
-                .content .tabs-desc .tab-c ul li a {
-                    color: #144e5a;
-                }
+        .content .tabs-desc .tab-c.longdescription ul li span {
+            color: inherit;
+        }
 
-                    .content .tabs-desc .tab-c ul li a:hover {
-                        text-decoration: none;
-                    }
+        .content .tabs-desc .tab-c ul li a {
+            color: #144e5a;
+        }
+
+            .content .tabs-desc .tab-c ul li a:hover {
+                text-decoration: none;
+            }
 
         .content .tabs-desc .tab-c.shown {
             display: block;
@@ -449,14 +442,34 @@ input:focus {
                     border: 1px solid #e7e7e7;
                 }
 
-.wiki-content a, .wiki-content font, .tabs-desc .tab-c a {
+.right.sub .text a, .right-sub .text font, .tabs-desc .tab-c a {
     color: #208e34 !important;
     text-decoration: none !important;
     font-weight: 700;
 }
 
-    .wiki-content a:hover, .wiki-content font:hover, .tabs-desc .tab-c a:hover {
+    .right.sub .text a:hover, .right-sub .text font:hover, .tabs-desc .tab-c a:hover {
         text-decoration: underline !important;
     }
+
+.content .tabs-cont h2 {
+    color: #144e5a !important;
+}
+
+.content .latest_label {
+    background: #eb6e0e;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 19px;
+    /* font-weight: 700; */
+    margin: 10px 0 0 10px;
+    padding: 0 10px;
+    /* vertical-align: top; */
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 9999;
+}
 
 /* --- .content - END --- */

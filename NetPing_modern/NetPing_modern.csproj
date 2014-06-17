@@ -333,6 +333,7 @@
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
+    <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
     <Content Include="Content\JavaScript\korzina.js" />
     <Content Include="Content\JavaScript\main.js" />
@@ -356,6 +357,7 @@
     <Content Include="Content\Themes\responsiveslides.css" />
     <Content Include="Content\Themes\shutter.css" />
     <Content Include="Content\Themes\slide.css" />
+    <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
