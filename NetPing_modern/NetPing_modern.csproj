@@ -319,8 +319,10 @@
     <Content Include="Content\Images\ProductPageImg\item_big_zoom.png" />
     <Content Include="Content\Images\ProductPageImg\item_cart.png" />
     <Content Include="Content\Images\ProductPageImg\item_files_pdf.png" />
+    <Content Include="Content\Images\ProductPageImg\item_gallery_navi_down.png" />
     <Content Include="Content\Images\ProductPageImg\item_gallery_navi_next.png" />
     <Content Include="Content\Images\ProductPageImg\item_gallery_navi_prev.png" />
+    <Content Include="Content\Images\ProductPageImg\item_gallery_navi_up.png" />
     <Content Include="Content\Images\ProductPageImg\item_text_seporator.png" />
     <Content Include="Content\Images\ProductPageImg\minus.png" />
     <Content Include="Content\Images\ProductPageImg\plus.png" />
@@ -333,6 +335,7 @@
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
+    <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
     <Content Include="Content\JavaScript\korzina.js" />
     <Content Include="Content\JavaScript\main.js" />
@@ -356,6 +359,7 @@
     <Content Include="Content\Themes\responsiveslides.css" />
     <Content Include="Content\Themes\shutter.css" />
     <Content Include="Content\Themes\slide.css" />
+    <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />

@@ -47,4 +47,12 @@
         }
     });
     
+    $('#sideslider').tinycarousel({
+        axis: "y",
+        buttons: true,
+        start: 1,
+        interval: true,
+
+        animation: true
+    });
 });

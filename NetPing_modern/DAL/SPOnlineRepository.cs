@@ -34,7 +34,7 @@ namespace NetPing.DAL
 
         public IEnumerable<SPTerm> TermsFileTypes { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsFileTypes")); } }
         private IEnumerable<SPTerm> TermsFileTypes_Read() { return GetTermsFromSP("Documents types"); }
-        
+
         public IEnumerable<SPTerm> TermsDestinations { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDestinations")); } }
         private IEnumerable<SPTerm> TermsDestinations_Read() { return GetTermsFromSP("Destinations"); }
 
@@ -45,227 +45,268 @@ namespace NetPing.DAL
         private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts"); }
 
 
-        public IEnumerable<SiteText> SiteTexts    {  get  {return (IEnumerable<SiteText>)(PullFromCache("SiteTexts"));} }
-        private IEnumerable<SiteText> SiteTexts_Read(IEnumerable<SPTerm> termsSiteTexts) 
+        public IEnumerable<SiteText> SiteTexts { get { return (IEnumerable<SiteText>)(PullFromCache("SiteTexts")); } }
+        private IEnumerable<SiteText> SiteTexts_Read(IEnumerable<SPTerm> termsSiteTexts)
         {
-                var result = new List<SiteText>();
+            var result = new List<SiteText>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Site_texts",NetPing_modern.Resources.Camls.Caml_SiteTexts))
+            foreach (var item in (ListItemCollection)ReadSPList("Site_texts", NetPing_modern.Resources.Camls.Caml_SiteTexts))
+            {
+                result.Add(new SiteText
                 {
-                    result.Add(new SiteText
-                    {
-                        Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(termsSiteTexts)
-                       ,
-                        Text =(Helpers.IsCultureEng) ? (item["Text_Eng"] as string).ReplaceInternalLinks() : (item["Text_RUS"] as string).ReplaceInternalLinks()
-                    });
-                }
-                if (result.Count == 0) throw new Exception("No one SiteText was readed!");
-                return result;
+                    Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(termsSiteTexts)
+                   ,
+                    Text = (Helpers.IsCultureEng) ? (item["Text_Eng"] as string).ReplaceInternalLinks() : (item["Text_RUS"] as string).ReplaceInternalLinks()
+                });
+            }
+            if (result.Count == 0) throw new Exception("No one SiteText was readed!");
+            return result;
         }
 
 
         public IEnumerable<DeviceParameter> DevicesParameters { get { return (IEnumerable<DeviceParameter>)(PullFromCache("DevicesParameters")); } }
-        private IEnumerable<DeviceParameter> DevicesParameters_Read(IEnumerable<SPTerm> termsDeviceParameters, IEnumerable<SPTerm> terms) 
+        private IEnumerable<DeviceParameter> DevicesParameters_Read(IEnumerable<SPTerm> termsDeviceParameters, IEnumerable<SPTerm> terms)
         {
-                var result = new List<DeviceParameter>();
+            var result = new List<DeviceParameter>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Device_parameters",""))
+            foreach (var item in (ListItemCollection)ReadSPList("Device_parameters", ""))
+            {
+                result.Add(new DeviceParameter
                 {
-                    result.Add(new DeviceParameter
-                    {
-                        Id = item.Id
-                       ,
-                        Name = (item["Parameter"] as TaxonomyFieldValue).ToSPTerm(termsDeviceParameters)
-                       ,
-                        Device = (item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
-                       ,
-                        Value = (Helpers.IsCultureEng) ?  item["ENG_value"] as string : item["Title"] as string 
-                    });
-                }
-                if (result.Count == 0) throw new Exception("No one deviceparameter was readed!");
-                return result;
+                    Id = item.Id
+                   ,
+                    Name = (item["Parameter"] as TaxonomyFieldValue).ToSPTerm(termsDeviceParameters)
+                   ,
+                    Device = (item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
+                   ,
+                    Value = (Helpers.IsCultureEng) ? item["ENG_value"] as string : item["Title"] as string
+                });
+            }
+            if (result.Count == 0) throw new Exception("No one deviceparameter was readed!");
+            return result;
         }
 
 
 
 
-        public IEnumerable<Device> Devices  {  get  {return (IEnumerable<Device>)(PullFromCache("Devices"));} }
+        public IEnumerable<Device> Devices { get { return (IEnumerable<Device>)(PullFromCache("Devices")); } }
         private IEnumerable<Device> Devices_Read(IEnumerable<Post> allPosts, IEnumerable<SFile> allFiles, IEnumerable<DevicePhoto> allDevicePhotos, IEnumerable<DeviceParameter> allDevicesParameters, IEnumerable<SPTerm> terms, IEnumerable<SPTerm> termsDestinations, IEnumerable<SPTerm> termsLabels)
         {
-                var devices = new List<Device>();
+            var devices = new List<Device>();
 
-                var list    = context.Web.Lists.GetByTitle("Device keys");
+            var list = context.Web.Lists.GetByTitle("Device keys");
 
-                foreach (var item in (ListItemCollection)ReadSPList("Device keys",NetPing_modern.Resources.Camls.Caml_Device_keys))
-                {
-                    var device = new Device 
-                             {
-                                Id              = item.Id
-                                , Key           = item["Title"] as string
-                                , Name          = (item["Name"] as TaxonomyFieldValue).ToSPTerm(terms)
-                                , Destination = (item["Destination"] as TaxonomyFieldValueCollection).ToSPTermList(termsDestinations)
-                                , Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
-                                , Price = (Helpers.IsCultureEng) ?  item["Global_price"] as double? : item["Russian_price"] as double?
-                                , Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
-                                , Created = (DateTime)item["Created"]
-                                , GroupUrl=item["Group_url"] as string
-                             };
+            foreach (var item in (ListItemCollection)ReadSPList("Device keys", NetPing_modern.Resources.Camls.Caml_Device_keys))
+            {
+                var device = new Device
+                         {
+                             Id = item.Id
+                            ,
+                             Key = item["Title"] as string
+                            ,
+                             Name = (item["Name"] as TaxonomyFieldValue).ToSPTerm(terms)
+                            ,
+                             Destination = (item["Destination"] as TaxonomyFieldValueCollection).ToSPTermList(termsDestinations)
+                            ,
+                             Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
+                            ,
+                             Price = (Helpers.IsCultureEng) ? item["Global_price"] as double? : item["Russian_price"] as double?
+                            ,
+                             Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
+                            ,
+                             Created = (DateTime)item["Created"]
+                            ,
+                             GroupUrl = item["Group_url"] as string
+                         };
 
-                    devices.Add(device);
+                devices.Add(device);
+            }
+
+            SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Destination_Russia));
+            foreach (var dev in devices)
+            {
+
+                Debug.WriteLine(dev.Name.Name);
+                // Collect Posts for corresponded to device
+                if (dev.Name.Level == 3)  // it is not group
+                {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
+                    dev.Posts = allPosts.Where(pst =>
+                                 pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n == d.OwnNameFromPath) != null) != null
+                                 &&
+                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
+                        ).ToList();
                 }
-                
-                SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId( NetPing_modern.Properties.Resources.Guid_Destination_Russia));
-                foreach (var dev in devices)
-                {
-                   
-                        Debug.WriteLine(dev.Name.Name);
-                        // Collect Posts for corresponded to device
-                        if (dev.Name.Level == 3)  // it is not group
-                        {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
-                            dev.Posts = allPosts.Where(pst =>
-                                         pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n==d.OwnNameFromPath)!=null) !=null
-                                         &&
-                                         pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
-                                ).ToList();
-                        }
-                        else                      // it is group
-                        {                         // Collect all posts where any Device from post path contains dev.Name
-                            dev.Posts = allPosts.Where(pst =>
-                                         pst.Devices.FirstOrDefault(d => d!=null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
-                                         &&
-                                         pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
-                                ).ToList();
-                        }
+                else                      // it is group
+                {                         // Collect all posts where any Device from post path contains dev.Name
+                    dev.Posts = allPosts.Where(pst =>
+                                 pst.Devices.FirstOrDefault(d => d != null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
+                                 &&
+                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
+                        ).ToList();
+                }
 
-                        //Set Short description
-                        var post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, short description");
-                        if (post == null) dev.Short_description = "#error";
-                        else dev.Short_description = post.Body;
+                //Set Short description
+                var post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, short description");
+                if (post == null) dev.Short_description = "#error";
+                else dev.Short_description = CleanSpanStyles(CleanFonts(post.Body));
 
-                        //Set Long description
-                        post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
-                        if (post == null) dev.Long_description = "#error";
-                        else dev.Long_description = post.Body;
+                //Set Long description
+                post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
+                if (post == null) dev.Long_description = "#error";
+                else dev.Long_description = CleanSpanStyles(CleanFonts(post.Body));
 
-                        //Collect SFiles according device
-                        // get all files where dev.Name.Path contains Device name of any device from SFile
-                        dev.SFiles = allFiles.Where(fl =>
-                                         fl.Devices.FirstOrDefault(d =>d!=null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
-                                                ).ToList();
+                //Collect SFiles according device
+                // get all files where dev.Name.Path contains Device name of any device from SFile
+                dev.SFiles = allFiles.Where(fl =>
+                                 fl.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
+                                        ).ToList();
 
-                        // collect device parameters 
-                        dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
+                // collect device parameters 
+                dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
 
-                        // Get device photos
-                        dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
+                // Get device photos
+                dev.DevicePhotos = allDevicePhotos.Where(p => p.Dev_name == dev.Name).ToList();
 
-                    }
-                    
-                if (devices.Count == 0) throw new Exception("No one devices was readed!");
-                return devices;
+            }
+
+            if (devices.Count == 0) throw new Exception("No one devices was readed!");
+            return devices;
         }
 
-        public IEnumerable<DevicePhoto> DevicePhotos {  get  {return (IEnumerable<DevicePhoto>)(PullFromCache("DevicePhotos"));} }
+        private String CleanSpanStyles(String str)
+        {
+            for (int tagstart = str.IndexOf("<span"); tagstart != -1; tagstart = str.IndexOf("<span", tagstart + 1))
+            {
+                int tagend = str.IndexOf('>', tagstart);
+                var tag = str.Substring(tagstart, tagend - tagstart + 1);
+                if (tag.Contains("style"))
+                {
+                    str = str.Remove(
+                        tag.IndexOf("style") + tagstart,
+                        tag.LastIndexOf('"') - tag.IndexOf("style") + 1);
+                }
+            }
+            return str;
+        }
+
+        private String CleanFonts(String str)
+        {
+            for (int tagstart = str.IndexOf("<font"); tagstart != -1; tagstart = str.IndexOf("<font", tagstart + 1))
+            {
+                int tagend = str.IndexOf('>', tagstart);
+                var tag = str.Substring(tagstart, tagend - tagstart + 1);
+                if (tag.Contains("color"))
+                {
+                    str = str.Remove(
+                        tag.IndexOf("color") + tagstart,
+                        tag.LastIndexOf('"') - tag.IndexOf("color") + 1);
+                }
+            }
+            return str;
+        }
+
+
+        public IEnumerable<DevicePhoto> DevicePhotos { get { return (IEnumerable<DevicePhoto>)(PullFromCache("DevicePhotos")); } }
         private IEnumerable<DevicePhoto> DevicePhotos_Read(IEnumerable<SPTerm> terms)
         {
-                var result = new List<DevicePhoto>();
+            var result = new List<DevicePhoto>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Device_photos",NetPing_modern.Resources.Camls.Caml_DevicePhotos))
+            foreach (var item in (ListItemCollection)ReadSPList("Device_photos", NetPing_modern.Resources.Camls.Caml_DevicePhotos))
+            {
+                result.Add(new DevicePhoto
                 {
-                    result.Add(new DevicePhoto
-                    {
-                        Name = item["FileLeafRef"] as string
-                       ,
-                        Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
-                       ,
-                        Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + (item["FileLeafRef"] as string)
-                       ,
-                        IsBig = (item["FileLeafRef"] as string).Contains("big") ? true : false 
-                       ,
-                        IsCover = Convert.ToBoolean(item["Cover"])
-                    });
-                }
-                if (result.Count == 0) throw new Exception("No one DevicePhoto was readed!");
-                return result;
+                    Name = item["FileLeafRef"] as string
+                   ,
+                    Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
+                   ,
+                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + (item["FileLeafRef"] as string)
+                   ,
+                    IsBig = (item["FileLeafRef"] as string).Contains("big") ? true : false
+                   ,
+                    IsCover = Convert.ToBoolean(item["Cover"])
+                });
+            }
+            if (result.Count == 0) throw new Exception("No one DevicePhoto was readed!");
+            return result;
         }
 
-        public IEnumerable<PubFiles> PubFiles {  get  {return (IEnumerable<PubFiles>)(PullFromCache("PubFiles"));} }
+        public IEnumerable<PubFiles> PubFiles { get { return (IEnumerable<PubFiles>)(PullFromCache("PubFiles")); } }
         private IEnumerable<PubFiles> PubFiles_Read(IEnumerable<SPTerm> termsFileTypes)
         {
-                var result = new List<PubFiles>();
+            var result = new List<PubFiles>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub",NetPing_modern.Resources.Camls.Caml_Photos_to_pub))
+            foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub", NetPing_modern.Resources.Camls.Caml_Photos_to_pub))
+            {
+                result.Add(new PubFiles
                 {
-                    result.Add(new PubFiles
-                    {
-                        Name = item["FileLeafRef"] as string
-                       ,
-                        File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
-                       ,
-                        Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/"+(item["FileLeafRef"] as string)
-                       ,
-                        Url_link = (item["Url"] as FieldUrlValue).Url
-                    });
-                }
-                //if (result.Count == 0) throw new Exception("No one PubFiles was readed!");
-                return result;
+                    Name = item["FileLeafRef"] as string
+                   ,
+                    File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
+                   ,
+                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/" + (item["FileLeafRef"] as string)
+                   ,
+                    Url_link = (item["Url"] as FieldUrlValue).Url
+                });
+            }
+            //if (result.Count == 0) throw new Exception("No one PubFiles was readed!");
+            return result;
         }
 
-        public IEnumerable<SFile> SFiles  {  get  {return (IEnumerable<SFile>)(PullFromCache("SFiles"));} }
+        public IEnumerable<SFile> SFiles { get { return (IEnumerable<SFile>)(PullFromCache("SFiles")); } }
         private IEnumerable<SFile> SFiles_Read(IEnumerable<SPTerm> termsFileTypes, IEnumerable<SPTerm> terms)
         {
-                var result = new List<SFile>();
-  
-                foreach (var item in (ListItemCollection)ReadSPList("Pub files",NetPing_modern.Resources.Camls.Caml_Pub_files))
-                {
+            var result = new List<SFile>();
 
-                    result.Add(new SFile
-                    {
-                        Id = item.Id
-                       ,
-                        Name = item["FileLeafRef"] as string
-                       ,
-                        Title = item["Title"] as string
-                       ,
-                        Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
-                       ,
-                        File_type  = (item["File_x0020_type0"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
-                       ,
-                        Created = (DateTime)item["Created"]
-                       ,
-                        Url = (item["Public_url"] as FieldUrlValue).ToFileUrlStr(item["FileLeafRef"] as string)
-                    });
-                }
-                if (result.Count == 0) throw new Exception("No one SFile was readed!");
-                return result;
+            foreach (var item in (ListItemCollection)ReadSPList("Pub files", NetPing_modern.Resources.Camls.Caml_Pub_files))
+            {
+
+                result.Add(new SFile
+                {
+                    Id = item.Id
+                   ,
+                    Name = item["FileLeafRef"] as string
+                   ,
+                    Title = item["Title"] as string
+                   ,
+                    Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
+                   ,
+                    File_type = (item["File_x0020_type0"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
+                   ,
+                    Created = (DateTime)item["Created"]
+                   ,
+                    Url = (item["Public_url"] as FieldUrlValue).ToFileUrlStr(item["FileLeafRef"] as string)
+                });
+            }
+            if (result.Count == 0) throw new Exception("No one SFile was readed!");
+            return result;
         }
 
-        public IEnumerable<Post> Posts {  get  {return (IEnumerable<Post>)(PullFromCache("Posts"));} }
+        public IEnumerable<Post> Posts { get { return (IEnumerable<Post>)(PullFromCache("Posts")); } }
         private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms)
         {
-                var result = new List<Post>();
+            var result = new List<Post>();
 
-                foreach (var item in (ListItemCollection)ReadSPList("Posts",NetPing_modern.Resources.Camls.Caml_Posts))
-                {
-                    result.Add(new Post
-                             {
-                                 Id = item.Id
-                                ,
-                                 Title = item["Title"] as string
-                                ,
-                                 Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
-                                ,
-                                 Body = (item["Body"] as string).ReplaceInternalLinks()
-                                ,
-                                 Cathegory = (item["PostCategory"] as FieldLookupValue[])[0].LookupValue.ToString()
-                                ,
-                                 IsActive = Convert.ToBoolean(item["Active"])
-                                ,
-                                 Created = (DateTime)item["Created"]
-                             });
-                }
-                if (result.Count == 0) throw new Exception("No one post was readed!");
-                return result;      
+            foreach (var item in (ListItemCollection)ReadSPList("Posts", NetPing_modern.Resources.Camls.Caml_Posts))
+            {
+                result.Add(new Post
+                         {
+                             Id = item.Id
+                            ,
+                             Title = item["Title"] as string
+                            ,
+                             Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
+                            ,
+                             Body = (item["Body"] as string).ReplaceInternalLinks()
+                            ,
+                             Cathegory = (item["PostCategory"] as FieldLookupValue[])[0].LookupValue.ToString()
+                            ,
+                             IsActive = Convert.ToBoolean(item["Active"])
+                            ,
+                             Created = (DateTime)item["Created"]
+                         });
+            }
+            if (result.Count == 0) throw new Exception("No one post was readed!");
+            return result;
         }
         #endregion
 
@@ -308,10 +349,10 @@ namespace NetPing.DAL
             }
 
             return "OK!";
-            
+
         }
 
-        
+
 
         private object PullFromCache(string cache_name)
         {
@@ -320,7 +361,7 @@ namespace NetPing.DAL
 
             // Check file cache
             Stream streamRead = null;
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name +"_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             try
             {
                 streamRead = System.IO.File.OpenRead(file_name);
@@ -330,12 +371,12 @@ namespace NetPing.DAL
             }
             catch (Exception ex)
             {
-                if (streamRead!=null) streamRead.Close();
+                if (streamRead != null) streamRead.Close();
                 UpdateAll();
                 return HttpRuntime.Cache.Get(cache_name);
             }
             HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
-            
+
             return obj;
         }
 
@@ -343,7 +384,7 @@ namespace NetPing.DAL
         {
             HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
 
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name+"_" +System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             Stream streamWrite = null;
             try
             {
@@ -354,7 +395,7 @@ namespace NetPing.DAL
             }
             catch (Exception ex)
             {
-                if (streamWrite!=null) streamWrite.Close();
+                if (streamWrite != null) streamWrite.Close();
                 //toDo log exception to log file
             }
         }
@@ -384,7 +425,7 @@ namespace NetPing.DAL
                     context.Load(lang_label);
                     context.ExecuteQuery();
 
-                    if (lang_label.Count!=0) name = lang_label[0].Value;
+                    if (lang_label.Count != 0) name = lang_label[0].Value;
                 }
 
                 terms.Add(new SPTerm
@@ -400,7 +441,7 @@ namespace NetPing.DAL
                     terms.Sort(new SPTermComparerByCustomSortOrder(term.CustomSortOrder));
 
             }
-            if (terms.Count==0) throw new Exception("No terms was readed!");
+            if (terms.Count == 0) throw new Exception("No terms was readed!");
             return terms;
         }
 
@@ -421,7 +462,7 @@ namespace NetPing.DAL
             }
         }
 
-        #region SharePoint Context 
+        #region SharePoint Context
 
 
         private ListItemCollection ReadSPList(string list_name, string caml_query)
@@ -441,7 +482,7 @@ namespace NetPing.DAL
             get
             {
                 return new NetPing.Global.Config.Config();
-                
+
                 //return DependencyResolver.Current.GetService<NetPing_modern.Global.Config.IConfig>();
             }
         }
