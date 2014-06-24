@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
@@ -142,6 +145,7 @@
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\Product_itemController.cs" />
     <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="DAL\CategoryId.cs" />
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\SPOnlineRepository.cs" />
@@ -163,6 +167,19 @@
     <Compile Include="Models\SiteText.cs" />
     <Compile Include="Models\SPTerm.cs" />
     <Compile Include="Models\TreeNode.cs" />
+    <Compile Include="PriceGeneration\CategoriesReplacementsTree.cs" />
+    <Compile Include="PriceGeneration\Category.cs" />
+    <Compile Include="PriceGeneration\CategoryNameReplacement.cs" />
+    <Compile Include="PriceGeneration\DateReplacement.cs" />
+    <Compile Include="PriceGeneration\PriceList.cs" />
+    <Compile Include="PriceGeneration\PriceListReplacementsTree.cs" />
+    <Compile Include="PriceGeneration\Product.cs" />
+    <Compile Include="PriceGeneration\ProductImageReplacement.cs" />
+    <Compile Include="PriceGeneration\ProductReplacement.cs" />
+    <Compile Include="PriceGeneration\ProductsReplacementsTree.cs" />
+    <Compile Include="PriceGeneration\Section.cs" />
+    <Compile Include="PriceGeneration\SectionNameReplacement.cs" />
+    <Compile Include="PriceGeneration\SectionsReplacemenetsTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -361,6 +378,7 @@
     <Content Include="Content\Themes\slide.css" />
     <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Price\price_template.docx" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
@@ -413,6 +431,7 @@
     <EmbeddedResource Include="Resources\Views\Catalog\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Index.ru.resx" />
     <EmbeddedResource Include="Resources\Views\InnerPages\About.ru.resx">
@@ -485,6 +504,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetPing.PriceGeneration\NetPing.PriceGeneration.csproj">
+      <Project>{27129f28-7703-4ec4-b41c-b51d0dc1ef4a}</Project>
+      <Name>NetPing.PriceGeneration</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
