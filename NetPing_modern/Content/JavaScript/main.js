@@ -39,4 +39,7 @@ $(document).ready(function($){
     {
         headers3.sshutter();
     }
+    headers3.wrapInner('<span class="dashed"></span>')
+
+    $('.text *').attr('style', '');
 });

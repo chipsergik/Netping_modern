@@ -37,3 +37,7 @@
         color: #208e34;
         line-height: 20px;
     }
+
+.shutter span.dashed {
+    border-bottom: 2px dashed #000;
+}

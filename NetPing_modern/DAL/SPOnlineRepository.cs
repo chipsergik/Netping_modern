@@ -153,7 +153,7 @@ namespace NetPing.DAL
                 //Set Long description
                 post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
                 if (post == null) dev.Long_description = "#error";
-                else dev.Long_description = CleanSpanStyles(CleanFonts(post.Body));
+                else dev.Long_description = StylishHeaders3(CleanSpanStyles(CleanFonts(post.Body)));
 
                 //Collect SFiles according device
                 // get all files where dev.Name.Path contains Device name of any device from SFile
@@ -202,6 +202,13 @@ namespace NetPing.DAL
                         tag.LastIndexOf('"') - tag.IndexOf("color") + 1);
                 }
             }
+            return str;
+        }
+
+        private String StylishHeaders3(String str)
+        {
+            //str = str.Replace("<h3", "<h3 class=\"shutter collapsed\"><span class=dashed>");
+            //str = str.Replace("</h3>", "</span></h3>");
             return str;
         }
 
