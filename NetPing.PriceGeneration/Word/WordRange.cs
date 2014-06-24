@@ -68,6 +68,16 @@ namespace NetPing.PriceGeneration.Word
             return Find(parameters, findObject);
         }
 
+        public void AddBookmark(string bookmarkName)
+        {
+            _range.Bookmarks.Add(bookmarkName);
+        }
+
+        public void UpdateFields()
+        {
+            _range.Fields.Update();
+        }
+
         public void InsertAfter(string text)
         {
             _range.InsertAfter(text);

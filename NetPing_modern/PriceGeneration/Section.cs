@@ -8,11 +8,12 @@ using System.Web;
 using HtmlAgilityPack;
 using NetPing.DAL;
 using NetPing.Models;
+using NetPing.PriceGeneration;
 using NetPing.PriceGeneration.PriceList;
 
 namespace NetPing_modern.PriceGeneration
 {
-    public class Section : ISection, IDisposable
+    public class Section : ISection, IDisposable, IBookmark
     {
         private readonly string _sectionId;
         private readonly string _categoryId;
@@ -56,7 +57,7 @@ namespace NetPing_modern.PriceGeneration
                                 ulNode.Remove();
                             }
                         }
-                        product.Description = html.DocumentNode.InnerText;
+                        product.Description = html.DocumentNode.InnerText.Replace("&#160;", " ");
 
                         product.ImageFileName = GetImageFileName(device);
 
@@ -123,6 +124,14 @@ namespace NetPing_modern.PriceGeneration
                 catch (Exception)
                 {
                 }
+            }
+        }
+
+        public string BookmarkName
+        {
+            get
+            {
+                return "Section" + _categoryId + _sectionId;
             }
         }
     }

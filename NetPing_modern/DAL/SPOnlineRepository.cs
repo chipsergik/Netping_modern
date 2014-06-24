@@ -2,25 +2,18 @@
 using Microsoft.SharePoint.Client.Taxonomy;
 using NetPing.Models;
 using System;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NetPing.PriceGeneration;
-using NetPing.PriceGeneration.PriceList;
 using NetpingHelpers;
 using NetPing.Tools;
 using NetPing.Global.Config;
-using System.Web.Mvc;
 using NetPing_modern.DAL;
 using NetPing_modern.PriceGeneration;
 using NetPing_modern.Resources.Views.Catalog;
-using Ninject;
 using System.Diagnostics;
-
-using System.Collections;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace NetPing.DAL
@@ -319,7 +312,7 @@ namespace NetPing.DAL
         {
             try
             {
-                var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
+                /*var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
@@ -345,7 +338,7 @@ namespace NetPing.DAL
                 PushToCache("PubFiles", pubFiles);
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
-                PushToCache("Devices", devices);
+                PushToCache("Devices", devices);*/
                 GeneratePriceList();
             }
             catch (Exception ex)

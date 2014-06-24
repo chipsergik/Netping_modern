@@ -171,6 +171,7 @@
     <Compile Include="PriceGeneration\Category.cs" />
     <Compile Include="PriceGeneration\CategoryNameReplacement.cs" />
     <Compile Include="PriceGeneration\DateReplacement.cs" />
+    <Compile Include="PriceGeneration\HeaderDateReplacement.cs" />
     <Compile Include="PriceGeneration\PriceList.cs" />
     <Compile Include="PriceGeneration\PriceListReplacementsTree.cs" />
     <Compile Include="PriceGeneration\Product.cs" />

@@ -36,7 +36,10 @@ namespace NetPing.PriceGeneration
                             {
                                 nextEntry.InsertAfter(nextEntry);
                             }
-                            replacementsTree.Apply(nextEntry, items[index]);
+                            object item = items[index];
+                            replacementsTree.Apply(nextEntry, item);
+
+                            AddBookmark(item, nextEntry);
                             index++;
 
                             if (index == items.Count)
@@ -61,6 +64,15 @@ namespace NetPing.PriceGeneration
                 }
             }
             
+        }
+
+        private static void AddBookmark(object item, WordRange nextEntry)
+        {
+            var bookmark = item as IBookmark;
+            if (bookmark != null)
+            {
+                nextEntry.AddBookmark(bookmark.BookmarkName);
+            }
         }
 
         protected virtual IList<object> GetItems(object source)

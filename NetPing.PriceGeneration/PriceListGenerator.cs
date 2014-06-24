@@ -34,7 +34,9 @@ namespace NetPing.PriceGeneration
                         {
                             _replacements.Apply(footer.Range, priceList);
                         }
+                    
                     }
+                    document.Content.UpdateFields();
                     document.SaveAs(outputFileName, WdSaveFormat.wdFormatPDF);
                     document.Close(false);
                 }

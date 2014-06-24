@@ -13,6 +13,7 @@ namespace NetPing_modern.PriceGeneration
         {
             var replacements = base.CreateReplacemenets();
             replacements.Add(new DateReplacement("%date%"));
+            replacements.Add(new HeaderDateReplacement("%headerdate%"));
             return replacements;
         }
     }

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseReplacemenet.cs" />
+    <Compile Include="IBookMark.cs" />
     <Compile Include="PriceList\ICategory.cs" />
     <Compile Include="PriceList\IPriceList.cs" />
     <Compile Include="IPriceListGenerator.cs" />
