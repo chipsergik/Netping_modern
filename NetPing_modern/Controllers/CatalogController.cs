@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NetPing.DAL;
-
 /*
     Страница каталога отображает 3 раздела каталога, в каждом из разделов подкаталоги:
         Удалённый мониторинг датчиков - VieBags.id=_nping_bases     /catalog.aspx?id=_nping_bases
@@ -34,6 +33,7 @@ using NetPing.DAL;
     !!! Чек-бокс и кнопку сравнения выводить, но сделать неактивными, этот функционал будут добавлен позже. !!!
 
 */
+using NetPing_modern.DAL;
 
 
 namespace NetPing.Controllers
@@ -44,23 +44,14 @@ namespace NetPing.Controllers
         // GET: /Catalog/
         public ActionResult Index(string id, string sub)
         {
-            string[] id_choice = { "_nping_bases", "_nping_power", "_swtch" };
+            string[] id_choice = { CategoryId.MonitoringId, CategoryId.PowerId, CategoryId.SwitchesId };
             var repository = new SPOnlineRepository();
 
             id=id_choice.FirstOrDefault(x => x == id);
             if (id == null) id = id_choice[0];
             if (sub == "" || sub == null) sub = id;
 
-            /*
-            var Devices = repository.Devices.Where(dev => dev.Key.Contains(sub) 
-                                                   && 
-                                                   !dev.Key.Contains("#")
-                                                   &&
-                                                   dev.Label.OwnNameFromPath != "Archive"
-                                                  );
-            */
-            var dev_group = repository.Devices.FirstOrDefault(d => d.Key == sub + "#");
-            var Devices = repository.Devices.Where(dev => dev.IsInGroup(dev_group) && !dev.IsGroup() && dev.Label.OwnNameFromPath!="Archive");
+            var Devices = repository.GetDevices(id, sub);
             ViewBag.id = id;
             ViewBag.sub = sub;
             return View(Devices);

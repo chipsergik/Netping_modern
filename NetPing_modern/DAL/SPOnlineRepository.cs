@@ -2,21 +2,18 @@
 using Microsoft.SharePoint.Client.Taxonomy;
 using NetPing.Models;
 using System;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using NetPing.PriceGeneration;
 using NetpingHelpers;
 using NetPing.Tools;
 using NetPing.Global.Config;
-using System.Web.Mvc;
 using NetPing_modern.DAL;
-using Ninject;
+using NetPing_modern.PriceGeneration;
+using NetPing_modern.Resources.Views.Catalog;
 using System.Diagnostics;
-
-using System.Collections;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace NetPing.DAL
@@ -342,6 +339,7 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
+                GeneratePriceList();
             }
             catch (Exception ex)
             {
@@ -352,6 +350,59 @@ namespace NetPing.DAL
 
         }
 
+        public IEnumerable<Device> GetDevices(string id, string groupId)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentNullException("id");
+
+            if (string.IsNullOrEmpty(groupId))
+                throw new ArgumentNullException("groupId");
+
+            var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
+            var devices = Devices.Where(d => d.IsInGroup(group) && !d.IsGroup() && d.Label.OwnNameFromPath != "Archive");
+            return devices;
+        }
+
+        private void GeneratePriceList()
+        {
+            using (var priceList = new PriceList())
+            {
+                var monitoring = new Category(Index.Sec_monitoring);
+
+                monitoring.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
+                monitoring.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
+                monitoring.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.MonitoringId, CategoryId.MonitoringSection.AccessoriesId));
+                monitoring.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
+                priceList.Categories.Add(monitoring);
+
+                var power = new Category(Index.Sec_power);
+                power.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
+                power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
+                power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
+                power.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
+                priceList.Categories.Add(power);
+
+
+                var switches = new Category(Index.Sec_switch);
+                switches.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
+                switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
+                switches.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
+                priceList.Categories.Add(switches);
+
+                var priceRepl = new PriceListReplacementsTree();
+                var categoriesRepl = new CategoriesReplacementsTree();
+                var sectionsRepl = new SectionsReplacemenetsTree();
+                var productsRepl = new ProductsReplacementsTree();
+
+                sectionsRepl.Add("%StartProducts%*%EndProducts%", productsRepl);
+                categoriesRepl.Add("%StartSections%*%EndSections%", sectionsRepl);
+                priceRepl.Add("%StartCategories%*%EndCategories%", categoriesRepl);
+
+                var generator = new PriceListGenerator(priceRepl);
+                generator.Generate(priceList, new FileInfo(HttpContext.Current.Server.MapPath("Content/Price/price_template.docx")),
+                    HttpContext.Current.Server.MapPath("Content/Data/Price.pdf"));
+            }
+        }
 
 
         private object PullFromCache(string cache_name)
