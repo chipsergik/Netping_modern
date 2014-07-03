@@ -50,7 +50,7 @@
     $('#sideslider').tinycarousel({
         axis: "y",
         buttons: true,
-        start: 1,
+        start: 0,
         interval: true,
 
         animation: true
