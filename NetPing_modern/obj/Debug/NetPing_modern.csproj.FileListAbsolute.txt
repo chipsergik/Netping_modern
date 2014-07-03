@@ -210,3 +210,4 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetP
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\ru\NetPing_modern.resources.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\Microsoft.Web.Mvc.dll

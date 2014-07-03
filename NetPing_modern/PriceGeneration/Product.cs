@@ -11,5 +11,6 @@ namespace NetPing_modern.PriceGeneration
         public string Cost { get; set; }
 
         public string ImageFileName { get; set; }
+        public string Url { get; set; }
     }
 }
