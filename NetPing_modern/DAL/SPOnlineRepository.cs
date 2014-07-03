@@ -312,7 +312,7 @@ namespace NetPing.DAL
         {
             try
             {
-                /*var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
+                var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
@@ -338,7 +338,7 @@ namespace NetPing.DAL
                 PushToCache("PubFiles", pubFiles);
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
-                PushToCache("Devices", devices);*/
+                PushToCache("Devices", devices);
                 GeneratePriceList();
             }
             catch (Exception ex)
@@ -377,15 +377,15 @@ namespace NetPing.DAL
 
                 var power = new Category(Index.Sec_power);
                 power.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
-                power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
-                power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
+                //power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
+                //power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
                 power.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
                 priceList.Categories.Add(power);
 
 
                 var switches = new Category(Index.Sec_switch);
                 switches.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
-                switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
+                //switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
                 switches.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
                 priceList.Categories.Add(switches);
 
