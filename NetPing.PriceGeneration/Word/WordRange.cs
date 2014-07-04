@@ -78,6 +78,18 @@ namespace NetPing.PriceGeneration.Word
             _range.Fields.Update();
         }
 
+        public void AddHyperLink(string url, string text)
+        {
+            _range.Hyperlinks.GetType().InvokeMember("Add", BindingFlags.InvokeMethod, null, _range.Hyperlinks, new object[]
+                                                                                                        {
+                                                                                                            _range, 
+                                                                                                            url,
+                                                                                                            null,
+                                                                                                            null,
+                                                                                                            text
+                                                                                                        });
+        }
+
         public void InsertAfter(string text)
         {
             _range.InsertAfter(text);

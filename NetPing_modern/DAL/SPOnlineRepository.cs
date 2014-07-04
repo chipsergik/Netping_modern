@@ -384,15 +384,15 @@ namespace NetPing.DAL
 
                 var power = new Category(Index.Sec_power);
                 power.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
-                //power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
-                //power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
+                power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
+                power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
                 power.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
                 priceList.Categories.Add(power);
 
 
                 var switches = new Category(Index.Sec_switch);
                 switches.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
-                //switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
+                switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
                 switches.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
                 priceList.Categories.Add(switches);
 

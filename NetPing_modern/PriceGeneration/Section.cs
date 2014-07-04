@@ -4,8 +4,13 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Security.Policy;
 using System.Web;
+using System.Web.Http.Routing;
+using System.Web.Routing;
 using HtmlAgilityPack;
+using Microsoft.Web.Mvc;
+using NetPing.Controllers;
 using NetPing.DAL;
 using NetPing.Models;
 using NetPing.PriceGeneration;
@@ -26,47 +31,51 @@ namespace NetPing_modern.PriceGeneration
             SectionName = sectionName;
         }
 
-        private ICollection<IProduct> _products; 
+        private ICollection<IProduct> _products;
+
+        private ICollection<IProduct> GetProducts(SPOnlineRepository repository, string categoryId, string sectionId)
+        {
+            var devs = repository.GetDevices(categoryId, sectionId);
+            var result = new Collection<IProduct>();
+            foreach (var device in devs)
+            {
+                var product = new Product();
+                var price = device.Price;
+                if (price != null && price > 0)
+                {
+                    product.Cost = string.Format(new CultureInfo(1035), "{0:N0} {1}", price, device.GetCurrency);
+                }
+
+                product.Title = device.Name.Name;
+
+                var htmlDoc = new HtmlDocument();
+                htmlDoc.LoadHtml(device.Short_description);
+                var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                if (ulNodes != null)
+                {
+                    foreach (var ulNode in ulNodes)
+                    {
+                        ulNode.Remove();
+                    }
+                }
+                product.Description = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
+
+                product.ImageFileName = GetImageFileName(device);
+                var url =
+                    LinkBuilder.BuildUrlFromExpression<Product_itemController>(
+                        new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
+                        RouteTable.Routes, c => c.Index(device.Key));
+                Uri uri = HttpContext.Current.Request.Url;
+                product.Url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);
+
+                result.Add(product);
+            }
+            return result;
+        }
 
         public ICollection<IProduct> Products
         {
-            get
-            {
-                if (_products == null)
-                {
-                    var devs = _repository.GetDevices(_categoryId, _sectionId);
-                    _products = new Collection<IProduct>();
-                    foreach (var device in devs)
-                    {
-                        var product = new Product();
-                        var price = device.Price;
-                        if (price != null && price > 0)
-                        {
-                            product.Cost = string.Format(new CultureInfo(1035), "{0:N0} {1}", price, device.GetCurrency);
-                        }
-
-                        product.Title = device.Name.Name;
-
-                        HtmlDocument html = new HtmlDocument();
-                        html.LoadHtml(device.Short_description);
-                        var ulNodes = html.DocumentNode.SelectNodes("//ul");
-                        if (ulNodes != null)
-                        {
-                            foreach (var ulNode in ulNodes)
-                            {
-                                ulNode.Remove();
-                            }
-                        }
-                        product.Description = html.DocumentNode.InnerText.Replace("&#160;", " ");
-
-                        product.ImageFileName = GetImageFileName(device);
-
-                        _products.Add(product);
-                    }
-                }
-
-                return _products;
-            }
+            get { return _products ?? (_products = GetProducts(_repository, _categoryId, _sectionId)); }
         }
 
         private string GetImageFileName(Device device)

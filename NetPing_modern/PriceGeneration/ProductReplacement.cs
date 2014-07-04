@@ -29,7 +29,14 @@ namespace NetPing_modern.PriceGeneration
             if (line == null)
                 return;
 
-            InsertLines(range, new string[] {line});
+            if (string.Equals(argument, "title", StringComparison.InvariantCultureIgnoreCase))
+            {
+                range.AddHyperLink(product.Url, line);
+            }
+            else
+            {
+                InsertLines(range, new string[] { line });
+            }
         }
 
         private string ComposeLine(IProduct product, string argument)

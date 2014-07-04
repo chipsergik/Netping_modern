@@ -6,5 +6,6 @@
         string Description { get; }
         string Cost { get; }
         string ImageFileName { get; }
+        string Url { get; }
     }
 }
