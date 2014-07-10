@@ -112,7 +112,7 @@
 
 #slider3-pager-nav {
     height: 50px;
-    margin-bottom: 35px;
+    margin-bottom: 17px;
 }
 
 #slider3-pager img {
@@ -130,6 +130,9 @@
 
 #slider3 {
     border: 2px solid #e7e7e7;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
     #slider3 li {
@@ -147,7 +150,7 @@
     background-repeat: no-repeat;
     background-image: url(../Images/ProductPageImg/item_gallery_navi_next.png);
     position: absolute;
-    right: -5px;
+    right: 0px;
     top: 208px;
     text-indent: -9999px;
 }

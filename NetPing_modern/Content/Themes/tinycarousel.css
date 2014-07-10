@@ -1,0 +1,57 @@
+/* Tiny Carousel */
+#sideslider {
+    height: 1%;
+    overflow: hidden;
+    padding: 0 0 10px;
+}
+
+    #sideslider .viewport {
+        float: left;
+        width: 165px;
+        height: 520px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #sideslider .buttons {
+        background: #144e5a;
+        cursor: pointer;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../Images/ProductPageImg/item_gallery_navi_up.png);
+        display: block;
+        float: left;
+        width: 102px;
+        height: 15px;
+        position: relative;
+        font-size: 22px;
+        margin: 10px 32px;
+    }
+
+        #sideslider .buttons.next {
+            background-image: url(../Images/ProductPageImg/item_gallery_navi_down.png);
+        }
+
+
+    #sideslider .disable {
+        visibility: hidden;
+    }
+
+    #sideslider .overview {
+        list-style: none;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 165px;
+        left: 0;
+        top: 0;
+    }
+
+        #sideslider .overview li {
+            float: left;
+            margin: 0 20px 0 0;
+            padding: 1px;
+            /*border: 1px solid #dcdcdc;*/
+            width: 165px;
+            height: 165px;
+        }

@@ -216,6 +216,17 @@ input:focus {
     margin: 10px 0 0;
 }
 
+.cat_item a
+{
+	color: #208e34;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.cat_item a:hover{
+text-decoration: hover;
+}
+
     .cat_item .desc .left {
         width: 148px;
     }
@@ -283,10 +294,7 @@ input:focus {
         background-color: #f6fcfb;
     }
 
-        .cat_item .cat_pr:hover a {
-            text-decoration: underline;
-        }
-
+      
     .cat_item .cat_pr {
         padding-top: 15px;
         padding-bottom: 5px;

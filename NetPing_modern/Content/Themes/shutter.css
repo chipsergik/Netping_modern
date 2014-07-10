@@ -1,17 +1,43 @@
-.shutter {
+﻿.shutter {
     display: block;
     cursor: pointer;
     margin: 3px 0;
 }
 
-.shutter + div {
-    margin: 0 5px;
-}
+    .shutter + div {
+        margin: 0 5px;
+    }
 
-.shutter.collapsed {
-    background: url("../Images/ProductPageImg/plus.png") no-repeat right center;
-}
+    .shutter.collapsed {
+        /*background: url("../Images/ProductPageImg/plus.png") no-repeat right center;*/
+    }
 
-.shutter.expanded {
-    background: url("../Images/ProductPageImg/minus.png") no-repeat right center;
+
+        .shutter.collapsed:after {
+            content: "развернуть ↓";
+            float: right;
+            font-size: 11px;
+            color: #208e34;
+            line-height: 20px;
+        }
+
+        .shutter.collapsed:hover:after, .shutter.expanded:hover:after {
+            text-decoration: underline;
+        }
+
+
+    .shutter.expanded; {
+        /*background: url("../Images/ProductPageImg/minus.png") no-repeat right center;*/
+    }
+
+    .shutter.expanded:after {
+        float: right;
+        content: "свернуть ↑";
+        font-size: 11px;
+        color: #208e34;
+        line-height: 20px;
+    }
+
+.shutter span.dashed {
+    border-bottom: 2px dashed #404040;
 }
