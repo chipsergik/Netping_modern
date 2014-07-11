@@ -126,6 +126,24 @@
   <data name="Category_switch" xml:space="preserve">
     <value>Ethernet switchs and POE devices</value>
   </data>
+  <data name="Header_ask" xml:space="preserve">
+    <value>Ask a question</value>
+  </data>
+  <data name="Header_email_sales" xml:space="preserve">
+    <value>sales@netping.ru</value>
+  </data>
+  <data name="Header_email_support" xml:space="preserve">
+    <value>support@netping.ru</value>
+  </data>
+  <data name="Header_goods_in_basket" xml:space="preserve">
+    <value>Goods in the basket</value>
+  </data>
+  <data name="Header_phone" xml:space="preserve">
+    <value>+886-2-23121582</value>
+  </data>
+  <data name="Header_to_buy" xml:space="preserve">
+    <value>To buy</value>
+  </data>
   <data name="Menu_about" xml:space="preserve">
     <value>About</value>
   </data>
@@ -137,6 +155,9 @@
   </data>
   <data name="Menu_ideas" xml:space="preserve">
     <value>Ideas!</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>phone</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Products</value>

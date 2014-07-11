@@ -117,49 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Category_monitoring" xml:space="preserve">
-    <value>Мониторинг Датчиков</value>
+  <data name="helpers_details" xml:space="preserve">
+    <value>details</value>
   </data>
-  <data name="Category_power_control" xml:space="preserve">
-    <value>Управление Элекропитанием</value>
+  <data name="New_models" xml:space="preserve">
+    <value>New devices</value>
   </data>
-  <data name="Category_switch" xml:space="preserve">
-    <value>Коммутаторы Ethernet POE устройства</value>
-  </data>
-  <data name="Header_ask" xml:space="preserve">
-    <value>Задать вопрос</value>
-  </data>
-  <data name="Header_email_sales" xml:space="preserve">
-    <value>sales@netping.ru</value>
-  </data>
-  <data name="Header_email_support" xml:space="preserve">
-    <value>support@netping.ru</value>
-  </data>
-  <data name="Header_goods_in_basket" xml:space="preserve">
-    <value>Товаров в корзине</value>
-  </data>
-  <data name="Header_phone" xml:space="preserve">
-    <value>+7 /495/ 646-85-37</value>
-  </data>
-  <data name="Header_to_buy" xml:space="preserve">
-    <value>Купить</value>
-  </data>
-  <data name="Menu_about" xml:space="preserve">
-    <value>О компании</value>
-  </data>
-  <data name="Menu_contacts" xml:space="preserve">
-    <value>Контакты</value>
-  </data>
-  <data name="Menu_dealers" xml:space="preserve">
-    <value>Дилеры</value>
-  </data>
-  <data name="Menu_ideas" xml:space="preserve">
-    <value>Идеи!</value>
-  </data>
-  <data name="Phone" xml:space="preserve">
-    <value>тел.</value>
-  </data>
-  <data name="Products" xml:space="preserve">
-    <value>Продукты</value>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
   </data>
 </root>
