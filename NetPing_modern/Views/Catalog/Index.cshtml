@@ -158,9 +158,11 @@
                                 </ul>
                             </div>
                             
-                            <a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить каталог продукции в PDF</a>
-                            <!-- <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>
-                            -->
+                            @if (NetpingHelpers.Helpers.IsCultureRus)
+                            {
+                                <a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить прайс-лист продукции в PDF</a>
+                                <!-- <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>       -->
+                            }
                         </div>
 
                         <div class="right main catalog">

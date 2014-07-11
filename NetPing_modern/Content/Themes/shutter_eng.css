@@ -14,7 +14,7 @@
 
     
         .shutter.collapsed:after {
-            content:"развернуть ↓";
+            content:"details ↓";
             float: right;
             font-size: 11px;
             color: #208e34;
@@ -32,7 +32,7 @@
 
     .shutter.expanded:after {
         float: right;
-        content: "свернуть ↑";
+        content: "hide ↑";
         font-size: 11px;
         color: #208e34;
         line-height: 20px;

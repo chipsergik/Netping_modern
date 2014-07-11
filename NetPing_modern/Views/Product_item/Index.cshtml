@@ -15,7 +15,11 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Themes/ProductPageStyle.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Themes/responsiveslides.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Themes/slide.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter.css">
+    @if ( NetpingHelpers.Helpers.IsCultureEng) {
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter_eng.css">
+    } else {
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter.css">
+    }
     <link href="~/Content/Themes/tinycarousel.css" rel="stylesheet" />
     <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
     <script src="~/Content/JavaScript/modernizr.js"></script>

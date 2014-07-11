@@ -138,6 +138,9 @@
   <data name="Sec_spec" xml:space="preserve">
     <value>Specification</value>
   </data>
+  <data name="Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
   <data name="Title_connected" xml:space="preserve">
     <value>Connected:</value>
   </data>

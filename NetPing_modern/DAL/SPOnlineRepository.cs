@@ -379,7 +379,7 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
-                GeneratePriceList();
+                if (Helpers.IsCultureRus) GeneratePriceList();
             }
             catch (Exception ex)
             {

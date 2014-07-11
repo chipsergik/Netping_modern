@@ -380,6 +380,7 @@
     <Content Include="Content\Themes\product_item_styles.css" />
     <Content Include="Content\Themes\reset.css" />
     <Content Include="Content\Themes\responsiveslides.css" />
+    <Content Include="Content\Themes\shutter_eng.css" />
     <Content Include="Content\Themes\shutter.css" />
     <Content Include="Content\Themes\slide.css" />
     <Content Include="Content\Themes\tinycarousel.css" />
