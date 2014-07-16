@@ -304,7 +304,17 @@ input:focus {
         .cat_item .action .compare label {
             font: 700 14px 'Corbel', sans-serif;
             margin: 0 0 0 20px;
+            cursor: pointer;
+            padding: 2px 0;
+            display: inline-block;
         }
+
+            .cat_item .action .compare label input[type=checkbox] {
+                position: relative;
+                vertical-align: middle;
+                bottom: 1px;
+                margin-right: 20px;
+            }
 
         .cat_item .action .compare input[type=submit] {
             background: #afe0c1;
@@ -317,10 +327,10 @@ input:focus {
             width: 94px;
         }
 
-        .cat_item .action .compare input[type=submit].disabled {
-            background: #d3d3d3;
-            color: grey;
-        }
+            .cat_item .action .compare input[type=submit].disabled {
+                background: #d3d3d3;
+                color: grey;
+            }
 
     .cat_item .action .price {
         /*    font: 14px sans-serif;
@@ -339,9 +349,9 @@ input:focus {
             cursor: pointer;
         }
 
-        .cat_item .action .price span:hover{
-            background-color: #c5c2be;
-        }
+            .cat_item .action .price span:hover {
+                background-color: #c5c2be;
+            }
 
 #selectedSection {
     font-size: 21px;
