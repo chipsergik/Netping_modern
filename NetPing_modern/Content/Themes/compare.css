@@ -42,7 +42,7 @@
 #compareTable td, #compareTable th {
     width: 230px;
     padding: 5px 10px;
-    vertical-align: baseline;
+    vertical-align: top;
 }
 
     #compareTable th:first-child div {
@@ -169,3 +169,13 @@
         font-size: 14px;
         font-weight: 400;
     }
+
+#compareTable th a{
+    color: inherit;
+    font: inherit;
+}
+
+
+#compareTable th a:hover{
+    text-decoration: underline;
+}

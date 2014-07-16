@@ -80,7 +80,10 @@
                                         <th>Все параметры <div><label><input type="checkbox" id="showDistinct" />Только отличия</label></div></th>
                                         @foreach (var device in Model.Devices)
                                         {
-                                            <th>@device.Name.Name</th>
+                                            <th>
+                                        @Html.ActionLink(device.Name.Name, "Index", "Product_item", new { id = device.Key }, new { }) 
+                                                
+                                            </th>
                                         }
                                     </tr>
                                     <tr class="price">
