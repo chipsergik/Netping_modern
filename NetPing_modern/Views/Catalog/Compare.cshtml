@@ -1,4 +1,6 @@
-﻿@model NetPing_modern.Models.DevicesCompare
+﻿@using NetPing_modern.Resources.Views.Catalog
+
+@model NetPing_modern.Models.DevicesCompare
 
 @{
     Layout = null;
@@ -43,7 +45,7 @@
             <div class="content">
                 @if (Model.Devices == null || Model.Devices.Count < 2)
                 {
-                    <span>Должно быть выбрано минимум два устройства для сравнения</span>
+                    <span>@Compare.Warn</span>
                 }
                 else
                 {
@@ -53,8 +55,8 @@
                                 <thead>
                                     <tr>
                                         <th class="back-button">
-                                            Сравнение товаров
-                                            @Html.ActionLink("Назад", "Index")
+                                            @Compare.Compare_str
+                                            @Html.ActionLink(@Compare.Back, "Index")
                                         </th>
                                         @foreach (var device in Model.Devices)
                                         {
@@ -77,7 +79,7 @@
                                     </tr>
 
                                     <tr>
-                                        <th>Все параметры <div><label><input type="checkbox" id="showDistinct" />Только отличия</label></div></th>
+                                        <th>@Compare.All_params <div><label><input type="checkbox" id="showDistinct" />@Compare.Only_difference</label></div></th>
                                         @foreach (var device in Model.Devices)
                                         {
                                             <th>
@@ -87,7 +89,7 @@
                                         }
                                     </tr>
                                     <tr class="price">
-                                        <td>Цена</td>
+                                        <td>@Compare.Price</td>
                                         @foreach (var device in Model.Devices)
                                         {
                                             <td>
