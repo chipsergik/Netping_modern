@@ -163,6 +163,8 @@
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\DeviceParameterEqualityComparer.cs" />
+    <Compile Include="Models\DevicesCompare.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\DeviceParameter.cs" />
     <Compile Include="Models\Post.cs" />
@@ -201,6 +203,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Other.resx</DependentUpon>
+    <Compile Include="Resources\Views\Catalog\Compare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Compare.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Views\Catalog\Index.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -361,6 +367,7 @@
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\JavaScript\cart.js" />
+    <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
@@ -377,6 +384,7 @@
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
+    <Content Include="Content\Themes\compare.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\korzina.css" />
     <Content Include="Content\Themes\main.css" />
@@ -419,6 +427,7 @@
     <Content Include="Views\Shared\Korzina.cshtml" />
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
+    <Content Include="Views\Catalog\Compare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -447,6 +456,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Other.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Catalog\Compare.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Compare.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Catalog\Compare.ru.resx" />
     <EmbeddedResource Include="Resources\Views\Catalog\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>

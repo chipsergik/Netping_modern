@@ -40,6 +40,23 @@ $(document).ready(function($){
         headers3.sshutter();
     }
     headers3.wrapInner('<span class="dashed"></span>')
+	$('.text *').attr('style', '');
+    Catalog.prototype.init = function(){
+        $('input[name="compare"]:checkbox').change(function(){
+            var enabledCompare = ($('input[name="compare"]:checkbox:checked').length > 1);
+            var compareBtnSelector = '.comparebtn';
+            if (enabledCompare)
+            {
+                $(compareBtnSelector).removeAttr('disabled');
+                $(compareBtnSelector).removeClass('disabled');
+            }
+            else
+            {
+                $(compareBtnSelector).attr('disabled', 'disabled');
+                $(compareBtnSelector).addClass('disabled');
+            }
+        });
+    };
 
-    $('.text *').attr('style', '');
-});
+    return new Catalog();
+})();

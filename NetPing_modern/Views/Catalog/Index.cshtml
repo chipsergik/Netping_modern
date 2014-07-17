@@ -36,6 +36,9 @@
         <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
         <script src="~/Content/JavaScript/modernizr.js"></script>
         <script src="~/Content/JavaScript/main.js"></script>
+        <script>
+            $(CatalogJs.init);
+        </script>
     </head>
     <body>
         <div class="page">
@@ -175,89 +178,95 @@
                                 <div class="left"><img src="@selectedSectionImage" style="width: 45px; height: 45px" alt="" title="" /></div>
                                 <div class="right">@titTitle.Replace("<br/>", " ")</div>
                             </div>
-
-                            @foreach (Device device in Model)
+                            @using (Html.BeginForm("Compare", "Catalog", FormMethod.Get))
                             {
-                                string link="/product_item.aspx?id=" + @device.Key;
-                                <div class="cat_item">
-                                        
-                                    <div style="display: none">
-                                        <p class="Price">
-                                            @device.Price
-                                        </p>
-                                        <p class="ID">
-                                            @device.Name.Id
-                                        </p>
-                                        <p class="Key">
-                                            @device.Key.Replace("#", "")
-                                        </p>
-                                        <p class="Name">
-                                            @device.Name.Name
-                                        </p>
-                                        <p class="PhotoURL">
-                                            @{
-                                var photo1 = device.DevicePhotos.FirstOrDefault(p => p.IsBig);
-                                if (photo1 != null)
+                                foreach (Device device in Model)
                                 {
-                                    @photo1.Url;
-                                }
-                                            }
-                                        </p>
-                                    </div>    
-
-                                        <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
-                                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
-
-                                            <div class="right">
-                                                <a href="@link" class="title">@device.Name.Name</a>
-                                                <div class="text">
-                                                    <p> @Html.Raw(device.Short_description)</p>
-                                                </div>
-                                            </div>                                  
-                                        </div> 
-
-                                    <div class="action clearfix">
-                                        @{
-                                            string className = "new";
-                                            if (!String.IsNullOrWhiteSpace(device.Label.Name))
-                                            {
-                                                switch (device.Label.OwnNameFromPath)
-                                                {
-                                                    case "New":
-                                                    {
-                                                        className = "new";
-                                                        break;
-                                                    }
-                                                    case "EOL":
-                                                    {
-                                                        className = "eol";
-                                                        break;
-                                                    }
-                                                    case "Archive":
-                                                    {
-                                                        className = "archive";
-                                                        break;
-                                                    }
+                                    string link="/product_item.aspx?id=" + @device.Key;
+                                    <div class="cat_item">
+                                        
+                                        <div style="display: none">
+                                            <p class="Price">
+                                                @device.Price
+                                            </p>
+                                            <p class="ID">
+                                                @device.Name.Id
+                                            </p>
+                                            <p class="Key">
+                                                @device.Key.Replace("#", "")
+                                            </p>
+                                            <p class="Name">
+                                                @device.Name.Name
+                                            </p>
+                                            <p class="PhotoURL">
+                                                @{
+                                    var photo1 = device.DevicePhotos.FirstOrDefault(p => p.IsBig);
+                                    if (photo1 != null)
+                                    {
+                                        @photo1.Url;
+                                    }
                                                 }
-                                                <div class="type left"><span class="@className">@device.Label.Name</span></div>
+                                            </p>
+                                        </div>    
+
+                                            <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
+                                            <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
+
+                                                <div class="right">
+                                                    <a href="@link" class="title">@device.Name.Name</a>
+                                                    <div class="text">
+                                                        <p> @Html.Raw(device.Short_description)</p>
+                                                    </div>
+                                                </div>                                  
+                                            </div> 
+
+                                        <div class="action clearfix">
+                                            @{
+                                                string className = "new";
+                                                if (!String.IsNullOrWhiteSpace(device.Label.Name))
+                                                {
+                                                    switch (device.Label.OwnNameFromPath)
+                                                    {
+                                                        case "New":
+                                                        {
+                                                            className = "new";
+                                                            break;
+                                                        }
+                                                        case "EOL":
+                                                        {
+                                                            className = "eol";
+                                                            break;
+                                                        }
+                                                        case "Archive":
+                                                        {
+                                                            className = "archive";
+                                                            break;
+                                                        }
+                                                    }
+                                                    <div class="type left"><span class="@className">@device.Label.Name</span></div>
+                                                }
+                                                else
+                                                {
+                                                    <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
+                                                }
                                             }
-                                            else
-                                            {
-                                                <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
-                                            }
-                                        }
-                                        <!--
-                                        <div class="compare left">
-                                            <form action="/" method="POST" class="clearfix">
-                                                <div class="left"><input type="checkbox" disabled name="compare" /><label>@Index.Txt_compare_dev</label></div>
-                                                <div><input type="submit" disabled value="@Index.Txt_compare"/></div>
-                                            </form>
+                                        
+                                            <div class="row">
+                                                <div class="compare">
+                                                    <div class="right"><input type="submit" class="comparebtn disabled" disabled="disabled" value="@Index.Txt_compare"/></div>
+                                                    <div class="right"><label><input type="checkbox" name="compare" value="@device.Id" />@Index.Txt_compare_dev</label>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
+                                            </div>
+                                            
                                         </div>
-                                            -->
-                                        <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
                                     </div>
-                                </div>
                                 
+                                }
                             }
                         </div>
 

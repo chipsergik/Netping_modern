@@ -1,0 +1,155 @@
+﻿@using NetPing_modern.Resources.Views.Catalog
+
+@model NetPing_modern.Models.DevicesCompare
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Compare</title>
+
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Themes/header-footer.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Themes/CatalogPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Themes/compare.css" />
+    <link href="~/Content/Themes/responsiveslides.css" rel="stylesheet" />
+
+    <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
+    <script src="~/Content/JavaScript/modernizr.js"></script>
+    <script src="~/Content/JavaScript/responsiveslides.min.js"></script>
+    <script src="~/Content/JavaScript/CompareJs.js"></script>
+    <script>
+        $(function () {
+            var deviceCount = @Model.Devices.Count;
+            var compareJs = new CompareJs($('#compareTable'), deviceCount);
+            $('#showDistinct').change(function () {
+                if ($(this).is(':checked')) {
+                    compareJs.showDistinct();
+                } else {
+                    compareJs.showAll();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="main">
+            @RenderPage("../Shared/Header.cshtml")
+            <div class="content">
+                @if (Model.Devices == null || Model.Devices.Count < 2)
+                {
+                    <span>@Compare.Warn</span>
+                }
+                else
+                {
+                    <div class="outer">
+                        <div class="inner">
+                            <table id="compareTable">
+                                <thead>
+                                    <tr>
+                                        <th class="back-button">
+                                            @Compare.Compare_str
+                                            @Html.ActionLink(@Compare.Back, "Index")
+                                        </th>
+                                        @foreach (var device in Model.Devices)
+                                        {
+                                            var devicePhoto = device.DevicePhotos.FirstOrDefault(x => x.IsBig);
+                                            if (devicePhoto != null)
+                                            {
+                                                <th>
+                                                    <ul class="rslides compareSlider">
+                                                        <li><img class="bigImageSize" src="@devicePhoto.Url" /></li>
+                                                    </ul><span class="searchIcon"></span>
+                                                </th>
+                                            }
+
+                                            else
+                                            {
+                                                <th></th>
+                                            }
+
+                                        }
+                                    </tr>
+
+                                    <tr>
+                                        <th>@Compare.All_params <div><label><input type="checkbox" id="showDistinct" />@Compare.Only_difference</label></div></th>
+                                        @foreach (var device in Model.Devices)
+                                        {
+                                            <th>
+                                        @Html.ActionLink(device.Name.Name, "Index", "Product_item", new { id = device.Key }, new { }) 
+                                                
+                                            </th>
+                                        }
+                                    </tr>
+                                    <tr class="price">
+                                        <td>@Compare.Price</td>
+                                        @foreach (var device in Model.Devices)
+                                        {
+                                            <td>
+                                                <div style="display: none">
+                                                    <p class="Price">
+                                                        @device.Price
+                                                    </p>
+                                                    <p class="ID">
+                                                        @device.Name.Id
+                                                    </p>
+                                                    <p class="Key">
+                                                        @device.Key.Replace("#", "")
+                                                    </p>
+                                                    <p class="Name">
+                                                        @device.Name.Name
+                                                    </p>
+                                                    <p class="PhotoURL">
+                                                        @{
+                                            var photo1 = device.DevicePhotos.FirstOrDefault(p => p.IsBig);
+                                            if (photo1 != null)
+                                            {
+                                                @photo1.Url;
+                                            }
+                                                        }
+                                                    </p>
+                                                </div>
+                                                <div class="cart shopItem">@device.Price @device.GetCurrency</div>
+                                            </td>
+                                        }
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var parameter in Model.Parameters)
+                                    {
+                                        <tr>
+                                            <td>@parameter.Name.Name</td>
+                                            @foreach (var device in Model.Devices)
+                                            {
+
+                                                var devParam = device.DeviceParameters.FirstOrDefault(p => p.Name.OwnNameFromPath == parameter.Name.OwnNameFromPath);
+                                                var value = devParam == null ? " - " : devParam.Value;
+                                                <td>
+                                                    @value
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="overlay"></div>
+                            <div class="popup" id="popup1"></div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    @RenderPage("../Shared/Cart.cshtml")
+</body>
+</html>

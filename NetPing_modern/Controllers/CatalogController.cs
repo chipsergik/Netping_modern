@@ -34,6 +34,8 @@ using NetPing.DAL;
 
 */
 using NetPing_modern.DAL;
+using NetPing.Models;
+using NetPing_modern.Models;
 
 
 namespace NetPing.Controllers
@@ -55,6 +57,38 @@ namespace NetPing.Controllers
             ViewBag.id = id;
             ViewBag.sub = sub;
             return View(Devices);
+        }
+
+        public ActionResult Compare(int[] compare)
+        {
+            var model = new DevicesCompare();
+
+            if (compare == null || compare.Length < 2)
+                return View(model);
+
+            var repository = new SPOnlineRepository();
+            
+            model.Devices = repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
+            IEnumerable<DeviceParameter> collection = null;
+            var deviceParameterEqualityComparer = new DeviceParameterEqualityComparer();
+            for (int i = 0; i < model.Devices.Count - 1; i++)
+            {
+                var device = model.Devices[i];
+                var next = model.Devices[i + 1];
+                if (collection == null)
+                {
+                    collection = device.DeviceParameters.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
+                else
+                {
+                    collection = collection.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
+            }
+
+            if (collection != null)
+                model.Parameters = new List<DeviceParameter>(collection.Distinct(deviceParameterEqualityComparer));
+
+            return View(model);
         }
 	}
 }
