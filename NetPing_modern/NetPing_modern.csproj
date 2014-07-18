@@ -203,6 +203,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Other.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Catalog\Compare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
