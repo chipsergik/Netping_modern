@@ -41,17 +41,22 @@ $(document).ready(function($){
     }
     headers3.wrapInner('<span class="dashed"></span>')
 	$('.text *').attr('style', '');
-    Catalog.prototype.init = function(){
-        $('input[name="compare"]:checkbox').change(function(){
+}); 
+
+
+var CatalogJs = (function () {
+    function Catalog() {
+    };
+
+    Catalog.prototype.init = function () {
+        $('input[name="compare"]:checkbox').change(function () {
             var enabledCompare = ($('input[name="compare"]:checkbox:checked').length > 1);
             var compareBtnSelector = '.comparebtn';
-            if (enabledCompare)
-            {
+            if (enabledCompare) {
                 $(compareBtnSelector).removeAttr('disabled');
                 $(compareBtnSelector).removeClass('disabled');
             }
-            else
-            {
+            else {
                 $(compareBtnSelector).attr('disabled', 'disabled');
                 $(compareBtnSelector).addClass('disabled');
             }
