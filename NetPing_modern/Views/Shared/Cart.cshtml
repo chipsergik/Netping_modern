@@ -4,6 +4,13 @@
 }
 <link rel="stylesheet" type="text/css" href="~/Content/Themes/cart.css">
 <script src="~/Content/JavaScript/jquery.cookies.2.2.0.min.js" type="text/javascript"> </script>
+<script src="~/Content/JavaScript/res.js" type="text/javascript"></script>
+<script type="text/javascript">
+    Res.init({        
+        'OrderSent': '@Cart.OrderSent',
+        'OrderErrorMessage': '@Cart.OrderErrorMessage'
+    });
+</script>
 <script src="~/Content/JavaScript/cart.js" type="text/javascript"> </script>
 
 <div style="display: none">

@@ -178,6 +178,24 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something wrong.
+        /// </summary>
+        public static string OrderErrorMessage {
+            get {
+                return ResourceManager.GetString("OrderErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your order has been sent for processing.
+        /// </summary>
+        public static string OrderSent {
+            get {
+                return ResourceManager.GetString("OrderSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone (not required).
         /// </summary>
         public static string Phone {

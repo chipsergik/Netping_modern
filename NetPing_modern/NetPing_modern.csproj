@@ -378,6 +378,7 @@
     <Content Include="Content\JavaScript\korzina.js" />
     <Content Include="Content\JavaScript\main.js" />
     <Content Include="Content\JavaScript\modernizr.js" />
+    <Content Include="Content\JavaScript\res.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider.js" />
     <Content Include="Content\JavaScript\ProductItem.js" />
@@ -512,6 +513,7 @@
     <EmbeddedResource Include="Resources\Views\Shared\Cart.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Cart.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\Cart.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

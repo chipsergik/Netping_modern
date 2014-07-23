@@ -180,4 +180,10 @@
   <data name="TotalPrice" xml:space="preserve">
     <value>Стоимость</value>
   </data>
+  <data name="OrderErrorMessage" xml:space="preserve">
+    <value>Что-то пошло не так</value>
+  </data>
+  <data name="OrderSent" xml:space="preserve">
+    <value>Ваш заказ отправлен в обработку</value>
+  </data>
 </root>
