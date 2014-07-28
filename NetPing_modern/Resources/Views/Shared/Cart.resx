@@ -180,4 +180,10 @@
   <data name="Currency" xml:space="preserve">
     <value>usd</value>
   </data>
+  <data name="OrderErrorMessage" xml:space="preserve">
+    <value>Something wrong</value>
+  </data>
+  <data name="OrderSent" xml:space="preserve">
+    <value>Your order has been sent for processing</value>
+  </data>
 </root>

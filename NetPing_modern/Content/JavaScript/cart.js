@@ -83,10 +83,10 @@
             data: requestData,
             success: function () {
                 clearCart();
-                alert("Ваш заказ отправлен в обработку");
+                alert(Res.get('OrderSent'));
             },
             error: function () {
-                alert("Что-то пошло не так");
+                alert(Res.get('OrderErrorMessage'));
             },
             dataType: "json"
         });
