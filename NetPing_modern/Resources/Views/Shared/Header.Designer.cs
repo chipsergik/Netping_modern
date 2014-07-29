@@ -160,7 +160,7 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dealers.
+        ///   Looks up a localized string similar to How to buy.
         /// </summary>
         public static string Menu_dealers {
             get {
