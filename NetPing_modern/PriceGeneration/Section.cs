@@ -61,12 +61,8 @@ namespace NetPing_modern.PriceGeneration
                 product.Description = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
 
                 product.ImageFileName = GetImageFileName(device);
-                var url =
-                    LinkBuilder.BuildUrlFromExpression<Product_itemController>(
-                        new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
-                        RouteTable.Routes, c => c.Index(device.Key));
-                Uri uri = HttpContext.Current.Request.Url;
-                product.Url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);
+                var url = SPOnlineRepository.GetDeviceUrl(device);
+                product.Url = url;
 
                 result.Add(product);
             }

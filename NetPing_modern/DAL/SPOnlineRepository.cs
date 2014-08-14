@@ -1,11 +1,19 @@
-﻿using Microsoft.SharePoint.Client;
+﻿using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Web.Routing;
+using System.Xml.Serialization;
+using HtmlAgilityPack;
+using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
+using Microsoft.Web.Mvc;
+using NetPing.Controllers;
 using NetPing.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NetPing.PriceGeneration;
+using NetPing.PriceGeneration.YandexMarker;
 using NetpingHelpers;
 using NetPing.Tools;
 using NetPing.Global.Config;
@@ -15,6 +23,7 @@ using NetPing_modern.Resources.Views.Catalog;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Category = NetPing_modern.PriceGeneration.Category;
 
 namespace NetPing.DAL
 {
@@ -379,7 +388,11 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
-                if (Helpers.IsCultureRus) GeneratePriceList();
+                if (Helpers.IsCultureRus)
+                {
+                    GeneratePriceList();
+                    GenerateYml();
+                }
             }
             catch (Exception ex)
             {
@@ -388,6 +401,79 @@ namespace NetPing.DAL
 
             return "OK!";
 
+        }
+
+        private void GenerateYml()
+        {
+            var catalog = new YmlCatalog
+                          {
+                              Date = DateTime.Now
+                          };
+            var shop = new Shop();
+            catalog.Shop = shop;
+
+
+            const string netpingRu = "Netping.ru";
+            shop.Name = netpingRu;
+            shop.Company = netpingRu;
+            shop.Url = "http://netping.ru";
+            shop.Currencies.Add(new Currency
+                                    {
+                                        Id = "RUR",
+                                        Rate = 1,
+                                        Plus = 0
+                                    });
+
+            var tree = new DevicesTree(Devices);
+            foreach (DeviceTreeNode categoryNode in tree.Nodes)
+            {
+                shop.Categories.Add(new PriceGeneration.YandexMarker.Category
+                                    {
+                                        Id = categoryNode.Id,
+                                        Name = categoryNode.Name,
+                                        ParentId = categoryNode.Parent == null ? (int?) null : categoryNode.Parent.Id
+                                    });
+
+                foreach (DeviceTreeNode childCategoryNode in categoryNode.Nodes)
+                {
+                    shop.Categories.Add(new PriceGeneration.YandexMarker.Category
+                    {
+                        Id = childCategoryNode.Id,
+                        Name = childCategoryNode.Name,
+                        ParentId = childCategoryNode.Parent == null ? (int?)null : childCategoryNode.Parent.Id
+                    });
+
+                    foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
+                    {
+                        var htmlDoc = new HtmlDocument();
+                        htmlDoc.LoadHtml(offerNode.Device.Short_description);
+                        var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                        if (ulNodes != null)
+                        {
+                            foreach (var ulNode in ulNodes)
+                            {
+                                ulNode.Remove();
+                            }
+                        }
+                        var descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
+                        shop.Offers.Add(new Offer
+                                        {
+                                            Id = offerNode.Id,
+                                            Url = GetDeviceUrl(offerNode.Device),
+                                            Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
+                                            CategoryId = childCategoryNode.Id,
+                                            Picture = offerNode.Device.GetCoverPhoto(true).Url,
+                                            TypePrefix = childCategoryNode.Name,
+                                            VendorCode = offerNode.Name,
+                                            Model = offerNode.Name,
+                                            Description = descr
+                                        });
+                    }
+                }
+            }
+            shop.LocalDeliveryCost = 350;
+
+            YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("Content/Data/netping.xml"));
         }
 
         public IEnumerable<Device> GetDevices(string id, string groupId)
@@ -442,6 +528,17 @@ namespace NetPing.DAL
                 generator.Generate(priceList, new FileInfo(HttpContext.Current.Server.MapPath("Content/Price/price_template.docx")),
                     HttpContext.Current.Server.MapPath("Content/Data/Price.pdf"));
             }
+        }
+
+        internal static string GetDeviceUrl(Device device)
+        {
+            var url =
+                LinkBuilder.BuildUrlFromExpression<Product_itemController>(
+                    new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
+                    RouteTable.Routes, c => c.Index(device.Key));
+            Uri uri = HttpContext.Current.Request.Url;
+            url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);
+            return url;
         }
 
 

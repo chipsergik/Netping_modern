@@ -5,7 +5,7 @@ using NetPing.PriceGeneration.Word;
 
 namespace NetPing.PriceGeneration
 {
-    public class PriceListGenerator : IPriceListGenerator
+    public class PriceListGenerator
     {
         private readonly ReplacementsTree _replacements;
 

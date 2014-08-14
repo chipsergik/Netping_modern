@@ -150,6 +150,8 @@
     <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="DAL\CustomTermComparer.cs" />
     <Compile Include="DAL\CategoryId.cs" />
+    <Compile Include="DAL\DevicesTree.cs" />
+    <Compile Include="DAL\DeviceTreeNode.cs" />
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\SortOrdersCollection.cs" />
     <Compile Include="DAL\IRepository.cs" />

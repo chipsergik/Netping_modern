@@ -61,7 +61,6 @@
     <Compile Include="IBookMark.cs" />
     <Compile Include="PriceList\ICategory.cs" />
     <Compile Include="PriceList\IPriceList.cs" />
-    <Compile Include="IPriceListGenerator.cs" />
     <Compile Include="PriceList\IProduct.cs" />
     <Compile Include="IReplacement.cs" />
     <Compile Include="PriceList\ISection.cs" />
@@ -75,6 +74,12 @@
     <Compile Include="Word\WordRange.cs" />
     <Compile Include="Word\WordSection.cs" />
     <Compile Include="Word\WordSectionsCollection.cs" />
+    <Compile Include="YandexMarker\Category.cs" />
+    <Compile Include="YandexMarker\Currency.cs" />
+    <Compile Include="YandexMarker\Offer.cs" />
+    <Compile Include="YandexMarker\Shop.cs" />
+    <Compile Include="YandexMarker\YmlCatalog.cs" />
+    <Compile Include="YmlGenerator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
