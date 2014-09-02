@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-08-15 02:18">
+<yml_catalog date="2014-09-02 16:27">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -424,7 +424,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Power adaptor 48V 1.5A</vendorCode>
         <model>Power adaptor 48V 1.5A</model>
-        <description>​Блок питания обеспечивает выходное напряжение питания 48В постоянного напряжения с током до 1.5А. Может применяться для питания коммутатора NetPing LC-SM4</description>
+        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например, Netping NP-SM4</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -822,24 +822,6 @@
         <vendorCode>Устройство NetPing /PWR-220 v3/ETH</vendorCode>
         <model>Устройство NetPing /PWR-220 v3/ETH</model>
         <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="73" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_PWR220-v2</url>
-        <price>2905</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_PWR-220_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing /PWR-220 v3</vendorCode>
-        <model>Устройство NetPing /PWR-220 v3</model>
-        <description>Удаленное управление розеткой питания 220В по сети Ethernet/Internet. Коммутируемая нагрузка до 1 кВт, Web и SNMP v1 интерфейс управления. Удаленное обновление ПО.​</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
