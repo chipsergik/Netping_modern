@@ -161,7 +161,6 @@ namespace NetPing.DAL
                 devices.Add(device);
             }
 
-            SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Destination_Russia));
             foreach (var dev in devices)
             {
 
@@ -171,16 +170,12 @@ namespace NetPing.DAL
                 {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
                     dev.Posts = allPosts.Where(pst =>
                                  pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n == d.OwnNameFromPath) != null) != null
-                                 &&
-                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                         ).ToList();
                 }
                 else                      // it is group
                 {                         // Collect all posts where any Device from post path contains dev.Name
                     dev.Posts = allPosts.Where(pst =>
                                  pst.Devices.FirstOrDefault(d => d != null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
-                                 &&
-                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                         ).ToList();
                 }
 
