@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/Blog_master.cshtml";
+}
+
+@section Head_Css {
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+}
+
+@section Content_left {
+    @for (int i = 0; i < 5; i++)
+    {
+
+        <div class="blog-item">
+            <div class="blog-item-header">
+                <a href="#">Электропитание</a>
+                <span>12 сентября 2014г.</span>
+            </div>
+            <h1>
+                Вышла новая версия ПО для устройства NetPing
+            </h1>
+            <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, ipsum ut lacinia dapibus, arcu libero porttitor enim, eu dignissim tellus mauris quis lacus. Morbi venenatis est a turpis tincidunt, quis ultricies ligula lacinia. Phasellus iaculis placerat nulla, eu varius risus euismod nec. Donec nunc ex, mollis eget turpis condimentum, porttitor tincidunt elit. Duis semper, metus quis malesuada iaculis, lorem ipsum tincidunt est, sit amet tincidunt purus lacus nec lorem. Fusce blandit luctus nisi a rutrum. Vestibulum in iaculis nisl, in ullamcorper erat. Nulla quis quam ut nibh commodo egestas at eu ipsum. Quisque viverra id libero a viverra. In urna augue, egestas nec auctor dapibus, ornare sit amet mi.</p>
+            <ul class="tags">
+                <li class="tag">
+                    NetPing
+                </li>
+                <li class="tag">
+                    SMS
+                </li>
+                <li class="tag">
+                    Устройство
+                </li>
+            </ul>
+            <hr />
+        </div>
+        
+    }
+}
+
+@section Content_right{
+    asda
+}
