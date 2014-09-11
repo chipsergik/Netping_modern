@@ -1,3 +1,7 @@
+using NetPing.DAL;
+using NetPing.Global.Config;
+using NetPing_modern.Services.Confluence;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
 
@@ -53,6 +57,9 @@ namespace NetPing_modern.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IRepository>().To<SPOnlineRepository>().InRequestScope();
+            kernel.Bind<IConfig>().To<Config>().InSingletonScope();
+            kernel.Bind<IConfluenceClient>().To<ConfluenceClient>().InRequestScope();
         }        
     }
 }

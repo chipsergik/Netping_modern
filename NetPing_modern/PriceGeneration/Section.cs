@@ -22,18 +22,19 @@ namespace NetPing_modern.PriceGeneration
     {
         private readonly string _sectionId;
         private readonly string _categoryId;
-        private readonly SPOnlineRepository _repository = new SPOnlineRepository();
+        private readonly IRepository _repository;
 
-        public Section(string sectionName, string categoryId, string sectionId)
+        public Section(IRepository repository, string sectionName, string categoryId, string sectionId)
         {
             _sectionId = sectionId;
             _categoryId = categoryId;
             SectionName = sectionName;
+            _repository = repository;
         }
 
         private ICollection<IProduct> _products;
 
-        private ICollection<IProduct> GetProducts(SPOnlineRepository repository, string categoryId, string sectionId)
+        private ICollection<IProduct> GetProducts(IRepository repository, string categoryId, string sectionId)
         {
             var devs = repository.GetDevices(categoryId, sectionId);
             var result = new Collection<IProduct>();
@@ -48,17 +49,20 @@ namespace NetPing_modern.PriceGeneration
 
                 product.Title = device.Name.Name;
 
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(device.Short_description);
-                var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
-                if (ulNodes != null)
+                if (!string.IsNullOrEmpty(device.Short_description))
                 {
-                    foreach (var ulNode in ulNodes)
+                    var htmlDoc = new HtmlDocument();
+                    htmlDoc.LoadHtml(device.Short_description);
+                    var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                    if (ulNodes != null)
                     {
-                        ulNode.Remove();
+                        foreach (var ulNode in ulNodes)
+                        {
+                            ulNode.Remove();
+                        }
                     }
+                    product.Description = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
                 }
-                product.Description = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
 
                 product.ImageFileName = GetImageFileName(device);
                 var url = SPOnlineRepository.GetDeviceUrl(device);

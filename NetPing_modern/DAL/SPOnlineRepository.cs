@@ -1,8 +1,9 @@
-﻿using System.Collections.ObjectModel;
-using System.Collections.Specialized;
+﻿using System.Linq.Expressions;
+using System.Text.RegularExpressions;
+using System.Web.Mvc;
 using System.Web.Routing;
-using System.Xml.Serialization;
 using HtmlAgilityPack;
+using Microsoft.Ajax.Utilities;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
 using Microsoft.Web.Mvc;
@@ -23,12 +24,22 @@ using NetPing_modern.Resources.Views.Catalog;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using NetPing_modern.Services.Confluence;
+using Newtonsoft.Json.Linq;
 using Category = NetPing_modern.PriceGeneration.Category;
+using Group = System.Text.RegularExpressions.Group;
 
 namespace NetPing.DAL
 {
-    public class SPOnlineRepository : IRepository
+    internal class SPOnlineRepository : IRepository
     {
+        private readonly IConfluenceClient _confluenceClient;
+
+        public SPOnlineRepository(IConfluenceClient confluenceClient)
+        {
+            _confluenceClient = confluenceClient;
+        }
+
         #region Properties
 
         public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
@@ -129,11 +140,47 @@ namespace NetPing.DAL
             return -1;
         }
 
+        private readonly Regex _contentIdRegex = new Regex(@"pageId=(?<id>\d+)");
+
+        private void LoadFromConfluence(Device device, Expression<Func<Device, string>> expression, string url)
+        {
+            var meta = ModelMetadata.FromLambdaExpression(expression, new ViewDataDictionary<Device>());
+            var propertyInfo = typeof(Device).GetProperty(meta.PropertyName);
+
+            var mc = _contentIdRegex.Matches(url);
+            if (mc.Count > 0)
+            {
+                Match m = mc[0];
+                if (m.Success)
+                {
+                    Group group = m.Groups["id"];
+                    int id = int.Parse(group.Value);
+                    
+                    var contentTask = _confluenceClient.GetContenAsync(id);
+                    string content = contentTask.Result;
+                    if (!string.IsNullOrWhiteSpace(content))
+                    {
+                        dynamic page = JObject.Parse(content);
+                        string contentStr = (string)page.body.value;
+                        propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((contentStr)))));
+                    }
+                }
+            }
+
+            if (propertyInfo.GetValue(device) == null)
+            {
+                propertyInfo.SetValue(device, string.Empty);
+            }
+        }
+
         private IEnumerable<Device> Devices_Read(IEnumerable<Post> allPosts, IEnumerable<SFile> allFiles, IEnumerable<DevicePhoto> allDevicePhotos, IEnumerable<DeviceParameter> allDevicesParameters, IEnumerable<SPTerm> terms, IEnumerable<SPTerm> termsDestinations, IEnumerable<SPTerm> termsLabels)
         {
             var devices = new List<Device>();
 
             var list = context.Web.Lists.GetByTitle("Device keys");
+
+            CamlQuery query = new CamlQuery();
+            var items = list.GetItems(query);
 
             foreach (var item in (ListItemCollection)ReadSPList("Device keys", NetPing_modern.Resources.Camls.Caml_Device_keys))
             {
@@ -157,6 +204,20 @@ namespace NetPing.DAL
                             ,
                              GroupUrl = item["Group_url"] as string
                          };
+
+                
+
+                var urlField = item[Helpers.IsCultureEng ? "Eng_short_descr" : "Rus_short_descr"] as FieldUrlValue;
+                if (urlField != null)
+                {
+                    LoadFromConfluence(device, d => d.Short_description, urlField.Url);
+                }
+
+                urlField = item[Helpers.IsCultureEng ? "Eng_long_descr" : "Rus_long_descr"] as FieldUrlValue;
+                if (urlField != null)
+                {
+                    LoadFromConfluence(device, d => d.Long_description, urlField.Url);
+                }
 
                 devices.Add(device);
             }
@@ -183,16 +244,6 @@ namespace NetPing.DAL
                                  pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
                         ).ToList();
                 }
-
-                //Set Short description
-                var post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, short description");
-                if (post == null) dev.Short_description = "#error";
-                else dev.Short_description = CleanSpanStyles(CleanFonts(post.Body));
-
-                //Set Long description
-                post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
-                if (post == null) dev.Long_description = "#error";
-                else dev.Long_description = StylishHeaders3(CleanSpanStyles(CleanFonts(post.Body)));
 
                 //Collect SFiles according device
                 // get all files where dev.Name.Path contains Device name of any device from SFile
@@ -445,17 +496,24 @@ namespace NetPing.DAL
 
                     foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
                     {
-                        var htmlDoc = new HtmlDocument();
-                        htmlDoc.LoadHtml(offerNode.Device.Short_description);
-                        var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
-                        if (ulNodes != null)
+                        string shortDescription = offerNode.Device.Short_description;
+                        string descr = string.Empty;
+                        if (!string.IsNullOrWhiteSpace(shortDescription))
                         {
-                            foreach (var ulNode in ulNodes)
+                            var htmlDoc = new HtmlDocument();
+
+                            htmlDoc.LoadHtml(shortDescription);
+                            var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                            if (ulNodes != null)
                             {
-                                ulNode.Remove();
+                                foreach (var ulNode in ulNodes)
+                                {
+                                    ulNode.Remove();
+                                }
                             }
+                            descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
                         }
-                        var descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
+                        
                         shop.Offers.Add(new Offer
                                         {
                                             Id = offerNode.Id,
@@ -495,24 +553,24 @@ namespace NetPing.DAL
             {
                 var monitoring = new Category(Index.Sec_monitoring);
 
-                monitoring.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.MonitoringId, CategoryId.MonitoringSection.AccessoriesId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.MonitoringId, CategoryId.MonitoringSection.AccessoriesId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
                 priceList.Categories.Add(monitoring);
 
                 var power = new Category(Index.Sec_power);
-                power.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
-                power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
-                power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
-                power.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
                 priceList.Categories.Add(power);
 
 
                 var switches = new Category(Index.Sec_switch);
-                switches.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
-                switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
-                switches.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
                 priceList.Categories.Add(switches);
 
                 var priceRepl = new PriceListReplacementsTree();
@@ -715,8 +773,11 @@ namespace NetPing.DAL
             {
                 if (disposing)
                 {
-                    _context.Dispose();
-                    _context = null;
+                    if (_context != null)
+                    {
+                        _context.Dispose();
+                        _context = null;
+                    }
                 }
             }
             this.disposed = true;
