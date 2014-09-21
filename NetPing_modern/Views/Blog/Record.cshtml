@@ -1,17 +1,172 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/Blog_master.cshtml";
 }
 
-<!DOCTYPE html>
+@section Head_Css {
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>View</title>
-</head>
-<body>
-    <div> 
+@section Content_left{
+    <div class="blog-item">
+
+        <div class="blog-item-header">
+            <div class="category-label">Электропитание</div>
+            <span>12 сентября 2014г.</span>
+        </div>
+        <h1>
+            Вышла новая версия ПО для устройства NetPing
+        </h1>
+        <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, lacus non accumsan bibendum, justo nulla bibendum turpis, eleifend gravida diam sem vel turpis. Integer iaculis ante et leo tincidunt semper. Duis fringilla blandit vehicula. Praesent dui tellus, egestas vitae nisl eget, faucibus venenatis est. Vivamus nec nibh vel ligula fermentum pharetra vulputate non tortor. In hac habitasse platea dictumst. Quisque viverra mauris mi, eget blandit dolor finibus et. Quisque semper lacus lectus, eu vestibulum purus imperdiet eu. Duis dignissim ante nec vestibulum bibendum. Phasellus nec erat vel massa blandit ultrices vitae in ante. Fusce dolor lorem, finibus scelerisque consectetur quis, vehicula quis nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+        <p>
+            Curabitur in diam vitae elit condimentum viverra. Nam mi turpis, egestas id ligula non, dapibus rhoncus nibh. Nunc non odio vel justo commodo ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus euismod sodales felis, in congue ligula feugiat ac. Duis pellentesque neque sit amet eros lobortis sollicitudin. Pellentesque at lobortis ipsum, et imperdiet lectus.
+        </p>
+        <p>
+            Nulla laoreet accumsan augue, sed pulvinar sem hendrerit ut. Proin pharetra vulputate purus vel pharetra. Pellentesque accumsan gravida lacus, molestie tincidunt purus elementum at. Quisque quis diam orci. Aliquam erat volutpat. Mauris velit est, luctus et sapien id, consequat congue sapien. Suspendisse sed gravida tellus. In porta non elit in venenatis. Aliquam imperdiet et massa et fringilla. Donec ullamcorper augue sed placerat aliquam.
+        </p>
+        <hr />
+        <ul class="tags">
+            <li class="tag">
+                NetPing
+            </li>
+            <li class="tag">
+                SMS
+            </li>
+            <li class="tag">
+                Устройство
+            </li>
+        </ul>
     </div>
-</body>
-</html>
+    <div class="comment-form">
+        <h1>Оставить свой комментарий</h1>
+        <form>
+            <input type="text" placeholder="имя" />
+            <input type="text" placeholder="e-mail" />
+            <textarea placeholder="Ваше сообщение"></textarea>
+            <input type="submit" value="Отправить" />
+        </form>
+        <div class="clear"></div>
+    </div>
+    <div class="comments">
+        <h1>
+            Комментарии
+        </h1>
+        <hr />
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="comment">
+                <h3>Username</h3>
+                <span class="date">12 сентября 2014г.</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sapien, aliquam id pellentesque sit amet, viverra ac ligula. Aenean at vulputate eros, vel pharetra orci. Aliquam tortor arcu, semper vitae libero nec, suscipit aliquet enim. Quisque eu lorem at sapien scelerisque auctor ut fermentum dui. Suspendisse scelerisque erat ante, non feugiat est commodo non. Nunc pretium lacus ut tincidunt sagittis. Aliquam erat volutpat. Cras gravida ligula dapibus porttitor pretium. Praesent quis mi vel velit fringilla ornare. Suspendisse laoreet sapien quis neque elementum tempor. Maecenas eu sapien vel nulla tempus suscipit vitae at mi. Pellentesque imperdiet tellus non justo laoreet, eu tincidunt felis scelerisque. Donec dignissim felis augue, consequat tincidunt orci porta quis. Donec fermentum consequat massa sit amet congue. Mauris tristique viverra tristique. Aenean efficitur euismod eros, sed ornare leo scelerisque eget.</p>
+            </div>
+        }
+    </div>
+}
+
+@section Content_right{
+    <div class="article-search">
+        <input type="text" placeholder="Искать статью..." />
+        <input type="submit" value="" />
+    </div>
+    <div class="clear"></div>
+    <div class="related">
+        <h2>Популярные статьи</h2>
+        <a href="#" class="rss-feed"></a>
+        <hr />
+        @for (int i = 0; i < 3; i++)
+        {
+            <a href="#" class="related-item">
+                <h3>09.06.2014</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia id mi non porttitor. Donec.
+                </p>
+            </a>
+        }
+    </div>
+    <div class="categories">
+        <ul>
+            <li>
+                <a href="#">Электропитание</a>
+            </li>
+            <li>
+                <a href="#">Компании</a>
+            </li>
+            <li>
+                <a href="#">Крупные клиенты</a>
+            </li>
+            <li>
+                <a href="#">Новинки</a>
+            </li>
+        </ul>
+        <a href="#">&#x25BC; Все категории (25)</a>
+    </div>
+    <div class="all-tags">
+        <h2>Основные теги</h2>
+        <hr />
+        <div class="tag">
+            NetPing
+        </div>
+        <div class="tag active">
+            SMS
+        </div>
+        <div class="tag">
+            Устройство
+        </div>
+        <div class="tag">
+            Клиент
+        </div>
+        <div class="tag active">
+            Производство
+        </div>
+        <div class="tag">
+            Интернет
+        </div>
+        <div class="tag">
+            NetPing
+        </div>
+        <div class="tag">
+            SMS
+        </div>
+        <div class="tag">
+            Устройство
+        </div>
+        <div class="tag">
+            Клиент
+        </div>
+        <div class="tag">
+            Производство
+        </div>
+        <div class="tag">
+            Интернет
+        </div>
+        <div class="clear"></div>
+        <a href="#">&#x25BC; Все теги </a>
+    </div>
+    <div class="datepicker"></div>
+    <img src="" />
+}
+
+@section Under_menu{
+    <div class="under-menu">
+        <a href="#">
+            Популярные статьи
+        </a>
+        <a href="#">
+            Категории
+        </a>
+        <a href="#">
+            Тэги
+        </a>
+        <a href="#">
+            Календарь
+        </a>
+    </div>
+    <div class="clear"></div>
+}

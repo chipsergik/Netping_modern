@@ -7,22 +7,27 @@
     <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
+    <script src="~/Content/JavaScript/blog.js"></script>
 }
 
 @section Content_left {
-    @for (int i = 0; i < 5; i++)
+    @for (int i = 0; i < 10; i++)
     {
 
         <div class="blog-item">
-            <div class="blog-item-header">
-                <a href="#">Электропитание</a>
-                <span>12 сентября 2014г.</span>
-            </div>
-            <h1>
-                Вышла новая версия ПО для устройства NetPing
-            </h1>
-            <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, ipsum ut lacinia dapibus, arcu libero porttitor enim, eu dignissim tellus mauris quis lacus. Morbi venenatis est a turpis tincidunt, quis ultricies ligula lacinia. Phasellus iaculis placerat nulla, eu varius risus euismod nec. Donec nunc ex, mollis eget turpis condimentum, porttitor tincidunt elit. Duis semper, metus quis malesuada iaculis, lorem ipsum tincidunt est, sit amet tincidunt purus lacus nec lorem. Fusce blandit luctus nisi a rutrum. Vestibulum in iaculis nisl, in ullamcorper erat. Nulla quis quam ut nibh commodo egestas at eu ipsum. Quisque viverra id libero a viverra. In urna augue, egestas nec auctor dapibus, ornare sit amet mi.</p>
+            <a href="/blog/record">
+                <div class="blog-item-header">
+                    <div class="category-label">Электропитание</div>
+                    <span>12 сентября 2014г.</span>
+                </div>
+                <h1>
+                    Вышла новая версия ПО для устройства NetPing
+                </h1>
+                <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, ipsum ut lacinia dapibus, arcu libero porttitor enim, eu dignissim tellus mauris quis lacus. Morbi venenatis est a turpis tincidunt, quis ultricies ligula lacinia. Phasellus iaculis placerat nulla, eu varius risus euismod nec. Donec nunc ex, mollis eget turpis condimentum, porttitor tincidunt elit. Duis semper, metus quis malesuada iaculis, lorem ipsum tincidunt est, sit amet tincidunt purus lacus nec lorem. Fusce blandit luctus nisi a rutrum. Vestibulum in iaculis nisl, in ullamcorper erat. Nulla quis quam ut nibh commodo egestas at eu ipsum. Quisque viverra id libero a viverra. In urna augue, egestas nec auctor dapibus, ornare sit amet mi.</p>
+            </a>
             <ul class="tags">
                 <li class="tag">
                     NetPing
@@ -34,12 +39,110 @@
                     Устройство
                 </li>
             </ul>
+            <div class="clear"></div>
             <hr />
         </div>
-        
+
     }
 }
 
 @section Content_right{
-    asda
+    <div class="article-search">
+        <input type="text" placeholder="Искать статью..." />
+        <input type="submit"  value=""/>
+    </div>
+    <div class="clear"></div>
+    <div class="related">
+        <h2>Популярные статьи</h2>
+        <a href="#" class="rss-feed"></a>
+        <hr />
+        @for (int i = 0; i < 3; i++)
+        {
+            <a href="#" class="related-item">
+                <h3>09.06.2014</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia id mi non porttitor. Donec.
+                </p>
+            </a>
+        }
+    </div>
+    <div class="categories">
+        <ul>
+            <li>
+                <a href="#">Электропитание</a>
+            </li>
+            <li>
+                <a href="#">Компании</a>
+            </li>
+            <li>
+                <a href="#">Крупные клиенты</a>
+            </li>
+            <li>
+                <a href="#">Новинки</a>
+            </li>
+        </ul>
+        <a href="#">&#x25BC; Все категории (25)</a>
+    </div>
+    <div class="all-tags">
+        <h2>Основные теги</h2>
+        <hr />
+        <div class="tag">
+            NetPing
+        </div>
+        <div class="tag active">
+            SMS
+        </div>
+        <div class="tag">
+            Устройство
+        </div>
+        <div class="tag">
+            Клиент
+        </div>
+        <div class="tag active">
+            Производство
+        </div>
+        <div class="tag">
+            Интернет
+        </div>
+        <div class="tag">
+            NetPing
+        </div>
+        <div class="tag">
+            SMS
+        </div>
+        <div class="tag">
+            Устройство
+        </div>
+        <div class="tag">
+            Клиент
+        </div>
+        <div class="tag">
+            Производство
+        </div>
+        <div class="tag">
+            Интернет
+        </div>
+        <div class="clear"></div>
+        <a href="#">&#x25BC; Все теги </a>
+    </div>
+    <input id="datepicker" type="text">
+    <img src="" />
+}
+
+@section Under_menu{
+    <div class="under-menu">
+        <a href="#">
+            Популярные статьи
+        </a>
+        <a href="#">
+            Категории
+        </a>
+        <a href="#">
+            Тэги
+        </a>
+        <a href="#">
+            Календарь
+        </a>
+    </div>
+    <div class="clear"></div>
 }
