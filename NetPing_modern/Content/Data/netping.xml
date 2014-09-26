@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-09-02 16:27">
+<yml_catalog date="2014-09-11 07:23">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -40,8 +40,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</vendorCode>
         <model>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</model>
-        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).
-		  </description>
+        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -59,7 +58,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Термодатчик 1-wire, (THS), 2м</vendorCode>
         <model>Термодатчик 1-wire, (THS), 2м</model>
-        <description>Датчик температуры -55C ... +125C с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
+        <description>Датчик температуры -55C ... +125C&amp;nbsp;с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -77,7 +76,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик влажности 1-wire, (HS), 2м</vendorCode>
         <model>Датчик влажности 1-wire, (HS), 2м</model>
-        <description>​Датчик относительной влажности воздуха с интерфейсом 1-wire и встроенным датчиком температуры. Длина провода 2 м.</description>
+        <description>Датчик относительной влажности воздуха с интерфейсом 1-wire и встроенным датчиком температуры. Длина провода 2 м.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -95,8 +94,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Термодатчик TS, 1м</vendorCode>
         <model>Термодатчик TS, 1м</model>
-        <description>Термодатчик для измерения температуры окружающего воздуха внутри помещения. -55C..+125C. Избегайте попадания воды на термодатчик!
-​  </description>
+        <description>Термодатчик для измерения температуры окружающего воздуха внутри помещения. -55C..+125C. Избегайте попадания воды на термодатчик!</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -114,8 +112,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Thermo sensor WT</vendorCode>
         <model>Thermo sensor WT</model>
-        <description>Термодатчик для измерения температуры воздуха и воды -55C..+125C. Герметичный корпус, допускает погружение в воду.
-​  </description>
+        <description>Термодатчик для измерения температуры воздуха и воды -55C..+125C. Герметичный корпус, допускает погружение в воду.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -133,8 +130,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик влажности WS-1, 1м</vendorCode>
         <model>Датчик влажности WS-1, 1м</model>
-        <description>Датчик влажности предназначен для измерения относительной влажности в %. Кроме того датчик влажности содержит встроенный датчик температуры. Датчик влажности можно подключить к устройствам UniPing v3, UniPing server solution​
- </description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -170,8 +166,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик дыма ( ИП212-141), 2м</vendorCode>
         <model>Датчик дыма ( ИП212-141), 2м</model>
-        <description>Датчик дыма позволяет определить наличие дыма в месте его установки и подать сигнал об этом устройству NetPing. Датчик дыма подключается к устройствам&amp;#58; UniPing v3, UniPing server solution.
-​  </description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -189,7 +184,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</vendorCode>
         <model>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</model>
-        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).</description>
+        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -207,7 +202,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик протечки, модель 2605, 2м</vendorCode>
         <model>Датчик протечки, модель 2605, 2м</model>
-        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика. </description>
+        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика.&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -279,7 +274,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Сирена сигнальная (АС-10), 2м</vendorCode>
         <model>Сирена сигнальная (АС-10), 2м</model>
-        <description>Сирена AC-10 предназначена для подключения к устройствам модельного ряда UniPing. Сирена позволяет выдавать звуковые оповещения по команде от интерфейса устройства Uniping.</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -297,7 +292,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
         <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
-        <description>Однофазный многотарифный электросчетчик. Измерение активной электроэнергии в однофазных цепях переменного тока. Организации учета по четырем тарифам с передачей накопленной информации через интерфейс RS-485.  Счётчик может быть подключен к устройствам&amp;#58; UniPing v3,  UniPing server solution</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -333,7 +328,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Адаптер WiFi VAP11N</vendorCode>
         <model>Адаптер WiFi VAP11N</model>
-        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети.</description>
+        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети.&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -351,7 +346,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Розетка NetPing AC/DIN</vendorCode>
         <model>Розетка NetPing AC/DIN</model>
-        <description>Управляемая розетка позволяет включать/выключать и перезагружать электропитание внешней нагрузки 100..240В  50/60Гц, с током до 10А. Розетка должна быть подключена к IO линии базового устройства Netping!</description>
+        <description>Управляемая розетка позволяет включать/выключать и перезагружать электропитание внешней нагрузки 100..240В&amp;nbsp; 50/60Гц, с током до 10А. Розетка должна быть подключена к IO линии базового устройства Netping!</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -387,8 +382,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для PWR-220</vendorCode>
         <model>Переходник для PWR-220</model>
-        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing с компьютерной розетки на обыкновенную розетку для подключения евровилки.
-​  </description>
+        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing&amp;nbsp;с компьютерной розетки на обыкновенную розетку для подключения евровилки.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -424,7 +418,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Power adaptor 48V 1.5A</vendorCode>
         <model>Power adaptor 48V 1.5A</model>
-        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например, Netping NP-SM4</description>
+        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например,&amp;nbsp;Netping NP-SM4&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -514,7 +508,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель шлейфа датчика RC, 4м</vendorCode>
         <model>Удлинитель шлейфа датчика RC, 4м</model>
-        <description>​Позволяет увеличить длину шлейфа датчика на 4 м. Удлинители можно включать последовательно друг в друга для достижения нужной длины шлейфа датчика.</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -532,7 +526,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Инжектор питания POE (стандарта 802.3af)</vendorCode>
         <model>Инжектор питания POE (стандарта 802.3af)</model>
-        <description>Инжектор POE, обеспечивает питание по кабелю Ethernet устройств, которые поддерживают стандарт POE IEEE 802.3af. </description>
+        <description>Инжектор POE, обеспечивает&amp;nbsp;питание по кабелю Ethernet устройств, которые поддерживают стандарт POE IEEE 802.3af. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -550,7 +544,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
         <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
-        <description>Плата расширения для устройства Uniping v3 позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
+        <description>Плата расширения для устройства Uniping v3&amp;nbsp;позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -586,7 +580,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
         <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
-        <description>Блок питания для устройств NetPing и коммутаторов LC-S100-8​</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -604,7 +598,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для NetPing IO v2</vendorCode>
         <model>Переходник для NetPing IO v2</model>
-        <description>​Позволяет подключить блок питание с круглым джеком 2.1 мм к NetPing IO v2</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -622,7 +616,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Модем (Терминал МС52iT Cinterion GSM)</vendorCode>
         <model>Модем (Терминал МС52iT Cinterion GSM)</model>
-        <description>SMS гейт Cinterion MC52iT предназначен для отправки SMS сообщений о срабатывании датчиков подключенных к устройствам NetPing в локальной сети. ​</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -676,7 +670,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing v3</vendorCode>
         <model>Устройство UniPing v3</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -730,7 +724,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
         <model>Устройство NetPing Mini-UPS</model>
-        <description>Устройство бесперебойного питания со встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
+        <description>Устройство бесперебойного питания со&amp;nbsp;встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -766,8 +760,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
         <model>Устройство Netping 4/PWR-220 v3/SMS</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.
-		</description>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -839,8 +832,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>POE инжектор на 3 порта</vendorCode>
         <model>POE инжектор на 3 порта</model>
-        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at
-		  </description>
+        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -858,7 +850,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
         <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
-        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.</description>
+        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.&amp;nbsp;&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -893,7 +885,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>LC-SM100-16/2SFP/PSE</vendorCode>
         <model>LC-SM100-16/2SFP/PSE</model>
-        <description>​Управляемый коммутатор LC-SM100-16/2SFP/PSE c встроенным POE инжектором для питания внешних POE устройства на основе чипа Marvell, 16 портов  10/100BASE-TX (из которых 4 порта PSE, обеспечивают питание внешние устройства по технологии POE 802.3.af) + 2 gigabit SFP слот, 8K MAC, 802.1Q, IGMP v2, интерфейсы управления web и SNMP v1, компактный пластиковый корпус 180х130х45​</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -911,7 +903,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Управляемый коммутатор LC-SM100-16/2SFP</vendorCode>
         <model>Управляемый коммутатор LC-SM100-16/2SFP</model>
-        <description>Управляемый коммутатор LC-SM100-16/2SFP на основе чипа Marvell, 16 портов  10/100BASE-TX + 2 gigabit SFP слот, 8K MAC, 802.1Q, IGMP v2, интерфейсы управления web и SNMP v1, компактный пластиковый корпус 180х130х45​</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -929,7 +921,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Коммутатор NP-SM4</vendorCode>
         <model>Коммутатор NP-SM4</model>
-        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
+        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -947,7 +939,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Коммутатор PS104GT</vendorCode>
         <model>Коммутатор PS104GT</model>
-        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
+        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -965,7 +957,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Утилита PRTG Network Monitor – Professional до 500 датчиков</vendorCode>
         <model>Утилита PRTG Network Monitor – Professional до 500 датчиков</model>
-        <description>#error</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -983,7 +975,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Утилита PRTG Network Monitor – Professional до 100 датчиков</vendorCode>
         <model>Утилита PRTG Network Monitor – Professional до 100 датчиков</model>
-        <description>#error</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -1001,7 +993,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Утилита PRTG Network Monitor – Professional до 10 датчиков</vendorCode>
         <model>Утилита PRTG Network Monitor – Professional до 10 датчиков</model>
-        <description>#error</description>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>

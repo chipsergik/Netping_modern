@@ -161,6 +161,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global\Config\Config.cs" />
+    <Compile Include="Global\Config\ConfluenceSettings.cs" />
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
@@ -311,6 +312,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Confluence\ConfluenceClient.cs" />
+    <Compile Include="Services\Confluence\IConfluenceClient.cs" />
     <Compile Include="Tools\TimerCacheDependency.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -463,6 +466,7 @@
     <EmbeddedResource Include="Resources\Camls.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Camls.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Camls.ru.resx" />
     <EmbeddedResource Include="Resources\Other.ru.resx" />
