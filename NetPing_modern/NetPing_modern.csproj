@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\InnerPagesController.cs" />
@@ -319,6 +320,10 @@
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
     <Content Include="Content\Images\bg_down_list.png" />
+    <Content Include="Content\Images\BlogImg\related.png" />
+    <Content Include="Content\Images\BlogImg\rss.png" />
+    <Content Include="Content\Images\BlogImg\search.png" />
+    <Content Include="Content\Images\BlogImg\tags.png" />
     <Content Include="Content\Images\CatalogPageImg\big_links.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main_li.png" />
@@ -377,9 +382,11 @@
     <Content Include="Content\Images\search.png" />
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
+    <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
+    <Content Include="Content\JavaScript\jquery.datetimepicker.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
@@ -392,12 +399,14 @@
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\blog.css" />
     <Content Include="Content\Themes\cart.css" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\compare.css" />
     <Content Include="Content\Themes\header-footer.css" />
+    <Content Include="Content\Themes\jquery.datetimepicker.css" />
     <Content Include="Content\Themes\korzina.css" />
     <Content Include="Content\Themes\main.css" />
     <Content Include="Content\Themes\main_mainpage.css" />
@@ -440,6 +449,9 @@
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
     <Content Include="Views\Catalog\Compare.cshtml" />
+    <Content Include="Views\Blog\Main.cshtml" />
+    <Content Include="Views\Blog\Record.cshtml" />
+    <Content Include="Views\Shared\Blog_master.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
