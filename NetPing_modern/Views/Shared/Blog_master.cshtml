@@ -32,7 +32,9 @@
 <body>
     <div class="page">
         <div class="main">
-            @RenderPage("Header.cshtml")
+            <div class="header-wrapper">
+                @RenderPage("Header.cshtml")
+            </div>
             @RenderSection("Under_menu", false)
 
             <!--content-->

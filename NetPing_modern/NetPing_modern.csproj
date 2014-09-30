@@ -320,6 +320,9 @@
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
     <Content Include="Content\Images\bg_down_list.png" />
+    <Content Include="Content\Images\BlogImg\banner.png" />
+    <Content Include="Content\Images\BlogImg\comments.png" />
+    <Content Include="Content\Images\BlogImg\menu-button.png" />
     <Content Include="Content\Images\BlogImg\related.png" />
     <Content Include="Content\Images\BlogImg\rss.png" />
     <Content Include="Content\Images\BlogImg\search.png" />

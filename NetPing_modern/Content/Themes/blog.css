@@ -380,9 +380,48 @@ p + p {
     margin: 30px 0;
 }
 
+.header-wrapper {
+    background: #6acc84; /* Old browsers */
+    background: -moz-linear-gradient(left, #6acc84 0%, #beeec6 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#6acc84), color-stop(100%,#beeec6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #6acc84 0%,#beeec6 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #6acc84 0%,#beeec6 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #6acc84 0%,#beeec6 100%); /* IE10+ */
+    background: linear-gradient(to right, #6acc84 0%,#beeec6 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6acc84', endColorstr='#beeec6',GradientType=1 ); /* IE6-9 */
+}
+
+.header .logo{
+    background: none;
+}
+
+.logo:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 86px;
+    left: 0;
+    background-image: url(../Images/logo_bg.png);
+    background-position-x: left;
+    background-position-y: center;
+    background-repeat: no-repeat no-repeat;
+}
+
+.logo img{
+    position:relative;
+    vertical-align: bottom;
+}
+
+.logo:after {
+    content: "блог";
+    color: #eb635f;
+    font-size: 56px;
+    position:relative;
+    margin-left: 10px;
+}
 
 @media screen and (min-width: 720px) {
-    .page .main .under-menu {
+    .page .main .under-menu, .menu-button {
         display: none;
     }
 }
@@ -441,11 +480,21 @@ p + p {
         box-sizing: border-box;
     }
 
+    .header .header_contacts_item:first-child {
+        margin-right: 10px;
+    }
+
     .header_contacts_item {
         margin-bottom: 20px;
     }
 
     .page .main .footer_left {
         width: auto;
+    }
+
+    .menu-button{
+        display:inline-block;
+        bottom: 5px;
+        position:relative;
     }
 }
