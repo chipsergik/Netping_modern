@@ -141,6 +141,7 @@ namespace NetPing.DAL
         }
 
         private readonly Regex _contentIdRegex = new Regex(@"pageId=(?<id>\d+)");
+        private readonly Regex _spaceTitleRegex = new Regex(@"\/display\/(?<spaceKey>[\w \.\-\+%]+)\/(?<title>[\w \.\-\+%]+)?");
 
         private void LoadFromConfluence(Device device, Expression<Func<Device, string>> expression, string url)
         {
@@ -155,14 +156,44 @@ namespace NetPing.DAL
                 {
                     Group group = m.Groups["id"];
                     int id = int.Parse(group.Value);
-                    
+
                     var contentTask = _confluenceClient.GetContenAsync(id);
                     string content = contentTask.Result;
                     if (!string.IsNullOrWhiteSpace(content))
                     {
                         dynamic page = JObject.Parse(content);
-                        string contentStr = (string)page.body.value;
+                        string contentStr = (string) page.body.value;
                         propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((contentStr)))));
+                    }
+                }
+            }
+            else
+            {
+                mc = _spaceTitleRegex.Matches(url);
+                if (mc.Count > 0)
+                {
+                    Match m = mc[0];
+                    if (m.Success)
+                    {
+                        Group spaceKeyGroup = m.Groups["spaceKey"];
+                        string spaceKey = spaceKeyGroup.Value;
+
+                        Group titleGroup = m.Groups["title"];
+                        string title = titleGroup.Value;
+
+                        var contentTask = _confluenceClient.GetContentBySpaceAndTitle(spaceKey, title);
+                        int contentId = contentTask.Result;
+                        if (contentId > 0)
+                        {
+                            var contentTask2 = _confluenceClient.GetContenAsync(contentId);
+                            string content = contentTask2.Result;
+                            if (!string.IsNullOrWhiteSpace(content))
+                            {
+                                dynamic page = JObject.Parse(content);
+                                string contentStr = (string)page.body.value;
+                                propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((contentStr)))));
+                            }
+                        }
                     }
                 }
             }
