@@ -427,6 +427,10 @@ p + p {
 }
 
 @media screen and (max-width: 720px) {
+    body{
+        min-width: 670px;
+    }
+
     .page .main .content .content_right {
         display: none;
     }
