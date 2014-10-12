@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-10-02 06:19">
+<yml_catalog date="2014-10-12 13:03">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -9,218 +9,92 @@
       <currency id="RUR" rate="1" plus="0" />
     </currencies>
     <categories>
-      <category id="43">Устройства NetPing</category>
-      <category id="44" parentId="43">IP датчики, NetPing</category>
-      <category id="60" parentId="43">Управление электропитанием, NetPing</category>
+      <category id="85">Коммутаторы</category>
+      <category id="86" parentId="85">Коммутаторы на основе ядра Marvell</category>
+      <category id="95" parentId="85">Неуправляемые коммутаторы</category>
       <category id="4">Аксессуары</category>
       <category id="23" parentId="4">Аксессуары, датчики</category>
       <category id="5" parentId="4">Переходники и коммутационные платы</category>
+      <category id="43">Устройства NetPing</category>
+      <category id="44" parentId="43">IP датчики, NetPing</category>
+      <category id="60" parentId="43">Управление электропитанием, NetPing</category>
+      <category id="114">Утилиты</category>
+      <category id="115" parentId="114">Утилиты</category>
       <category id="79">Решения</category>
       <category id="82" parentId="79">Удалённые датчики</category>
       <category id="80" parentId="79">Удаленное управление питанием</category>
       <category id="134" parentId="79">POE устройства</category>
-      <category id="114">Утилиты</category>
-      <category id="115" parentId="114">Утилиты</category>
-      <category id="85">Коммутаторы</category>
-      <category id="86" parentId="85">Коммутаторы на основе ядра Marvell</category>
-      <category id="95" parentId="85">Неуправляемые коммутаторы</category>
     </categories>
     <local_delivery_cost>350</local_delivery_cost>
     <offers>
-      <offer id="121" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server_v3_SMS</url>
-        <price>9770</price>
+      <offer id="87" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_4PSE_LC-SM_100-16_2SFP</url>
+        <price>5600</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
+        <categoryId>86</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_4PSE_LC-SM_100-16_2SFP_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing server solution v3/SMS</vendorCode>
-        <model>Устройство UniPing server solution v3/SMS</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <vendorCode>LC-SM100-16/2SFP/PSE</vendorCode>
+        <model>LC-SM100-16/2SFP/PSE</model>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="50" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server</url>
-        <price>6072</price>
+      <offer id="88" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_LC-SM_100-16_2SFP</url>
+        <price>4960</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_big.png</picture>
+        <categoryId>86</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_LC-SM_100-16_2SFP_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing server solution</vendorCode>
-        <model>Устройство UniPing server solution</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <vendorCode>Управляемый коммутатор LC-SM100-16/2SFP</vendorCode>
+        <model>Управляемый коммутатор LC-SM100-16/2SFP</model>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="55" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v3_UniPing</url>
-        <price>3655</price>
+      <offer id="98" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_4SM</url>
+        <price>706</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png</picture>
+        <categoryId>95</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_4SM_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Неуправляемые коммутаторы</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing v3</vendorCode>
-        <model>Устройство UniPing v3</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков&amp;nbsp;</description>
+        <vendorCode>Коммутатор NP-SM4</vendorCode>
+        <model>Коммутатор NP-SM4</model>
+        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="53" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v2netpingIO</url>
-        <price>1530</price>
+      <offer id="131" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_ps104gt</url>
+        <price>4130</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v2netpingIO_big.png</picture>
+        <categoryId>95</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_ps104gt_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Неуправляемые коммутаторы</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing IO v2</vendorCode>
-        <model>Устройство NetPing IO v2</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления об их срабатывании</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="124" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_SMS</url>
-        <price>4150</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing SMS</vendorCode>
-        <model>Устройство NetPing SMS</model>
-        <description>Шлюз для отправки и приёма SMS-команд для устройств NetPing. Позволяет отправлять SMS-уведомления и выполнять SMS-команды, передаваемые по сети Ethernet/Internet от любого числа устройств NetPing.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="68" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_8PWR_SMS</url>
-        <price>12045</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_8PWR_SMS_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing 8/PWR-220 v3/SMS</vendorCode>
-        <model>Устройство NetPing 8/PWR-220 v3/SMS</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="137" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_4PWR_SMS_220_v3</url>
-        <price>7276</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_4PWR_SMS_220_v3_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
-        <model>Устройство Netping 4/PWR-220 v3/SMS</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="139" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_V2SMS2PWR220</url>
-        <price>5660</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_V2SMS2PWR220_big2.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing 2/PWR-220 v2/SMS</vendorCode>
-        <model>Устройство NetPing 2/PWR-220 v2/SMS</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="75" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_SMS2PWR220-v1</url>
-        <price>5136</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_SMS2PWR220-v1_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing 2/PWR-220 v1/SMS</vendorCode>
-        <model>Устройство NetPing 2/PWR-220 v1/SMS</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="69" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_2PWR220_v2</url>
-        <price>3825</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_2PWR220_v2 _big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing 2/PWR-220 v3/ETH</vendorCode>
-        <model>Устройство NetPing 2/PWR-220 v3/ETH</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="70" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_PWR220_v2</url>
-        <price>3205</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_PWR220_v2_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing /PWR-220 v3/ETH</vendorCode>
-        <model>Устройство NetPing /PWR-220 v3/ETH</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
+        <vendorCode>Коммутатор PS104GT</vendorCode>
+        <model>Коммутатор PS104GT</model>
+        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -508,6 +382,24 @@
         <vendorCode>IRC-TR v2 (ИК модуль расширения)</vendorCode>
         <model>IRC-TR v2 (ИК модуль расширения)</model>
         <description>ИК модуль для дистанционного управления устройствами с инфракрасным интерфейсом по сети TCP/IP (web, SNMP). Не является самостоятельным устройством, должен быть подключен к базовому устройству NetPing!</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="122" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_mini_UPS</url>
+        <price>2118</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_mini_UPS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
+        <model>Устройство NetPing Mini-UPS</model>
+        <description>Устройство бесперебойного питания со&amp;nbsp;встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -818,20 +710,218 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="122" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_mini_UPS</url>
-        <price>2118</price>
+      <offer id="121" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server_v3_SMS</url>
+        <price>9770</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_mini_UPS_big.png</picture>
+        <categoryId>44</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>IP датчики, NetPing</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
-        <model>Устройство NetPing Mini-UPS</model>
-        <description>Устройство бесперебойного питания со&amp;nbsp;встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
+        <vendorCode>Устройство UniPing server solution v3/SMS</vendorCode>
+        <model>Устройство UniPing server solution v3/SMS</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="50" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server</url>
+        <price>6072</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>44</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>IP датчики, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство UniPing server solution</vendorCode>
+        <model>Устройство UniPing server solution</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="55" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v3_UniPing</url>
+        <price>3655</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>44</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>IP датчики, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство UniPing v3</vendorCode>
+        <model>Устройство UniPing v3</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков&amp;nbsp;</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="53" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v2netpingIO</url>
+        <price>1530</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>44</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v2netpingIO_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>IP датчики, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing IO v2</vendorCode>
+        <model>Устройство NetPing IO v2</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления об их срабатывании</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="124" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_SMS</url>
+        <price>4150</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>44</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>IP датчики, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing SMS</vendorCode>
+        <model>Устройство NetPing SMS</model>
+        <description>Шлюз для отправки и приёма SMS-команд для устройств NetPing. Позволяет отправлять SMS-уведомления и выполнять SMS-команды, передаваемые по сети Ethernet/Internet от любого числа устройств NetPing.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="68" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_8PWR_SMS</url>
+        <price>12045</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_8PWR_SMS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing 8/PWR-220 v3/SMS</vendorCode>
+        <model>Устройство NetPing 8/PWR-220 v3/SMS</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="137" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_4PWR_SMS_220_v3</url>
+        <price>7276</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_4PWR_SMS_220_v3_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
+        <model>Устройство Netping 4/PWR-220 v3/SMS</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="139" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_V2SMS2PWR220</url>
+        <price>5660</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_V2SMS2PWR220_big2.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing 2/PWR-220 v2/SMS</vendorCode>
+        <model>Устройство NetPing 2/PWR-220 v2/SMS</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="75" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_SMS2PWR220-v1</url>
+        <price>5136</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_SMS2PWR220-v1_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing 2/PWR-220 v1/SMS</vendorCode>
+        <model>Устройство NetPing 2/PWR-220 v1/SMS</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="69" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_2PWR220_v2</url>
+        <price>3825</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_2PWR220_v2 _big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing 2/PWR-220 v3/ETH</vendorCode>
+        <model>Устройство NetPing 2/PWR-220 v3/ETH</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="70" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_PWR220_v2</url>
+        <price>3205</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>60</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_PWR220_v2_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing /PWR-220 v3/ETH</vendorCode>
+        <model>Устройство NetPing /PWR-220 v3/ETH</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="116" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx?id=_utils_mains_10_PRTG_monitor</url>
+        <price>0</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>115</categoryId>
+        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_utils_mains_10_PRTG_monitor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Утилиты</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Утилита PRTG Network Monitor – Professional до 10 датчиков</vendorCode>
+        <model>Утилита PRTG Network Monitor – Professional до 10 датчиков</model>
+        <description />
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -868,96 +958,6 @@
         <vendorCode>POE инжектор на 3 порта</vendorCode>
         <model>POE инжектор на 3 порта</model>
         <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at&amp;nbsp;</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="116" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_utils_mains_10_PRTG_monitor</url>
-        <price>0</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>115</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_utils_mains_10_PRTG_monitor_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Утилиты</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Утилита PRTG Network Monitor – Professional до 10 датчиков</vendorCode>
-        <model>Утилита PRTG Network Monitor – Professional до 10 датчиков</model>
-        <description />
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="87" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_4PSE_LC-SM_100-16_2SFP</url>
-        <price>5600</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>86</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_4PSE_LC-SM_100-16_2SFP_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>LC-SM100-16/2SFP/PSE</vendorCode>
-        <model>LC-SM100-16/2SFP/PSE</model>
-        <description />
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="88" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_LC-SM_100-16_2SFP</url>
-        <price>4960</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>86</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_LC-SM_100-16_2SFP_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Управляемый коммутатор LC-SM100-16/2SFP</vendorCode>
-        <model>Управляемый коммутатор LC-SM100-16/2SFP</model>
-        <description />
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="98" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_4SM</url>
-        <price>706</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>95</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_4SM_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Неуправляемые коммутаторы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Коммутатор NP-SM4</vendorCode>
-        <model>Коммутатор NP-SM4</model>
-        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="131" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_ps104gt</url>
-        <price>4130</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>95</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_ps104gt_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Неуправляемые коммутаторы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Коммутатор PS104GT</vendorCode>
-        <model>Коммутатор PS104GT</model>
-        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>

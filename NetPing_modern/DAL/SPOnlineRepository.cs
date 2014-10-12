@@ -1,9 +1,9 @@
 ﻿using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 using HtmlAgilityPack;
-using Microsoft.Ajax.Utilities;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
 using Microsoft.Web.Mvc;
@@ -161,9 +161,7 @@ namespace NetPing.DAL
                     string content = contentTask.Result;
                     if (!string.IsNullOrWhiteSpace(content))
                     {
-                        dynamic page = JObject.Parse(content);
-                        string contentStr = (string) page.body.value;
-                        propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((contentStr)))));
+                        propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
                     }
                 }
             }
@@ -189,9 +187,7 @@ namespace NetPing.DAL
                             string content = contentTask2.Result;
                             if (!string.IsNullOrWhiteSpace(content))
                             {
-                                dynamic page = JObject.Parse(content);
-                                string contentStr = (string)page.body.value;
-                                propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((contentStr)))));
+                                propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
                             }
                         }
                     }
@@ -414,23 +410,41 @@ namespace NetPing.DAL
         {
             var result = new List<Post>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Posts", NetPing_modern.Resources.Camls.Caml_Posts))
+            foreach (var item in (ListItemCollection)ReadSPList("Blog_posts", NetPing_modern.Resources.Camls.Caml_Posts))
             {
+                var link = item["Body_link"] as FieldUrlValue;
+                int? contentId = null;
+                string url = null;
+                if (link != null)
+                {
+                    url = link.Url;
+                    contentId = _confluenceClient.GetContentIdFromUrl(url);
+                }
+                string content = string.Empty;
+                string title = string.Empty;
+                if (contentId.HasValue)
+                {
+                    Task<string> contentTask = _confluenceClient.GetContenAsync(contentId.Value);
+                    content = contentTask.Result;
+                    contentTask = _confluenceClient.GetContentTitleAsync(contentId.Value);
+                    title = contentTask.Result;
+                }
+
                 result.Add(new Post
                          {
-                             Id = item.Id
+                             Id = int.Parse(item["Old_id"].ToString())
                             ,
-                             Title = item["Title"] as string
+                             Title = title
                             ,
                              Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                             ,
-                             Body = (item["Body"] as string).ReplaceInternalLinks()
+                             Body = content.ReplaceInternalLinks()
                             ,
-                             Cathegory = (item["PostCategory"] as FieldLookupValue[])[0].LookupValue.ToString()
+                             Cathegory = item["Category"] as string
                             ,
-                             IsActive = Convert.ToBoolean(item["Active"])
-                            ,
-                             Created = (DateTime)item["Created"]
+                             Created = (DateTime)item["Pub_date"]
+                             ,
+                             Url_name = url
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");

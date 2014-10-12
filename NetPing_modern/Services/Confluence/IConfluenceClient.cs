@@ -6,6 +6,10 @@ namespace NetPing_modern.Services.Confluence
     {
         Task<string> GetContenAsync(int id);
 
+        Task<string> GetContentTitleAsync(int id);
+
         Task<int> GetContentBySpaceAndTitle(string spaceKey, string title);
+
+        int? GetContentIdFromUrl(string url);
     }
 }
