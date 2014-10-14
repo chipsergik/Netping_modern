@@ -151,6 +151,8 @@
     <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="DAL\CustomTermComparer.cs" />
     <Compile Include="DAL\CategoryId.cs" />
+    <Compile Include="DAL\DevicesTree.cs" />
+    <Compile Include="DAL\DeviceTreeNode.cs" />
     <Compile Include="DAL\Errors.cs" />
     <Compile Include="DAL\SortOrdersCollection.cs" />
     <Compile Include="DAL\IRepository.cs" />
@@ -160,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global\Config\Config.cs" />
+    <Compile Include="Global\Config\ConfluenceSettings.cs" />
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
@@ -310,6 +313,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Confluence\ConfluenceClient.cs" />
+    <Compile Include="Services\Confluence\IConfluenceClient.cs" />
     <Compile Include="Tools\TimerCacheDependency.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -476,8 +481,11 @@
     <EmbeddedResource Include="Resources\Camls.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Camls.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Camls.ru.resx" />
+    <EmbeddedResource Include="Resources\Camls.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Other.ru.resx" />
     <EmbeddedResource Include="Resources\Other.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
