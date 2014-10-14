@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-10-12 13:03">
+<yml_catalog date="2014-10-14 01:55">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -76,7 +76,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Коммутатор NP-SM4</vendorCode>
         <model>Коммутатор NP-SM4</model>
-        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
+        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -94,7 +94,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Коммутатор PS104GT</vendorCode>
         <model>Коммутатор PS104GT</model>
-        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю)&amp;nbsp;</description>
+        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -112,7 +112,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</vendorCode>
         <model>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</model>
-        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).&amp;nbsp;</description>
+        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -130,7 +130,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Термодатчик 1-wire, (THS), 2м</vendorCode>
         <model>Термодатчик 1-wire, (THS), 2м</model>
-        <description>Датчик температуры -55C ... +125C&amp;nbsp;с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
+        <description>Датчик температуры -55C ... +125C с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -255,7 +255,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</vendorCode>
         <model>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</model>
-        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;).&amp;nbsp;</description>
+        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -273,7 +273,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик протечки, модель 2605, 2м</vendorCode>
         <model>Датчик протечки, модель 2605, 2м</model>
-        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика.&amp;nbsp;</description>
+        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -399,7 +399,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
         <model>Устройство NetPing Mini-UPS</model>
-        <description>Устройство бесперебойного питания со&amp;nbsp;встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
+        <description>Устройство бесперебойного питания со встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -417,7 +417,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Адаптер WiFi VAP11N</vendorCode>
         <model>Адаптер WiFi VAP11N</model>
-        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети.&amp;nbsp;</description>
+        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -435,7 +435,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Розетка NetPing AC/DIN</vendorCode>
         <model>Розетка NetPing AC/DIN</model>
-        <description>Управляемая розетка позволяет включать/выключать и перезагружать электропитание внешней нагрузки 100..240В&amp;nbsp; 50/60Гц, с током до 10А. Розетка должна быть подключена к IO линии базового устройства Netping!</description>
+        <description>Управляемая розетка позволяет включать/выключать и перезагружать электропитание внешней нагрузки 100..240В  50/60Гц, с током до 10А. Розетка должна быть подключена к IO линии базового устройства Netping!</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -471,7 +471,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для PWR-220</vendorCode>
         <model>Переходник для PWR-220</model>
-        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing&amp;nbsp;с компьютерной розетки на обыкновенную розетку для подключения евровилки.</description>
+        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing с компьютерной розетки на обыкновенную розетку для подключения евровилки.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -507,7 +507,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Power adaptor 48V 1.5A</vendorCode>
         <model>Power adaptor 48V 1.5A</model>
-        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например,&amp;nbsp;Netping NP-SM4&amp;nbsp;</description>
+        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например, Netping NP-SM4 </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -615,7 +615,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Инжектор питания POE (стандарта 802.3af)</vendorCode>
         <model>Инжектор питания POE (стандарта 802.3af)</model>
-        <description>Инжектор POE, обеспечивает&amp;nbsp;питание по кабелю Ethernet устройств, которые поддерживают стандарт POE IEEE 802.3af. </description>
+        <description>Инжектор POE, обеспечивает питание по кабелю Ethernet устройств, которые поддерживают стандарт POE IEEE 802.3af. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -633,7 +633,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
         <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
-        <description>Плата расширения для устройства Uniping v3&amp;nbsp;позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
+        <description>Плата расширения для устройства Uniping v3 позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -759,7 +759,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing v3</vendorCode>
         <model>Устройство UniPing v3</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков&amp;nbsp;</description>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -939,7 +939,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
         <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
-        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.&amp;nbsp;&amp;nbsp;</description>
+        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.  </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -957,7 +957,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>POE инжектор на 3 порта</vendorCode>
         <model>POE инжектор на 3 порта</model>
-        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at&amp;nbsp;</description>
+        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>

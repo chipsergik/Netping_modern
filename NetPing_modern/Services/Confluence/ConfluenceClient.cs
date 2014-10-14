@@ -36,7 +36,7 @@ namespace NetPing_modern.Services.Confluence
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var response =
-                    client.GetAsync(string.Format("wiki/rest/prototype/1/content/{0}?os_authType=basic", id));
+                    client.GetAsync(string.Format("wiki/rest/api/content/{0}?expand=body.view&os_authType=basic", id));
                 if (response.Result.IsSuccessStatusCode)
                 {
                     StreamContent content = (StreamContent)response.Result.Content;
@@ -109,6 +109,10 @@ namespace NetPing_modern.Services.Confluence
                 {
                     return page.body.value;
                 }
+            }
+            else if (page.body != null && page.body.view != null)
+            {
+                return page.body.view.value;
             }
             return string.Empty;
         }
