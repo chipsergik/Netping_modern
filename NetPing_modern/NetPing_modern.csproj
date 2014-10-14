@@ -468,7 +468,9 @@
       <LastGenOutput>Camls.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Camls.ru.resx" />
+    <EmbeddedResource Include="Resources\Camls.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Other.ru.resx" />
     <EmbeddedResource Include="Resources\Other.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

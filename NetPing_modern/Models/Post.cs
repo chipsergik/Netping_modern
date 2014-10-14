@@ -16,7 +16,7 @@ namespace NetPing.Models
         public string Body {  get;set; }
         public List<SPTerm> Devices { get; set; }
         public string Cathegory { get; set; }
-        public bool IsActive { get; set; }
         public DateTime Created { get; set; }
+        public string Url_name { get; set; }
     }
 }
