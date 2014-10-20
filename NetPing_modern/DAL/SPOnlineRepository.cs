@@ -161,7 +161,8 @@ namespace NetPing.DAL
                     string content = contentTask.Result;
                     if (!string.IsNullOrWhiteSpace(content))
                     {
-                        propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                        string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                        propertyInfo.SetValue(device, propertyValue);
                     }
                 }
             }
@@ -187,7 +188,8 @@ namespace NetPing.DAL
                             string content = contentTask2.Result;
                             if (!string.IsNullOrWhiteSpace(content))
                             {
-                                propertyInfo.SetValue(device, StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                                string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                                propertyInfo.SetValue(device, propertyValue);
                             }
                         }
                     }
@@ -329,6 +331,30 @@ namespace NetPing.DAL
             return str;
         }
 
+        private readonly Regex ConfluenceImageTagRegex = new Regex(@"\<img [^\>]+\>", RegexOptions.IgnoreCase);
+
+        private string ReplaceConfluenceImages(string str)
+        {
+            return ConfluenceImageTagRegex.Replace(str, new MatchEvaluator(ConfluenceImage));
+        }
+
+        private readonly Regex ConfluenceImgSrcRegex = new Regex(@"\ssrc=""/wiki(?<src>[^\""]+)""");
+        private readonly Regex ConfluenceDataBaseUrlRegex = new Regex(@"\sdata-base-url=""(?<src>[^\""]+)""");
+
+        string ConfluenceImage(Match match)
+        {
+            var s = match.ToString();
+            if (s.Contains("confluence-embedded-image"))
+            {
+                var src = ConfluenceImgSrcRegex.Match(s);
+                var baseUrl = ConfluenceDataBaseUrlRegex.Match(s);
+                if (src.Success && baseUrl.Success)
+                {
+                    return ConfluenceImgSrcRegex.Replace(s, string.Format(" src=\"{0}\"", baseUrl.Groups["src"].Value + src.Groups["src"].Value));
+                }
+            }
+            return s;
+        }
 
         public IEnumerable<DevicePhoto> DevicePhotos { get { return (IEnumerable<DevicePhoto>)(PullFromCache("DevicePhotos")); } }
         private IEnumerable<DevicePhoto> DevicePhotos_Read(IEnumerable<SPTerm> terms)
