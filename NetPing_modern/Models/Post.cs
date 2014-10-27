@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace NetPing.Models
 {
@@ -18,5 +16,17 @@ namespace NetPing.Models
         public string Cathegory { get; set; }
         public DateTime Created { get; set; }
         public string Url_name { get; set; }
+
+        public string Url
+        {
+            get
+            {
+                if (Id != 0)
+                {
+                    return string.Format("/view.aspx?id={0}", Id);
+                }
+                return "#";
+            }
+        }
     }
 }

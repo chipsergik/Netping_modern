@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NetPing_modern.Models.Blog
+@{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
 
@@ -13,22 +14,22 @@
 }
 
 @section Content_left {
-    @for (int i = 0; i < 10; i++)
+    @foreach(var post in Model.Posts)
     {
 
         <div class="blog-item">
-            <a href="/blog/record">
+            <a href="@post.Url">
                 <div class="blog-item-header">
-                    <div class="category-label">Электропитание</div>
-                    <span>12 сентября 2014г.</span>
+                    <div class="category-label">@post.Cathegory</div>
+                    <span>@post.Created.ToShortDateString()</span>
                 </div>
                 <h1>
-                    Вышла новая версия ПО для устройства NetPing
+                    @post.Title
                 </h1>
-                <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, ipsum ut lacinia dapibus, arcu libero porttitor enim, eu dignissim tellus mauris quis lacus. Morbi venenatis est a turpis tincidunt, quis ultricies ligula lacinia. Phasellus iaculis placerat nulla, eu varius risus euismod nec. Donec nunc ex, mollis eget turpis condimentum, porttitor tincidunt elit. Duis semper, metus quis malesuada iaculis, lorem ipsum tincidunt est, sit amet tincidunt purus lacus nec lorem. Fusce blandit luctus nisi a rutrum. Vestibulum in iaculis nisl, in ullamcorper erat. Nulla quis quam ut nibh commodo egestas at eu ipsum. Quisque viverra id libero a viverra. In urna augue, egestas nec auctor dapibus, ornare sit amet mi.</p>
+                @*<img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />*@
+                <p>@Html.Raw(post.Body)</p>
             </a>
-            <ul class="tags">
+            @*<ul class="tags">
                 <li class="tag">
                     NetPing
                 </li>
@@ -38,7 +39,7 @@
                 <li class="tag">
                     Устройство
                 </li>
-            </ul>
+            </ul>*@
             <div class="clear"></div>
             <hr />
         </div>

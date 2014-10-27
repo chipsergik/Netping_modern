@@ -166,6 +166,7 @@
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DeviceParameterEqualityComparer.cs" />
     <Compile Include="Models\DevicesCompare.cs" />
