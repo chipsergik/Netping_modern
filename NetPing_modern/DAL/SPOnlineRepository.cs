@@ -254,15 +254,20 @@ namespace NetPing.DAL
 
             foreach (var item in (ListItemCollection)ReadSPList("Device_photos", NetPing_modern.Resources.Camls.Caml_DevicePhotos))
             {
+                string pictureUrl = (item["FileLeafRef"] as string);
+                if (!string.IsNullOrEmpty(pictureUrl))
+                {
+                    pictureUrl = pictureUrl.Replace(" ", string.Empty);
+                }
                 result.Add(new DevicePhoto
                 {
                     Name = item["FileLeafRef"] as string
                    ,
                     Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                    ,
-                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + (item["FileLeafRef"] as string)
+                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + pictureUrl
                    ,
-                    IsBig = (item["FileLeafRef"] as string).Contains("big") ? true : false
+                    IsBig = pictureUrl.Contains("big") ? true : false
                    ,
                     IsCover = Convert.ToBoolean(item["Cover"])
                 });
@@ -451,13 +456,14 @@ namespace NetPing.DAL
                             }
                         }
                         var descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
+                        string pictureUrl = offerNode.Device.GetCoverPhoto(true).Url;
                         shop.Offers.Add(new Offer
                                         {
                                             Id = offerNode.Id,
                                             Url = GetDeviceUrl(offerNode.Device),
                                             Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
                                             CategoryId = childCategoryNode.Id,
-                                            Picture = offerNode.Device.GetCoverPhoto(true).Url,
+                                            Picture = pictureUrl,
                                             TypePrefix = childCategoryNode.Name,
                                             VendorCode = offerNode.Name,
                                             Model = offerNode.Name,
