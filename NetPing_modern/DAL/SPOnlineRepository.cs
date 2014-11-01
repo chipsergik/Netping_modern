@@ -391,7 +391,7 @@ namespace NetPing.DAL
                 PushToCache("Devices", devices);
 
 
-                return "";
+                //return "";
 
                 if (Helpers.IsCultureRus)
                 {
