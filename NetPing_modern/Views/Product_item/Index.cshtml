@@ -45,13 +45,7 @@
                     @Model.Name.Name
                 </p>
                 <p class="PhotoURL">
-                    @{
-                        var photo1 = Model.DevicePhotos.FirstOrDefault(p => p.IsBig);
-                        if (photo1 != null)
-                        {
-                            @photo1.Url;
-                        }
-                    }
+                    @Model.GetCoverPhoto(true).Url
                 </p>
             </div>
 

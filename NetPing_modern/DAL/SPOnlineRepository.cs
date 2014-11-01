@@ -265,7 +265,7 @@ namespace NetPing.DAL
                    ,
                     Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                    ,
-                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/" + pictureUrl
+                    Url = "http://netping.ru/Pub/Photos/" + pictureUrl
                    ,
                     IsBig = pictureUrl.Contains("big") ? true : false
                    ,
@@ -289,7 +289,7 @@ namespace NetPing.DAL
                    ,
                     File_type = (item["File_type"] as TaxonomyFieldValue).ToSPTerm(termsFileTypes)
                    ,
-                    Url = "https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/" + (item["FileLeafRef"] as string)
+                    Url = "http://netping.ru/Pub/Pub/" + (item["FileLeafRef"] as string)
                    ,
                     Url_link = (item["Url"] as FieldUrlValue).Url
                 });
@@ -321,6 +321,7 @@ namespace NetPing.DAL
                     Created = (DateTime)item["Created"]
                    ,
                     Url = (item["Public_url"] as FieldUrlValue).ToFileUrlStr(item["FileLeafRef"] as string)
+                  
                 });
             }
             if (result.Count == 0) throw new Exception("No one SFile was readed!");
@@ -388,6 +389,10 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
+
+
+                return "";
+
                 if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();

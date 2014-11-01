@@ -56,7 +56,7 @@ namespace NetpingHelpers
 
         public static string ToFileUrlStr(this FieldUrlValue url, string file_name)
         {
-            if (url == null) return "https://netpingeastcoltd-public.sharepoint.com/Pub/" + file_name;
+            if (url == null) return "http://netping.ru/Pub/Files/" + file_name;
               else return url.Url;
         }
 
