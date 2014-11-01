@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NetPing.Models.Post
+@{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
 
@@ -14,25 +15,16 @@
     <div class="blog-item">
 
         <div class="blog-item-header">
-            <div class="category-label">Электропитание</div>
-            <span>12 сентября 2014г.</span>
+            <div class="category-label">@Model.Cathegory</div>
+            <span>@Model.Created.ToShortDateString()</span>
         </div>
         <h1>
-            Вышла новая версия ПО для устройства NetPing
+            @Model.Title
         </h1>
-        <img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, lacus non accumsan bibendum, justo nulla bibendum turpis, eleifend gravida diam sem vel turpis. Integer iaculis ante et leo tincidunt semper. Duis fringilla blandit vehicula. Praesent dui tellus, egestas vitae nisl eget, faucibus venenatis est. Vivamus nec nibh vel ligula fermentum pharetra vulputate non tortor. In hac habitasse platea dictumst. Quisque viverra mauris mi, eget blandit dolor finibus et. Quisque semper lacus lectus, eu vestibulum purus imperdiet eu. Duis dignissim ante nec vestibulum bibendum. Phasellus nec erat vel massa blandit ultrices vitae in ante. Fusce dolor lorem, finibus scelerisque consectetur quis, vehicula quis nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </p>
-        <p>
-            Curabitur in diam vitae elit condimentum viverra. Nam mi turpis, egestas id ligula non, dapibus rhoncus nibh. Nunc non odio vel justo commodo ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus euismod sodales felis, in congue ligula feugiat ac. Duis pellentesque neque sit amet eros lobortis sollicitudin. Pellentesque at lobortis ipsum, et imperdiet lectus.
-        </p>
-        <p>
-            Nulla laoreet accumsan augue, sed pulvinar sem hendrerit ut. Proin pharetra vulputate purus vel pharetra. Pellentesque accumsan gravida lacus, molestie tincidunt purus elementum at. Quisque quis diam orci. Aliquam erat volutpat. Mauris velit est, luctus et sapien id, consequat congue sapien. Suspendisse sed gravida tellus. In porta non elit in venenatis. Aliquam imperdiet et massa et fringilla. Donec ullamcorper augue sed placerat aliquam.
-        </p>
+            @Html.Raw(Model.Body)
         <hr />
-        <ul class="tags">
+        @*<ul class="tags">
             <li class="tag">
                 NetPing
             </li>
@@ -42,9 +34,9 @@
             <li class="tag">
                 Устройство
             </li>
-        </ul>
+        </ul>*@
     </div>
-    <div class="comment-form">
+    @*<div class="comment-form">
         <h1>Оставить свой комментарий</h1>
         <form>
             <input type="text" placeholder="имя" />
@@ -67,7 +59,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sapien, aliquam id pellentesque sit amet, viverra ac ligula. Aenean at vulputate eros, vel pharetra orci. Aliquam tortor arcu, semper vitae libero nec, suscipit aliquet enim. Quisque eu lorem at sapien scelerisque auctor ut fermentum dui. Suspendisse scelerisque erat ante, non feugiat est commodo non. Nunc pretium lacus ut tincidunt sagittis. Aliquam erat volutpat. Cras gravida ligula dapibus porttitor pretium. Praesent quis mi vel velit fringilla ornare. Suspendisse laoreet sapien quis neque elementum tempor. Maecenas eu sapien vel nulla tempus suscipit vitae at mi. Pellentesque imperdiet tellus non justo laoreet, eu tincidunt felis scelerisque. Donec dignissim felis augue, consequat tincidunt orci porta quis. Donec fermentum consequat massa sit amet congue. Mauris tristique viverra tristique. Aenean efficitur euismod eros, sed ornare leo scelerisque eget.</p>
             </div>
         }
-    </div>
+    </div>*@
 }
 
 @section Content_right{
