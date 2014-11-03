@@ -26,7 +26,7 @@ namespace NetPing_modern.Controllers
         public ActionResult Record(string postname)
         {
             var posts = _repository.Posts;
-            var pst = posts.FirstOrDefault(item => item.Url_name == postname);
+            var pst = posts.FirstOrDefault(item => item.Url_name == ("/Blog/"+postname));
             if (pst == null) return View("Error", new Errors("Такой записи в блоге не существует!"));
             return View(pst);
         }

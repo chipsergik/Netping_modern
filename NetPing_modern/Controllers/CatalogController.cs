@@ -56,8 +56,8 @@ namespace NetPing.Controllers
             string[] id_choice = { CategoryId.MonitoringId, CategoryId.PowerId, CategoryId.SwitchesId };
 
             id=id_choice.FirstOrDefault(x => x == id);
-            if (id == null) id = id_choice[0];
-            if (sub == "" || sub == null) sub = id;
+            if (string.IsNullOrEmpty(id)) id = id_choice[0];
+            if (string.IsNullOrEmpty(sub)) sub = id;
 
             var Devices = _repository.GetDevices(id, sub);
             ViewBag.id = id;

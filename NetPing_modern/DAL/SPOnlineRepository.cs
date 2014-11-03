@@ -251,35 +251,30 @@ namespace NetPing.DAL
                 devices.Add(device);
             }
 
-            SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Destination_Russia));
+//            SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Destination_Russia));
             foreach (var dev in devices)
             {
 
-                Debug.WriteLine(dev.Name.Name);
-                // Collect Posts for corresponded to device
-                if (dev.Name.Level == 3)  // it is not group
-                {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
-                    dev.Posts = allPosts.Where(pst =>
-                                 pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n == d.OwnNameFromPath) != null) != null
-                                 &&
-                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
-                        ).ToList();
-                }
-                else                      // it is group
-                {                         // Collect all posts where any Device from post path contains dev.Name
-                    dev.Posts = allPosts.Where(pst =>
-                                 pst.Devices.FirstOrDefault(d => d != null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
-                                 &&
-                                 pst.Devices.ListNamesToListDesitnations(devices).Contains(dest_russia)
-                        ).ToList();
-                }
+//                Debug.WriteLine(dev.Name.Name);
+                // Collect Posts and Sfiles corresponded to device
 
-                //Collect SFiles according device
-                // get all files where dev.Name.Path contains Device name of any device from SFile
-                dev.SFiles = allFiles.Where(fl =>
-                                 fl.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
-                                        ).ToList();
+                dev.Posts = allPosts.Where(pst => dev.Name.IsIncludeAnyFromOthers(pst.Devices) || dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
+                dev.SFiles = allFiles.Where(fl => dev.Name.IsIncludeAnyFromOthers(fl.Devices) || dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
 
+  /*              
+                if (dev.Name.IsGroup())  
+                {  // collect all posts and files corresponding to group                      
+
+ 
+                }
+                else                     
+                {    // Collect all posts and files corresponding to device                     
+
+                    dev.Posts=allPosts.Where(pst => dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
+                    dev.SFiles = allFiles.Where(fl => dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
+                    
+                }
+                */
                 // collect device parameters 
                 dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
 
@@ -470,7 +465,7 @@ namespace NetPing.DAL
                             ,
                              Created = (DateTime)item["Pub_date"]
                              ,
-                             Url_name = url
+                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");
@@ -510,6 +505,9 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
+
+                return "";
+
                 if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();
@@ -614,10 +612,10 @@ namespace NetPing.DAL
                 throw new ArgumentNullException("groupId");
 
             var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
-            var devices = Devices.Where(d => d.IsInGroup(group) && !d.IsGroup() && d.Label.OwnNameFromPath != "Archive");
+            var devices = Devices.Where(d => d.Name.IsUnderOther(group.Name) && !d.Name.IsGroup() );
             return devices;
         }
-
+        
         private void GeneratePriceList()
         {
             using (var priceList = new PriceList())
