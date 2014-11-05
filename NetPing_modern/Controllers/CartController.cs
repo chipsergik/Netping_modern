@@ -1,4 +1,4 @@
-﻿using NetPing_modern.Models;
+﻿using NetPing_modern.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

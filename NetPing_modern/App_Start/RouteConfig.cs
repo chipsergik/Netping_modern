@@ -37,7 +37,7 @@ namespace NetPing
 
             routes.MapRoute(
                 name: "Blog",
-                url: "Blog/Main",
+                url: "Blog/{action}",
                 defaults: new { controller = "Blog", action = "Main" }
             );
 

@@ -1,3 +1,5 @@
+using System.Linq;
+using AutoMapper;
 using NetPing.DAL;
 using NetPing.Global.Config;
 using NetPing_modern.Services.Confluence;
@@ -48,7 +50,22 @@ namespace NetPing_modern.App_Start
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
             
             RegisterServices(kernel);
+            ConfigureMapping(kernel);
             return kernel;
+        }
+
+        private static void ConfigureMapping(IKernel kernel)
+        {
+            Mapper.Initialize(cfg => 
+                              {
+                                  cfg.ConstructServicesUsing(t => kernel.Get(t));
+                                  foreach (var profile in typeof (NinjectWebCommon).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(Profile))))
+                                  {
+                                      cfg.AddProfile(kernel.Get(profile) as Profile);
+                                  }
+                              });
+
+            Mapper.AssertConfigurationIsValid();
         }
 
         /// <summary>
@@ -60,6 +77,8 @@ namespace NetPing_modern.App_Start
             kernel.Bind<IRepository>().To<SPOnlineRepository>().InRequestScope();
             kernel.Bind<IConfig>().To<Config>().InSingletonScope();
             kernel.Bind<IConfluenceClient>().To<ConfluenceClient>().InRequestScope();
-        }        
+            //kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>)).InSingletonScope();
+            //kernel.Bind(x => )
+        }
     }
 }

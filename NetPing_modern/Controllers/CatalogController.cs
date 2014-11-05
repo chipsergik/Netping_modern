@@ -35,7 +35,7 @@ using NetPing.DAL;
 */
 using NetPing_modern.DAL;
 using NetPing.Models;
-using NetPing_modern.Models;
+using NetPing_modern.ViewModels;
 
 
 namespace NetPing.Controllers

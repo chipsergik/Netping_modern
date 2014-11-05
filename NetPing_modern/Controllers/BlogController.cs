@@ -1,25 +1,29 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using NetPing.DAL;
-using NetPing_modern.Models;
+using NetPing.Models;
+using NetPing_modern.Mappers;
+using NetPing_modern.ViewModels;
 
 namespace NetPing_modern.Controllers
 {
     public class BlogController : Controller
     {
         private readonly IRepository _repository;
+        private readonly IMapper<Post, PostViewModel> _postMapper;
 
-        public BlogController(IRepository repository)
+        public BlogController(IRepository repository, IMapper<Post,PostViewModel> postMapper)
         {
             _repository = repository;
+            _postMapper = postMapper;
         }
 
         public ActionResult Main()
         {
-            var model = new Blog();
+            var model = new BlogViewModel();
 
             var posts = _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.Where(pst => pst.Cathegory == "News");
-            model.Posts = posts.OrderByDescending(item => item.Created).Take(100);
+            model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map).Take(100);
             return View(model);
         }
 
