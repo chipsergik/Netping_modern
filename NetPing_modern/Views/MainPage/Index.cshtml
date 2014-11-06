@@ -17,13 +17,13 @@
 
 @section Head {
     <!-- Main page banner data -->
-   
+
     <script type='text/javascript'>
-        
+
         var Banners = @Html.Raw(Json.Encode(ViewBag.Banners));
 
     </script>
-    
+
     <script type="text/javascript" src="~/Content/JavaScript/jquery1.8.3min.js"> </script>
     <script type="text/javascript" src="~/Content/JavaScript/responsiveslides.min.js"> </script>
     <script type="text/javascript" src="~/Content/JavaScript/slider.js"> </script>
@@ -51,40 +51,76 @@
             <ul class="rslides" id="slider1"></ul>
         </div>
     </div>
-    <form class="search" name="search" method="post" action="">
-        <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
-        <input class="search_img" type="image" src="~/Content/Images/search.png"></input>
-    </form>
-    <a class="present_left" href="/catalog.aspx?id=_nping_bases">
-        <div class="present_left_image present_left_image1"></div>
-        <h2 class="present_left_h2">@Html.Raw(Index.Sec_monitoring)</h2>
-        <br />
-        <p class="present_left_p">@Index.Sec_monitoring_descr</p>
-        <span class="present_left_s">@Index.Txt_models</span>
-    </a>
-    <a class="present_left" href="/catalog.aspx?id=_nping_power">
-        <div class="present_left_image present_left_image2"></div>
-        <h2 class="present_left_h2">@Html.Raw(Index.Sec_power)</h2>
-        <br />
-        <p class="present_left_p">@Index.Sec_power_descr</p>
-        <span class="present_left_s">@Index.Txt_models</span>
-        <div class="clear"></div>
-    </a>
-    <a class="present_left" href="/catalog.aspx?id=_swtch">
-        <div class="present_left_image present_left_image3"></div>
-        <h2 class="present_left_h2">@Html.Raw(Index.Sec_switch)</h2>
-        <br />
-        <p class="present_left_p">@Index.Sec_switch_descr</p>
-        <span class="present_left_s">@Index.Txt_models</span>
-    </a>
-    <div class="clear"></div>
 
+    <div class="present_fluid">
+        <div class="present_fluid_inner">
+            <a class="present_left" href="/catalog.aspx?id=_nping_bases">
+                <div class="present_left_image present_left_image1"></div>
+                <h2 class="present_left_h2">@Html.Raw(Index.Sec_monitoring)</h2>
+                <br />
+                <p class="present_left_p">@Index.Sec_monitoring_descr</p>
+                <span class="present_left_s">@Index.Txt_models</span>
+            </a>
+            <a class="present_left" href="/catalog.aspx?id=_nping_power">
+                <div class="present_left_image present_left_image2"></div>
+                <h2 class="present_left_h2">@Html.Raw(Index.Sec_power)</h2>
+                <br />
+                <p class="present_left_p">@Index.Sec_power_descr</p>
+                <span class="present_left_s">@Index.Txt_models</span>
+                <div class="clear"></div>
+            </a>
+            <a class="present_left" href="/catalog.aspx?id=_swtch">
+                <div class="present_left_image present_left_image3"></div>
+                <h2 class="present_left_h2">@Html.Raw(Index.Sec_switch)</h2>
+                <br />
+                <p class="present_left_p">@Index.Sec_switch_descr</p>
+                <span class="present_left_s">@Index.Txt_models</span>
+            </a>
+            <div class="clear"></div>
+        </div>
+    </div>
+<div class="clear"></div>
 }
 
 @section Content {
+    <div class="content_news">
+        <div class="content_news_header">
+            <div class="content_news_latest">@Index.Title_news</div>
+            <a href="#" class="content_news_latest_rrs"></a>
+            <div class="clear"></div>
+        </div>
+
+
+        @{
+            int i = 0;
+            foreach (Post post in ViewBag.posts)
+            {
+                <div class="content_news_latest_date @post.Cathegory">
+                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                    <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
+
+                </div>
+                if (++i == 15)
+                {
+                    break;
+                }
+            }
+        }
+    </div>
     <div class="content_sales">
+        <form class="search" name="search" method="post" action="">
+            <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
+            <input class="search_img" type="image" src="~/Content/Images/search.png"></input>
+            <div class="clear"></div>
+        </form>
+        <div class="content_subcription">
+            <span>@Index.Subscription</span>
+            <form class="subscribe" name="subscribe" method="post" action="">
+                <input placeholder="E-Mail" class="subscribe_text_input" size="28"></input><input class="subscribe_image" type="image" src="~/Content/Images/subscribe_button.png"></input>
+            </form>
+        </div>
+        <div class="clear"></div>
         <div class="content_best_sales"><span>@Index.Title_new_devices</span></div>
-        <div class="content_best_sales_border"></div>
 
         @foreach (Device device in ViewBag.Devices)
         {
@@ -100,36 +136,20 @@
                 </p>
             </div>
         }
-    </div>
-    <div class="content_news">
-        <div class="content_news_latest">@Index.Title_news</div>
-        <a href="#" class="content_news_latest_rrs"></a>
-        <div class="clear"></div>
-        <div class="content_news_latest_border"></div>
-        <!--
-        <div class="content_subcription">
-            <span>@Index.Subscription</span>
-            <form class="subscribe" name="subscribe" method="post" action="">
-                <input placeholder="E-Mail" class="subscribe_text_input" size="28"></input><input class="subscribe_image" type="image" src="~/Content/Images/CatalogPageImg/catalog_main_li.png"></input>
-            </form>
-        </div>
-        <div class="clear"></div>
-        <div class="content_subscription_border"></div>
-            -->
-        @{
-            int i = 0;
-            foreach (Post post in ViewBag.posts)
-            {
-                <div class="content_news_latest_date">
-                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                    <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
 
-                </div>
-                if (++i == 15)
-                {
-                    break;
-                }
-            }
+        <div class="content_best_inwork"><span>В разработке</span></div>
+
+        @foreach (Device device in ViewBag.Devices)
+        {
+            <div class="content_best_sales_description" style="background-image: url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));">
+                <a class="content_best_sales_description_a" href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                <p class="content_best_sales_description_p">
+
+                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                                  
+                </p>
+            </div>
         }
     </div>
+
 }
