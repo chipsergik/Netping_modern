@@ -2,7 +2,11 @@ using System.Linq;
 using AutoMapper;
 using NetPing.DAL;
 using NetPing.Global.Config;
+using NetPing.Models;
+using NetPing_modern.Mappers;
 using NetPing_modern.Services.Confluence;
+using NetPing_modern.ViewModels;
+using Ninject.Extensions.Conventions;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
@@ -59,7 +63,9 @@ namespace NetPing_modern.App_Start
             Mapper.Initialize(cfg => 
                               {
                                   cfg.ConstructServicesUsing(t => kernel.Get(t));
-                                  foreach (var profile in typeof (NinjectWebCommon).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(Profile))))
+                                  foreach (var profile in typeof (NinjectWebCommon).Assembly.GetTypes()
+                                      .Where(t => t.GetInterfaces().Any(x => x.IsGenericType && 
+                                          x.GetGenericTypeDefinition() == typeof(IMapper<,>)) && !t.IsGenericType))
                                   {
                                       cfg.AddProfile(kernel.Get(profile) as Profile);
                                   }
@@ -77,8 +83,9 @@ namespace NetPing_modern.App_Start
             kernel.Bind<IRepository>().To<SPOnlineRepository>().InRequestScope();
             kernel.Bind<IConfig>().To<Config>().InSingletonScope();
             kernel.Bind<IConfluenceClient>().To<ConfluenceClient>().InRequestScope();
-            //kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>)).InSingletonScope();
-            //kernel.Bind(x => )
+            //kernel.Bind(x => x.FromThisAssembly().SelectAllClasses().InheritedFrom(typeof(Profile)).BindToSelf());
+            kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>));
+            kernel.Bind<IMapper<Post, PostViewModel>>().To<PostViewModelMapper>();
         }
     }
 }

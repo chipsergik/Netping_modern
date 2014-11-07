@@ -10,5 +10,6 @@ namespace NetPing_modern.ViewModels
         public string Cathegory { get; set; }
         public DateTime Created { get; set; }
         public string Url { get; set; }
+        public bool IsTop { get; set; }
     }
 }

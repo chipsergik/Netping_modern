@@ -16,6 +16,7 @@ namespace NetPing.Models
         public string Cathegory { get; set; }
         public DateTime Created { get; set; }
         public string Url_name { get; set; }
+        public bool IsTop { get; set; }
 
         public string Url
         {

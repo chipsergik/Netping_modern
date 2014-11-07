@@ -1,4 +1,6 @@
-﻿@model NetPing_modern.ViewModels.BlogViewModel
+﻿@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+
+@model NetPing_modern.ViewModels.BlogViewModel
 @{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
@@ -54,10 +56,10 @@
     </div>
     <div class="clear"></div>
     <div class="related">
-        <h2>Популярные статьи</h2>
+        <h2>@Resources.PopularArticlesTitle</h2>
         <a href="#" class="rss-feed"></a>
         <hr />
-        @for (int i = 0; i < 3; i++)
+        @foreach(var post in Model.Posts.Where(p => p.IsTop))
         {
             <a href="#" class="related-item">
                 <h3>09.06.2014</h3>

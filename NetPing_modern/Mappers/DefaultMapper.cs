@@ -4,6 +4,10 @@ namespace NetPing_modern.Mappers
 {
     public class DefaultMapper<TSource, TDestination> : Profile, IMapper<TSource, TDestination>
     {
+        public DefaultMapper()
+        {
+        }
+
         public TDestination Map(TSource source)
         {
             return Mapper.Map<TSource, TDestination>(source);

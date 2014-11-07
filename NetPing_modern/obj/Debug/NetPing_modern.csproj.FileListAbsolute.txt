@@ -154,3 +154,6 @@ C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\AutoMap
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\AutoMapper.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\AutoMapper.xml
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\Ninject.Web.Common.xml
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\Ninject.Extensions.Conventions.dll
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\Ninject.Extensions.Conventions.xml
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Blog.Main.resources

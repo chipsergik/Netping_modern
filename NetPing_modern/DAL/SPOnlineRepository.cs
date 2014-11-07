@@ -465,7 +465,8 @@ namespace NetPing.DAL
                             ,
                              Created = (DateTime)item["Pub_date"]
                              ,
-                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description
+                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description,
+                             IsTop = (bool) item["TOP"] 
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");
