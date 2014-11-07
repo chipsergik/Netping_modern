@@ -453,7 +453,7 @@ namespace NetPing.DAL
 
                 result.Add(new Post
                          {
-                             Id = int.Parse(item["Old_id"].ToString())
+                             Id =(item["Old_id"] ==null) ? 0 : int.Parse(item["Old_id"].ToString())
                             ,
                              Title = title
                             ,
