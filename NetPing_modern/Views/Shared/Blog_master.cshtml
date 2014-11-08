@@ -1,4 +1,6 @@
-﻿@{
+﻿@model NetPing_modern.ViewModels.BlogViewModel
+@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+@{
     Layout = null;
 }
 @using NetPing.Models;
@@ -23,9 +25,29 @@
     <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen"/>
+
     <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
     <script src="~/Content/JavaScript/modernizr.js"></script>
     <script src="~/Content/JavaScript/main.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.easing-1.3.pack.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.confluence-embedded-image').each(function() {
+                $(this).attr('href', $(this).data('image-src')).css('cursor', 'zoom-in');
+            });
+            $('.confluence-embedded-image').fancybox({
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': '600',
+                'speedOut': '200',
+                'overlayShow': false,
+                'type': 'image'
+            });
+        });
+    </script>
     @RenderSection("Head_Css", false)
     @RenderSection("Head", false)
 </head>
@@ -42,14 +64,91 @@
 
                 @if (!IsSectionDefined("Content"))
                 {
-
-
                     <div class="content_left">
                         @RenderSection("Content_left", false)
                     </div>
 
                     <div class="content_right">
-                        @RenderSection("Content_right", false)
+                        <div class="article-search">
+                            <input type="text" placeholder="Искать статью..." />
+                            <input type="submit"  value=""/>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="related">
+                            <h2>@Resources.PopularArticlesTitle</h2>
+                            <a href="#" class="rss-feed"></a>
+                            <hr />
+                            @foreach(var post in Model.Posts.Where(p => p.IsTop))
+                            {
+                                <a href="@post.Url" class="related-item">
+                                    <h3>@post.Created.ToShortDateString()</h3>
+                                    <p>
+                                        @post.Title
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                        <div class="categories">
+                            <ul>
+                                <li>
+                                    <a href="#">Электропитание</a>
+                                </li>
+                                <li>
+                                    <a href="#">Компании</a>
+                                </li>
+                                <li>
+                                    <a href="#">Крупные клиенты</a>
+                                </li>
+                                <li>
+                                    <a href="#">Новинки</a>
+                                </li>
+                            </ul>
+                            <a href="#">&#x25BC; Все категории (25)</a>
+                        </div>
+                        <div class="all-tags">
+                            <h2>Основные теги</h2>
+                            <hr />
+                            <div class="tag">
+                                NetPing
+                            </div>
+                            <div class="tag active">
+                                SMS
+                            </div>
+                            <div class="tag">
+                                Устройство
+                            </div>
+                            <div class="tag">
+                                Клиент
+                            </div>
+                            <div class="tag active">
+                                Производство
+                            </div>
+                            <div class="tag">
+                                Интернет
+                            </div>
+                            <div class="tag">
+                                NetPing
+                            </div>
+                            <div class="tag">
+                                SMS
+                            </div>
+                            <div class="tag">
+                                Устройство
+                            </div>
+                            <div class="tag">
+                                Клиент
+                            </div>
+                            <div class="tag">
+                                Производство
+                            </div>
+                            <div class="tag">
+                                Интернет
+                            </div>
+                            <div class="clear"></div>
+                            <a href="#">&#x25BC; Все теги </a>
+                        </div>
+                        <input id="datepicker" type="text">
+                        <img src="" />
                     </div>
                 }
                 else

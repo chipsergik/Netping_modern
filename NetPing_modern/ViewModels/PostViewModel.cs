@@ -6,6 +6,7 @@ namespace NetPing_modern.ViewModels
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string ShortBody { get; set; }
         public string Body { get; set; }
         public string Cathegory { get; set; }
         public DateTime Created { get; set; }

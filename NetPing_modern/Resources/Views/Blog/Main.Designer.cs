@@ -61,6 +61,24 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Такой записи в блоге не существует..
+        /// </summary>
+        public static string ErrorPostDoesntExistMessage {
+            get {
+                return ResourceManager.GetString("ErrorPostDoesntExistMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ошибка.
+        /// </summary>
+        public static string ErrorTitle {
+            get {
+                return ResourceManager.GetString("ErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Популярные статьи.
         /// </summary>
         public static string PopularArticlesTitle {

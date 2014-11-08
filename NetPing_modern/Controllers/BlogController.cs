@@ -22,17 +22,21 @@ namespace NetPing_modern.Controllers
         {
             var model = new BlogViewModel();
 
-            var posts = _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.Where(pst => pst.Cathegory == "News");
-            model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map).Take(100);
+            var posts = _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.ToList();
+            model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map);
             return View(model);
         }
 
         public ActionResult Record(string postname)
         {
+            var model = new BlogViewModel();
             var posts = _repository.Posts;
-            var pst = posts.FirstOrDefault(item => item.Url_name == ("/Blog/"+postname));
-            if (pst == null) return View("Error", new Errors("Такой записи в блоге не существует!"));
-            return View(pst);
+            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname)));
+            model.Posts =
+                _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0)
+                    .Posts.OrderByDescending(item => item.Created)
+                    .Select(_postMapper.Map);
+            return View(model);
         }
 	}
 }

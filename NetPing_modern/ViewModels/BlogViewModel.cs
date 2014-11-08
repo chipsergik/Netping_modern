@@ -5,5 +5,7 @@ namespace NetPing_modern.ViewModels
     public class BlogViewModel
     {
         public IEnumerable<PostViewModel> Posts { get; set; } 
+
+        public PostViewModel Post { get; set; }
     }
 }

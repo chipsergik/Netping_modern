@@ -17,17 +17,5 @@ namespace NetPing.Models
         public DateTime Created { get; set; }
         public string Url_name { get; set; }
         public bool IsTop { get; set; }
-
-        public string Url
-        {
-            get
-            {
-                if (Id != 0)
-                {
-                    return string.Format("/view.aspx?id={0}", Id);
-                }
-                return "#";
-            }
-        }
     }
 }

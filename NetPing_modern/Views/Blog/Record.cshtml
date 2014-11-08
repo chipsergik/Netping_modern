@@ -1,4 +1,5 @@
-﻿@model NetPing.Models.Post
+﻿@model NetPing_modern.ViewModels.BlogViewModel
+@using Resources = NetPing_modern.Resources.Views.Blog.Main;
 @{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
@@ -12,137 +13,70 @@
 }
 
 @section Content_left{
-    <div class="blog-item">
 
-        <div class="blog-item-header">
-            <div class="category-label">@Model.Cathegory</div>
-            <span>@Model.Created.ToShortDateString()</span>
-        </div>
-        <h1>
-            @Model.Title
-        </h1>
+    @if (Model.Post == null)
+    {
+        <div class="blog-item">
 
-            @Html.Raw(Model.Body)
-        <hr />
-        @*<ul class="tags">
-            <li class="tag">
-                NetPing
-            </li>
-            <li class="tag">
-                SMS
-            </li>
-            <li class="tag">
-                Устройство
-            </li>
-        </ul>*@
-    </div>
-    @*<div class="comment-form">
-        <h1>Оставить свой комментарий</h1>
-        <form>
-            <input type="text" placeholder="имя" />
-            <input type="text" placeholder="e-mail" />
-            <textarea placeholder="Ваше сообщение"></textarea>
-            <input type="submit" value="Отправить" />
-        </form>
-        <div class="clear"></div>
-    </div>
-    <div class="comments">
-        <h1>
-            Комментарии
-        </h1>
-        <hr />
-        @for (int i = 0; i < 3; i++)
-        {
-            <div class="comment">
-                <h3>Username</h3>
-                <span class="date">12 сентября 2014г.</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sapien, aliquam id pellentesque sit amet, viverra ac ligula. Aenean at vulputate eros, vel pharetra orci. Aliquam tortor arcu, semper vitae libero nec, suscipit aliquet enim. Quisque eu lorem at sapien scelerisque auctor ut fermentum dui. Suspendisse scelerisque erat ante, non feugiat est commodo non. Nunc pretium lacus ut tincidunt sagittis. Aliquam erat volutpat. Cras gravida ligula dapibus porttitor pretium. Praesent quis mi vel velit fringilla ornare. Suspendisse laoreet sapien quis neque elementum tempor. Maecenas eu sapien vel nulla tempus suscipit vitae at mi. Pellentesque imperdiet tellus non justo laoreet, eu tincidunt felis scelerisque. Donec dignissim felis augue, consequat tincidunt orci porta quis. Donec fermentum consequat massa sit amet congue. Mauris tristique viverra tristique. Aenean efficitur euismod eros, sed ornare leo scelerisque eget.</p>
+            <div class="blog-item-header">
+                <div class="category-label">@Resources.ErrorTitle</div>
             </div>
-        }
-    </div>*@
-}
+            <h1>
+                @Resources.ErrorPostDoesntExistMessage
+            </h1>
+        </div>
+    }
+    else
+    {
+        <div class="blog-item">
 
-@section Content_right{
-    <div class="article-search">
-        <input type="text" placeholder="Искать статью..." />
-        <input type="submit" value="" />
-    </div>
-    <div class="clear"></div>
-    <div class="related">
-        <h2>Популярные статьи</h2>
-        <a href="#" class="rss-feed"></a>
-        <hr />
-        @for (int i = 0; i < 3; i++)
-        {
-            <a href="#" class="related-item">
-                <h3>09.06.2014</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia id mi non porttitor. Donec.
-                </p>
-            </a>
-        }
-    </div>
-    <div class="categories">
-        <ul>
-            <li>
-                <a href="#">Электропитание</a>
-            </li>
-            <li>
-                <a href="#">Компании</a>
-            </li>
-            <li>
-                <a href="#">Крупные клиенты</a>
-            </li>
-            <li>
-                <a href="#">Новинки</a>
-            </li>
-        </ul>
-        <a href="#">&#x25BC; Все категории (25)</a>
-    </div>
-    <div class="all-tags">
-        <h2>Основные теги</h2>
-        <hr />
-        <div class="tag">
-            NetPing
+            <div class="blog-item-header">
+                <div class="category-label">@Model.Post.Cathegory</div>
+                <span>@Model.Post.Created.ToShortDateString()</span>
+            </div>
+            <h1>
+                @Model.Post.Title
+            </h1>
+
+            @Html.Raw(Model.Post.Body)
+            <hr />
+            @*<ul class="tags">
+                <li class="tag">
+                    NetPing
+                </li>
+                <li class="tag">
+                    SMS
+                </li>
+                <li class="tag">
+                    Устройство
+                </li>
+            </ul>*@
         </div>
-        <div class="tag active">
-            SMS
+        @*<div class="comment-form">
+            <h1>Оставить свой комментарий</h1>
+            <form>
+                <input type="text" placeholder="имя" />
+                <input type="text" placeholder="e-mail" />
+                <textarea placeholder="Ваше сообщение"></textarea>
+                <input type="submit" value="Отправить" />
+            </form>
+            <div class="clear"></div>
         </div>
-        <div class="tag">
-            Устройство
-        </div>
-        <div class="tag">
-            Клиент
-        </div>
-        <div class="tag active">
-            Производство
-        </div>
-        <div class="tag">
-            Интернет
-        </div>
-        <div class="tag">
-            NetPing
-        </div>
-        <div class="tag">
-            SMS
-        </div>
-        <div class="tag">
-            Устройство
-        </div>
-        <div class="tag">
-            Клиент
-        </div>
-        <div class="tag">
-            Производство
-        </div>
-        <div class="tag">
-            Интернет
-        </div>
-        <div class="clear"></div>
-        <a href="#">&#x25BC; Все теги </a>
-    </div>
-    <div class="datepicker"></div>
-    <img src="" />
+        <div class="comments">
+            <h1>
+                Комментарии
+            </h1>
+            <hr />
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="comment">
+                    <h3>Username</h3>
+                    <span class="date">12 сентября 2014г.</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sapien, aliquam id pellentesque sit amet, viverra ac ligula. Aenean at vulputate eros, vel pharetra orci. Aliquam tortor arcu, semper vitae libero nec, suscipit aliquet enim. Quisque eu lorem at sapien scelerisque auctor ut fermentum dui. Suspendisse scelerisque erat ante, non feugiat est commodo non. Nunc pretium lacus ut tincidunt sagittis. Aliquam erat volutpat. Cras gravida ligula dapibus porttitor pretium. Praesent quis mi vel velit fringilla ornare. Suspendisse laoreet sapien quis neque elementum tempor. Maecenas eu sapien vel nulla tempus suscipit vitae at mi. Pellentesque imperdiet tellus non justo laoreet, eu tincidunt felis scelerisque. Donec dignissim felis augue, consequat tincidunt orci porta quis. Donec fermentum consequat massa sit amet congue. Mauris tristique viverra tristique. Aenean efficitur euismod eros, sed ornare leo scelerisque eget.</p>
+                </div>
+            }
+        </div>*@
+    }
 }
 
 @section Under_menu{

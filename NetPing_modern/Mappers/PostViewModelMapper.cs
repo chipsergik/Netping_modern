@@ -11,7 +11,7 @@ namespace NetPing_modern.Mappers
     {
         protected override void Configure(IMappingExpression<Post, PostViewModel> mapping)
         {
-            mapping.ForMember(m => m.Body, o => o.ResolveUsing(p =>
+            mapping.ForMember(m => m.ShortBody, o => o.ResolveUsing(p =>
                                                                {
                                                                    var html = new HtmlDocument();
                                                                    html.LoadHtml(p.Body);
@@ -47,6 +47,21 @@ namespace NetPing_modern.Mappers
 
                                                                    return html.DocumentNode.InnerHtml;
                                                                }));
+
+            mapping.ForMember(m => m.Url, o => o.ResolveUsing(p =>
+                                                              {
+                                                                  if (!string.IsNullOrEmpty(p.Url_name))
+                                                                  {
+                                                                      return p.Url_name;
+                                                                  }
+
+                                                                  if (p.Id != 0)
+                                                                  {
+                                                                      return string.Format("/view.aspx?id={0}", p.Id);
+                                                                  }
+
+                                                                  return "#";
+                                                              }));
         }
     }
 }

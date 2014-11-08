@@ -453,7 +453,7 @@ namespace NetPing.DAL
 
                 result.Add(new Post
                          {
-                             Id = int.Parse(item["Old_id"].ToString())
+                             Id =(item["Old_id"] ==null) ? 0 : int.Parse(item["Old_id"].ToString())
                             ,
                              Title = title
                             ,
@@ -507,13 +507,11 @@ namespace NetPing.DAL
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
 
-                return "";
-
-                if (Helpers.IsCultureRus)
+                /*if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();
                     GenerateYml();
-                }
+                }*/
             }
             catch (Exception ex)
             {
