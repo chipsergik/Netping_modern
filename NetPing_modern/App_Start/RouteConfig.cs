@@ -36,9 +36,22 @@ namespace NetPing
            );
 
             routes.MapRoute(
+                name: "BlogCategory",
+                url: "Blog/Category/{path}",
+                defaults: new { controller = "Blog", action = "Category" }
+            );
+
+            routes.MapRoute(
+                name: "BlogSearch",
+                url: "Blog/Search",
+                defaults: new { controller = "Blog", action = "Search" }
+            );
+
+            routes.MapRoute(
                 name: "Blog",
-                url: "Blog/Main",
-                defaults: new { controller = "Blog", action = "Main" }
+                url: "Blog/{action}",
+                defaults: new { controller = "Blog", action = "Main" },
+                constraints: new {action = @"Main"}
             );
 
             routes.MapRoute(

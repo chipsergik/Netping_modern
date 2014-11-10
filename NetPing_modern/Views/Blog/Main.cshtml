@@ -1,4 +1,6 @@
-﻿@model NetPing_modern.Models.Blog
+﻿@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+
+@model NetPing_modern.ViewModels.BlogViewModel
 @{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
@@ -10,7 +12,6 @@
     <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
     <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
-    <script src="~/Content/JavaScript/blog.js"></script>
 }
 
 @section Content_left {
@@ -20,14 +21,14 @@
         <div class="blog-item">
             <a href="@post.Url">
                 <div class="blog-item-header">
-                    <div class="category-label">@post.Cathegory</div>
+                    <div class="category-label">@post.Category.Name</div>
                     <span>@post.Created.ToShortDateString()</span>
                 </div>
                 <h1>
                     @post.Title
                 </h1>
                 @*<img src="https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png" />*@
-                <p>@Html.Raw(post.Body)</p>
+                <p>@Html.Raw(post.ShortBody)</p>
             </a>
             @*<ul class="tags">
                 <li class="tag">
@@ -45,89 +46,6 @@
         </div>
 
     }
-}
-
-@section Content_right{
-    <div class="article-search">
-        <input type="text" placeholder="Искать статью..." />
-        <input type="submit"  value=""/>
-    </div>
-    <div class="clear"></div>
-    <div class="related">
-        <h2>Популярные статьи</h2>
-        <a href="#" class="rss-feed"></a>
-        <hr />
-        @for (int i = 0; i < 3; i++)
-        {
-            <a href="#" class="related-item">
-                <h3>09.06.2014</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia id mi non porttitor. Donec.
-                </p>
-            </a>
-        }
-    </div>
-    <div class="categories">
-        <ul>
-            <li>
-                <a href="#">Электропитание</a>
-            </li>
-            <li>
-                <a href="#">Компании</a>
-            </li>
-            <li>
-                <a href="#">Крупные клиенты</a>
-            </li>
-            <li>
-                <a href="#">Новинки</a>
-            </li>
-        </ul>
-        <a href="#">&#x25BC; Все категории (25)</a>
-    </div>
-    <div class="all-tags">
-        <h2>Основные теги</h2>
-        <hr />
-        <div class="tag">
-            NetPing
-        </div>
-        <div class="tag active">
-            SMS
-        </div>
-        <div class="tag">
-            Устройство
-        </div>
-        <div class="tag">
-            Клиент
-        </div>
-        <div class="tag active">
-            Производство
-        </div>
-        <div class="tag">
-            Интернет
-        </div>
-        <div class="tag">
-            NetPing
-        </div>
-        <div class="tag">
-            SMS
-        </div>
-        <div class="tag">
-            Устройство
-        </div>
-        <div class="tag">
-            Клиент
-        </div>
-        <div class="tag">
-            Производство
-        </div>
-        <div class="tag">
-            Интернет
-        </div>
-        <div class="clear"></div>
-        <a href="#">&#x25BC; Все теги </a>
-    </div>
-    <input id="datepicker" type="text">
-    <img src="" />
 }
 
 @section Under_menu{

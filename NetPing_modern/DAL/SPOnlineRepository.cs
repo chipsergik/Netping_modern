@@ -25,7 +25,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using NetPing_modern.Services.Confluence;
-using Newtonsoft.Json.Linq;
 using Category = NetPing_modern.PriceGeneration.Category;
 using Group = System.Text.RegularExpressions.Group;
 
@@ -33,6 +32,7 @@ namespace NetPing.DAL
 {
     internal class SPOnlineRepository : IRepository
     {
+        private const string TermsCategoriesCacheName = "TermsCategories";
         private readonly IConfluenceClient _confluenceClient;
 
         public SPOnlineRepository(IConfluenceClient confluenceClient)
@@ -44,6 +44,16 @@ namespace NetPing.DAL
 
         public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
         private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels"); }
+
+        public IEnumerable<SPTerm> TermsCategories { get
+        {
+            return (IEnumerable<SPTerm>) (PullFromCache(TermsCategoriesCacheName));
+        } } 
+        
+        private IEnumerable<SPTerm> TermsCategories_Read()
+        {
+            return GetTermsFromSP("Posts categories");
+        }
 
 
         public IEnumerable<SPTerm> TermsDeviceParameters { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDeviceParameters")); } }
@@ -427,7 +437,7 @@ namespace NetPing.DAL
         }
 
         public IEnumerable<Post> Posts { get { return (IEnumerable<Post>)(PullFromCache("Posts")); } }
-        private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms)
+        private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms, IEnumerable<SPTerm> categoryTerms)
         {
             var result = new List<Post>();
 
@@ -461,11 +471,12 @@ namespace NetPing.DAL
                             ,
                              Body = content.ReplaceInternalLinks()
                             ,
-                             Cathegory = item["Category"] as string
+                             Category = (item["Category"] as TaxonomyFieldValue).ToSPTerm(categoryTerms)
                             ,
                              Created = (DateTime)item["Pub_date"]
                              ,
-                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description
+                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description,
+                             IsTop = (bool) item["TOP"] 
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");
@@ -479,6 +490,7 @@ namespace NetPing.DAL
             try
             {
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
+                var termsCategories = TermsCategories_Read(); Debug.WriteLine("TermsCategories_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
@@ -489,11 +501,12 @@ namespace NetPing.DAL
                 var devicePhotos = DevicePhotos_Read(terms); Debug.WriteLine("DevicePhotos_Read OK");
                 var pubFiles = PubFiles_Read(termsFileTypes);
                 var sFiles = SFiles_Read(termsFileTypes, terms); Debug.WriteLine("SFiles_Read OK");
-                var posts = Posts_Read(terms); Debug.WriteLine("Posts_Read OK");
+                var posts = Posts_Read(terms, termsCategories); Debug.WriteLine("Posts_Read OK");
                 var devices = Devices_Read(posts, sFiles, devicePhotos, devicesParameters, terms, termsDestinations, termsLabels); Debug.WriteLine("Devices_Read OK");
 
                 PushToCache("SiteTexts", siteTexts);
                 PushToCache("TermsLabels", termsLabels);
+                PushToCache(TermsCategoriesCacheName, termsCategories);
                 PushToCache("TermsDeviceParameters", termsDeviceParameters);
                 PushToCache("TermsFileTypes", termsFileTypes);
                 PushToCache("TermsDestinations", termsDestinations);
@@ -505,8 +518,6 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
-
-                return "";
 
                 if (Helpers.IsCultureRus)
                 {

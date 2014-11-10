@@ -112,9 +112,42 @@ namespace NetPing_modern.Services.Confluence
             }
             else if (page.body != null && page.body.view != null)
             {
-                return page.body.view.value;
+                var value = page.body.view.value;
+                value = FixImageLinks(value.ToString());
+                return value;
             }
             return string.Empty;
+        }
+
+        private readonly Regex _imgRegex = new Regex(@"\<img class=""confluence-embedded-image""[^\>]+src=""(?<src>[^""]+)""[^>]+data-base-url=""(?<baseurl>[^""]+)""[^>]+\>");
+        private const string WikiPrefix = "/wiki";
+
+        private object FixImageLinks(string value)
+        {
+            return _imgRegex.Replace(value, new MatchEvaluator(ConfluenceImage));
+        }
+
+        private string ConfluenceImage(Match match)
+        {
+            var str = match.ToString();
+            if (match.Success)
+            {
+                var srcGroup = match.Groups["src"];
+                var baseurlGroup = match.Groups["baseurl"];
+                if (srcGroup.Success && baseurlGroup.Success)
+                {
+                    var url = baseurlGroup.Value;
+                    if (url.LastIndexOf(WikiPrefix, StringComparison.InvariantCultureIgnoreCase) != -1)
+                    {
+                        url = url.Substring(0, url.Length - WikiPrefix.Length);
+                    }
+                    url = url + srcGroup.Value;
+
+                    return str.Replace(srcGroup.Value, url);
+                }
+            }
+
+            return str;
         }
 
         private bool IsJson(string result)

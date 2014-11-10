@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NetPing.Models;
 
-namespace NetPing_modern.Models
+namespace NetPing_modern.ViewModels
 {
     public class DevicesCompare
     {

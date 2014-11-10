@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace NetPing_modern.Models
+namespace NetPing_modern.ViewModels
 {
     public class Cart
     {

@@ -18,7 +18,7 @@ namespace NetPing.Controllers
 
         public ActionResult Index()
         {
-            var posts = _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.Where(pst => pst.Cathegory == "News");
+            var posts = _repository.Devices.FirstOrDefault(dev => dev.Name.Level == 0).Posts.Where(pst => pst.Category.Name == "News");
             posts = posts.OrderByDescending(item => item.Created);
             ViewBag.posts = posts;
             
