@@ -180,6 +180,7 @@
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Mappers\TermViewModelMapper.cs" />
     <Compile Include="Mappers\DefaultMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Mappers\PostViewModelMapper.cs" />
@@ -339,6 +340,8 @@
     <Compile Include="Services\Confluence\ConfluenceClient.cs" />
     <Compile Include="Services\Confluence\IConfluenceClient.cs" />
     <Compile Include="Tools\TimerCacheDependency.cs" />
+    <Compile Include="ViewModels\TagViewModel.cs" />
+    <Compile Include="ViewModels\TermViewModel.cs" />
     <Compile Include="ViewModels\PostViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -415,6 +418,7 @@
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\Images\calendar.png" />
+    <Content Include="Content\JavaScript\blog.js" />
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\fancybox\blank.gif" />
@@ -444,6 +448,7 @@
     <Content Include="Content\JavaScript\fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
     <Content Include="Content\JavaScript\jquery.datetimepicker.js" />
+    <Content Include="Content\JavaScript\jquery.exlist.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />

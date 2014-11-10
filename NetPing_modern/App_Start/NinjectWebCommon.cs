@@ -83,9 +83,10 @@ namespace NetPing_modern.App_Start
             kernel.Bind<IRepository>().To<SPOnlineRepository>().InRequestScope();
             kernel.Bind<IConfig>().To<Config>().InSingletonScope();
             kernel.Bind<IConfluenceClient>().To<ConfluenceClient>().InRequestScope();
-            //kernel.Bind(x => x.FromThisAssembly().SelectAllClasses().InheritedFrom(typeof(Profile)).BindToSelf());
             kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>));
             kernel.Bind<IMapper<Post, PostViewModel>>().To<PostViewModelMapper>();
+            kernel.Bind<IMapper<SPTerm, TermViewModel>>().To<TermViewModelMapper>();
+
         }
     }
 }

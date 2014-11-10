@@ -9,6 +9,13 @@ namespace NetPing_modern.Mappers
 {
     public class PostViewModelMapper : DefaultMapper<Post,PostViewModel>
     {
+        private readonly IMapper<SPTerm, TermViewModel> _termMapper;
+
+        public PostViewModelMapper(IMapper<SPTerm, TermViewModel> termMapper)
+        {
+            _termMapper = termMapper;
+        }
+
         protected override void Configure(IMappingExpression<Post, PostViewModel> mapping)
         {
             mapping.ForMember(m => m.ShortBody, o => o.ResolveUsing(p =>
@@ -62,6 +69,32 @@ namespace NetPing_modern.Mappers
 
                                                                   return "#";
                                                               }));
+
+            mapping.ForMember(m => m.Category, o => o.ResolveUsing(p =>
+                                                                   {
+                                                                       var model = new TermViewModel
+                                                                                   {
+                                                                                       Id =
+                                                                                           p
+                                                                                           .Category
+                                                                                           .Id,
+                                                                                       Name =
+                                                                                           p
+                                                                                           .Category
+                                                                                           .Name
+                                                                                   };
+                                                                       return model;
+                                                                   }));
+            mapping.ForMember(m => m.Tags, o => o.ResolveUsing(p => p.Devices.Select(_termMapper.Map).Select(t =>
+                                                                                                             {
+                                                                                                                 var m = new TagViewModel
+                                                                                                                         {
+                                                                                                                             Id = t.Id,
+                                                                                                                             Name = t.Name,
+                                                                                                                             Path = t.Path
+                                                                                                                         };
+                                                                                                                 return m;
+                                                                                                             })));
         }
     }
 }

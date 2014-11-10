@@ -2,6 +2,9 @@
 @using Resources = NetPing_modern.Resources.Views.Blog.Main;
 @{
     Layout = null;
+
+    const int TopCategories = 5;
+    const int TopTags = 5;
 }
 @using NetPing.Models;
 @using System.Globalization
@@ -30,9 +33,11 @@
     <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
     <script src="~/Content/JavaScript/modernizr.js"></script>
     <script src="~/Content/JavaScript/main.js"></script>
+    <script src="~/Content/JavaScript/jquery.exlist.js"></script>
     <script src="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.js"></script>
     <script src="~/Content/JavaScript/fancybox/jquery.easing-1.3.pack.js"></script>
     <script src="~/Content/JavaScript/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script src="~/Content/JavaScript/blog.js"></script>
     <script type="text/javascript">
         $(function () {
             $('.confluence-embedded-image').each(function() {
@@ -45,6 +50,14 @@
                 'speedOut': '200',
                 'overlayShow': false,
                 'type': 'image'
+            });
+            $('.categories').exlist({
+                listItemSelector: 'ul li',
+                top: @TopCategories
+            });
+            $('.all-tags').exlist({
+                listItemSelector: '.tag',
+                top: @TopTags
             });
         });
     </script>
@@ -70,8 +83,10 @@
 
                     <div class="content_right">
                         <div class="article-search">
-                            <input type="text" placeholder="Искать статью..." />
-                            <input type="submit"  value=""/>
+                            <form action="/Blog/Search" method="GET">
+                                <input type="text" name="q" placeholder="Искать статью..." value="@Model.Query" />
+                                <input type="submit"  value=""/>
+                            </form>
                         </div>
                         <div class="clear"></div>
                         <div class="related">
@@ -90,65 +105,35 @@
                         </div>
                         <div class="categories">
                             <ul>
-                                <li>
-                                    <a href="#">Электропитание</a>
-                                </li>
-                                <li>
-                                    <a href="#">Компании</a>
-                                </li>
-                                <li>
-                                    <a href="#">Крупные клиенты</a>
-                                </li>
-                                <li>
-                                    <a href="#">Новинки</a>
-                                </li>
+                                @foreach(var category in Model.Categories)
+                                {
+                                    <li>
+                                        <a href="/Blog/Category/@category.Path">@category.Name</a>
+                                    </li>
+                                }
                             </ul>
-                            <a href="#">&#x25BC; Все категории (25)</a>
+                            @if (Model.Categories.Count > TopCategories)
+                            {
+                                <a href="#" data-expand>&#x25BC; Все категории (@Model.Categories.Count)</a>
+                            }
                         </div>
                         <div class="all-tags">
                             <h2>Основные теги</h2>
                             <hr />
-                            <div class="tag">
-                                NetPing
-                            </div>
-                            <div class="tag active">
-                                SMS
-                            </div>
-                            <div class="tag">
-                                Устройство
-                            </div>
-                            <div class="tag">
-                                Клиент
-                            </div>
-                            <div class="tag active">
-                                Производство
-                            </div>
-                            <div class="tag">
-                                Интернет
-                            </div>
-                            <div class="tag">
-                                NetPing
-                            </div>
-                            <div class="tag">
-                                SMS
-                            </div>
-                            <div class="tag">
-                                Устройство
-                            </div>
-                            <div class="tag">
-                                Клиент
-                            </div>
-                            <div class="tag">
-                                Производство
-                            </div>
-                            <div class="tag">
-                                Интернет
-                            </div>
+                            @foreach (var tag in Model.Tags)
+                            {
+                                <div class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
+                                    @tag.Name
+                                </div>
+                            }
                             <div class="clear"></div>
-                            <a href="#">&#x25BC; Все теги </a>
+                            <a href="#" data-expand>&#x25BC; Все теги </a>
                         </div>
                         <input id="datepicker" type="text">
                         <img src="" />
+                        <form method="GET" id="tagsForm">
+                            <input type="hidden" name="q" value="@Model.Query"/>
+                        </form>
                     </div>
                 }
                 else

@@ -10,6 +10,7 @@ namespace NetPing.DAL
         IEnumerable<SPTerm> TermsDestinations { get; }
         IEnumerable<SPTerm> TermsDeviceParameters { get; }
         IEnumerable<SPTerm> TermsLabels { get; }
+        IEnumerable<SPTerm> TermsCategories { get; }
         IEnumerable<Device> Devices { get; }
         IEnumerable<Post> Posts { get; }
         IEnumerable<SFile> SFiles { get; }

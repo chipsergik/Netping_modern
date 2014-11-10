@@ -12,7 +12,6 @@
     <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
     <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
-    <script src="~/Content/JavaScript/blog.js"></script>
 }
 
 @section Content_left {
@@ -22,7 +21,7 @@
         <div class="blog-item">
             <a href="@post.Url">
                 <div class="blog-item-header">
-                    <div class="category-label">@post.Cathegory</div>
+                    <div class="category-label">@post.Category.Name</div>
                     <span>@post.Created.ToShortDateString()</span>
                 </div>
                 <h1>
