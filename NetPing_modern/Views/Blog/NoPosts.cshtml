@@ -15,36 +15,15 @@
 }
 
 @section Content_left {
-    @foreach(var post in Model.Posts)
-    {
+    <div class="blog-item">
 
-        <div class="blog-item">
-            
-                <div class="blog-item-header">
-                    <div class="category-label">@post.Category.Name</div>
-                    <span>@post.Created.ToShortDateString()</span>
-                </div>
-                <h1>
-                    <a href="@post.Url">
-                        @post.Title
-                    </a>
-                </h1>
-                <p>@Html.Raw(post.ShortBody)</p>
-            
-            <ul class="tags">
-                @foreach (var tag in post.Tags)
-                {
-                    <li class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
-                        @tag.Name
-                    </li>
-                }
-            </ul>
-            <a class="more" href="@post.Url">@Resources.More</a>
-            <div class="clear"></div>
-            <hr />
+        <div class="blog-item-header">
+            <div class="category-label">@Resources.ErrorTitle</div>
         </div>
-
-    }
+        <h1>
+            @Resources.ErrorNoPostsMessage
+        </h1>
+    </div>
 }
 
 @section Under_menu{
