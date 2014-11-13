@@ -35,17 +35,14 @@ p + p {
 }
 
 .page .main .content {
-    background: #bdeec6; /* Old browsers */
-    background: -moz-linear-gradient(top, #bdeec6 0%, #ffffff 15%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bdeec6), color-stop(15%,#ffffff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #bdeec6 0%,#ffffff 15%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #bdeec6 0%,#ffffff 15%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #bdeec6 0%,#ffffff 15%); /* IE10+ */
-    background: linear-gradient(to bottom, #bdeec6 0%,#ffffff 15%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdeec6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
 }
 
 .blog-item {
+}
+
+.blog-item .more {
+    float: right;
 }
 
     .blog-item a:hover {
@@ -165,6 +162,7 @@ p + p {
     font-size: 10px;
     cursor: pointer;
     margin: 2px 2px 2px;
+    white-space: nowrap;
 }
 
     .tag.active {

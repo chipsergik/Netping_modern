@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorNoPostsMessage" xml:space="preserve">
+    <value>Ни одной записи не найдено.</value>
+  </data>
   <data name="ErrorPostDoesntExistMessage" xml:space="preserve">
     <value>Такой записи в блоге не существует.</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
     <value>Ошибка</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Читать дальше</value>
   </data>
   <data name="PopularArticlesTitle" xml:space="preserve">
     <value>Популярные статьи</value>

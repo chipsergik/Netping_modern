@@ -7,7 +7,7 @@
             timepicker: false,
             todayButton: false
         });
-    $('.all-tags .tag').click(function(){
+    $('.tag').click(function(){
 
         if ($(this).hasClass('active'))
         {
@@ -23,7 +23,7 @@
 
         $('#tagsForm').submit();
     });
-    $('.all-tags .tag[data-tag-selected="True"]').addClass('active').each(function(){
+    $('.tag[data-tag-selected="True"]').addClass('active').each(function(){
         var tag = $("<input type='hidden' name='tags'/>");
         tag.val($(this).data('tag-path'));
         $('#tagsForm').append(tag);
