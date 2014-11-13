@@ -326,6 +326,7 @@
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
     <Content Include="Content\Images\bg_down_list.png" />
+    <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\CatalogPageImg\big_links.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main_li.png" />
@@ -346,6 +347,7 @@
     <Content Include="Content\Images\CatalogPageImg\tabs_title_bg.png" />
     <Content Include="Content\Images\content_news.png" />
     <Content Include="Content\Images\content_news_latest_rrs.png" />
+    <Content Include="Content\Images\footer_bg.png" />
     <Content Include="Content\Images\inwork.png" />
     <Content Include="Content\Images\ProductPageImg\item_files_doc.gif" />
     <Content Include="Content\Images\favicon.ico" />
@@ -384,6 +386,7 @@
     <Content Include="Content\Images\ProductPageImg\tabs_title_bg.png" />
     <Content Include="Content\Images\search.png" />
     <Content Include="Content\Images\search_center.png" />
+    <Content Include="Content\Images\subscribe_button.png" />
     <Content Include="Content\Images\themes.gif" />
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
@@ -405,6 +408,7 @@
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\compare.css" />
+    <Content Include="Content\Themes\DevelopmentPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\korzina.css" />
     <Content Include="Content\Themes\main.css" />
@@ -448,6 +452,7 @@
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
     <Content Include="Views\Catalog\Compare.cshtml" />
+    <Content Include="Views\Product_item\Development.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
