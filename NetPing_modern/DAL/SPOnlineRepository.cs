@@ -519,6 +519,8 @@ namespace NetPing.DAL
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
 
+                Debug.WriteLine("PushToCache OK");
+
                 if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();
