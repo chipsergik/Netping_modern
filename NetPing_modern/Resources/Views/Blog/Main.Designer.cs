@@ -61,6 +61,15 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ни одной записи не найдено..
+        /// </summary>
+        public static string ErrorNoPostsMessage {
+            get {
+                return ResourceManager.GetString("ErrorNoPostsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Такой записи в блоге не существует..
         /// </summary>
         public static string ErrorPostDoesntExistMessage {
@@ -75,6 +84,15 @@ namespace NetPing_modern.Resources.Views.Blog {
         public static string ErrorTitle {
             get {
                 return ResourceManager.GetString("ErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Читать дальше.
+        /// </summary>
+        public static string More {
+            get {
+                return ResourceManager.GetString("More", resourceCulture);
             }
         }
         

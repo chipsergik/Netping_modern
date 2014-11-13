@@ -514,6 +514,7 @@
     <Content Include="Views\Blog\Main.cshtml" />
     <Content Include="Views\Blog\Record.cshtml" />
     <Content Include="Views\Shared\Blog_master.cshtml" />
+    <Content Include="Views\Blog\NoPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -548,6 +549,7 @@
     <EmbeddedResource Include="Resources\Views\Blog\Main.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Main.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Compare.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

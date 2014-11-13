@@ -40,9 +40,24 @@ namespace NetPing_modern.Controllers
                                    }
                                });
 
+            model.Posts.ForEach(p => p.Tags.ForEach(t =>
+                                                    {
+                                                        if (tags == null)
+                                                            return;
+                                                        if (tags.Contains(t.Path))
+                                                        {
+                                                            t.IsSelected = true;
+                                                        }
+                                                    }));
+
             if (tags != null && tags.Count > 0)
             {
-                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path)));
+                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path))).ToList();
+            }
+
+            if (!model.Posts.Any())
+            {
+                return View("NoPosts", model);
             }
 
             return View(model);
@@ -68,6 +83,12 @@ namespace NetPing_modern.Controllers
                     t.IsSelected = true;
                 }
             });
+
+            if (!model.Posts.Any())
+            {
+                return View("NoPosts", model);
+            }
+
             return View("Main", model);
         }
 
@@ -76,7 +97,7 @@ namespace NetPing_modern.Controllers
             var model = new BlogViewModel();
 
             posts = _repository.Posts.ToList();
-            model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map);
+            model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map).ToList();
             model.Categories = _repository.TermsCategories.Select(_termMapper.Map).ToList();
 
             devices = new Dictionary<Guid, SPTerm>();
@@ -108,8 +129,17 @@ namespace NetPing_modern.Controllers
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
-            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname)));
+            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname.Replace("x2E", "."))));
             return View(model);
+        }
+
+        public ActionResult Post(int id)
+        {
+            List<Post> posts;
+            Dictionary<Guid, SPTerm> devices;
+            var model = CreateModel(out posts, out devices);
+            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Id == id));
+            return View("Record", model);
         }
 
         public ActionResult Category(string path, List<string> tags = null)
