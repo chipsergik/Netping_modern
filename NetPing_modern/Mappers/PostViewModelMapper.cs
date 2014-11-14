@@ -67,7 +67,7 @@ namespace NetPing_modern.Mappers
 
                                                                   if (!string.IsNullOrEmpty(p.Url_name))
                                                                   {
-                                                                      return p.Url_name.Replace(".", "x2E");
+                                                                      return p.Url_name;
                                                                   }
 
                                                                   return "#";

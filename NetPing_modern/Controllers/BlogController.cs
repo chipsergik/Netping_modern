@@ -129,7 +129,7 @@ namespace NetPing_modern.Controllers
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
-            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname.Replace("x2E", "."))));
+            model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname)));
             return View(model);
         }
 
