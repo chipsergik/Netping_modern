@@ -37,6 +37,7 @@
     <script src="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.js"></script>
     <script src="~/Content/JavaScript/fancybox/jquery.easing-1.3.pack.js"></script>
     <script src="~/Content/JavaScript/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
     <script src="~/Content/JavaScript/blog.js"></script>
     <script type="text/javascript">
         $(function () {
@@ -93,7 +94,7 @@
                             <h2>@Resources.PopularArticlesTitle</h2>
                             <a href="#" class="rss-feed"></a>
                             <hr />
-                            @foreach(var post in Model.Posts.Where(p => p.IsTop))
+                            @foreach(var post in Model.TopPosts)
                             {
                                 <a href="@post.Url" class="related-item">
                                     <h3>@post.Created.ToShortDateString()</h3>
@@ -107,9 +108,18 @@
                             <ul>
                                 @foreach(var category in Model.Categories)
                                 {
-                                    <li>
-                                        <a href="/Blog/Category/@category.Path">@category.Name</a>
-                                    </li>
+                                    if (category.IsSelected)
+                                    {
+                                        <li>
+                                            <a href="/Blog" class="active">@category.Name</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a href="/Blog/Category/@category.Path">@category.Name</a>
+                                        </li>
+                                    }
                                 }
                             </ul>
                             @if (Model.Categories.Count > TopCategories)
@@ -131,7 +141,7 @@
                         </div>
                         @*<input id="datepicker" type="text">*@
                         <img src="" />
-                        <form method="GET" id="tagsForm">
+                        <form method="GET" action="/Blog" id="tagsForm">
                             <input type="hidden" name="q" value="@Model.Query"/>
                         </form>
                     </div>

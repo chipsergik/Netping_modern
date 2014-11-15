@@ -12,6 +12,23 @@
     <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
 }
 
+@section Head
+{
+    <script type="text/javascript">
+            var disqus_shortname = 'netping'; // Required - Replace example with your forum shortname
+            var disqus_identifier = '@Model.Post.Id';
+            var disqus_title = '@Model.Post.Title';
+            var disqus_url = '@Model.Post.Url';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+    </script>
+}
+
 @section Content_left{
 
     @if (Model.Post == null)
@@ -40,42 +57,17 @@
 
             @Html.Raw(Model.Post.Body)
             <hr />
-            @*<ul class="tags">
-                <li class="tag">
-                    NetPing
-                </li>
-                <li class="tag">
-                    SMS
-                </li>
-                <li class="tag">
-                    Устройство
-                </li>
-            </ul>*@
+            <ul class="tags">
+                @foreach (var tag in Model.Post.Tags)
+                {
+                    <li class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
+                        @tag.Name
+                    </li>
+                }
+            </ul>
         </div>
-        @*<div class="comment-form">
-            <h1>Оставить свой комментарий</h1>
-            <form>
-                <input type="text" placeholder="имя" />
-                <input type="text" placeholder="e-mail" />
-                <textarea placeholder="Ваше сообщение"></textarea>
-                <input type="submit" value="Отправить" />
-            </form>
-            <div class="clear"></div>
-        </div>
-        <div class="comments">
-            <h1>
-                Комментарии
-            </h1>
-            <hr />
-            @for (int i = 0; i < 3; i++)
-            {
-                <div class="comment">
-                    <h3>Username</h3>
-                    <span class="date">12 сентября 2014г.</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sapien, aliquam id pellentesque sit amet, viverra ac ligula. Aenean at vulputate eros, vel pharetra orci. Aliquam tortor arcu, semper vitae libero nec, suscipit aliquet enim. Quisque eu lorem at sapien scelerisque auctor ut fermentum dui. Suspendisse scelerisque erat ante, non feugiat est commodo non. Nunc pretium lacus ut tincidunt sagittis. Aliquam erat volutpat. Cras gravida ligula dapibus porttitor pretium. Praesent quis mi vel velit fringilla ornare. Suspendisse laoreet sapien quis neque elementum tempor. Maecenas eu sapien vel nulla tempus suscipit vitae at mi. Pellentesque imperdiet tellus non justo laoreet, eu tincidunt felis scelerisque. Donec dignissim felis augue, consequat tincidunt orci porta quis. Donec fermentum consequat massa sit amet congue. Mauris tristique viverra tristique. Aenean efficitur euismod eros, sed ornare leo scelerisque eget.</p>
-                </div>
-            }
-        </div>*@
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
 }
 

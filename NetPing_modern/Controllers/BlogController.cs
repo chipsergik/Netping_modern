@@ -15,14 +15,17 @@ namespace NetPing_modern.Controllers
         private readonly IRepository _repository;
         private readonly IMapper<Post, PostViewModel> _postMapper;
         private readonly IMapper<SPTerm, TermViewModel> _termMapper;
+        private readonly IMapper<SPTerm, CategoryViewModel> _categoryMapper; 
 
         public BlogController(IRepository repository, 
             IMapper<Post,PostViewModel> postMapper, 
-            IMapper<SPTerm, TermViewModel> termMapper)
+            IMapper<SPTerm, TermViewModel> termMapper,
+            IMapper<SPTerm, CategoryViewModel> categoryMapper)
         {
             _repository = repository;
             _postMapper = postMapper;
             _termMapper = termMapper;
+            _categoryMapper = categoryMapper;
         }
 
         public ActionResult Main(List<string> tags = null)
@@ -97,8 +100,9 @@ namespace NetPing_modern.Controllers
             var model = new BlogViewModel();
 
             posts = _repository.Posts.ToList();
+            model.TopPosts = posts.OrderByDescending(item => item.Created).Where(item => item.IsTop).Select(_postMapper.Map).ToList();
             model.Posts = posts.OrderByDescending(item => item.Created).Select(_postMapper.Map).ToList();
-            model.Categories = _repository.TermsCategories.Select(_termMapper.Map).ToList();
+            model.Categories = _repository.TermsCategories.Select(_categoryMapper.Map).ToList();
 
             devices = new Dictionary<Guid, SPTerm>();
             foreach (var post in posts)
@@ -161,6 +165,14 @@ namespace NetPing_modern.Controllers
                     t.IsSelected = true;
                 }
             });
+
+            model.Categories.ForEach(c => c.IsSelected = c.Path == path);
+
+            if (!model.Posts.Any())
+            {
+                return View("NoPosts", model);
+            }
+
             return View("Main", model);
         }
 	}

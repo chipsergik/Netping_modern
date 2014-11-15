@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using AutoMapper;
 using HtmlAgilityPack;
 using NetPing.Models;
@@ -58,16 +57,14 @@ namespace NetPing_modern.Mappers
 
             mapping.ForMember(m => m.Url, o => o.ResolveUsing(p =>
                                                               {
-                                                                  
+                                                                  if (!string.IsNullOrEmpty(p.Url_name))
+                                                                  {
+                                                                      return p.Url_name;
+                                                                  }
 
                                                                   if (p.Id != 0)
                                                                   {
                                                                       return string.Format("/view.aspx?id={0}", p.Id);
-                                                                  }
-
-                                                                  if (!string.IsNullOrEmpty(p.Url_name))
-                                                                  {
-                                                                      return p.Url_name;
                                                                   }
 
                                                                   return "#";

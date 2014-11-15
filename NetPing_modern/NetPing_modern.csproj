@@ -180,6 +180,7 @@
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Mappers\CategoryViewModelMapper.cs" />
     <Compile Include="Mappers\TermViewModelMapper.cs" />
     <Compile Include="Mappers\DefaultMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
@@ -340,6 +341,7 @@
     <Compile Include="Services\Confluence\ConfluenceClient.cs" />
     <Compile Include="Services\Confluence\IConfluenceClient.cs" />
     <Compile Include="Tools\TimerCacheDependency.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\TagViewModel.cs" />
     <Compile Include="ViewModels\TermViewModel.cs" />
     <Compile Include="ViewModels\PostViewModel.cs" />
