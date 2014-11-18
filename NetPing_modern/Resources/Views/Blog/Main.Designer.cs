@@ -61,6 +61,15 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Блог.
+        /// </summary>
+        public static string BlogTitle {
+            get {
+                return ResourceManager.GetString("BlogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ни одной записи не найдено..
         /// </summary>
         public static string ErrorNoPostsMessage {

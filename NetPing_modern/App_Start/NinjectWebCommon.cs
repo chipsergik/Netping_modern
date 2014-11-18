@@ -3,6 +3,7 @@ using AutoMapper;
 using NetPing.DAL;
 using NetPing.Global.Config;
 using NetPing.Models;
+using NetPing.PriceGeneration.YandexMarker;
 using NetPing_modern.Mappers;
 using NetPing_modern.Services.Confluence;
 using NetPing_modern.ViewModels;
@@ -86,6 +87,7 @@ namespace NetPing_modern.App_Start
             kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>));
             kernel.Bind<IMapper<Post, PostViewModel>>().To<PostViewModelMapper>();
             kernel.Bind<IMapper<SPTerm, TermViewModel>>().To<TermViewModelMapper>();
+            kernel.Bind<IMapper<SPTerm, CategoryViewModel>>().To<CategoryViewModelMapper>();
 
         }
     }

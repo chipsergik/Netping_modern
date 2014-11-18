@@ -475,7 +475,7 @@ namespace NetPing.DAL
                             ,
                              Created = (DateTime)item["Pub_date"]
                              ,
-                             Url_name = "/Blog/"+(item["Body_link"] as FieldUrlValue).Description,
+                             Url_name = "/Blog/" + (item["Body_link"] as FieldUrlValue).Description.Replace(".", "x2E"),
                              IsTop = (bool) item["TOP"] 
                          });
             }
@@ -521,11 +521,11 @@ namespace NetPing.DAL
 
                 Debug.WriteLine("PushToCache OK");
 
-                if (Helpers.IsCultureRus)
+                /*if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();
                     GenerateYml();
-                }
+                }*/
             }
             catch (Exception ex)
             {

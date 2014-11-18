@@ -56,6 +56,17 @@ p + p {
         margin: 20px 0;
     }
 
+.blog-item h1 a {
+    color: #144e5a;
+}
+
+.blog-item h1 a:link,
+.blog-item h1 a:hover,
+.blog-item h1 a:focus
+ {
+    color: #144e5a;
+}
+
 .comments h1 {
     padding-left: 70px;
     line-height: 57px;
@@ -89,6 +100,11 @@ p + p {
     float: left;
     max-width: 150px;
     margin-right: 20px;
+}
+
+.page .main .content .blog-item img.confluence-embedded-image {
+    float: none;
+    max-width: 100%;
 }
 
 .blog-item hr {
@@ -277,30 +293,59 @@ p + p {
     margin: 20px 0px 20px;
 }
 
-    .categories ul li a {
-        display: block;
-        border-bottom: 1px solid #fff;
-        color: #a5d49e;
-        background-color: #144e5a;
-        font-weight: 700;
-        padding: 8px 20px;
-        font-size: 13px;
+.categories ul li a {
+    display: block;
+    border-bottom: 1px solid #fff;
+    color: #a5d49e;
+    background-color: #144e5a;
+    font-weight: 700;
+    padding: 8px 20px;
+    font-size: 13px;
+}
+
+.categories ul li a.active {
+    background-color: #218196;
+}
+
+.categories ul li a.active, .categories ul li a:hover {
+    color: #144e5a;
+    background-color: #63c87e;
+}
+
+.categories > a, .all-tags > a {
+    text-decoration: underline;
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-size: 14px;
+    color: #f6635e;
+    margin: 5px 0px;
+}
+
+.content .content_left .bread {
+        list-style: none;
+        padding: 26px 0 34px;
     }
 
-        .categories ul li a.active, .categories ul li a:hover {
-            color: #144e5a;
-            background-color: #63c87e;
-        }
+.content .content_left .bread li {
+    color: #a7a7a7;
+    float: left;
+    font: 700 12px sans-serif;
+    /*font: 700 12px 'Corbel', sans-serif;*/
+    margin: 0 5px 0 0;
+}
 
-    .categories > a, .all-tags > a {
-        text-decoration: underline;
-        display: block;
-        text-align: right;
-        font-style: italic;
-        font-size: 14px;
-        color: #f6635e;
-        margin: 5px 0px;
-    }
+.content .content_left .bread li.active span {
+    color: #3ca03d;
+}
+
+.content .content_left .bread li a {
+    color: #2f2f2f;
+}
+
+.content .content_left .bread li a:hover {
+    text-decoration: none;
+}
 
 
 .all-tags h2 {
