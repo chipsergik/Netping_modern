@@ -13,6 +13,7 @@ namespace NetPing.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public IDictionary<string, string> Properties { get; set; }
 
         private string _ownNameFromPath="";
         public string OwnNameFromPath

@@ -261,7 +261,6 @@ namespace NetPing.DAL
                 devices.Add(device);
             }
 
-//            SPTerm dest_russia = termsDestinations.FirstOrDefault(dest => dest.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Destination_Russia));
             foreach (var dev in devices)
             {
 
@@ -271,20 +270,7 @@ namespace NetPing.DAL
                 dev.Posts = allPosts.Where(pst => dev.Name.IsIncludeAnyFromOthers(pst.Devices) || dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
                 dev.SFiles = allFiles.Where(fl => dev.Name.IsIncludeAnyFromOthers(fl.Devices) || dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
 
-  /*              
-                if (dev.Name.IsGroup())  
-                {  // collect all posts and files corresponding to group                      
-
  
-                }
-                else                     
-                {    // Collect all posts and files corresponding to device                     
-
-                    dev.Posts=allPosts.Where(pst => dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
-                    dev.SFiles = allFiles.Where(fl => dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
-                    
-                }
-                */
                 // collect device parameters 
                 dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
 
@@ -748,6 +734,7 @@ namespace NetPing.DAL
             foreach (var term in allTerms)
             {
                 string name = term.Name;
+ 
                 if (lcid != 1033)   // If lcid label not avaliable or lcid==1033 keep default label
                 {
                     var lang_label = term.GetAllLabels(lcid);
@@ -764,6 +751,8 @@ namespace NetPing.DAL
                             Name = name
                            ,
                             Path = term.PathOfTerm
+                           ,
+                            Properties=term.LocalCustomProperties
                         });
                 if (!string.IsNullOrEmpty(term.CustomSortOrder))
                 {
