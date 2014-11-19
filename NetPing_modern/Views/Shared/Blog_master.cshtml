@@ -1,0 +1,163 @@
+﻿@model NetPing_modern.ViewModels.BlogViewModel
+@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+@{
+    Layout = null;
+
+    const int TopCategories = 5;
+    const int TopTags = 5;
+}
+@using NetPing.Models;
+@using System.Globalization
+@using NetpingHelpers
+@helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0}", price);
+        @str
+    }
+}
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
+    <script src="~/Content/JavaScript/modernizr.js"></script>
+    <script src="~/Content/JavaScript/main.js"></script>
+    <script src="~/Content/JavaScript/jquery.exlist.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.easing-1.3.pack.js"></script>
+    <script src="~/Content/JavaScript/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
+    <script src="~/Content/JavaScript/blog.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.confluence-embedded-image').each(function() {
+                $(this).attr('href', $(this).data('image-src')).css('cursor', 'zoom-in');
+            });
+            $('.confluence-embedded-image').fancybox({
+                'transitionIn': 'elastic',
+                'transitionOut': 'elastic',
+                'speedIn': '600',
+                'speedOut': '200',
+                'overlayShow': false,
+                'type': 'image'
+            });
+            $('.categories').exlist({
+                listItemSelector: 'ul li',
+                top: @TopCategories
+            });
+            $('.all-tags').exlist({
+                listItemSelector: '.tag',
+                top: @TopTags
+            });
+        });
+    </script>
+    @RenderSection("Head_Css", false)
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="page">
+        <div class="main">
+            <div class="header-wrapper">
+                @RenderPage("Header.cshtml")
+            </div>
+            @RenderSection("Under_menu", false)
+
+            <!--content-->
+            <div class="content">
+
+                @if (!IsSectionDefined("Content"))
+                {
+                    <div class="content_left">
+                        @RenderSection("Content_left", false)
+                    </div>
+
+                    <div class="content_right">
+                        <div class="article-search">
+                            <form action="/Blog/Search" method="GET">
+                                <input type="text" name="q" placeholder="Искать статью..." value="@Model.Query" />
+                                <input type="submit"  value=""/>
+                            </form>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="related">
+                            <h2>@Resources.PopularArticlesTitle</h2>
+                            <a href="#" class="rss-feed"></a>
+                            <hr />
+                            @foreach(var post in Model.TopPosts)
+                            {
+                                <a href="@post.Url" class="related-item">
+                                    <h3>@post.Created.ToShortDateString()</h3>
+                                    <p>
+                                        @post.Title
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                        <div class="categories">
+                            <ul>
+                                @foreach(var category in Model.Categories)
+                                {
+                                    if (category.IsSelected)
+                                    {
+                                        <li>
+                                            <a href="/Blog" class="active">@category.Name</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a href="/Blog/Category/@category.Path">@category.Name</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                            @if (Model.Categories.Count > TopCategories)
+                            {
+                                <a href="#" data-expand>&#x25BC; Все категории (@Model.Categories.Count)</a>
+                            }
+                        </div>
+                        <div class="all-tags">
+                            <h2>Основные теги</h2>
+                            <hr />
+                            @foreach (var tag in Model.Tags)
+                            {
+                                <div class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
+                                    @tag.Name
+                                </div>
+                            }
+                            <div class="clear"></div>
+                            <a href="#" data-expand>&#x25BC; Все теги </a>
+                        </div>
+                        @*<input id="datepicker" type="text">*@
+                        <img src="" />
+                        <form method="GET" action="/Blog" id="tagsForm">
+                            <input type="hidden" name="q" value="@Model.Query"/>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    @RenderSection("Content", false)
+                }
+                <div class="clear"></div>
+            </div>
+            <!--end content-->
+            @RenderPage("Footer.cshtml")
+            @RenderPage("../Shared/cart.cshtml")
+
+
+        </div>
+    </div>
+</body>
+</html>

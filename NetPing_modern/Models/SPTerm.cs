@@ -13,6 +13,7 @@ namespace NetPing.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public IDictionary<string, string> Properties { get; set; }
 
         private string _ownNameFromPath="";
         public string OwnNameFromPath
@@ -47,10 +48,44 @@ namespace NetPing.Models
                 return _level;
             }
         }
-        
+
+        public bool IsGroup()
+        {
+            return (Level != 3);
+        }
+
         public bool IsEqualStrId(string str_id)
         {
             return Id.ToString() == str_id;
         }
+
+        public bool IsUnderOther(SPTerm other)  // This SPTerm is equal or under other
+        {
+            if (other == null) return false;
+            var path = Path.Split(';');
+            if (path.FirstOrDefault(p => p == other.OwnNameFromPath) == null) return false;
+            return true;
+        }
+
+        public bool IsUnderAnyOthers(List<SPTerm> others)  // Thia SPTerm under or equal any one from others
+        {
+            if (others.FirstOrDefault(o => IsUnderOther(o)) == null) return false;
+            return true;
+        }
+
+        public bool IsIncludeOther(SPTerm other)   // This SPTerm exist in Path of other (it's meam this SPTerm if group that include other)
+        {
+            if (other == null) return false;
+            var path = other.Path.Split(';');
+            if (path.FirstOrDefault(p => p == OwnNameFromPath) == null) return false;
+            return true;
+        }
+
+        public bool IsIncludeAnyFromOthers(List<SPTerm> others)   // This SPTerm exist in Path of any from others (it's meam this SPTerm if group that include any one from others)
+        {
+            if (others.FirstOrDefault(o => IsIncludeOther(o)) == null) return false;
+            return true;
+        }
+
     }
 }

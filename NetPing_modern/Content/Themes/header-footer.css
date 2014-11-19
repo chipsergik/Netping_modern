@@ -64,6 +64,10 @@
         width: 510px;
     }
 
+    .menu-button {
+        display: none;
+    }
+
         .header .logo img {
             border: none;
             margin-left: 70px;

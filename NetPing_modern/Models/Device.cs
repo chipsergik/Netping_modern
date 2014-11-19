@@ -56,17 +56,7 @@ namespace NetPing.Models
         {
             return "/product_item.aspx?id=" + Key;
         }
-        public bool IsGroup()
-        {
-            if (Key.Contains("#")) return true;
-            return false;
-        }
-        public bool IsInGroup(Device group)
-        {
-            var path = Name.Path.Split(';');
-            if (group == null) return false;
-            if (path.FirstOrDefault(p => p == group.Name.OwnNameFromPath) == null) return false;
-            return true;
-        }
+        
+
     }
 }

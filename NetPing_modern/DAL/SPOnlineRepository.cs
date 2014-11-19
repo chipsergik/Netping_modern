@@ -1,7 +1,8 @@
-﻿using System.Collections.ObjectModel;
-using System.Collections.Specialized;
+﻿using System.Linq.Expressions;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.Web.Routing;
-using System.Xml.Serialization;
 using HtmlAgilityPack;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
@@ -23,16 +24,36 @@ using NetPing_modern.Resources.Views.Catalog;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using NetPing_modern.Services.Confluence;
 using Category = NetPing_modern.PriceGeneration.Category;
+using Group = System.Text.RegularExpressions.Group;
 
 namespace NetPing.DAL
 {
-    public class SPOnlineRepository : IRepository
+    internal class SPOnlineRepository : IRepository
     {
+        private const string TermsCategoriesCacheName = "TermsCategories";
+        private readonly IConfluenceClient _confluenceClient;
+
+        public SPOnlineRepository(IConfluenceClient confluenceClient)
+        {
+            _confluenceClient = confluenceClient;
+        }
+
         #region Properties
 
         public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
         private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels"); }
+
+        public IEnumerable<SPTerm> TermsCategories { get
+        {
+            return (IEnumerable<SPTerm>) (PullFromCache(TermsCategoriesCacheName));
+        } } 
+        
+        private IEnumerable<SPTerm> TermsCategories_Read()
+        {
+            return GetTermsFromSP("Posts categories");
+        }
 
 
         public IEnumerable<SPTerm> TermsDeviceParameters { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsDeviceParameters")); } }
@@ -129,11 +150,76 @@ namespace NetPing.DAL
             return -1;
         }
 
+        private readonly Regex _contentIdRegex = new Regex(@"pageId=(?<id>\d+)");
+        private readonly Regex _spaceTitleRegex = new Regex(@"\/display\/(?<spaceKey>[\w \.\-\+%]+)\/(?<title>[\w \.\-\+%]+)?");
+
+        private void LoadFromConfluence(Device device, Expression<Func<Device, string>> expression, string url)
+        {
+            var meta = ModelMetadata.FromLambdaExpression(expression, new ViewDataDictionary<Device>());
+            var propertyInfo = typeof(Device).GetProperty(meta.PropertyName);
+
+            var mc = _contentIdRegex.Matches(url);
+            if (mc.Count > 0)
+            {
+                Match m = mc[0];
+                if (m.Success)
+                {
+                    Group group = m.Groups["id"];
+                    int id = int.Parse(group.Value);
+
+                    var contentTask = _confluenceClient.GetContenAsync(id);
+                    string content = contentTask.Result;
+                    if (!string.IsNullOrWhiteSpace(content))
+                    {
+                        string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                        propertyInfo.SetValue(device, propertyValue);
+                    }
+                }
+            }
+            else
+            {
+                mc = _spaceTitleRegex.Matches(url);
+                if (mc.Count > 0)
+                {
+                    Match m = mc[0];
+                    if (m.Success)
+                    {
+                        Group spaceKeyGroup = m.Groups["spaceKey"];
+                        string spaceKey = spaceKeyGroup.Value;
+
+                        Group titleGroup = m.Groups["title"];
+                        string title = titleGroup.Value;
+
+                        var contentTask = _confluenceClient.GetContentBySpaceAndTitle(spaceKey, title);
+                        int contentId = contentTask.Result;
+                        if (contentId > 0)
+                        {
+                            var contentTask2 = _confluenceClient.GetContenAsync(contentId);
+                            string content = contentTask2.Result;
+                            if (!string.IsNullOrWhiteSpace(content))
+                            {
+                                string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                                propertyInfo.SetValue(device, propertyValue);
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (propertyInfo.GetValue(device) == null)
+            {
+                propertyInfo.SetValue(device, string.Empty);
+            }
+        }
+
         private IEnumerable<Device> Devices_Read(IEnumerable<Post> allPosts, IEnumerable<SFile> allFiles, IEnumerable<DevicePhoto> allDevicePhotos, IEnumerable<DeviceParameter> allDevicesParameters, IEnumerable<SPTerm> terms, IEnumerable<SPTerm> termsDestinations, IEnumerable<SPTerm> termsLabels)
         {
             var devices = new List<Device>();
 
             var list = context.Web.Lists.GetByTitle("Device keys");
+
+            CamlQuery query = new CamlQuery();
+            var items = list.GetItems(query);
 
             foreach (var item in (ListItemCollection)ReadSPList("Device keys", NetPing_modern.Resources.Camls.Caml_Device_keys))
             {
@@ -158,43 +244,33 @@ namespace NetPing.DAL
                              GroupUrl = item["Group_url"] as string
                          };
 
+                
+
+                var urlField = item[Helpers.IsCultureEng ? "Eng_short_descr" : "Rus_short_descr"] as FieldUrlValue;
+                if (urlField != null)
+                {
+                    LoadFromConfluence(device, d => d.Short_description, urlField.Url);
+                }
+
+                urlField = item[Helpers.IsCultureEng ? "Eng_long_descr" : "Rus_long_descr"] as FieldUrlValue;
+                if (urlField != null)
+                {
+                    LoadFromConfluence(device, d => d.Long_description, urlField.Url);
+                }
+
                 devices.Add(device);
             }
 
             foreach (var dev in devices)
             {
 
-                Debug.WriteLine(dev.Name.Name);
-                // Collect Posts for corresponded to device
-                if (dev.Name.Level == 3)  // it is not group
-                {                         // Collect all posts where dev.Name.Path contains Device name of any device from post
-                    dev.Posts = allPosts.Where(pst =>
-                                 pst.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Split(';').FirstOrDefault(n => n == d.OwnNameFromPath) != null) != null
-                        ).ToList();
-                }
-                else                      // it is group
-                {                         // Collect all posts where any Device from post path contains dev.Name
-                    dev.Posts = allPosts.Where(pst =>
-                                 pst.Devices.FirstOrDefault(d => d != null && d.Path.Contains(dev.Name.OwnNameFromPath)) != null
-                        ).ToList();
-                }
+//                Debug.WriteLine(dev.Name.Name);
+                // Collect Posts and Sfiles corresponded to device
 
-                //Set Short description
-                var post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, short description");
-                if (post == null) dev.Short_description = "#error";
-                else dev.Short_description = CleanSpanStyles(CleanFonts(post.Body));
+                dev.Posts = allPosts.Where(pst => dev.Name.IsIncludeAnyFromOthers(pst.Devices) || dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
+                dev.SFiles = allFiles.Where(fl => dev.Name.IsIncludeAnyFromOthers(fl.Devices) || dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
 
-                //Set Long description
-                post = dev.Posts.FirstOrDefault(pst => pst.Cathegory == "Catalog, long description");
-                if (post == null) dev.Long_description = "#error";
-                else dev.Long_description = StylishHeaders3(CleanSpanStyles(CleanFonts(post.Body)));
-
-                //Collect SFiles according device
-                // get all files where dev.Name.Path contains Device name of any device from SFile
-                dev.SFiles = allFiles.Where(fl =>
-                                 fl.Devices.FirstOrDefault(d => d != null && dev.Name.Path.Contains(d.OwnNameFromPath)) != null
-                                        ).ToList();
-
+ 
                 // collect device parameters 
                 dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
 
@@ -246,6 +322,30 @@ namespace NetPing.DAL
             return str;
         }
 
+        private readonly Regex ConfluenceImageTagRegex = new Regex(@"\<img [^\>]+\>", RegexOptions.IgnoreCase);
+
+        private string ReplaceConfluenceImages(string str)
+        {
+            return ConfluenceImageTagRegex.Replace(str, new MatchEvaluator(ConfluenceImage));
+        }
+
+        private readonly Regex ConfluenceImgSrcRegex = new Regex(@"\ssrc=""/wiki(?<src>[^\""]+)""");
+        private readonly Regex ConfluenceDataBaseUrlRegex = new Regex(@"\sdata-base-url=""(?<src>[^\""]+)""");
+
+        string ConfluenceImage(Match match)
+        {
+            var s = match.ToString();
+            if (s.Contains("confluence-embedded-image"))
+            {
+                var src = ConfluenceImgSrcRegex.Match(s);
+                var baseUrl = ConfluenceDataBaseUrlRegex.Match(s);
+                if (src.Success && baseUrl.Success)
+                {
+                    return ConfluenceImgSrcRegex.Replace(s, string.Format(" src=\"{0}\"", baseUrl.Groups["src"].Value + src.Groups["src"].Value));
+                }
+            }
+            return s;
+        }
 
         public IEnumerable<DevicePhoto> DevicePhotos { get { return (IEnumerable<DevicePhoto>)(PullFromCache("DevicePhotos")); } }
         private IEnumerable<DevicePhoto> DevicePhotos_Read(IEnumerable<SPTerm> terms)
@@ -329,27 +429,46 @@ namespace NetPing.DAL
         }
 
         public IEnumerable<Post> Posts { get { return (IEnumerable<Post>)(PullFromCache("Posts")); } }
-        private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms)
+        private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms, IEnumerable<SPTerm> categoryTerms)
         {
             var result = new List<Post>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Posts", NetPing_modern.Resources.Camls.Caml_Posts))
+            foreach (var item in (ListItemCollection)ReadSPList("Blog_posts", NetPing_modern.Resources.Camls.Caml_Posts))
             {
+                var link = item["Body_link"] as FieldUrlValue;
+                int? contentId = null;
+                string url = null;
+                if (link != null)
+                {
+                    url = link.Url;
+                    contentId = _confluenceClient.GetContentIdFromUrl(url);
+                }
+                string content = string.Empty;
+                string title = string.Empty;
+                if (contentId.HasValue)
+                {
+                    Task<string> contentTask = _confluenceClient.GetContenAsync(contentId.Value);
+                    content = contentTask.Result;
+                    contentTask = _confluenceClient.GetContentTitleAsync(contentId.Value);
+                    title = contentTask.Result;
+                }
+
                 result.Add(new Post
                          {
-                             Id = item.Id
+                             Id =(item["Old_id"] ==null) ? 0 : int.Parse(item["Old_id"].ToString())
                             ,
-                             Title = item["Title"] as string
+                             Title = title
                             ,
                              Devices = (item["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                             ,
-                             Body = (item["Body"] as string).ReplaceInternalLinks()
+                             Body = content.ReplaceInternalLinks()
                             ,
-                             Cathegory = (item["PostCategory"] as FieldLookupValue[])[0].LookupValue.ToString()
+                             Category = (item["Category"] as TaxonomyFieldValue).ToSPTerm(categoryTerms)
                             ,
-                             IsActive = Convert.ToBoolean(item["Active"])
-                            ,
-                             Created = (DateTime)item["Created"]
+                             Created = (DateTime)item["Pub_date"]
+                             ,
+                             Url_name = "/Blog/" + (item["Body_link"] as FieldUrlValue).Description.Replace(".", "x2E"),
+                             IsTop = (bool) item["TOP"] 
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");
@@ -363,6 +482,7 @@ namespace NetPing.DAL
             try
             {
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
+                var termsCategories = TermsCategories_Read(); Debug.WriteLine("TermsCategories_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
@@ -373,11 +493,12 @@ namespace NetPing.DAL
                 var devicePhotos = DevicePhotos_Read(terms); Debug.WriteLine("DevicePhotos_Read OK");
                 var pubFiles = PubFiles_Read(termsFileTypes);
                 var sFiles = SFiles_Read(termsFileTypes, terms); Debug.WriteLine("SFiles_Read OK");
-                var posts = Posts_Read(terms); Debug.WriteLine("Posts_Read OK");
+                var posts = Posts_Read(terms, termsCategories); Debug.WriteLine("Posts_Read OK");
                 var devices = Devices_Read(posts, sFiles, devicePhotos, devicesParameters, terms, termsDestinations, termsLabels); Debug.WriteLine("Devices_Read OK");
 
                 PushToCache("SiteTexts", siteTexts);
                 PushToCache("TermsLabels", termsLabels);
+                PushToCache(TermsCategoriesCacheName, termsCategories);
                 PushToCache("TermsDeviceParameters", termsDeviceParameters);
                 PushToCache("TermsFileTypes", termsFileTypes);
                 PushToCache("TermsDestinations", termsDestinations);
@@ -390,14 +511,13 @@ namespace NetPing.DAL
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
 
+                Debug.WriteLine("PushToCache OK");
 
-                //return "";
-
-                if (Helpers.IsCultureRus)
+                /*if (Helpers.IsCultureRus)
                 {
                     GeneratePriceList();
                     GenerateYml();
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -450,18 +570,24 @@ namespace NetPing.DAL
 
                     foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
                     {
-                        var htmlDoc = new HtmlDocument();
-                        htmlDoc.LoadHtml(offerNode.Device.Short_description);
-                        var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
-                        if (ulNodes != null)
+                        string shortDescription = offerNode.Device.Short_description;
+                        string descr = string.Empty;
+                        if (!string.IsNullOrWhiteSpace(shortDescription))
                         {
-                            foreach (var ulNode in ulNodes)
+                            var htmlDoc = new HtmlDocument();
+
+                            htmlDoc.LoadHtml(shortDescription);
+                            var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                            if (ulNodes != null)
                             {
-                                ulNode.Remove();
+                                foreach (var ulNode in ulNodes)
+                                {
+                                    ulNode.Remove();
+                                }
                             }
+                            descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
                         }
-                        var descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
-                        string pictureUrl = offerNode.Device.GetCoverPhoto(true).Url;
+                        
                         shop.Offers.Add(new Offer
                                         {
                                             Id = offerNode.Id,
@@ -491,34 +617,34 @@ namespace NetPing.DAL
                 throw new ArgumentNullException("groupId");
 
             var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
-            var devices = Devices.Where(d => d.IsInGroup(group) && !d.IsGroup() && d.Label.OwnNameFromPath != "Archive");
+            var devices = Devices.Where(d => d.Name.IsUnderOther(group.Name) && !d.Name.IsGroup() );
             return devices;
         }
-
+        
         private void GeneratePriceList()
         {
             using (var priceList = new PriceList())
             {
                 var monitoring = new Category(Index.Sec_monitoring);
 
-                monitoring.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.MonitoringId, CategoryId.MonitoringSection.AccessoriesId));
-                monitoring.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.MonitoringId, CategoryId.MonitoringSection.AccessoriesId));
+                monitoring.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
                 priceList.Categories.Add(monitoring);
 
                 var power = new Category(Index.Sec_power);
-                power.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
-                power.Sections.Add(new Section(Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
-                power.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
-                power.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
+                power.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.PowerId, CategoryId.PowerSection.SolutionsId));
                 priceList.Categories.Add(power);
 
 
                 var switches = new Category(Index.Sec_switch);
-                switches.Sections.Add(new Section(Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
-                switches.Sections.Add(new Section(Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
-                switches.Sections.Add(new Section(Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
+                switches.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
                 priceList.Categories.Add(switches);
 
                 var priceRepl = new PriceListReplacementsTree();
@@ -614,6 +740,7 @@ namespace NetPing.DAL
             foreach (var term in allTerms)
             {
                 string name = term.Name;
+ 
                 if (lcid != 1033)   // If lcid label not avaliable or lcid==1033 keep default label
                 {
                     var lang_label = term.GetAllLabels(lcid);
@@ -630,6 +757,8 @@ namespace NetPing.DAL
                             Name = name
                            ,
                             Path = term.PathOfTerm
+                           ,
+                            Properties=term.LocalCustomProperties
                         });
                 if (!string.IsNullOrEmpty(term.CustomSortOrder))
                 {
@@ -721,8 +850,11 @@ namespace NetPing.DAL
             {
                 if (disposing)
                 {
-                    _context.Dispose();
-                    _context = null;
+                    if (_context != null)
+                    {
+                        _context.Dispose();
+                        _context = null;
+                    }
                 }
             }
             this.disposed = true;

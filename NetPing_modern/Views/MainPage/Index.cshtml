@@ -122,7 +122,7 @@
             {
                 <div class="content_news_latest_date">
                     <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                    <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
+                    <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
 
                 </div>
                 if (++i == 15)

@@ -1,5 +1,16 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
+using System.Linq;
+using AutoMapper;
+using NetPing.DAL;
+using NetPing.Global.Config;
+using NetPing.Models;
+using NetPing.PriceGeneration.YandexMarker;
+using NetPing_modern.Mappers;
+using NetPing_modern.Services.Confluence;
+using NetPing_modern.ViewModels;
+using Ninject.Extensions.Conventions;
+
+[assembly: WebActivator.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
 
 namespace NetPing_modern.App_Start
 {
@@ -40,19 +51,28 @@ namespace NetPing_modern.App_Start
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            try
-            {
-                kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-                kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+            kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
+            kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+            
+            RegisterServices(kernel);
+            ConfigureMapping(kernel);
+            return kernel;
+        }
 
-                RegisterServices(kernel);
-                return kernel;
-            }
-            catch
-            {
-                kernel.Dispose();
-                throw;
-            }
+        private static void ConfigureMapping(IKernel kernel)
+        {
+            Mapper.Initialize(cfg => 
+                              {
+                                  cfg.ConstructServicesUsing(t => kernel.Get(t));
+                                  foreach (var profile in typeof (NinjectWebCommon).Assembly.GetTypes()
+                                      .Where(t => t.GetInterfaces().Any(x => x.IsGenericType && 
+                                          x.GetGenericTypeDefinition() == typeof(IMapper<,>)) && !t.IsGenericType))
+                                  {
+                                      cfg.AddProfile(kernel.Get(profile) as Profile);
+                                  }
+                              });
+
+            Mapper.AssertConfigurationIsValid();
         }
 
         /// <summary>
@@ -61,6 +81,14 @@ namespace NetPing_modern.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            kernel.Bind<IRepository>().To<SPOnlineRepository>().InRequestScope();
+            kernel.Bind<IConfig>().To<Config>().InSingletonScope();
+            kernel.Bind<IConfluenceClient>().To<ConfluenceClient>().InRequestScope();
+            kernel.Bind(typeof (IMapper<,>)).To(typeof (DefaultMapper<,>));
+            kernel.Bind<IMapper<Post, PostViewModel>>().To<PostViewModelMapper>();
+            kernel.Bind<IMapper<SPTerm, TermViewModel>>().To<TermViewModelMapper>();
+            kernel.Bind<IMapper<SPTerm, CategoryViewModel>>().To<CategoryViewModelMapper>();
+
+        }
     }
 }

@@ -35,25 +35,31 @@ using NetPing.DAL;
 */
 using NetPing_modern.DAL;
 using NetPing.Models;
-using NetPing_modern.Models;
+using NetPing_modern.ViewModels;
 
 
 namespace NetPing.Controllers
 {
     public class CatalogController : Controller
     {
+        private readonly IRepository _repository;
+
+        public CatalogController(IRepository repository)
+        {
+            _repository = repository;
+        }
+
         //
         // GET: /Catalog/
         public ActionResult Index(string id, string sub)
         {
             string[] id_choice = { CategoryId.MonitoringId, CategoryId.PowerId, CategoryId.SwitchesId };
-            var repository = new SPOnlineRepository();
 
             id=id_choice.FirstOrDefault(x => x == id);
-            if (id == null) id = id_choice[0];
-            if (sub == "" || sub == null) sub = id;
+            if (string.IsNullOrEmpty(id)) id = id_choice[0];
+            if (string.IsNullOrEmpty(sub)) sub = id;
 
-            var Devices = repository.GetDevices(id, sub);
+            var Devices = _repository.GetDevices(id, sub);
             ViewBag.id = id;
             ViewBag.sub = sub;
             return View(Devices);
@@ -66,9 +72,7 @@ namespace NetPing.Controllers
             if (compare == null || compare.Length < 2)
                 return View(model);
 
-            var repository = new SPOnlineRepository();
-            
-            model.Devices = repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
+            model.Devices = _repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
             IEnumerable<DeviceParameter> collection = null;
             var deviceParameterEqualityComparer = new DeviceParameterEqualityComparer();
             for (int i = 0; i < model.Devices.Count - 1; i++)

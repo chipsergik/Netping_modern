@@ -181,7 +181,7 @@
                                 <div class="tab-c" data-tab-id="3">
                                     <ul>
                                         @{
-                                            IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Cathegory == "FAQ");
+                                            IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Category.Name == "FAQ");
                                             foreach (Post post in posts_faq)
                                             {
                                                 <li>
@@ -196,7 +196,7 @@
                                 <div class="tab-c" data-tab-id="4">
                                     <ul>
                                         @{
-                                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Cathegory == "Typical solution");
+                                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.Name == "Typical solution");
 
                                             foreach (Post post in post_solutions)
                                             {

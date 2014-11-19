@@ -1,0 +1,73 @@
+﻿@using NetPing_modern.Resources.Views.Product_item
+@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+
+@model NetPing_modern.ViewModels.BlogViewModel
+@{
+    Layout = "~/Views/Shared/Blog_master.cshtml";
+}
+
+@section Head_Css {
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
+}
+
+@section Content_left {
+
+    <ul class="bread clearfix">
+        <li><a href="/">@Index.Path_main</a></li>
+        <li>&gt;</li>
+        <li><a href="/Blog">@Resources.BlogTitle</a></li>
+    </ul>
+
+    @foreach(var post in Model.Posts)
+    {
+
+        <div class="blog-item">
+            
+                <div class="blog-item-header">
+                    <div class="category-label">@post.Category.Name</div>
+                    <span>@post.Created.ToShortDateString()</span>
+                </div>
+                <h1>
+                    <a href="@post.Url">
+                        @post.Title
+                    </a>
+                </h1>
+                <p>@Html.Raw(post.ShortBody)</p>
+            
+            <ul class="tags">
+                @foreach (var tag in post.Tags)
+                {
+                    <li class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
+                        @tag.Name
+                    </li>
+                }
+            </ul>
+            <a class="more" href="@post.Url">@Resources.More</a>
+            <div class="clear"></div>
+            <hr />
+        </div>
+
+    }
+}
+
+@section Under_menu{
+    <div class="under-menu">
+        <a href="#">
+            Популярные статьи
+        </a>
+        <a href="#">
+            Категории
+        </a>
+        <a href="#">
+            Тэги
+        </a>
+        <a href="#">
+            Календарь
+        </a>
+    </div>
+    <div class="clear"></div>
+}
