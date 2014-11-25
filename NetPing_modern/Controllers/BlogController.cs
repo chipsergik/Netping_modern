@@ -30,6 +30,7 @@ namespace NetPing_modern.Controllers
 
         public ActionResult Main(List<string> tags = null)
         {
+            
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
@@ -60,8 +61,14 @@ namespace NetPing_modern.Controllers
 
             if (!model.Posts.Any())
             {
-                return View("NoPosts", model);
+                return HttpNotFound();
             }
+
+            ViewBag.Title = "Блог компании Netping, новости, примеры применения, ответы на вопросы";
+            ViewBag.Description = "Блог компании Netping, новости компании Netping, примеры применения устройств Netping, ответы на вопросы об устройствах Netping";
+            ViewBag.Keys = "Netping блог, новости Netping, ответы на вопросы Netping, примеры применения Netping";
+
+            ViewBag.BlogCategoryName = "";
 
             return View(model);
         }
@@ -89,8 +96,12 @@ namespace NetPing_modern.Controllers
 
             if (!model.Posts.Any())
             {
-                return View("NoPosts", model);
+                return View("NoPosts",model);
             }
+
+            ViewBag.Title = "Поиск в блоге: "+q;
+            ViewBag.BlogCategory = "";
+
 
             return View("Main", model);
         }
@@ -127,25 +138,36 @@ namespace NetPing_modern.Controllers
                                                                        }).ToList();
             return model;
         }
-
+        
         public ActionResult Record(string postname)
         {
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
             model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname)));
+
+            ViewBag.Title = model.Post.Title;
+            ViewBag.Description = model.Post.ShortBody;
+
+            ViewBag.BlogCategoryName = model.Post.Category.Name;
+            ViewBag.BlogCategoryPath = model.Post.Category.Path;
+
             return View(model);
         }
-
+        /*
         public ActionResult Post(int id)
         {
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
             model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Id == id));
+
+            ViewBag.Title = model.Post.Title;
+            ViewBag.Description = model.Post.ShortBody;
+
             return View("Record", model);
         }
-
+        */
         public ActionResult Category(string path, List<string> tags = null)
         {
             List<Post> posts;
@@ -170,8 +192,31 @@ namespace NetPing_modern.Controllers
 
             if (!model.Posts.Any())
             {
-                return View("NoPosts", model);
+                return HttpNotFound();
             }
+
+            if (path == "FAQ")
+            {
+                ViewBag.Title = "Ответы на вопросы про устройства Netping";
+                ViewBag.Description = "Ответы на типовые вопросы про использование устройств Netping";
+                ViewBag.Keys = "ответы на вопросы";
+            }
+            if (path == "News")
+            {
+
+                ViewBag.Title = "Новости компании Netping";
+                ViewBag.Description = "Периодически публикуемые новости о компании Netping, обновления ПО устройств, выпуск новых устройств";
+                ViewBag.Keys = "новости Netping, обновление прошивок, выпуск новых устройств";
+            }
+            if (path == "Tutorial")
+            {
+                ViewBag.Title = "Примеры применения устройств Netping";
+                ViewBag.Description = "Примеры применения, типовые схемы использования устройств Netping";
+                ViewBag.Keys = "примеры применения, типовые схемы";
+            }
+
+            ViewBag.BlogCategoryName = model.Categories.FirstOrDefault(c => c.IsSelected).Name;
+            ViewBag.BlogCategoryPath = model.Categories.FirstOrDefault(c => c.IsSelected).Path;
 
             return View("Main", model);
         }

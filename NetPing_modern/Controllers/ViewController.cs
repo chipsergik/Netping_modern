@@ -24,7 +24,7 @@ namespace NetPing.Controllers
         {
             
             var post=_repository.Posts.FirstOrDefault(p => p.Id == id);
-            if (post == null) return RedirectPermanent("Blog/no-found-article");
+            if (post == null) return HttpNotFound();
             return RedirectPermanent(post.Url_name);
         }
  

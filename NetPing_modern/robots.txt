@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /*compare
+Disallow: /Blog?*
+Disallow: /Blog/Category/* 
+Disallow: /Blog/Search* 
+#Sitemap: http://www.netping.ru/sitemap.xml
+Host: www.netping.ru

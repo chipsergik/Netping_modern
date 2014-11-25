@@ -116,9 +116,11 @@ namespace NetpingHelpers
         // Replace links inside Sharepoint HTML body
         public static string ReplaceInternalLinks(this string value)
         {
-            value=value.Replace("src=\"/web/feeds/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_feeds/");
-            value=value.Replace("src=\"/web/Catalog/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_catalog/");
-            value = value.Replace("src=\"/web/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/");
+            //value=value.Replace("src=\"/web/feeds/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_feeds/");
+            //value=value.Replace("src=\"/web/Catalog/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_catalog/");
+            //value = value.Replace("src=\"/web/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/");
+
+            value = value.Replace("=\"/wiki/download/", "=\"https://netping.atlassian.net/wiki/download/");
             return value;
         }
 

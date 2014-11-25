@@ -1,5 +1,7 @@
 ﻿@model NetPing_modern.ViewModels.BlogViewModel
 @using Resources = NetPing_modern.Resources.Views.Blog.Main;
+@using NetPing_modern.Resources.Views.Product_item
+
 @{
     Layout = "~/Views/Shared/Blog_master.cshtml";
 }
@@ -14,9 +16,21 @@
 
 @section Head
 {
+    
 }
 
 @section Content_left{
+
+<ul class="bread clearfix">
+    <li><a href="/">@Index.Path_main</a></li>
+    <li>&gt;</li>
+    <li><a href="/Blog">@Resources.BlogTitle</a></li>
+    <li>&gt;</li>
+    <li><a href="/Blog/Category/@ViewBag.BlogCategoryPath">@ViewBag.BlogCategoryName</a></li>
+    <li>&gt;</li>
+    <li>@Model.Post.Title</li>
+
+</ul>
 
     @if (Model.Post == null)
     {

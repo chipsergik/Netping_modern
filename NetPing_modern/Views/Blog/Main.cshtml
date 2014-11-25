@@ -20,6 +20,10 @@
         <li><a href="/">@Index.Path_main</a></li>
         <li>&gt;</li>
         <li><a href="/Blog">@Resources.BlogTitle</a></li>
+        @if (ViewBag.BlogCategoryName != "") { 
+            <li>&gt;</li>
+            <li><a href="@ViewBag.BlogCategoryPath">@ViewBag.BlogCategoryName</a></li>
+        }
     </ul>
 
     @foreach(var post in Model.Posts)

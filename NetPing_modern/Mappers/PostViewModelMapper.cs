@@ -81,7 +81,11 @@ namespace NetPing_modern.Mappers
                                                                                        Name =
                                                                                            p
                                                                                            .Category
-                                                                                           .Name
+                                                                                           .Name,
+                                                                                        Path =
+                                                                                            p
+                                                                                            .Category
+                                                                                            .Path
                                                                                    };
                                                                        return model;
                                                                    }));
