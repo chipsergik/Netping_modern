@@ -1,5 +1,8 @@
 ﻿using System.Web.Mvc;
 using NetPing.DAL;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace NetPing.Controllers
 {
@@ -19,7 +22,11 @@ namespace NetPing.Controllers
 
         public ActionResult Index(int id)
         {
-            return RedirectToAction("Post", "Blog", new {id = id});
+            
+            var post=_repository.Posts.FirstOrDefault(p => p.Id == id);
+            if (post == null) return RedirectPermanent("Blog/no-found-article");
+            return RedirectPermanent(post.Url_name);
         }
+ 
     }
 }

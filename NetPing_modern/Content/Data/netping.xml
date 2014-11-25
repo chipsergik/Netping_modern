@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<<<<<<< HEAD
-<yml_catalog date="2014-10-27 01:41">
-=======
-<yml_catalog date="2014-11-13 12:06">
->>>>>>> origin/S4-blog
+<yml_catalog date="2014-11-24 16:21">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -36,7 +32,6 @@
         <price>9770</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -54,7 +49,6 @@
         <price>6072</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_UniPing_server_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -72,7 +66,6 @@
         <price>3655</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v3_UniPing_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -80,11 +73,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing v3</vendorCode>
         <model>Устройство UniPing v3</model>
-<<<<<<< HEAD
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
-=======
         <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков </description>
->>>>>>> origin/S4-blog
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -94,7 +83,6 @@
         <price>1530</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_v2netpingIO_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -112,7 +100,6 @@
         <price>4150</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -130,7 +117,6 @@
         <price>12045</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_8PWR_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -148,7 +134,6 @@
         <price>7276</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_4PWR_SMS_220_v3_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -156,12 +141,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
         <model>Устройство Netping 4/PWR-220 v3/SMS</model>
-<<<<<<< HEAD
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.
-		</description>
-=======
         <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.</description>
->>>>>>> origin/S4-blog
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -171,7 +151,6 @@
         <price>5660</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_V2SMS2PWR220_big2.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -179,12 +158,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v2/SMS</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v2/SMS</model>
-<<<<<<< HEAD
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором
-			</description>
-=======
         <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором</description>
->>>>>>> origin/S4-blog
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -194,7 +168,6 @@
         <price>5136</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_SMS2PWR220-v1_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -212,11 +185,6 @@
         <price>3825</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-<<<<<<< HEAD
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_2PWR220_v2_big.png</picture>
-=======
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_2PWR220_v2 _big.png</picture>
->>>>>>> origin/S4-blog
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -234,7 +202,6 @@
         <price>3205</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_power_ETH_PWR220_v2_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -252,7 +219,6 @@
         <price>217</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_metall_kontakt_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -270,7 +236,6 @@
         <price>330</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_1WireTermosensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -288,7 +253,6 @@
         <price>1671</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_1WireHumiditysensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -306,7 +270,6 @@
         <price>208</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_TermosensorTS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -324,7 +287,6 @@
         <price>414</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_TermosensorWT_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -342,7 +304,6 @@
         <price>1244</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_wet_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -350,7 +311,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик влажности WS-1, 1м</vendorCode>
         <model>Датчик влажности WS-1, 1м</model>
-        <description />
+        <description>Датчик влажности предназначен для измерения относительной влажности в %. Кроме того, датчик влажности содержит встроенный датчик температуры. Датчик влажности можно подключить к устройствам UniPing v3, UniPing server solution. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -360,7 +321,6 @@
         <price>540</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_sensor220V_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -378,7 +338,6 @@
         <price>789</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_smoke_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -413,7 +372,6 @@
         <price>918</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_water_sensr_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -431,7 +389,6 @@
         <price>789</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_moove_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -449,7 +406,6 @@
         <price>1203</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_glass_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -467,7 +423,6 @@
         <price>622</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_shock_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -485,7 +440,6 @@
         <price>498</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_sirena_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -493,7 +447,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Сирена сигнальная (АС-10), 2м</vendorCode>
         <model>Сирена сигнальная (АС-10), 2м</model>
-        <description />
+        <description>Сирена AC-10 предназначена для подключения к устройствам модельного ряда UniPing. Сирена позволяет выдавать звуковые оповещения по команде от интерфейса устройства Uniping. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -503,7 +457,6 @@
         <price>3108</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_ce102_power_meter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -511,7 +464,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
         <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
-        <description />
+        <description>Однофазный многотарифный электросчетчик. Его задача - измерение активной электроэнергии в однофазных цепях переменного тока и организация учёта по четырём тарифам с передачей накопленной информации через интерфейс RS-485.  Счётчик может быть подключен к устройствам:UniPing v3,  UniPing server solution</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -521,7 +474,6 @@
         <price>2072</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_v2_IRC-TR_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -539,7 +491,6 @@
         <price>2118</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_nping_bases_mini_UPS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -547,11 +498,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
         <model>Устройство NetPing Mini-UPS</model>
-<<<<<<< HEAD
-        <description>Устройство бесперебойного питания со встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
-=======
         <description>Устройство бесперебойного питания со встроенным аккумулятором. Для питания устройств NetPing при исчезновении внешнего электропитания</description>
->>>>>>> origin/S4-blog
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -561,7 +508,6 @@
         <price>1529</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_VAP11N_WiFi_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -579,7 +525,6 @@
         <price>647</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_AC_DIN_socket_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -597,7 +542,6 @@
         <price>622</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_split_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -615,7 +559,6 @@
         <price>294</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_Adapter_PWR220_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -633,7 +576,6 @@
         <price>233</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_UPS_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -651,7 +593,6 @@
         <price>809</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_Power_48V_ps_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -669,7 +610,6 @@
         <price>684</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_extender1wire5m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -687,7 +627,6 @@
         <price>862</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_extender1wire10m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -705,7 +644,6 @@
         <price>235</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_extender1wire2m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -723,7 +661,6 @@
         <price>66</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_1to2Splitter1wire_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -741,7 +678,6 @@
         <price>199</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_sensors_extender4_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -749,7 +685,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель шлейфа датчика RC, 4м</vendorCode>
         <model>Удлинитель шлейфа датчика RC, 4м</model>
-        <description />
+        <description> озволяет увеличить длину шлейфа датчика на 4 м. Удлинители можно включать последовательно друг в друга для достижения нужной длины шлейфа датчика.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -759,7 +695,6 @@
         <price>412</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_Inj_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -777,7 +712,6 @@
         <price>1660</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_v2_Connection_Board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -795,7 +729,6 @@
         <price>1814</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_relay_board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -813,7 +746,6 @@
         <price>415</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_Power_sup_netping_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -821,7 +753,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
         <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
-        <description />
+        <description>Адаптер питания, может использоваться для питания устройств NetPing и некоторых моделей управляемых коммутаторов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -831,7 +763,6 @@
         <price>188</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_mains_IO_power_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -839,26 +770,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для NetPing IO v2</vendorCode>
         <model>Переходник для NetPing IO v2</model>
-        <description />
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="29" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_mc35i</url>
-        <price>6710</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_acces_sensr_mc35i_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Модем (Терминал МС52iT Cinterion GSM)</vendorCode>
-        <model>Модем (Терминал МС52iT Cinterion GSM)</model>
-<<<<<<< HEAD
-        <description>SMS гейт Cinterion MC52iT предназначен для отправки SMS сообщений о срабатывании датчиков подключенных к устройствам NetPing в локальной сети. ​</description>
+        <description> Позволяет подключить блок питания с круглым джеком 2.1 мм к NetPing IO v2</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -868,49 +780,6 @@
         <price>5638</price>
         <currencyId>RUR</currencyId>
         <categoryId>80</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_solut_pwr_termostat_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Удаленное управление питанием</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
-        <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
-        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="133" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_solut_poe_3injector</url>
-        <price>1515</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>134</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_solut_poe_3injector_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>POE устройства</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>POE инжектор на 3 порта</vendorCode>
-        <model>POE инжектор на 3 порта</model>
-        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at
-		  </description>
-=======
-        <description />
->>>>>>> origin/S4-blog
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-<<<<<<< HEAD
-=======
-      <offer id="135" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_solut_power_termostat</url>
-        <price>5638</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>80</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_solut_pwr_termostat_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -928,7 +797,6 @@
         <price>1515</price>
         <currencyId>RUR</currencyId>
         <categoryId>134</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_solut_poe_3injector_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -941,13 +809,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
->>>>>>> origin/S4-blog
       <offer id="87" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_4PSE_LC-SM_100-16_2SFP</url>
         <price>5600</price>
         <currencyId>RUR</currencyId>
         <categoryId>86</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_4PSE_LC-SM_100-16_2SFP_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -955,25 +821,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>LC-SM100-16/2SFP/PSE</vendorCode>
         <model>LC-SM100-16/2SFP/PSE</model>
-        <description />
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="88" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_LC-SM_100-16_2SFP</url>
-        <price>4960</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>86</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_marvl_LC-SM_100-16_2SFP_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Управляемый коммутатор LC-SM100-16/2SFP</vendorCode>
-        <model>Управляемый коммутатор LC-SM100-16/2SFP</model>
-        <description />
+        <description> Управляемый коммутатор LC-SM100-16/2SFP/PSE c встроенным POE инжектором для питания внешних POE устройства на основе чипа Marvell, 16 портов  10/100BASE-TX (из которых 4 порта PSE обеспечивают питание внешнего устройства по технологии POE 802.3.af) + 2 gigabit SFP слот, 8K MAC, 802.1Q, IGMP v2, интерфейсы управления web и SNMP v1, компактный пластиковый корпус 180х130х45.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -983,7 +831,6 @@
         <price>706</price>
         <currencyId>RUR</currencyId>
         <categoryId>95</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_4SM_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -1001,7 +848,6 @@
         <price>4130</price>
         <currencyId>RUR</currencyId>
         <categoryId>95</categoryId>
-        <picture>https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/_swtch_poeeq_ps104gt_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -1009,11 +855,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Коммутатор PS104GT</vendorCode>
         <model>Коммутатор PS104GT</model>
-<<<<<<< HEAD
-        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
-=======
         <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
->>>>>>> origin/S4-blog
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>

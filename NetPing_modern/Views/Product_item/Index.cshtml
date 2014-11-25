@@ -185,7 +185,7 @@
                                             foreach (Post post in posts_faq)
                                             {
                                                 <li>
-                                                    <a href='@string.Format("/view.aspx?id={0}", @post.Id)'>@post.Title</a>
+                                                    <a href='@post.Url_name'>@post.Title</a>
                                                 </li>
                                             }
                                         }
@@ -196,12 +196,12 @@
                                 <div class="tab-c" data-tab-id="4">
                                     <ul>
                                         @{
-                                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.Name == "Typical solution");
+                                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.Name == "Tutorial");
 
                                             foreach (Post post in post_solutions)
                                             {
                                                 <li>
-                                                    <a href='@string.Format("/view.aspx?id={0}", @post.Id)'>@post.Title</a>
+                                                    <a href='@post.Url_name'>@post.Title</a>
                                                 </li>
                                             }
                                         }

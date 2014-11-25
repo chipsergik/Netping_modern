@@ -9,8 +9,9 @@ using NetPing_modern.Services.Confluence;
 using NetPing_modern.ViewModels;
 using Ninject.Extensions.Conventions;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
+
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NetPing_modern.App_Start.NinjectWebCommon), "Stop")]
 
 namespace NetPing_modern.App_Start
 {

@@ -513,11 +513,11 @@ namespace NetPing.DAL
 
                 Debug.WriteLine("PushToCache OK");
 
-                /*if (Helpers.IsCultureRus)
+                if (Helpers.IsCultureRus)
                 {
-                    GeneratePriceList();
+                 //   GeneratePriceList();
                     GenerateYml();
-                }*/
+                }
             }
             catch (Exception ex)
             {
@@ -594,7 +594,7 @@ namespace NetPing.DAL
                                             Url = GetDeviceUrl(offerNode.Device),
                                             Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
                                             CategoryId = childCategoryNode.Id,
-                                            Picture = pictureUrl,
+                                         /*   Picture = pictureUrl, */
                                             TypePrefix = childCategoryNode.Name,
                                             VendorCode = offerNode.Name,
                                             Model = offerNode.Name,

@@ -29,12 +29,13 @@ namespace NetPing
 
             routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
 
+
             routes.MapRoute(
                name: "ASPX",
                url: "{controller}.aspx/{id}",
                defaults: new { action = "Index", id = UrlParameter.Optional }
            );
-
+            
             routes.MapRoute(
                 name: "BlogCategory",
                 url: "Blog/Category/{path}",
@@ -59,13 +60,13 @@ namespace NetPing
                 url: "Blog/{postname}",
                 defaults: new { controller = "Blog", action = "Record" }
             );
-
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "MainPage", action = "Index", id = UrlParameter.Optional }
             );
-
+           
             
         }
     }
