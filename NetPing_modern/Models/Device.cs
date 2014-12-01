@@ -27,7 +27,7 @@ namespace NetPing.Models
         public SPTerm Label { get; set; }
         public DateTime Created { get; set; }
         public List<SPTerm> Connected_devices { get; set; }
-        public string GroupUrl;
+        public string Url;
 
         public List<Post> Posts { get; set; }
         public List<SFile> SFiles { get; set; }
@@ -51,12 +51,5 @@ namespace NetPing.Models
             if (dp != null) return dp;
             return new DevicePhoto();
         }
-
-        public string GetURLDevicePage()
-        {
-            return "/product_item.aspx?id=" + Key;
-        }
-        
-
     }
 }

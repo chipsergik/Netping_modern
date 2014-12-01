@@ -56,10 +56,10 @@
                         @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
                         {
                             <div class="content_right_item">
-                                <a class="content_right_item_title" href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                                <a class="content_right_item_title" href="@("/product_item.aspx?id=" + @device.Url)">@device.Name.Name</a>
                                 <img src="@device.GetCoverPhoto(false).Url" />
                                 <div class="content_right_item_text">
-                                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Url))
                                     <br />
                                     <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
                                 </div>

@@ -61,6 +61,8 @@ var CatalogJs = (function () {
                 $(compareBtnSelector).addClass('disabled');
             }
         });
+
+		$('#productsPage').addClass('active');
     };
 
     return new Catalog();
