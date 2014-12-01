@@ -811,8 +811,8 @@ namespace NetPing.DAL
             }
         }
 
-        private static ClientContext _context;
-        protected static ClientContext context
+        private ClientContext _context;
+        protected ClientContext context
         {
             get
             {
