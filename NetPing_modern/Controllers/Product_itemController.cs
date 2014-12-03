@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using NetPing.DAL;
 
@@ -21,10 +18,10 @@ namespace NetPing.Controllers
 
         public ActionResult Index(string id)
         {
-            var device = _repository.Devices.Where(dev => dev.Key.Replace("#", "") == id).FirstOrDefault();
+            var device = _repository.Devices.Where(dev => dev.Url == id).FirstOrDefault();
 
             //if (device == null) return View("Error", new Errors("Неверный параметр!"));
-            if (device == null) return Redirect("/catalog.aspx");  // if key incorrect go to /catalog.aspx
+            if (device == null) return Redirect("/products");  // if key incorrect go to /products
 
 
             //Create list of connected devices
@@ -42,7 +39,7 @@ namespace NetPing.Controllers
             var grp = dev_path[dev_path.Length - 2];
             var group_dev = _repository.Devices.FirstOrDefault(dev => dev.Name.OwnNameFromPath == grp);
             ViewBag.grp_name = group_dev.Name.Name;
-            ViewBag.grp_url = group_dev.GroupUrl;
+            ViewBag.grp_url = Url.Action("Index", "Products", new {group = group_dev.Url});
 
             //if (device.Key.Contains("_solut_")) return View("Solutions", device);
 

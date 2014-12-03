@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
 @using NetpingHelpers
 @using NetPing.Models
+@using NetPing_modern.Helpers
 @using NetPing_modern.Resources.Views.MainPage
 @{
     Layout = "~/Views/Shared/Inner_master.cshtml";
@@ -55,14 +56,14 @@
         <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
         <input class="search_img" type="image" src="~/Content/Images/search.png"></input>
     </form>
-    <a class="present_left" href="/catalog.aspx?id=_nping_bases">
+    <a class="present_left" href="@Url.Action("Index", "Products", new {group = NavigationProvider.Groups.Monitoring})">
         <div class="present_left_image present_left_image1"></div>
         <h2 class="present_left_h2">@Html.Raw(Index.Sec_monitoring)</h2>
         <br />
         <p class="present_left_p">@Index.Sec_monitoring_descr</p>
         <span class="present_left_s">@Index.Txt_models</span>
     </a>
-    <a class="present_left" href="/catalog.aspx?id=_nping_power">
+    <a class="present_left" href="@Url.Action("Index", "Products", new {group = NavigationProvider.Groups.Power})">
         <div class="present_left_image present_left_image2"></div>
         <h2 class="present_left_h2">@Html.Raw(Index.Sec_power)</h2>
         <br />
@@ -70,7 +71,7 @@
         <span class="present_left_s">@Index.Txt_models</span>
         <div class="clear"></div>
     </a>
-    <a class="present_left" href="/catalog.aspx?id=_swtch">
+    <a class="present_left" href="@Url.Action("Index", "Products", new {group = NavigationProvider.Groups.Switch})">
         <div class="present_left_image present_left_image3"></div>
         <h2 class="present_left_h2">@Html.Raw(Index.Sec_switch)</h2>
         <br />
@@ -89,10 +90,10 @@
         @foreach (Device device in ViewBag.Devices)
         {
             <div class="content_best_sales_description" style="background-image: url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));">
-                <a class="content_best_sales_description_a" href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
+                <a class="content_best_sales_description_a" href="@("/product_item.aspx?id=" + @device.Url)">@device.Name.Name</a>
                 <p class="content_best_sales_description_p">
 
-                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
+                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Url))
 
                     <br />
                     Цена:

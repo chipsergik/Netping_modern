@@ -216,12 +216,7 @@ namespace NetPing.DAL
         {
             var devices = new List<Device>();
 
-            var list = context.Web.Lists.GetByTitle("Device keys");
-
-            CamlQuery query = new CamlQuery();
-            var items = list.GetItems(query);
-
-            foreach (var item in (ListItemCollection)ReadSPList("Device keys", NetPing_modern.Resources.Camls.Caml_Device_keys))
+            foreach (var item in (ListItemCollection)ReadSPList("Devices", NetPing_modern.Resources.Camls.Caml_Device_keys))
             {
                 var device = new Device
                          {
@@ -235,24 +230,24 @@ namespace NetPing.DAL
                             ,
                              Connected_devices = (item["Connected_devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
                             ,
-                             Price = (Helpers.IsCultureEng) ? item["Global_price"] as double? : item["Russian_price"] as double?
+                             Price = item["Price"] as double?
                             ,
-                             Label = (item["Russian_label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
+                             Label = (item["Label"] as TaxonomyFieldValue).ToSPTerm(termsLabels)
                             ,
                              Created = (DateTime)item["Created"]
                             ,
-                             GroupUrl = item["Group_url"] as string
+                             Url = item["Url"] as string
                          };
 
                 
 
-                var urlField = item[Helpers.IsCultureEng ? "Eng_short_descr" : "Rus_short_descr"] as FieldUrlValue;
+                var urlField = item["Short_descr"] as FieldUrlValue;
                 if (urlField != null)
                 {
                     LoadFromConfluence(device, d => d.Short_description, urlField.Url);
                 }
 
-                urlField = item[Helpers.IsCultureEng ? "Eng_long_descr" : "Rus_long_descr"] as FieldUrlValue;
+                urlField = item["Long_descr"] as FieldUrlValue;
                 if (urlField != null)
                 {
                     LoadFromConfluence(device, d => d.Long_description, urlField.Url);

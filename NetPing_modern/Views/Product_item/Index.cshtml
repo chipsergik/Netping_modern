@@ -39,7 +39,7 @@
                     @Model.Name.Id
                 </p>
                 <p class="Key">
-                    @Model.Key.Replace("#", "")
+                    @Model.Key
                 </p>
                 <p class="Name">
                     @Model.Name.Name
@@ -228,11 +228,11 @@
                                         <ul class="overview">
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
-                                                <li><a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
+                                                <li><a href="~/product_item?id=@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
                                             }
                                             @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                                             {
-                                                <li><a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
+                                                <li><a href="~/product_item?id=@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
                                             }
                                         </ul>
                                     </div>
