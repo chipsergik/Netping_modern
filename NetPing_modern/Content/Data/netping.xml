@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-11-25 17:45">
+<yml_catalog date="2014-12-03 16:42">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -29,7 +29,7 @@
     <offers>
       <offer id="121" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server_v3_SMS</url>
-        <price>9770</price>
+        <price>10747</price>
         <currencyId>RUR</currencyId>
         <categoryId>44</categoryId>
         <store>true</store>
@@ -148,7 +148,7 @@
       </offer>
       <offer id="139" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_nping_power_V2SMS2PWR220</url>
-        <price>5660</price>
+        <price>6056</price>
         <currencyId>RUR</currencyId>
         <categoryId>60</categoryId>
         <store>true</store>
@@ -233,7 +233,7 @@
       </offer>
       <offer id="125" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_1WireTermosensor</url>
-        <price>330</price>
+        <price>365</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
         <store>true</store>
@@ -267,7 +267,7 @@
       </offer>
       <offer id="38" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_TermosensorTS</url>
-        <price>208</price>
+        <price>229</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
         <store>true</store>
@@ -345,7 +345,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик дыма ( ИП212-141), 2м</vendorCode>
         <model>Датчик дыма ( ИП212-141), 2м</model>
-        <description />
+        <description>Датчик дыма предназначен для обнаружения загораний в закрытых помещениях, сопровождающихся появлением дыма. Подключается к устройствам Uniping.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -369,7 +369,7 @@
       </offer>
       <offer id="41" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_water_sensr</url>
-        <price>918</price>
+        <price>1080</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
         <store>true</store>
@@ -454,7 +454,7 @@
       </offer>
       <offer id="24" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_ce102_power_meter</url>
-        <price>3108</price>
+        <price>2100</price>
         <currencyId>RUR</currencyId>
         <categoryId>23</categoryId>
         <store>true</store>
@@ -505,7 +505,7 @@
       </offer>
       <offer id="132" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_mains_VAP11N_WiFi</url>
-        <price>1529</price>
+        <price>1682</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
         <store>true</store>
@@ -539,7 +539,7 @@
       </offer>
       <offer id="37" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_split_af_POE</url>
-        <price>622</price>
+        <price>705</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
         <store>true</store>
@@ -692,7 +692,7 @@
       </offer>
       <offer id="26" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_Inj_af_POE</url>
-        <price>412</price>
+        <price>463</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
         <store>true</store>
@@ -726,7 +726,7 @@
       </offer>
       <offer id="17" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_acces_mains_relay_board</url>
-        <price>1814</price>
+        <price>2150</price>
         <currencyId>RUR</currencyId>
         <categoryId>5</categoryId>
         <store>true</store>
@@ -828,7 +828,7 @@
       </offer>
       <offer id="98" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_4SM</url>
-        <price>706</price>
+        <price>1100</price>
         <currencyId>RUR</currencyId>
         <categoryId>95</categoryId>
         <store>true</store>
@@ -845,7 +845,7 @@
       </offer>
       <offer id="131" type="vendor.model" available="true">
         <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_ps104gt</url>
-        <price>4130</price>
+        <price>4543</price>
         <currencyId>RUR</currencyId>
         <categoryId>95</categoryId>
         <store>true</store>

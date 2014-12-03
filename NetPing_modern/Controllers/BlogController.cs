@@ -146,6 +146,8 @@ namespace NetPing_modern.Controllers
             var model = CreateModel(out posts, out devices);
             model.Post = _postMapper.Map(posts.FirstOrDefault(item => item.Url_name == string.Format("/Blog/{0}", postname)));
 
+            if (model.Post == null) return HttpNotFound();
+
             ViewBag.Title = model.Post.Title;
             ViewBag.Description = model.Post.ShortBody;
 

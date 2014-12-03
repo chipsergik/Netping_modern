@@ -487,7 +487,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
     <Content Include="wmail_997fceb02a1348e5.html" />
-    <Content Include="yandex_5fa84d13a81f6f3d.txt" />
+    <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
