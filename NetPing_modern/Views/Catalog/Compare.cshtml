@@ -83,7 +83,7 @@
                                         @foreach (var device in Model.Devices)
                                         {
                                             <th>
-                                        @Html.ActionLink(device.Name.Name, "Index", "Product_item", new { id = device.Key }, new { }) 
+                                        @Html.ActionLink(device.Name.Name, "Index", "Product_item", new { id = device.Url }, new { }) 
                                                 
                                             </th>
                                         }
@@ -101,7 +101,7 @@
                                                         @device.Name.Id
                                                     </p>
                                                     <p class="Key">
-                                                        @device.Key.Replace("#", "")
+                                                        @device.Key
                                                     </p>
                                                     <p class="Name">
                                                         @device.Name.Name

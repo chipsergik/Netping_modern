@@ -25,15 +25,14 @@ namespace NetPing
 
             routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Index" });
 
-            routes.MapRoute("catalog_aspx", "catalog.aspx", new { controller = "Catalog", action = "Index" });
-
             routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
 
 
             routes.MapRoute(
                name: "ASPX",
                url: "{controller}.aspx/{id}",
-               defaults: new { action = "Index", id = UrlParameter.Optional }
+               defaults: new { action = "Index", id = UrlParameter.Optional },
+               constraints: new {controller = "!Products"}
            );
             
             routes.MapRoute(
@@ -61,6 +60,13 @@ namespace NetPing
                 defaults: new { controller = "Blog", action = "Record" }
             );
             
+            routes.MapRoute(
+                name: "Products",
+                url: "{controller}/{group}/{id}",
+                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional, group = "Monitoring-servernoj" },
+                constraints: new {controller = "Products"}
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -159,9 +159,9 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\InnerPagesController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\Product_itemController.cs" />
     <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="DAL\CustomTermComparer.cs" />
@@ -181,11 +181,14 @@
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\NavigationProvider.cs" />
     <Compile Include="Mappers\CategoryViewModelMapper.cs" />
     <Compile Include="Mappers\TermViewModelMapper.cs" />
     <Compile Include="Mappers\DefaultMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Mappers\PostViewModelMapper.cs" />
+    <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\SectionModel.cs" />
     <Compile Include="Resources\Views\Blog\Main.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -523,6 +526,7 @@
     <Content Include="Views\Blog\Record.cshtml" />
     <Content Include="Views\Shared\Blog_master.cshtml" />
     <Content Include="Views\Blog\NoPosts.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

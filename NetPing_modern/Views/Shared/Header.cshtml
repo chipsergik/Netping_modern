@@ -103,13 +103,13 @@
     <div class="nav">
         <ul>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/catalog.aspx") == true ? "nav_element active" : "nav_element") href="/catalog.aspx">@Header.Products</a>
+                @Html.ActionLink(@Header.Products, "Index", "Products", new {}, new {id = "productsPage", @class="nav_element"})
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list"><a href="/catalog.aspx?id=_nping_bases" class="link_item_list">@Header.Category_monitoring</a></li>
-                        <li class="item_list"><a href="/catalog.aspx?id=_nping_power" class="link_item_list">@Header.Category_power_control</a></li>
-                        <li class="item_list"><a href="/catalog.aspx?id=_swtch" class="link_item_list">@Header.Category_switch</a></li>
+                        <li class="item_list">@Html.ActionLink(Header.Products, "Index", "Products", new {group = "Monitoring-servernoj"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "Products", new {group = "Upravljaemye-rozetki-ip-pdu"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "Products", new {group = "Kommutatory-ethernet"}, new {@class = "link_item_list"})</li>
                         <div class="clear"></div>
                     </ul>
                 </div>
