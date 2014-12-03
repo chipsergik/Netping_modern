@@ -11,6 +11,7 @@ namespace NetPing
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            /*
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
             routes.MapRoute("about_aspx", "about.aspx", new { controller = "InnerPages", action = "About" });
@@ -26,15 +27,15 @@ namespace NetPing
             routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Index" });
 
             routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
-
-
+            */
+            /*
             routes.MapRoute(
                name: "ASPX",
                url: "{controller}.aspx/{id}",
                defaults: new { action = "Index", id = UrlParameter.Optional },
                constraints: new {controller = "!Products"}
            );
-            
+            */
             routes.MapRoute(
                 name: "BlogCategory",
                 url: "Blog/Category/{path}",
@@ -62,7 +63,7 @@ namespace NetPing
             
             routes.MapRoute(
                 name: "Products",
-                url: "{controller}/{group}/{id}",
+                url: "Products/{group}/{id}",
                 defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional, group = "Monitoring-servernoj" },
                 constraints: new {controller = "Products"}
             );

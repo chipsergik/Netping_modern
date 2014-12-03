@@ -28,8 +28,8 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
-NetPing_modern/obj/
-NetPing_modern/bin/
+NetPing_modern/obj/*
+NetPing_modern/bin/*
 
 
 # MSTest test Results

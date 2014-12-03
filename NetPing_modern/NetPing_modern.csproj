@@ -489,12 +489,10 @@
     <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
-    <Content Include="wmail_997fceb02a1348e5.html" />
     <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
-    <Content Include="google8132af374d843fee.html" />
     <Content Include="robots.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

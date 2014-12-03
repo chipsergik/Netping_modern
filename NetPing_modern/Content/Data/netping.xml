@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-03 16:42">
+<yml_catalog date="2014-12-03 18:16">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -9,29 +9,24 @@
       <currency id="RUR" rate="1" plus="0" />
     </currencies>
     <categories>
-      <category id="43">Устройства NetPing</category>
-      <category id="44" parentId="43">IP датчики, NetPing</category>
-      <category id="60" parentId="43">Управление электропитанием, NetPing</category>
-      <category id="4">Аксессуары</category>
-      <category id="23" parentId="4">Аксессуары, датчики</category>
-      <category id="5" parentId="4">Переходники и коммутационные платы</category>
-      <category id="79">Решения</category>
-      <category id="80" parentId="79">Удаленное управление питанием</category>
-      <category id="82" parentId="79">Удалённые датчики</category>
-      <category id="134" parentId="79">POE устройства</category>
-      <category id="114">Утилиты</category>
-      <category id="115" parentId="114">Утилиты</category>
-      <category id="85">Коммутаторы</category>
-      <category id="86" parentId="85">Коммутаторы на основе ядра Marvell</category>
-      <category id="95" parentId="85">Неуправляемые коммутаторы</category>
+      <category id="5">Устройства NetPing</category>
+      <category id="6" parentId="5">IP датчики, NetPing</category>
+      <category id="7" parentId="5">Управление электропитанием, NetPing</category>
+      <category id="2">Аксессуары</category>
+      <category id="4" parentId="2">Аксессуары, датчики</category>
+      <category id="3" parentId="2">Переходники и коммутационные платы</category>
+      <category id="9">Решения</category>
+      <category id="11" parentId="9">Удаленное управление питанием</category>
+      <category id="12" parentId="9">Удалённые датчики</category>
+      <category id="10" parentId="9">POE устройства</category>
     </categories>
     <local_delivery_cost>350</local_delivery_cost>
     <offers>
-      <offer id="121" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server_v3_SMS</url>
+      <offer id="49" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>10747</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
+        <categoryId>6</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -44,11 +39,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="50" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_UniPing_server</url>
+      <offer id="48" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>6072</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
+        <categoryId>6</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -61,11 +56,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="55" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v3_UniPing</url>
+      <offer id="51" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>3655</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
+        <categoryId>6</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -78,11 +73,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="53" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_v2netpingIO</url>
+      <offer id="50" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1530</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
+        <categoryId>6</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -95,11 +90,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="124" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_SMS</url>
+      <offer id="47" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>4150</price>
         <currencyId>RUR</currencyId>
-        <categoryId>44</categoryId>
+        <categoryId>6</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -112,11 +107,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="68" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_8PWR_SMS</url>
+      <offer id="53" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>12045</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -129,11 +124,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="137" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_4PWR_SMS_220_v3</url>
+      <offer id="52" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>7276</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -146,11 +141,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="139" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_V2SMS2PWR220</url>
+      <offer id="58" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>6056</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -163,11 +158,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="75" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_SMS2PWR220-v1</url>
+      <offer id="57" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>5136</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -180,11 +175,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="69" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_2PWR220_v2</url>
+      <offer id="54" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>3825</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -197,11 +192,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="70" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_power_ETH_PWR220_v2</url>
+      <offer id="55" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>3205</price>
         <currencyId>RUR</currencyId>
-        <categoryId>60</categoryId>
+        <categoryId>7</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -214,11 +209,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="138" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_metall_kontakt</url>
+      <offer id="32" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>217</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -231,11 +226,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="125" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_1WireTermosensor</url>
+      <offer id="26" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>365</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -248,11 +243,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="130" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_1WireHumiditysensor</url>
+      <offer id="25" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1671</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -265,11 +260,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="38" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_TermosensorTS</url>
+      <offer id="41" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>229</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -282,11 +277,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="39" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_TermosensorWT</url>
+      <offer id="42" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>414</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -299,11 +294,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="42" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_wet_sensor</url>
+      <offer id="45" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1244</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -316,11 +311,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="33" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_sensor220V</url>
+      <offer id="36" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>540</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -333,11 +328,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="36" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_smoke_sensor</url>
+      <offer id="39" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>789</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -350,11 +345,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="28" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_kontakt</url>
+      <offer id="30" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>76</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -367,11 +362,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="41" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_water_sensr</url>
+      <offer id="44" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1080</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -384,11 +379,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="30" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_moove_sensor</url>
+      <offer id="33" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>789</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -401,11 +396,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="25" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_glass</url>
+      <offer id="28" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1203</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -418,11 +413,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="34" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_shock_sensor</url>
+      <offer id="37" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>622</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -435,11 +430,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="35" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_sirena</url>
+      <offer id="38" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>498</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -452,11 +447,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="24" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_ce102_power_meter</url>
+      <offer id="27" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>2100</price>
         <currencyId>RUR</currencyId>
-        <categoryId>23</categoryId>
+        <categoryId>4</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -469,11 +464,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="40" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_v2_IRC-TR</url>
+      <offer id="43" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>2072</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -486,11 +481,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="122" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_nping_bases_mini_UPS</url>
+      <offer id="46" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>2118</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -503,11 +498,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="132" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_VAP11N_WiFi</url>
+      <offer id="24" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1682</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -520,11 +515,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="6" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_AC_DIN_socket</url>
+      <offer id="14" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>647</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -537,11 +532,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="37" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_split_af_POE</url>
+      <offer id="40" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>705</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -554,11 +549,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="9" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_Adapter_PWR220</url>
+      <offer id="15" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>294</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -571,11 +566,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="19" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_UPS_adapter</url>
+      <offer id="22" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>233</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -588,11 +583,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="31" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_Power_48V_ps</url>
+      <offer id="34" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>809</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -605,11 +600,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="127" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_extender1wire5m</url>
+      <offer id="18" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>684</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -622,11 +617,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="128" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_extender1wire10m</url>
+      <offer id="16" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>862</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -639,11 +634,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="126" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_extender1wire2m</url>
+      <offer id="17" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>235</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -656,11 +651,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="129" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_1to2Splitter1wire</url>
+      <offer id="13" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>66</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -673,11 +668,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="18" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_sensors_extender4</url>
+      <offer id="21" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>199</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -690,11 +685,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="26" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_Inj_af_POE</url>
+      <offer id="29" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>463</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -707,11 +702,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="20" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_v2_Connection_Board</url>
+      <offer id="23" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1660</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -724,11 +719,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="17" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_relay_board</url>
+      <offer id="20" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>2150</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -741,11 +736,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="32" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_sensr_Power_sup_netping</url>
+      <offer id="35" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>415</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -758,11 +753,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="16" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_acces_mains_IO_power_adapter</url>
+      <offer id="19" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>188</price>
         <currencyId>RUR</currencyId>
-        <categoryId>5</categoryId>
+        <categoryId>3</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -775,11 +770,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="135" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_solut_power_termostat</url>
+      <offer id="60" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>5638</price>
         <currencyId>RUR</currencyId>
-        <categoryId>80</categoryId>
+        <categoryId>11</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -792,11 +787,11 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="133" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_solut_poe_3injector</url>
+      <offer id="59" type="vendor.model" available="true">
+        <url>http://localhost:59728//product_item.aspx</url>
         <price>1515</price>
         <currencyId>RUR</currencyId>
-        <categoryId>134</categoryId>
+        <categoryId>10</categoryId>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -805,57 +800,6 @@
         <vendorCode>POE инжектор на 3 порта</vendorCode>
         <model>POE инжектор на 3 порта</model>
         <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="87" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_marvl_4PSE_LC-SM_100-16_2SFP</url>
-        <price>5600</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>86</categoryId>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Коммутаторы на основе ядра Marvell</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>LC-SM100-16/2SFP/PSE</vendorCode>
-        <model>LC-SM100-16/2SFP/PSE</model>
-        <description> Управляемый коммутатор LC-SM100-16/2SFP/PSE c встроенным POE инжектором для питания внешних POE устройства на основе чипа Marvell, 16 портов  10/100BASE-TX (из которых 4 порта PSE обеспечивают питание внешнего устройства по технологии POE 802.3.af) + 2 gigabit SFP слот, 8K MAC, 802.1Q, IGMP v2, интерфейсы управления web и SNMP v1, компактный пластиковый корпус 180х130х45.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="98" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_4SM</url>
-        <price>1100</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>95</categoryId>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Неуправляемые коммутаторы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Коммутатор NP-SM4</vendorCode>
-        <model>Коммутатор NP-SM4</model>
-        <description>Коммутатор Ethernet 4 порта 10/100 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="131" type="vendor.model" available="true">
-        <url>http://localhost:59728//product_item.aspx?id=_swtch_poeeq_ps104gt</url>
-        <price>4543</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>95</categoryId>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Неуправляемые коммутаторы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Коммутатор PS104GT</vendorCode>
-        <model>Коммутатор PS104GT</model>
-        <description>Коммутатор Ethernet 5 gigabit портов 10/100/1000 BASE-TX. С поддержкой POE (электропитание по Ethernet кабелю) </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
