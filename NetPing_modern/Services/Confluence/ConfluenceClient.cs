@@ -12,6 +12,20 @@ namespace NetPing_modern.Services.Confluence
 {
     internal class ConfluenceClient : IConfluenceClient
     {
+
+        public class ContentNotFoundException : Exception
+        {
+            public ContentNotFoundException(int contentId) : base(string.Format("Confluence content with id = {0} was not found", contentId))
+            {
+
+            }
+
+            public ContentNotFoundException(string spaceKey, string title)
+                : base(string.Format("Confluence content with space key = '{0}' and title = '{1}' was not found", spaceKey, title))
+            {
+            }
+        }
+
         private IConfig _config;
         private readonly Dictionary<int, string> _cache = new Dictionary<int, string>();
 
@@ -45,7 +59,7 @@ namespace NetPing_modern.Services.Confluence
                     return parser(id, result);
                 }
             }
-            return string.Empty;
+            throw new ContentNotFoundException(id);
         }
 
         public async Task<string> GetContenAsync(int id)
@@ -183,10 +197,10 @@ namespace NetPing_modern.Services.Confluence
                             }
                         }
                     }
-                    return -1;
+                    throw new ContentNotFoundException(spaceKey, title);
                 }
             }
-            return -1;
+            throw new ContentNotFoundException(spaceKey, title);
         }
 
         private readonly Regex _contentIdRegex = new Regex(@"pageId=(?<id>\d+)");
