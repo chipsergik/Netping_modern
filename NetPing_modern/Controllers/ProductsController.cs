@@ -4,6 +4,9 @@ using NetPing.DAL;
 using NetPing_modern.Helpers;
 using NetPing_modern.Models;
 using WebGrease.Css.Extensions;
+using NetPing_modern.ViewModels;
+using NetPing.Models;
+using System.Collections.Generic;
 
 namespace NetPing_modern.Controllers
 {
@@ -16,6 +19,35 @@ namespace NetPing_modern.Controllers
             _repository = repository;
         }
 
+        public ActionResult Compare(int[] compare)
+        {
+            var model = new DevicesCompare();
+
+            if (compare == null || compare.Length < 2)
+                return View(model);
+
+            model.Devices = _repository.Devices.Where(d => compare.Contains(d.Id)).ToList();
+            IEnumerable<DeviceParameter> collection = null;
+            var deviceParameterEqualityComparer = new DeviceParameterEqualityComparer();
+            for (int i = 0; i < model.Devices.Count - 1; i++)
+            {
+                var device = model.Devices[i];
+                var next = model.Devices[i + 1];
+                if (collection == null)
+                {
+                    collection = device.DeviceParameters.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
+                else
+                {
+                    collection = collection.Union(next.DeviceParameters, deviceParameterEqualityComparer);
+                }
+            }
+
+            if (collection != null)
+                model.Parameters = new List<DeviceParameter>(collection.Distinct(deviceParameterEqualityComparer));
+
+            return View(model);
+        }
 
         public ActionResult Device_view(string id)
         {
@@ -46,6 +78,7 @@ namespace NetPing_modern.Controllers
         public ActionResult Index(string group, string id)
         {
             var devices = _repository.Devices.Where(d => !d.Name.IsGroup());
+            if (group == null) return HttpNotFound();
             var g = _repository.Devices.FirstOrDefault(d => d.Url == @group);
             if (g != null)
             {

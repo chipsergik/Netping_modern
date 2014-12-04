@@ -462,7 +462,7 @@ namespace NetPing.DAL
                             ,
                              Created = (DateTime)item["Pub_date"]
                              ,
-                             Url_name = "/Blog/" + (item["Body_link"] as FieldUrlValue).Description.Replace(".", "x2E"),
+                             Url_name = "/Blog/" + (item["Body_link"] as FieldUrlValue).Description.Replace(".", "x2E").Trim(' '),
                              IsTop = (bool) item["TOP"] 
                          });
             }
@@ -589,7 +589,7 @@ namespace NetPing.DAL
                                             Url = GetDeviceUrl(offerNode.Device),
                                             Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
                                             CategoryId = childCategoryNode.Id,
-                                         /*   Picture = pictureUrl, */
+                                            Picture =  "http://www.netping.ru/"+offerNode.Device.GetCoverPhoto(true).Url, 
                                             TypePrefix = childCategoryNode.Name,
                                             VendorCode = offerNode.Name,
                                             Model = offerNode.Name,
@@ -666,7 +666,7 @@ namespace NetPing.DAL
                     RouteTable.Routes, c => c.Index(device.Key));
             Uri uri = HttpContext.Current.Request.Url;
             url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);*/
-            return "/products/"+device.Url; 
+            return "http://www.netping.ru/products/"+device.Url; 
         }
 
 

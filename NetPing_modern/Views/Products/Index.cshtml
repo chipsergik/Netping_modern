@@ -203,13 +203,7 @@
                                                 @device.Name.Name
                                             </p>
                                             <p class="PhotoURL">
-                                                @{
-                                    var photo1 = device.DevicePhotos.FirstOrDefault(p => p.IsBig);
-                                    if (photo1 != null)
-                                    {
-                                        @photo1.Url;
-                                    }
-                                                }
+                                                @device.GetCoverPhoto(false).Url
                                             </p>
                                         </div>    
 

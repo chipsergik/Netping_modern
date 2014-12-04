@@ -45,6 +45,13 @@ namespace NetPing
                constraints: new {controller = "!Products"}
            );
             */
+
+            routes.MapRoute(
+                name: "CatalogCompare",
+                url: "Catalog/Compare",
+                defaults: new { controller = "Products", action = "Compare" }
+            );
+
             routes.MapRoute(
                 name: "BlogCategory",
                 url: "Blog/Category/{path}",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-04 14:26">
+<yml_catalog date="2014-12-04 20:44">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -23,10 +23,11 @@
     <local_delivery_cost>350</local_delivery_cost>
     <offers>
       <offer id="49" type="vendor.model" available="true">
-        <url>/products/uniping-server-solution-v3-sms</url>
+        <url>http://www.netping.ru/products/uniping-server-solution-v3-sms</url>
         <price>10747</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -40,10 +41,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="48" type="vendor.model" available="true">
-        <url>/products/uniping-server-solution</url>
+        <url>http://www.netping.ru/products/uniping-server-solution</url>
         <price>6072</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -57,10 +59,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="51" type="vendor.model" available="true">
-        <url>/products/uniping-v3</url>
+        <url>http://www.netping.ru/products/uniping-v3</url>
         <price>3655</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -74,10 +77,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="50" type="vendor.model" available="true">
-        <url>/products/netping-io-v2</url>
+        <url>http://www.netping.ru/products/netping-io-v2</url>
         <price>1530</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -91,10 +95,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="47" type="vendor.model" available="true">
-        <url>/products/netping-sms</url>
+        <url>http://www.netping.ru/products/netping-sms</url>
         <price>4150</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -108,10 +113,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="53" type="vendor.model" available="true">
-        <url>/products/netping-8-pwr-220-v3-sms</url>
+        <url>http://www.netping.ru/products/netping-8-pwr-220-v3-sms</url>
         <price>12045</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_8PWR_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -125,10 +131,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="52" type="vendor.model" available="true">
-        <url>/products/netping-4-pwr-220-v3-sms</url>
+        <url>http://www.netping.ru/products/netping-4-pwr-220-v3-sms</url>
         <price>7276</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_4PWR_SMS_220_v3_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -142,10 +149,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="58" type="vendor.model" available="true">
-        <url>/products/netping-2-pwr-220-v2-sms</url>
+        <url>http://www.netping.ru/products/netping-2-pwr-220-v2-sms</url>
         <price>6056</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_V2SMS2PWR220_big2.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -159,10 +167,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="57" type="vendor.model" available="true">
-        <url>/products/netping-2-pwr-220-v1-sms</url>
+        <url>http://www.netping.ru/products/netping-2-pwr-220-v1-sms</url>
         <price>5136</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_SMS2PWR220-v1_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -176,10 +185,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="54" type="vendor.model" available="true">
-        <url>/products/netping-2-pwr-220-v3-eth</url>
+        <url>http://www.netping.ru/products/netping-2-pwr-220-v3-eth</url>
         <price>3825</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -193,10 +203,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="55" type="vendor.model" available="true">
-        <url>/products/netping-pwr-220-v3-eth</url>
+        <url>http://www.netping.ru/products/netping-pwr-220-v3-eth</url>
         <price>3205</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_PWR220_v2_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -210,10 +221,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="32" type="vendor.model" available="true">
-        <url>/products/door-sensor-metall</url>
+        <url>http://www.netping.ru/products/door-sensor-metall</url>
         <price>217</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -227,10 +239,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="26" type="vendor.model" available="true">
-        <url>/products/thermo-sensor-1-wire</url>
+        <url>http://www.netping.ru/products/thermo-sensor-1-wire</url>
         <price>365</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -244,10 +257,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="25" type="vendor.model" available="true">
-        <url>/products/humidity-sensor-1-wire</url>
+        <url>http://www.netping.ru/products/humidity-sensor-1-wire</url>
         <price>1671</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -261,10 +275,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="41" type="vendor.model" available="true">
-        <url>/products/thermo-sensor-TS</url>
+        <url>http://www.netping.ru/products/thermo-sensor-TS</url>
         <price>229</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -278,10 +293,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="42" type="vendor.model" available="true">
-        <url>/products/thermo-sensor-WT</url>
+        <url>http://www.netping.ru/products/thermo-sensor-WT</url>
         <price>414</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorWT_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -295,10 +311,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="45" type="vendor.model" available="true">
-        <url>/products/humidity-sensor-ws1</url>
+        <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
         <price>1244</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -312,10 +329,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="36" type="vendor.model" available="true">
-        <url>/products/sensor-220V</url>
+        <url>http://www.netping.ru/products/sensor-220V</url>
         <price>540</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sensor220V_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -329,10 +347,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="39" type="vendor.model" available="true">
-        <url>/products/smoke-sensor</url>
+        <url>http://www.netping.ru/products/smoke-sensor</url>
         <price>789</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_smoke_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -346,10 +365,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="30" type="vendor.model" available="true">
-        <url>/products/netping-door-sensor</url>
+        <url>http://www.netping.ru/products/netping-door-sensor</url>
         <price>76</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -363,10 +383,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="44" type="vendor.model" available="true">
-        <url>/products/netping-datchik-protechki</url>
+        <url>http://www.netping.ru/products/netping-datchik-protechki</url>
         <price>1080</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -380,10 +401,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="33" type="vendor.model" available="true">
-        <url>/products/netping-datchik-dvijenija</url>
+        <url>http://www.netping.ru/products/netping-datchik-dvijenija</url>
         <price>789</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -397,10 +419,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="28" type="vendor.model" available="true">
-        <url>/products/glass-brake-sensor</url>
+        <url>http://www.netping.ru/products/glass-brake-sensor</url>
         <price>1203</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_glass_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -414,10 +437,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="37" type="vendor.model" available="true">
-        <url>/products/netping-shock-sensor</url>
+        <url>http://www.netping.ru/products/netping-shock-sensor</url>
         <price>622</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_shock_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -431,10 +455,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="38" type="vendor.model" available="true">
-        <url>/products/sirena-ac10</url>
+        <url>http://www.netping.ru/products/sirena-ac10</url>
         <price>498</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sirena_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -448,10 +473,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="27" type="vendor.model" available="true">
-        <url>/products/power-meter-ce102</url>
+        <url>http://www.netping.ru/products/power-meter-ce102</url>
         <price>2100</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -465,10 +491,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="43" type="vendor.model" available="true">
-        <url>/products/netping-IRC-TR-v2</url>
+        <url>http://www.netping.ru/products/netping-IRC-TR-v2</url>
         <price>2072</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_v2_IRC-TR_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -482,10 +509,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="46" type="vendor.model" available="true">
-        <url>/products/netping-mini-ups</url>
+        <url>http://www.netping.ru/products/netping-mini-ups</url>
         <price>2118</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_mini_UPS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -499,10 +527,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="24" type="vendor.model" available="true">
-        <url>/products/vap11n-wifi-bridge</url>
+        <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
         <price>1682</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -516,10 +545,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="14" type="vendor.model" available="true">
-        <url>/products/rozetka-ac-din-socket</url>
+        <url>http://www.netping.ru/products/rozetka-ac-din-socket</url>
         <price>647</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_AC_DIN_socket_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -533,10 +563,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="40" type="vendor.model" available="true">
-        <url>/products/POE-splitter-12V</url>
+        <url>http://www.netping.ru/products/POE-splitter-12V</url>
         <price>705</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -550,10 +581,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="15" type="vendor.model" available="true">
-        <url>/products/perehodnik-ups-c-kabelem</url>
+        <url>http://www.netping.ru/products/perehodnik-ups-c-kabelem</url>
         <price>294</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -567,10 +599,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="22" type="vendor.model" available="true">
-        <url>/products/power-socket-adapter-ups</url>
+        <url>http://www.netping.ru/products/power-socket-adapter-ups</url>
         <price>233</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -584,10 +617,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="34" type="vendor.model" available="true">
-        <url>/products/power-adapter-48V-1_5A</url>
+        <url>http://www.netping.ru/products/power-adapter-48V-1_5A</url>
         <price>809</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_48V_ps_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -601,10 +635,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="18" type="vendor.model" available="true">
-        <url>/products/cable-extender-1-wire-5m</url>
+        <url>http://www.netping.ru/products/cable-extender-1-wire-5m</url>
         <price>684</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -618,10 +653,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="16" type="vendor.model" available="true">
-        <url>/products/cable-extender-1-wire-10m</url>
+        <url>http://www.netping.ru/products/cable-extender-1-wire-10m</url>
         <price>862</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -635,10 +671,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="17" type="vendor.model" available="true">
-        <url>/products/cable-extender-1-wire-2m</url>
+        <url>http://www.netping.ru/products/cable-extender-1-wire-2m</url>
         <price>235</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -652,10 +689,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="13" type="vendor.model" available="true">
-        <url>/products/splitter-1-wire-1-to-2</url>
+        <url>http://www.netping.ru/products/splitter-1-wire-1-to-2</url>
         <price>66</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_1to2Splitter1wire_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -669,10 +707,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="21" type="vendor.model" available="true">
-        <url>/products/netping-cable-extender-4m</url>
+        <url>http://www.netping.ru/products/netping-cable-extender-4m</url>
         <price>199</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_sensors_extender4_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -686,10 +725,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="29" type="vendor.model" available="true">
-        <url>/products/injector-poe-802-3-af</url>
+        <url>http://www.netping.ru/products/injector-poe-802-3-af</url>
         <price>463</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Inj_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -703,10 +743,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="23" type="vendor.model" available="true">
-        <url>/products/netping-connection-board-v2</url>
+        <url>http://www.netping.ru/products/netping-connection-board-v2</url>
         <price>1660</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -720,10 +761,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="20" type="vendor.model" available="true">
-        <url>/products/netping-relay-board</url>
+        <url>http://www.netping.ru/products/netping-relay-board</url>
         <price>2150</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -737,10 +779,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="35" type="vendor.model" available="true">
-        <url>/products/power-adapter-12V-0_5A</url>
+        <url>http://www.netping.ru/products/power-adapter-12V-0_5A</url>
         <price>415</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -754,10 +797,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="19" type="vendor.model" available="true">
-        <url>/products/power-adapter-netping-io-v2</url>
+        <url>http://www.netping.ru/products/power-adapter-netping-io-v2</url>
         <price>188</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -771,10 +815,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="60" type="vendor.model" available="true">
-        <url>/products/netping-thermostat</url>
+        <url>http://www.netping.ru/products/netping-thermostat</url>
         <price>5638</price>
         <currencyId>RUR</currencyId>
         <categoryId>11</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -788,10 +833,11 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="59" type="vendor.model" available="true">
-        <url>/products/poe-3-ports-injector</url>
+        <url>http://www.netping.ru/products/poe-3-ports-injector</url>
         <price>1515</price>
         <currencyId>RUR</currencyId>
         <categoryId>10</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>

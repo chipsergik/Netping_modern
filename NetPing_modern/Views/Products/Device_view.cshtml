@@ -41,8 +41,11 @@
                 <p class="Name">
                     @Model.Name.Name
                 </p>
+                <p class="Key">
+                    @Model.Url
+                </p>
                 <p class="PhotoURL">
-                    @Model.GetCoverPhoto(true).Url
+                    @Model.GetCoverPhoto(false).Url
                 </p>
             </div>
 
