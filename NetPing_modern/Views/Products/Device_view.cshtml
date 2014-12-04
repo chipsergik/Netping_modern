@@ -38,9 +38,6 @@
                 <p class="ID">
                     @Model.Name.Id
                 </p>
-                <p class="Key">
-                    @Model.Key
-                </p>
                 <p class="Name">
                     @Model.Name.Name
                 </p>
@@ -222,11 +219,11 @@
                                         <ul class="overview">
                                             @foreach (Device dev in ViewBag.Connected_devices_sensors)
                                             {
-                                                <li><a href="~/product_item?id=@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
+                                                <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
                                             }
                                             @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                                             {
-                                                <li><a href="~/product_item?id=@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
+                                                <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
                                             }
                                         </ul>
                                     </div>
@@ -258,5 +255,6 @@
     <script src="~/Content/JavaScript/slider1.js" type="text/javascript"> </script>
 
     @RenderPage("../Shared/Cart.cshtml")
+    
 </body>
 </html>

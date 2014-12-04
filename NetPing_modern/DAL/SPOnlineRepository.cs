@@ -222,7 +222,7 @@ namespace NetPing.DAL
                          {
                              Id = item.Id
                             ,
-                             Key = item["Title"] as string
+                             OldKey = item["Title"] as string
                             ,
                              Name = (item["Name"] as TaxonomyFieldValue).ToSPTerm(terms)
                             ,
@@ -611,7 +611,8 @@ namespace NetPing.DAL
             if (string.IsNullOrEmpty(groupId))
                 throw new ArgumentNullException("groupId");
 
-            var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
+            //var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
+            var group = Devices.FirstOrDefault(d => d.Url == groupId );
             var devices = Devices.Where(d => d.Name.IsUnderOther(group.Name) && !d.Name.IsGroup() );
             return devices;
         }
@@ -659,13 +660,13 @@ namespace NetPing.DAL
 
         internal static string GetDeviceUrl(Device device)
         {
-            var url =
+           /* var url =
                 LinkBuilder.BuildUrlFromExpression<Product_itemController>(
                     new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
                     RouteTable.Routes, c => c.Index(device.Key));
             Uri uri = HttpContext.Current.Request.Url;
-            url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);
-            return url;
+            url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);*/
+            return "/products/"+device.Url; 
         }
 
 

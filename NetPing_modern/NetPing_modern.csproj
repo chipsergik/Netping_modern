@@ -494,15 +494,16 @@
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
     <Content Include="robots.txt" />
-    <Content Include="Web.config">
+    <Content Include="Views\Products\Device_view.cshtml" />
+    <None Include="Web.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
+    </None>
+    <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
+    </None>
+    <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
+    </None>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\InnerPages\Contacts.cshtml" />
@@ -510,7 +511,6 @@
     <Content Include="Views\Shared\Inner_master.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\View\Index.cshtml" />
-    <Content Include="Views\Product_item\Index.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />

@@ -103,27 +103,27 @@
     <div class="nav">
         <ul>
             <li class="nav_li">
-                @Html.ActionLink(@Header.Products, "Index", "Products", new {}, new {id = "productsPage", @class="nav_element"})
+                @Html.ActionLink(@Header.Products, "Index", "products", new { group = "monitoring-servernoj" }, new { id = "productsPage", @class = "nav_element" })
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list">@Html.ActionLink(Header.Products, "Index", "Products", new {group = "Monitoring-servernoj"}, new {@class = "link_item_list"})</li>
-                        <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "Products", new {group = "Upravljaemye-rozetki-ip-pdu"}, new {@class = "link_item_list"})</li>
-                        <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "Products", new {group = "Kommutatory-ethernet"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_monitoring, "Index", "products", new {group = "monitoring-servernoj"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "products", new {group = "upravljaemye-rozetki-ip-pdu"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "products", new {group = "kommutatory-ethernet"}, new {@class = "link_item_list"})</li>
                         <div class="clear"></div>
                     </ul>
                 </div>
             </li>
             <li class="nav_li">
-                <a class= @(Request.RawUrl.ToLower().Contains("/about.aspx") == true ? "nav_element active" : "nav_element") href="/about.aspx">@Header.Menu_about</a>
+                <a class= @(Request.RawUrl.ToLower().Contains("/about") == true ? "nav_element active" : "nav_element") href="/about">@Header.Menu_about</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/dealer.aspx") == true ? "nav_element active" : "nav_element") href="/dealer.aspx">@Header.Menu_dealers</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element") href="/buy">@Header.Menu_dealers</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/contacts.aspx") == true ? "nav_element active" : "nav_element") href="/contacts.aspx">@Header.Menu_contacts</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/contacts") == true ? "nav_element active" : "nav_element") href="/contacts">@Header.Menu_contacts</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">

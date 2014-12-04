@@ -13,7 +13,7 @@ namespace NetPing.Models
     public class Device
     {
         public int Id { get; set; }
-        public string Key { get; set; }
+        public string OldKey { get; set; }
         public SPTerm Name { get; set; }
         public List<SPTerm> Destination { get; set; }
         public double? Price { get; set; }

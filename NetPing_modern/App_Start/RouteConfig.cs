@@ -11,6 +11,15 @@ namespace NetPing
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
+            routes.MapRoute("about", "about", new { controller = "InnerPages", action = "About" });
+            routes.MapRoute("contacts", "contacts", new { controller = "InnerPages", action = "Contacts" });
+            routes.MapRoute("buy", "buy", new { controller = "InnerPages", action = "Dealers" });
+
+            routes.MapRoute("cache_updated", "cache_updated", new { controller = "InnerPages", action = "UCache" });
+
+            routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
+
             /*
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
@@ -22,11 +31,11 @@ namespace NetPing
 
             routes.MapRoute("zakaz_aspx", "zakaz.aspx", new { controller = "InnerPages", action = "Question" });
 
-            routes.MapRoute("cache_updated", "cache_updated", new { controller = "InnerPages", action = "UCache" });
+            
 
             routes.MapRoute("default_aspx", "default.aspx", new { controller = "MainPage", action = "Index" });
 
-            routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
+            
             */
             /*
             routes.MapRoute(
@@ -63,10 +72,17 @@ namespace NetPing
             
             routes.MapRoute(
                 name: "Products",
-                url: "Products/{group}/{id}",
-                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional, group = "Monitoring-servernoj" },
+                url: "products/{group}/{id}",
+                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional /*, group = "Monitoring-servernoj"*/ },
                 constraints: new {controller = "Products"}
             );
+
+            routes.MapRoute(
+               name: "Solutions",
+               url: "solutions/{group}/{id}",
+               defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional /*, group = "Monitoring-servernoj"*/ },
+               constraints: new { controller = "Products" }
+           );
 
             routes.MapRoute(
                 name: "Default",

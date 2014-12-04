@@ -145,7 +145,8 @@
                                         {
                                             for (int i = 0; i < Model.ActiveSection.Sections.Count; i++)
                                             {
-                                                var link = Url.Action("Index", new {group = Model.ActiveSection.Url, id = Model.ActiveSection.Sections[i].Url});
+                                                //var link = Url.Action("Index", new {group = Model.ActiveSection.Url, id = Model.ActiveSection.Sections[i].Url});
+                                                var link = "/"+Model.ActiveSection.Sections[i].FullUrl;
                                                 if (Model.ActiveSection.Sections[i].IsSelected)
                                                 {
                                                     <li id="selectedSection"><a href="@link">@Model.ActiveSection.Sections[i].FormattedTitle</a></li>    
@@ -163,7 +164,7 @@
                             
                             @if (NetpingHelpers.Helpers.IsCultureRus)
                             {
-                                <a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить прайс-лист продукции в PDF</a>
+                                <!--<a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить прайс-лист продукции в PDF</a> -->
                                 <!-- <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>       -->
                             }
                         </div>
@@ -185,7 +186,7 @@
                             {
                                 foreach (Device device in Model.Devices)
                                 {
-                                    string link="/product_item.aspx?id=" + @device.Url;
+                                    string link="/products/" + @device.Url;
                                     <div class="cat_item">
                                         
                                         <div style="display: none">

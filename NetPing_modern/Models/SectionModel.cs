@@ -15,6 +15,7 @@ namespace NetPing_modern.Models
         }
 
         public string Url { get; set; }
+        public string FullUrl { get; set; } // Url from root
 
         public string ImageUrl { get; set; }
 

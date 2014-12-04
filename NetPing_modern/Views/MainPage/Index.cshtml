@@ -89,11 +89,11 @@
 
         @foreach (Device device in ViewBag.Devices)
         {
-            <div class="content_best_sales_description" style="background-image: url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));">
-                <a class="content_best_sales_description_a" href="@("/product_item.aspx?id=" + @device.Url)">@device.Name.Name</a>
+            <div class="content_best_sales_description" style="background-image: url(@device.GetCoverPhoto(false).Url);">
+                <a class="content_best_sales_description_a" href="@("/products/" + device.Url)">@device.Name.Name</a>
                 <p class="content_best_sales_description_p">
 
-                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Url))
+                    @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
 
                     <br />
                     Цена:
