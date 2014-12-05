@@ -80,15 +80,22 @@ namespace NetPing
             routes.MapRoute(
                 name: "Products",
                 url: "products/{group}/{id}",
-                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional /*, group = "Monitoring-servernoj"*/ },
+                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional },
                 constraints: new {controller = "Products"}
             );
 
             routes.MapRoute(
                name: "Solutions",
                url: "solutions/{group}/{id}",
-               defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional /*, group = "Monitoring-servernoj"*/ },
+               defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional  },
                constraints: new { controller = "Products" }
+           );
+
+            routes.MapRoute(
+               name: "view.aspx",
+               url: "view.aspx/{id}",
+               defaults: new { controller = "View", action = "Index", id = UrlParameter.Optional },
+               constraints: new { controller = "View" }
            );
 
             routes.MapRoute(

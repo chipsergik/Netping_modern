@@ -2,6 +2,7 @@
 using NetPing.DAL;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 
 namespace NetPing.Controllers
@@ -20,13 +21,17 @@ namespace NetPing.Controllers
 
 
 
-        public ActionResult Index(int id)
+        public ActionResult Index(string id)
         {
-            
-            var post=_repository.Posts.FirstOrDefault(p => p.Id == id);
+            Int16 id_int = 0;
+            if (!Int16.TryParse(id,out id_int))  return HttpNotFound();
+
+            var post=_repository.Posts.FirstOrDefault(p => p.Id == id_int);
             if (post == null) return HttpNotFound();
             return RedirectPermanent(post.Url_name);
+           
         }
- 
+
+      
     }
 }
