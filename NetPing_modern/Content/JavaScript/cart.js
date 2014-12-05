@@ -159,7 +159,7 @@ function showPopup() {
         var itemImg = itemTemplate.find(".shopPopupItemImg")[0];
         itemImg.src = product.photoURL;
         var itemName = itemTemplate.find(".shopItemName")[0];
-        itemName.innerHTML = '<a href="/product_item.aspx?id=' + product.key + '">' + product.name + '</a>';
+        itemName.innerHTML = '<a href="/products/' + product.key + '">' + product.name + '</a>';
         var itemPrice = itemTemplate.find(".shopItemPrice")[0];
         itemPrice.innerHTML = product.price;
         var itemCount = itemTemplate.find(".shopItemCountInput")[0];

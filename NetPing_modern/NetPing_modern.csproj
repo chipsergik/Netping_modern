@@ -43,6 +43,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -60,7 +66,11 @@
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <HintPath>..\packages\Ninject.3.2.3-unstable-007\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.1-unstable-001\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -147,10 +157,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\InnerPagesController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\Product_itemController.cs" />
     <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="DAL\CustomTermComparer.cs" />
@@ -166,9 +177,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global\Config\Config.cs" />
+    <Compile Include="Global\Config\ConfluenceSettings.cs" />
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\NavigationProvider.cs" />
+    <Compile Include="Mappers\CategoryViewModelMapper.cs" />
+    <Compile Include="Mappers\TermViewModelMapper.cs" />
+    <Compile Include="Mappers\DefaultMapper.cs" />
+    <Compile Include="Mappers\IMapper.cs" />
+    <Compile Include="Mappers\PostViewModelMapper.cs" />
+    <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\SectionModel.cs" />
+    <Compile Include="Resources\Views\Blog\Main.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DeviceParameterEqualityComparer.cs" />
     <Compile Include="Models\DevicesCompare.cs" />
@@ -316,17 +342,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Confluence\ConfluenceClient.cs" />
+    <Compile Include="Services\Confluence\IConfluenceClient.cs" />
     <Compile Include="Tools\TimerCacheDependency.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\TagViewModel.cs" />
+    <Compile Include="ViewModels\TermViewModel.cs" />
+    <Compile Include="ViewModels\PostViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="banner.gif" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
     <Content Include="Content\Images\bg_down_list.png" />
+<<<<<<< HEAD
     <Content Include="Content\Images\cart.png" />
+=======
+    <Content Include="Content\Images\BlogImg\banner.png" />
+    <Content Include="Content\Images\BlogImg\comments.png" />
+    <Content Include="Content\Images\BlogImg\menu-button.png" />
+    <Content Include="Content\Images\BlogImg\related.png" />
+    <Content Include="Content\Images\BlogImg\rss.png" />
+    <Content Include="Content\Images\BlogImg\search.png" />
+    <Content Include="Content\Images\BlogImg\tags.png" />
+>>>>>>> origin/master
     <Content Include="Content\Images\CatalogPageImg\big_links.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main_li.png" />
@@ -388,9 +431,38 @@
     <Content Include="Content\Images\search_center.png" />
     <Content Include="Content\Images\subscribe_button.png" />
     <Content Include="Content\Images\themes.gif" />
+    <Content Include="Content\Images\calendar.png" />
+    <Content Include="Content\JavaScript\blog.js" />
     <Content Include="Content\JavaScript\cart.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
+    <Content Include="Content\JavaScript\fancybox\blank.gif" />
+    <Content Include="Content\JavaScript\fancybox\fancybox-x.png" />
+    <Content Include="Content\JavaScript\fancybox\fancybox-y.png" />
+    <Content Include="Content\JavaScript\fancybox\fancybox.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_close.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_loading.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_nav_left.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_nav_right.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_e.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_n.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_ne.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_nw.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_s.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_se.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_sw.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_shadow_w.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_title_left.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_title_main.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_title_over.png" />
+    <Content Include="Content\JavaScript\fancybox\fancy_title_right.png" />
+    <Content Include="Content\JavaScript\fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="Content\JavaScript\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="Content\JavaScript\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="Content\JavaScript\fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Content\JavaScript\fancybox\jquery.mousewheel-3.0.4.pack.js" />
     <Content Include="Content\JavaScript\jquery.cookies.2.2.0.min.js" />
+    <Content Include="Content\JavaScript\jquery.datetimepicker.js" />
+    <Content Include="Content\JavaScript\jquery.exlist.js" />
     <Content Include="Content\JavaScript\jquery.siblingsshutter.js" />
     <Content Include="Content\JavaScript\jquery.tinycarousel.min.js" />
     <Content Include="Content\JavaScript\jquery1.8.3min.js" />
@@ -403,6 +475,7 @@
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\blog.css" />
     <Content Include="Content\Themes\cart.css" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
@@ -410,6 +483,7 @@
     <Content Include="Content\Themes\compare.css" />
     <Content Include="Content\Themes\DevelopmentPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
+    <Content Include="Content\Themes\jquery.datetimepicker.css" />
     <Content Include="Content\Themes\korzina.css" />
     <Content Include="Content\Themes\main.css" />
     <Content Include="Content\Themes\main_mainpage.css" />
@@ -423,18 +497,22 @@
     <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
+    <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
     <None Include="Properties\PublishProfiles\Test1.pubxml" />
-    <Content Include="Web.config">
+    <Content Include="robots.txt" />
+    <Content Include="Views\Products\Device_view.cshtml" />
+    <Content Include="Views\Products\Compare.cshtml" />
+    <None Include="Web.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
+    </None>
+    <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
+    </None>
+    <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
-    </Content>
+    </None>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\InnerPages\Contacts.cshtml" />
@@ -442,7 +520,6 @@
     <Content Include="Views\Shared\Inner_master.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\View\Index.cshtml" />
-    <Content Include="Views\Product_item\Index.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
@@ -452,7 +529,15 @@
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
     <Content Include="Views\Catalog\Compare.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Product_item\Development.cshtml" />
+=======
+    <Content Include="Views\Blog\Main.cshtml" />
+    <Content Include="Views\Blog\Record.cshtml" />
+    <Content Include="Views\Shared\Blog_master.cshtml" />
+    <Content Include="Views\Blog\NoPosts.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -478,11 +563,18 @@
       <LastGenOutput>Camls.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Camls.ru.resx" />
+    <EmbeddedResource Include="Resources\Camls.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Other.ru.resx" />
     <EmbeddedResource Include="Resources\Other.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Other.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Main.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Compare.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -609,6 +701,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.0-ci1027\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0-ci1027\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

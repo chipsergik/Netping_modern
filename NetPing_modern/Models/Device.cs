@@ -13,7 +13,7 @@ namespace NetPing.Models
     public class Device
     {
         public int Id { get; set; }
-        public string Key { get; set; }
+        public string OldKey { get; set; }
         public SPTerm Name { get; set; }
         public List<SPTerm> Destination { get; set; }
         public double? Price { get; set; }
@@ -27,7 +27,7 @@ namespace NetPing.Models
         public SPTerm Label { get; set; }
         public DateTime Created { get; set; }
         public List<SPTerm> Connected_devices { get; set; }
-        public string GroupUrl;
+        public string Url;
 
         public List<Post> Posts { get; set; }
         public List<SFile> SFiles { get; set; }
@@ -50,23 +50,6 @@ namespace NetPing.Models
             DevicePhoto dp=DevicePhotos.FirstOrDefault(p => p.IsBig == isBig && p.IsCover);
             if (dp != null) return dp;
             return new DevicePhoto();
-        }
-
-        public string GetURLDevicePage()
-        {
-            return "/product_item.aspx?id=" + Key;
-        }
-        public bool IsGroup()
-        {
-            if (Key.Contains("#")) return true;
-            return false;
-        }
-        public bool IsInGroup(Device group)
-        {
-            var path = Name.Path.Split(';');
-            if (group == null) return false;
-            if (path.FirstOrDefault(p => p == group.Name.OwnNameFromPath) == null) return false;
-            return true;
         }
     }
 }

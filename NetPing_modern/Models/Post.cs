@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace NetPing.Models
 {
@@ -15,8 +13,9 @@ namespace NetPing.Models
         public string Title { get; set; }
         public string Body {  get;set; }
         public List<SPTerm> Devices { get; set; }
-        public string Cathegory { get; set; }
-        public bool IsActive { get; set; }
+        public SPTerm Category { get; set; }
         public DateTime Created { get; set; }
+        public string Url_name { get; set; }
+        public bool IsTop { get; set; }
     }
 }

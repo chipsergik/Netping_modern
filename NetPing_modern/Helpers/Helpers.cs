@@ -1,16 +1,16 @@
 ﻿using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
+using NetPing.Global.Config;
 using NetPing.Models;
 using NetPing.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
-using System.Web;
 using System.Web.Mvc;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Globalization;
+using NetPing_modern.Services.Confluence;
 
 
 namespace NetpingHelpers
@@ -19,7 +19,10 @@ namespace NetpingHelpers
     {
         public static IEnumerable<Device> GetNewDevices()
         {
-            var repository = new SPOnlineRepository();
+            // should be removed
+            // repository should be instantiated by DI container
+            var repository = new SPOnlineRepository(new ConfluenceClient(new Config()));
+
             var devices = repository.Devices.Where(dev =>
                                     dev.Label.IsEqualStrId(NetPing_modern.Properties.Resources.Guid_Label_New)
                             );
@@ -95,13 +98,12 @@ namespace NetpingHelpers
 
 
         // Get device names terms list, return destinations list for this devices
-        public static List<SPTerm> DevicesToDestinations(this List<SPTerm> values)
+        public static List<SPTerm> DevicesToDestinations(this List<SPTerm> values, IRepository repository)
         {
             List<SPTerm> result=new List<SPTerm>();
             if (values == null || values.Count < 1)
                 return result;
             
-            var repository = new SPOnlineRepository();
             foreach (SPTerm value in values)
             {
                 List<SPTerm> dev_dests = repository.Devices.ToList().Find(i => i.Name.Name == value.Name).Destination;
@@ -114,9 +116,11 @@ namespace NetpingHelpers
         // Replace links inside Sharepoint HTML body
         public static string ReplaceInternalLinks(this string value)
         {
-            value=value.Replace("src=\"/web/feeds/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_feeds/");
-            value=value.Replace("src=\"/web/Catalog/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_catalog/");
-            value = value.Replace("src=\"/web/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/");
+            //value=value.Replace("src=\"/web/feeds/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_feeds/");
+            //value=value.Replace("src=\"/web/Catalog/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Old_catalog/");
+            //value = value.Replace("src=\"/web/Lists/Photos/", "src=\"https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/");
+
+            value = value.Replace("=\"/wiki/download/", "=\"https://netping.atlassian.net/wiki/download/");
             return value;
         }
 

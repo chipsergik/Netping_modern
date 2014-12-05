@@ -45,7 +45,12 @@ namespace NetPing_modern.PriceGeneration
             if (propertyInfo == null)
                 return null;
 
-            return propertyInfo.GetValue(product, null).ToString();
+            object value = propertyInfo.GetValue(product, null);
+
+            if (value == null)
+                return string.Empty;
+
+            return value.ToString();
         }
 
         private string GetArgumentName(string text)

@@ -1,30 +1,37 @@
-﻿using System;
+﻿using System.Web.Mvc;
+using NetPing.DAL;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using NetPing.DAL;
+using System;
+
 
 namespace NetPing.Controllers
 {
     public class ViewController : Controller
     {
+        private readonly IRepository _repository;
+
+        public ViewController(IRepository repository)
+        {
+            _repository = repository;
+        }
+
         //
         // GET: /View/
 
-        public ActionResult Index(int id)
+
+
+        public ActionResult Index(string id)
         {
+            Int16 id_int = 0;
+            if (!Int16.TryParse(id,out id_int))  return HttpNotFound();
 
-            var repository = new SPOnlineRepository();
-            var posts = repository.Posts;
-
-            var pst = posts.Where(item => item.Id == id).FirstOrDefault();
-
-            if (pst == null) return View("Error", new Errors("Неверный параметр!"));
-
-            return View(pst);
+            var post=_repository.Posts.FirstOrDefault(p => p.Id == id_int);
+            if (post == null) return HttpNotFound();
+            return RedirectPermanent(post.Url_name);
+           
         }
 
-
+      
     }
 }

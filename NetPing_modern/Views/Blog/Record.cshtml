@@ -1,0 +1,103 @@
+﻿@model NetPing_modern.ViewModels.BlogViewModel
+@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+@using NetPing_modern.Resources.Views.Product_item
+
+@{
+    Layout = "~/Views/Shared/Blog_master.cshtml";
+}
+
+@section Head_Css {
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
+}
+
+@section Head
+{
+    
+}
+
+@section Content_left{
+
+<ul class="bread clearfix">
+    <li><a href="/">@Index.Path_main</a></li>
+    <li>&gt;</li>
+    <li><a href="/Blog">@Resources.BlogTitle</a></li>
+    <li>&gt;</li>
+    <li><a href="/Blog/Category/@ViewBag.BlogCategoryPath">@ViewBag.BlogCategoryName</a></li>
+    <li>&gt;</li>
+    <li>@Model.Post.Title</li>
+
+</ul>
+
+    @if (Model.Post == null)
+    {
+        <div class="blog-item">
+
+            <div class="blog-item-header">
+                <div class="category-label">@Resources.ErrorTitle</div>
+            </div>
+            <h1>
+                @Resources.ErrorPostDoesntExistMessage
+            </h1>
+        </div>
+    }
+    else
+    {
+        <div class="blog-item">
+
+            <div class="blog-item-header">
+                <div class="category-label">@Model.Post.Category.Name</div>
+                <span>@Model.Post.Created.ToShortDateString()</span>
+            </div>
+            <h1>
+                @Model.Post.Title
+            </h1>
+
+            @Html.Raw(Model.Post.Body)
+            <hr />
+            <ul class="tags">
+                @foreach (var tag in Model.Post.Tags)
+                {
+                    <li class="tag" data-tag-path="@tag.Path" data-tag-selected="@tag.IsSelected">
+                        @tag.Name
+                    </li>
+                }
+            </ul>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'netpingru'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    }
+}
+
+@section Under_menu{
+    <div class="under-menu">
+        <a href="#">
+            Популярные статьи
+        </a>
+        <a href="#">
+            Категории
+        </a>
+        <a href="#">
+            Тэги
+        </a>
+        <a href="#">
+            Календарь
+        </a>
+    </div>
+    <div class="clear"></div>
+}

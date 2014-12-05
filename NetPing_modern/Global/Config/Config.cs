@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
+using NetPing_modern.Global.Config;
 
 namespace NetPing.Global.Config
 {
@@ -13,6 +10,14 @@ namespace NetPing.Global.Config
             get
             {
                 return (SharePointSettings) ConfigurationManager.GetSection("SharePoint");
+            }
+        }
+
+        public ConfluenceSettings ConfluenceSettings
+        {
+            get
+            {
+                return (ConfluenceSettings) ConfigurationManager.GetSection("confluence");
             }
         }
     }

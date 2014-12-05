@@ -1,0 +1,53 @@
+﻿@using Resources = NetPing_modern.Resources.Views.Blog.Main;
+@using NetPing_modern.Resources.Views.Product_item
+
+@model NetPing_modern.ViewModels.BlogViewModel
+@{
+    Layout = "~/Views/Shared/Blog_master.cshtml";
+}
+
+@section Head_Css {
+    <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/blog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
+}
+
+@section Content_left {
+
+<ul class="bread clearfix">
+    <li><a href="/">@Index.Path_main</a></li>
+    <li>&gt;</li>
+    <li><a href="/Blog">@Resources.BlogTitle</a></li>
+</ul>
+
+    <div class="blog-item">
+
+        <div class="blog-item-header">
+            <div class="category-label">@Resources.ErrorTitle</div>
+        </div>
+        <h1>
+            @Resources.ErrorNoPostsMessage
+        </h1>
+    </div>
+}
+
+@section Under_menu{
+    <div class="under-menu">
+        <a href="#">
+            Популярные статьи
+        </a>
+        <a href="#">
+            Категории
+        </a>
+        <a href="#">
+            Тэги
+        </a>
+        <a href="#">
+            Календарь
+        </a>
+    </div>
+    <div class="clear"></div>
+}

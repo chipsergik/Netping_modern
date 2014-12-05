@@ -95,33 +95,35 @@
     </a>
         
     <div class="clear"></div>
+    
     <a class="logo" href="/">
+        <img src="~/Content/Images/BlogImg/menu-button.png" class="menu-button"/>
         <img src="~/Content/Images/logo_text.png"></img>
     </a>
     <div class="nav">
         <ul>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/catalog.aspx") == true ? "nav_element active" : "nav_element") href="/catalog.aspx">@Header.Products</a>
+                @Html.ActionLink(@Header.Products, "Index", "products", new { group = "monitoring-servernoj" }, new { id = "productsPage", @class = "nav_element" })
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list"><a href="/catalog.aspx?id=_nping_bases" class="link_item_list">@Header.Category_monitoring</a></li>
-                        <li class="item_list"><a href="/catalog.aspx?id=_nping_power" class="link_item_list">@Header.Category_power_control</a></li>
-                        <li class="item_list"><a href="/catalog.aspx?id=_swtch" class="link_item_list">@Header.Category_switch</a></li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_monitoring, "Index", "products", new {group = "monitoring-servernoj"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "products", new {group = "upravljaemye-rozetki-ip-pdu"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "products", new {group = "kommutatory-ethernet"}, new {@class = "link_item_list"})</li>
                         <div class="clear"></div>
                     </ul>
                 </div>
             </li>
             <li class="nav_li">
-                <a class= @(Request.RawUrl.ToLower().Contains("/about.aspx") == true ? "nav_element active" : "nav_element") href="/about.aspx">@Header.Menu_about</a>
+                <a class= @(Request.RawUrl.ToLower().Contains("/about") == true ? "nav_element active" : "nav_element") href="/about">@Header.Menu_about</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/dealer.aspx") == true ? "nav_element active" : "nav_element") href="/dealer.aspx">@Header.Menu_dealers</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element") href="/buy">@Header.Menu_dealers</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/contacts.aspx") == true ? "nav_element active" : "nav_element") href="/contacts.aspx">@Header.Menu_contacts</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/contacts") == true ? "nav_element active" : "nav_element") href="/contacts">@Header.Menu_contacts</a>
                 <div class="nav_element_border"></div>
             </li>
             <li class="nav_li">

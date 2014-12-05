@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /*compare
+Disallow: /Blog?*
+Disallow: /Blog/Category/* 
+Disallow: /Blog/Search* 
+Disallow: /products/upravljaemye-rozetki-ip-pdu/sensors
+Disallow: /products/upravljaemye-rozetki-ip-pdu/accessories
+Disallow: /products/kommutatory-ethernet/accessories
+
+#Sitemap: http://www.netping.ru/sitemap.xml
+Host: www.netping.ru
