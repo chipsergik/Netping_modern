@@ -359,17 +359,14 @@
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
     <Content Include="Content\Images\bg_down_list.png" />
-<<<<<<< HEAD
-    <Content Include="Content\Images\cart.png" />
-=======
     <Content Include="Content\Images\BlogImg\banner.png" />
+    <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\BlogImg\comments.png" />
     <Content Include="Content\Images\BlogImg\menu-button.png" />
     <Content Include="Content\Images\BlogImg\related.png" />
     <Content Include="Content\Images\BlogImg\rss.png" />
     <Content Include="Content\Images\BlogImg\search.png" />
     <Content Include="Content\Images\BlogImg\tags.png" />
->>>>>>> origin/master
     <Content Include="Content\Images\CatalogPageImg\big_links.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main.png" />
     <Content Include="Content\Images\CatalogPageImg\catalog_main_li.png" />
@@ -497,6 +494,7 @@
     <Content Include="Content\Themes\tinycarousel.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
+    <Content Include="google65e951962d61c85e.html" />
     <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
@@ -529,15 +527,12 @@
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
     <Content Include="Views\Catalog\Compare.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\Product_item\Development.cshtml" />
-=======
     <Content Include="Views\Blog\Main.cshtml" />
     <Content Include="Views\Blog\Record.cshtml" />
     <Content Include="Views\Shared\Blog_master.cshtml" />
     <Content Include="Views\Blog\NoPosts.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
->>>>>>> origin/master
+    <Content Include="Views\Product_item\Development.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

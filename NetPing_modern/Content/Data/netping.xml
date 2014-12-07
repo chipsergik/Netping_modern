@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-04 20:44">
+<yml_catalog date="2014-12-07 15:06">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -359,7 +359,7 @@
         <vendor>NetPing</vendor>
         <vendorCode>Датчик дыма ( ИП212-141), 2м</vendorCode>
         <model>Датчик дыма ( ИП212-141), 2м</model>
-        <description>Датчик дыма предназначен для обнаружения загораний в закрытых помещениях, сопровождающихся появлением дыма. Подключается к устройствам Uniping.</description>
+        <description>Датчик дыма предназначен для обнаружения возгораний с задымлением в закрытых помещениях. Подключается к устройствам Uniping.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Category_monitoring" xml:space="preserve">
-    <value>Мониторинг Датчиков</value>
+    <value>Устройства мониторинга серверных комнат</value>
   </data>
   <data name="Category_power_control" xml:space="preserve">
-    <value>Управление Элекропитанием</value>
+    <value>Устройства удалённого управления электропитанием</value>
   </data>
   <data name="Category_switch" xml:space="preserve">
     <value>Коммутаторы Ethernet POE устройства</value>
@@ -147,14 +147,17 @@
   <data name="Menu_about" xml:space="preserve">
     <value>О компании</value>
   </data>
+  <data name="Menu_blog" xml:space="preserve">
+    <value>Наш блог</value>
+  </data>
+  <data name="Menu_buy" xml:space="preserve">
+    <value>Купить!</value>
+  </data>
   <data name="Menu_contacts" xml:space="preserve">
-    <value>Контакты</value>
+    <value>Наш адрес</value>
   </data>
-  <data name="Menu_dealers" xml:space="preserve">
-    <value>Дилеры</value>
-  </data>
-  <data name="Menu_ideas" xml:space="preserve">
-    <value>Идеи!</value>
+  <data name="Menu_support" xml:space="preserve">
+    <value>Поддержка</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>тел.</value>

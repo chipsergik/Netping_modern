@@ -6,6 +6,8 @@
 @{
     Layout = "~/Views/Shared/Inner_master.cshtml";
     ViewBag.Title = Index.Page_title;
+    ViewBag.Description="Устройства мониторинга микроклимата в серверных комнатах, шкафах и стойках. Удалённое управление и распределение электропитания"; 
+    ViewBag.Keywords="мониторинг серверной, управляемая розетка, мониторинг датчиков";                    
 }
 
 @section Head_Css {
@@ -55,14 +57,14 @@
 
     <div class="present_fluid">
         <div class="present_fluid_inner">
-            <a class="present_left" href="/catalog.aspx?id=_nping_bases">
+            <a class="present_left" href="/products/monitoring-servernoj">
                 <div class="present_left_image present_left_image1"></div>
                 <h2 class="present_left_h2">@Html.Raw(Index.Sec_monitoring)</h2>
                 <br />
                 <p class="present_left_p">@Index.Sec_monitoring_descr</p>
                 <span class="present_left_s">@Index.Txt_models</span>
             </a>
-            <a class="present_left" href="/catalog.aspx?id=_nping_power">
+            <a class="present_left" href="/products/upravljaemye-rozetki-ip-pdu">
                 <div class="present_left_image present_left_image2"></div>
                 <h2 class="present_left_h2">@Html.Raw(Index.Sec_power)</h2>
                 <br />
@@ -70,7 +72,7 @@
                 <span class="present_left_s">@Index.Txt_models</span>
                 <div class="clear"></div>
             </a>
-            <a class="present_left" href="/catalog.aspx?id=_swtch">
+            <a class="present_left" href="/products/kommutatory-ethernet">
                 <div class="present_left_image present_left_image3"></div>
                 <h2 class="present_left_h2">@Html.Raw(Index.Sec_switch)</h2>
                 <br />
@@ -86,71 +88,81 @@
 @section Content {
     <div class="content_news">
         <div class="content_news_header">
-            <div class="content_news_latest">@Index.Title_news</div>
-            <a href="#" class="content_news_latest_rrs"></a>
+            <div><a href="/Blog" class="content_news_latest" >@Index.Title_news</a></div>
+            <a href="/Blog" class="content_news_latest_rrs"></a>
             <div class="clear"></div>
         </div>
 
-
-        @{
-            int i = 0;
-            foreach (Post post in ViewBag.posts)
-            {
-                <div class="content_news_latest_date @post.Cathegory">
-                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                    <a class="content_news_latest_date_a" href="@string.Format("/view.aspx?id={0}", @post.Id)">@post.Title</a>
-
-                </div>
-                if (++i == 15)
+        
+            @{
+                int i = 0;
+                foreach (Post post in ViewBag.posts)
                 {
-                    break;
+                    <div class="content_news_latest_date @post.Category.OwnNameFromPath">
+                        <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                        <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
+
+                    </div>
+                    if (++i == 7)
+                    {
+                        break;
+                    }
                 }
             }
-        }
+        
     </div>
     <div class="content_sales">
-        <form class="search" name="search" method="post" action="">
-            <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
-            <input class="search_img" type="image" src="~/Content/Images/search.png"></input>
-            <div class="clear"></div>
-        </form>
+
+        <div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'http://yandex.ru/sitesearch','arrow':false,'bg':'transparent','fontsize':12,'fg':'#000000','language':'ru','logo':'rb','publicname':'Поиск по сайту www.netping.ru','suggest':true,'target':'_blank','tld':'ru','type':2,'usebigdictionary':true,'searchid':2189223,'webopt':false,'websearch':false,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':'','input_placeholderColor':'#000000','input_borderColor':'#7f9db9'}"><form class="search" action="http://yandex.ru/sitesearch" method="get" target="_blank"><input  type="hidden" name="searchid" value="2189223" /><input type="hidden" name="l10n" value="ru" /><input type="hidden" name="reqenc" value="" /><input type="search" name="text" value="" /><input class="search_text_vvod" size="28" type="submit" value="Найти" /></form></div>
+        <style type="text/css">
+            .ya-page_js_yes .ya-site-form_inited_no {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+        
+        
         <div class="content_subcription">
             <span>@Index.Subscription</span>
-            <form class="subscribe" name="subscribe" method="post" action="">
-                <input placeholder="E-Mail" class="subscribe_text_input" size="28"></input><input class="subscribe_image" type="image" src="~/Content/Images/subscribe_button.png"></input>
+
+            <form action="//netping.us9.list-manage.com/subscribe/post?u=7179e0fbe457bf650bded2764&amp;id=b8c8c7351d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe" target="_blank" novalidate>
+                <input class="subscribe_text_input" size="28" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" required>
+                <input class="subscribe_image" type="image" src="~/Content/Images/subscribe_button.png" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
             </form>
         </div>
-        <div class="clear"></div>
-        <div class="content_best_sales"><span>@Index.Title_new_devices</span></div>
 
+            <div class="clear"></div>
+            <div class="content_best_sales"><span>@Index.Title_new_devices</span></div>
+
+            @foreach (Device device in ViewBag.Devices)
+            {
+                <div class="content_best_sales_description" style="background-image: url(@device.GetCoverPhoto(false).Url);">
+                    <a class="content_best_sales_description_a" href="@("/products/" + device.Url)">@device.Name.Name</a>
+                    <p class="content_best_sales_description_p">
+
+                        @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
+
+                        <br />
+                        Цена:
+                        <span class="price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span>
+                    </p>
+                </div>
+            }
+
+            <div class="content_best_inwork"><span>В разработке</span></div>
+            <!--
         @foreach (Device device in ViewBag.Devices)
         {
-            <div class="content_best_sales_description" style="background-image: url(@device.GetCoverPhoto(false).Url);">
-                <a class="content_best_sales_description_a" href="@("/products/" + device.Url)">@device.Name.Name</a>
+            <div class="content_best_sales_description" style="background-image: url(@device.GetCoverPhoto(false).Url));">
+                <a class="content_best_sales_description_a" href="@("/products/" + @device.Url)">@device.Name.Name</a>
                 <p class="content_best_sales_description_p">
 
                     @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
 
-                    <br />
-                    Цена:
-                    <span class="price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span>
                 </p>
             </div>
         }
-
-        <div class="content_best_inwork"><span>В разработке</span></div>
-
-        @foreach (Device device in ViewBag.Devices)
-        {
-            <div class="content_best_sales_description" style="background-image: url(@string.Format("https://netpingeastcoltd-public.sharepoint.com/Pub/Photos/Devices/{0}_small.png", @device.Key));">
-                <a class="content_best_sales_description_a" href="@("/product_item.aspx?id=" + @device.Key)">@device.Name.Name</a>
-                <p class="content_best_sales_description_p">
-
-                    @Html.Raw(device.Short_description.ToShortTextHTML("product_item.aspx?id=" + device.Key))
-                                  
-                </p>
-            </div>
-        }
-    </div>
+            -->
+        </div>
 
 }

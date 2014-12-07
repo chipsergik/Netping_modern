@@ -147,13 +147,16 @@
   <data name="Menu_about" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="Menu_blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="Menu_buy" xml:space="preserve">
+    <value>How to buy</value>
+  </data>
   <data name="Menu_contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
-  <data name="Menu_dealers" xml:space="preserve">
-    <value>How to buy</value>
-  </data>
-  <data name="Menu_ideas" xml:space="preserve">
+  <data name="Menu_support" xml:space="preserve">
     <value>Ideas!</value>
   </data>
   <data name="Phone" xml:space="preserve">

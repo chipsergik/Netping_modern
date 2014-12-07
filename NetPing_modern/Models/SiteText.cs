@@ -8,7 +8,7 @@ namespace NetPing.Models
     [Serializable]
     public class SiteText
     {
-        public  SPTerm Tag { get; set; }
+        public  string Tag { get; set; }
         public string Text { get; set; }
     }
 }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Page_title" xml:space="preserve">
-    <value>Устройства NetPing</value>
+    <value>Устройства мониторинга серверных комнат и управления электропитанием</value>
   </data>
   <data name="Sec_monitoring" xml:space="preserve">
     <value>Мониторинг&lt;br/&gt;датчиков</value>
@@ -139,7 +139,7 @@
     <value>Управляемые и неуправляемые коммутаторы Ethernet, и POE устройства</value>
   </data>
   <data name="Title_news" xml:space="preserve">
-    <value>Новости</value>
+    <value>Новые статьи нашего блога</value>
   </data>
   <data name="Title_new_devices" xml:space="preserve">
     <value>Новинки</value>
@@ -148,6 +148,6 @@
     <value>Модельный ряд</value>
   </data>
   <data name="Subscription" xml:space="preserve">
-    <value>Подписка на новости</value>
+    <value>Подписаться на новости</value>
   </data>
 </root>

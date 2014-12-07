@@ -67,23 +67,41 @@ namespace NetPing.DAL
 
         public IEnumerable<SPTerm> Terms { get { return (IEnumerable<SPTerm>)(PullFromCache("Terms")); } }
         private IEnumerable<SPTerm> Terms_Read() { return GetTermsFromSP("Names"); }
-
+/*
         public IEnumerable<SPTerm> TermsSiteTexts { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsSiteTexts")); } }
         private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts"); }
-
+*/
 
         public IEnumerable<SiteText> SiteTexts { get { return (IEnumerable<SiteText>)(PullFromCache("SiteTexts")); } }
-        private IEnumerable<SiteText> SiteTexts_Read(IEnumerable<SPTerm> termsSiteTexts)
+        private IEnumerable<SiteText> SiteTexts_Read()
         {
             var result = new List<SiteText>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Site_texts", NetPing_modern.Resources.Camls.Caml_SiteTexts))
+            foreach (var item in (ListItemCollection)ReadSPList("Web_texts", NetPing_modern.Resources.Camls.Caml_SiteTexts))
             {
+                var link = item["Body_link"] as FieldUrlValue;
+                int? contentId = null;
+                string url = null;
+                if (link != null)
+                {
+                    url = link.Url;
+                    contentId = _confluenceClient.GetContentIdFromUrl(url);
+                }
+                string content = string.Empty;
+                string title = string.Empty;
+                if (contentId.HasValue)
+                {
+                    Task<string> contentTask = _confluenceClient.GetContenAsync(contentId.Value);
+                    content = contentTask.Result;
+                    contentTask = _confluenceClient.GetContentTitleAsync(contentId.Value);
+                    title = contentTask.Result;
+                }
+
                 result.Add(new SiteText
                 {
-                    Tag = (item["Tag"] as TaxonomyFieldValue).ToSPTerm(termsSiteTexts)
+                    Tag = item["Title"] as string
                    ,
-                    Text = (Helpers.IsCultureEng) ? (item["Text_Eng"] as string).ReplaceInternalLinks() : (item["Text_RUS"] as string).ReplaceInternalLinks()
+                    Text = content.ReplaceInternalLinks()
                 });
             }
             if (result.Count == 0) throw new Exception("No one SiteText was readed!");
@@ -482,8 +500,8 @@ namespace NetPing.DAL
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
                 var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
-                var termsSiteTexts = TermsSiteTexts_Read();
-                var siteTexts = SiteTexts_Read(termsSiteTexts);
+//                var termsSiteTexts = TermsSiteTexts_Read();
+                var siteTexts = SiteTexts_Read();
                 var devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
                 var devicePhotos = DevicePhotos_Read(terms); Debug.WriteLine("DevicePhotos_Read OK");
                 var pubFiles = PubFiles_Read(termsFileTypes);
@@ -498,7 +516,7 @@ namespace NetPing.DAL
                 PushToCache("TermsFileTypes", termsFileTypes);
                 PushToCache("TermsDestinations", termsDestinations);
                 PushToCache("Terms", terms);
-                PushToCache("TermsSiteTexts", termsSiteTexts);
+//                PushToCache("TermsSiteTexts", termsSiteTexts);
                 PushToCache("DevicesParameters", devicesParameters);
                 PushToCache("DevicePhotos", devicePhotos);
                 PushToCache("PubFiles", pubFiles);

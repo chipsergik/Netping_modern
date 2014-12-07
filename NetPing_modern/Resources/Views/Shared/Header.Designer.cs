@@ -151,6 +151,24 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string Menu_blog {
+            get {
+                return ResourceManager.GetString("Menu_blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to buy.
+        /// </summary>
+        public static string Menu_buy {
+            get {
+                return ResourceManager.GetString("Menu_buy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Menu_contacts {
@@ -160,20 +178,11 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How to buy.
-        /// </summary>
-        public static string Menu_dealers {
-            get {
-                return ResourceManager.GetString("Menu_dealers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ideas!.
         /// </summary>
-        public static string Menu_ideas {
+        public static string Menu_support {
             get {
-                return ResourceManager.GetString("Menu_ideas", resourceCulture);
+                return ResourceManager.GetString("Menu_support", resourceCulture);
             }
         }
         

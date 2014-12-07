@@ -64,18 +64,6 @@
         <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
     </form>*@
     <div class="header_contacts">
-       <div class="header_contacts_item">
-           <div class="header_contacts_title">
-               <!--<a href="/zakaz.aspx">@Header.Header_ask</a>-->
-               @Header.Header_ask
-           </div>
-           <div class="header_content_border">
-           </div>
-           <div class="header_contacts_content">
-               <span>@Header.Phone:</span>@Header.Header_phone<br />
-               <span>e-mail:</span><a href="mailto:@Header.Header_email_support">@Header.Header_email_support</a>
-           </div>
-       </div>
         <div class="header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_to_buy </a>-->
@@ -86,6 +74,18 @@
             <div class="header_contacts_content">
                 <span>@Header.Phone:</span>@Header.Header_phone<br />
                 <span>e-mail:</span><a href="mailto:@Header.Header_email_sales">@Header.Header_email_sales</a>
+            </div>
+        </div>
+        <div class="header_contacts_item">
+            <div class="header_contacts_title">
+                <!--<a href="/zakaz.aspx">@Header.Header_ask</a>-->
+                @Header.Header_ask
+            </div>
+            <div class="header_content_border">
+            </div>
+            <div class="header_contacts_content">
+                <span>@Header.Phone:</span>@Header.Header_phone<br />
+                <span>e-mail:</span><a href="mailto:@Header.Header_email_support">@Header.Header_email_support</a>
             </div>
         </div>
     </div>
@@ -110,6 +110,20 @@
                         <li class="item_list">@Html.ActionLink(Header.Category_monitoring, "Index", "products", new {group = "monitoring-servernoj"}, new {@class = "link_item_list"})</li>
                         <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "products", new {group = "upravljaemye-rozetki-ip-pdu"}, new {@class = "link_item_list"})</li>
                         <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "products", new {group = "kommutatory-ethernet"}, new {@class = "link_item_list"})</li>
+                        <li class="item_list"><a href="/products/monitoring-servernoj/sensors">Датчики для устройств Netping</a></li>
+                        <li class="item_list"><a href="/products/monitoring-servernoj/accessories">Аксессуары для устройств Netping</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav_li">
+                <a class=@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element") href="/buy"><b>@Header.Menu_buy</b></a>
+                <div class="nav_element_border"></div>
+                <div class="abs">
+                    <ul class="down_list">
+                        <li class="item_list"><a href="/buy">Купить у нас</a></li>
+                        <li class="item_list"><a href="/buy/partnership">Наши партнёры</a></li>
+                       <!-- <li class="item_list"><a href="/Blog/....">Как стать партнёром?</a></li> -->
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -117,18 +131,40 @@
             <li class="nav_li">
                 <a class= @(Request.RawUrl.ToLower().Contains("/about") == true ? "nav_element active" : "nav_element") href="/about">@Header.Menu_about</a>
                 <div class="nav_element_border"></div>
+                <div class="abs">
+                    <ul class="down_list">
+                        <li class="item_list"><a href="/contacts">@Header.Menu_contacts</a></li>
+                        <li class="item_list"><a href="/Blog/Category/News">Новости Netping</a></li>
+                        <li class="item_list"><a href="/vacancy">Мы ищем сотрудников!</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
             </li>
-            <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element") href="/buy">@Header.Menu_dealers</a>
-                <div class="nav_element_border"></div>
-            </li>
+
+            <!--
             <li class="nav_li">
                 <a class=@(Request.RawUrl.ToLower().Contains("/contacts") == true ? "nav_element active" : "nav_element") href="/contacts">@Header.Menu_contacts</a>
                 <div class="nav_element_border"></div>
             </li>
+                -->
             <li class="nav_li">
-                <a class="nav_element" target="_blank" href="http://ideas.netping.ru">@Header.Menu_ideas</a>
+                <a class=@(Request.RawUrl.ToLower().Contains("/support") == true ? "nav_element active" : "nav_element") href="/support">@Header.Menu_support</a>
+                <div class="nav_element_border"></div>
+                <div class="abs">
+                    <ul class="down_list">
+                        <li class="item_list"><a href="/Blog/Category/FAQ">Ответы на часто задаваемые вопросы</a></li>
+                        <li class="item_list"><a href="/Blog/Category/Tutorial">Примеры применения устройств Netping</a></li>
+                        <li class="item_list"><a href="http://ideas.netping.ru/forums/213180-ideas" target="_blank">Предложите новую идею для Netping!</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
             </li>
+            <li class="nav_li">
+                <a class=@(Request.RawUrl.ToLower().Contains("/Blog") == true ? "nav_element active" : "nav_element") href="/Blog">@Header.Menu_blog</a>
+                <div class="nav_element_border"></div>
+            </li>
+
+
 
         </ul>
 

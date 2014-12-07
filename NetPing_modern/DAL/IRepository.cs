@@ -18,7 +18,7 @@ namespace NetPing.DAL
         IEnumerable<SPTerm> TermsFileTypes { get; }
         IEnumerable<PubFiles> PubFiles { get; }
         IEnumerable<SiteText> SiteTexts { get; }
-        IEnumerable<SPTerm> TermsSiteTexts { get; }
+//        IEnumerable<SPTerm> TermsSiteTexts { get; }
 
         TreeNode<Device> DevicesTree(Device root, IEnumerable<Device> devices);
         IEnumerable<Device> GetDevices(string id, string groupId);

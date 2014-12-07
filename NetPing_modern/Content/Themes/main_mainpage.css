@@ -303,12 +303,12 @@ body {
             background: #144e5a;
         }
 
-        .page .main .content .content_news_latest_date.guide .content_news_latest_date_span:after {
+        .page .main .content .content_news_latest_date.Tutorial .content_news_latest_date_span:after {
             content: "Руководство";
             background: #4ab27d;
         }
 
-        .page .main .content .content_news_latest_date.faq .content_news_latest_date_span:after {
+        .page .main .content .content_news_latest_date.FAQ .content_news_latest_date_span:after {
             content: "Ответ на вопрос";
             background: #8e8e8e;
         }
