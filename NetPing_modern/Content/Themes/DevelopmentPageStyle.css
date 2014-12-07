@@ -512,21 +512,3 @@ body {
     font-weight: 700;
 }
 
-.page .main .footer, .page .main .footer_left {
-    position: relative;
-    z-index: 15;
-    height: 88px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.page .main .footer-container:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 88px;
-    left: 0;
-    background: url("../Images/footer_bg.png") no-repeat no-repeat center center;
-    z-index: 10;
-}

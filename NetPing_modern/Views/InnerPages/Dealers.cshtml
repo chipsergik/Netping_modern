@@ -7,26 +7,27 @@
 }
 
 @section Head_Css {
-    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" /> 
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main_mainpage.css" rel="stylesheet" type="text/css" />
+
     <style>
         .partnyor {
             overflow: hidden;
             margin-bottom: 35px;
         }
 
-        .partnyor div {
-            margin-top : 40px ;
-        }
+            .partnyor div {
+                margin-top: 40px;
+            }
 
-        .partnyor div.border {
-            margin-top : 5px ;
-        }
-
+                .partnyor div.border {
+                    margin-top: 5px;
+                }
     </style>
 }
 
-@model  IEnumerable<SiteText>
+@model  IEnumerable<sitetext>
 
     @section Content_left {
         @foreach (dynamic grp in ViewBag.DealerGroups)
