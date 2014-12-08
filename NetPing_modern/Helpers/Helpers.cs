@@ -30,6 +30,17 @@ namespace NetpingHelpers
             return devices;
         }
 
+        public static IEnumerable<Post> GetTopPosts()
+        {
+            // should be removed
+            // repository should be instantiated by DI container
+            var repository = new SPOnlineRepository(new ConfluenceClient(new Config()));
+
+            var top_posts = repository.Posts.Where(p => p.IsTop).OrderByDescending(p=>p.Created);
+
+            return top_posts;
+        }
+
         public static bool IsCultureEng
         {
             get { 

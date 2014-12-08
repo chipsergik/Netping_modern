@@ -14,7 +14,10 @@ namespace NetPing
 
             routes.MapRoute("about", "about", new { controller = "InnerPages", action = "About" });
             routes.MapRoute("contacts", "contacts", new { controller = "InnerPages", action = "Contacts" });
-            routes.MapRoute("buy", "buy", new { controller = "InnerPages", action = "Dealers" });
+            routes.MapRoute("vacancy", "vacancy", new { controller = "InnerPages", action = "Vacancy" });
+            routes.MapRoute("support", "support", new { controller = "InnerPages", action = "Support" });
+
+            //routes.MapRoute("buy", "buy", new { controller = "InnerPages", action = "Buy" });
 
             routes.MapRoute("cache_updated", "cache_updated", new { controller = "InnerPages", action = "UCache" });
 
@@ -45,6 +48,12 @@ namespace NetPing
                constraints: new {controller = "!Products"}
            );
             */
+
+            routes.MapRoute(
+                name: "Buy",
+                url: "buy/{id}",
+                defaults: new { controller = "InnerPages", action = "Buy",id=UrlParameter.Optional}
+            );
 
             routes.MapRoute(
                 name: "CatalogCompare",

@@ -50,28 +50,42 @@
                         @RenderSection("Content_left", false)
                     </div>
 
+                  
                     <div class="content_right">
                         @RenderSection("Content_right", false)
-                        <div class="title">
+
+                         <!-- <div class="title">
                             <div class="title_left"></div>
-                            <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
+                            <div class="title_right">Популярные статьи</div>
+                            <a href="#" class="rss-feed"></a>
                             <div class="clear"></div>
+                            @foreach (var post in NetpingHelpers.Helpers.GetTopPosts())
+                                {
+                                    <a href="@post.Url_name" class="content_right_item_title">  @post.Title    </a>
+                                }
                         </div>
-                        @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
-                        {
-                            <div class="content_right_item">
-                                <a class="content_right_item_title" href="@("/products/" + @device.Url)">@device.Name.Name</a>
-                                <img src="@device.GetCoverPhoto(false).Url" />
-                                <div class="content_right_item_text">
-                                    @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
-                                    <br />
-                                    <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
-                                </div>
+                        -->
+
+                            <div class="title">
+                                <div class="title_left"></div>
+                                <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
                                 <div class="clear"></div>
                             </div>
+                            @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
+                        {
+                                <div class="content_right_item">
+                                    <a class="content_right_item_title" href="@("/products/" + @device.Url)">@device.Name.Name</a>
+                                    <img src="@device.GetCoverPhoto(false).Url" />
+                                    <div class="content_right_item_text">
+                                        @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
+                                        <br />
+                                        <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
                         }
-                        }
-                    </div>
+                            }
+                        </div>
                 }
                 else
                 {

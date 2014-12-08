@@ -545,7 +545,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\InnerPages\About.cshtml" />
+    <Content Include="Views\InnerPages\InnerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
