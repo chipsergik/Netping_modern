@@ -30,7 +30,8 @@ build/
 [Oo]bj/
 NetPing_modern/obj/*
 NetPing_modern/bin/*
-
+NetPing_modern/obj/
+NetPing_modern/bin/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
