@@ -71,7 +71,9 @@ namespace NetPing_modern.Controllers
             ViewBag.grp_name = group_dev.Name.Name;
             ViewBag.grp_url = Url.Action("Index", "Products", new { group = group_dev.Url });
 
-
+            ViewBag.Title = device.Name.Name;
+            ViewBag.Description = device.Name.Name;
+            ViewBag.Keywords = device.Name.Name;
             return View("Device_view",device);
         }
 
@@ -87,6 +89,10 @@ namespace NetPing_modern.Controllers
             }
             else { return HttpNotFound(); }
 
+            ViewBag.Title = g.Name.Name;
+            ViewBag.Description = g.Name.Name;
+            ViewBag.Keywords = g.Name.Name;
+
             var model = new ProductsModel
                         {
                             ActiveSection =
@@ -100,6 +106,10 @@ namespace NetPing_modern.Controllers
                 if (sub != null)
                 {
                     devices = _repository.Devices.Where(d => !d.Name.IsGroup() && d.Name.IsUnderOther(sub.Name));
+
+                    ViewBag.Title = sub.Name.Name;
+                    ViewBag.Description = sub.Name.Name;
+                    ViewBag.Keywords = sub.Name.Name;
                 }
                 else { return HttpNotFound(); }
                 model.ActiveSection.Sections.First(m => m.Url  == id).IsSelected = true;
@@ -113,6 +123,9 @@ namespace NetPing_modern.Controllers
             model.ActiveSection.IsSelected = true;
             var sections = NavigationProvider.GetAllSections().Where(m => m.Url != model.ActiveSection.Url);
             sections.ForEach(m => model.Sections.Add(m));
+
+
+ 
             return View(model);
         }
     }

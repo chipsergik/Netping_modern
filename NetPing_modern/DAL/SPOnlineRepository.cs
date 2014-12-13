@@ -378,7 +378,7 @@ namespace NetPing.DAL
                    ,
                     Dev_name = ((item["Device"] == null) ? null : item["Device"] as TaxonomyFieldValue).ToSPTerm(terms)
                    ,
-                    Url = "http://netping.ru/Pub/Photos/" + pictureUrl
+                    Url = "http://www.netping.ru/Pub/Photos/" + pictureUrl
                    ,
                     IsBig = pictureUrl.Contains("big") ? true : false
                    ,
@@ -554,7 +554,7 @@ namespace NetPing.DAL
             const string netpingRu = "Netping.ru";
             shop.Name = netpingRu;
             shop.Company = netpingRu;
-            shop.Url = "http://netping.ru";
+            shop.Url = "http://www.netping.ru";
             shop.Currencies.Add(new Currency
                                     {
                                         Id = "RUR",
@@ -607,8 +607,8 @@ namespace NetPing.DAL
                                             Url = GetDeviceUrl(offerNode.Device),
                                             Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
                                             CategoryId = childCategoryNode.Id,
-                                            Picture =  "http://www.netping.ru/"+offerNode.Device.GetCoverPhoto(true).Url, 
-                                            TypePrefix = childCategoryNode.Name,
+                                            Picture =  offerNode.Device.GetCoverPhoto(true).Url, 
+                                            TypePrefix = "", /*childCategoryNode.Name,*/
                                             VendorCode = offerNode.Name,
                                             Model = offerNode.Name,
                                             Description = descr

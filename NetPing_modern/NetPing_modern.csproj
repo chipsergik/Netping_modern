@@ -517,8 +517,6 @@
     <Content Include="Views\InnerPages\Dealers.cshtml" />
     <Content Include="Views\Shared\Inner_master.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
-    <Content Include="Views\View\Index.cshtml" />
-    <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\InnerPages\Ucache.cshtml" />
@@ -526,7 +524,6 @@
     <Content Include="Views\Shared\Korzina.cshtml" />
     <Content Include="Views\InnerPages\Question.cshtml" />
     <Content Include="Views\Shared\Cart.cshtml" />
-    <Content Include="Views\Catalog\Compare.cshtml" />
     <Content Include="Views\Blog\Main.cshtml" />
     <Content Include="Views\Blog\Record.cshtml" />
     <Content Include="Views\Shared\Blog_master.cshtml" />

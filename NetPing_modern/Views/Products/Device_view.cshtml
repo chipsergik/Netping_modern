@@ -4,10 +4,11 @@
 @model Device
 <html>
 <head>
-    @{
-        ViewBag.Title = Index.Page_title;
-    }
     <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="robots" content="index,follow" />
+
     <meta charset="utf-8">
     <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
