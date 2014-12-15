@@ -104,7 +104,7 @@
                                             IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
                                             foreach (SFile file in user_guides)
                                             {
-                                                <li><a target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
+                                                <li><a rel="nofollow"  target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
                                             }
                                         }
                                     </ul>
@@ -168,7 +168,7 @@
                                                         <ul>
                                                             @foreach (SFile file in files.ToList())
                                                             {
-                                                                <li> <a target="_blank" href="@file.Url">@file.Name</a></li>
+                                                                <li> <a rel="nofollow" target="_blank" href="@file.Url">@file.Name</a></li>
                                                             }
                                                         </ul>
                                                     </div>

@@ -67,10 +67,14 @@ namespace NetPing.DAL
 
         public IEnumerable<SPTerm> Terms { get { return (IEnumerable<SPTerm>)(PullFromCache("Terms")); } }
         private IEnumerable<SPTerm> Terms_Read() { return GetTermsFromSP("Names"); }
-/*
-        public IEnumerable<SPTerm> TermsSiteTexts { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsSiteTexts")); } }
-        private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts"); }
-*/
+
+        public IEnumerable<SPTerm> TermsFirmwares { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsFirmwares")); } }
+        private IEnumerable<SPTerm> TermsFirmwares_Read() { return GetTermsFromSP("Firmware versions"); }
+        /*
+        /*
+                public IEnumerable<SPTerm> TermsSiteTexts { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsSiteTexts")); } }
+                private IEnumerable<SPTerm> TermsSiteTexts_Read() { return GetTermsFromSP("Site texts"); }
+        */
 
         public IEnumerable<SiteText> SiteTexts { get { return (IEnumerable<SiteText>)(PullFromCache("SiteTexts")); } }
         private IEnumerable<SiteText> SiteTexts_Read()
@@ -438,6 +442,56 @@ namespace NetPing.DAL
                 });
             }
             if (result.Count == 0) throw new Exception("No one SFile was readed!");
+
+
+            var _context = new ClientContext("https://netpingeastcoltd.sharepoint.com/dev/");
+            _context.Credentials = new SharePointOnlineCredentials(_config.SPSettings.Login, _config.SPSettings.Password.ToSecureString());
+            _context.ExecuteQuery();
+            var list = _context.Web.Lists.GetByTitle("Firmwares");
+            CamlQuery camlquery = new CamlQuery();
+
+            camlquery.ViewXml =  NetPing_modern.Resources.Camls.Caml_Firmwares;
+            var items = list.GetItems(camlquery);
+            _context.Load(list);
+            _context.Load(items);
+            _context.ExecuteQuery();
+
+
+            foreach (var item in items)
+            {
+
+                Folder  item_folder= _context.Web.GetFolderByServerRelativeUrl(item["FileDirRef"].ToString());
+                Folder item_folder_parent = item_folder.ParentFolder;
+                var item_folder_parent_items = item_folder_parent.ListItemAllFields;
+                _context.Load(item_folder);
+                _context.Load(item_folder_parent);
+                _context.Load(item_folder_parent_items);
+                _context.ExecuteQuery();
+
+                var file_type = termsFileTypes.FirstOrDefault(t => t.Id == new Guid("4dadfd09-f883-4f42-9178-ded2fe88016b"));
+                if ((item["DocType"] as TaxonomyFieldValue).TermGuid == "e3de2072-1eb2-4b6d-a7e2-3319bf89836d") file_type = termsFileTypes.FirstOrDefault(t => t.Id == new Guid("e3de2072-1eb2-4b6d-a7e2-3319bf89836d"));
+
+                result.Add(new SFile
+                {
+                    Id = item.Id
+                   ,
+                    Name = item["FileLeafRef"] as string
+                   ,
+                    Title = item["Title"] as string
+                   ,
+                    Devices = (item_folder_parent_items["Devices"] as TaxonomyFieldValueCollection).ToSPTermList(terms)
+                   ,
+                    File_type = file_type
+                   ,
+                    Created = (DateTime)item["Created"]
+                   ,
+                    Url = "http://netping.ru/Pub/Firmwares/" + (item["FileLeafRef"] as string)
+
+                });
+            }
+            if (result.Count == 0) throw new Exception("No one SFile was readed!");
+
+
             return result;
         }
 
@@ -493,14 +547,17 @@ namespace NetPing.DAL
         public string UpdateAll()
         {
             try
-            {
+            { 
+                var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
+                var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
+                
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
                 var termsCategories = TermsCategories_Read(); Debug.WriteLine("TermsCategories_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
-                var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
+                
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
-                var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
 //                var termsSiteTexts = TermsSiteTexts_Read();
+                //var termFirmwares = TermsFirmwares_Read();
                 var siteTexts = SiteTexts_Read();
                 var devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
                 var devicePhotos = DevicePhotos_Read(terms); Debug.WriteLine("DevicePhotos_Read OK");
@@ -516,14 +573,15 @@ namespace NetPing.DAL
                 PushToCache("TermsFileTypes", termsFileTypes);
                 PushToCache("TermsDestinations", termsDestinations);
                 PushToCache("Terms", terms);
-//                PushToCache("TermsSiteTexts", termsSiteTexts);
+                //PushToCache("TermsFirmwares", terms);
+                //                PushToCache("TermsSiteTexts", termsSiteTexts);
                 PushToCache("DevicesParameters", devicesParameters);
                 PushToCache("DevicePhotos", devicePhotos);
                 PushToCache("PubFiles", pubFiles);
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
-
+                
                 Debug.WriteLine("PushToCache OK");
 
                 if (Helpers.IsCultureRus)
