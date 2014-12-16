@@ -144,8 +144,24 @@
                         </div>
                         @*<input id="datepicker" type="text">*@
                         <img src="" />
-                        <form method="GET" action="/Blog" id="tagsForm">
-                            <input type="hidden" name="q" value="@Model.Query"/>
+
+                        @{
+                            var action = "/Blog";
+                            var categoryPath = ViewBag.BlogCategoryPath;
+                            if (!string.IsNullOrEmpty(categoryPath))
+                            {
+                                action = "/Blog/Category/" + categoryPath;
+                            } else if (!string.IsNullOrEmpty(Model.Query))
+                            {
+                                action = "/Blog/Search/";
+                            }
+                        }
+
+                        <form method="GET" action="@action" id="tagsForm">
+                            @if (string.IsNullOrEmpty(categoryPath))
+                            {
+                                <input type="hidden" name="q" value="@Model.Query"/>
+                            }
                         </form>
                     </div>
                 }
