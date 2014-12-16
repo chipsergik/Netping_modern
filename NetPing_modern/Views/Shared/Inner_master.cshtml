@@ -14,7 +14,7 @@
 }
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>@ViewBag.Title</title>
@@ -27,9 +27,11 @@
     <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />
-    <script src="~/Content/JavaScript/jquery1.8.3min.js"></script>
-    <script src="~/Content/JavaScript/modernizr.js"></script>
-    <script src="~/Content/JavaScript/main.js"></script>
+    <script src="~/Content/JavaScript/jquery1.8.3min.js" type="text/javascript"></script>
+    <script src="~/Content/JavaScript/modernizr.js" type="text/javascript"></script>
+    <script src="~/Content/JavaScript/main.js" type="text/javascript"></script>
+    <link rel='stylesheet' type='text/css' href='~/Content/Themes/cart.css'>
+
     @RenderSection("Head_Css", false)
     @RenderSection("Head", false)
 </head>
@@ -50,42 +52,59 @@
                         @RenderSection("Content_left", false)
                     </div>
 
-                  
+
                     <div class="content_right">
                         @RenderSection("Content_right", false)
 
-                         <!-- <div class="title">
+                        @*<div class="related">
+                                <h2>Популярные статьи</h2>
+                                <a href="#" class="rss-feed"></a>
+                                <hr />
+                                @foreach (var post in NetpingHelpers.Helpers.GetTopPosts())
+                                {
+                                    <a href="@post.Url_name" class="related-item">
+                                        <h3>@post.Created.ToShortDateString()</h3>
+                                        <p>
+                                            @post.Title
+                                        </p>
+                                    </a>
+                                }
+                            </div>*@
+
+                        <div class="title">
                             <div class="title_left"></div>
                             <div class="title_right">Популярные статьи</div>
                             <a href="#" class="rss-feed"></a>
                             <div class="clear"></div>
                             @foreach (var post in NetpingHelpers.Helpers.GetTopPosts())
-                                {
-                                    <a href="@post.Url_name" class="content_right_item_title">  @post.Title    </a>
-                                }
-                        </div>
-                        -->
-
-                            <div class="title">
-                                <div class="title_left"></div>
-                                <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
-                                <div class="clear"></div>
-                            </div>
-                            @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
-                        {
+                            {
                                 <div class="content_right_item">
-                                    <a class="content_right_item_title" href="@("/products/" + @device.Url)">@device.Name.Name</a>
-                                    <img src="@device.GetCoverPhoto(false).Url" />
-                                    <div class="content_right_item_text">
-                                        @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
-                                        <br />
-                                        <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
-                                    </div>
-                                    <div class="clear"></div>
+                                    <a href="@post.Url_name" class="content_right_item_title">  @post.Title    </a>
                                 </div>
-                        }
                             }
                         </div>
+
+
+                        <div class="title">
+                            <div class="title_left"></div>
+                            <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
+                            <div class="clear"></div>
+                        </div>
+                        @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
+                        {
+                            <div class="content_right_item">
+                                <a class="content_right_item_title" href="@("/products/" + @device.Url)">@device.Name.Name</a>
+                                <img src="@device.GetCoverPhoto(false).Url" />
+                                <div class="content_right_item_text">
+                                    @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
+                                    <br />
+                                    <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        }
+                        }
+                    </div>
                 }
                 else
                 {
