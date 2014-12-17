@@ -2,11 +2,12 @@
 @{
     Layout = null;
 }
-<link rel="stylesheet" type="text/css" href="~/Content/Themes/cart.css">
+
+
 <script src="~/Content/JavaScript/jquery.cookies.2.2.0.min.js" type="text/javascript"> </script>
 <script src="~/Content/JavaScript/res.js" type="text/javascript"></script>
 <script type="text/javascript">
-    Res.init({        
+    Res.init({
         'OrderSent': '@Cart.OrderSent',
         'OrderErrorMessage': '@Cart.OrderErrorMessage'
     });
@@ -17,7 +18,7 @@
     <div class="shopPopupItem" id="cartItemTemplate">
         <p class="hiddenID"></p>
         <div class="shopItemImgContainer">
-            <img class="shopPopupItemImg" src="" alt="" />
+            <img class="shopPopupItemImg" src="#" alt="" />
         </div>
         <div class="shopItemC2">
             <p class="shopItemName"></p>
@@ -37,17 +38,17 @@
         </div>
     </div>
 </div>
-</div>
 
 <div class="overlayCart"></div>
 <div id="cartPopup">
+    <a class="closePopup">x</a>
     <input type="button" class="remove left" id="clearCartButton" value="@Cart.EmptyCart" />
     <input type="button" class="remove left" id="backCartButton" value="@Cart.Back" style="display: none;" />
     <input type="button" class="accept right" id="continueCartButton" value="@Cart.Checkout" />
     <input type="button" class="accept right" id="sendDataCartButton" value="@Cart.Done" style="display: none;" />
     <input type="button" class="accept right" id="closeCartButton" value="@Cart.ContinueShopping" />
     <div class="clear"></div>
-    <div id="cartCost"><h1>@Cart.Subtotal: <div id="cartCostValue"></div> @Cart.Currency</h1></div>
+    <div id="cartCost"><h1>@Cart.Subtotal: <span id="cartCostValue"></span> @Cart.Currency</h1></div>
     <div class="clear"></div>
     <div id="cartAbout" class="k1">
         <div id="userInfo">
@@ -59,7 +60,7 @@
             <input type="text" id="requisites" placeholder="@Cart.InvoiceDetails" />
             <div class="clear"></div>
             <h2>@Cart.DeliveryMethod</h2>
-            <label><input type="radio" value="ЕМС Почта России" name="shipping" checked="checked"/>@Cart.EMSRussianPost</label>
+            <label><input type="radio" value="ЕМС Почта России" name="shipping" checked="checked" />@Cart.EMSRussianPost</label>
             <label><input type="radio" value="Гарантпост" name="shipping" />@Cart.GarantPost</label>
             <label><input type="radio" value="Самовывоз" name="shipping" />@Cart.SelfDelivery</label>
         </div>

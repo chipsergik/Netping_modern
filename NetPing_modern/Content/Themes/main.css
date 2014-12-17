@@ -111,6 +111,7 @@
         .page .main .content .content_right .content_right_item img {
             float: left;
             width: 30%;
+            max-width: 100px;
         }
 
         .page .main .content .content_right .title {

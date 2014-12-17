@@ -18,7 +18,7 @@
         clearCart();
     });
 
-    $("#closeCartButton").click(function () {
+    $("#closeCartButton, .closePopup").click(function () {
         hidePopup();
     });
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-08 18:19">
+<yml_catalog date="2014-12-13 20:33">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -9,105 +9,87 @@
       <currency id="RUR" rate="1" plus="0" />
     </currencies>
     <categories>
-      <category id="5">Устройства NetPing</category>
-      <category id="6" parentId="5">IP датчики, NetPing</category>
-      <category id="7" parentId="5">Управление электропитанием, NetPing</category>
-      <category id="2">Аксессуары</category>
-      <category id="4" parentId="2">Аксессуары, датчики</category>
-      <category id="3" parentId="2">Переходники и коммутационные платы</category>
       <category id="9">Решения</category>
-      <category id="11" parentId="9">Удаленное управление питанием</category>
-      <category id="12" parentId="9">Удалённые датчики</category>
-      <category id="10" parentId="9">POE устройства</category>
+      <category id="12" parentId="9">Готовые решения для мониторинга серверных комнат и шкафов</category>
+      <category id="11" parentId="9">Готовые решения для удаленного управления электропитанием</category>
+      <category id="10" parentId="9">Готовые решения на основе POE</category>
+      <category id="5">Устройства NetPing</category>
+      <category id="7" parentId="5">Каталог устройств удалённого управления и распределения электропитания Netping</category>
+      <category id="6" parentId="5">Каталог устойств мониторинг серверных комнат и шкафов</category>
+      <category id="2">Аксессуары</category>
+      <category id="4" parentId="2">Каталог датчиков для устройств Netping</category>
+      <category id="3" parentId="2">Каталог аксессуаров для устройств Netping</category>
     </categories>
     <local_delivery_cost>350</local_delivery_cost>
     <offers>
-      <offer id="49" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/uniping-server-solution-v3-sms</url>
-        <price>10747</price>
+      <offer id="91" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/gotovoe-reshenie-dlya-monitoringa-servernoj-komnaty-na-osnove-uniping-server-solution-v3-sms</url>
+        <price>16895</price>
         <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
+        <categoryId>12</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/Server_room_monitor_solution_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Готовые решения для мониторинга серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing server solution v3/SMS</vendorCode>
-        <model>Устройство UniPing server solution v3/SMS</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <vendorCode>Готовое решение для мониторинга серверной комнаты на основе Uniping server solution v3/SMS</vendorCode>
+        <model>Готовое решение для мониторинга серверной комнаты на основе Uniping server solution v3/SMS</model>
+        <description>Наиболее типовыми задачами мониторинга серверных комнат являются: мониторинг климата и окружающей среды при работе компьютерного оборудования,мониторинг доступа в помещение и наличия движения в серверной комнате,мониторинг наличия электропитания. Система мониторинга должна постоянно отслеживать эти параметры и уведомлять дежурный персонал в случае необходимости.Данное решение для мониторинга серверных комнат на основе устройства Uniping server solution v3/SMS позволяет собирать информацию с внешних датчиков и отправлять E-mail или SMS-уведомления дежурному персоналу в случае необходимости. Для сбора и накопления статистики используется интеграция устройства по протоколу SNMP с системами мониторинга сети Zabbix или PRTG network monitor.  </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="48" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/uniping-server-solution</url>
-        <price>6072</price>
+      <offer id="60" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-thermostat</url>
+        <price>5638</price>
         <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
+        <categoryId>11</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Готовые решения для удаленного управления электропитанием</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing server solution</vendorCode>
-        <model>Устройство UniPing server solution</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
+        <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
+        <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
+        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.  </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="51" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/uniping-v3</url>
-        <price>3655</price>
+      <offer id="92" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/monitoring-bankomatov-i-platjozhnykh-terminalov-pri-pomoshhi-netping</url>
+        <price>8105</price>
         <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
+        <categoryId>11</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/ATM_solution_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Готовые решения для удаленного управления электропитанием</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing v3</vendorCode>
-        <model>Устройство UniPing v3</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков </description>
+        <vendorCode>Мониторинг банкоматов и платёжных терминалов при помощи Netping</vendorCode>
+        <model>Мониторинг банкоматов и платёжных терминалов при помощи Netping</model>
+        <description>Типовой задачей в обслуживании банкоматов и платёжных терминалов является обеспечение их надёжной работы. Для этого немаловажно постоянно отслеживать условия работы критичных блоков, а также иметь возможность удалённо перезагружать, включать или выключать электропитание внутренних устройств. Важно поддерживать контроль над банкоматом при проблемах основного канала связи, интегрировать систему мониторинга в общую систему управления и отслеживания работы банкоматов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="50" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-io-v2</url>
-        <price>1530</price>
+      <offer id="59" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/poe-3-ports-injector</url>
+        <price>1515</price>
         <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
+        <categoryId>10</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
+        <typePrefix>Готовые решения на основе POE</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing IO v2</vendorCode>
-        <model>Устройство NetPing IO v2</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления об их срабатывании</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="47" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-sms</url>
-        <price>4150</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>IP датчики, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing SMS</vendorCode>
-        <model>Устройство NetPing SMS</model>
-        <description>Шлюз для отправки и приёма SMS-команд для устройств NetPing. Позволяет отправлять SMS-уведомления и выполнять SMS-команды, передаваемые по сети Ethernet/Internet от любого числа устройств NetPing.</description>
+        <vendorCode>POE инжектор на 3 порта</vendorCode>
+        <model>POE инжектор на 3 порта</model>
+        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -121,7 +103,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 8/PWR-220 v3/SMS</vendorCode>
         <model>Устройство NetPing 8/PWR-220 v3/SMS</model>
@@ -139,11 +121,29 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
         <model>Устройство Netping 4/PWR-220 v3/SMS</model>
         <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS и встроенным аккумулятором.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="54" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-2-pwr-220-v3-eth</url>
+        <price>3825</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>7</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Устройство NetPing 2/PWR-220 v3/ETH</vendorCode>
+        <model>Устройство NetPing 2/PWR-220 v3/ETH</model>
+        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -157,7 +157,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v2/SMS</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v2/SMS</model>
@@ -175,29 +175,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v1/SMS</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v1/SMS</model>
         <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой управления по SMS</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="54" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-2-pwr-220-v3-eth</url>
-        <price>3825</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>7</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство NetPing 2/PWR-220 v3/ETH</vendorCode>
-        <model>Устройство NetPing 2/PWR-220 v3/ETH</model>
-        <description>Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU)</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -211,7 +193,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Управление электропитанием, NetPing</typePrefix>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing /PWR-220 v3/ETH</vendorCode>
         <model>Устройство NetPing /PWR-220 v3/ETH</model>
@@ -220,110 +202,92 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="32" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/door-sensor-metall</url>
-        <price>217</price>
+      <offer id="47" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-sms</url>
+        <price>4150</price>
         <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
+        <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</vendorCode>
-        <model>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</model>
-        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
+        <vendorCode>Устройство NetPing SMS</vendorCode>
+        <model>Устройство NetPing SMS</model>
+        <description>Шлюз для отправки и приёма SMS-команд для устройств NetPing. Позволяет отправлять SMS-уведомления и выполнять SMS-команды, передаваемые по сети Ethernet/Internet от любого числа устройств NetPing.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="26" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/thermo-sensor-1-wire</url>
-        <price>365</price>
+      <offer id="50" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-io-v2</url>
+        <price>1530</price>
         <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
+        <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Термодатчик 1-wire, (THS), 2м</vendorCode>
-        <model>Термодатчик 1-wire, (THS), 2м</model>
-        <description>Датчик температуры -55C ... +125C с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
+        <vendorCode>Устройство NetPing IO v2</vendorCode>
+        <model>Устройство NetPing IO v2</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления об их срабатывании</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="25" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/humidity-sensor-1-wire</url>
-        <price>1671</price>
+      <offer id="51" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/uniping-v3</url>
+        <price>3655</price>
         <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
+        <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Датчик влажности 1-wire, (HS), 2м</vendorCode>
-        <model>Датчик влажности 1-wire, (HS), 2м</model>
-        <description>Датчик относительной влажности воздуха с интерфейсом 1-wire и встроенным датчиком температуры. Длина провода 2 м.</description>
+        <vendorCode>Устройство UniPing v3</vendorCode>
+        <model>Устройство UniPing v3</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="41" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/thermo-sensor-TS</url>
-        <price>229</price>
+      <offer id="49" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/uniping-server-solution-v3-sms</url>
+        <price>10747</price>
         <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
+        <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Термодатчик TS, 1м</vendorCode>
-        <model>Термодатчик TS, 1м</model>
-        <description>Термодатчик для измерения температуры окружающего воздуха внутри помещения. -55C..+125C. Избегайте попадания воды на термодатчик!</description>
+        <vendorCode>Устройство UniPing server solution v3/SMS</vendorCode>
+        <model>Устройство UniPing server solution v3/SMS</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="42" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/thermo-sensor-WT</url>
-        <price>414</price>
+      <offer id="48" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/uniping-server-solution</url>
+        <price>6072</price>
         <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorWT_big.png</picture>
+        <categoryId>6</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Thermo sensor WT</vendorCode>
-        <model>Thermo sensor WT</model>
-        <description>Термодатчик для измерения температуры воздуха и воды -55C..+125C. Герметичный корпус, допускает погружение в воду.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="45" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
-        <price>1244</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Датчик влажности WS-1, 1м</vendorCode>
-        <model>Датчик влажности WS-1, 1м</model>
-        <description>Датчик влажности предназначен для измерения относительной влажности в %. Кроме того, датчик влажности содержит встроенный датчик температуры. Датчик влажности можно подключить к устройствам UniPing v3, UniPing server solution. </description>
+        <vendorCode>Устройство UniPing server solution</vendorCode>
+        <model>Устройство UniPing server solution</model>
+        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -337,11 +301,65 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Датчик наличия 220В ( мод. HRS05005), 1м</vendorCode>
         <model>Датчик наличия 220В ( мод. HRS05005), 1м</model>
         <description>Датчик позволяет определить наличие 220В в розетке питания. Датчик выполнен в виде адаптера под евророзетку.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="42" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/thermo-sensor-WT</url>
+        <price>414</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorWT_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Thermo sensor WT</vendorCode>
+        <model>Thermo sensor WT</model>
+        <description>Термодатчик для измерения температуры воздуха и воды -55C..+125C. Герметичный корпус, допускает погружение в воду.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="41" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/thermo-sensor-TS</url>
+        <price>229</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Термодатчик TS, 1м</vendorCode>
+        <model>Термодатчик TS, 1м</model>
+        <description>Термодатчик для измерения температуры окружающего воздуха внутри помещения. -55C..+125C. Избегайте попадания воды на термодатчик!</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="26" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/thermo-sensor-1-wire</url>
+        <price>365</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Термодатчик 1-wire, (THS), 2м</vendorCode>
+        <model>Термодатчик 1-wire, (THS), 2м</model>
+        <description>Датчик температуры -55C ... +125C с интерфейсом 1-wire. Длина шлейфа 2 м.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -355,83 +373,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Датчик дыма ( ИП212-141), 2м</vendorCode>
         <model>Датчик дыма ( ИП212-141), 2м</model>
         <description>Датчик дыма предназначен для обнаружения возгораний с задымлением в закрытых помещениях. Подключается к устройствам Uniping.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="30" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-door-sensor</url>
-        <price>76</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</vendorCode>
-        <model>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</model>
-        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="44" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-datchik-protechki</url>
-        <price>1080</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Датчик протечки, модель 2605, 2м</vendorCode>
-        <model>Датчик протечки, модель 2605, 2м</model>
-        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика. </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="33" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-datchik-dvijenija</url>
-        <price>789</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</vendorCode>
-        <model>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</model>
-        <description>Датчик предназначен для регистрации наличия движения. Позволяет регистрировать любое движение в зоне 10 м. Подключается к устройствам Uniping.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="28" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/glass-brake-sensor</url>
-        <price>1203</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_glass_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</vendorCode>
-        <model>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</model>
-        <description>Датчик разбития стекла - это охранный датчик, устанавливающийся возле оконного стекла и реагирующий на звук при его разбитии.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -445,29 +391,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Датчик удара PI-90D, 1м</vendorCode>
         <model>Датчик удара PI-90D, 1м</model>
         <description>Датчик удара позволяет регистрировать удары и вибрации поверхности, на которой он установлен, а также громкие хлопки, акустические удары. Обычно используется для уведомлений о случаях вандализма на удалённых узлах и в шкафах с оборудованием.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="38" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/sirena-ac10</url>
-        <price>498</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sirena_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Сирена сигнальная (АС-10), 2м</vendorCode>
-        <model>Сирена сигнальная (АС-10), 2м</model>
-        <description>Сирена AC-10 предназначена для подключения к устройствам модельного ряда UniPing. Сирена позволяет выдавать звуковые оповещения по команде от интерфейса устройства Uniping. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -481,7 +409,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Аксессуары, датчики</typePrefix>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
         <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
@@ -490,20 +418,182 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="43" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-IRC-TR-v2</url>
-        <price>2072</price>
+      <offer id="45" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
+        <price>1244</price>
         <currencyId>RUR</currencyId>
-        <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_v2_IRC-TR_big.png</picture>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>IRC-TR v2 (ИК модуль расширения)</vendorCode>
-        <model>IRC-TR v2 (ИК модуль расширения)</model>
-        <description>ИК модуль для дистанционного управления устройствами с инфракрасным интерфейсом по сети TCP/IP (web, SNMP). Не является самостоятельным устройством, должен быть подключен к базовому устройству NetPing!</description>
+        <vendorCode>Датчик влажности WS-1, 1м</vendorCode>
+        <model>Датчик влажности WS-1, 1м</model>
+        <description>Датчик влажности предназначен для измерения относительной влажности в %. Кроме того, датчик влажности содержит встроенный датчик температуры. Датчик влажности можно подключить к устройствам UniPing v3, UniPing server solution. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="25" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/humidity-sensor-1-wire</url>
+        <price>1671</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик влажности 1-wire, (HS), 2м</vendorCode>
+        <model>Датчик влажности 1-wire, (HS), 2м</model>
+        <description>Датчик относительной влажности воздуха с интерфейсом 1-wire и встроенным датчиком температуры. Длина провода 2 м.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="28" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/glass-brake-sensor</url>
+        <price>1203</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_glass_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</vendorCode>
+        <model>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</model>
+        <description>Датчик разбития стекла - это охранный датчик, устанавливающийся возле оконного стекла и реагирующий на звук при его разбитии.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="32" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/door-sensor-metall</url>
+        <price>217</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</vendorCode>
+        <model>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</model>
+        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="30" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-door-sensor</url>
+        <price>76</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</vendorCode>
+        <model>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</model>
+        <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="38" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/sirena-ac10</url>
+        <price>498</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sirena_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Сирена сигнальная (АС-10), 2м</vendorCode>
+        <model>Сирена сигнальная (АС-10), 2м</model>
+        <description>Сирена AC-10 предназначена для подключения к устройствам модельного ряда UniPing. Сирена позволяет выдавать звуковые оповещения по команде от интерфейса устройства Uniping. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="33" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-datchik-dvijenija</url>
+        <price>789</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</vendorCode>
+        <model>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</model>
+        <description>Датчик предназначен для регистрации наличия движения. Позволяет регистрировать любое движение в зоне 10 м. Подключается к устройствам Uniping.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="44" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-datchik-protechki</url>
+        <price>1080</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик протечки, модель 2605, 2м</vendorCode>
+        <model>Датчик протечки, модель 2605, 2м</model>
+        <description>Датчик протечки позволяет определить наличие воды в точке установки датчика. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="19" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-adapter-netping-io-v2</url>
+        <price>188</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Переходник для NetPing IO v2</vendorCode>
+        <model>Переходник для NetPing IO v2</model>
+        <description> Позволяет подключить блок питания с круглым джеком 2.1 мм к NetPing IO v2</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="20" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-relay-board</url>
+        <price>2150</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>NetPing Relay board (Плата реле для UniPing v3)</vendorCode>
+        <model>NetPing Relay board (Плата реле для UniPing v3)</model>
+        <description>Плата расширения для устройства Uniping v3. На плате установлено 16 низковольтных реле для управления внешними устройствами. При подключении платы дополнительные внешние датчики нельзя будет подключить к UniPing v3!</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -517,7 +607,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
         <model>Устройство NetPing Mini-UPS</model>
@@ -526,92 +616,56 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="24" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
-        <price>1682</price>
+      <offer id="43" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-IRC-TR-v2</url>
+        <price>2072</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_v2_IRC-TR_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Адаптер WiFi VAP11N</vendorCode>
-        <model>Адаптер WiFi VAP11N</model>
-        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
+        <vendorCode>IRC-TR v2 (ИК модуль расширения)</vendorCode>
+        <model>IRC-TR v2 (ИК модуль расширения)</model>
+        <description>ИК модуль для дистанционного управления устройствами с инфракрасным интерфейсом по сети TCP/IP (web, SNMP). Не является самостоятельным устройством, должен быть подключен к базовому устройству NetPing!</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="23" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-connection-board-v2</url>
+        <price>1660</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
+        <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
+        <description>Плата расширения для устройства Uniping v3 позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="14" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/rozetka-ac-din-socket</url>
-        <price>647</price>
+        <price>712</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_AC_DIN_socket_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Розетка NetPing AC/DIN</vendorCode>
         <model>Розетка NetPing AC/DIN</model>
         <description>Управляемая розетка позволяет включать/выключать и перезагружать электропитание внешней нагрузки 100..240В  50/60Гц, с током до 10А. Розетка должна быть подключена к IO линии базового устройства Netping!</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="40" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/POE-splitter-12V</url>
-        <price>705</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Сплиттер POE 12В (стандарта 802.3af)</vendorCode>
-        <model>Сплиттер POE 12В (стандарта 802.3af)</model>
-        <description>Сплиттер стандарта POE IEEE 802.3af. Позволяет получить питание 12В для любого внешнего устройства от сети Ethernet с поддержкой стандарта передачи питания POE.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="15" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/perehodnik-ups-c-kabelem</url>
-        <price>294</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Переходник для PWR-220</vendorCode>
-        <model>Переходник для PWR-220</model>
-        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing с компьютерной розетки на обыкновенную розетку для подключения евровилки.</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="22" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/power-socket-adapter-ups</url>
-        <price>233</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Переходник ИБП</vendorCode>
-        <model>Переходник ИБП</model>
-        <description>Переходник предназначен для подключения евровилки питания устройства NetPing к розетке ИБП (UPS, C13). Также переходник может быть использован для подключения евровилки устройства NetPing к розетке ИБП (UPS, C13)</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -625,7 +679,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Power adaptor 48V 1.5A</vendorCode>
         <model>Power adaptor 48V 1.5A</model>
@@ -634,56 +688,56 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="18" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/cable-extender-1-wire-5m</url>
-        <price>684</price>
+      <offer id="24" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
+        <price>1682</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Удлинитель кабеля 1-wire, 5м</vendorCode>
-        <model>Удлинитель кабеля 1-wire, 5м</model>
-        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <vendorCode>Адаптер WiFi VAP11N</vendorCode>
+        <model>Адаптер WiFi VAP11N</model>
+        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="16" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/cable-extender-1-wire-10m</url>
-        <price>862</price>
+      <offer id="35" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-adapter-12V-0_5A</url>
+        <price>415</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Удлинитель кабеля 1-wire, 10м</vendorCode>
-        <model>Удлинитель кабеля 1-wire, 10м</model>
-        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
+        <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
+        <description>Адаптер питания, может использоваться для питания устройств NetPing и некоторых моделей управляемых коммутаторов.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="17" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/cable-extender-1-wire-2m</url>
-        <price>235</price>
+      <offer id="40" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/POE-splitter-12V</url>
+        <price>705</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Удлинитель кабеля 1-wire, 2м</vendorCode>
-        <model>Удлинитель кабеля 1-wire, 2м</model>
-        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <vendorCode>Сплиттер POE 12В (стандарта 802.3af)</vendorCode>
+        <model>Сплиттер POE 12В (стандарта 802.3af)</model>
+        <description>Сплиттер стандарта POE IEEE 802.3af. Позволяет получить питание 12В для любого внешнего устройства от сети Ethernet с поддержкой стандарта передачи питания POE.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -697,7 +751,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Сплиттер 1-wire, 3 розетки</vendorCode>
         <model>Сплиттер 1-wire, 3 розетки</model>
@@ -715,7 +769,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель шлейфа датчика RC, 4м</vendorCode>
         <model>Удлинитель шлейфа датчика RC, 4м</model>
@@ -733,7 +787,7 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
         <vendorCode>Инжектор питания POE (стандарта 802.3af)</vendorCode>
         <model>Инжектор питания POE (стандарта 802.3af)</model>
@@ -742,110 +796,92 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="23" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-connection-board-v2</url>
-        <price>1660</price>
+      <offer id="17" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-2m</url>
+        <price>235</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
-        <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
-        <description>Плата расширения для устройства Uniping v3 позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
+        <vendorCode>Удлинитель кабеля 1-wire, 2м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 2м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="20" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-relay-board</url>
-        <price>2150</price>
+      <offer id="16" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-10m</url>
+        <price>862</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>NetPing Relay board (Плата реле для UniPing v3)</vendorCode>
-        <model>NetPing Relay board (Плата реле для UniPing v3)</model>
-        <description>Плата расширения для устройства Uniping v3. На плате установлено 16 низковольтных реле для управления внешними устройствами. При подключении платы дополнительные внешние датчики нельзя будет подключить к UniPing v3!</description>
+        <vendorCode>Удлинитель кабеля 1-wire, 10м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 10м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="35" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/power-adapter-12V-0_5A</url>
-        <price>415</price>
+      <offer id="18" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-5m</url>
+        <price>684</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
-        <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
-        <description>Адаптер питания, может использоваться для питания устройств NetPing и некоторых моделей управляемых коммутаторов.</description>
+        <vendorCode>Удлинитель кабеля 1-wire, 5м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 5м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="19" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/power-adapter-netping-io-v2</url>
-        <price>188</price>
+      <offer id="22" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-socket-adapter-ups</url>
+        <price>233</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Переходники и коммутационные платы</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Переходник для NetPing IO v2</vendorCode>
-        <model>Переходник для NetPing IO v2</model>
-        <description> Позволяет подключить блок питания с круглым джеком 2.1 мм к NetPing IO v2</description>
+        <vendorCode>Переходник ИБП</vendorCode>
+        <model>Переходник ИБП</model>
+        <description>Переходник предназначен для подключения евровилки питания устройства NetPing к розетке ИБП (UPS, C13). Также переходник может быть использован для подключения евровилки устройства NetPing к розетке ИБП (UPS, C13)</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="60" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/netping-thermostat</url>
-        <price>5638</price>
+      <offer id="15" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/perehodnik-ups-c-kabelem</url>
+        <price>294</price>
         <currencyId>RUR</currencyId>
-        <categoryId>11</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
-        <typePrefix>Удаленное управление питанием</typePrefix>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
         <vendor>NetPing</vendor>
-        <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
-        <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
-        <description>Устройство позволяет поддерживать заданную температуру, автоматически включая обогреватель/кондиционер при превышении порога температуры и выключая при возвращении температуры в норму.  </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="59" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/poe-3-ports-injector</url>
-        <price>1515</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>10</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>POE устройства</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>POE инжектор на 3 порта</vendorCode>
-        <model>POE инжектор на 3 порта</model>
-        <description>POE инжектор на 3 порта, способен обеспечить 3 внешних устройства питанием по стандарту POE IEEE 802.3af/at </description>
+        <vendorCode>Переходник для PWR-220</vendorCode>
+        <model>Переходник для PWR-220</model>
+        <description>Переходник для PWR-220. Специальный кабель-переходник корпусе устройства NetPing с компьютерной розетки на обыкновенную розетку для подключения евровилки.</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
