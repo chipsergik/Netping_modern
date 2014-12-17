@@ -1,4 +1,4 @@
-﻿#cartPopup *{
+﻿#cartPopup * {
     border: 0;
 }
 
@@ -10,7 +10,7 @@
     float: right;
 }
 
-#cartPopup{
+#cartPopup {
     font-family: sans-serif;
 }
 
@@ -37,7 +37,7 @@ div#cartPopup {
     display: none;
     background: #fff;
     z-index: 10000;
-    border: 2px groov #000;
+    border: 2px groove #000;
     width: 600px;
     margin: -300px 0 0 -300px;
     height: 600px;
@@ -45,6 +45,18 @@ div#cartPopup {
     box-sizing: border-box;
     overflow-y: scroll;
 }
+
+    div#cartPopup .closePopup {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-family: monospace;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+
+
 
 #cartAbout {
     display: none;
@@ -153,10 +165,10 @@ input.accept {
     border: 1px solid #ccc;
 }
 
-#userInfo input[type="text"].invalid{
+#userInfo input[type="text"].invalid {
     border: 1px solid #f00;
 }
 
-#closeCartButton{
+#closeCartButton {
     margin-right: 1px;
 }

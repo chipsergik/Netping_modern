@@ -19,7 +19,7 @@
 }
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>@ViewBag.Title</title>
@@ -83,6 +83,7 @@
                 {
                     <div class="content_left">
                         @RenderSection("Content_left", false)
+
                     </div>
 
                     <div class="content_right">
@@ -143,10 +144,31 @@
                             <a href="#" data-expand>&#x25BC; Все теги </a>
                         </div>
                         @*<input id="datepicker" type="text">*@
-                        <img src="" />
+                        @*<img src="" />*@
                         <form method="GET" action="/Blog" id="tagsForm">
                             <input type="hidden" name="q" value="@Model.Query"/>
                         </form>
+                        <div class="new-devices">
+                            <div class="title">
+                                <div class="title_left"></div>
+                                <div class="title_right">@NetPing_modern.Resources.Other.New_models</div>
+                                <div class="clear"></div>
+                            </div>
+                            @{foreach (Device device in NetpingHelpers.Helpers.GetNewDevices())
+                                {
+                                    <div class="content_right_item">
+                                        <a class="content_right_item_title" href="@("/products/" + @device.Url)">@device.Name.Name</a>
+                                        <img src="@device.GetCoverPhoto(false).Url" alt="" />
+                                        <div class="content_right_item_text">
+                                            @Html.Raw(device.Short_description.ToShortTextHTML("/products/" + device.Url))
+                                            <br />
+                                            <p>@NetPing_modern.Resources.Other.Price: <span class="content_right_price">@GetPrice(device.Price)&nbsp;@device.GetCurrency</span></p>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                }
+                            }
+                        </div>
                     </div>
                 }
                 else

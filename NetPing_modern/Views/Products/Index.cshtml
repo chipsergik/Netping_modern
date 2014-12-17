@@ -136,7 +136,7 @@
                     <div class="wrapper clearfix">
                         <div class="left main catalog">
                             <div class="cat_tit" style="background: url('../../Content/Images/present_left.png') no-repeat; -ms-background-size: 100% 100%; background-size: 100% 100%">
-                                <img class="sectionImage" src="@Model.ActiveSection.ImageUrl"/>
+                                <img class="sectionImage" src="@Model.ActiveSection.ImageUrl" alt=""/>
                                 <div class="cat_tit_title">@Html.Raw(Model.ActiveSection.Title)</div>
                                 <div class="cat_tit_desc">@Html.Raw(Model.ActiveSection.Description)</div>
                                 <ul style="margin-top: 22px;">
@@ -174,7 +174,7 @@
                                 @foreach (var sec in Model.Sections)
                                 {
                                     var link = Url.Action("Index", new {group = sec.Url});
-                                    <a href="@link"><img src="@sec.ImageUrl" class="sectionImage"/><span class="title">@Html.Raw(sec.Title)</span><span class="desc">@sec.Description</span></a>
+                                    <a href="@link"><img src="@sec.ImageUrl" class="sectionImage" alt=""/><span class="title">@Html.Raw(sec.Title)</span><span class="desc">@sec.Description</span></a>
                                 }
                             </div>
 
