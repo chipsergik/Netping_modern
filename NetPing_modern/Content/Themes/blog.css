@@ -152,7 +152,7 @@ p + p {
     .page .main .content .blog-item img.confluence-embedded-image {
         float: none;
         max-width: 100%;
-        cursor: url(http://localhost:59728/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
+        cursor: url(http://wwww.netping.ru/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
     }
 
 .blog-item hr {
