@@ -159,6 +159,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\InnerPagesController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -193,6 +194,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Error\ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Error\ErrorMessages.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -503,6 +514,8 @@
     <Content Include="robots.txt" />
     <Content Include="Views\Products\Device_view.cshtml" />
     <Content Include="Views\Products\Compare.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -580,6 +593,14 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Index.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\Error\ErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Error\ErrorMessages.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\About.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>About.ru.Designer.cs</LastGenOutput>

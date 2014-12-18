@@ -79,10 +79,10 @@ namespace NetPing_modern.Controllers
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
             model.Query = q;
-            model.Posts = posts.Where(p => p.Body.Contains(q)).OrderByDescending(item => item.Created).Select(_postMapper.Map);
+            model.Posts = posts.Where(p => p.Body.Contains(q)).OrderByDescending(item => item.Created).Select(_postMapper.Map).ToList();
             if (tags != null && tags.Count > 0)
             {
-                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path)));
+                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path))).ToList();
             }
             model.Tags.ForEach(t =>
             {
@@ -98,6 +98,16 @@ namespace NetPing_modern.Controllers
             {
                 return View("NoPosts",model);
             }
+
+            model.Posts.ForEach(p => p.Tags.ForEach(t =>
+            {
+                if (tags == null)
+                    return;
+                if (tags.Contains(t.Path))
+                {
+                    t.IsSelected = true;
+                }
+            }));
 
             ViewBag.Title = "Поиск в блоге: "+q;
             ViewBag.BlogCategory = "";
@@ -175,10 +185,10 @@ namespace NetPing_modern.Controllers
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
-            model.Posts = posts.Where(p => p.Category.Path == path).OrderByDescending(item => item.Created).Select(_postMapper.Map);
+            model.Posts = posts.Where(p => p.Category.Path == path).OrderByDescending(item => item.Created).Select(_postMapper.Map).ToList();
             if (tags != null && tags.Count > 0)
             {
-                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path)));
+                model.Posts = model.Posts.Where(m => m.Tags.Any(t => tags.Contains(t.Path))).ToList();
             }
             model.Tags.ForEach(t =>
             {
@@ -196,6 +206,16 @@ namespace NetPing_modern.Controllers
             {
                 return HttpNotFound();
             }
+
+            model.Posts.ForEach(p => p.Tags.ForEach(t =>
+            {
+                if (tags == null)
+                    return;
+                if (tags.Contains(t.Path))
+                {
+                    t.IsSelected = true;
+                }
+            }));
 
             if (path == "FAQ")
             {

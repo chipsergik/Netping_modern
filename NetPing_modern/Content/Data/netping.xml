@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<<<<<<< HEAD
 <yml_catalog date="2014-12-17 18:05">
+=======
+<yml_catalog date="2014-12-16 22:48">
+>>>>>>> origin/S5-iter2
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -27,11 +31,19 @@
         <price>16895</price>
         <currencyId>RUR</currencyId>
         <categoryId>12</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/Server_room_monitor_solution_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/Server_room_monitor_solution_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Готовые решения для мониторинга серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Готовое решение для мониторинга серверной комнаты на основе Uniping server solution v3/SMS</vendorCode>
         <model>Готовое решение для мониторинга серверной комнаты на основе Uniping server solution v3/SMS</model>
@@ -45,11 +57,19 @@
         <price>5638</price>
         <currencyId>RUR</currencyId>
         <categoryId>11</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Готовые решения для удаленного управления электропитанием</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Термостат на основе Netping 2/PWR-220 v1/SMS</vendorCode>
         <model>Термостат на основе Netping 2/PWR-220 v1/SMS</model>
@@ -63,11 +83,19 @@
         <price>8105</price>
         <currencyId>RUR</currencyId>
         <categoryId>11</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/ATM_solution_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/ATM_solution_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Готовые решения для удаленного управления электропитанием</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Мониторинг банкоматов и платёжных терминалов при помощи Netping</vendorCode>
         <model>Мониторинг банкоматов и платёжных терминалов при помощи Netping</model>
@@ -78,6 +106,7 @@
       </offer>
       <offer id="59" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/poe-3-ports-injector</url>
+<<<<<<< HEAD
         <price>1909</price>
         <currencyId>RUR</currencyId>
         <categoryId>10</categoryId>
@@ -86,6 +115,16 @@
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <price>1515</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>10</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Готовые решения на основе POE</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>POE инжектор на 3 порта</vendorCode>
         <model>POE инжектор на 3 порта</model>
@@ -103,7 +142,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 8/PWR-220 v3/SMS</vendorCode>
         <model>Устройство NetPing 8/PWR-220 v3/SMS</model>
@@ -121,7 +164,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство Netping 4/PWR-220 v3/SMS</vendorCode>
         <model>Устройство Netping 4/PWR-220 v3/SMS</model>
@@ -135,11 +182,19 @@
         <price>3825</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v3/ETH</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v3/ETH</model>
@@ -157,7 +212,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v2/SMS</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v2/SMS</model>
@@ -175,7 +234,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing 2/PWR-220 v1/SMS</vendorCode>
         <model>Устройство NetPing 2/PWR-220 v1/SMS</model>
@@ -189,11 +252,19 @@
         <price>3205</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_power_ETH_PWR220_v2_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_PWR220_v2_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устройств удалённого управления и распределения электропитания Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing /PWR-220 v3/ETH</vendorCode>
         <model>Устройство NetPing /PWR-220 v3/ETH</model>
@@ -207,11 +278,19 @@
         <price>4150</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing SMS</vendorCode>
         <model>Устройство NetPing SMS</model>
@@ -225,11 +304,19 @@
         <price>1530</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing IO v2</vendorCode>
         <model>Устройство NetPing IO v2</model>
@@ -243,11 +330,19 @@
         <price>3655</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing v3</vendorCode>
         <model>Устройство UniPing v3</model>
@@ -261,11 +356,19 @@
         <price>10747</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing server solution v3/SMS</vendorCode>
         <model>Устройство UniPing server solution v3/SMS</model>
@@ -279,11 +382,19 @@
         <price>6072</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог устойств мониторинг серверных комнат и шкафов</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство UniPing server solution</vendorCode>
         <model>Устройство UniPing server solution</model>
@@ -297,11 +408,19 @@
         <price>540</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_sensor220V_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sensor220V_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик наличия 220В ( мод. HRS05005), 1м</vendorCode>
         <model>Датчик наличия 220В ( мод. HRS05005), 1м</model>
@@ -319,7 +438,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Thermo sensor WT</vendorCode>
         <model>Thermo sensor WT</model>
@@ -333,11 +456,19 @@
         <price>229</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Термодатчик TS, 1м</vendorCode>
         <model>Термодатчик TS, 1м</model>
@@ -351,11 +482,19 @@
         <price>365</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Термодатчик 1-wire, (THS), 2м</vendorCode>
         <model>Термодатчик 1-wire, (THS), 2м</model>
@@ -373,7 +512,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик дыма ( ИП212-141), 2м</vendorCode>
         <model>Датчик дыма ( ИП212-141), 2м</model>
@@ -387,11 +530,19 @@
         <price>622</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_shock_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_shock_sensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик удара PI-90D, 1м</vendorCode>
         <model>Датчик удара PI-90D, 1м</model>
@@ -405,11 +556,19 @@
         <price>2100</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
         <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
@@ -423,11 +582,19 @@
         <price>1244</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик влажности WS-1, 1м</vendorCode>
         <model>Датчик влажности WS-1, 1м</model>
@@ -441,11 +608,19 @@
         <price>1671</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик влажности 1-wire, (HS), 2м</vendorCode>
         <model>Датчик влажности 1-wire, (HS), 2м</model>
@@ -463,7 +638,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</vendorCode>
         <model>Датчик разбития стекла (Стекло-3 ИО 329-4), 2м</model>
@@ -475,6 +654,7 @@
       <offer id="32" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/door-sensor-metall</url>
         <price>217</price>
+<<<<<<< HEAD
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
@@ -500,6 +680,34 @@
         <delivery>true</delivery>
         <typePrefix />
         <vendor>NetPing</vendor>
+=======
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</vendorCode>
+        <model>Датчик охранный (Извещатель охранный ИО102-20/Б2П, 2м)</model>
+        <description>Датчик открытия/закрытия двери (ИО102-20/Б2П). Предназначен для установки на металлическую дверь шкафа или комнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="30" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-door-sensor</url>
+        <price>76</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+>>>>>>> origin/S5-iter2
         <vendorCode>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</vendorCode>
         <model>Датчик охранный (Извещатель охранный ИО-102-2 (СМК-1), 2м</model>
         <description>Датчик открытия/закрытия двери (ИО-102-2 (СМК-1). Устанавливается на дверь шкафа или компнаты. Содержит герконовые контакты (&amp;quot;сухой контакт&amp;quot;). </description>
@@ -516,7 +724,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Сирена сигнальная (АС-10), 2м</vendorCode>
         <model>Сирена сигнальная (АС-10), 2м</model>
@@ -530,11 +742,19 @@
         <price>789</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</vendorCode>
         <model>Датчик движения ( PYRONIX COLT QUAD PI ПИК детектор) , 1м</model>
@@ -548,11 +768,19 @@
         <price>1080</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Датчик протечки, модель 2605, 2м</vendorCode>
         <model>Датчик протечки, модель 2605, 2м</model>
@@ -566,11 +794,19 @@
         <price>188</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для NetPing IO v2</vendorCode>
         <model>Переходник для NetPing IO v2</model>
@@ -584,11 +820,19 @@
         <price>2150</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>NetPing Relay board (Плата реле для UniPing v3)</vendorCode>
         <model>NetPing Relay board (Плата реле для UniPing v3)</model>
@@ -602,11 +846,19 @@
         <price>2118</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_nping_bases_mini_UPS_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_mini_UPS_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Устройство NetPing Mini-UPS</vendorCode>
         <model>Устройство NetPing Mini-UPS</model>
@@ -620,11 +872,19 @@
         <price>2072</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_v2_IRC-TR_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_v2_IRC-TR_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>IRC-TR v2 (ИК модуль расширения)</vendorCode>
         <model>IRC-TR v2 (ИК модуль расширения)</model>
@@ -638,11 +898,19 @@
         <price>1660</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
         <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
@@ -656,11 +924,19 @@
         <price>712</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_AC_DIN_socket_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_AC_DIN_socket_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Розетка NetPing AC/DIN</vendorCode>
         <model>Розетка NetPing AC/DIN</model>
@@ -678,7 +954,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Power adaptor 48V 1.5A</vendorCode>
         <model>Power adaptor 48V 1.5A</model>
@@ -692,11 +972,19 @@
         <price>1682</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Адаптер WiFi VAP11N</vendorCode>
         <model>Адаптер WiFi VAP11N</model>
@@ -710,11 +998,19 @@
         <price>415</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
         <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
@@ -728,11 +1024,19 @@
         <price>705</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Сплиттер POE 12В (стандарта 802.3af)</vendorCode>
         <model>Сплиттер POE 12В (стандарта 802.3af)</model>
@@ -750,7 +1054,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Сплиттер 1-wire, 3 розетки</vendorCode>
         <model>Сплиттер 1-wire, 3 розетки</model>
@@ -768,7 +1076,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель шлейфа датчика RC, 4м</vendorCode>
         <model>Удлинитель шлейфа датчика RC, 4м</model>
@@ -786,7 +1098,11 @@
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
+<<<<<<< HEAD
         <typePrefix />
+=======
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Инжектор питания POE (стандарта 802.3af)</vendorCode>
         <model>Инжектор питания POE (стандарта 802.3af)</model>
@@ -800,11 +1116,19 @@
         <price>235</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель кабеля 1-wire, 2м</vendorCode>
         <model>Удлинитель кабеля 1-wire, 2м</model>
@@ -818,11 +1142,19 @@
         <price>862</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель кабеля 1-wire, 10м</vendorCode>
         <model>Удлинитель кабеля 1-wire, 10м</model>
@@ -836,11 +1168,19 @@
         <price>684</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Удлинитель кабеля 1-wire, 5м</vendorCode>
         <model>Удлинитель кабеля 1-wire, 5м</model>
@@ -854,11 +1194,19 @@
         <price>233</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Переходник ИБП</vendorCode>
         <model>Переходник ИБП</model>
@@ -872,11 +1220,19 @@
         <price>294</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Переходник для PWR-220</vendorCode>
         <model>Переходник для PWR-220</model>

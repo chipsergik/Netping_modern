@@ -7,21 +7,21 @@
             timepicker: false,
             todayButton: false
         });
+    var $tagsForm = $('#tagsForm');
     $('.tag').click(function(){
-
         if ($(this).hasClass('active'))
         {
-            var form = $('#tagsForm');
+            var form = $tagsForm;
             $('input[value="' + $(this).data('tag-path') + '"]', form).remove();
         }
         else
         {
             var tag = $("<input type='hidden' name='tags'/>");
             tag.val($(this).data('tag-path'));
-            $('#tagsForm').append(tag);
+            $tagsForm.append(tag);
         }
 
-        $('#tagsForm').submit();
+        $tagsForm.submit();
     });
     $('.tag[data-tag-selected="True"]').addClass('active').each(function(){
         var tag = $("<input type='hidden' name='tags'/>");
