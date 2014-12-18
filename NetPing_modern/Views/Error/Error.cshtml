@@ -1,0 +1,14 @@
+﻿@using NetPing_modern.Resources.Views.Error
+
+@{
+    Layout = "~/Views/Shared/Inner_master.cshtml";
+    ViewBag.Title = NetPing_modern.Resources.Views.View.Index.Page_title;
+}
+@section Head_Css {
+    <link href="~/Content/Themes/main_mainpage.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/main.css" rel="stylesheet" type="text/css" />
+}
+
+@section Content_left {
+    <h1>@ErrorMessages.Error</h1>
+}
