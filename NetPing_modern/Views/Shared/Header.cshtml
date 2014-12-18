@@ -105,13 +105,13 @@
     <div class="nav">
         <ul>
             <li class="nav_li">
-                @Html.ActionLink(@Header.Products, "Index", "products", new { group = "monitoring-servernoj" }, new { id = "productsPage", @class = "nav_element" })
+                <a class="@(Request.RawUrl.ToLower().Contains("/products") == true ? "nav_element active" : "nav_element")" href="/products/monitoring-servernoj">@Header.Products</a>
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list">@Html.ActionLink(Header.Category_monitoring, "Index", "products", new { group = "monitoring-servernoj" }, new { @class = "link_item_list" })</li>
-                        <li class="item_list">@Html.ActionLink(Header.Category_power_control, "Index", "products", new { group = "upravljaemye-rozetki-ip-pdu" }, new { @class = "link_item_list" })</li>
-                        <li class="item_list">@Html.ActionLink(Header.Category_switch, "Index", "products", new { group = "kommutatory-ethernet" }, new { @class = "link_item_list" })</li>
+                        <li class="item_list"><a href="/products/monitoring-servernoj">@Header.Category_monitoring</a></li>
+                        <li class="item_list"><a href="/products/upravljaemye-rozetki-ip-pdu">@Header.Category_power_control</a></li>
+                        <li class="item_list"><a href="/products/kommutatory-ethernet">@Header.Category_switch</a></li>
                         <li class="item_list"><a href="/products/monitoring-servernoj/sensors">Датчики для устройств Netping</a></li>
                         <li class="item_list"><a href="/products/monitoring-servernoj/accessories">Аксессуары для устройств Netping</a></li>
                     </ul>
