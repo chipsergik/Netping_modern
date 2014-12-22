@@ -163,8 +163,5 @@ C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\N
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\ru\NetPing_modern.resources.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.dll
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
-<<<<<<< HEAD
-=======
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Error.ErrorMessages.resources
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Error.ErrorMessages.ru.resources
->>>>>>> 4db11d955755230a2ecb06478fa933a032e65817

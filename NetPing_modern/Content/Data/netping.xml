@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-16 22:48">
+<yml_catalog date="2014-12-23 00:12">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -78,7 +78,7 @@
       </offer>
       <offer id="59" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/poe-3-ports-injector</url>
-        <price>1515</price>
+        <price>1909</price>
         <currencyId>RUR</currencyId>
         <categoryId>10</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
