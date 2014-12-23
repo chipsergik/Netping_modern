@@ -205,6 +205,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\LastModifiedCacheAttribute.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DeviceParameterEqualityComparer.cs" />

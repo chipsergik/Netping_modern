@@ -10,7 +10,7 @@ namespace NetPing.PriceGeneration.YandexMarker
         [XmlIgnore]
         public DateTime Date { get; set; }
 
-        private string dateFormat = "yyyy-MM-dd HH:mm";
+        public const string DateFormat = "yyyy-MM-dd HH:mm";
 
         [XmlAttribute("date")]
         public string ProxyDateTime
@@ -18,11 +18,11 @@ namespace NetPing.PriceGeneration.YandexMarker
             get
             {
 
-                return Date.ToString(dateFormat);
+                return Date.ToString(DateFormat);
             }
             set
             {
-                Date = DateTime.ParseExact(value, dateFormat, CultureInfo.InvariantCulture);
+                Date = DateTime.ParseExact(value, DateFormat, CultureInfo.InvariantCulture);
             }
         }
 
