@@ -150,4 +150,10 @@
   <data name="Subscription" xml:space="preserve">
     <value>Подписаться на новости</value>
   </data>
+  <data name="Page_description" xml:space="preserve">
+    <value>Устройства мониторинга микроклимата в серверных комнатах, шкафах и стойках. Удалённое управление и распределение электропитания</value>
+  </data>
+  <data name="Page_keywords" xml:space="preserve">
+    <value>мониторинг серверной, управляемая розетка, мониторинг датчиков</value>
+  </data>
 </root>

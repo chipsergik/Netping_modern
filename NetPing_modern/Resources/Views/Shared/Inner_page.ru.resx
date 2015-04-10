@@ -117,43 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Page_title" xml:space="preserve">
-    <value>NetPing devices</value>
-  </data>
-  <data name="Sec_monitoring" xml:space="preserve">
-    <value>IP sensors&lt;br/&gt;monitoring</value>
-  </data>
-  <data name="Sec_monitoring_descr" xml:space="preserve">
-    <value>Remoutly, by IP network  monitoring temperature, humidity, doors and other sensors</value>
-  </data>
-  <data name="Sec_power" xml:space="preserve">
-    <value>Remote power&lt;br/&gt;control</value>
-  </data>
-  <data name="Sec_power_descr" xml:space="preserve">
-    <value>IP PDU devices for remote power control servers, routers and other network devices</value>
-  </data>
-  <data name="Sec_switch" xml:space="preserve">
-    <value>Ethernet switches&lt;br/&gt;and POE devices</value>
-  </data>
-  <data name="Sec_switch_descr" xml:space="preserve">
-    <value>Ethernet switchs, and POE (pover over Ethernet) devices</value>
-  </data>
-  <data name="Title_news" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="Title_new_devices" xml:space="preserve">
-    <value>New models</value>
-  </data>
-  <data name="Txt_models" xml:space="preserve">
-    <value>Models details</value>
-  </data>
-  <data name="Subscription" xml:space="preserve">
-    <value>Subscription</value>
-  </data>
-  <data name="Page_description" xml:space="preserve">
-    <value>Environmental monitoring devices for server rooms, IP PDU</value>
-  </data>
-  <data name="Page_keywords" xml:space="preserve">
-    <value>temperature sensors, humidiry sensors, IP PDU</value>
+  <data name="Title_TopArticles" xml:space="preserve">
+    <value>Популярные статьи</value>
   </data>
 </root>

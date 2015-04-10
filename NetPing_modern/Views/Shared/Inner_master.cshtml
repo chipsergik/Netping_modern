@@ -1,9 +1,13 @@
-﻿@{
-    Layout = null;
-}
-@using NetPing.Models;
+﻿@using NetPing.Models;
 @using System.Globalization
 @using NetpingHelpers
+@using NetPing_modern.Resources.Views.Shared
+
+@{
+    Layout = null;
+}
+
+
 @helper GetPrice(double? price)
 {
     if (price != null && price > 0)
@@ -73,7 +77,7 @@
 
                         <div class="title">
                             <div class="title_left"></div>
-                            <div class="title_right">Популярные статьи</div>
+                            <div class="title_right">jjjjjjjjjj</div>
                             <a href="#" class="rss-feed"></a>
                             <div class="clear"></div>
                             @foreach (var post in NetpingHelpers.Helpers.GetTopPosts())

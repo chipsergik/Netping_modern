@@ -61,6 +61,24 @@ namespace NetPing_modern.Resources.Views.MainPage {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Environmental monitoring devices for server rooms, IP PDU.
+        /// </summary>
+        public static string Page_description {
+            get {
+                return ResourceManager.GetString("Page_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to temperature sensors, humidiry sensors, IP PDU.
+        /// </summary>
+        public static string Page_keywords {
+            get {
+                return ResourceManager.GetString("Page_keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NetPing devices.
         /// </summary>
         public static string Page_title {

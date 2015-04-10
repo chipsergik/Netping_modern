@@ -205,6 +205,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Shared\Inner_page.ru.Designer.cs">
+      <DependentUpon>Inner_page.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Inner_page.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inner_page.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\LastModifiedCacheAttribute.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -672,6 +682,14 @@
     <EmbeddedResource Include="Resources\Views\Shared\Header.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Header.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Inner_page.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inner_page.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Inner_page.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inner_page.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\View\Index.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
