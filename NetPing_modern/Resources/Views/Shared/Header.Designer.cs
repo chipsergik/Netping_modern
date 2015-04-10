@@ -61,6 +61,15 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Netping device accessories.
+        /// </summary>
+        public static string Category_access {
+            get {
+                return ResourceManager.GetString("Category_access", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sensors monitorings, IPsensors.
         /// </summary>
         public static string Category_monitoring {
@@ -75,6 +84,15 @@ namespace NetPing_modern.Resources.Views.Shared {
         public static string Category_power_control {
             get {
                 return ResourceManager.GetString("Category_power_control", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Netping devices sensors.
+        /// </summary>
+        public static string Category_sensors {
+            get {
+                return ResourceManager.GetString("Category_sensors", resourceCulture);
             }
         }
         
@@ -97,7 +115,7 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sales@netping.ru.
+        ///   Looks up a localized string similar to sales@netpingdevice.com.
         /// </summary>
         public static string Header_email_sales {
             get {
@@ -106,7 +124,7 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to support@netping.ru.
+        ///   Looks up a localized string similar to support@netpingdevice.com.
         /// </summary>
         public static string Header_email_support {
             get {
@@ -169,6 +187,33 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Buy directly.
+        /// </summary>
+        public static string Menu_buy_directly {
+            get {
+                return ResourceManager.GetString("Menu_buy_directly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to partnership.
+        /// </summary>
+        public static string Menu_buy_partner_howto {
+            get {
+                return ResourceManager.GetString("Menu_buy_partner_howto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy from partners.
+        /// </summary>
+        public static string Menu_buy_partners {
+            get {
+                return ResourceManager.GetString("Menu_buy_partners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Menu_contacts {
@@ -178,11 +223,47 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ideas!.
+        ///   Looks up a localized string similar to FAQ.
+        /// </summary>
+        public static string Menu_faq {
+            get {
+                return ResourceManager.GetString("Menu_faq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Netping news.
+        /// </summary>
+        public static string Menu_news {
+            get {
+                return ResourceManager.GetString("Menu_news", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solutions.
+        /// </summary>
+        public static string Menu_solutions {
+            get {
+                return ResourceManager.GetString("Menu_solutions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
         /// </summary>
         public static string Menu_support {
             get {
                 return ResourceManager.GetString("Menu_support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our vacancy.
+        /// </summary>
+        public static string Menu_vacancy {
+            get {
+                return ResourceManager.GetString("Menu_vacancy", resourceCulture);
             }
         }
         

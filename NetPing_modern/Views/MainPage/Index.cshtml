@@ -4,10 +4,10 @@
 @using NetPing_modern.Helpers
 @using NetPing_modern.Resources.Views.MainPage
 @{
-    Layout = "~/Views/Shared/Inner_master.cshtml";
     ViewBag.Title = Index.Page_title;
     ViewBag.Description = Index.Page_description;
     ViewBag.Keywords = Index.Page_keywords;
+    Layout = "~/Views/Shared/Inner_master.cshtml";
 }
 
 @section Head_Css {
@@ -153,7 +153,7 @@
                 </div>
             }
 
-            <div class="content_best_inwork"><span>В разработке</span></div>
+            <div class="content_best_inwork"><span>@Index.Title_dev</span></div>
             <!--
         @foreach (Device device in ViewBag.Devices)
         {

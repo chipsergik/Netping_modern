@@ -156,4 +156,7 @@
   <data name="Page_keywords" xml:space="preserve">
     <value>temperature sensors, humidiry sensors, IP PDU</value>
   </data>
+  <data name="Title_dev" xml:space="preserve">
+    <value>Development</value>
+  </data>
 </root>

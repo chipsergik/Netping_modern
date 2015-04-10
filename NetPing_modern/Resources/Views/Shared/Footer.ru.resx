@@ -126,4 +126,7 @@
   <data name="Terms_conditions" xml:space="preserve">
     <value>Ограничеия и условия</value>
   </data>
+  <data name="Tree_products" xml:space="preserve">
+    <value>Продукты</value>
+  </data>
 </root>

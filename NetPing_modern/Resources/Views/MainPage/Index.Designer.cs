@@ -151,6 +151,15 @@ namespace NetPing_modern.Resources.Views.MainPage {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Development.
+        /// </summary>
+        public static string Title_dev {
+            get {
+                return ResourceManager.GetString("Title_dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New models.
         /// </summary>
         public static string Title_new_devices {
