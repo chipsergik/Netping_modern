@@ -124,6 +124,15 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All tags.
+        /// </summary>
+        public static string TXT_all_tags {
+            get {
+                return ResourceManager.GetString("TXT_all_tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calendar.
         /// </summary>
         public static string TXT_calendar {
@@ -147,6 +156,15 @@ namespace NetPing_modern.Resources.Views.Blog {
         public static string TXT_Look_for {
             get {
                 return ResourceManager.GetString("TXT_Look_for", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main tags.
+        /// </summary>
+        public static string TXT_main_tags {
+            get {
+                return ResourceManager.GetString("TXT_main_tags", resourceCulture);
             }
         }
         

@@ -148,6 +148,12 @@
     <value>Искать статью...</value>
   </data>
   <data name="TXT_tags" xml:space="preserve">
-    <value>Тэги</value>
+    <value>Теги</value>
+  </data>
+  <data name="TXT_all_tags" xml:space="preserve">
+    <value>Все теги</value>
+  </data>
+  <data name="TXT_main_tags" xml:space="preserve">
+    <value>Основные теги</value>
   </data>
 </root>

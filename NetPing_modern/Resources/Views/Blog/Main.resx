@@ -150,4 +150,10 @@
   <data name="TXT_tags" xml:space="preserve">
     <value>Tags</value>
   </data>
+  <data name="TXT_all_tags" xml:space="preserve">
+    <value>All tags</value>
+  </data>
+  <data name="TXT_main_tags" xml:space="preserve">
+    <value>Main tags</value>
+  </data>
 </root>

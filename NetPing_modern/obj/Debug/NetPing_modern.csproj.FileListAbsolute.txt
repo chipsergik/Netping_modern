@@ -63,9 +63,11 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetP
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Cart.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Footer.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Header.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Inner_page.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.View.Index.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Camls.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Other.ru.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Blog.Main.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Catalog.Compare.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Catalog.Index.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Error.ErrorMessages.ru.resources
@@ -78,11 +80,9 @@ C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetP
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Cart.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Footer.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Header.ru.resources
+C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Inner_page.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.View.Index.ru.resources
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.csproj.GenerateResource.Cache
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\ru\NetPing_modern.resources.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.dll
 C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
-C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Inner_page.resources
-C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Shared.Inner_page.ru.resources
-C:\Users\panchenko\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Blog.Main.ru.resources
