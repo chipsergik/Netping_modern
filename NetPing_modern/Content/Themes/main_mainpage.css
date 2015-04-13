@@ -303,13 +303,28 @@ body {
             background: #144e5a;
         }
 
+         .page .main .content .content_news_latest_date.News.Eng .content_news_latest_date_span:after {
+            content: "News";
+            background: #144e5a;
+        }
+
         .page .main .content .content_news_latest_date.Tutorial .content_news_latest_date_span:after {
             content: "Руководство";
             background: #4ab27d;
         }
 
+        .page .main .content .content_news_latest_date.Tutorial.Eng .content_news_latest_date_span:after {
+            content: "Turtorial";
+            background: #4ab27d;
+        }
+
         .page .main .content .content_news_latest_date.FAQ .content_news_latest_date_span:after {
             content: "Ответ на вопрос";
+            background: #8e8e8e;
+        }
+
+        .page .main .content .content_news_latest_date.FAQ.Eng .content_news_latest_date_span:after {
+            content: "FAQ";
             background: #8e8e8e;
         }
 

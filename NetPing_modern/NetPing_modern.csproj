@@ -190,6 +190,11 @@
     <Compile Include="Mappers\PostViewModelMapper.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\SectionModel.cs" />
+    <Compile Include="Resources\Views\Blog\Main.ru.Designer.cs">
+      <DependentUpon>Main.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Views\Blog\Main.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -587,6 +592,11 @@
     <EmbeddedResource Include="Resources\Other.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Other.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Main.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.ru.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Blog\Main.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

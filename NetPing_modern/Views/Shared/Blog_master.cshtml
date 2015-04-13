@@ -90,7 +90,7 @@
                     <div class="content_right">
                         <div class="article-search">
                             <form action="/Blog/Search" method="GET">
-                                <input type="text" name="q" placeholder="Искать статью..." value="@Model.Query" />
+                                <input type="text" name="q" placeholder="@Resources.TXT_Look_for" value="@Model.Query" />
                                 <input type="submit"  value=""/>
                             </form>
                         </div>
@@ -129,7 +129,7 @@
                             </ul>
                             @if (Model.Categories.Count > TopCategories)
                             {
-                                <a href="#" data-expand>&#x25BC; Все категории (@Model.Categories.Count)</a>
+                                <a href="#" data-expand>&#x25BC; @Resources.TXT_all_categories (@Model.Categories.Count)</a>
                             }
                         </div>
                         <div class="all-tags">

@@ -148,7 +148,7 @@ namespace NetPing_modern.Resources {
         ///				&lt;In&gt;
         ///					&lt;FieldRef Name=&apos;Language&apos; /&gt;
         ///					&lt;Values&gt;
-        ///						&lt;Value Type=&apos;TaxonomyFieldType&apos;&gt;Russian&lt;/Value&gt;
+        ///						&lt;Value Type=&apos;TaxonomyFieldType&apos;&gt;English&lt;/Value&gt;
         ///					&lt;/Values&gt;
         ///				&lt;/In&gt;
         ///				&lt;In&gt;

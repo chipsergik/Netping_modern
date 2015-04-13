@@ -102,15 +102,26 @@
         </div>
 
         
-            @{
+                    @{
                 int i = 0;
                 foreach (Post post in ViewBag.posts)
                 {
-                    <div class="content_news_latest_date @post.Category.OwnNameFromPath">
-                        <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                        <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
 
+                  if(NetpingHelpers.Helpers.IsCultureEng)
+                  {
+                    <div class="content_news_latest_date @post.Category.OwnNameFromPath Eng">
+                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                    <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
                     </div>
+                  }
+                  else
+                  {
+                   <div class="content_news_latest_date @post.Category.OwnNameFromPath">
+                   <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                   <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
+                   </div>                     
+                  }
+ 
                     if (++i == 7)
                     {
                         break;
@@ -168,5 +179,4 @@
         }
             -->
         </div>
-
-}
+    }

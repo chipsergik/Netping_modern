@@ -204,7 +204,7 @@ namespace NetPing_modern.Services.Confluence
         }
 
         private readonly Regex _contentIdRegex = new Regex(@"pageId=(?<id>\d+)");
-
+/*
         public int? GetContentIdFromUrl(string url)
         {
             var mc = _contentIdRegex.Matches(url);
@@ -221,5 +221,46 @@ namespace NetPing_modern.Services.Confluence
             }
             return null;
         }
+ */
+        private readonly Regex _spaceTitleRegex = new Regex(@"\/display\/(?<spaceKey>[\w \.\-\+%]+)\/(?<title>[\w \.\-\+%]+)?");
+        public int? GetContentIdFromUrl(string url)
+        {
+            var mc = _contentIdRegex.Matches(url);
+
+            if (mc.Count > 0)
+            {
+                Match m = mc[0];
+                if (m.Success)
+                {
+                    Group group = m.Groups["id"];
+                    int id= int.Parse(group.Value);
+                    if (id > 0) return id;
+
+                }
+            }
+            else
+            {
+                mc = _spaceTitleRegex.Matches(url);
+                if (mc.Count > 0)
+                {
+                    Match m = mc[0];
+                    if (m.Success)
+                    {
+                        Group spaceKeyGroup = m.Groups["spaceKey"];
+                        string spaceKey = spaceKeyGroup.Value;
+
+                        Group titleGroup = m.Groups["title"];
+                        string title = titleGroup.Value;
+
+                        var contentTask = GetContentBySpaceAndTitle(spaceKey, title);
+                        int contentId = contentTask.Result;
+                        if (contentId > 0) return contentId;
+                    }
+                }
+            }
+            return null;
+        }
+
+
     }
 }
