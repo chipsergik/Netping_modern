@@ -63,6 +63,10 @@ input:focus {
         width: 1000px;
     }
 
+.page .main .content .tabs-desc img.confluence-embedded-image {
+    max-width: 100%;
+}
+
 .header {
     background: url(../Images/backround_main.png) no-repeat;
 }
