@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2014-12-23 00:12">
+<yml_catalog date="2015-04-14 04:21">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -24,7 +24,7 @@
     <offers>
       <offer id="91" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/gotovoe-reshenie-dlya-monitoringa-servernoj-komnaty-na-osnove-uniping-server-solution-v3-sms</url>
-        <price>16895</price>
+        <price>19210</price>
         <currencyId>RUR</currencyId>
         <categoryId>12</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/Server_room_monitor_solution_big.png</picture>
@@ -42,7 +42,7 @@
       </offer>
       <offer id="60" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-thermostat</url>
-        <price>5638</price>
+        <price>7006</price>
         <currencyId>RUR</currencyId>
         <categoryId>11</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_pwr_termostat_big.png</picture>
@@ -60,7 +60,7 @@
       </offer>
       <offer id="92" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/monitoring-bankomatov-i-platjozhnykh-terminalov-pri-pomoshhi-netping</url>
-        <price>8105</price>
+        <price>10000</price>
         <currencyId>RUR</currencyId>
         <categoryId>11</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/ATM_solution_big.png</picture>
@@ -78,7 +78,7 @@
       </offer>
       <offer id="59" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/poe-3-ports-injector</url>
-        <price>1909</price>
+        <price>2935</price>
         <currencyId>RUR</currencyId>
         <categoryId>10</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_solut_poe_3injector_big.png</picture>
@@ -96,7 +96,7 @@
       </offer>
       <offer id="53" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-8-pwr-220-v3-sms</url>
-        <price>12045</price>
+        <price>14260</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_8PWR_SMS_big.png</picture>
@@ -114,7 +114,7 @@
       </offer>
       <offer id="52" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-4-pwr-220-v3-sms</url>
-        <price>7276</price>
+        <price>9500</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_4PWR_SMS_220_v3_big.png</picture>
@@ -132,7 +132,7 @@
       </offer>
       <offer id="54" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-2-pwr-220-v3-eth</url>
-        <price>3825</price>
+        <price>4400</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_2PWR220_v2_big.png</picture>
@@ -150,7 +150,7 @@
       </offer>
       <offer id="58" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-2-pwr-220-v2-sms</url>
-        <price>6056</price>
+        <price>6500</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_V2SMS2PWR220_big2.png</picture>
@@ -168,7 +168,7 @@
       </offer>
       <offer id="57" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-2-pwr-220-v1-sms</url>
-        <price>5136</price>
+        <price>5906</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_SMS2PWR220-v1_big.png</picture>
@@ -186,7 +186,7 @@
       </offer>
       <offer id="55" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-pwr-220-v3-eth</url>
-        <price>3205</price>
+        <price>3690</price>
         <currencyId>RUR</currencyId>
         <categoryId>7</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_power_ETH_PWR220_v2_big.png</picture>
@@ -204,7 +204,7 @@
       </offer>
       <offer id="47" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-sms</url>
-        <price>4150</price>
+        <price>5550</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_SMS_big.png</picture>
@@ -222,7 +222,7 @@
       </offer>
       <offer id="50" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-io-v2</url>
-        <price>1530</price>
+        <price>1760</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v2netpingIO_big.png</picture>
@@ -240,7 +240,7 @@
       </offer>
       <offer id="51" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/uniping-v3</url>
-        <price>3655</price>
+        <price>4700</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_v3_UniPing_big.png</picture>
@@ -258,7 +258,7 @@
       </offer>
       <offer id="49" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/uniping-server-solution-v3-sms</url>
-        <price>10747</price>
+        <price>11500</price>
         <currencyId>RUR</currencyId>
         <categoryId>6</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_UniPing_server_v3_SMS_big.png</picture>
@@ -294,7 +294,7 @@
       </offer>
       <offer id="36" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/sensor-220V</url>
-        <price>540</price>
+        <price>620</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sensor220V_big.png</picture>
@@ -310,9 +310,27 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
+      <offer id="27" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-meter-ce102</url>
+        <price>2415</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
+        <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
+        <description>Однофазный многотарифный электросчетчик. Его задача - измерение активной электроэнергии в однофазных цепях переменного тока и организация учёта по четырём тарифам с передачей накопленной информации через интерфейс RS-485.  Счётчик может быть подключен к устройствам:UniPing v3,  UniPing server solution</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
       <offer id="42" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/thermo-sensor-WT</url>
-        <price>414</price>
+        <price>630</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorWT_big.png</picture>
@@ -330,7 +348,7 @@
       </offer>
       <offer id="41" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/thermo-sensor-TS</url>
-        <price>229</price>
+        <price>550</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_TermosensorTS_big.png</picture>
@@ -348,7 +366,7 @@
       </offer>
       <offer id="26" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/thermo-sensor-1-wire</url>
-        <price>365</price>
+        <price>675</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireTermosensor_big.png</picture>
@@ -366,7 +384,7 @@
       </offer>
       <offer id="39" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/smoke-sensor</url>
-        <price>789</price>
+        <price>910</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_smoke_sensor_big.png</picture>
@@ -384,7 +402,7 @@
       </offer>
       <offer id="37" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-shock-sensor</url>
-        <price>622</price>
+        <price>715</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_shock_sensor_big.png</picture>
@@ -400,27 +418,9 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="27" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/power-meter-ce102</url>
-        <price>2100</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>4</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
-        <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
-        <description>Однофазный многотарифный электросчетчик. Его задача - измерение активной электроэнергии в однофазных цепях переменного тока и организация учёта по четырём тарифам с передачей накопленной информации через интерфейс RS-485.  Счётчик может быть подключен к устройствам:UniPing v3,  UniPing server solution</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
       <offer id="45" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
-        <price>1244</price>
+        <price>1430</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_wet_sensor_big.png</picture>
@@ -438,7 +438,7 @@
       </offer>
       <offer id="25" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/humidity-sensor-1-wire</url>
-        <price>1671</price>
+        <price>1920</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_1WireHumiditysensor_big.png</picture>
@@ -456,7 +456,7 @@
       </offer>
       <offer id="28" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/glass-brake-sensor</url>
-        <price>1203</price>
+        <price>1390</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_glass_big.png</picture>
@@ -474,7 +474,7 @@
       </offer>
       <offer id="32" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/door-sensor-metall</url>
-        <price>217</price>
+        <price>250</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_metall_kontakt_big.png</picture>
@@ -492,7 +492,7 @@
       </offer>
       <offer id="30" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-door-sensor</url>
-        <price>76</price>
+        <price>150</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/</picture>
@@ -510,7 +510,7 @@
       </offer>
       <offer id="38" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/sirena-ac10</url>
-        <price>498</price>
+        <price>575</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_sirena_big.png</picture>
@@ -528,7 +528,7 @@
       </offer>
       <offer id="33" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-datchik-dvijenija</url>
-        <price>789</price>
+        <price>910</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_moove_sensor_big.png</picture>
@@ -546,7 +546,7 @@
       </offer>
       <offer id="44" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-datchik-protechki</url>
-        <price>1080</price>
+        <price>1600</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_water_sensr_big.png</picture>
@@ -564,7 +564,7 @@
       </offer>
       <offer id="19" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/power-adapter-netping-io-v2</url>
-        <price>188</price>
+        <price>216</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
@@ -582,7 +582,7 @@
       </offer>
       <offer id="20" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-relay-board</url>
-        <price>2150</price>
+        <price>2900</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
@@ -600,7 +600,7 @@
       </offer>
       <offer id="46" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-mini-ups</url>
-        <price>2118</price>
+        <price>2435</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_nping_bases_mini_UPS_big.png</picture>
@@ -636,7 +636,7 @@
       </offer>
       <offer id="23" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-connection-board-v2</url>
-        <price>1660</price>
+        <price>2255</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
@@ -654,7 +654,7 @@
       </offer>
       <offer id="14" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/rozetka-ac-din-socket</url>
-        <price>712</price>
+        <price>990</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_AC_DIN_socket_big.png</picture>
@@ -672,7 +672,7 @@
       </offer>
       <offer id="34" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/power-adapter-48V-1_5A</url>
-        <price>809</price>
+        <price>1055</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_48V_ps_big.png</picture>
@@ -688,27 +688,9 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
-      <offer id="24" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
-        <price>1682</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>3</categoryId>
-        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
-        <vendor>NetPing</vendor>
-        <vendorCode>Адаптер WiFi VAP11N</vendorCode>
-        <model>Адаптер WiFi VAP11N</model>
-        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
       <offer id="35" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/power-adapter-12V-0_5A</url>
-        <price>415</price>
+        <price>477</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
@@ -724,9 +706,27 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
+      <offer id="24" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
+        <price>1700</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог аксессуаров для устройств Netping</typePrefix>
+        <vendor>NetPing</vendor>
+        <vendorCode>Адаптер WiFi VAP11N</vendorCode>
+        <model>Адаптер WiFi VAP11N</model>
+        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
       <offer id="40" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/POE-splitter-12V</url>
-        <price>705</price>
+        <price>870</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
@@ -744,7 +744,7 @@
       </offer>
       <offer id="13" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/splitter-1-wire-1-to-2</url>
-        <price>66</price>
+        <price>250</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_1to2Splitter1wire_big.png</picture>
@@ -762,7 +762,7 @@
       </offer>
       <offer id="21" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-cable-extender-4m</url>
-        <price>199</price>
+        <price>250</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_sensors_extender4_big.png</picture>
@@ -780,7 +780,7 @@
       </offer>
       <offer id="29" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/injector-poe-802-3-af</url>
-        <price>463</price>
+        <price>532</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Inj_af_POE_big.png</picture>
@@ -852,7 +852,7 @@
       </offer>
       <offer id="22" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/power-socket-adapter-ups</url>
-        <price>233</price>
+        <price>350</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_UPS_adapter_big.png</picture>
@@ -870,7 +870,7 @@
       </offer>
       <offer id="15" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/perehodnik-ups-c-kabelem</url>
-        <price>294</price>
+        <price>550</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_Adapter_PWR220_big.png</picture>
