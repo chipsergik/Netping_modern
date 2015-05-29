@@ -18,9 +18,12 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Themes/slide.css">
     <link rel='stylesheet' type='text/css' href='~/Content/Themes/cart.css'>
 
-    @if ( NetpingHelpers.Helpers.IsCultureEng) {
+    @if (NetpingHelpers.Helpers.IsCultureEng)
+    {
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter_eng.css">
-    } else {
+    }
+    else
+    {
         <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter.css">
     }
     <link href="~/Content/Themes/tinycarousel.css" rel="stylesheet" />
@@ -106,7 +109,7 @@
                                             IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
                                             foreach (SFile file in user_guides)
                                             {
-                                                <li><a rel="nofollow"  target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
+                                                <li><a rel="nofollow" target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
                                             }
                                         }
                                     </ul>
@@ -117,13 +120,32 @@
                             </div>
                         </div>
 
+                        @{
+                            IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "FAQ");
+                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "Tutorial");
+                        }
                         <div class="tabs-desc">
                             <div class="clearfix">
-                                <div class="tab active" data-tab-id="5">@Index.Sec_description</div>
-                                <div class="tab" data-tab-id="1">@Index.Sec_spec</div>
-                                <div class="tab" data-tab-id="2">@Index.Sec_files</div>
-                                <div class="tab" data-tab-id="3">@Index.Sec_faq</div>
-                                <div class="tab" data-tab-id="4">@Index.Sec_examples</div>
+                                <div class="tab active" data-tab-id="5"
+                                     @(String.IsNullOrWhiteSpace(Model.Long_description) ? "style=display:none;" : "")>
+                                    @Index.Sec_description
+                                </div>
+                                <div class="tab" data-tab-id="1"
+                                     @(Model.DeviceParameters.Count == 0 ? "style=display:none;" : "")>
+                                    @Index.Sec_spec
+                                </div>
+                                <div class="tab" data-tab-id="2"
+                                     @(Model.SFiles.Count == 0 ? "style=display:none;" : "")>
+                                    @Index.Sec_files
+                                </div>
+                                <div class="tab" data-tab-id="3"
+                                     @(posts_faq.Count() == 0 ? "style=display:none;" : "")>
+                                    @Index.Sec_faq
+                                </div>
+                                <div class="tab" data-tab-id="4"
+                                     @(post_solutions.Count() == 0 ? "style=display:none;" : "")>
+                                    @Index.Sec_examples
+                                </div>
                             </div>
 
                             <div class="tabs-cont">
@@ -184,7 +206,6 @@
                                 <div class="tab-c" data-tab-id="3">
                                     <ul>
                                         @{
-                                            IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "FAQ");
                                             foreach (Post post in posts_faq)
                                             {
                                                 <li>
@@ -199,8 +220,6 @@
                                 <div class="tab-c" data-tab-id="4">
                                     <ul>
                                         @{
-                                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "Tutorial");
-
                                             foreach (Post post in post_solutions)
                                             {
                                                 <li>
@@ -261,6 +280,6 @@
     <script src="~/Content/JavaScript/slider1.js" type="text/javascript"> </script>
 
     @RenderPage("../Shared/Cart.cshtml")
-    
+
 </body>
 </html>
