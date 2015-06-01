@@ -1,0 +1,15 @@
+﻿@using NetPing.Models
+@model IEnumerable<SFile>
+
+
+<div class="seporator"></div>
+
+<ul class="files">
+    @{
+        foreach (SFile file in Model)
+        {
+            <li><a rel="nofollow" target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
+        }
+    }
+</ul>
+<div class="seporator"></div>
