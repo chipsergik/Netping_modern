@@ -165,3 +165,5 @@ C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\N
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.pdb
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Error.ErrorMessages.resources
 C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\obj\Debug\NetPing_modern.Resources.Views.Error.ErrorMessages.ru.resources
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\libtidy.dll
+C:\Users\Андрей\Documents\GitHub\Netping_modern\NetPing_modern\bin\TidyManaged.dll
