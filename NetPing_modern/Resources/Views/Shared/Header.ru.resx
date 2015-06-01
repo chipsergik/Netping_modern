@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Category_access" xml:space="preserve">
+    <value>Аксессуары для устройств Netping</value>
+  </data>
   <data name="Category_monitoring" xml:space="preserve">
     <value>Устройства мониторинга серверных комнат</value>
   </data>
   <data name="Category_power_control" xml:space="preserve">
     <value>Устройства удалённого управления электропитанием</value>
+  </data>
+  <data name="Category_sensors" xml:space="preserve">
+    <value>Датчики для устройств Netping</value>
   </data>
   <data name="Category_switch" xml:space="preserve">
     <value>Коммутаторы Ethernet POE устройства</value>
@@ -153,11 +159,32 @@
   <data name="Menu_buy" xml:space="preserve">
     <value>Купить!</value>
   </data>
+  <data name="Menu_buy_directly" xml:space="preserve">
+    <value>Купить у нас</value>
+  </data>
+  <data name="Menu_buy_partners" xml:space="preserve">
+    <value>Наши партнёры</value>
+  </data>
+  <data name="Menu_buy_partner_howto" xml:space="preserve">
+    <value>Как стать партнёром?</value>
+  </data>
   <data name="Menu_contacts" xml:space="preserve">
     <value>Наш адрес</value>
   </data>
+  <data name="Menu_faq" xml:space="preserve">
+    <value>Ответы на часто задаваемые вопросы</value>
+  </data>
+  <data name="Menu_news" xml:space="preserve">
+    <value>Новости Netping</value>
+  </data>
+  <data name="Menu_solutions" xml:space="preserve">
+    <value>Примеры применения устройств Netping</value>
+  </data>
   <data name="Menu_support" xml:space="preserve">
     <value>Поддержка</value>
+  </data>
+  <data name="Menu_vacancy" xml:space="preserve">
+    <value>Мы ищем сотрудников!</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>тел.</value>

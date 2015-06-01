@@ -180,6 +180,21 @@ namespace NetPing.DAL
             var meta = ModelMetadata.FromLambdaExpression(expression, new ViewDataDictionary<Device>());
             var propertyInfo = typeof(Device).GetProperty(meta.PropertyName);
 
+
+            var id = _confluenceClient.GetContentIdFromUrl(url);
+            if (id==null) {
+                propertyInfo.SetValue(device, string.Empty);
+                return;
+            }
+
+            var contentTask = _confluenceClient.GetContenAsync((int)id);
+            string content = contentTask.Result;
+            if (!string.IsNullOrWhiteSpace(content))
+            {
+                string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                propertyInfo.SetValue(device, propertyValue);
+            }
+/*
             var mc = _contentIdRegex.Matches(url);
             if (mc.Count > 0)
             {
@@ -227,6 +242,11 @@ namespace NetPing.DAL
                     }
                 }
             }
+*/
+
+
+
+
 
             if (propertyInfo.GetValue(device) == null)
             {

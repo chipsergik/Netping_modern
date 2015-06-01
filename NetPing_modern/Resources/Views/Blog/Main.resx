@@ -118,21 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BlogTitle" xml:space="preserve">
-    <value>Блог</value>
+    <value>Blog</value>
   </data>
   <data name="ErrorNoPostsMessage" xml:space="preserve">
-    <value>Ни одной записи не найдено.</value>
+    <value>No records.</value>
   </data>
   <data name="ErrorPostDoesntExistMessage" xml:space="preserve">
-    <value>Такой записи в блоге не существует.</value>
+    <value>Record is not found.</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Ошибка</value>
+    <value>Error</value>
   </data>
   <data name="More" xml:space="preserve">
-    <value>Читать дальше</value>
+    <value>Read more</value>
   </data>
   <data name="PopularArticlesTitle" xml:space="preserve">
-    <value>Популярные статьи</value>
+    <value>Top popular</value>
+  </data>
+  <data name="TXT_all_categories" xml:space="preserve">
+    <value>All categories</value>
+  </data>
+  <data name="TXT_calendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="TXT_category" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="TXT_Look_for" xml:space="preserve">
+    <value>Look for...</value>
+  </data>
+  <data name="TXT_tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="TXT_all_tags" xml:space="preserve">
+    <value>All tags</value>
+  </data>
+  <data name="TXT_main_tags" xml:space="preserve">
+    <value>Main tags</value>
   </data>
 </root>

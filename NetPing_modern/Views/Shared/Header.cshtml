@@ -92,9 +92,13 @@
         </div>
     </div>
 
+@if (!NetpingHelpers.Helpers.IsCultureEng)
+{ 
     <a href="#" class="cart">
         <span class="cart_text">@Header.Header_goods_in_basket</span><span class="cart_count">0</span>
     </a>
+}
+                        
 
     <div class="clear"></div>
 
@@ -112,8 +116,8 @@
                         <li class="item_list"><a href="/products/monitoring-servernoj">@Header.Category_monitoring</a></li>
                         <li class="item_list"><a href="/products/upravljaemye-rozetki-ip-pdu">@Header.Category_power_control</a></li>
                         <li class="item_list"><a href="/products/kommutatory-ethernet">@Header.Category_switch</a></li>
-                        <li class="item_list"><a href="/products/monitoring-servernoj/sensors">Датчики для устройств Netping</a></li>
-                        <li class="item_list"><a href="/products/monitoring-servernoj/accessories">Аксессуары для устройств Netping</a></li>
+                        <li class="item_list"><a href="/products/monitoring-servernoj/sensors">@Header.Category_sensors</a></li>
+                        <li class="item_list"><a href="/products/monitoring-servernoj/accessories">@Header.Category_access</a></li>
                     </ul>
                 </div>
             </li>
@@ -122,9 +126,9 @@
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list"><a href="/buy">Купить у нас</a></li>
-                        <li class="item_list"><a href="/buy/dealers">Наши партнёры</a></li>
-                        <li class="item_list"><a href="/buy/partnership-how-to">Как стать партнёром?</a></li>
+                        <li class="item_list"><a href="/buy">@Header.Menu_buy_directly</a></li>
+                        <li class="item_list"><a href="/buy/dealers">@Header.Menu_buy_partners</a></li>
+                        <li class="item_list"><a href="/buy/partnership-how-to">@Header.Menu_buy_partner_howto</a></li>
                     </ul>
                 </div>
             </li>
@@ -134,8 +138,8 @@
                 <div class="abs">
                     <ul class="down_list">
                         <li class="item_list"><a href="/contacts">@Header.Menu_contacts</a></li>
-                        <li class="item_list"><a href="/Blog/Category/News">Новости Netping</a></li>
-                        <li class="item_list"><a href="/vacancy">Мы ищем сотрудников!</a></li>
+                        <li class="item_list"><a href="/Blog/Category/News">@Header.Menu_news</a></li>
+                        @if (!NetpingHelpers.Helpers.IsCultureEng) {    <li class="item_list"><a href="/vacancy">@Header.Menu_vacancy</a></li> }
                     </ul>
                 </div>
             </li>
@@ -151,9 +155,12 @@
                 <div class="nav_element_border"></div>
                 <div class="abs">
                     <ul class="down_list">
-                        <li class="item_list"><a href="/Blog/Category/FAQ">Ответы на часто задаваемые вопросы</a></li>
-                        <li class="item_list"><a href="/Blog/Category/Tutorial">Примеры применения устройств Netping</a></li>
-                        <li class="item_list"><a href="http://ideas.netping.ru/forums/213180-ideas" target="_blank">Предложите новую идею для Netping!</a></li>
+                        <li class="item_list"><a href="/Blog/Category/FAQ">@Header.Menu_faq</a></li>
+                        <li class="item_list"><a href="/Blog/Category/Tutorial">@Header.Menu_solutions</a></li>
+                        @if (!NetpingHelpers.Helpers.IsCultureEng)
+                        {
+                                <li class="item_list"><a href="http://ideas.netping.ru/forums/213180-ideas" target="_blank">Предложите новую идею для Netping!</a></li>
+                        }
                         @*<li><div class="clear"></div></li>*@
                     </ul>
                 </div>

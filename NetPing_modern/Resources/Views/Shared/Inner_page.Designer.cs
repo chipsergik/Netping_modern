@@ -22,14 +22,14 @@ namespace NetPing_modern.Resources.Views.Shared {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Footer {
+    public class Inner_page {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Footer() {
+        internal Inner_page() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NetPing_modern.Resources.Views.Shared {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.Shared.Footer", typeof(Footer).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.Shared.Inner_page", typeof(Inner_page).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,11 @@ namespace NetPing_modern.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright © NetPing east Co Ltd. All rights reserved.
+        ///   Looks up a localized string similar to Top articles.
         /// </summary>
-        public static string Copyright {
+        public static string Title_TopArticles {
             get {
-                return ResourceManager.GetString("Copyright", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Privacy policy.
-        /// </summary>
-        public static string Privacy_policy {
-            get {
-                return ResourceManager.GetString("Privacy_policy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Terms &amp; conditions.
-        /// </summary>
-        public static string Terms_conditions {
-            get {
-                return ResourceManager.GetString("Terms_conditions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Products.
-        /// </summary>
-        public static string Tree_products {
-            get {
-                return ResourceManager.GetString("Tree_products", resourceCulture);
+                return ResourceManager.GetString("Title_TopArticles", resourceCulture);
             }
         }
     }

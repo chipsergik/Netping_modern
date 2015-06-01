@@ -505,7 +505,7 @@ p + p {
 }
 
 .logo:after {
-    content: "блог";
+    content: "blog";
     color: #eb635f;
     font-size: 56px;
     position: relative;

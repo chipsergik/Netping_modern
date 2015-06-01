@@ -190,6 +190,11 @@
     <Compile Include="Mappers\PostViewModelMapper.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\SectionModel.cs" />
+    <Compile Include="Resources\Views\Blog\Main.ru.Designer.cs">
+      <DependentUpon>Main.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Views\Blog\Main.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +209,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Inner_page.ru.Designer.cs">
+      <DependentUpon>Inner_page.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Shared\Inner_page.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inner_page.resx</DependentUpon>
     </Compile>
     <Compile Include="Tools\LastModifiedCacheAttribute.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
@@ -578,6 +593,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Other.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Main.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.ru.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Blog\Main.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Main.Designer.cs</LastGenOutput>
@@ -672,6 +692,14 @@
     <EmbeddedResource Include="Resources\Views\Shared\Header.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Header.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Inner_page.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inner_page.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Shared\Inner_page.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Inner_page.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\View\Index.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

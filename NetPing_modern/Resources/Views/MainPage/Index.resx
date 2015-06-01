@@ -150,4 +150,13 @@
   <data name="Subscription" xml:space="preserve">
     <value>Subscription</value>
   </data>
+  <data name="Page_description" xml:space="preserve">
+    <value>Environmental monitoring devices for server rooms, IP PDU</value>
+  </data>
+  <data name="Page_keywords" xml:space="preserve">
+    <value>temperature sensors, humidiry sensors, IP PDU</value>
+  </data>
+  <data name="Title_dev" xml:space="preserve">
+    <value>Development</value>
+  </data>
 </root>

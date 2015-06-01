@@ -4,10 +4,10 @@
 @using NetPing_modern.Helpers
 @using NetPing_modern.Resources.Views.MainPage
 @{
-    Layout = "~/Views/Shared/Inner_master.cshtml";
     ViewBag.Title = Index.Page_title;
-    ViewBag.Description="Устройства мониторинга микроклимата в серверных комнатах, шкафах и стойках. Удалённое управление и распределение электропитания"; 
-    ViewBag.Keywords="мониторинг серверной, управляемая розетка, мониторинг датчиков";                    
+    ViewBag.Description = Index.Page_description;
+    ViewBag.Keywords = Index.Page_keywords;
+    Layout = "~/Views/Shared/Inner_master.cshtml";
 }
 
 @section Head_Css {
@@ -102,15 +102,26 @@
         </div>
 
         
-            @{
+                    @{
                 int i = 0;
                 foreach (Post post in ViewBag.posts)
                 {
-                    <div class="content_news_latest_date @post.Category.OwnNameFromPath">
-                        <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
-                        <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
 
+                  if(NetpingHelpers.Helpers.IsCultureEng)
+                  {
+                    <div class="content_news_latest_date @post.Category.OwnNameFromPath Eng">
+                    <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                    <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
                     </div>
+                  }
+                  else
+                  {
+                   <div class="content_news_latest_date @post.Category.OwnNameFromPath">
+                   <span class="content_news_latest_date_span">@post.Created.ToShortDateString()</span>
+                   <a class="content_news_latest_date_a" href="@post.Url_name">@post.Title</a>
+                   </div>                     
+                  }
+ 
                     if (++i == 7)
                     {
                         break;
@@ -153,7 +164,7 @@
                 </div>
             }
 
-            <div class="content_best_inwork"><span>В разработке</span></div>
+            <div class="content_best_inwork"><span>@Index.Title_dev</span></div>
             <!--
         @foreach (Device device in ViewBag.Devices)
         {
@@ -168,5 +179,4 @@
         }
             -->
         </div>
-
-}
+    }
