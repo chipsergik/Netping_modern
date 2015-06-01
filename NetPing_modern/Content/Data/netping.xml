@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<<<<<<< HEAD
 <yml_catalog date="2015-03-27 12:37">
+=======
+<yml_catalog date="2015-04-14 04:21">
+>>>>>>> origin/S5-iter2
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -315,11 +319,19 @@
         <price>2415</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
         <typePrefix />
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_ce102_power_meter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix>Каталог датчиков для устройств Netping</typePrefix>
+>>>>>>> origin/S5-iter2
         <vendor>NetPing</vendor>
         <vendorCode>Счетчик электроэнергии СЕ102 S6 145 AKV</vendorCode>
         <model>Счетчик электроэнергии СЕ102 S6 145 AKV</model>
@@ -692,7 +704,11 @@
         <price>477</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
+>>>>>>> origin/S5-iter2
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
@@ -710,7 +726,11 @@
         <price>1700</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
+<<<<<<< HEAD
         <picture>http://www.netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+=======
+        <picture>http://www.netping.ru/http://netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+>>>>>>> origin/S5-iter2
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>

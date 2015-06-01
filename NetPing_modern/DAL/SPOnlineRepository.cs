@@ -1,31 +1,33 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using HtmlAgilityPack;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
-using Microsoft.Web.Mvc;
-using NetPing.Controllers;
+using NetpingHelpers;
+using NetPing.Global.Config;
 using NetPing.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using NetPing.PriceGeneration;
 using NetPing.PriceGeneration.YandexMarker;
-using NetpingHelpers;
 using NetPing.Tools;
-using NetPing.Global.Config;
 using NetPing_modern.DAL;
 using NetPing_modern.PriceGeneration;
+using NetPing_modern.Resources;
 using NetPing_modern.Resources.Views.Catalog;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using NetPing_modern.Services.Confluence;
-using Category = NetPing_modern.PriceGeneration.Category;
+using TidyManaged;
+using Category = NetPing.PriceGeneration.YandexMarker.Category;
+using File = System.IO.File;
 using Group = System.Text.RegularExpressions.Group;
 
 namespace NetPing.DAL
@@ -81,7 +83,7 @@ namespace NetPing.DAL
         {
             var result = new List<SiteText>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Web_texts", NetPing_modern.Resources.Camls.Caml_SiteTexts))
+            foreach (var item in (ListItemCollection)ReadSPList("Web_texts", Camls.Caml_SiteTexts))
             {
                 var link = item["Body_link"] as FieldUrlValue;
                 int? contentId = null;
@@ -209,6 +211,20 @@ namespace NetPing.DAL
                     if (!string.IsNullOrWhiteSpace(content))
                     {
                         string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+
+                        var utf8 = Encoding.UTF8.GetBytes(propertyValue);
+                        var win1251 = Encoding.GetEncoding(1251).GetString(utf8);
+                        var doc = Document.FromString(win1251);
+                        doc.DocType = DocTypeMode.Auto;
+                        doc.OutputBodyOnly = AutoBool.Yes;
+                        doc.OutputXhtml = true;
+                        doc.ShowWarnings = false;
+                        doc.IndentBlockElements = AutoBool.Yes;
+                        doc.RemoveEndTags = true;
+
+                        doc.CleanAndRepair();
+                        propertyValue = doc.Save();
+
                         propertyInfo.SetValue(device, propertyValue);
                     }
                 }
@@ -258,7 +274,7 @@ namespace NetPing.DAL
         {
             var devices = new List<Device>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Devices", NetPing_modern.Resources.Camls.Caml_Device_keys))
+            foreach (var item in (ListItemCollection)ReadSPList("Devices", Camls.Caml_Device_keys))
             {
                 var device = new Device
                          {
@@ -389,7 +405,7 @@ namespace NetPing.DAL
         {
             var result = new List<DevicePhoto>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Device_photos", NetPing_modern.Resources.Camls.Caml_DevicePhotos))
+            foreach (var item in (ListItemCollection)ReadSPList("Device_photos", Camls.Caml_DevicePhotos))
             {
                 string pictureUrl = (item["FileLeafRef"] as string);
                 if (!string.IsNullOrEmpty(pictureUrl))
@@ -418,7 +434,7 @@ namespace NetPing.DAL
         {
             var result = new List<PubFiles>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub", NetPing_modern.Resources.Camls.Caml_Photos_to_pub))
+            foreach (var item in (ListItemCollection)ReadSPList("Photos_to_pub", Camls.Caml_Photos_to_pub))
             {
                 result.Add(new PubFiles
                 {
@@ -440,7 +456,7 @@ namespace NetPing.DAL
         {
             var result = new List<SFile>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Pub files", NetPing_modern.Resources.Camls.Caml_Pub_files))
+            foreach (var item in (ListItemCollection)ReadSPList("Pub files", Camls.Caml_Pub_files))
             {
 
                 result.Add(new SFile
@@ -520,7 +536,7 @@ namespace NetPing.DAL
         {
             var result = new List<Post>();
 
-            foreach (var item in (ListItemCollection)ReadSPList("Blog_posts", NetPing_modern.Resources.Camls.Caml_Posts))
+            foreach (var item in (ListItemCollection)ReadSPList("Blog_posts", Camls.Caml_Posts))
             {
                 var link = item["Body_link"] as FieldUrlValue;
                 int? contentId = null;
@@ -643,7 +659,7 @@ namespace NetPing.DAL
             var tree = new DevicesTree(Devices);
             foreach (DeviceTreeNode categoryNode in tree.Nodes)
             {
-                shop.Categories.Add(new PriceGeneration.YandexMarker.Category
+                shop.Categories.Add(new Category
                                     {
                                         Id = categoryNode.Id,
                                         Name = categoryNode.Name,
@@ -652,7 +668,7 @@ namespace NetPing.DAL
 
                 foreach (DeviceTreeNode childCategoryNode in categoryNode.Nodes)
                 {
-                    shop.Categories.Add(new PriceGeneration.YandexMarker.Category
+                    shop.Categories.Add(new Category
                     {
                         Id = childCategoryNode.Id,
                         Name = childCategoryNode.Name,
@@ -717,7 +733,7 @@ namespace NetPing.DAL
         {
             using (var priceList = new PriceList())
             {
-                var monitoring = new Category(Index.Sec_monitoring);
+                var monitoring = new NetPing_modern.PriceGeneration.Category(Index.Sec_monitoring);
 
                 monitoring.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.MonitoringId, CategoryId.MonitoringSection.DevicesId));
                 monitoring.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.MonitoringId, CategoryId.MonitoringSection.SensorsId));
@@ -725,7 +741,7 @@ namespace NetPing.DAL
                 monitoring.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.MonitoringId, CategoryId.MonitoringSection.SolutionsId));
                 priceList.Categories.Add(monitoring);
 
-                var power = new Category(Index.Sec_power);
+                var power = new NetPing_modern.PriceGeneration.Category(Index.Sec_power);
                 power.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.PowerId, CategoryId.PowerSection.DevicesId));
                 power.Sections.Add(new Section(this, Index.Sec_sub_sensors, CategoryId.PowerId, CategoryId.PowerSection.SensorsId));
                 power.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.PowerId, CategoryId.PowerSection.AccessoriesId));
@@ -733,7 +749,7 @@ namespace NetPing.DAL
                 priceList.Categories.Add(power);
 
 
-                var switches = new Category(Index.Sec_switch);
+                var switches = new NetPing_modern.PriceGeneration.Category(Index.Sec_switch);
                 switches.Sections.Add(new Section(this, Index.Sec_sub_devices, CategoryId.SwitchesId, CategoryId.SwitchesSection.DevicesId));
                 switches.Sections.Add(new Section(this, Index.Sec_sub_access, CategoryId.SwitchesId, CategoryId.SwitchesSection.AccessoriesId));
                 switches.Sections.Add(new Section(this, Index.Sec_sub_solutions, CategoryId.SwitchesId, CategoryId.SwitchesSection.SolutionsId));
@@ -773,10 +789,10 @@ namespace NetPing.DAL
 
             // Check file cache
             Stream streamRead = null;
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             try
             {
-                streamRead = System.IO.File.OpenRead(file_name);
+                streamRead = File.OpenRead(file_name);
                 BinaryFormatter binaryRead = new BinaryFormatter();
                 obj = (object)binaryRead.Deserialize(streamRead);
                 streamRead.Close();
@@ -796,11 +812,11 @@ namespace NetPing.DAL
         {
             HttpRuntime.Cache.Insert(cache_name, obj, new TimerCacheDependency());
 
-            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
+            string file_name = HttpContext.Current.Server.MapPath("~/Content/Data/" + cache_name + "_" + CultureInfo.CurrentCulture.IetfLanguageTag + ".dat");
             Stream streamWrite = null;
             try
             {
-                streamWrite = System.IO.File.Create(file_name);
+                streamWrite = File.Create(file_name);
                 BinaryFormatter binaryWrite = new BinaryFormatter();
                 binaryWrite.Serialize(streamWrite, obj);
                 streamWrite.Close();
@@ -814,7 +830,7 @@ namespace NetPing.DAL
 
         private IEnumerable<SPTerm> GetTermsFromSP(string setname)
         {
-            var lcid = System.Globalization.CultureInfo.CurrentCulture.LCID;
+            var lcid = CultureInfo.CurrentCulture.LCID;
 
             var terms = new List<SPTerm>();
             var sortOrders = new SortOrdersCollection<Guid>();
@@ -903,7 +919,7 @@ namespace NetPing.DAL
         {
             get
             {
-                return new NetPing.Global.Config.Config();
+                return new Config();
 
                 //return DependencyResolver.Current.GetService<NetPing_modern.Global.Config.IConfig>();
             }

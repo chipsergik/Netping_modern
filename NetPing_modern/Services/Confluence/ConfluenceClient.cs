@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -56,7 +57,12 @@ namespace NetPing_modern.Services.Confluence
                     StreamContent content = (StreamContent)response.Result.Content;
                     var task = content.ReadAsStringAsync();
                     string result = task.Result;
-                    return parser(id, result);
+                    string parsed = parser(id, result);
+                    /*using (StreamWriter outfile = new StreamWriter("C:\\tmp\\confluence\\" + id.ToString() + ".txt"))
+                    {
+                        outfile.Write(parsed);
+                    }*/
+                    return parsed;
                 }
             }
             throw new ContentNotFoundException(id);
