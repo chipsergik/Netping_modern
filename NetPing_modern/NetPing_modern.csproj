@@ -444,6 +444,7 @@
     <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\JavaScript\blog.js" />
     <Content Include="Content\JavaScript\cart.js" />
+    <Content Include="Content\JavaScript\compare.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\fancybox\blank.gif" />
     <Content Include="Content\JavaScript\fancybox\fancybox-x.png" />

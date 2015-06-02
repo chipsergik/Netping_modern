@@ -1,4 +1,13 @@
-﻿.compareSlider {
+﻿.content{
+    margin-bottom: 15px;
+}
+
+.top-scroll {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.compareSlider {
     border: 2px solid #e7e7e7;
 }
 
