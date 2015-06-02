@@ -517,6 +517,7 @@
     <Content Include="Views\Products\Compare.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Products\UserGuides.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
