@@ -463,6 +463,7 @@
     <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\JavaScript\blog.js" />
     <Content Include="Content\JavaScript\cart.js" />
+    <Content Include="Content\JavaScript\compare.js" />
     <Content Include="Content\JavaScript\CompareJs.js" />
     <Content Include="Content\JavaScript\fancybox\blank.gif" />
     <Content Include="Content\JavaScript\fancybox\fancybox-x.png" />
@@ -539,6 +540,7 @@
     <Content Include="Views\Products\Compare.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Products\UserGuides.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>

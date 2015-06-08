@@ -101,20 +101,14 @@
                                     <div class="text">
                                         @Html.Raw(Model.Short_description)
                                     </div>
-                                    <br />
-                                    <div class="seporator"></div>
-
-                                    <ul class="files">
+                                    <br/>
                                         @{
                                             IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
-                                            foreach (SFile file in user_guides)
+                                            if (user_guides.Any())
                                             {
-                                                <li><a rel="nofollow" target="_blank" href="@file.Url" class="doc"><b>@file.Name.Replace(".docx", "").Replace(".doc", "")</b></a> </li>
+                                                Html.RenderPartial("UserGuides", user_guides);
                                             }
                                         }
-                                    </ul>
-                                    <div class="seporator"></div>
-
                                 </div>
 
                             </div>

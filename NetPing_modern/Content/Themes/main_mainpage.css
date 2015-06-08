@@ -349,11 +349,13 @@ body {
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            float: left;
         }
 
         .page .main .content .subscribe_image {
             margin-left: -23px;
-            vertical-align: middle;
+            float:left;
+            margin-top: 4px;
         }
 
         .page .main .content .content_subscription_border {

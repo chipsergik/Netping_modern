@@ -25,6 +25,7 @@
     <script src="~/Content/JavaScript/modernizr.js"></script>
     <script src="~/Content/JavaScript/responsiveslides.min.js"></script>
     <script src="~/Content/JavaScript/CompareJs.js"></script>
+    <script src="~/Content/JavaScript/compare.js"></script>
     <script>
         $(function () {
             var deviceCount = @Model.Devices.Count;
@@ -44,6 +45,9 @@
         <div class="main">
             @RenderPage("../Shared/Header.cshtml")
             <div class="content">
+                @*<div class="top-scroll">
+
+                </div>*@
                 @if (Model.Devices == null || Model.Devices.Count < 2)
                 {
                     <span>@Compare.Warn</span>
