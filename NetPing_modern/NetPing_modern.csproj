@@ -508,6 +508,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
     <Content Include="google65e951962d61c85e.html" />
+    <Content Include="Resources\CartData.xml" />
     <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
