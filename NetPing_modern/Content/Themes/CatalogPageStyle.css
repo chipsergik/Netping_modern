@@ -38,7 +38,7 @@
 }
 
     .page .main {
-        background-color: #ffffff;
+        /*background-color: #ffffff;*/
         /*font-family: Corbel, sans-serif;*/
         margin: 0 auto;
         width: 1000px;
@@ -50,7 +50,7 @@
 }
 
 .header {
-    background: url(../Images/backround_main.png) no-repeat;
+    /*background: url(../Images/backround_main.png) no-repeat;*/
 }
 
 .sectionImage {
