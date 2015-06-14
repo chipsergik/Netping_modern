@@ -217,6 +217,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\InnerPages\Buy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Buy.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buy.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Partnership.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partnership.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Partnership.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partnership.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Support.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Support.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Shared\Inner_page.ru.Designer.cs">
       <DependentUpon>Inner_page.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -643,6 +668,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>About.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Buy.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Buy.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Buy.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Buy.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Contacts.ru.resx">
       <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -656,6 +689,14 @@
       <LastGenOutput>Dealers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Dealers.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\InnerPages\Partnership.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partnership.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Partnership.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partnership.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Question.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Question.Designer.cs</LastGenOutput>
@@ -664,6 +705,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Question.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Support.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Support.ru.resx" />
     <EmbeddedResource Include="Resources\Views\MainPage\Index.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.ru.Designer.cs</LastGenOutput>

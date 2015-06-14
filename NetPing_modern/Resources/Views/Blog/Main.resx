@@ -156,4 +156,13 @@
   <data name="TXT_main_tags" xml:space="preserve">
     <value>Main tags</value>
   </data>
+  <data name="Page_description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Page_keywords" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Page_title" xml:space="preserve">
+    <value />
+  </data>
 </root>
