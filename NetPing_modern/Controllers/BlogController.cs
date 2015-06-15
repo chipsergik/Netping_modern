@@ -7,6 +7,7 @@ using NetPing.Models;
 using NetPing_modern.Mappers;
 using NetPing_modern.ViewModels;
 using WebGrease.Css.Extensions;
+using System.Resources;
 
 namespace NetPing_modern.Controllers
 {
@@ -64,9 +65,12 @@ namespace NetPing_modern.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.Title = "Блог компании Netping, новости, примеры применения, ответы на вопросы";
-            ViewBag.Description = "Блог компании Netping, новости компании Netping, примеры применения устройств Netping, ответы на вопросы об устройствах Netping";
-            ViewBag.Keys = "Netping блог, новости Netping, ответы на вопросы Netping, примеры применения Netping";
+            var resourceManager = new ResourceManager("NetPing_modern.Resources.Views.Blog.Main", typeof(BlogController).Assembly);
+
+            ViewBag.Title = resourceManager.GetString("Page_title", System.Globalization.CultureInfo.CurrentCulture);
+            ViewBag.Description = resourceManager.GetString("Page_description", System.Globalization.CultureInfo.CurrentCulture);
+            ViewBag.Keys = resourceManager.GetString("Page_keywords", System.Globalization.CultureInfo.CurrentCulture);
+
 
             ViewBag.BlogCategoryName = "";
 

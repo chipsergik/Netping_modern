@@ -156,4 +156,13 @@
   <data name="TXT_main_tags" xml:space="preserve">
     <value>Основные теги</value>
   </data>
+  <data name="Page_description" xml:space="preserve">
+    <value>Блог компании Netping, новости компании Netping, примеры применения устройств Netping, ответы на вопросы об устройствах Netping</value>
+  </data>
+  <data name="Page_keywords" xml:space="preserve">
+    <value>Netping блог, новости Netping, ответы на вопросы Netping, примеры применения Netping</value>
+  </data>
+  <data name="Page_title" xml:space="preserve">
+    <value>Блог компании Netping, новости, примеры применения, ответы на вопросы</value>
+  </data>
 </root>

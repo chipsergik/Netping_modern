@@ -49,6 +49,9 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.3.0-ci1027\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="Base32">
+      <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -213,6 +216,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessages.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Buy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Buy.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buy.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Partnership.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partnership.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Partnership.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Partnership.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\InnerPages\Support.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Support.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Views\Shared\Inner_page.ru.Designer.cs">
       <DependentUpon>Inner_page.ru.resx</DependentUpon>
@@ -421,6 +449,7 @@
     <Content Include="Content\Images\footer_bg.png" />
     <Content Include="Content\Images\inwork.png" />
     <Content Include="Content\Images\magnify.cur" />
+    <Content Include="Content\Images\preloader.gif" />
     <Content Include="Content\Images\ProductPageImg\item_files_doc.gif" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\footer_left.png" />
@@ -531,7 +560,6 @@
     <Content Include="libtidy.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\CartData.xml" />
     <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
@@ -640,6 +668,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>About.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Buy.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Buy.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Buy.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Buy.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Contacts.ru.resx">
       <LastGenOutput>Contacts.ru.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -653,6 +689,14 @@
       <LastGenOutput>Dealers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Dealers.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\InnerPages\Partnership.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partnership.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Partnership.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Partnership.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\InnerPages\Question.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Question.Designer.cs</LastGenOutput>
@@ -661,6 +705,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Question.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Support.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Support.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\InnerPages\Support.ru.resx" />
     <EmbeddedResource Include="Resources\Views\MainPage\Index.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.ru.Designer.cs</LastGenOutput>
