@@ -9,6 +9,7 @@
 @using NetPing.Models;
 @using System.Globalization
 @using NetpingHelpers
+@using NetPing_modern.Helpers
 @helper GetPrice(double? price)
 {
     if (price != null && price > 0)
@@ -44,7 +45,7 @@
     <script src="~/Content/JavaScript/jquery.datetimepicker.js"></script>
     <script src="~/Content/JavaScript/blog.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $('.confluence-embedded-image').each(function() {
                 $(this).attr('href', $(this).data('image-src')).css('cursor', 'zoom-in');
             });
@@ -66,6 +67,7 @@
             });
         });
     </script>
+    @Html.GoogleAnalytics()
     @RenderSection("Head_Css", false)
     @RenderSection("Head", false)
 </head>

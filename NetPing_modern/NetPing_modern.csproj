@@ -186,6 +186,7 @@
     <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\Config\SharePointSettings.cs" />
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\NavigationProvider.cs" />
     <Compile Include="Mappers\CategoryViewModelMapper.cs" />
     <Compile Include="Mappers\TermViewModelMapper.cs" />
