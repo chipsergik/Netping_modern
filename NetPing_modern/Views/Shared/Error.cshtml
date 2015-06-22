@@ -2,6 +2,7 @@
     Layout = null;
 }
 
+@using NetPing_modern.Helpers
 @model NetPing.DAL.Errors
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Error</title>
+    @Html.GoogleAnalytics()
 </head>
 <body>
     <hgroup>
