@@ -531,6 +531,8 @@ namespace NetPing.DAL
             return result;
         }
 
+        private readonly Regex tagRegex = new Regex("\\[.*\\]");
+
         public IEnumerable<Post> Posts { get { return (IEnumerable<Post>)(PullFromCache("Posts")); } }
         private IEnumerable<Post> Posts_Read(IEnumerable<SPTerm> terms, IEnumerable<SPTerm> categoryTerms)
         {
@@ -554,6 +556,11 @@ namespace NetPing.DAL
                     content = contentTask.Result;
                     contentTask = _confluenceClient.GetContentTitleAsync(contentId.Value);
                     title = contentTask.Result;
+                }
+
+                if (!string.IsNullOrWhiteSpace(title))
+                {
+                    title = tagRegex.Replace(title, "");
                 }
 
                 result.Add(new Post
