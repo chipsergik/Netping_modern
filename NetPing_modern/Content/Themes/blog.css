@@ -154,15 +154,20 @@ p + p {
     margin-right: 20px;
 }
 
-    .page .main .content .blog-item img.confluence-embedded-image {
-        float: none;
-        width: 50%;
-        max-width:500px;
-        cursor: url(http://wwww.netping.ru/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
-    }
+.page .main .content .blog-item img.confluence-embedded-image {
+    float: none;
+    width: 50%;
+    max-width:500px;
+    cursor: url(http://wwww.netping.ru/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
+}
 
 .blog-item hr {
     margin: 20px 0;
+}
+
+.blog-item .img-preview {
+    float: left;
+    max-width: 10%;
 }
 
 /*cancel reset.css settings to show confluence content*/
