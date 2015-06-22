@@ -161,13 +161,22 @@ p + p {
     cursor: url(http://wwww.netping.ru/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
 }
 
+.page .main .content .blog-item .img-preview img.confluence-embedded-image {
+    width: auto;
+    max-width: 400px;
+}
+
 .blog-item hr {
     margin: 20px 0;
 }
 
 .blog-item .img-preview {
     float: left;
-    max-width: 10%;
+}
+
+.blog-item .img-preview img.confluence-embedded-image {
+    margin: 0;
+    padding: 0;
 }
 
 /*cancel reset.css settings to show confluence content*/
