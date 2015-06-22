@@ -61,7 +61,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to About Netping Company, Company&apos;s History and Main Achievements.
         /// </summary>
         public static string Page_description {
             get {
@@ -70,7 +70,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to About NetPing.
         /// </summary>
         public static string Page_head {
             get {
@@ -79,7 +79,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to netping, about a company.
         /// </summary>
         public static string Page_keywords {
             get {
@@ -88,7 +88,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About company NetPing.
+        ///   Looks up a localized string similar to About NetPing.
         /// </summary>
         public static string Page_title {
             get {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetPing_modern.Resources.Views.InnerPages {
+namespace NetPing_modern.Resources.Views.Blog {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace NetPing_modern.Resources.Views.InnerPages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Buy {
+    internal class News {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Buy() {
+        internal News() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.InnerPages.Buy", typeof(Buy).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.Blog.News", typeof(News).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,36 +61,36 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How to Purchase Netping Devices.
+        ///   Looks up a localized string similar to Periodically Published News about Netping Company, Software Updates for Devices, Release of New Devices.
         /// </summary>
-        public static string Page_description {
+        internal static string Page_description {
             get {
                 return ResourceManager.GetString("Page_description", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Netping - Purchase Netping Devices.
+        ///   Looks up a localized string similar to NetPing News.
         /// </summary>
-        public static string Page_head {
+        internal static string Page_head {
             get {
                 return ResourceManager.GetString("Page_head", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to netping buy.
+        ///   Looks up a localized string similar to Netping News, Firmware Updates, Release of New Devices.
         /// </summary>
-        public static string Page_keywords {
+        internal static string Page_keywords {
             get {
                 return ResourceManager.GetString("Page_keywords", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Netping - Purchase Netping Devices.
+        ///   Looks up a localized string similar to NetPing News.
         /// </summary>
-        public static string Page_title {
+        internal static string Page_title {
             get {
                 return ResourceManager.GetString("Page_title", resourceCulture);
             }

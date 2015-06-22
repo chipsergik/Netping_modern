@@ -197,6 +197,11 @@
     <Compile Include="Mappers\PostViewModelMapper.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\SectionModel.cs" />
+    <Compile Include="Resources\Views\Blog\Faq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Faq.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Blog\Main.ru.Designer.cs">
       <DependentUpon>Main.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -206,6 +211,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Blog\News.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>News.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Views\Blog\Tutorial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tutorial.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Views\Error\ErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -631,6 +646,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Other.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Faq.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Faq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Faq.ru.resx" />
     <EmbeddedResource Include="Resources\Views\Blog\Main.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Main.ru.Designer.cs</LastGenOutput>
@@ -641,6 +661,16 @@
       <LastGenOutput>Main.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\News.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>News.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\News.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\Blog\Tutorial.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tutorial.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Blog\Tutorial.ru.resx" />
     <EmbeddedResource Include="Resources\Views\Catalog\Compare.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Compare.Designer.cs</LastGenOutput>

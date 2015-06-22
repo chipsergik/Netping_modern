@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Page_description" xml:space="preserve">
-    <value />
+    <value>About Netping Company, Company's History and Main Achievements</value>
   </data>
   <data name="Page_head" xml:space="preserve">
-    <value />
+    <value>About NetPing</value>
   </data>
   <data name="Page_keywords" xml:space="preserve">
-    <value />
+    <value>netping, about a company</value>
   </data>
   <data name="Page_title" xml:space="preserve">
-    <value>About company NetPing</value>
+    <value>About NetPing</value>
   </data>
 </root>
