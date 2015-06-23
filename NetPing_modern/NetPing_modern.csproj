@@ -386,6 +386,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="banner.gif" />
+    <Content Include="Content\Images\background-adaptive.png" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
@@ -505,13 +506,13 @@
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\adaptive_master.css" />
     <Content Include="Content\Themes\blog.css" />
     <Content Include="Content\Themes\cart.css" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\compare.css" />
-    <Content Include="Content\Themes\DevelopmentPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\jquery.datetimepicker.css" />
     <Content Include="Content\Themes\korzina.css" />
@@ -542,6 +543,8 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Products\UserGuides.cshtml" />
+    <Content Include="Views\Shared\Adaptive_master.cshtml" />
+    <Content Include="Views\InnerPages\Dev.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -569,7 +572,6 @@
     <Content Include="Views\Shared\Blog_master.cshtml" />
     <Content Include="Views\Blog\NoPosts.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Product_item\Development.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -577,6 +579,7 @@
     <Folder Include="Pub\Files\" />
     <Folder Include="Pub\Photos\" />
     <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Product_item\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
