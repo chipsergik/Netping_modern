@@ -33,12 +33,10 @@ namespace NetPing_modern.Controllers
                     EnableSsl = true
                 };
 
-                var timeStamp = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds.ToString();
+                var timeStamp = DateTime.UtcNow.Subtract(new DateTime(2015, 6, 1)).TotalMilliseconds.ToString("R");
 
-                var bytes = System.Text.Encoding.UTF8.GetBytes(timeStamp);
-
-                var cartId = Base32Encoder.Encode(bytes);
-                cartId = cartId.Remove(cartId.IndexOf('='), cartId.LastIndexOf('=') - cartId.IndexOf('=') + 1);
+                var cartId = timeStamp.Contains(',') ? timeStamp.Remove(timeStamp.IndexOf(','), 1) : timeStamp;
+                cartId = cartId.Contains('.') ? cartId.Remove(timeStamp.IndexOf('.'), 1) : cartId;
 
                 mail.From = new MailAddress("shop@netping.ru");
                 mail.To.Add("sales@netping.ru");
@@ -73,7 +71,7 @@ namespace NetPing_modern.Controllers
                         </html>", cart.Name, cart.Address, cart.Shipping, cart.Phone, cart.Requisites, sum, items);
                 var htmlView = AlternateView.CreateAlternateViewFromString(cont, null, "text/html");
                 mail.AlternateViews.Add(htmlView);
-                client.Send(mail);
+                //client.Send(mail);
 
 
 
@@ -97,7 +95,7 @@ namespace NetPing_modern.Controllers
                 htmlView = AlternateView.CreateAlternateViewFromString(cont, null, "text/html");
                 mail.AlternateViews.Clear();
                 mail.AlternateViews.Add(htmlView);
-                client.Send(mail);
+                //client.Send(mail);
 
 
                 /*
