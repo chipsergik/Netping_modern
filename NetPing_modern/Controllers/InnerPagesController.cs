@@ -82,12 +82,15 @@ namespace NetPing.Controllers
             var text = _repository.SiteTexts.FirstOrDefault(t => t.Tag == "Contact_us").Text;
             //            if (text == null) return HttpNotFound();
 
-            ViewBag.Head = "Контакты компании Netping";
-            ViewBag.Text = text;
-            ViewBag.Title = "Контакты компании Netping";
-            ViewBag.Description = "адрес, телефон, банковские реквизиты компании Netping";
-            ViewBag.Keywords = "контакты компании, банковские реквизиты, адрес офиса";
+            var resourceManager = new ResourceManager("NetPing_modern.Resources.Views.InnerPages.Contacts", typeof(InnerPagesController).Assembly);
 
+            ViewBag.Text = text;
+            ViewBag.Head = resourceManager.GetString("Page_head", System.Globalization.CultureInfo.CurrentCulture);
+            ViewBag.Title = resourceManager.GetString("Page_title", System.Globalization.CultureInfo.CurrentCulture);
+            ViewBag.Description = resourceManager.GetString("Page_description", System.Globalization.CultureInfo.CurrentCulture);
+            ViewBag.Keywords = resourceManager.GetString("Page_keywords", System.Globalization.CultureInfo.CurrentCulture);
+
+            ViewBag.Text = text;
             return View("InnerPage");
         }
 

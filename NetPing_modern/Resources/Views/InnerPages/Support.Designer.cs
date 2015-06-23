@@ -61,7 +61,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to How to Get a Technical Support for Netping Devices.
         /// </summary>
         public static string Page_description {
             get {
@@ -70,7 +70,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Technical Support for NetPing Devices.
         /// </summary>
         public static string Page_head {
             get {
@@ -79,7 +79,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Technical Support.
         /// </summary>
         public static string Page_keywords {
             get {
@@ -88,7 +88,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Technical Support for NetPing Devices.
         /// </summary>
         public static string Page_title {
             get {

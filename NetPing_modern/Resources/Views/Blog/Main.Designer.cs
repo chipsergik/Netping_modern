@@ -106,7 +106,7 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Netping Company&apos;s Blog, Netping Company&apos;s News, Examples of Using Netping Devices, FAQ about Netping Devices.
         /// </summary>
         public static string Page_description {
             get {
@@ -115,7 +115,7 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Netping&apos;s Blog, Netping&apos;s News, Netping FAQ, Examples of Using Netping.
         /// </summary>
         public static string Page_keywords {
             get {
@@ -124,7 +124,7 @@ namespace NetPing_modern.Resources.Views.Blog {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to NetPing Company&apos;s Blog: Our News, Examples of Using, FAQ.
         /// </summary>
         public static string Page_title {
             get {

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Page_description" xml:space="preserve">
-    <value>как получить техническую поддержку по устройствам Netping</value>
+    <value>Как получить техническую поддержку по устройствам Netping</value>
   </data>
   <data name="Page_head" xml:space="preserve">
     <value>Техническая поддержка устройств Netping</value>

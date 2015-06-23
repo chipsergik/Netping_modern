@@ -16,10 +16,10 @@ namespace NetPing_modern.Controllers
         private readonly IRepository _repository;
         private readonly IMapper<Post, PostViewModel> _postMapper;
         private readonly IMapper<SPTerm, TermViewModel> _termMapper;
-        private readonly IMapper<SPTerm, CategoryViewModel> _categoryMapper; 
+        private readonly IMapper<SPTerm, CategoryViewModel> _categoryMapper;
 
-        public BlogController(IRepository repository, 
-            IMapper<Post,PostViewModel> postMapper, 
+        public BlogController(IRepository repository,
+            IMapper<Post, PostViewModel> postMapper,
             IMapper<SPTerm, TermViewModel> termMapper,
             IMapper<SPTerm, CategoryViewModel> categoryMapper)
         {
@@ -31,7 +31,7 @@ namespace NetPing_modern.Controllers
 
         public ActionResult Main(List<string> tags = null)
         {
-            
+
             List<Post> posts;
             Dictionary<Guid, SPTerm> devices;
             var model = CreateModel(out posts, out devices);
@@ -100,7 +100,7 @@ namespace NetPing_modern.Controllers
 
             if (!model.Posts.Any())
             {
-                return View("NoPosts",model);
+                return View("NoPosts", model);
             }
 
             model.Posts.ForEach(p => p.Tags.ForEach(t =>
@@ -113,7 +113,7 @@ namespace NetPing_modern.Controllers
                 }
             }));
 
-            ViewBag.Title = "Поиск в блоге: "+q;
+            ViewBag.Title = "Поиск в блоге: " + q;
             ViewBag.BlogCategory = "";
 
 
@@ -152,7 +152,7 @@ namespace NetPing_modern.Controllers
                                                                        }).ToList();
             return model;
         }
-        
+
         public ActionResult Record(string postname)
         {
             List<Post> posts;
@@ -221,30 +221,27 @@ namespace NetPing_modern.Controllers
                 }
             }));
 
-            if (path == "FAQ")
+            if (path == "FAQ" || path == "News" || path == "Tutorial")
             {
-                ViewBag.Title = "Ответы на вопросы про устройства Netping";
-                ViewBag.Description = "Ответы на типовые вопросы про использование устройств Netping";
-                ViewBag.Keys = "ответы на вопросы";
-            }
-            if (path == "News")
-            {
+                ResourceManager resourceManager = new ResourceManager("NetPing_modern.Resources.Views.Blog.Faq", typeof(BlogController).Assembly); ;
 
-                ViewBag.Title = "Новости компании Netping";
-                ViewBag.Description = "Периодически публикуемые новости о компании Netping, обновления ПО устройств, выпуск новых устройств";
-                ViewBag.Keys = "новости Netping, обновление прошивок, выпуск новых устройств";
+                if (path == "News")
+                    resourceManager = new ResourceManager("NetPing_modern.Resources.Views.Blog.News", typeof(BlogController).Assembly); ;
+
+                if (path == "Tutorial")
+                    resourceManager = new ResourceManager("NetPing_modern.Resources.Views.Blog.Tutorial", typeof(BlogController).Assembly); ;
+
+                ViewBag.Head = resourceManager.GetString("Page_head", System.Globalization.CultureInfo.CurrentCulture);
+                ViewBag.Title = resourceManager.GetString("Page_title", System.Globalization.CultureInfo.CurrentCulture);
+                ViewBag.Description = resourceManager.GetString("Page_description", System.Globalization.CultureInfo.CurrentCulture);
+                ViewBag.Keys = resourceManager.GetString("Page_keywords", System.Globalization.CultureInfo.CurrentCulture);
             }
-            if (path == "Tutorial")
-            {
-                ViewBag.Title = "Примеры применения устройств Netping";
-                ViewBag.Description = "Примеры применения, типовые схемы использования устройств Netping";
-                ViewBag.Keys = "примеры применения, типовые схемы";
-            }
+
 
             ViewBag.BlogCategoryName = model.Categories.FirstOrDefault(c => c.IsSelected).Name;
             ViewBag.BlogCategoryPath = model.Categories.FirstOrDefault(c => c.IsSelected).Path;
 
             return View("Main", model);
         }
-	}
+    }
 }
