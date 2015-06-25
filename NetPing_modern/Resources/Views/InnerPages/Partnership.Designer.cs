@@ -22,14 +22,14 @@ namespace NetPing_modern.Resources.Views.InnerPages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Contacts {
+    public class Partnership {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Contacts() {
+        internal Partnership() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.InnerPages.Contacts", typeof(Contacts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NetPing_modern.Resources.Views.InnerPages.Partnership", typeof(Partnership).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Netping Company&apos;s Address, Phone Number, Bank Details.
+        ///   Looks up a localized string similar to How to Become a Partner, a Dealer of Netping Company.
         /// </summary>
         public static string Page_description {
             get {
@@ -70,7 +70,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company contacts NetPing.
+        ///   Looks up a localized string similar to How to Become a Partner?.
         /// </summary>
         public static string Page_head {
             get {
@@ -79,7 +79,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company&apos;s Contacts, Bank Details, Office Address.
+        ///   Looks up a localized string similar to How to become Netping Dealer, How to Become Netping Partner.
         /// </summary>
         public static string Page_keywords {
             get {
@@ -88,7 +88,7 @@ namespace NetPing_modern.Resources.Views.InnerPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company contacts NetPing.
+        ///   Looks up a localized string similar to How to Become a Partner?.
         /// </summary>
         public static string Page_title {
             get {

@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Page_description" xml:space="preserve">
+    <value>Netping Company's Dealer and Partner List</value>
+  </data>
+  <data name="Page_head" xml:space="preserve">
+    <value>Our Partners</value>
+  </data>
+  <data name="Page_keywords" xml:space="preserve">
+    <value>netping dealers, netping partners</value>
+  </data>
   <data name="Page_title" xml:space="preserve">
-    <value>Dealers</value>
+    <value>Our Partners</value>
   </data>
 </root>

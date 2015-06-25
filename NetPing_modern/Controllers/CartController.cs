@@ -6,12 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Resources;
-using System.Xml;
-using System.Xml.Linq;
+using Base32;
 
 namespace NetPing_modern.Controllers
 {
@@ -35,15 +33,15 @@ namespace NetPing_modern.Controllers
                     EnableSsl = true
                 };
 
+                var timeStamp = DateTime.UtcNow.Subtract(new DateTime(2015, 6, 1)).TotalMilliseconds.ToString("R");
 
-                var xml = XDocument.Load(Server.MapPath("/Resources/CartData.xml"));
-                var cartId = int.Parse(xml.Element("Cart").Value) + 1;
-                xml.Element("Cart").Value = cartId.ToString();
-                xml.Save(Server.MapPath("/Resources/CartData.xml"));
+                var cartId = timeStamp.Contains(',') ? timeStamp.Remove(timeStamp.IndexOf(','), 1) : timeStamp;
+                cartId = cartId.Contains('.') ? cartId.Remove(timeStamp.IndexOf('.'), 1) : cartId;
+
                 mail.From = new MailAddress("shop@netping.ru");
                 mail.To.Add("sales@netping.ru");
                 mail.ReplyToList.Add(cart.EMail);
-                mail.Subject = "Заказ №" + cartId.ToString("00000");
+                mail.Subject = "Заказ № \"" + cartId + "\"";
                 string items = "";
                 var sum = 0;
                 foreach (var cartitem in cart.Data)

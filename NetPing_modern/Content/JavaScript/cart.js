@@ -76,16 +76,20 @@
             Data: data,
             Phone: phone
         };
-        console.log(requestData);
+
+        $('#cartPopup').append('<div id="cart-preloader" class="cart-preloader"></div>');
+        
         $.ajax({
             type: "POST",
             url: "/cart/SendCartMail",
             data: requestData,
             success: function () {
+                $('#cart-preloader').remove();
                 clearCart();
                 alert(Res.get('OrderSent'));
             },
             error: function () {
+                $('#cart-preloader').remove();
                 alert(Res.get('OrderErrorMessage'));
             },
             dataType: "json"
