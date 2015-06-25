@@ -71,7 +71,7 @@ namespace NetPing_modern.Controllers
                         </html>", cart.Name, cart.Address, cart.Shipping, cart.Phone, cart.Requisites, sum, items);
                 var htmlView = AlternateView.CreateAlternateViewFromString(cont, null, "text/html");
                 mail.AlternateViews.Add(htmlView);
-                //client.Send(mail);
+                client.Send(mail);
 
 
 
@@ -95,7 +95,7 @@ namespace NetPing_modern.Controllers
                 htmlView = AlternateView.CreateAlternateViewFromString(cont, null, "text/html");
                 mail.AlternateViews.Clear();
                 mail.AlternateViews.Add(htmlView);
-                //client.Send(mail);
+                client.Send(mail);
 
 
                 /*
