@@ -33,17 +33,6 @@
 
 /* SERGO S.*/
 
-.page {
-    background: url(../Images/background.png) repeat-x;
-}
-
-    .page .main {
-        /*background-color: #ffffff;*/
-        /*font-family: Corbel, sans-serif;*/
-        margin: 0 auto;
-        width: 1000px;
-    }
-
 .size_140_140 {
     width: 140px;
     height: 140px;

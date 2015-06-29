@@ -41,242 +41,249 @@
             $(CatalogJs.init);
         </script>
     </head>
-    <body>
-        <div class="page">
-            <div class="main">
-                @RenderPage("../Shared/Header.cshtml")
-                <div class="content">
-                        @{
-                            string titTitle = "";
-                            string titDesc = "";
-                            string[] names = null;
-                            string[] links = null;
-                            string desc1 = Index.Sec_monitoring_descr;
-                            string desc2 = Index.Sec_power_descr;
-                            string desc3 = Index.Sec_switch_descr;
+<body>
+<div class="header_background">
+    <div class="header_top"></div>
+    <div class="header_bottom"></div>
+</div>
+<div class="page">
+<div class="main">
+@RenderPage("../Shared/Header.cshtml")
+<div class="content">
+@{
+    string titTitle = "";
+    string titDesc = "";
+    string[] names = null;
+    string[] links = null;
+    string desc1 = Index.Sec_monitoring_descr;
+    string desc2 = Index.Sec_power_descr;
+    string desc3 = Index.Sec_switch_descr;
 
-                            string title1 = Index.Sec_monitoring;
-                            string title2 = Index.Sec_power;
-                            string title3 = Index.Sec_switch;
+    string title1 = Index.Sec_monitoring;
+    string title2 = Index.Sec_power;
+    string title3 = Index.Sec_switch;
 
-                            const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
-                            const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
-                            const string _swtchURL = "../../Content/Images/present_left_img3.png";
-                            const string bgURL = "../../Content/Images/present_left.png";
+    const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
+    const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
+    const string _swtchURL = "../../Content/Images/present_left_img3.png";
+    const string bgURL = "../../Content/Images/present_left.png";
 
-                            string selectedSectionImage = "";
-                            string section2ImgUrl = "";
-                            string section3ImgUrl = "";
+    string selectedSectionImage = "";
+    string section2ImgUrl = "";
+    string section3ImgUrl = "";
 
-                            string s1 = "";
-                            string l1 = "";
-                            string s2 = "";
-                            string l2 = "";
-                            string t1 = "";
-                            string t2 = "";
-                            
+    string s1 = "";
+    string l1 = "";
+    string s2 = "";
+    string l2 = "";
+    string t1 = "";
+    string t2 = "";
 
-                            switch ((string) ViewBag.id)
+
+    switch ((string) ViewBag.id)
+    {
+        case "_nping_bases":
+        {
+            selectedSectionImage = _nping_basesURL;
+            section2ImgUrl = _nping_powerURL;
+            section3ImgUrl = _swtchURL;
+
+            titTitle = title1;
+            titDesc = desc1;
+            t1 = title2;
+            t2 = title3;
+            s1 = desc2;
+            s2 = desc3;
+            l1 = "?id=_nping_power";
+            l2 = "?id=_swtch";
+            names = new[] {Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions};
+            links = new[] {"_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr"};
+            break;
+        }
+        case "_nping_power":
+        {
+            selectedSectionImage = _nping_powerURL;
+            section2ImgUrl = _nping_basesURL;
+            section3ImgUrl = _swtchURL;
+
+            titTitle = title2;
+            titDesc = desc2;
+            t1 = title1;
+            t2 = title3;
+            s1 = desc1;
+            s2 = desc3;
+            l1 = "?id=_nping_bases";
+            l2 = "?id=_swtch";
+            names = new[] {Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions};
+            links = new[] {"_nping_power", "_acces_sensr", "_acces_mains", "_solut_power"};
+            break;
+        }
+        case "_swtch":
+        {
+            selectedSectionImage = _swtchURL;
+            section2ImgUrl = _nping_basesURL;
+            section3ImgUrl = _nping_powerURL;
+
+            titTitle = title3;
+            titDesc = desc3;
+            t1 = title1;
+            t2 = title2;
+            s1 = desc1;
+            s2 = desc2;
+            l1 = "?id=_nping_bases";
+            l2 = "?id=_nping_power";
+            names = new[] {Index.Sec_sub_devices, Index.Sec_sub_access, Index.Sec_sub_solutions};
+            links = new[] {"_swtch", "_acces_mains", "_solut_poe"};
+            break;
+        }
+    }
+}
+<div class="wrapper clearfix">
+    <div class="left main catalog">
+        <div class="cat_tit" style="background: url('../../Content/Images/present_left.png') no-repeat; -ms-background-size: 100% 100%; background-size: 100% 100%">
+            <img class="sectionImage" src="@Model.ActiveSection.ImageUrl" alt=""/>
+            <div class="cat_tit_title">@Html.Raw(Model.ActiveSection.Title)</div>
+            <div class="cat_tit_desc">@Html.Raw(Model.ActiveSection.Description)</div>
+            <ul style="margin-top: 22px;">
+                @{
+                    if (Model.ActiveSection.Sections != null)
+                    {
+                        for (int i = 0; i < Model.ActiveSection.Sections.Count; i++)
+                        {
+                            //var link = Url.Action("Index", new {group = Model.ActiveSection.Url, id = Model.ActiveSection.Sections[i].Url});
+                            var link = "/" + Model.ActiveSection.Sections[i].FullUrl;
+                            if (Model.ActiveSection.Sections[i].IsSelected)
                             {
-                                case "_nping_bases":
-                                {
-                                    selectedSectionImage = _nping_basesURL;
-                                    section2ImgUrl = _nping_powerURL; 
-                                    section3ImgUrl = _swtchURL; 
-
-                                    titTitle = title1;
-                                    titDesc = desc1;
-                                    t1 = title2;
-                                    t2 = title3;
-                                    s1 = desc2;
-                                    s2 = desc3;
-                                    l1 = "?id=_nping_power";
-                                    l2 = "?id=_swtch";
-                                    names = new[] {Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions};
-                                    links = new[] {"_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr"};
-                                    break;
-                                }
-                                case "_nping_power":
-                                {
-                                    selectedSectionImage = _nping_powerURL;                                
-                                    section2ImgUrl = _nping_basesURL;
-                                    section3ImgUrl = _swtchURL; 
-
-                                    titTitle = title2;
-                                    titDesc = desc2;
-                                    t1 = title1;
-                                    t2 = title3;
-                                    s1 = desc1;
-                                    s2 = desc3;
-                                    l1 = "?id=_nping_bases";
-                                    l2 = "?id=_swtch";
-                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
-                                    links = new[] {"_nping_power", "_acces_sensr", "_acces_mains", "_solut_power"};
-                                    break;
-                                }
-                                case "_swtch":
-                                {
-                                    selectedSectionImage = _swtchURL;
-                                    section2ImgUrl = _nping_basesURL; 
-                                    section3ImgUrl = _nping_powerURL; 
-
-                                    titTitle = title3;
-                                    titDesc = desc3;
-                                    t1 = title1;
-                                    t2 = title2;
-                                    s1 = desc1;
-                                    s2 = desc2;
-                                    l1 = "?id=_nping_bases";
-                                    l2 = "?id=_nping_power";
-                                    names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access, Index.Sec_sub_solutions };
-                                    links = new[] {"_swtch", "_acces_mains","_solut_poe"};
-                                    break;
-                                }
+                                <li id="selectedSection"><a href="@link">@Model.ActiveSection.Sections[i].FormattedTitle</a></li>
                             }
+                            else
+                            {
+                                <li><a href="@link">@Model.ActiveSection.Sections[i].FormattedTitle</a></li>
+                            }
+
                         }
-                    <div class="wrapper clearfix">
-                        <div class="left main catalog">
-                            <div class="cat_tit" style="background: url('../../Content/Images/present_left.png') no-repeat; -ms-background-size: 100% 100%; background-size: 100% 100%">
-                                <img class="sectionImage" src="@Model.ActiveSection.ImageUrl" alt=""/>
-                                <div class="cat_tit_title">@Html.Raw(Model.ActiveSection.Title)</div>
-                                <div class="cat_tit_desc">@Html.Raw(Model.ActiveSection.Description)</div>
-                                <ul style="margin-top: 22px;">
-                                    @{
-                                        if (Model.ActiveSection.Sections != null)
-                                        {
-                                            for (int i = 0; i < Model.ActiveSection.Sections.Count; i++)
-                                            {
-                                                //var link = Url.Action("Index", new {group = Model.ActiveSection.Url, id = Model.ActiveSection.Sections[i].Url});
-                                                var link = "/"+Model.ActiveSection.Sections[i].FullUrl;
-                                                if (Model.ActiveSection.Sections[i].IsSelected)
-                                                {
-                                                    <li id="selectedSection"><a href="@link">@Model.ActiveSection.Sections[i].FormattedTitle</a></li>    
-                                                }
-                                                else
-                                                {
-                                                    <li><a href="@link">@Model.ActiveSection.Sections[i].FormattedTitle</a></li>    
-                                                }
-                                                
-                                            }
-                                        }
-                                    }
-                                </ul>
-                            </div>
-                            
-                            @if (NetpingHelpers.Helpers.IsCultureRus)
-                            {
-                                <!--<a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить прайс-лист продукции в PDF</a> -->
-                                <!-- <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a>       -->
-                            }
+                    }
+                }
+            </ul>
+        </div>
+
+        @if (NetpingHelpers.Helpers.IsCultureRus)
+        {
+            <!--<a href="/Content/Data/Price.pdf" class="big_link pdf">Загрузить прайс-лист продукции в PDF</a> -->
+            <!-- <a href="#" class="big_link cart">Задать вопрос или заказать устройство</a> -->
+        }
+    </div>
+
+    <div class="right main catalog">
+        <div class="catalog_sub clearfix">
+            @foreach (var sec in Model.Sections)
+            {
+                var link = Url.Action("Index", new {group = sec.Url});
+                <a href="@link"><img src="@sec.ImageUrl" class="sectionImage" alt=""/><span class="title">@Html.Raw(sec.Title)</span><span class="desc">@sec.Description</span></a>
+            }
+        </div>
+
+        <div class="catalog_cat_tit clearfix">
+            <div class="left"><img src="@Model.ActiveSection.ImageUrl" style="width: 45px; height: 45px" alt="" title=""/>
+            </div>
+            <div class="right">@titTitle.Replace("<br/>", " ")</div>
+        </div>
+        @using (Html.BeginForm("Compare", "Catalog", FormMethod.Get))
+        {
+            foreach (Device device in Model.Devices)
+            {
+                string link = "/products/" + @device.Url;
+                <div class="cat_item">
+
+                    <div style="display: none">
+                        <p class="Price">
+                            @device.Price
+                        </p>
+                        <p class="ID">
+                            @device.Name.Id
+                        </p>
+                        <p class="Key">
+                            @device.Url
+                        </p>
+                        <p class="Name">
+                            @device.Name.Name
+                        </p>
+                        <p class="PhotoURL">
+                            @device.GetCoverPhoto(false).Url
+                        </p>
+                    </div>
+
+                    <div class="desc clearfix cat_pr" onclick=" window.location.href = '@link' ">
+                        <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title=""/>
                         </div>
 
-                        <div class="right main catalog">
-                            <div class="catalog_sub clearfix">
-                                @foreach (var sec in Model.Sections)
-                                {
-                                    var link = Url.Action("Index", new {group = sec.Url});
-                                    <a href="@link"><img src="@sec.ImageUrl" class="sectionImage" alt=""/><span class="title">@Html.Raw(sec.Title)</span><span class="desc">@sec.Description</span></a>
-                                }
+                        <div class="right">
+                            <a href="@link" class="title">@device.Name.Name</a>
+                            <div class="text">
+                                <p> @Html.Raw(device.Short_description)</p>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="catalog_cat_tit clearfix">
-                                <div class="left"><img src="@Model.ActiveSection.ImageUrl" style="width: 45px; height: 45px" alt="" title="" /></div>
-                                <div class="right">@titTitle.Replace("<br/>", " ")</div>
-                            </div>
-                            @using (Html.BeginForm("Compare", "Catalog", FormMethod.Get))
+                    <div class="action clearfix">
+                        @{
+                            string className = "new";
+                            if (!String.IsNullOrWhiteSpace(device.Label.Name))
                             {
-                                foreach (Device device in Model.Devices)
+                                switch (device.Label.OwnNameFromPath)
                                 {
-                                    string link="/products/" + @device.Url;
-                                    <div class="cat_item">
-                                        
-                                        <div style="display: none">
-                                            <p class="Price">
-                                                @device.Price
-                                            </p>
-                                            <p class="ID">
-                                                @device.Name.Id
-                                            </p>
-                                            <p class="Key">
-                                                @device.Url
-                                            </p>
-                                            <p class="Name">
-                                                @device.Name.Name
-                                            </p>
-                                            <p class="PhotoURL">
-                                                @device.GetCoverPhoto(false).Url
-                                            </p>
-                                        </div>    
-
-                                            <div class="desc clearfix cat_pr" onclick="window.location.href='@link'">
-                                            <div class="left"><img class="size_140_140" src="@device.GetCoverPhoto(true).Url" alt="" title="" /></div>
-
-                                                <div class="right">
-                                                    <a href="@link" class="title">@device.Name.Name</a>
-                                                    <div class="text">
-                                                        <p> @Html.Raw(device.Short_description)</p>
-                                                    </div>
-                                                </div>                                  
-                                            </div> 
-
-                                        <div class="action clearfix">
-                                            @{
-                                                string className = "new";
-                                                if (!String.IsNullOrWhiteSpace(device.Label.Name))
-                                                {
-                                                    switch (device.Label.OwnNameFromPath)
-                                                    {
-                                                        case "New":
-                                                        {
-                                                            className = "new";
-                                                            break;
-                                                        }
-                                                        case "EOL":
-                                                        {
-                                                            className = "eol";
-                                                            break;
-                                                        }
-                                                        case "Archive":
-                                                        {
-                                                            className = "archive";
-                                                            break;
-                                                        }
-                                                    }
-                                                    <div class="type left"><span class="@className">@device.Label.Name</span></div>
-                                                }
-                                                else
-                                                {
-                                                    <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
-                                                }
-                                            }
-                                        
-                                            <div class="row">
-                                                <div class="compare">
-                                                    <div class="right"><input type="submit" class="comparebtn disabled" disabled="disabled" value="@Index.Txt_compare"/></div>
-                                                    <div class="right"><label><input type="checkbox" name="compare" value="@device.Id" />@Index.Txt_compare_dev</label>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            
-                                            <div class="row">
-                                                <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                
+                                    case "New":
+                                    {
+                                        className = "new";
+                                        break;
+                                    }
+                                    case "EOL":
+                                    {
+                                        className = "eol";
+                                        break;
+                                    }
+                                    case "Archive":
+                                    {
+                                        className = "archive";
+                                        break;
+                                    }
                                 }
+                                <div class="type left"><span class="@className">@device.Label.Name</span></div>
                             }
+                            else
+                            {
+                                <div style="visibility: hidden" class="type left"><span class="@className">@device.Label.Name</span></div>
+                            }
+                        }
+
+                        <div class="row">
+                            <div class="compare">
+                                <div class="right"><input type="submit" class="comparebtn disabled" disabled="disabled" value="@Index.Txt_compare"/>
+                                </div>
+                                <div class="right"><label><input type="checkbox" name="compare" value="@device.Id"/>@Index.Txt_compare_dev</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="price right"><span>@GetPrice(device.Price)@device.GetCurrency</span></div>
                         </div>
 
                     </div>
                 </div>
-                @RenderPage("../Shared/Footer.cshtml")
-                @RenderPage("../Shared/cart.cshtml")
+
+            }
+        }
+    </div>
+
+</div>
+</div>
+@RenderPage("../Shared/Footer.cshtml")
+@RenderPage("../Shared/cart.cshtml")
 
 
-            </div>
-        </div>
-        <script> </script>
-    </body>
+</div>
+</div>
+<script> </script>
+</body>
 </html>
