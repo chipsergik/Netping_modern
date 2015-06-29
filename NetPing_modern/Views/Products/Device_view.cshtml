@@ -33,247 +33,251 @@
     <script src="~/Content/JavaScript/main.js"></script>
 </head>
 <body>
-    <div class="page">
-        <div class="main">
-            @RenderPage("../Shared/Header.cshtml")
+<div class="header_background">
+    <div class="header_top"></div>
+    <div class="header_bottom"></div>
+</div>
+<div class="page">
+<div class="main">
+@RenderPage("../Shared/Header.cshtml")
 
-            <div style="display: none">
-                <p class="Price">
-                    @Model.Price
-                </p>
-                <p class="ID">
-                    @Model.Name.Id
-                </p>
-                <p class="Name">
-                    @Model.Name.Name
-                </p>
-                <p class="Key">
-                    @Model.Url
-                </p>
-                <p class="PhotoURL">
-                    @Model.GetCoverPhoto(false).Url
-                </p>
+<div style="display: none">
+    <p class="Price">
+        @Model.Price
+    </p>
+    <p class="ID">
+        @Model.Name.Id
+    </p>
+    <p class="Name">
+        @Model.Name.Name
+    </p>
+    <p class="Key">
+        @Model.Url
+    </p>
+    <p class="PhotoURL">
+        @Model.GetCoverPhoto(false).Url
+    </p>
+</div>
+
+<div class="content">
+<div class="wrapper clearfix">
+
+<div class="left main">
+    <ul class="bread clearfix">
+        <li><a href="/">@Index.Path_main</a></li>
+        <li>&gt;</li>
+        <li><a href="@ViewBag.grp_url">@ViewBag.grp_name</a></li>
+        <li>&gt;</li>
+        <li class="active"><span>@Model.Name.Name</span></li>
+    </ul>
+
+    <div class="item">
+        <div class="i-title">@Model.Name.Name</div>
+        <div class="clearfix">
+            <div class="left sub">
+                <div id="wrapper1">
+                    @if (Model.Label != null)
+                    {
+                        <div class="latest_label">@Model.Label.Name</div>
+                    }
+                    <ul class="rslides" id="slider3">
+                        @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
+                        {
+                            <li><img class="bigImageSize" src="@photo.Url" alt="" title=""/></li>
+                        }
+                    </ul>
+                    <div id="slider3-pager-nav">
+                        <ul id="slider3-pager">
+                            @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
+                            {
+                                <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt=""></a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="seporator"></div>
+
+                    <a style="cursor: pointer" id="shopItem" class="cart price">@Model.Price<span>&nbsp;@Model.GetCurrency</span></a>
+                    <span id="searchIcon"></span>
+                </div>
             </div>
 
-            <div class="content">
-                <div class="wrapper clearfix">
+            <div class="right sub">
+                <div class="text">
+                    @Html.Raw(Model.Short_description)
+                </div>
+                <br/>
+                @{
+                    IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
+                    if (user_guides.Any())
+                    {
+                        Html.RenderPartial("UserGuides", user_guides);
+                    }
+                }
+            </div>
 
-                    <div class="left main">
-                        <ul class="bread clearfix">
-                            <li><a href="/">@Index.Path_main</a></li>
-                            <li>&gt;</li>
-                            <li><a href="@ViewBag.grp_url">@ViewBag.grp_name</a></li>
-                            <li>&gt;</li>
-                            <li class="active"><span>@Model.Name.Name</span></li>
-                        </ul>
+        </div>
+    </div>
 
-                        <div class="item">
-                            <div class="i-title">@Model.Name.Name</div>
-                            <div class="clearfix">
-                                <div class="left sub">
-                                    <div id="wrapper1">
-                                        @if (Model.Label != null)
-                                        {
-                                            <div class="latest_label">@Model.Label.Name</div>
-                                        }
-                                        <ul class="rslides" id="slider3">
-                                            @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
-                                            {
-                                                <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
-                                            }
-                                        </ul>
-                                        <div id="slider3-pager-nav">
-                                            <ul id="slider3-pager">
-                                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
-                                                {
-                                                    <li><a href="#"><img class="smalImageSize" src="@photo.Url" alt=""></a></li>
-                                                }
-                                            </ul>
-                                        </div>
-                                        <div class="seporator"></div>
+    @{
+        IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "FAQ");
+        IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "Tutorial");
+    }
+    <div class="tabs-desc">
+        <div class="clearfix">
+            <div class="tab active" data-tab-id="5"
+                 @(String.IsNullOrWhiteSpace(Model.Long_description) ? "style=display:none;" : "")>
+                @Index.Sec_description
+            </div>
+            <div class="tab" data-tab-id="1"
+                 @(Model.DeviceParameters.Count == 0 ? "style=display:none;" : "")>
+                @Index.Sec_spec
+            </div>
+            <div class="tab" data-tab-id="2"
+                 @(Model.SFiles.Count == 0 ? "style=display:none;" : "")>
+                @Index.Sec_files
+            </div>
+            <div class="tab" data-tab-id="3"
+                 @(posts_faq.Count() == 0 ? "style=display:none;" : "")>
+                @Index.Sec_faq
+            </div>
+            <div class="tab" data-tab-id="4"
+                 @(post_solutions.Count() == 0 ? "style=display:none;" : "")>
+                @Index.Sec_examples
+            </div>
+        </div>
 
-                                        <a style="cursor: pointer" id="shopItem" class="cart price">@Model.Price<span>&nbsp;@Model.GetCurrency</span></a>
-                                        <span id="searchIcon"></span>
-                                    </div>
-                                </div>
+        <div class="tabs-cont">
 
-                                <div class="right sub">
-                                    <div class="text">
-                                        @Html.Raw(Model.Short_description)
-                                    </div>
-                                    <br/>
-                                        @{
-                                            IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
-                                            if (user_guides.Any())
-                                            {
-                                                Html.RenderPartial("UserGuides", user_guides);
-                                            }
-                                        }
-                                </div>
+            <div class="tab-c shown longdescription" data-tab-id="5">
+                @Html.Raw(Model.Long_description)
+            </div>
 
-                            </div>
-                        </div>
-
-                        @{
-                            IEnumerable<Post> posts_faq = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "FAQ");
-                            IEnumerable<Post> post_solutions = Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "Tutorial");
-                        }
-                        <div class="tabs-desc">
-                            <div class="clearfix">
-                                <div class="tab active" data-tab-id="5"
-                                     @(String.IsNullOrWhiteSpace(Model.Long_description) ? "style=display:none;" : "")>
-                                    @Index.Sec_description
-                                </div>
-                                <div class="tab" data-tab-id="1"
-                                     @(Model.DeviceParameters.Count == 0 ? "style=display:none;" : "")>
-                                    @Index.Sec_spec
-                                </div>
-                                <div class="tab" data-tab-id="2"
-                                     @(Model.SFiles.Count == 0 ? "style=display:none;" : "")>
-                                    @Index.Sec_files
-                                </div>
-                                <div class="tab" data-tab-id="3"
-                                     @(posts_faq.Count() == 0 ? "style=display:none;" : "")>
-                                    @Index.Sec_faq
-                                </div>
-                                <div class="tab" data-tab-id="4"
-                                     @(post_solutions.Count() == 0 ? "style=display:none;" : "")>
-                                    @Index.Sec_examples
-                                </div>
-                            </div>
-
-                            <div class="tabs-cont">
-
-                                <div class="tab-c shown longdescription" data-tab-id="5">
-                                    @Html.Raw(Model.Long_description)
-                                </div>
-
-                                <div class="tab-c" data-tab-id="1">
-                                    @{
-                                        if (Model.DeviceParameters.Count != 0)
-                                        {
-                                            foreach (dynamic grp in ViewBag.Parameter_groups)
-                                            {
-                                                IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
-                                                if (parameters.Any())
-                                                {
-                                                    <div class="t-title">@grp.Name.Substring(2)</div>
-                                                }
-                                                <div>
-                                                    <ul>
-                                                        @foreach (DeviceParameter par in parameters.ToList())
-                                                        {
-                                                            <li>@par.Name.Name   <span> @par.Value </span> </li>
-                                                        }
-                                                    </ul>
-                                                </div>
-                                            }
-                                        }
+            <div class="tab-c" data-tab-id="1">
+                @{
+                    if (Model.DeviceParameters.Count != 0)
+                    {
+                        foreach (dynamic grp in ViewBag.Parameter_groups)
+                        {
+                            IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
+                            if (parameters.Any())
+                            {
+                                <div class="t-title">@grp.Name.Substring(2)</div>
+                            }
+                            <div>
+                                <ul>
+                                    @foreach (DeviceParameter par in parameters.ToList())
+                                    {
+                                        <li>@par.Name.Name <span> @par.Value </span> </li>
                                     }
-                                </div>
-
-                                <div class="tab-c" data-tab-id="2">
-                                    <ul>
-                                        @if (Model.SFiles.Count != 0)
-                                        {
-                                            foreach (dynamic grp in ViewBag.Files_groups)
-                                            {
-                                                IEnumerable<SFile> files = Model.SFiles.Where(type => type.File_type.Id == grp.Id);
-                                                if (files.Any())
-                                                {
-                                                    <div class="t-title">@grp.Name</div>
-                                                    <div>
-                                                        <ul>
-                                                            @foreach (SFile file in files.ToList())
-                                                            {
-                                                                <li> <a rel="nofollow" target="_blank" href="@file.Url">@file.Name</a></li>
-                                                            }
-                                                        </ul>
-                                                    </div>
-                                                }
-                                            }
-                                        }
-                                    </ul>
-
-                                </div>
-
-                                <div class="tab-c" data-tab-id="3">
-                                    <ul>
-                                        @{
-                                            foreach (Post post in posts_faq)
-                                            {
-                                                <li>
-                                                    <a href='@post.Url_name'>@post.Title</a>
-                                                </li>
-                                            }
-                                        }
-                                    </ul>
-
-                                </div>
-
-                                <div class="tab-c" data-tab-id="4">
-                                    <ul>
-                                        @{
-                                            foreach (Post post in post_solutions)
-                                            {
-                                                <li>
-                                                    <a href='@post.Url_name'>@post.Title</a>
-                                                </li>
-                                            }
-                                        }
-                                    </ul>
-                                </div>
-
+                                </ul>
                             </div>
-                        </div>
-                    </div>
+                        }
+                    }
+                }
+            </div>
 
-                    <div class="right main">
-                        <div class="widget">
-                            <div class="w-title">@Index.Title_connected</div>
-                            <div class="w-cont">
-                                <div class="clearfix" id="sideslider">
-                                    <a class="buttons prev" href="#"></a>
-                                    <div class="viewport">
-                                        <ul class="overview">
-                                            @foreach (Device dev in ViewBag.Connected_devices_sensors)
-                                            {
-                                                <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
-                                            }
-                                            @foreach (Device dev in ViewBag.Connected_devices_accessuars)
-                                            {
-                                                <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a></li>
-                                            }
-                                        </ul>
-                                    </div>
-                                    <a class="buttons next" href="#"></a>
-                                    @*<div>
+            <div class="tab-c" data-tab-id="2">
+                <ul>
+                    @if (Model.SFiles.Count != 0)
+                    {
+                        foreach (dynamic grp in ViewBag.Files_groups)
+                        {
+                            IEnumerable<SFile> files = Model.SFiles.Where(type => type.File_type.Id == grp.Id);
+                            if (files.Any())
+                            {
+                                <div class="t-title">@grp.Name</div>
+                                <div>
+                                    <ul>
+                                        @foreach (SFile file in files.ToList())
+                                        {
+                                            <li> <a rel="nofollow" target="_blank" href="@file.Url">@file.Name</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        }
+                    }
+                </ul>
+
+            </div>
+
+            <div class="tab-c" data-tab-id="3">
+                <ul>
+                    @{
+                        foreach (Post post in posts_faq)
+                        {
+                            <li>
+                                <a href='@post.Url_name'>@post.Title</a>
+                            </li>
+                        }
+                    }
+                </ul>
+
+            </div>
+
+            <div class="tab-c" data-tab-id="4">
+                <ul>
+                    @{
+                        foreach (Post post in post_solutions)
+                        {
+                            <li>
+                                <a href='@post.Url_name'>@post.Title</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="right main">
+    <div class="widget">
+        <div class="w-title">@Index.Title_connected</div>
+        <div class="w-cont">
+            <div class="clearfix" id="sideslider">
+                <a class="buttons prev" href="#"></a>
+                <div class="viewport">
+                    <ul class="overview">
+                        @foreach (Device dev in ViewBag.Connected_devices_sensors)
+                        {
+                            <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title=""/>@dev.Name.Name</a></li>
+                        }
+                        @foreach (Device dev in ViewBag.Connected_devices_accessuars)
+                        {
+                            <li><a href="/products/@dev.Url" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title=""/>@dev.Name.Name</a></li>
+                        }
+                    </ul>
+                </div>
+                <a class="buttons next" href="#"></a>
+                @*<div>
                                             <div class="w-sub-title">@Index.Title_connected_acces</div>
                                             @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                                             {
                                                 <a href="~/product_item?id=@dev.Key" class="item"><img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />@dev.Name.Name</a>
                                             }
                                         </div>*@
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
-            @RenderPage("../Shared/Footer.cshtml")
         </div>
-
-        <div class="overlay"></div>
-        <div class="popup" id="popup1"></div>
     </div>
+</div>
 
-    <script src="~/Content/JavaScript/ProductItem.js" type="text/javascript"> </script>
-    <script src="~/Content/JavaScript/jquery.tinycarousel.min.js"></script>
-    <script src="~/Content/JavaScript/responsiveslides.min.js" type="text/javascript"> </script>
-    <script src="~/Content/JavaScript/slider1.js" type="text/javascript"> </script>
+</div>
+</div>
+@RenderPage("../Shared/Footer.cshtml")
+</div>
 
-    @RenderPage("../Shared/Cart.cshtml")
+<div class="overlay"></div>
+<div class="popup" id="popup1"></div>
+</div>
+
+<script src="~/Content/JavaScript/ProductItem.js" type="text/javascript"> </script>
+<script src="~/Content/JavaScript/jquery.tinycarousel.min.js"></script>
+<script src="~/Content/JavaScript/responsiveslides.min.js" type="text/javascript"> </script>
+<script src="~/Content/JavaScript/slider1.js" type="text/javascript"> </script>
+
+@RenderPage("../Shared/Cart.cshtml")
 
 </body>
 </html>
