@@ -18,6 +18,7 @@
 .header .logo img {
     margin-left: 10px;
     margin-top: 2px;
+    border: 0px;
 }
 
 .header .logo p {
@@ -37,7 +38,6 @@
 }
 
 .header_bottom {
-    height: 125px;
     background-color: #e6f8e5;
 }
 
@@ -61,17 +61,15 @@
     display: flex;
     display: -ms-flexbox;
     justify-content: space-around;
-    -ms-flex-pack: justify;
     flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
     align-items: center;
     -ms-flex-align: center;
 }
 
 .header_bottom .inline-flex {
-    width: 100%;
     justify-content: center;
     -ms-flex-pack: center;
+    display: -ms-flexbox;
 }
 
 .header_background {
@@ -416,9 +414,23 @@ padding-top: 13px;
     margin-left: 50px;
 }
 
+@media (max-width: 1280px) {
+    .header_bottom {
+        height: 125px;
+        -ms-flex-wrap: wrap;
+        -ms-flex-pack: center;
+    }
+
+    .header_bottom .inline-flex {
+        width: 100%;
+    }
+}
+
 @media (min-width: 1280px) {
     .header_bottom {
         height: 78px;
+        -ms-flex-wrap: nowrap;
+        -ms-flex-pack: justify;
     }
 
     .header_background {
