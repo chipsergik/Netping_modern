@@ -627,11 +627,11 @@ namespace NetPing.DAL
                 
                 Debug.WriteLine("PushToCache OK");
 
-                /*if (Helpers.IsCultureRus)
+                if (Helpers.IsCultureRus)
                 {
                  //   GeneratePriceList();
                     GenerateYml();
-                }*/
+                }
             }
             catch (Exception ex)
             {
