@@ -56,10 +56,6 @@ input:focus {
     max-width: 100%;
 }
 
-.header {
-    background: url(../Images/backround_main.png) no-repeat;
-}
-
 .persent50 {
     width: 49%;
 }

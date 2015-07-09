@@ -2,13 +2,6 @@
 /* CSS Document */
 
 
-.page {
-    /*float: left;*/
-    max-width: 1280px;
-    min-width: 800px;
-    margin: 0px auto;
-}
-
 .page .main {
 /*font-family:Corbel;*/
 /*background: url(../Images/backround_main.png) no-repeat #5AC477;*/
