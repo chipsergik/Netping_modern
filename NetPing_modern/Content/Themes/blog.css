@@ -182,7 +182,6 @@ p + p {
 /*cancel reset.css settings to show confluence content*/
 
 .blog-item, .blog-item ul, .blog-item p {
-    padding-left: 40px;
     margin-bottom: 14px;
     margin-top: 14px;
 }
