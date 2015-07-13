@@ -52,20 +52,16 @@
     <noscript><div><img src="//mc.yandex.ru/watch/25270505" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 }
-
 <div class="header">
 
     <!--
-        <ul>
-            <li><a  class="language" href="#">RUS</a></li>
-            <li><a class="language_active" href="#">ENG</a></li>
-        </ul>
-        -->
-    @*<form class="search" name="search" method="post" action="">
-            <div class="search_text"><input placeholder="Search..." class="search_text_vvod" size="28"></input></div>
-            <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
-        </form>*@
-    <div class="header_contacts">
+    <ul>
+        <li><a class="language" href="#">RUS</a></li>
+        <li><a class="language_active" href="#">ENG</a></li>
+    </ul>
+    -->
+    <div class="header_top">
+
         <div class="header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_to_buy </a>-->
@@ -74,7 +70,7 @@
             <div class="header_content_border">
             </div>
             <div class="header_contacts_content">
-                <span>@Header.Phone:</span>@Header.Header_phone<br />
+                <span>@Header.Phone:</span>@Header.Header_phone<br/>
                 <span>e-mail:</span><a href="mailto:@Header.Header_email_sales">@Header.Header_email_sales</a>
             </div>
         </div>
@@ -86,94 +82,122 @@
             <div class="header_content_border">
             </div>
             <div class="header_contacts_content">
-                <span>@Header.Phone:</span>@Header.Header_phone<br />
+                <span>@Header.Phone:</span>@Header.Header_phone<br/>
                 <span>e-mail:</span><a href="mailto:@Header.Header_email_support">@Header.Header_email_support</a>
             </div>
         </div>
+
+        @if (NetpingHelpers.Helpers.IsCultureRus)
+        {
+            <div class="header_contacts_item">
+                <a href="#" class="cart">
+                    <span class="cart_text">@Header.Header_goods_in_basket</span><span class="cart_count">0</span>
+                </a>
+            </div>
+        }
     </div>
 
-@if (!NetpingHelpers.Helpers.IsCultureEng)
-{ 
-    <a href="#" class="cart">
-        <span class="cart_text">@Header.Header_goods_in_basket</span><span class="cart_count">0</span>
-    </a>
-}
-                        
+
 
     <div class="clear"></div>
+    <div class="header_bottom">
+        <a class="logo" href="/">
+            <img src="~/Content/Images/BlogImg/menu-button.png" class="menu-button" alt="Menu button"/>
+            <img src="~/Content/Images/logo_text.png" alt="Netping logo"/>
+            <p>@Header.Logo_Title</p>
+        </a>
+        <div class="inline-flex">
+            <div class="nav">
+                <ul>
+                    <li class="nav_li">
+                        <a class="@(Request.RawUrl.ToLower().Contains("/products") == true ? "nav_element active" : "nav_element")" href="/products/monitoring-servernoj">@Header.Products</a>
+                        <div class="nav_element_border"></div>
+                        <div class="abs">
+                            <ul class="down_list">
+                                <li class="item_list"><a href="/products/monitoring-servernoj">@Header.Category_monitoring</a></li>
+                                <li class="item_list"><a href="/products/upravljaemye-rozetki-ip-pdu">@Header.Category_power_control</a></li>
+                                <li class="item_list"><a href="/products/kommutatory-ethernet">@Header.Category_switch</a></li>
+                                <li class="item_list"><a href="/products/monitoring-servernoj/sensors">@Header.Category_sensors</a></li>
+                                <li class="item_list"><a href="/products/monitoring-servernoj/accessories">@Header.Category_access</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_li">
+                        <a class="@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element")" href="/buy"><b>@Header.Menu_buy</b></a>
+                        <div class="nav_element_border"></div>
+                        <div class="abs">
+                            <ul class="down_list">
+                                <li class="item_list"><a href="/buy">@Header.Menu_buy_directly</a></li>
+                                <li class="item_list"><a href="/buy/dealers">@Header.Menu_buy_partners</a></li>
+                                <li class="item_list"><a href="/buy/partnership-how-to">@Header.Menu_buy_partner_howto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_li">
+                        <a class="@(Request.RawUrl.ToLower().Contains("/about") == true ? "nav_element active" : "nav_element")" href="/about">@Header.Menu_about</a>
+                        <div class="nav_element_border"></div>
+                        <div class="abs">
+                            <ul class="down_list">
+                                <li class="item_list"><a href="/contacts">@Header.Menu_contacts</a></li>
+                                <li class="item_list"><a href="/Blog/Category/News">@Header.Menu_news</a></li>
+                                @if (!NetpingHelpers.Helpers.IsCultureEng)
+                                {
+                                    <li class="item_list"><a href="/vacancy">@Header.Menu_vacancy</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </li>
 
-    <a class="logo" href="/">
-        <img src="~/Content/Images/BlogImg/menu-button.png" class="menu-button" alt="Menu button" />
-        <img src="~/Content/Images/logo_text.png" alt="Netping logo" />
-    </a>
-    <div class="nav">
-        <ul>
-            <li class="nav_li">
-                <a class="@(Request.RawUrl.ToLower().Contains("/products") == true ? "nav_element active" : "nav_element")" href="/products/monitoring-servernoj">@Header.Products</a>
-                <div class="nav_element_border"></div>
-                <div class="abs">
-                    <ul class="down_list">
-                        <li class="item_list"><a href="/products/monitoring-servernoj">@Header.Category_monitoring</a></li>
-                        <li class="item_list"><a href="/products/upravljaemye-rozetki-ip-pdu">@Header.Category_power_control</a></li>
-                        <li class="item_list"><a href="/products/kommutatory-ethernet">@Header.Category_switch</a></li>
-                        <li class="item_list"><a href="/products/monitoring-servernoj/sensors">@Header.Category_sensors</a></li>
-                        <li class="item_list"><a href="/products/monitoring-servernoj/accessories">@Header.Category_access</a></li>
-                    </ul>
+                    <!--
+                    <li class="nav_li">
+                        <a class=@(Request.RawUrl.ToLower().Contains("/contacts") == true ? "nav_element active" : "nav_element") href="/contacts">@Header.Menu_contacts</a>
+                        <div class="nav_element_border"></div>
+                    </li>
+                    -->
+                    <li class="nav_li">
+                        <a class="@(Request.RawUrl.ToLower().Contains("/support") == true ? "nav_element active" : "nav_element")" href="/support">@Header.Menu_support</a>
+                        <div class="nav_element_border"></div>
+                        <div class="abs">
+                            <ul class="down_list">
+                                <li class="item_list"><a href="/Blog/Category/FAQ">@Header.Menu_faq</a></li>
+                                <li class="item_list"><a href="/Blog/Category/Tutorial">@Header.Menu_solutions</a></li>
+                                @if (!NetpingHelpers.Helpers.IsCultureEng)
+                                {
+                                    <li class="item_list"><a href="http://ideas.netping.ru/forums/213180-ideas" target="_blank">Предложите новую идею для Netping!</a></li>
+                                }@*<li><div class="clear"></div></li>*@</ul>
+                        </div>
+                    </li>
+                    <li class="nav_li">
+                        <a class="@(Request.RawUrl.ToLower().Contains("/Blog") == true ? "nav_element active" : "nav_element")" href="/Blog">@Header.Menu_blog</a>
+                        <div class="nav_element_border"></div>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+            <form class="search" name="search" action="http://www.google.com/cse" target="_blank">
+                <div class="search_text" id="search-box">
+                    @if (Helpers.IsCultureRus)
+                    {
+                        <input placeholder="Поиск по сайту..." class="search_text_vvod" size="28" name="q"></input>
+                        <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
+                        <input type="hidden" name="cx" value="006534849235046585456:eqktuqsoi58"/>
+                        <input name="ie" type="hidden" value="UTF-8"/>
+                    }
+                    @if (Helpers.IsCultureEng)
+                    {
+                        <input placeholder="Поиск по сайту..." class="search_text_vvod" size="28" name="q"></input>
+                        <input class="search_img"type="image" src="~/Content/Images/search.png"></input>
+                        <input type="hidden" name="cx" value="006534849235046585456:ndjvcf8s5r8"/>
+                        <input name="ie" type="hidden" value="UTF-8"/>
+                    }
+                    
                 </div>
-            </li>
-            <li class="nav_li">
-                <a class="@(Request.RawUrl.ToLower().Contains("/buy") == true ? "nav_element active" : "nav_element")" href="/buy"><b>@Header.Menu_buy</b></a>
-                <div class="nav_element_border"></div>
-                <div class="abs">
-                    <ul class="down_list">
-                        <li class="item_list"><a href="/buy">@Header.Menu_buy_directly</a></li>
-                        <li class="item_list"><a href="/buy/dealers">@Header.Menu_buy_partners</a></li>
-                        <li class="item_list"><a href="/buy/partnership-how-to">@Header.Menu_buy_partner_howto</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav_li">
-                <a class="@(Request.RawUrl.ToLower().Contains("/about") == true ? "nav_element active" : "nav_element")" href="/about">@Header.Menu_about</a>
-                <div class="nav_element_border"></div>
-                <div class="abs">
-                    <ul class="down_list">
-                        <li class="item_list"><a href="/contacts">@Header.Menu_contacts</a></li>
-                        <li class="item_list"><a href="/Blog/Category/News">@Header.Menu_news</a></li>
-                        @if (!NetpingHelpers.Helpers.IsCultureEng) {    <li class="item_list"><a href="/vacancy">@Header.Menu_vacancy</a></li> }
-                    </ul>
-                </div>
-            </li>
-
-            <!--
-            <li class="nav_li">
-                <a class=@(Request.RawUrl.ToLower().Contains("/contacts") == true ? "nav_element active" : "nav_element") href="/contacts">@Header.Menu_contacts</a>
-                <div class="nav_element_border"></div>
-            </li>
-                -->
-            <li class="nav_li">
-                <a class="@(Request.RawUrl.ToLower().Contains("/support") == true ? "nav_element active" : "nav_element")" href="/support">@Header.Menu_support</a>
-                <div class="nav_element_border"></div>
-                <div class="abs">
-                    <ul class="down_list">
-                        <li class="item_list"><a href="/Blog/Category/FAQ">@Header.Menu_faq</a></li>
-                        <li class="item_list"><a href="/Blog/Category/Tutorial">@Header.Menu_solutions</a></li>
-                        @if (!NetpingHelpers.Helpers.IsCultureEng)
-                        {
-                                <li class="item_list"><a href="http://ideas.netping.ru/forums/213180-ideas" target="_blank">Предложите новую идею для Netping!</a></li>
-                        }
-                        @*<li><div class="clear"></div></li>*@
-                    </ul>
-                </div>
-            </li>
-            <li class="nav_li">
-                <a class="@(Request.RawUrl.ToLower().Contains("/Blog") == true ? "nav_element active" : "nav_element")" href="/Blog">@Header.Menu_blog</a>
-                <div class="nav_element_border"></div>
-            </li>
-
-
-
-        </ul>
-
+            </form>
+        </div>
     </div>
+
     <div class="clear"></div>
 </div>

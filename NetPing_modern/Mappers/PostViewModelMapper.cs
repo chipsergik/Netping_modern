@@ -117,7 +117,7 @@ namespace NetPing_modern.Mappers
 
             html.DocumentNode.RemoveAllChildren();
 
-            // 4 - is the approximate number of empirically chosen to avlid too complex logic
+            // 4 - is the approximate number of empirically chosen to avoid too complex logic
 
             const int amountOfTextNodes = 4;
             textNodes.Take(amountOfTextNodes).ForEach(n => html.DocumentNode.AppendChild(n));

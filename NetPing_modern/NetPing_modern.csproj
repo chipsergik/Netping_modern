@@ -782,6 +782,7 @@
     <EmbeddedResource Include="Resources\Views\Shared\Header.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Header.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\Inner_page.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

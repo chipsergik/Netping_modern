@@ -52,23 +52,8 @@ input:focus {
 
 /* SERGO S.*/
 
-.page {
-    background: url(../Images/background.png) repeat-x;
-}
-
-    .page .main {
-        background-color: #ffffff;
-        /*font-family: Corbel;*/
-        margin: 0px auto;
-        width: 1000px;
-    }
-
 .page .main .content .tabs-desc img.confluence-embedded-image {
     max-width: 100%;
-}
-
-.header {
-    background: url(../Images/backround_main.png) no-repeat;
 }
 
 .persent50 {

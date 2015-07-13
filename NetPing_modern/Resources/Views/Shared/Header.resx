@@ -192,4 +192,7 @@
   <data name="Products" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="Logo_Title" xml:space="preserve">
+    <value>Devices for monitoring of server rooms and remote power management</value>
+  </data>
 </root>
