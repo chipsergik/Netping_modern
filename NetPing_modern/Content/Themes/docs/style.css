@@ -1,0 +1,110 @@
+﻿.doc-content {
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+    .doc-content h3 {
+        font-size: 16px;
+        text-decoration: underline;
+        margin-bottom: 18px;
+    }
+
+    .doc-content p {
+        margin: 4px 0;
+    }
+
+    .doc-content table {
+        margin: 50px 0 30px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .doc-content table td, .doc-content table th {
+            border: 1px solid #3fa06d;
+            padding: 12px 6px;
+            text-align: center;
+        }
+
+        .doc-content table th {
+            font-weight: 700;
+        }
+
+    .doc-content .alert {
+        background: none;
+        color: #000;
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+    }
+
+        .doc-content .alert.alert-warning {
+            border-color: #f69679;
+        }
+
+        .doc-content .alert.alert-info {
+            border-color: #4ab27d;
+            background: #e5f8e4;
+        }
+
+.doc-tree {
+    font-size: 16px;
+}
+
+    .doc-tree ul a {
+        font-size: 15px;
+    }
+
+        .doc-tree ul ul a {
+            font-size: 14px;
+        }
+
+            .doc-tree ul ul ul a {
+                font-size: 13px;
+            }
+
+                .doc-tree ul ul ul ul a {
+                    font-size: 12px;
+                }
+
+    .doc-tree ul {
+        margin: 8px 0 8px 10px;
+    }
+
+    .doc-tree li {
+        list-style-position: inside;
+        list-style-image: url('../../Images/icons/li-nochild.png');
+    }
+
+        .doc-tree li.opened {
+            list-style-image: url('../../Images/icons/li-opened.png');
+        }
+
+        .doc-tree li.closed {
+            list-style-image: url('../../Images/icons/li-closed.png');
+        }
+
+    .doc-tree a {
+        color: #15892a;
+    }
+
+        .doc-tree a:hover {
+            color: #000;
+            text-decoration: none;
+        }
+
+
+.file-icon.pdf-file {
+    background-image: url('../../Images/icons/pdf.png');
+    width: 35px;
+    height: 35px;
+    display: block;
+    float: left;
+    margin-right: 4px;
+}
+
+a.download{
+    margin-bottom: 20px;
+    color: #208e34;
+    text-decoration: none;
+    font-size: 12px;
+}

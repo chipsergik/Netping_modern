@@ -1,0 +1,256 @@
+﻿@{
+    ViewBag.Title = "Doc";
+    Layout = "~/Views/Shared/Adaptive_master.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-sm-5">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="panel-icon panel-doc-icon"></span>Документация</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="doc-tree">
+                    <li class="opened">
+                        <a href="#">Документация 1</a>
+                        <ul>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="opened">
+                        <a href="#">Документация 1</a>
+                        <ul>
+                            <li class="closed">
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li class="opened">
+                                <a href="#">Документация 1</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Документация 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Документация 1</a>
+                                    </li>
+                                    <li class="opened">
+                                        <a href="#">Документация 1</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Документация 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Документация 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Документация 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Документация 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Документация 1</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Документация 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Документация 1</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Документация 1</a>
+                    </li>
+                    <li class="opened">
+                        <a href="#">Документация 1</a>
+                        <ul>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Документация 1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Документация 1</a>
+                    </li>
+                </ul>
+                <hr />
+                <a href="#" class="download"><span class="file-icon pdf-file"></span>Загрузить в PDF руководство пользователя</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-7">
+
+        <h1>[USS] Uniping устройство ввода-вывода</h1>
+        <h2>Страница ТЕРМОДАТЧИКИ web интерфейса Н2</h2>
+        <div class="doc-content">
+            <h3>Датчики типа «Сухой контакт» H3</h3>
+
+            <p>
+                Стиль основного текста 14px. На этой странице отображаются показания термодатчиков, подключенных к устройству.
+            </p>
+            <p>
+                Некоторые устройства поддерживают подключение датчиков температуры типов TS WT и 1-wire одновременно (это можно уточнить в документе руководство пользователя на устройство).
+            </p>
+            <table>
+                <tr>
+                    <th>
+                        Шлейф датчика
+                    </th>
+                    <th>
+                        Клемма Uniping Server Solution v3/SMS
+                    </th>
+                </tr>
+                <tr>
+                    <td>Первый шлейф</td>
+                    <td>Одна из IO линий 1-8</td>
+                </tr>
+                <tr>
+                    <td>Второй шлейф</td>
+                    <td>GND</td>
+                </tr>
+            </table>
+            <div class="alert alert-warning">
+                <h4>Важно!</h4>
+                Датчик 1-Wire не рекомендуется привязывать к  Датчику Х, если к устройству подключен датчик TS или WT с номером X. Датчики 1-Wire
+            </div>
+            <p>
+                Сброс параметров устройства в значения по умолчанию необходим в следующих случаях:
+                <ul>
+                    <li>
+                        Стиль оформления маркированного списка. Утеря логина и\или пароля для доступа к web-интерфейсу устройства;
+                    </li>
+                    <li>
+                        Отсутствие информации о текущем IP адресе устройства;
+                    </li>
+                </ul>
+            </p>
+            <div class="alert alert-info">
+                <p>
+                    <strong>Памятка</strong> – поле для установки краткого описания термодатчика. Памятка используется в сообщениях Syslog и Журнала, а также включается в Trap уведомления. Максимальный размер – 16 символов.
+                </p>
+                <p>
+                    <strong>По умолчанию: пусто</strong>
+                </p>
+                <p>
+                    <strong>Текущая температура, °C</strong> – отображает текущую температуру датчика в градусах Цельсия. Значение температуры периодически обновляется автоматически без перезагрузки web-страницы.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+        <div class="panel popular col-lg-12 col-sm-6">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="panel-icon panel-popular-icon"></span>Полулярные статьи <a href="#" class="rss-feed"></a></h3>
+            </div>
+            <div class="panel-body">
+                <a href="#">
+                    Почему важно поддерживать температурный режим в серверной?
+                </a>
+                <a href="#">
+                    Netping выпустил обновление ПО устройства NetPing 2/PWR-220 v3/SMSОбновление версии ПО устройства 201.8.10
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-12">
+            <div class="panel devices">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="panel-icon panel-new-icon"></span>Новинки</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="item">
+                        <a href="#">Устройство NetPing 2/PWR-220 v2/SMS</a>
+                        <div class="device-image">
+                            <img src="http://www.netping.ru/Pub/Photos/_nping_power_v2SMS2PWR220_small2.png" />
+                        </div>
+                        <p>
+                            Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой
+                            <a href="#">подробнее...</a>
+                        </p>
+                        <div class="price">
+                            Цена: <span>9 000 руб.</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="#">Устройство NetPing 2/PWR-220 v2/SMS</a>
+                        <div class="device-image">
+                            <img src="http://www.netping.ru/Pub/Photos/_nping_power_v2SMS2PWR220_small2.png" />
+                        </div>                    <p>
+                            Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой
+                            <a href="#">подробнее...</a>
+                        </p>
+                        <div class="price">
+                            Цена: <span>9 000 руб.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel devices ">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="panel-icon panel-inwork-icon"></span>В разработке</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="item">
+                        <a href="#">Устройство NetPing 2/PWR-220 v2/SMS</a>
+                        <div class="device-image">
+                            <img src="http://www.netping.ru/Pub/Photos/_nping_power_v2SMS2PWR220_small2.png" />
+                        </div>                    <p>
+                            Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой
+                            <a href="#">подробнее...</a>
+                        </p>
+
+                    </div>
+                    <div class="item">
+                        <a href="#">Устройство NetPing 2/PWR-220 v2/SMS</a>
+                        <div class="device-image">
+                            <img src="http://www.netping.ru/Pub/Photos/_nping_power_v2SMS2PWR220_small2.png" />
+                        </div>                    <p>
+                            Устройство удалённого управления розетками электропитания по сети Ethernet/Internet (IP PDU) c поддержкой
+                            <a href="#">подробнее...</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

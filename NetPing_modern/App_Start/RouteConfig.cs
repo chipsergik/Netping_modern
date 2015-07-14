@@ -23,6 +23,8 @@ namespace NetPing
 
             routes.MapRoute("product_item_aspx", "product_item.aspx", new { controller = "Product_item", action = "Index" });
 
+            routes.MapRoute("doc", "doc", new { controller = "Docs", action = "Index" });
+            
             /*
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             
