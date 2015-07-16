@@ -17,39 +17,30 @@
 <div style="display: none">
     <div class="shopPopupItem" id="cartItemTemplate">
         <p class="hiddenID"></p>
-        <div class="shopItemImgContainer">
-            <img class="shopPopupItemImg" src="#" alt="" />
-        </div>
-        <div class="shopItemC2">
-            <p class="shopItemName"></p>
-            <table>
-                <tr>
-                    <th>@Cart.Price</th>
-                    <th>@Cart.Quantity</th>
-                    <th>@Cart.TotalPrice</th>
-                </tr>
-                <tr>
-                    <td><span class="shopItemPrice"></span> @Cart.Currency</td>
-                    <td><input type="number" class="shopItemCountInput" value="" /></td>
-                    <td><span class="shopItemPriceSum"></span> @Cart.Currency</td>
-                </tr>
-            </table>
-            <input type="button" class="remove" value="@Cart.Remove" />
-        </div>
+        <table>
+            <tr>
+                <td><img class="shopPopupItemImg" src="#" alt="" /></td>
+                <td><a href="#" class="shopItemName"></a></td>
+                <td><span class="cart-item-counter-control remove-one">-</span><span class="shopItemCount counter"></span><span class="cart-item-counter-control add-one">+</span></td>
+                <td><span class="shopItemPrice"></span> @Cart.Currency</td>
+                <td><span class="shopItemPriceSum"></span> @Cart.Currency</td>
+                <td><button class="remove"><span class="remove-icon"></span></button></td>
+            </tr>
+        </table>
+
     </div>
 </div>
 
-<div class="overlayCart"></div>
+<div class="overlayCart" style="display:none;"></div>
 <div id="cartPopup">
-    <a class="closePopup">x</a>
-    <input type="button" class="remove left" id="clearCartButton" value="@Cart.EmptyCart" />
-    <input type="button" class="remove left" id="backCartButton" value="@Cart.Back" style="display: none;" />
-    <input type="button" class="accept right" id="continueCartButton" value="@Cart.Checkout" />
-    <input type="button" class="accept right" id="sendDataCartButton" value="@Cart.Done" style="display: none;" />
-    <input type="button" class="accept right" id="closeCartButton" value="@Cart.ContinueShopping" />
+    <input type="button" class="btn btn-info remove left" id="backCartButton" value="@Cart.Back" style="display: none;" />
+    <input type="button" class="btn btn-primary accept right" id="continueCartButton" value="@Cart.Checkout" />
+    <input type="button" class="btn btn-primary accept right" id="sendDataCartButton" value="@Cart.Done" style="display: none;" />
+    <input type="button" class="btn btn-info accept left" id="closeCartButton" value="@Cart.ContinueShopping" />
     <div class="clear"></div>
-    <div id="cartCost"><h1>@Cart.Subtotal: <span id="cartCostValue"></span> @Cart.Currency</h1></div>
+    <div id="cartCost"><span class="subtotal">@Cart.Subtotal</span> <span id="cartCostValue"> </span>@Cart.Currency</div>
     <div class="clear"></div>
+    <hr />
     <div id="cartAbout" class="k1">
         <div id="userInfo">
             <h2>@Cart.OrderData</h2>
