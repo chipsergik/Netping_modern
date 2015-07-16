@@ -685,44 +685,44 @@ namespace NetPing.DAL
                     PushToCache("TermsDestinations", termsDestinations);
                     break;
                 case "DevicesParameters":
-                    terms = Terms_Read();
-                    termsDeviceParameters = TermsDeviceParameters_Read();
+                    terms = Terms;
+                    termsDeviceParameters = TermsDeviceParameters;
                     devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
                     PushToCache("DevicesParameters", devicesParameters);
                     break;
                 case "DevicePhotos":
-                    terms = Terms_Read();
+                    terms = Terms;
                     devicePhotos = DevicePhotos_Read(terms);
                     PushToCache("DevicePhotos", devicePhotos);
                     break;
                 case "PubFiles":
-                    termsFileTypes = TermsFileTypes_Read();
+                    termsFileTypes = TermsFileTypes;
                     var pubFiles = PubFiles_Read(termsFileTypes);
                     PushToCache("PubFiles", pubFiles);
                     break;
                 case "SFiles":
-                    terms = Terms_Read();
-                    termsFileTypes = TermsFileTypes_Read();
+                    terms = Terms;
+                    termsFileTypes = TermsFileTypes;
                     sFiles = SFiles_Read(termsFileTypes, terms);
                     PushToCache("SFiles", sFiles);
                     break;
                 case "Posts":
-                    terms = Terms_Read();
-                    termsCategories = TermsCategories_Read();
+                    terms = Terms;
+                    termsCategories = TermsCategories;
                     posts = Posts_Read(terms, termsCategories);
                     PushToCache("Posts", posts);
                     break;
                 case "Devices":
-                    terms = Terms_Read();
-                    termsCategories = TermsCategories_Read();
-                    posts = Posts_Read(terms, termsCategories);
-                    termsFileTypes = TermsFileTypes_Read();
-                    sFiles = SFiles_Read(termsFileTypes, terms);
-                    devicePhotos = DevicePhotos_Read(terms);
-                    termsDeviceParameters = TermsDeviceParameters_Read();
-                    devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
-                    termsDestinations = TermsDestinations_Read();
-                    termsLabels = TermsLabels_Read();
+                    terms = Terms;
+                    termsCategories = TermsCategories;
+                    posts = Posts;
+                    termsFileTypes = TermsFileTypes;
+                    sFiles = SFiles;
+                    devicePhotos = DevicePhotos;
+                    termsDeviceParameters = TermsDeviceParameters;
+                    devicesParameters = DevicesParameters;
+                    termsDestinations = TermsDestinations;
+                    termsLabels = TermsLabels;
                     var devices = Devices_Read(posts, sFiles, devicePhotos, devicesParameters, terms, termsDestinations, termsLabels);
                     PushToCache("Devices", devices);
                     break;
@@ -818,7 +818,7 @@ namespace NetPing.DAL
             }
             shop.LocalDeliveryCost = 350;
 
-            YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("Content/Data/netping.xml"));
+            YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("/Content/Data/netping.xml"));
         }
 
         public IEnumerable<Device> GetDevices(string id, string groupId)
