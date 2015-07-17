@@ -1,0 +1,251 @@
+﻿.catalog-menu.additional-catalog {
+    margin-top: 50px;
+}
+
+.catalog-menu a {
+    display: block;
+    padding: 10px;
+    background: #e5f8e4;
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 14px;
+    min-height: 100px;
+}
+
+.catalog-menu.additional-catalog a {
+    background: #e5e5e5;
+}
+
+.catalog-menu a:hover {
+    background: #93ebaa;
+}
+
+.catalog-menu .menu-item-title {
+    font-size: 22px;
+    color: #144e5a;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 6px;
+    line-height: 1em;
+}
+
+.catalog-menu .menu-item-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.catalog-menu .menu-item-body {
+    margin-top: 10px;
+}
+
+.catalog-menu .menu-item-icon.solutions-icon {
+    background-image: url('../../Images/icons/solutions.png');
+}
+
+.catalog-menu .menu-item-icon.monitoring-icon {
+    background-image: url('../../Images/icons/monitoring.png');
+}
+
+.catalog-menu .menu-item-icon.power-icon {
+    background-image: url('../../Images/icons/power.png');
+}
+
+.catalog-menu .menu-item-icon.switch-icon {
+    background-image: url('../../Images/icons/switch.png');
+}
+
+.catalog-menu .menu-item-icon.plugin-icon {
+    background-image: url('../../Images/icons/plugin.png');
+}
+
+.catalog-menu .menu-item-icon.sensor-icon {
+    background-image: url('../../Images/icons/sensor.png');
+}
+
+.catalog-menu .menu-item-icon.accessory-icon {
+    background-image: url('../../Images/icons/accessory.png');
+}
+
+.catalog-menu .menu-item-icon.inwork-icon {
+    background-image: url('../../Images/icons/inwork.png');
+}
+
+.catalog-menu .menu-item-icon.archive-icon {
+    background-image: url('../../Images/icons/archive.png');
+}
+
+.device-catalog hr {
+    border-color: #a0a0a0;
+}
+
+.device-catalog-item a h3 {
+    color: #000;
+    display: inline;
+    vertical-align: middle;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.device-catalog-item a:hover {
+    text-decoration: underline;
+}
+
+.device-catalog-item img {
+    width: 100%;
+}
+
+.device-catalog-item .device-item-content p, .device-catalog-item .device-item-content strong {
+    font-weight: 400;
+}
+
+.device-catalog-item .device-item-content ul {
+    margin-top: 15px;
+}
+
+    .device-catalog-item .device-item-content ul li {
+        list-style-position: inside;
+        list-style-image: url('../../Images/icons/li-nochild.png');
+    }
+
+.device-catalog-item .label {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 25px;
+    font-weight: 400;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    vertical-align: middle;
+    margin: 8px 8px 8px 0;
+}
+
+    .device-catalog-item .label.label-new {
+        background: #60af6e;
+    }
+
+    .device-catalog-item .label.label-eol {
+        background: #fc5658;
+    }
+
+    .device-catalog-item .label.label-inwork {
+        background: #30b3ad;
+    }
+
+    .device-catalog-item .label.label-archive {
+        background: #535353;
+    }
+
+.device-catalog-item .device-item-buttons .button-block {
+    margin-bottom: 5px;
+}
+
+.device-catalog-item .device-item-buttons .price {
+    color: #eb6e0e;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+    .device-catalog-item .device-item-buttons .price span {
+        font-weight: 700;
+    }
+
+    
+.device-catalog-item .device-item-buttons .more-info{
+    text-align: right;
+}
+
+.device-catalog-item .device-item-buttons .to-cart .btn.counter {
+    font-size: 24px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+}
+
+.device-catalog-item .device-item-buttons .to-cart .add-remove {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .device-catalog-item .device-item-buttons .to-cart .add-remove > button {
+        display: block;
+        text-align: center;
+        padding: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 1em;
+    }
+
+    .device-catalog-item .device-item-buttons .to-cart .add-remove > .add {
+        margin-bottom: 2px;
+    }
+
+    .btn.btn-primary.buy-button:before{
+        content: "Купить";
+    }
+    .btn.btn-primary.in-cart:before{
+        content: "В корзине";
+    }
+
+.device-catalog-item .device-item-buttons .compare input[type=checkbox] {
+    display: none;
+}
+
+    .device-catalog-item .device-item-buttons .compare input[type=checkbox] + label.checkbox {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        border: 1px solid #e5e5e5;
+        background: #eeeeee center center no-repeat no-repeat;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .device-catalog-item .device-item-buttons .compare input[type=checkbox]:checked + label.checkbox {
+        background-image: url('../../Images/check.png');
+    }
+
+.btn {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    font-size: 16px;
+    width: 120px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+    .btn.btn-primary {
+        background: #eb6e0e;
+    }
+
+        .btn.btn-primary.in-cart {
+            background: #60af6e;
+        }
+
+    .btn.btn-info {
+        background: #e6f8e5;
+        color: #144e5a;
+    }
+
+    .btn.btn-default {
+        background: #144e5a;
+        color: #fff;
+    }
+
+@media screen and (max-width: 1200px) {
+    .device-catalog-item .device-item-buttons .price {
+        margin-bottom: 5px;
+        line-height: 34px;
+    }
+
+    .device-catalog-item .device-item-buttons .more-info{
+    text-align: left;
+}
+}
