@@ -74,7 +74,7 @@ namespace NetPing_modern.Controllers
             ViewBag.Title = device.Name.Name;
             ViewBag.Description = device.Name.Name;
             ViewBag.Keywords = device.Name.Name;
-            return View("Device_view",device);
+            return View("Device_view", device);
         }
 
         public ActionResult Index(string group, string id)
@@ -98,7 +98,7 @@ namespace NetPing_modern.Controllers
                             ActiveSection =
                                 NavigationProvider.GetAllSections().First(m => m.Url == @group)
                         };
-            
+
 
             if (!string.IsNullOrEmpty(id))
             {
@@ -112,20 +112,19 @@ namespace NetPing_modern.Controllers
                     ViewBag.Keywords = sub.Name.Name;
                 }
                 else { return HttpNotFound(); }
-                model.ActiveSection.Sections.First(m => m.Url  == id).IsSelected = true;
+                model.ActiveSection.Sections.First(m => m.Url == id).IsSelected = true;
             }
             else
             {
                 model.ActiveSection.Sections.First().IsSelected = true;
             }
-
-            model.Devices = devices;
+            model.Devices = devices.Where(d => d.Label.Path != "Archive");
             model.ActiveSection.IsSelected = true;
             var sections = NavigationProvider.GetAllSections().Where(m => m.Url != model.ActiveSection.Url);
             sections.ForEach(m => model.Sections.Add(m));
 
 
- 
+
             return View(model);
         }
     }
