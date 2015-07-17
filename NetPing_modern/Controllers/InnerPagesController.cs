@@ -123,5 +123,11 @@ namespace NetPing.Controllers
             return View("InnerPage");
         }
 
+        public ActionResult Dev()
+        {
+            return View();
+        }
+
+
     }
 }

@@ -126,7 +126,7 @@ namespace NetPing_modern.Controllers
 
 
  
-            return View(model);
+            return View("Adaptive_Index", model);
         }
     }
 }
