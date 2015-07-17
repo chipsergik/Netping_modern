@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NetPing.DAL
 {
-    public interface IRepository: IDisposable
+    public interface IRepository : IDisposable
     {
         IEnumerable<SPTerm> Terms { get; }
         IEnumerable<SPTerm> TermsDestinations { get; }
@@ -18,10 +18,12 @@ namespace NetPing.DAL
         IEnumerable<SPTerm> TermsFileTypes { get; }
         IEnumerable<PubFiles> PubFiles { get; }
         IEnumerable<SiteText> SiteTexts { get; }
-//        IEnumerable<SPTerm> TermsSiteTexts { get; }
+        //        IEnumerable<SPTerm> TermsSiteTexts { get; }
 
         TreeNode<Device> DevicesTree(Device root, IEnumerable<Device> devices);
         IEnumerable<Device> GetDevices(string id, string groupId);
         string UpdateAll();
+
+        string UpdateAllAsync(string name);
     }
 }
