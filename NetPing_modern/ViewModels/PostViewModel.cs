@@ -14,5 +14,6 @@ namespace NetPing_modern.ViewModels
         public string Url { get; set; }
         public bool IsTop { get; set; }
         public List<TagViewModel> Tags { get; set; }
+        public string Preview { get; set; }
     }
 }
