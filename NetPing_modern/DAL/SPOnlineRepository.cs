@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
@@ -25,10 +24,8 @@ using NetPing_modern.PriceGeneration;
 using NetPing_modern.Resources;
 using NetPing_modern.Resources.Views.Catalog;
 using NetPing_modern.Services.Confluence;
-//using TidyManaged;
 using Category = NetPing.PriceGeneration.YandexMarker.Category;
 using File = System.IO.File;
-using Group = System.Text.RegularExpressions.Group;
 
 namespace NetPing.DAL
 {
@@ -567,6 +564,8 @@ namespace NetPing.DAL
                     title = tagRegex.Replace(title, "");
                 }
 
+
+
                 result.Add(new Post
                          {
                              Id = (item["Old_id"] == null) ? 0 : int.Parse(item["Old_id"].ToString())
@@ -588,6 +587,7 @@ namespace NetPing.DAL
             if (result.Count == 0) throw new Exception("No one post was readed!");
             return result;
         }
+
         #endregion
 
 

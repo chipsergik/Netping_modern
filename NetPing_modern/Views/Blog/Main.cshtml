@@ -30,12 +30,17 @@
     {
 
         <div class="blog-item">
-            
-                <div class="blog-item-header">
-                    <div class="category-label">@post.Category.Name</div>
-                    <span>@post.Created.ToShortDateString()</span>
-                </div>
-                <h1>
+
+            <div class="blog-item-header">
+                <div class="category-label">@post.Category.Name</div>
+                <span>@post.Created.ToShortDateString()</span>
+            </div>
+
+            <p class="img-preview">
+                @Html.Raw(post.Preview)
+            </p>
+
+            <h1>
                     <a href="@post.Url">
                         @post.Title
                     </a>
