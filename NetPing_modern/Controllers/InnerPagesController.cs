@@ -31,7 +31,7 @@ namespace NetPing.Controllers
         {
             ViewBag.result = _repository.UpdateAll();
 
-            return View("UCache");
+            return View();
         }
 
         #region Async Cache update
