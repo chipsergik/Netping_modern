@@ -21,20 +21,20 @@ $(document).ready(function () {
 })
 
 function updateInvoke(itemId) {
-    item = taskNames[itemId];
-    $('#update-messages').append('<p id="' + item + '">Task ' + item
+    operationName = taskNames[itemId];
+    $('#update-messages').append('<p id="' + operationName + '">Task ' + operationName
                        + ' is processing <img style="margin: 0 10px;vertical-align: middle;" height=16 src="/Content/Images/preloader.gif" /></p>');
     $.ajax({
         type: "POST",
         url: "/innerpages/ucacheasyncwork",
-        data: JSON.stringify({ dataName: item }),
+        data: JSON.stringify({ dataName: operationName }),
         dataType: 'json',
         processData: true,
         traditional: true,
         contentType: 'application/json; charset=utf-8',
         async: true,
         success: function (response) {
-            $('#' + item).text('Task ' + item
+            $('#' + operationName).text('Task ' + operationName
             + " completed with message: " + response);
             if (++itemId < taskNames.length)
                 updateInvoke(itemId);
@@ -46,9 +46,9 @@ function updateInvoke(itemId) {
 
         },
         error: function (response) {
-            $('#' + item).text('Task ' + item
+            $('#' + operationName).text('Task ' + operationName
                           + " completed with message: " + response);
-            console.log('Task ' + item + " completed with message: ");
+            console.log('Task ' + operationName + " completed with message: ");
             console.log(response);
         },
     });
