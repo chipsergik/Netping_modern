@@ -33,4 +33,7 @@
         $('#gSearch').submit();
         return false;
     });
+
+    // fix for not-needed attributes
+    $('.blog-item img ').removeAttr('height').removeAttr('width');
 });

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using AutoMapper;
 using HtmlAgilityPack;
 using NetPing.Models;
@@ -23,13 +24,18 @@ namespace NetPing_modern.Mappers
             mapping.ForMember(m => m.ShortBody, o => o.ResolveUsing(p =>
                                                                     {
                                                                         var html = GetText(p);
-                                                                        var icon = GetFirstImg(p);
-                                                                        if (icon != null)
-                                                                        {
-                                                                            html.DocumentNode.ChildNodes.Insert(0, icon);
-                                                                        }
-                                                                        return html.DocumentNode.InnerHtml;
+                                                                        return RemoveHtmlTags(html.DocumentNode.InnerHtml);
                                                                     }));
+
+            mapping.ForMember(m => m.Preview, o => o.ResolveUsing(p =>
+                                                                  {
+                                                                      var preview = GetFirstImg(p);
+                                                                      if (preview != null)
+                                                                      {
+                                                                          return preview.OuterHtml;
+                                                                      }
+                                                                      return "";
+                                                                  }));
 
             mapping.ForMember(m => m.Url, o => o.ResolveUsing(p =>
                                                               {
@@ -117,11 +123,56 @@ namespace NetPing_modern.Mappers
 
             html.DocumentNode.RemoveAllChildren();
 
-            // 4 - is the approximate number of empirically chosen to avoid too complex logic
+            foreach (var textNode in textNodes)
+            {
+                html.DocumentNode.AppendChild(textNode);
+                if (html.DocumentNode.InnerHtml.Length > 2000)
+                    break;
+            }
 
-            const int amountOfTextNodes = 4;
-            textNodes.Take(amountOfTextNodes).ForEach(n => html.DocumentNode.AppendChild(n));
             return html;
+        }
+
+        private readonly static Regex htmlTags = new Regex(@"\<(/{0,1})(?<tag>[\w]+)[^>]*>");
+
+        private static string RemoveHtmlTags(string html)
+        {
+            return htmlTags.Replace(html, s => ReplaceMatch(html, "tag", "", s));
+        }
+
+        private static string ReplaceMatch(string html, string tag, string empty, Match match)
+        {
+            if (match.Groups["tag"].Value.Equals("a", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            if (match.Groups["tag"].Value.Equals("img", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            if (match.Groups["tag"].Value.Equals("p", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            if (match.Groups["tag"].Value.Equals("ul", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            if (match.Groups["tag"].Value.Equals("ol", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            if (match.Groups["tag"].Value.Equals("li", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return match.Value;
+            }
+
+            return string.Empty;
         }
     }
 }

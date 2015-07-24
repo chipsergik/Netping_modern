@@ -31,8 +31,30 @@ namespace NetPing.Controllers
         {
             ViewBag.result = _repository.UpdateAll();
 
-            return View("UCache");
+            return View();
         }
+
+        #region Async Cache update
+
+        public ActionResult UCacheAsync()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult UCacheAsyncWork(string dataName)
+        {
+            try
+            {
+                return Json(_repository.UpdateAllAsync(dataName));
+            }
+            catch (Exception Ex)
+            {
+                return Json(Ex);
+            }
+        }
+
+        #endregion
 
         public ActionResult Buy(string id)
         {

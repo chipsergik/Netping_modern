@@ -101,7 +101,7 @@ p + p {
 
 .page .main .content .blog-item img.confluence-embedded-image {
     float: none;
-    width: 50%;
+    width: 100%;
     max-width:500px;
     cursor: url(http://wwww.netping.ru/Content/Images/magnify.cur),url('../Images/magnify.cur'),zoom-in !important;
 }
@@ -127,7 +127,6 @@ p + p {
 /*cancel reset.css settings to show confluence content*/
 
 .blog-item, .blog-item ul, .blog-item p {
-    padding-left: 40px;
     margin-bottom: 14px;
     margin-top: 14px;
 }
@@ -145,6 +144,22 @@ p + p {
 }
 
 /*cancel reset.css settings*/
+
+.blog-item table{
+    border-collapse: collapse;
+
+}
+
+.blog-item td{
+  border-bottom: 1px solid #ccc;
+  padding: 4px 4px;
+  vertical-align: top;
+}
+
+.blog-item td p{
+    padding:0;
+    margin: 0;
+}
 
 .blog-item-header {
 }

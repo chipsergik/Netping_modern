@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
@@ -45,11 +44,14 @@ namespace NetPing.DAL
         public IEnumerable<SPTerm> TermsLabels { get { return (IEnumerable<SPTerm>)(PullFromCache("TermsLabels")); } }
         private IEnumerable<SPTerm> TermsLabels_Read() { return GetTermsFromSP("Labels"); }
 
-        public IEnumerable<SPTerm> TermsCategories { get
+        public IEnumerable<SPTerm> TermsCategories
         {
-            return (IEnumerable<SPTerm>) (PullFromCache(TermsCategoriesCacheName));
-        } } 
-        
+            get
+            {
+                return (IEnumerable<SPTerm>)(PullFromCache(TermsCategoriesCacheName));
+            }
+        }
+
         private IEnumerable<SPTerm> TermsCategories_Read()
         {
             return GetTermsFromSP("Posts categories");
@@ -182,7 +184,8 @@ namespace NetPing.DAL
 
 
             var id = _confluenceClient.GetContentIdFromUrl(url);
-            if (id==null) {
+            if (id == null)
+            {
                 propertyInfo.SetValue(device, string.Empty);
                 return;
             }
@@ -194,69 +197,69 @@ namespace NetPing.DAL
                 string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
                 propertyInfo.SetValue(device, propertyValue);
             }
-/*
-            var mc = _contentIdRegex.Matches(url);
-            if (mc.Count > 0)
-            {
-                Match m = mc[0];
-                if (m.Success)
-                {
-                    Group group = m.Groups["id"];
-                    int id = int.Parse(group.Value);
-
-                    var contentTask = _confluenceClient.GetContenAsync(id);
-                    string content = contentTask.Result;
-                    if (!string.IsNullOrWhiteSpace(content))
-                    {
-                        string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
-
-                        var utf8 = Encoding.UTF8.GetBytes(propertyValue);
-                        var win1251 = Encoding.GetEncoding(1251).GetString(utf8);
-                        var doc = Document.FromString(win1251);
-                        doc.DocType = DocTypeMode.Auto;
-                        doc.OutputBodyOnly = AutoBool.Yes;
-                        doc.OutputXhtml = true;
-                        doc.ShowWarnings = false;
-                        doc.IndentBlockElements = AutoBool.Yes;
-                        doc.RemoveEndTags = true;
-
-                        doc.CleanAndRepair();
-                        propertyValue = doc.Save();
-
-                        propertyInfo.SetValue(device, propertyValue);
-                    }
-                }
-            }
-            else
-            {
-                mc = _spaceTitleRegex.Matches(url);
-                if (mc.Count > 0)
-                {
-                    Match m = mc[0];
-                    if (m.Success)
-                    {
-                        Group spaceKeyGroup = m.Groups["spaceKey"];
-                        string spaceKey = spaceKeyGroup.Value;
-
-                        Group titleGroup = m.Groups["title"];
-                        string title = titleGroup.Value;
-
-                        var contentTask = _confluenceClient.GetContentBySpaceAndTitle(spaceKey, title);
-                        int contentId = contentTask.Result;
-                        if (contentId > 0)
+            /*
+                        var mc = _contentIdRegex.Matches(url);
+                        if (mc.Count > 0)
                         {
-                            var contentTask2 = _confluenceClient.GetContenAsync(contentId);
-                            string content = contentTask2.Result;
-                            if (!string.IsNullOrWhiteSpace(content))
+                            Match m = mc[0];
+                            if (m.Success)
                             {
-                                string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
-                                propertyInfo.SetValue(device, propertyValue);
+                                Group group = m.Groups["id"];
+                                int id = int.Parse(group.Value);
+
+                                var contentTask = _confluenceClient.GetContenAsync(id);
+                                string content = contentTask.Result;
+                                if (!string.IsNullOrWhiteSpace(content))
+                                {
+                                    string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+
+                                    var utf8 = Encoding.UTF8.GetBytes(propertyValue);
+                                    var win1251 = Encoding.GetEncoding(1251).GetString(utf8);
+                                    var doc = Document.FromString(win1251);
+                                    doc.DocType = DocTypeMode.Auto;
+                                    doc.OutputBodyOnly = AutoBool.Yes;
+                                    doc.OutputXhtml = true;
+                                    doc.ShowWarnings = false;
+                                    doc.IndentBlockElements = AutoBool.Yes;
+                                    doc.RemoveEndTags = true;
+
+                                    doc.CleanAndRepair();
+                                    propertyValue = doc.Save();
+
+                                    propertyInfo.SetValue(device, propertyValue);
+                                }
                             }
                         }
-                    }
-                }
-            }
-*/
+                        else
+                        {
+                            mc = _spaceTitleRegex.Matches(url);
+                            if (mc.Count > 0)
+                            {
+                                Match m = mc[0];
+                                if (m.Success)
+                                {
+                                    Group spaceKeyGroup = m.Groups["spaceKey"];
+                                    string spaceKey = spaceKeyGroup.Value;
+
+                                    Group titleGroup = m.Groups["title"];
+                                    string title = titleGroup.Value;
+
+                                    var contentTask = _confluenceClient.GetContentBySpaceAndTitle(spaceKey, title);
+                                    int contentId = contentTask.Result;
+                                    if (contentId > 0)
+                                    {
+                                        var contentTask2 = _confluenceClient.GetContenAsync(contentId);
+                                        string content = contentTask2.Result;
+                                        if (!string.IsNullOrWhiteSpace(content))
+                                        {
+                                            string propertyValue = ReplaceConfluenceImages(StylishHeaders3(CleanSpanStyles(CleanFonts((content)))));
+                                            propertyInfo.SetValue(device, propertyValue);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+            */
 
 
 
@@ -295,7 +298,7 @@ namespace NetPing.DAL
                              Url = item["Url"] as string
                          };
 
-                
+
 
                 var urlField = item["Short_descr"] as FieldUrlValue;
                 if (urlField != null)
@@ -315,13 +318,13 @@ namespace NetPing.DAL
             foreach (var dev in devices)
             {
 
-//                Debug.WriteLine(dev.Name.Name);
+                //                Debug.WriteLine(dev.Name.Name);
                 // Collect Posts and Sfiles corresponded to device
 
                 dev.Posts = allPosts.Where(pst => dev.Name.IsIncludeAnyFromOthers(pst.Devices) || dev.Name.IsUnderAnyOthers(pst.Devices)).ToList();
-                dev.SFiles = allFiles.Where(fl => dev.Name.IsIncludeAnyFromOthers(fl.Devices) || dev.Name.IsUnderAnyOthers(fl.Devices)).ToList(); 
+                dev.SFiles = allFiles.Where(fl => dev.Name.IsIncludeAnyFromOthers(fl.Devices) || dev.Name.IsUnderAnyOthers(fl.Devices)).ToList();
 
- 
+
                 // collect device parameters 
                 dev.DeviceParameters = allDevicesParameters.Where(par => par.Device == dev.Name).ToList();
 
@@ -472,7 +475,7 @@ namespace NetPing.DAL
                     Created = (DateTime)item["Created"]
                    ,
                     Url = (item["Public_url"] as FieldUrlValue).ToFileUrlStr(item["FileLeafRef"] as string)
-                  
+
                 });
             }
             if (result.Count == 0) throw new Exception("No one SFile was readed!");
@@ -484,7 +487,7 @@ namespace NetPing.DAL
             var list = _context.Web.Lists.GetByTitle("Firmwares");
             CamlQuery camlquery = new CamlQuery();
 
-            camlquery.ViewXml =  NetPing_modern.Resources.Camls.Caml_Firmwares;
+            camlquery.ViewXml = NetPing_modern.Resources.Camls.Caml_Firmwares;
             var items = list.GetItems(camlquery);
             _context.Load(list);
             _context.Load(items);
@@ -494,7 +497,7 @@ namespace NetPing.DAL
             foreach (var item in items)
             {
 
-                Folder  item_folder= _context.Web.GetFolderByServerRelativeUrl(item["FileDirRef"].ToString());
+                Folder item_folder = _context.Web.GetFolderByServerRelativeUrl(item["FileDirRef"].ToString());
                 Folder item_folder_parent = item_folder.ParentFolder;
                 var item_folder_parent_items = item_folder_parent.ListItemAllFields;
                 _context.Load(item_folder);
@@ -561,9 +564,11 @@ namespace NetPing.DAL
                     title = tagRegex.Replace(title, "");
                 }
 
+
+
                 result.Add(new Post
                          {
-                             Id =(item["Old_id"] ==null) ? 0 : int.Parse(item["Old_id"].ToString())
+                             Id = (item["Old_id"] == null) ? 0 : int.Parse(item["Old_id"].ToString())
                             ,
                              Title = title
                             ,
@@ -576,28 +581,29 @@ namespace NetPing.DAL
                              Created = (DateTime)item["Pub_date"]
                              ,
                              Url_name = "/Blog/" + (item["Body_link"] as FieldUrlValue).Description.Replace(".", "x2E").Trim(' '),
-                             IsTop = (bool) item["TOP"] 
+                             IsTop = (bool)item["TOP"]
                          });
             }
             if (result.Count == 0) throw new Exception("No one post was readed!");
             return result;
         }
+
         #endregion
 
 
         public string UpdateAll()
         {
             try
-            { 
+            {
                 var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
-                
+
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
                 var termsCategories = TermsCategories_Read(); Debug.WriteLine("TermsCategories_Read OK");
                 var termsDeviceParameters = TermsDeviceParameters_Read(); Debug.WriteLine("TermsDeviceParameters_Read OK");
-                
+
                 var termsDestinations = TermsDestinations_Read(); Debug.WriteLine("TermsDestinations_Read OK");
-//                var termsSiteTexts = TermsSiteTexts_Read();
+                //                var termsSiteTexts = TermsSiteTexts_Read();
                 //var termFirmwares = TermsFirmwares_Read();
                 var siteTexts = SiteTexts_Read();
                 var devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
@@ -622,12 +628,12 @@ namespace NetPing.DAL
                 PushToCache("SFiles", sFiles);
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
-                
+
                 Debug.WriteLine("PushToCache OK");
 
                 if (Helpers.IsCultureRus)
                 {
-                 //   GeneratePriceList();
+                    //   GeneratePriceList();
                     GenerateYml();
                 }
             }
@@ -639,6 +645,101 @@ namespace NetPing.DAL
             return "OK!";
 
         }
+
+        public string UpdateAllAsync(string name)
+        {
+            IEnumerable<SPTerm> terms, termsDeviceParameters, termsFileTypes, termsCategories, termsDestinations, termsLabels;
+            IEnumerable<Post> posts;
+            IEnumerable<SFile> sFiles;
+            IEnumerable<DevicePhoto> devicePhotos;
+            IEnumerable<DeviceParameter> devicesParameters;
+
+            switch (name)
+            {
+                case "TermsFileTypes":
+                    termsFileTypes = TermsFileTypes_Read();
+                    PushToCache("TermsFileTypes", termsFileTypes);
+                    break;
+                case "Terms":
+                    terms = Terms_Read();
+                    PushToCache("Terms", terms);
+                    break;
+                case "SiteTexts":
+                    var siteTexts = SiteTexts_Read();
+                    PushToCache("SiteTexts", siteTexts);
+                    break;
+                case "TermsLabels":
+                    termsLabels = TermsLabels_Read();
+                    PushToCache("TermsLabels", termsLabels);
+                    break;
+                case "TermsDeviceParameters":
+                    termsDeviceParameters = TermsDeviceParameters_Read();
+                    PushToCache("TermsDeviceParameters", termsDeviceParameters);
+                    break;
+                case "TermsCategories":
+                    termsCategories = TermsCategories_Read();
+                    PushToCache(TermsCategoriesCacheName, termsCategories);
+                    break;
+                case "TermsDestinations":
+                    termsDestinations = TermsDestinations_Read();
+                    PushToCache("TermsDestinations", termsDestinations);
+                    break;
+                case "DevicesParameters":
+                    terms = Terms;
+                    termsDeviceParameters = TermsDeviceParameters;
+                    devicesParameters = DevicesParameters_Read(termsDeviceParameters, terms);
+                    PushToCache("DevicesParameters", devicesParameters);
+                    break;
+                case "DevicePhotos":
+                    terms = Terms;
+                    devicePhotos = DevicePhotos_Read(terms);
+                    PushToCache("DevicePhotos", devicePhotos);
+                    break;
+                case "PubFiles":
+                    termsFileTypes = TermsFileTypes;
+                    var pubFiles = PubFiles_Read(termsFileTypes);
+                    PushToCache("PubFiles", pubFiles);
+                    break;
+                case "SFiles":
+                    terms = Terms;
+                    termsFileTypes = TermsFileTypes;
+                    sFiles = SFiles_Read(termsFileTypes, terms);
+                    PushToCache("SFiles", sFiles);
+                    break;
+                case "Posts":
+                    terms = Terms;
+                    termsCategories = TermsCategories;
+                    posts = Posts_Read(terms, termsCategories);
+                    PushToCache("Posts", posts);
+                    break;
+                case "Devices":
+                    terms = Terms;
+                    termsCategories = TermsCategories;
+                    posts = Posts;
+                    termsFileTypes = TermsFileTypes;
+                    sFiles = SFiles;
+                    devicePhotos = DevicePhotos;
+                    termsDeviceParameters = TermsDeviceParameters;
+                    devicesParameters = DevicesParameters;
+                    termsDestinations = TermsDestinations;
+                    termsLabels = TermsLabels;
+                    var devices = Devices_Read(posts, sFiles, devicePhotos, devicesParameters, terms, termsDestinations, termsLabels);
+                    PushToCache("Devices", devices);
+                    break;
+                case "GenerateYml":
+                    if (Helpers.IsCultureRus)
+                    {
+                        //   GeneratePriceList();
+                        GenerateYml();
+                    }
+                    break;
+                default:
+                    return "404";
+            }
+            return "OK";
+        }
+
+
 
         private void GenerateYml()
         {
@@ -668,7 +769,7 @@ namespace NetPing.DAL
                                     {
                                         Id = categoryNode.Id,
                                         Name = categoryNode.Name,
-                                        ParentId = categoryNode.Parent == null ? (int?) null : categoryNode.Parent.Id
+                                        ParentId = categoryNode.Parent == null ? (int?)null : categoryNode.Parent.Id
                                     });
 
                 foreach (DeviceTreeNode childCategoryNode in categoryNode.Nodes)
@@ -699,14 +800,14 @@ namespace NetPing.DAL
                             }
                             descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
                         }
-                        
+
                         shop.Offers.Add(new Offer
                                         {
                                             Id = offerNode.Id,
                                             Url = GetDeviceUrl(offerNode.Device),
-                                            Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
+                                            Price = (int)(offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
                                             CategoryId = childCategoryNode.Id,
-                                            Picture =  offerNode.Device.GetCoverPhoto(true).Url, 
+                                            Picture = offerNode.Device.GetCoverPhoto(true).Url,
                                             TypePrefix = "", /*childCategoryNode.Name,*/
                                             VendorCode = offerNode.Name,
                                             Model = offerNode.Name,
@@ -717,7 +818,7 @@ namespace NetPing.DAL
             }
             shop.LocalDeliveryCost = 350;
 
-            YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("Content/Data/netping.xml"));
+            YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("/Content/Data/netping.xml"));
         }
 
         public IEnumerable<Device> GetDevices(string id, string groupId)
@@ -729,11 +830,11 @@ namespace NetPing.DAL
                 throw new ArgumentNullException("groupId");
 
             //var group = Devices.FirstOrDefault(d => d.Key == groupId + "#");
-            var group = Devices.FirstOrDefault(d => d.Url == groupId );
-            var devices = Devices.Where(d => d.Name.IsUnderOther(group.Name) && !d.Name.IsGroup() );
+            var group = Devices.FirstOrDefault(d => d.Url == groupId);
+            var devices = Devices.Where(d => d.Name.IsUnderOther(group.Name) && !d.Name.IsGroup());
             return devices;
         }
-        
+
         private void GeneratePriceList()
         {
             using (var priceList = new PriceList())
@@ -777,13 +878,13 @@ namespace NetPing.DAL
 
         internal static string GetDeviceUrl(Device device)
         {
-           /* var url =
-                LinkBuilder.BuildUrlFromExpression<Product_itemController>(
-                    new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
-                    RouteTable.Routes, c => c.Index(device.Key));
-            Uri uri = HttpContext.Current.Request.Url;
-            url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);*/
-            return "http://www.netping.ru/products/"+device.Url; 
+            /* var url =
+                 LinkBuilder.BuildUrlFromExpression<Product_itemController>(
+                     new RequestContext(new HttpContextWrapper(HttpContext.Current), new RouteData()),
+                     RouteTable.Routes, c => c.Index(device.Key));
+             Uri uri = HttpContext.Current.Request.Url;
+             url = string.Format("{0}://{1}{2}{3}", uri.Scheme, uri.Authority, HttpRuntime.AppDomainAppVirtualPath, url);*/
+            return "http://www.netping.ru/products/" + device.Url;
         }
 
 
@@ -853,7 +954,7 @@ namespace NetPing.DAL
             foreach (var term in allTerms)
             {
                 string name = term.Name;
- 
+
                 if (lcid != 1033)   // If lcid label not avaliable or lcid==1033 keep default label
                 {
                     var lang_label = term.GetAllLabels(lcid);
@@ -871,7 +972,7 @@ namespace NetPing.DAL
                            ,
                             Path = term.PathOfTerm
                            ,
-                            Properties=term.LocalCustomProperties
+                            Properties = term.LocalCustomProperties
                         });
                 if (!string.IsNullOrEmpty(term.CustomSortOrder))
                 {
@@ -879,11 +980,11 @@ namespace NetPing.DAL
                 }
 
             }
-                var customSortOrder = sortOrders.GetSortOrders();
+            var customSortOrder = sortOrders.GetSortOrders();
 
-                terms.Sort(new SPTermComparerByCustomSortOrder(customSortOrder));
-            
-            if (terms.Count==0) throw new Exception("No terms was readed!");
+            terms.Sort(new SPTermComparerByCustomSortOrder(customSortOrder));
+
+            if (terms.Count == 0) throw new Exception("No terms was readed!");
 
             return terms;
         }
