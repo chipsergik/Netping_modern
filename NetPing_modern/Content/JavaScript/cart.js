@@ -14,10 +14,10 @@
     $(".to-cart .remove").on("click", removeOneItem);
 
 
-    $("#cartPopup").click(function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    });
+    //$("#cartPopup").click(function (event) {
+    //    event.preventDefault();
+    //    event.stopPropagation();
+    //});
 
     $("#clearCartButton").click(function () {
         clearCart();
@@ -120,19 +120,21 @@ function updateCartCount() {
     }
     $('.cart-count').text(cartcount);
 
-    $(".header a.cart, .btn-primary.in-cart").off("click");
+    $(".header .cart, .btn-primary.in-cart").off("click");
     $('.cat_item .action .price span, .buy-button').off("click");
-    $(".header a.cart, .btn-primary.in-cart").on("click", function (event) {
-        event.preventDefault();
+    $(".header .cart, .btn-primary.in-cart").on("click", function (event) {
         var container = $(this);
         showPopup(container);
     });
 
     $('.cat_item .action .price span, .buy-button').on("click", function (event) {
-        event.preventDefault();
         var item = $(this).parents('.cat_item');
         addProduct(item);
     });
+    $('#continueCartButton').removeAttr('disabled');
+    if (data.length == 0)
+        $('#continueCartButton').attr('disabled', 'disabled');
+
 }
 
 function addProduct(itemcontainer) {
@@ -172,6 +174,9 @@ function clearCart() {
 
 
 function showPopup(container) {
+    if (isCartPopupOpened)
+        return;
+
     isCartPopupOpened = true;
     var cartPopup = $('#cartItems');
     cartPopup.empty();
@@ -221,6 +226,8 @@ function showPopup(container) {
         C.del(prID);
         data = getData() || [];
         productContainer.remove();
+        updateCartCount();
+        updateSum(data);
         if ($("#cartPopup").find(".shopPopupItem").length == 0) hidePopup();
     });
     container.append($('#cartPopup'));
@@ -252,15 +259,13 @@ function showPopup(container) {
         }
     });
 
-    $('body').addClass('noscroll');
 }
 
 function hidePopup() {
     $('body').append($('#cartPopup'));
     $('.overlayCart, #cartPopup').hide();
 
-    iscartPopupOpened = false;
-    $('body').removeClass('noscroll');
+    isCartPopupOpened = false;
     updateCartCount();
 }
 

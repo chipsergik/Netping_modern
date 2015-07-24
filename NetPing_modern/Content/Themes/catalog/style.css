@@ -1,4 +1,8 @@
-﻿.catalog-menu.additional-catalog {
+﻿@-ms-viewport {
+  width: auto;
+}
+
+.catalog-menu.additional-catalog {
     margin-top: 50px;
 }
 
@@ -74,6 +78,10 @@
 
 .catalog-menu .menu-item-icon.archive-icon {
     background-image: url('../../Images/icons/archive.png');
+}
+
+.catalog-content{
+    max-width: 1100px;
 }
 
 .device-catalog hr {
@@ -241,7 +249,7 @@
 
 @media screen and (max-width: 1200px) {
     .device-catalog-item .device-item-buttons .price {
-        margin-bottom: 5px;
+        margin-bottom: 18px;
         line-height: 34px;
     }
 
