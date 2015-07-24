@@ -9,13 +9,13 @@ namespace NetPing.PriceGeneration
     {
         public static void Generate(YmlCatalog catalog, string outputFileName)
         {
-            var serializer = new XmlSerializer(typeof (YmlCatalog), "");
-            using (TextWriter textWriter = new StreamWriter(outputFileName))
+            var serializer = new XmlSerializer(typeof(YmlCatalog), "");
+            using (Stream textWriter = File.OpenWrite(outputFileName))
             {
-                using (var writer = new XmlTextWriter(textWriter))
+                using (var writer = new XmlTextWriter(textWriter, null))
                 {
                     var ns = new XmlSerializerNamespaces();
-                    ns.Add("","");
+                    ns.Add("", "");
                     writer.Formatting = Formatting.Indented;
                     writer.WriteStartDocument();
                     writer.WriteDocType("yml_catalog", null, "shops.dtd", null);
