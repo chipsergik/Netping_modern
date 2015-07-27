@@ -99,7 +99,11 @@
             },
             dataType: "json"
         });
-    })
+    });
+
+    $('.device-item-buttons input[type=text]').on('keydown', onlyNumeric);
+
+    $('.device-item-buttons input[type=text]').on('blur change', countInput);
 })
 
 var C = jaaulde.utils.cookies;
@@ -112,11 +116,11 @@ function updateCartCount() {
     var data = getData() || [];
     var cartcount = 0;
     $('.in-cart.btn-primary').removeClass('in-cart').addClass('buy-button');
-    $('.counter.in-cart').removeClass('in-cart').text(1);
+    $('.counter.in-cart').removeClass('in-cart').val(1);
     for (i = 0; i < data.length; i++) {
         cartcount += parseInt(data[i].count);
         $('.buy-button[data-device-id="' + data[i].ID + '"]').removeClass('buy-button').addClass('in-cart')
-                                                        .siblings('.counter').addClass('in-cart').text(data[i].count);
+                                                        .siblings('.counter').addClass('in-cart').val(data[i].count);
     }
     $('.cart-count').text(cartcount);
 
@@ -147,7 +151,7 @@ function addProduct(itemcontainer) {
     var item = data.filter(function (element) {
         return element.ID == ID;
     });
-    var count = parseInt($(itemcontainer).find(".counter").text());
+    var count = parseInt($(itemcontainer).find(".counter").val());
     if (item.length > 0) {
         item[0].count += count;
         C.set(ID, JSON.stringify(item[0]));
@@ -195,7 +199,7 @@ function showPopup(container) {
         var itemPrice = itemTemplate.find(".shopItemPrice")[0];
         itemPrice.innerHTML = product.price;
         var itemCount = itemTemplate.find(".shopItemCount")[0];
-        itemCount.innerHTML = product.count;
+        itemCount.value = product.count;
         var itemPriceSum = itemTemplate.find(".shopItemPriceSum")[0];
         itemPriceSum.innerHTML = parseInt(product.price) * parseInt(product.count);
         cartPopup.append(itemTemplate);
@@ -210,7 +214,7 @@ function showPopup(container) {
     $(".cart-item-counter-control.remove-one").on('click', removeOneItem);
     $(".cart-item-counter-control").on("click", function (event) {
         event.preventDefault();
-        value = parseInt($(this).siblings('.counter').text());
+        value = parseInt($(this).siblings('.counter').val());
         if (!value || parseInt(value) <= 0) value = 1;
         var productContainer = $(this).parents('.shopPopupItem');
         productContainer.find(".shopItemPriceSum")[0].innerHTML = parseInt(value) *
@@ -220,6 +224,23 @@ function showPopup(container) {
         data = getData() || [];
         updateSum(data);
     });
+
+    $(".shopItemCount").on('keydown', onlyNumeric);
+    $(".shopItemCount").on('blur change', countInput);
+    $(".shopItemCount").on('blur change', 
+        function () {
+            value = $(this).val();
+            if (!value || parseInt(value) <= 0) value = 1;
+            var productContainer = $(this).parents('.shopPopupItem');
+            productContainer.find(".shopItemPriceSum")[0].innerHTML = parseInt(value) *
+                parseInt(productContainer.find(".shopItemPrice")[0].innerHTML);
+            var prID = productContainer.find(".hiddenID")[0].innerHTML;
+            updateCount(prID, value);
+            data = getData() || [];
+            updateSum(data);
+        });
+
+
     $(".shopPopupItem .remove").click(function () {
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
@@ -294,10 +315,10 @@ function isProduct(p) {
 function addOneItem(event) {
     event.preventDefault();
     var counter = $(this).parent().parent().find(".counter");
-    var counterValue = parseInt(counter.text());
+    var counterValue = parseInt(counter.val());
     if (counterValue < 99) {
         counterValue++;
-        counter.text(counterValue);
+        counter.val(counterValue);
     }
     var data = getData() || [];
     var ID = $(this).data('device-id');
@@ -314,10 +335,10 @@ function addOneItem(event) {
 function removeOneItem(event) {
     event.preventDefault();
     var counter = $(this).parent().parent().find(".counter");
-    var counterValue = parseInt(counter.text());
+    var counterValue = parseInt(counter.val());
     if (counterValue > 1) {
         counterValue--;
-        counter.text(counterValue);
+        counter.val(counterValue);
     }
     var data = getData() || [];
     var ID = $(this).data('device-id');
@@ -328,5 +349,39 @@ function removeOneItem(event) {
         item[0].count = counterValue;
         C.set(ID, JSON.stringify(item[0]));
         updateCartCount();
+    }
+}
+
+function countInput(event) {
+    var inputItem = $(this);
+    if (inputItem.val().length == 0)
+        inputItem.val(1);
+
+    var data = getData() || [];
+    var ID = $(this).data('device-id');
+    var item = data.filter(function (element) {
+        return element.ID == ID;
+    });
+
+    if (item.length > 0) {
+        item[0].count = inputItem.val();
+        C.set(ID, JSON.stringify(item[0]));
+        updateCartCount();
+    }
+}
+
+function onlyNumeric(e) {
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+        // Allow: Ctrl+A, Command+A
+        (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+        // Allow: home, end, left, right, down, up
+        (e.keyCode >= 35 && e.keyCode <= 40)) {
+        // let it happen, don't do anything
+        return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
     }
 }

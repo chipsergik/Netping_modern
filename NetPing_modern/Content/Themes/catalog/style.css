@@ -88,6 +88,10 @@
     border-color: #a0a0a0;
 }
 
+   .device-catalog-item:hover{
+       background: #fafff9;
+   }
+
 .device-catalog-item a h3 {
     color: #000;
     display: inline;
