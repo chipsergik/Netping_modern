@@ -87,7 +87,7 @@
         };
 
         $('#cartPopup').append('<div id="cart-preloader" class="cart-preloader"></div>');
-        
+
         $.ajax({
             type: "POST",
             url: "/cart/SendCartMail",
@@ -231,7 +231,7 @@ function showPopup(container) {
 
     $(".shopItemCount").on('keydown', onlyNumeric);
     $(".shopItemCount").on('blur change', countInput);
-    $(".shopItemCount").on('blur change', 
+    $(".shopItemCount").on('blur change',
         function () {
             value = $(this).val();
             if (!value || parseInt(value) <= 0) value = 1;
@@ -355,8 +355,6 @@ function removeOneItem(event) {
         updateCartCount();
     }
 }
-<<<<<<< HEAD
-=======
 
 function countInput(event) {
     var inputItem = $(this);
@@ -391,4 +389,3 @@ function onlyNumeric(e) {
         e.preventDefault();
     }
 }
->>>>>>> 8e2d4ebe34f8f14312f8ddad1dd5fb87ed8a9201
