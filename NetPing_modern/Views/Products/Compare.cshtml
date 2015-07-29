@@ -29,7 +29,7 @@
     <script src="~/Content/JavaScript/compare.js"></script>
     <script>
         $(function() {
-            var deviceCount = @Model.Devices.Count;
+            var deviceCount = @(Model.Devices != null && Model.Devices.Count < 2 ? Model.Devices.Count : 0);
             var compareJs = new CompareJs($('#compareTable'), deviceCount);
             $('#showDistinct').change(function() {
                 if ($(this).is(':checked')) {

@@ -124,8 +124,9 @@ namespace NetPing_modern.Controllers
             sections.ForEach(m => model.Sections.Add(m));
 
 
-
-            return View(model);
+            //return View(model);
+        
+            return View("Adaptive_Index", model);
         }
     }
 }

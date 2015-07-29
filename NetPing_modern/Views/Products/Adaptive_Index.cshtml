@@ -1,0 +1,308 @@
+﻿@model NetPing_modern.Models.ProductsModel
+
+@{
+    ViewBag.Title = "Каталог";
+    Layout = "~/Views/Shared/Adaptive_master.cshtml";
+}
+
+@using System.Globalization
+@using NetPing.DAL
+@using NetPing.Models
+@using NetPing_modern.Resources.Views.Catalog
+
+@section Head_Css{
+    <link href="~/Content/Themes/catalog/style.css" rel="stylesheet" />
+}
+
+@helper GetPrice(double? price)
+{
+    if (price != null && price > 0)
+    {
+        string str = string.Format(new CultureInfo(1035), "{0:N0} ", price);
+        @str
+    }
+}
+@{
+    string titTitle = "";
+    string titDesc = "";
+    string[] names = null;
+    string[] links = null;
+    string desc1 = Index.Sec_monitoring_descr;
+    string desc2 = Index.Sec_power_descr;
+    string desc3 = Index.Sec_switch_descr;
+
+    string title1 = Index.Sec_monitoring;
+    string title2 = Index.Sec_power;
+    string title3 = Index.Sec_switch;
+
+    const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
+    const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
+    const string _swtchURL = "../../Content/Images/present_left_img3.png";
+    const string bgURL = "../../Content/Images/present_left.png";
+
+    string selectedSectionImage = "";
+    string section2ImgUrl = "";
+    string section3ImgUrl = "";
+
+    string s1 = "";
+    string l1 = "";
+    string s2 = "";
+    string l2 = "";
+    string t1 = "";
+    string t2 = "";
+
+
+    switch ((string)ViewBag.id)
+    {
+        case "_nping_bases":
+            {
+                selectedSectionImage = _nping_basesURL;
+                section2ImgUrl = _nping_powerURL;
+                section3ImgUrl = _swtchURL;
+
+                titTitle = title1;
+                titDesc = desc1;
+                t1 = title2;
+                t2 = title3;
+                s1 = desc2;
+                s2 = desc3;
+                l1 = "?id=_nping_power";
+                l2 = "?id=_swtch";
+                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
+                links = new[] { "_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr" };
+                break;
+            }
+        case "_nping_power":
+            {
+                selectedSectionImage = _nping_powerURL;
+                section2ImgUrl = _nping_basesURL;
+                section3ImgUrl = _swtchURL;
+
+                titTitle = title2;
+                titDesc = desc2;
+                t1 = title1;
+                t2 = title3;
+                s1 = desc1;
+                s2 = desc3;
+                l1 = "?id=_nping_bases";
+                l2 = "?id=_swtch";
+                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
+                links = new[] { "_nping_power", "_acces_sensr", "_acces_mains", "_solut_power" };
+                break;
+            }
+        case "_swtch":
+            {
+                selectedSectionImage = _swtchURL;
+                section2ImgUrl = _nping_basesURL;
+                section3ImgUrl = _nping_powerURL;
+
+                titTitle = title3;
+                titDesc = desc3;
+                t1 = title1;
+                t2 = title2;
+                s1 = desc1;
+                s2 = desc2;
+                l1 = "?id=_nping_bases";
+                l2 = "?id=_nping_power";
+                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access, Index.Sec_sub_solutions };
+                links = new[] { "_swtch", "_acces_mains", "_solut_poe" };
+                break;
+            }
+    }
+}
+
+<div class="row">
+    <div class="col-xs-5 col-sm-5 col-md-3">
+        <div class="catalog-menu">
+            <a href="/solutions/kommutatory-ethernet/re6enija-na-osnove-POE">
+                <div class="menu-item-icon solutions-icon"></div>
+                <div class="menu-item-title">
+                    Готовые<br />решения
+                </div>
+                <div class="menu-item-body">
+                    Конфигурации для типовых задач
+                </div>
+            </a>
+            <a href="/products/monitoring-servernoj">
+                <div class="menu-item-icon monitoring-icon"></div>
+                <div class="menu-item-title">
+                    Мониторинг<br />датчиков
+                </div>
+                <div class="menu-item-body">
+                    Удалённый мониторинг различных датчиков по сети Internet/Ethernet
+                </div>
+            </a>
+            <a href="/products/upravljaemye-rozetki-ip-pdu">
+                <div class="menu-item-icon power-icon"></div>
+                <div class="menu-item-title">
+                    Управление<br />электропитанием
+                </div>
+                <div class="menu-item-body">
+                    Устройства удаленного управления питанием по сети Internet/Ethernet
+                </div>
+            </a>
+            <a href="/products/kommutatory-ethernet">
+                <div class="menu-item-icon switch-icon"></div>
+                <div class="menu-item-title">
+                    Коммутаторы Ethernet<br />и POE устройства
+                </div>
+                <div class="menu-item-body">
+                    Управляемые и неуправляемые коммутаторы Ethernet и POE устройства
+                </div>
+            </a>
+            @*<a href="#">
+                <div class="menu-item-icon plugin-icon"></div>
+                <div class="menu-item-title">
+                    Утилиты
+                </div>
+                <div class="menu-item-body">
+                    Утилиты для настройки функционирования устройств
+                </div>
+            </a>*@
+            <a href="/products/monitoring-servernoj/sensors">
+                <div class="menu-item-icon sensor-icon"></div>
+                <div class="menu-item-title">
+                    Датчики<br />устройств Netping
+                </div>
+                <div class="menu-item-body">
+                    Датчики, применяемые в схемах функционирования устройств Netping
+                </div>
+            </a>
+            <a href="/products/monitoring-servernoj/accessories">
+                <div class="menu-item-icon accessory-icon"></div>
+                <div class="menu-item-title">
+                    Аксессуары<br />для устройств Netping
+                </div>
+                <div class="menu-item-body">
+                    Аксессуары, дополняющие функционирование устройств Netping
+                </div>
+            </a>
+        </div>
+        <div class="catalog-menu additional-catalog">
+            <a href="/dev">
+                <div class="menu-item-icon inwork-icon"></div>
+                <div class="menu-item-title">
+                    Разрабатываемые устройства
+                </div>
+                <div class="menu-item-body">
+                    Идеи, находящиеся в стадии воплощения
+                </div>
+            </a>
+            @*<a href="#">
+                <div class="menu-item-icon archive-icon"></div>
+                <div class="menu-item-title">
+                    Архив устройств
+                </div>
+                <div class="menu-item-body">
+                    Устройства, снятые с производства
+                </div>
+            </a>*@
+        </div>
+    </div>
+    <div class="col-xs-7 col-sm-7 col-md-9 catalog-content">
+        <h1>
+            @Model.ActiveSection.FormattedTitle
+        </h1>
+        <h2>
+            @Model.ActiveSection.Description
+        </h2>
+        <div class="device-catalog">
+            @using (Html.BeginForm("Compare", "Catalog", FormMethod.Get))
+            {
+                foreach (Device device in Model.Devices)
+                {
+                    string link = "/products/" + @device.Url;
+
+
+
+                    <div class="device-catalog-item row cat_item">
+                        <div style="display: none">
+                            <p class="Price">
+                                @device.Price
+                            </p>
+                            <p class="ID">
+                                @device.Name.Id
+                            </p>
+                            <p class="Key">
+                                @device.Url
+                            </p>
+                            <p class="Name">
+                                @device.Name.Name
+                            </p>
+                            <p class="PhotoURL">
+                                @device.GetCoverPhoto(false).Url
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-lg-offset-3 col-lg-9">
+                            <a href="@link"><h3>@device.Name.Name</h3></a>
+                            @{string className = "new";}
+                            @if (!String.IsNullOrWhiteSpace(device.Label.Name))
+                            {
+                                switch (device.Label.OwnNameFromPath)
+                                {
+                                    case "New":
+                                        {
+                                            className = "new";
+                                            break;
+                                        }
+                                    case "EOL":
+                                        {
+                                            className = "eol";
+                                            break;
+                                        }
+                                    case "Archive":
+                                        {
+                                            className = "archive";
+                                            break;
+                                        }
+                                }
+                                <span class="label label-@className">@device.Label.Name</span>
+                            }
+                            else
+                            {
+                                <span class="label label-@className">Новинка</span>
+                            }
+                        </div>
+                        <div class="col-lg-3 col-xs-3">
+                            <img src="@device.GetCoverPhoto(true).Url" alt="@device.Name.Name" title="@device.Name.Name" />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="device-item-content">
+                                @Html.Raw(device.Short_description)
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-3 device-item-buttons">
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-12 price">
+                                    <span>@device.Price</span> руб.
+                                </div>
+
+                                <div class="col-xs-6 col-lg-12 to-cart button-block text-right ">
+                                    <input type="text" class="btn btn-info counter" data-device-id="@device.Name.Id" value="1" />
+                                    <div class="add-remove">
+                                        <button data-device-id="@device.Name.Id" class="btn btn-info count-button add">+</button>
+                                        <button data-device-id="@device.Name.Id" class="btn btn-info count-button remove">-</button>
+                                    </div>
+
+                                    <div data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-12 button-block more-info">
+                                    <a href="@link" class="btn btn-default">
+                                        Узнать больше
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-lg-12 compare text-right button-block">
+                                    <input type="checkbox" id="check-@device.Id" name="compare" value="@device.Id" /><label for="check-@device.Id" class="checkbox"></label>
+                                    <button class="btn btn-default">Сравнить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                }
+            }
+        </div>
+    </div>
+</div>

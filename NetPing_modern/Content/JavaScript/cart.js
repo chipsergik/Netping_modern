@@ -5,20 +5,27 @@
         addProduct('body');
     });
 
-    $('.cat_item .action .price span').on("click", function () {
-        var item = $(this).parents('.cat_item');
-        addProduct(item);
+    $(".to-cart .counter").on("click", function (event) {
+        event.preventDefault();
     });
 
-    $(".header a.cart").on("click", function () {
-        showPopup();
-    })
+    $(".to-cart .add").on("click", addOneItem);
+
+    $(".to-cart .remove").on("click", removeOneItem);
+
+
+    //$("#cartPopup").click(function (event) {
+    //    event.preventDefault();
+    //    event.stopPropagation();
+    //});
 
     $("#clearCartButton").click(function () {
         clearCart();
     });
 
-    $("#closeCartButton, .closePopup").click(function () {
+    $("#closeCartButton").click(function (event) {
+        event.preventDefault();
+        event.stopPropagation();
         hidePopup();
     });
 
@@ -26,6 +33,7 @@
         $("#cartItems").hide();
         $("#cartAbout").show();
         $("#continueCartButton").hide();
+        $("#closeCartButton").hide();
         $("#sendDataCartButton").show();
         $("#clearCartButton").hide();
         $("#backCartButton").show();
@@ -35,6 +43,7 @@
         $("#continueCartButton").show();
         $("#sendDataCartButton").hide();
         $("#clearCartButton").show();
+        $("#closeCartButton").show();
         $("#backCartButton").hide();
         $("#cartAbout").hide();
         $("#cartItems").show();
@@ -78,7 +87,7 @@
         };
 
         $('#cartPopup').append('<div id="cart-preloader" class="cart-preloader"></div>');
-        
+
         $.ajax({
             type: "POST",
             url: "/cart/SendCartMail",
@@ -94,7 +103,11 @@
             },
             dataType: "json"
         });
-    })
+    });
+
+    $('.device-item-buttons input[type=text]').on('keydown', onlyNumeric);
+
+    $('.device-item-buttons input[type=text]').on('blur change', countInput);
 })
 
 var C = jaaulde.utils.cookies;
@@ -104,13 +117,32 @@ C.setOptions({ expiresAt: 1 });
 var isCartPopupOpened = false;
 
 function updateCartCount() {
-    console.log('upd');
     var data = getData() || [];
     var cartcount = 0;
+    $('.in-cart.btn-primary').removeClass('in-cart').addClass('buy-button');
+    $('.counter.in-cart').removeClass('in-cart').val(1);
     for (i = 0; i < data.length; i++) {
         cartcount += parseInt(data[i].count);
+        $('.buy-button[data-device-id="' + data[i].ID + '"]').removeClass('buy-button').addClass('in-cart')
+                                                        .siblings('.counter').addClass('in-cart').val(data[i].count);
     }
-    $('.cart_count').text(cartcount);
+    $('.cart-count').text(cartcount);
+
+    $(".header .cart, .btn-primary.in-cart").off("click");
+    $('.cat_item .action .price span, .buy-button').off("click");
+    $(".header .cart, .btn-primary.in-cart").on("click", function (event) {
+        var container = $(this);
+        showPopup(container);
+    });
+
+    $('.cat_item .action .price span, .buy-button').on("click", function (event) {
+        var item = $(this).parents('.cat_item');
+        addProduct(item);
+    });
+    $('#continueCartButton').removeAttr('disabled');
+    if (data.length == 0)
+        $('#continueCartButton').attr('disabled', 'disabled');
+
 }
 
 function addProduct(itemcontainer) {
@@ -123,14 +155,15 @@ function addProduct(itemcontainer) {
     var item = data.filter(function (element) {
         return element.ID == ID;
     });
+    var count = parseInt($(itemcontainer).find(".counter").val());
     if (item.length > 0) {
-        item[0].count++
+        item[0].count += count;
         C.set(ID, JSON.stringify(item[0]));
     }
     else {
         C.set(ID, JSON.stringify({
             name: name,
-            count: 1,
+            count: count,
             price: price,
             photoURL: photoURL,
             key: key,
@@ -148,7 +181,10 @@ function clearCart() {
 }
 
 
-function showPopup() {
+function showPopup(container) {
+    if (isCartPopupOpened)
+        return;
+
     isCartPopupOpened = true;
     var cartPopup = $('#cartItems');
     cartPopup.empty();
@@ -166,37 +202,67 @@ function showPopup() {
         itemName.innerHTML = '<a href="/products/' + product.key + '">' + product.name + '</a>';
         var itemPrice = itemTemplate.find(".shopItemPrice")[0];
         itemPrice.innerHTML = product.price;
-        var itemCount = itemTemplate.find(".shopItemCountInput")[0];
+        var itemCount = itemTemplate.find(".shopItemCount")[0];
         itemCount.value = product.count;
         var itemPriceSum = itemTemplate.find(".shopItemPriceSum")[0];
         itemPriceSum.innerHTML = parseInt(product.price) * parseInt(product.count);
         cartPopup.append(itemTemplate);
+        var itemCountAdd = itemTemplate.find(".add-one")[0];
+        $(itemCountAdd).data("device-id", product.ID);
+
+        var itemCountRemove = itemTemplate.find(".remove-one")[0];
+        $(itemCountRemove).data("device-id", product.ID);
     }
 
-    $(".shopItemCountInput").on("blur, change", function () {
-        this.value = parseInt(this.value);
-        if (!this.value || parseInt(this.value) <= 0) this.value = 1;
+    $(".cart-item-counter-control.add-one").on('click', addOneItem);
+    $(".cart-item-counter-control.remove-one").on('click', removeOneItem);
+    $(".cart-item-counter-control").on("click", function (event) {
+        event.preventDefault();
+        value = parseInt($(this).siblings('.counter').val());
+        if (!value || parseInt(value) <= 0) value = 1;
         var productContainer = $(this).parents('.shopPopupItem');
-        productContainer.find(".shopItemPriceSum")[0].innerHTML = parseInt(this.value) *
+        productContainer.find(".shopItemPriceSum")[0].innerHTML = parseInt(value) *
             parseInt(productContainer.find(".shopItemPrice")[0].innerHTML);
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
-        updateCount(prID, this.value);
+        updateCount(prID, value);
         data = getData() || [];
         updateSum(data);
     });
+
+    $(".shopItemCount").on('keydown', onlyNumeric);
+    $(".shopItemCount").on('blur change', countInput);
+    $(".shopItemCount").on('blur change',
+        function () {
+            value = $(this).val();
+            if (!value || parseInt(value) <= 0) value = 1;
+            var productContainer = $(this).parents('.shopPopupItem');
+            productContainer.find(".shopItemPriceSum")[0].innerHTML = parseInt(value) *
+                parseInt(productContainer.find(".shopItemPrice")[0].innerHTML);
+            var prID = productContainer.find(".hiddenID")[0].innerHTML;
+            updateCount(prID, value);
+            data = getData() || [];
+            updateSum(data);
+        });
+
+
     $(".shopPopupItem .remove").click(function () {
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
         data = getData() || [];
         productContainer.remove();
+        updateCartCount();
+        updateSum(data);
         if ($("#cartPopup").find(".shopPopupItem").length == 0) hidePopup();
     });
+    container.append($('#cartPopup'));
     $('.overlayCart, #cartPopup').show();
 
     $('.closeCart, .overlayCart').click(function () {
         hidePopup();
     });
+
+
 
     function updateCount(ID, count) {
         var p = C.get(ID);
@@ -218,13 +284,13 @@ function showPopup() {
         }
     });
 
-    $('body').addClass('noscroll');
 }
 
 function hidePopup() {
+    $('body').append($('#cartPopup'));
     $('.overlayCart, #cartPopup').hide();
-    iscartPopupOpened = false;
-    $('body').removeClass('noscroll');
+
+    isCartPopupOpened = false;
     updateCartCount();
 }
 
@@ -250,3 +316,76 @@ function isProduct(p) {
         p.hasOwnProperty("key");
 }
 
+function addOneItem(event) {
+    event.preventDefault();
+    var counter = $(this).parent().parent().find(".counter");
+    var counterValue = parseInt(counter.val());
+    if (counterValue < 99) {
+        counterValue++;
+        counter.val(counterValue);
+    }
+    var data = getData() || [];
+    var ID = $(this).data('device-id');
+    var item = data.filter(function (element) {
+        return element.ID == ID;
+    });
+    if (item.length > 0) {
+        item[0].count = counterValue;
+        C.set(ID, JSON.stringify(item[0]));
+        updateCartCount();
+    }
+}
+
+function removeOneItem(event) {
+    event.preventDefault();
+    var counter = $(this).parent().parent().find(".counter");
+    var counterValue = parseInt(counter.val());
+    if (counterValue > 1) {
+        counterValue--;
+        counter.val(counterValue);
+    }
+    var data = getData() || [];
+    var ID = $(this).data('device-id');
+    var item = data.filter(function (element) {
+        return element.ID == ID;
+    });
+    if (item.length > 0) {
+        item[0].count = counterValue;
+        C.set(ID, JSON.stringify(item[0]));
+        updateCartCount();
+    }
+}
+
+function countInput(event) {
+    var inputItem = $(this);
+    if (inputItem.val().length == 0)
+        inputItem.val(1);
+
+    var data = getData() || [];
+    var ID = $(this).data('device-id');
+    var item = data.filter(function (element) {
+        return element.ID == ID;
+    });
+
+    if (item.length > 0) {
+        item[0].count = inputItem.val();
+        C.set(ID, JSON.stringify(item[0]));
+        updateCartCount();
+    }
+}
+
+function onlyNumeric(e) {
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+        // Allow: Ctrl+A, Command+A
+        (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+        // Allow: home, end, left, right, down, up
+        (e.keyCode >= 35 && e.keyCode <= 40)) {
+        // let it happen, don't do anything
+        return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+}

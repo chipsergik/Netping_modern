@@ -24,10 +24,5 @@ namespace NetPing.Controllers
 
             return RedirectPermanent("/products/" + device.Url);
         }
-
-        public ActionResult Development()
-        {
-            return View();
-        }
     }
 }

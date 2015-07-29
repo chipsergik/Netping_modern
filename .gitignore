@@ -59,4 +59,8 @@ NetPing_modern/bin/
 *.scc
 *.bak
 NetPing_modern/Content/Data/netping.xml
+<<<<<<< HEAD
 NetPing_modern.v12.suo
+=======
+NetPing_modern.v12.suo
+>>>>>>> origin/FlatCatalog

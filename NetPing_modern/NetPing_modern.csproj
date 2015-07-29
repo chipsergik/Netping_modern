@@ -430,6 +430,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="banner.gif" />
+    <Content Include="Content\Images\background-adaptive.png" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\backround_main.png" />
     <Content Include="Content\Images\best_sales.png" />
@@ -460,9 +461,29 @@
     <Content Include="Content\Images\CatalogPageImg\submenu_circle.png" />
     <Content Include="Content\Images\CatalogPageImg\tabs_li_arrow.png" />
     <Content Include="Content\Images\CatalogPageImg\tabs_title_bg.png" />
+    <Content Include="Content\Images\check.png" />
     <Content Include="Content\Images\content_news.png" />
     <Content Include="Content\Images\content_news_latest_rrs.png" />
     <Content Include="Content\Images\footer_bg.png" />
+    <Content Include="Content\Images\icons\accessory.png" />
+    <Content Include="Content\Images\icons\archive.png" />
+    <Content Include="Content\Images\icons\cart.png" />
+    <Content Include="Content\Images\icons\doc-panel.png" />
+    <Content Include="Content\Images\icons\find.png" />
+    <Content Include="Content\Images\icons\inwork.png" />
+    <Content Include="Content\Images\icons\li-closed.png" />
+    <Content Include="Content\Images\icons\li-nochild.png" />
+    <Content Include="Content\Images\icons\li-opened.png" />
+    <Content Include="Content\Images\icons\monitoring.png" />
+    <Content Include="Content\Images\icons\new.png" />
+    <Content Include="Content\Images\icons\pdf.png" />
+    <Content Include="Content\Images\icons\plugin.png" />
+    <Content Include="Content\Images\icons\popular.png" />
+    <Content Include="Content\Images\icons\power.png" />
+    <Content Include="Content\Images\icons\remove-icon.png" />
+    <Content Include="Content\Images\icons\sensor.png" />
+    <Content Include="Content\Images\icons\solutions.png" />
+    <Content Include="Content\Images\icons\switch.png" />
     <Content Include="Content\Images\inwork.png" />
     <Content Include="Content\Images\magnify.cur" />
     <Content Include="Content\Images\preloader.gif" />
@@ -551,13 +572,21 @@
     <Content Include="Content\JavaScript\ProductItem.js" />
     <Content Include="Content\JavaScript\responsiveslides.min.js" />
     <Content Include="Content\JavaScript\slider1.js" />
+    <Content Include="Content\Themes\adaptive-header-footer.css" />
+    <Content Include="Content\Themes\adaptive.css" />
+    <Content Include="Content\Themes\adaptive_master.css" />
     <Content Include="Content\Themes\blog.css" />
+    <Content Include="Content\Themes\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Themes\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Themes\bootstrap\bootstrap.css" />
+    <Content Include="Content\Themes\bootstrap\bootstrap.min.css" />
     <Content Include="Content\Themes\cart.css" />
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
+    <Content Include="Content\Themes\cart\cart.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
+    <Content Include="Content\Themes\catalog\style.css" />
     <Content Include="Content\Themes\compare.css" />
-    <Content Include="Content\Themes\DevelopmentPageStyle.css" />
     <Content Include="Content\Themes\header-footer.css" />
     <Content Include="Content\Themes\jquery.datetimepicker.css" />
     <Content Include="Content\Themes\korzina.css" />
@@ -571,12 +600,27 @@
     <Content Include="Content\Themes\shutter.css" />
     <Content Include="Content\Themes\slide.css" />
     <Content Include="Content\Themes\tinycarousel.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Price\price_template.docx" />
     <Content Include="google65e951962d61c85e.html" />
+    <Content Include="Icon.png" />
     <Content Include="libtidy.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\CartData.xml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Themes\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Themes\bootstrap\bootstrap.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="yandex_582f0c5a998f9328.txt" />
     <None Include="Properties\PublishProfiles\Local public.pubxml" />
     <None Include="Properties\PublishProfiles\netping_pub.pubxml" />
@@ -587,7 +631,13 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Products\UserGuides.cshtml" />
-    <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
+    <Content Include="Views\Shared\Adaptive_master.cshtml" />
+    <Content Include="Views\InnerPages\Dev.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Shared\Adaptive-Footer.cshtml" />
+    <Content Include="Views\Shared\Adaptive-Header.cshtml" />
+    <Content Include="Views\Products\Adaptive_Index.cshtml" />
+	<Content Include="Views\InnerPages\UCacheAsync.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -615,7 +665,6 @@
     <Content Include="Views\Shared\Blog_master.cshtml" />
     <Content Include="Views\Blog\NoPosts.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Product_item\Development.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -623,6 +672,7 @@
     <Folder Include="Pub\Files\" />
     <Folder Include="Pub\Photos\" />
     <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Product_item\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
