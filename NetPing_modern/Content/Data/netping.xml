@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2015-07-24 00:12">
+<yml_catalog date="2015-07-30 11:46">
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -401,7 +401,7 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
       <offer id="107" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/humidity-sensor-ws2​</url>
+        <url>http://www.netping.ru/products/humidity-sensor-ws2</url>
         <price>1690</price>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
@@ -924,5 +924,4 @@
       </offer>
     </offers>
   </shop>
-</yml_catalog>>
 </yml_catalog>
