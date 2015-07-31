@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <yml_catalog date="2015-07-30 11:46">
+=======
+<yml_catalog date="2015-07-30 12:26">
+>>>>>>> 4418d09a38e1100653195e3de7174055fec24148
 =======
 <yml_catalog date="2015-07-30 12:26">
 >>>>>>> 4418d09a38e1100653195e3de7174055fec24148
@@ -369,6 +373,7 @@
         <country_of_origin>Россия</country_of_origin>
       </offer>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <offer id="45" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
         <price>1430</price>
@@ -585,6 +590,8 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
+=======
+>>>>>>> 4418d09a38e1100653195e3de7174055fec24148
 =======
 >>>>>>> 4418d09a38e1100653195e3de7174055fec24148
       <offer id="46" type="vendor.model" available="true">
