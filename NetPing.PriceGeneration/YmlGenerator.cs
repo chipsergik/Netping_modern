@@ -10,6 +10,7 @@ namespace NetPing.PriceGeneration
         public static void Generate(YmlCatalog catalog, string outputFileName)
         {
             var serializer = new XmlSerializer(typeof(YmlCatalog), "");
+            File.Delete(outputFileName);
             using (Stream textWriter = File.OpenWrite(outputFileName))
             {
                 using (var writer = new XmlTextWriter(textWriter, null))
