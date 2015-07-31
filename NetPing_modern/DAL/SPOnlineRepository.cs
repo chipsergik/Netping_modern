@@ -783,6 +783,11 @@ namespace NetPing.DAL
 
                     foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
                     {
+                        if (!(string.IsNullOrEmpty(offerNode.Device.Label.OwnNameFromPath) || offerNode.Device.Label.OwnNameFromPath.Equals("New", StringComparison.CurrentCultureIgnoreCase)))
+                        {
+                            break;
+                        }
+
                         string shortDescription = offerNode.Device.Short_description;
                         string descr = string.Empty;
                         if (!string.IsNullOrWhiteSpace(shortDescription))

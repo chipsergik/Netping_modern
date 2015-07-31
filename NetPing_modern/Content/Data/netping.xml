@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<<<<<<< HEAD
 <yml_catalog date="2015-07-30 11:46">
+=======
+<yml_catalog date="2015-07-30 12:26">
+>>>>>>> 4418d09a38e1100653195e3de7174055fec24148
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -180,24 +184,6 @@
         <vendorCode>Устройство NetPing IO v2</vendorCode>
         <model>Устройство NetPing IO v2</model>
         <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления об их срабатывании</description>
-        <sales_notes>предоплата</sales_notes>
-        <manufacturer_warranty>P2Y</manufacturer_warranty>
-        <country_of_origin>Россия</country_of_origin>
-      </offer>
-      <offer id="48" type="vendor.model" available="true">
-        <url>http://www.netping.ru/products/uniping-server-solution</url>
-        <price>6072</price>
-        <currencyId>RUR</currencyId>
-        <categoryId>6</categoryId>
-        <picture>http://www.netping.ru/Pub/Photos/_nping_bases_UniPing_server_big.png</picture>
-        <store>true</store>
-        <pickup>true</pickup>
-        <delivery>true</delivery>
-        <typePrefix />
-        <vendor>NetPing</vendor>
-        <vendorCode>Устройство UniPing server solution</vendorCode>
-        <model>Устройство UniPing server solution</model>
-        <description>Устройство удалённого мониторинга датчиков по сети Ethernet/Internet. Позволяет удалённо получать информацию о состоянии датчиков и уведомления о срабатывании датчиков</description>
         <sales_notes>предоплата</sales_notes>
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
@@ -382,6 +368,7 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
+<<<<<<< HEAD
       <offer id="45" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/humidity-sensor-ws1</url>
         <price>1430</price>
@@ -598,6 +585,8 @@
         <manufacturer_warranty>P2Y</manufacturer_warranty>
         <country_of_origin>Россия</country_of_origin>
       </offer>
+=======
+>>>>>>> 4418d09a38e1100653195e3de7174055fec24148
       <offer id="46" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/netping-mini-ups</url>
         <price>2435</price>
