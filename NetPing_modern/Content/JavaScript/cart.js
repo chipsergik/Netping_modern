@@ -245,7 +245,7 @@ function showPopup(container) {
         });
 
 
-    $(".shopPopupItem .remove").click(function () {
+    $(".shopPopupItem .remove").click(function (event) {
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
@@ -254,6 +254,8 @@ function showPopup(container) {
         updateCartCount();
         updateSum(data);
         if ($("#cartPopup").find(".shopPopupItem").length == 0) hidePopup();
+        event.preventDefault();
+        event.stopPropagation();
     });
     container.append($('#cartPopup'));
     $('.overlayCart, #cartPopup').show();
