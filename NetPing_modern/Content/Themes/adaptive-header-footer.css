@@ -76,32 +76,6 @@
 
 
 
-.header .cart {
-    text-align: right;
-    font-size: 14px;
-    color: #000;
-}
-
-    .header .cart .cart-icon {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        background-image: url('../Images/icons/cart.png');
-        vertical-align: bottom;
-        margin-right: 10px;
-    }
-
-    .header .cart .cart-text {
-        text-decoration: underline;
-    }
-
-    .header .cart .cart-count {
-        color: #f6635e;
-        text-decoration: none;
-        margin-left: 8px;
-        font-size: 18px;
-        font-weight: 700;
-    }
 
 .header a {
     color: inherit;
