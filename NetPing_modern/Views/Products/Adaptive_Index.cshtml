@@ -12,6 +12,11 @@
 
 @section Head_Css{
     <link href="~/Content/Themes/catalog/style.css" rel="stylesheet" />
+
+    @if (NetpingHelpers.Helpers.IsCultureEng)
+    {
+        <link href="~/Content/Themes/catalog/style.en.css" rel="stylesheet" />
+    }
 }
 
 @helper GetPrice(double? price)
@@ -117,7 +122,7 @@
             <a href="/solutions/kommutatory-ethernet/re6enija-na-osnove-POE">
                 <div class="menu-item-icon solutions-icon"></div>
                 <div class="menu-item-title">
-                    Готовые<br />решения
+                    @Html.Raw(Index.Sec_sub_solutions)
                 </div>
                 <div class="menu-item-body">
                     Конфигурации для типовых задач
@@ -126,55 +131,55 @@
             <a href="/products/monitoring-servernoj">
                 <div class="menu-item-icon monitoring-icon"></div>
                 <div class="menu-item-title">
-                    Мониторинг<br />датчиков
+                    @Html.Raw(Index.Sec_monitoring)
                 </div>
                 <div class="menu-item-body">
-                    Удалённый мониторинг различных датчиков по сети Internet/Ethernet
+                    @Html.Raw(Index.Sec_monitoring_descr)
                 </div>
             </a>
             <a href="/products/upravljaemye-rozetki-ip-pdu">
                 <div class="menu-item-icon power-icon"></div>
                 <div class="menu-item-title">
-                    Управление<br />электропитанием
+                    @Html.Raw(Index.Sec_power)
                 </div>
                 <div class="menu-item-body">
-                    Устройства удаленного управления питанием по сети Internet/Ethernet
+                    @Html.Raw(Index.Sec_power_descr)
                 </div>
             </a>
             <a href="/products/kommutatory-ethernet">
                 <div class="menu-item-icon switch-icon"></div>
                 <div class="menu-item-title">
-                    Коммутаторы Ethernet<br />и POE устройства
+                    @Html.Raw(Index.Sec_switch)
                 </div>
                 <div class="menu-item-body">
-                    Управляемые и неуправляемые коммутаторы Ethernet и POE устройства
+                    @Html.Raw(Index.Sec_switch_descr)
                 </div>
             </a>
             @*<a href="#">
-                <div class="menu-item-icon plugin-icon"></div>
-                <div class="menu-item-title">
-                    Утилиты
-                </div>
-                <div class="menu-item-body">
-                    Утилиты для настройки функционирования устройств
-                </div>
-            </a>*@
+                    <div class="menu-item-icon plugin-icon"></div>
+                    <div class="menu-item-title">
+                        Утилиты
+                    </div>
+                    <div class="menu-item-body">
+                        Утилиты для настройки функционирования устройств
+                    </div>
+                </a>*@
             <a href="/products/monitoring-servernoj/sensors">
                 <div class="menu-item-icon sensor-icon"></div>
                 <div class="menu-item-title">
-                    Датчики<br />устройств Netping
+                    @Html.Raw(Index.Sec_sub_sensors)
                 </div>
                 <div class="menu-item-body">
-                    Датчики, применяемые в схемах функционирования устройств Netping
+                    @Html.Raw(Index.Sec_sub_sensors_descr)
                 </div>
             </a>
             <a href="/products/monitoring-servernoj/accessories">
                 <div class="menu-item-icon accessory-icon"></div>
                 <div class="menu-item-title">
-                    Аксессуары<br />для устройств Netping
+                    @Html.Raw(Index.Sec_sub_access)
                 </div>
                 <div class="menu-item-body">
-                    Аксессуары, дополняющие функционирование устройств Netping
+                    @Html.Raw(Index.Sec_sub_access_descr)
                 </div>
             </a>
         </div>
@@ -182,21 +187,21 @@
             <a href="/dev">
                 <div class="menu-item-icon inwork-icon"></div>
                 <div class="menu-item-title">
-                    Разрабатываемые устройства
+                    @Html.Raw(Index.Sec_dev)
                 </div>
                 <div class="menu-item-body">
-                    Идеи, находящиеся в стадии воплощения
+                    @Html.Raw(Index.Sec_dev_descr)
                 </div>
             </a>
             @*<a href="#">
-                <div class="menu-item-icon archive-icon"></div>
-                <div class="menu-item-title">
-                    Архив устройств
-                </div>
-                <div class="menu-item-body">
-                    Устройства, снятые с производства
-                </div>
-            </a>*@
+                    <div class="menu-item-icon archive-icon"></div>
+                    <div class="menu-item-title">
+                        Архив устройств
+                    </div>
+                    <div class="menu-item-body">
+                        Устройства, снятые с производства
+                    </div>
+                </a>*@
         </div>
     </div>
     <div class="col-xs-7 col-sm-7 col-md-9 catalog-content">
@@ -290,12 +295,12 @@
                             <div class="row">
                                 <div class="col-xs-6 col-lg-12 button-block more-info">
                                     <a href="@link" class="btn btn-default">
-                                        Узнать больше
+                                        @Index.Btn_read_more
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-lg-12 compare text-right button-block">
                                     <input type="checkbox" id="check-@device.Id" name="compare" value="@device.Id" /><label for="check-@device.Id" class="checkbox"></label>
-                                    <button class="btn btn-default">Сравнить</button>
+                                    <button class="btn btn-default">@Index.Txt_compare</button>
                                 </div>
                             </div>
                         </div>
