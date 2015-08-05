@@ -2,6 +2,7 @@
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <yml_catalog date="2015-07-30 11:46">
 =======
 <yml_catalog date="2015-07-30 12:26">
@@ -9,6 +10,9 @@
 =======
 <yml_catalog date="2015-07-30 12:26">
 >>>>>>> 4418d09a38e1100653195e3de7174055fec24148
+=======
+<yml_catalog date="2015-08-05 13:05">
+>>>>>>> 48acc27274ad0395ec72ef87b5779f2e2d17e14e
   <shop>
     <name>Netping.ru</name>
     <company>Netping.ru</company>
@@ -686,6 +690,241 @@
       </offer>
       <offer id="24" type="vendor.model" available="true">
         <url>http://www.netping.ru/products/vap11n-wifi-bridge</url>
+        <price>1700</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_VAP11N_WiFi_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Адаптер WiFi VAP11N</vendorCode>
+        <model>Адаптер WiFi VAP11N</model>
+        <description>Адаптер, позволяющий подключать устройства NetPing к WiFi сети. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="29" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/injector-poe-802-3-af</url>
+        <price>532</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_Inj_af_POE_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Инжектор питания POE (стандарта 802.3af)</vendorCode>
+        <model>Инжектор питания POE (стандарта 802.3af)</model>
+        <description>Инжектор POE, обеспечивает питание по кабелю Ethernet устройств, которые поддерживают стандарт POE IEEE 802.3af. </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="40" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/POE-splitter-12V</url>
+        <price>870</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_split_af_POE_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Сплиттер POE 12В (стандарта 802.3af)</vendorCode>
+        <model>Сплиттер POE 12В (стандарта 802.3af)</model>
+        <description>Сплиттер стандарта POE IEEE 802.3af. Позволяет получить питание 12В для любого внешнего устройства от сети Ethernet с поддержкой стандарта передачи питания POE.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="34" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-adapter-48V-1_5A</url>
+        <price>1055</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_Power_48V_ps_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Блок питания 48В 1,5А (мод.HRS48005)</vendorCode>
+        <model>Блок питания 48В 1,5А (мод.HRS48005)</model>
+        <description>Блок питания с выходным напряжением 48В предназначен для питания POE инжекторов, например, Netping NP-SM4 </description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="18" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-5m</url>
+        <price>684</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire5m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Удлинитель кабеля 1-wire, 5м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 5м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="16" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-10m</url>
+        <price>862</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire10m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Удлинитель кабеля 1-wire, 10м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 10м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="17" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/cable-extender-1-wire-2m</url>
+        <price>235</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_extender1wire2m_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Удлинитель кабеля 1-wire, 2м</vendorCode>
+        <model>Удлинитель кабеля 1-wire, 2м</model>
+        <description>Кабель-удлинитель для 1-wire датчиков. Позволяет удлинить шлейф 1-wire датчика и подключить 2 1-wire датчика к одному удлинителю.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="21" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-cable-extender-4m</url>
+        <price>250</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_sensors_extender4_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Удлинитель шлейфа датчика RC, 4м</vendorCode>
+        <model>Удлинитель шлейфа датчика RC, 4м</model>
+        <description>Позволяет увеличить длину шлейфа датчика на 4 м. Удлинители можно включать последовательно друг в друга для достижения нужной длины шлейфа датчика.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="13" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/splitter-1-wire-1-to-2</url>
+        <price>250</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_1to2Splitter1wire_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Сплиттер 1-wire, 3 розетки</vendorCode>
+        <model>Сплиттер 1-wire, 3 розетки</model>
+        <description>Разветвитель кабеля для подключения датчиков с интерфейсом 1-wire. Позволят разветвить один кабель на два.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="23" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-connection-board-v2</url>
+        <price>2255</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_v2_Connection_Board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</vendorCode>
+        <model>NetPing Сonnection board v2 (Коммутационная плата для Uniping v3)</model>
+        <description>Плата расширения для устройства Uniping v3 позволяет подключить датчики и исполнительные устройства при помощи клеммных контактов.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="20" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/netping-relay-board</url>
+        <price>2900</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_relay_board_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>NetPing Relay board (Плата реле для UniPing v3)</vendorCode>
+        <model>NetPing Relay board (Плата реле для UniPing v3)</model>
+        <description>Плата расширения для устройства Uniping v3. На плате установлено 16 низковольтных реле для управления внешними устройствами. При подключении платы дополнительные внешние датчики нельзя будет подключить к UniPing v3!</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="35" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-adapter-12V-0_5A</url>
+        <price>477</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_sensr_Power_sup_netping_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Блок питания 12В 0,5А (мод.HRS12005)</vendorCode>
+        <model>Блок питания 12В 0,5А (мод.HRS12005)</model>
+        <description>Адаптер питания, может использоваться для питания устройств NetPing и некоторых моделей управляемых коммутаторов.</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+      <offer id="19" type="vendor.model" available="true">
+        <url>http://www.netping.ru/products/power-adapter-netping-io-v2</url>
+        <price>216</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://www.netping.ru/Pub/Photos/_acces_mains_IO_power_adapter_big.png</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <typePrefix />
+        <vendor>NetPing</vendor>
+        <vendorCode>Переходник для NetPing IO v2</vendorCode>
+        <model>Переходник для NetPing IO v2</model>
+        <description> Позволяет подключить блок питания с круглым джеком 2.1 мм к NetPing IO v2</description>
+        <sales_notes>предоплата</sales_notes>
+        <manufacturer_warranty>P2Y</manufacturer_warranty>
+        <country_of_origin>Россия</country_of_origin>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>-bridge</url>
         <price>1700</price>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
