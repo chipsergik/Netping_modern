@@ -783,47 +783,59 @@ namespace NetPing.DAL
 
                     foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
                     {
-                        if (!(string.IsNullOrEmpty(offerNode.Device.Label.OwnNameFromPath) || offerNode.Device.Label.OwnNameFromPath.Equals("New", StringComparison.CurrentCultureIgnoreCase)))
+                        AddOffers(offerNode, shop, childCategoryNode);
+                        foreach (DeviceTreeNode subNode in offerNode.Nodes)
                         {
-                            break;
+                            AddOffers(subNode, shop, childCategoryNode);
                         }
-
-                        string shortDescription = offerNode.Device.Short_description;
-                        string descr = string.Empty;
-                        if (!string.IsNullOrWhiteSpace(shortDescription))
-                        {
-                            var htmlDoc = new HtmlDocument();
-
-                            htmlDoc.LoadHtml(shortDescription);
-                            var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
-                            if (ulNodes != null)
-                            {
-                                foreach (var ulNode in ulNodes)
-                                {
-                                    ulNode.Remove();
-                                }
-                            }
-                            descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
-                        }
-
-                        shop.Offers.Add(new Offer
-                                        {
-                                            Id = offerNode.Id,
-                                            Url = GetDeviceUrl(offerNode.Device),
-                                            Price = (int)(offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
-                                            CategoryId = childCategoryNode.Id,
-                                            Picture = offerNode.Device.GetCoverPhoto(true).Url,
-                                            TypePrefix = "", /*childCategoryNode.Name,*/
-                                            VendorCode = offerNode.Name,
-                                            Model = offerNode.Name,
-                                            Description = descr
-                                        });
                     }
                 }
             }
             shop.LocalDeliveryCost = 350;
 
             YmlGenerator.Generate(catalog, HttpContext.Current.Server.MapPath("/Content/Data/netping.xml"));
+        }
+
+        private static void AddOffers(DeviceTreeNode offerNode, Shop shop, DeviceTreeNode childCategoryNode)
+        {
+            if (!(string.IsNullOrEmpty(offerNode.Device.Label.OwnNameFromPath) ||
+                  offerNode.Device.Label.OwnNameFromPath.Equals("New", StringComparison.CurrentCultureIgnoreCase)))
+            {
+                return;
+            }
+
+            string shortDescription = offerNode.Device.Short_description;
+            string descr = string.Empty;
+            if (!string.IsNullOrWhiteSpace(shortDescription))
+            {
+                var htmlDoc = new HtmlDocument();
+
+                htmlDoc.LoadHtml(shortDescription);
+                var ulNodes = htmlDoc.DocumentNode.SelectNodes("//ul");
+                if (ulNodes != null)
+                {
+                    foreach (var ulNode in ulNodes)
+                    {
+                        ulNode.Remove();
+                    }
+                }
+                descr = htmlDoc.DocumentNode.InnerText.Replace("&#160;", " ");
+            }
+
+            shop.Offers.Add(new Offer
+                            {
+                                Id = offerNode.Id,
+                                Url = GetDeviceUrl(offerNode.Device),
+                                Price = (int) (offerNode.Device.Price.HasValue ? offerNode.Device.Price.Value : 0),
+                                CategoryId = childCategoryNode.Id,
+                                Picture = offerNode.Device.GetCoverPhoto(true).Url,
+                                TypePrefix = "",
+                                /*childCategoryNode.Name,*/
+                                VendorCode = offerNode.Name,
+                                Model = offerNode.Name,
+                                Description = descr
+                            });
+
         }
 
         public IEnumerable<Device> GetDevices(string id, string groupId)
