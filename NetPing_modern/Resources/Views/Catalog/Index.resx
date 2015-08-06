@@ -126,53 +126,59 @@
   <data name="Btn_read_more" xml:space="preserve">
     <value>More</value>
   </data>
+  <data name="CatalogName" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
   <data name="Page_title" xml:space="preserve">
     <value>NetPing devices catalog</value>
   </data>
+  <data name="Path_main" xml:space="preserve">
+    <value>Netping</value>
+  </data>
   <data name="Sec_dev" xml:space="preserve">
-    <value>Devices in development</value>
+    <value>Devices&lt;br/&gt;under development</value>
   </data>
   <data name="Sec_dev_descr" xml:space="preserve">
-    <value>Ideas under realization</value>
+    <value>Ideas at the stage of implementation</value>
   </data>
   <data name="Sec_monitoring" xml:space="preserve">
-    <value>IP sensors&lt;br/&gt;monitoring</value>
+    <value>Monitoring&lt;br/&gt;sensors</value>
   </data>
   <data name="Sec_monitoring_descr" xml:space="preserve">
-    <value>Remoutly, by IP network  monitoring temperature, humidity, doors and other sensors</value>
+    <value>Remote monitoring for temperature, humidity, door and other sensors via Internet/Ethernet networks</value>
   </data>
   <data name="Sec_power" xml:space="preserve">
-    <value>Remote power&lt;br/&gt;control</value>
+    <value>Power supply&lt;br/&gt;management</value>
   </data>
   <data name="Sec_power_descr" xml:space="preserve">
-    <value>IP PDU devices for remote power control servers, routers and other network devices</value>
+    <value>Power distribution units (PDU), servers, routers and other devices via Internet/Ethernet networks</value>
   </data>
   <data name="Sec_sub_access" xml:space="preserve">
-    <value>Accessories</value>
+    <value>Accessories&lt;br/&gt;for Netping devices</value>
   </data>
   <data name="Sec_sub_access_descr" xml:space="preserve">
-    <value>Accessories for Netping devices</value>
+    <value>Accessories that supplement functioning devices</value>
   </data>
   <data name="Sec_sub_devices" xml:space="preserve">
     <value>Devices</value>
   </data>
   <data name="Sec_sub_sensors" xml:space="preserve">
-    <value>Netping devices sensors</value>
+    <value>Sensors&lt;br/&gt;for Netping devices</value>
   </data>
   <data name="Sec_sub_sensors_descr" xml:space="preserve">
-    <value>Sensors used in Netping circuits</value>
+    <value>Sensors used in operation schemes for Netping devices</value>
   </data>
   <data name="Sec_sub_solutions" xml:space="preserve">
     <value>Ready solutions</value>
   </data>
   <data name="Sec_sub_solutions_descr" xml:space="preserve">
-    <value>Solutions for typical problems</value>
+    <value>Configurations for typical tasks</value>
   </data>
   <data name="Sec_switch" xml:space="preserve">
-    <value>Ethernet switch&lt;br/&gt;and POE devices</value>
+    <value>Ethernet switches&lt;br/&gt;and POE devices</value>
   </data>
   <data name="Sec_switch_descr" xml:space="preserve">
-    <value>Ethernet switchs, and POE (pover over Ethernet) devices</value>
+    <value>Controllable and uncontrollable Ethernet switches, and POE devices</value>
   </data>
   <data name="Txt_compare" xml:space="preserve">
     <value>Compare</value>

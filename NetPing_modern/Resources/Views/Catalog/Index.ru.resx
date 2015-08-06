@@ -180,4 +180,10 @@
   <data name="Sec_sub_solutions_descr" xml:space="preserve">
     <value>Конфигурации для решения типовых задач</value>
   </data>
+  <data name="CatalogName" xml:space="preserve">
+    <value>Каталог</value>
+  </data>
+  <data name="Path_main" xml:space="preserve">
+    <value>Netping</value>
+  </data>
 </root>
