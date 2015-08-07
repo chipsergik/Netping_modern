@@ -151,14 +151,14 @@
                 </div>
             </a>
             @*<a href="#">
-                <div class="menu-item-icon plugin-icon"></div>
-                <div class="menu-item-title">
-                    Утилиты
-                </div>
-                <div class="menu-item-body">
-                    Утилиты для настройки функционирования устройств
-                </div>
-            </a>*@
+                    <div class="menu-item-icon plugin-icon"></div>
+                    <div class="menu-item-title">
+                        Утилиты
+                    </div>
+                    <div class="menu-item-body">
+                        Утилиты для настройки функционирования устройств
+                    </div>
+                </a>*@
             <a href="/products/monitoring-servernoj/sensors">
                 <div class="menu-item-icon sensor-icon"></div>
                 <div class="menu-item-title">
@@ -189,14 +189,14 @@
                 </div>
             </a>
             @*<a href="#">
-                <div class="menu-item-icon archive-icon"></div>
-                <div class="menu-item-title">
-                    Архив устройств
-                </div>
-                <div class="menu-item-body">
-                    Устройства, снятые с производства
-                </div>
-            </a>*@
+                    <div class="menu-item-icon archive-icon"></div>
+                    <div class="menu-item-title">
+                        Архив устройств
+                    </div>
+                    <div class="menu-item-body">
+                        Устройства, снятые с производства
+                    </div>
+                </a>*@
         </div>
     </div>
     <div class="col-xs-7 col-sm-7 col-md-9 catalog-content">
@@ -234,6 +234,13 @@
                             </p>
                         </div>
                         <div class="col-xs-12 col-lg-offset-3 col-lg-9">
+
+
+                        </div>
+                        <div class="col-lg-3 col-xs-3">
+                            <img src="@device.GetCoverPhoto(true).Url" alt="@device.Name.Name" title="@device.Name.Name" />
+                        </div>
+                        <div class="col-lg-9 device-item-content">
                             <a href="@link"><h3>@device.Name.Name</h3></a>
                             @{string className = "new";}
                             @if (!String.IsNullOrWhiteSpace(device.Label.Name))
@@ -262,43 +269,41 @@
                             {
                                 <span class="label label-@className">Новинка</span>
                             }
-                        </div>
-                        <div class="col-lg-3 col-xs-3">
-                            <img src="@device.GetCoverPhoto(true).Url" alt="@device.Name.Name" title="@device.Name.Name" />
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="device-item-content">
-                                @Html.Raw(device.Short_description)
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 device-item-buttons">
                             <div class="row">
-                                <div class="col-xs-6 col-lg-12 price">
-                                    <span>@device.Price</span> руб.
+                                <div class="col-lg-7">
+                                    @Html.Raw(device.Short_description)
                                 </div>
+                                <div class="col-sm-12 col-lg-5 device-item-buttons">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-lg-12 price">
+                                            <span>@device.Price</span> руб.
+                                        </div>
 
-                                <div class="col-xs-6 col-lg-12 to-cart button-block text-right ">
-                                    <input type="text" class="btn btn-info counter" data-device-id="@device.Name.Id" value="1" />
-                                    <div class="add-remove">
-                                        <button data-device-id="@device.Name.Id" class="btn btn-info count-button add">+</button>
-                                        <button data-device-id="@device.Name.Id" class="btn btn-info count-button remove">-</button>
+                                        <div class="col-xs-6 col-lg-12 to-cart button-block text-right ">
+                                            <input type="text" class="btn btn-info counter" data-device-id="@device.Name.Id" value="1" />
+                                            <div class="add-remove">
+                                                <button data-device-id="@device.Name.Id" class="btn btn-info count-button add">+</button>
+                                                <button data-device-id="@device.Name.Id" class="btn btn-info count-button remove">-</button>
+                                            </div>
+
+                                            <div data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
+                                        </div>
                                     </div>
-
-                                    <div data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 col-lg-12 button-block more-info">
-                                    <a href="@link" class="btn btn-default">
-                                        Узнать больше
-                                    </a>
-                                </div>
-                                <div class="col-xs-6 col-lg-12 compare text-right button-block">
-                                    <input type="checkbox" id="check-@device.Id" name="compare" value="@device.Id" /><label for="check-@device.Id" class="checkbox"></label>
-                                    <button class="btn btn-default">Сравнить</button>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-lg-12 button-block more-info">
+                                            <a href="@link" class="btn btn-default">
+                                                Узнать больше
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-6 col-lg-12 compare text-right button-block">
+                                            <input type="checkbox" id="check-@device.Id" name="compare" value="@device.Id" /><label for="check-@device.Id" class="checkbox"></label>
+                                            <button class="btn btn-default">Сравнить</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <hr />
                 }
