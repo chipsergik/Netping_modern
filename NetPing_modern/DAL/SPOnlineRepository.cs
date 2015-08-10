@@ -595,7 +595,7 @@ namespace NetPing.DAL
         {
             try
             {
-                var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
+                /*var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
 
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
@@ -629,7 +629,7 @@ namespace NetPing.DAL
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
 
-                Debug.WriteLine("PushToCache OK");
+                Debug.WriteLine("PushToCache OK");*/
 
                 if (Helpers.IsCultureRus)
                 {
