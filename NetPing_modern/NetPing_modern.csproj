@@ -632,6 +632,7 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Products\UserGuides.cshtml" />
+    <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
     <Content Include="Views\Shared\Adaptive_master.cshtml" />
     <Content Include="Views\InnerPages\Dev.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
