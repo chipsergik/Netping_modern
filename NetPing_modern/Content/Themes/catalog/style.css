@@ -1,5 +1,5 @@
 ﻿@-ms-viewport {
-  width: auto;
+    width: auto;
 }
 
 .catalog-menu.additional-catalog {
@@ -80,7 +80,7 @@
     background-image: url('../../Images/icons/archive.png');
 }
 
-.catalog-content{
+.catalog-content {
     max-width: 1100px;
 }
 
@@ -88,9 +88,9 @@
     border-color: #a0a0a0;
 }
 
-   .device-catalog-item:hover{
-       background: #fafff9;
-   }
+.device-item-content:hover {
+    background: #fafff9;
+}
 
 .device-catalog-item a h3 {
     color: #000;
@@ -106,6 +106,8 @@
 
 .device-catalog-item img {
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .device-catalog-item .device-item-content p, .device-catalog-item .device-item-content strong {
@@ -164,8 +166,8 @@
         font-weight: 700;
     }
 
-    
-.device-catalog-item .device-item-buttons .more-info{
+
+.device-catalog-item .device-item-buttons .more-info {
     text-align: right;
 }
 
@@ -196,12 +198,13 @@
         margin-bottom: 2px;
     }
 
-    .btn.btn-primary.buy-button:before{
-        content: "Купить";
-    }
-    .btn.btn-primary.in-cart:before{
-        content: "В корзине";
-    }
+.btn.btn-primary.buy-button:before {
+    content: "Купить";
+}
+
+.btn.btn-primary.in-cart:before {
+    content: "В корзине";
+}
 
 .device-catalog-item .device-item-buttons .compare input[type=checkbox] {
     display: none;
@@ -257,7 +260,7 @@
         line-height: 34px;
     }
 
-    .device-catalog-item .device-item-buttons .more-info{
-    text-align: left;
-}
+    .device-catalog-item .device-item-buttons .more-info {
+        text-align: left;
+    }
 }
