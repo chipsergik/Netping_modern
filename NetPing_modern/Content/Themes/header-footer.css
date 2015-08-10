@@ -108,13 +108,6 @@
     margin-right: 15px;
 }
 
-.header .cart {
-    margin: 25px 13px 0px 0px;
-    font-size: 14px;
-    padding-left: 35px;
-    background: url('../Images/cart.png') no-repeat no-repeat left;
-}
-
 .header ul li ul {
 position: absolute;
 top: 36px;
@@ -139,15 +132,6 @@ padding-right: 16px;
 
 .header .header_contacts_item:first-child {
 margin-right: 15px;
-}
-
-.header .cart {
-margin: 25px 10px 0px 0px;
-font-size: 14px;
-padding-left: 35px;
-background: url('../Images/cart.png') no-repeat no-repeat left;
-/*float: right;*/
-color: #000;
 }
 
 .header a {
