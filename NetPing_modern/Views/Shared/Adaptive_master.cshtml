@@ -31,31 +31,8 @@
     <div class="container-fluid header-container">
         @RenderPage("../Shared/Adaptive-Header.cshtml")
     </div>
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-xs-12 breadcrumbs">
-                <a href="#" class="root">
-                    Netping
-                </a>
-                >
-                <a href="#" class="node">
-                    Документация
-                </a>
-                >
-                <a href="#" class="node">
-                    Мониторинг датчиков
-                </a>
-                >
-                <a href="#" class="page">
-                    [USS] Uniping server solution v3/SMS
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        @RenderBody()
-    </div>
+    @RenderBody()
+    
 
     @RenderPage("../Shared/Adaptive-Footer.cshtml")
     <div class="overlay"></div>
