@@ -608,7 +608,6 @@
     <Content Include="libtidy.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\CartData.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -638,7 +637,7 @@
     <Content Include="Views\Shared\Adaptive-Footer.cshtml" />
     <Content Include="Views\Shared\Adaptive-Header.cshtml" />
     <Content Include="Views\Products\Adaptive_Index.cshtml" />
-	<Content Include="Views\InnerPages\UCacheAsync.cshtml" />
+    <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
