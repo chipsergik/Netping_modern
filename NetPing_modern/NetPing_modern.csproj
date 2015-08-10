@@ -584,6 +584,7 @@
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\cart\cart.css" />
+    <Content Include="Content\Themes\catalog\style.en.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\catalog\style.css" />
     <Content Include="Content\Themes\compare.css" />
@@ -638,7 +639,7 @@
     <Content Include="Views\Shared\Adaptive-Footer.cshtml" />
     <Content Include="Views\Shared\Adaptive-Header.cshtml" />
     <Content Include="Views\Products\Adaptive_Index.cshtml" />
-	<Content Include="Views\InnerPages\UCacheAsync.cshtml" />
+    <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
