@@ -138,6 +138,8 @@ function updateCartCount() {
     $('.cat_item .action .price span, .buy-button').on("click", function (event) {
         var item = $(this).parents('.cat_item');
         addProduct(item);
+        var container = $(this);
+        showPopup(container);
     });
     $('#continueCartButton').removeAttr('disabled');
     if (data.length == 0)
