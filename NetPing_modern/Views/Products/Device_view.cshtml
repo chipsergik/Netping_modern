@@ -158,7 +158,7 @@
                     {
                         foreach (dynamic grp in ViewBag.Parameter_groups)
                         {
-                            IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name.Path.Contains(grp.OwnNameFromPath));
+                            IEnumerable<DeviceParameter> parameters = Model.DeviceParameters.Where(par => par.Name != null && par.Name.Path.Contains(grp.OwnNameFromPath));
                             if (parameters.Any())
                             {
                                 <div class="t-title">@grp.Name.Substring(2)</div>
