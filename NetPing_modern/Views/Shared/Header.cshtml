@@ -90,9 +90,12 @@
         @if (NetpingHelpers.Helpers.IsCultureRus)
         {
             <div class="header_contacts_item">
-                <a href="#" class="cart">
+                <div class="cart">
+                    <span class="cart-icon"></span><span class="cart-text"> @Header.Header_goods_in_basket</span><span class="cart-count">0</span>
+                </div>
+                @*<a href="#" class="cart">
                     <span class="cart_text">@Header.Header_goods_in_basket</span><span class="cart_count">0</span>
-                </a>
+                </a>*@
             </div>
         }
     </div>
