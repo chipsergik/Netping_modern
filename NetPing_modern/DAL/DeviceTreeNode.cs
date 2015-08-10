@@ -45,10 +45,10 @@ namespace NetPing_modern.DAL
             var path = _device.Name.Path;
 
             var childDevices = from dev in _tree.Devices where (dev.Name.Path.StartsWith(path) && dev.Name.Path != path) select dev;
+            var level = _parentNode == null ? 3 : _parentNode.Device.Name.Level + 1;
             foreach (Device device in childDevices)
             {
-                var devPath = device.Name.Path.Substring(path.Length + 1).Split(';');
-                if (devPath.Length == 1)
+                if (device.Name.Level == level)
                 {
                     _nodes.Add(new DeviceTreeNode(_tree, this, device));
                 }

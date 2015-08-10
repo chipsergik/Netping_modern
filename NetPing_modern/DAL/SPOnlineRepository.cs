@@ -595,7 +595,7 @@ namespace NetPing.DAL
         {
             try
             {
-                /*var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
+                var termsFileTypes = TermsFileTypes_Read(); Debug.WriteLine("TermsFileTypes_Read OK");
                 var terms = Terms_Read(); Debug.WriteLine("Terms_Read OK");
 
                 var termsLabels = TermsLabels_Read(); Debug.WriteLine("TermsLabels_Read OK");
@@ -629,7 +629,7 @@ namespace NetPing.DAL
                 PushToCache("Posts", posts);
                 PushToCache("Devices", devices);
 
-                Debug.WriteLine("PushToCache OK");*/
+                Debug.WriteLine("PushToCache OK");
 
                 if (Helpers.IsCultureRus)
                 {
@@ -774,21 +774,7 @@ namespace NetPing.DAL
 
                 foreach (DeviceTreeNode childCategoryNode in categoryNode.Nodes)
                 {
-                    shop.Categories.Add(new Category
-                    {
-                        Id = childCategoryNode.Id,
-                        Name = childCategoryNode.Name,
-                        ParentId = childCategoryNode.Parent == null ? (int?)null : childCategoryNode.Parent.Id
-                    });
-
-                    foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
-                    {
-                        AddOffers(offerNode, shop, childCategoryNode);
-                        foreach (DeviceTreeNode subNode in offerNode.Nodes)
-                        {
-                            AddOffers(subNode, shop, childCategoryNode);
-                        }
-                    }
+                    AddOffers(childCategoryNode, shop, categoryNode);
                 }
             }
             shop.LocalDeliveryCost = 350;

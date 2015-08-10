@@ -36,7 +36,6 @@ namespace NetPing_modern.DAL
         private void BuildNodes()
         {
             _nodes = new List<DeviceTreeNode>();
-
             foreach (Device device in Devices)
             {
                 if (device.Name.Level == 2)
