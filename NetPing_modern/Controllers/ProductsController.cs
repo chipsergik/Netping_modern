@@ -118,7 +118,7 @@ namespace NetPing_modern.Controllers
             {
                 model.ActiveSection.Sections.First().IsSelected = true;
             }
-            model.Devices = devices.Where(d => d.Label.Path != "Archive");
+            model.Devices = devices;
             model.ActiveSection.IsSelected = true;
             var sections = NavigationProvider.GetAllSections().Where(m => m.Url != model.ActiveSection.Url);
             sections.ForEach(m => model.Sections.Add(m));

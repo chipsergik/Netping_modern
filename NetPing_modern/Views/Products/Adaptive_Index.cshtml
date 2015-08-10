@@ -284,7 +284,7 @@
                                         <button data-device-id="@device.Name.Id" class="btn btn-info count-button remove">-</button>
                                     </div>
 
-                                    <div data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
+                                    <div  @(device.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
                                 </div>
                             </div>
                             <div class="row">
