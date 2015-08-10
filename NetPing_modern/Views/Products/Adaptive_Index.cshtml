@@ -175,16 +175,7 @@
                         @Html.Raw(Index.Sec_switch_descr)
                     </div>
                 </a>
-                @*<a href="#">
-                        <div class="menu-item-icon plugin-icon"></div>
-                        <div class="menu-item-title">
-                            Утилиты
-                        </div>
-                        <div class="menu-item-body">
-                            Утилиты для настройки функционирования устройств
-                        </div>
-                    </a>*@
-                <a href="/products/monitoring-servernoj/sensors">
+               <a href="/products/monitoring-servernoj/sensors">
                     <div class="menu-item-icon sensor-icon"></div>
                     <div class="menu-item-title">
                         @Html.Raw(Index.Sec_sub_sensors)
@@ -213,15 +204,6 @@
                         @Html.Raw(Index.Sec_dev_descr)
                     </div>
                 </a>
-                @*<a href="#">
-                        <div class="menu-item-icon archive-icon"></div>
-                        <div class="menu-item-title">
-                            Архив устройств
-                        </div>
-                        <div class="menu-item-body">
-                            Устройства, снятые с производства
-                        </div>
-                    </a>*@
             </div>
         </div>
         <div class="col-xs-7 col-sm-7 col-md-9 catalog-content">
@@ -294,12 +276,13 @@
                             <div class="col-lg-6">
                                 <div class="device-item-content">
                                     @Html.Raw(device.Short_description)
+                                    <div @(device.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-lg-3 device-item-buttons">
                                 <div class="row">
                                     <div class="col-xs-6 col-lg-12 price">
-                                        <span>@device.Price</span> руб.
+                                        <span>@GetPrice(device.Price)</span> @device.GetCurrency
                                     </div>
 
                                     <div class="col-xs-6 col-lg-12 to-cart button-block text-right ">
