@@ -1,0 +1,6 @@
+﻿    .btn.btn-primary.buy-button:before{
+        content: "Buy";
+    }
+    .btn.btn-primary.in-cart:before{
+        content: "In cart";
+    }
