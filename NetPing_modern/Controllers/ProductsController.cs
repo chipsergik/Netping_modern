@@ -141,7 +141,7 @@ namespace NetPing_modern.Controllers
                     ViewBag.Keywords = sub.Name.Name;
                 }
                 else { return HttpNotFound(); }
-                model.ActiveSection.Sections.First(m => m.Url == id).IsSelected = true;
+                model.ActiveSection = model.ActiveSection.Sections.First(m => m.Url == id);
             }
             else
             {
