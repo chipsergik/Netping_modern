@@ -77,6 +77,35 @@ namespace NetPing_modern.Controllers
             return View("Device_view", device);
         }
 
+        public ActionResult Solutions()
+        {
+            var solutionsNames = new[] { "dlja-servernyh-komnat-i-6kafov", "udaljonnoe-upravlenie-jelektropitaniem", "re6enija-na-osnove-POE" };
+            var model = new ProductsModel
+                      {
+                          ActiveSection =
+                             NavigationProvider.GetAllSections().First()
+                      };
+            var devices = new List<Device>();
+            foreach (var solutionName in solutionsNames)
+            {
+                var sub = _repository.Devices.FirstOrDefault(d => d.Url == solutionName);
+                if (sub != null)
+                {
+                    devices.AddRange(_repository.Devices.Where(d => !d.Name.IsGroup() && d.Name.IsUnderOther(sub.Name)));
+                }
+            }
+
+            model.Devices = devices;
+            model.ActiveSection.IsSelected = true;
+            var sections = NavigationProvider.GetAllSections().Where(m => m.Url != model.ActiveSection.Url);
+            sections.ForEach(m => model.Sections.Add(m));
+
+
+            //return View(model);
+
+            return View("Adaptive_Index", model);
+        }
+
         public ActionResult Index(string group, string id)
         {
             var devices = _repository.Devices.Where(d => !d.Name.IsGroup());
@@ -112,20 +141,20 @@ namespace NetPing_modern.Controllers
                     ViewBag.Keywords = sub.Name.Name;
                 }
                 else { return HttpNotFound(); }
-                model.ActiveSection.Sections.First(m => m.Url == id).IsSelected = true;
+                model.ActiveSection = model.ActiveSection.Sections.First(m => m.Url == id);
             }
             else
             {
                 model.ActiveSection.Sections.First().IsSelected = true;
             }
-            model.Devices = devices.Where(d => d.Label.Path != "Archive");
+            model.Devices = devices;
             model.ActiveSection.IsSelected = true;
             var sections = NavigationProvider.GetAllSections().Where(m => m.Url != model.ActiveSection.Url);
             sections.ForEach(m => model.Sections.Add(m));
 
 
             //return View(model);
-        
+
             return View("Adaptive_Index", model);
         }
     }
