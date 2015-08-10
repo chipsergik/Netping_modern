@@ -106,6 +106,8 @@
 
 .device-catalog-item img {
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .device-catalog-item .device-item-content p, .device-catalog-item .device-item-content strong {
