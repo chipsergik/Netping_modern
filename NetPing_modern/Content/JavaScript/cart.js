@@ -138,8 +138,6 @@ function updateCartCount() {
     $('.cat_item .action .price span, .buy-button').on("click", function (event) {
         var item = $(this).parents('.cat_item');
         addProduct(item);
-        var container = $(this);
-        showPopup(container);
     });
     $('#continueCartButton').removeAttr('disabled');
     if (data.length == 0)
@@ -247,7 +245,7 @@ function showPopup(container) {
         });
 
 
-    $(".shopPopupItem .remove").click(function (event) {
+    $(".shopPopupItem .remove").click(function () {
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
@@ -256,8 +254,6 @@ function showPopup(container) {
         updateCartCount();
         updateSum(data);
         if ($("#cartPopup").find(".shopPopupItem").length == 0) hidePopup();
-        event.preventDefault();
-        event.stopPropagation();
     });
     container.append($('#cartPopup'));
     $('.overlayCart, #cartPopup').show();
@@ -380,7 +376,7 @@ function countInput(event) {
 
 function onlyNumeric(e) {
     // Allow: backspace, delete, tab, escape, enter and .
-    if ($.inArray(e.keyCode, [46, 8, 9, 27, 110]) !== -1 ||
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
         // Allow: Ctrl+A, Command+A
         (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
         // Allow: home, end, left, right, down, up
@@ -391,10 +387,5 @@ function onlyNumeric(e) {
     // Ensure that it is a number and stop the keypress
     if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
         e.preventDefault();
-    }
-    if (e.keyCode == 13)
-    {
-        e.preventDefault();
-        $(this).blur();
     }
 }
