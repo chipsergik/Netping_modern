@@ -103,13 +103,6 @@ namespace NetPing
            );
 
             routes.MapRoute(
-              name: "AllSolutions",
-              url: "solutions",
-              defaults: new { controller = "Products", action = "Solutions" },
-              constraints: new { controller = "Products" }
-          );
-
-            routes.MapRoute(
                name: "view.aspx",
                url: "view.aspx/{id}",
                defaults: new { controller = "View", action = "Index", id = UrlParameter.Optional },
