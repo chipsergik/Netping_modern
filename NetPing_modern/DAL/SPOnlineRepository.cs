@@ -774,21 +774,7 @@ namespace NetPing.DAL
 
                 foreach (DeviceTreeNode childCategoryNode in categoryNode.Nodes)
                 {
-                    shop.Categories.Add(new Category
-                    {
-                        Id = childCategoryNode.Id,
-                        Name = childCategoryNode.Name,
-                        ParentId = childCategoryNode.Parent == null ? (int?)null : childCategoryNode.Parent.Id
-                    });
-
-                    foreach (DeviceTreeNode offerNode in childCategoryNode.Nodes)
-                    {
-                        AddOffers(offerNode, shop, childCategoryNode);
-                        foreach (DeviceTreeNode subNode in offerNode.Nodes)
-                        {
-                            AddOffers(subNode, shop, childCategoryNode);
-                        }
-                    }
+                    AddOffers(childCategoryNode, shop, categoryNode);
                 }
             }
             shop.LocalDeliveryCost = 350;
