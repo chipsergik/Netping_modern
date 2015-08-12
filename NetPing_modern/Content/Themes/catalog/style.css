@@ -1,5 +1,5 @@
 ﻿@-ms-viewport {
-  width: auto;
+    width: auto;
 }
 
 .catalog-menu.additional-catalog {
@@ -80,7 +80,7 @@
     background-image: url('../../Images/icons/archive.png');
 }
 
-.catalog-content{
+.catalog-content {
     max-width: 1100px;
 }
 
@@ -88,9 +88,9 @@
     border-color: #a0a0a0;
 }
 
-   .device-catalog-item:hover{
-       background: #fafff9;
-   }
+.device-catalog-item:hover {
+    background: #fafff9;
+}
 
 .device-catalog-item a h3 {
     color: #000;
@@ -106,6 +106,8 @@
 
 .device-catalog-item img {
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 
 .device-catalog-item .device-item-content p, .device-catalog-item .device-item-content strong {
@@ -164,8 +166,8 @@
         font-weight: 700;
     }
 
-    
-.device-catalog-item .device-item-buttons .more-info{
+
+.device-catalog-item .device-item-buttons .more-info {
     text-align: right;
 }
 
@@ -173,7 +175,8 @@
     font-size: 24px;
     padding-top: 2px;
     padding-bottom: 1px;
-    width: 34px;
+    width: 19%;
+    max-width: 50px;
     height: 34px;
     text-align: center;
 }
@@ -181,13 +184,15 @@
 .device-catalog-item .device-item-buttons .to-cart .add-remove {
     display: inline-block;
     vertical-align: middle;
+    width: 15%;
+    max-width: 20px;
 }
 
     .device-catalog-item .device-item-buttons .to-cart .add-remove > button {
         display: block;
         text-align: center;
         padding: 0;
-        width: 16px;
+        width: 100%;
         height: 16px;
         line-height: 1em;
     }
@@ -196,12 +201,13 @@
         margin-bottom: 2px;
     }
 
-    .btn.btn-primary.buy-button:before{
-        content: "Купить";
-    }
-    .btn.btn-primary.in-cart:before{
-        content: "В корзине";
-    }
+.btn.btn-primary.buy-button:before {
+    content: "Купить";
+}
+
+.btn.btn-primary.in-cart:before {
+    content: "В корзине";
+}
 
 .device-catalog-item .device-item-buttons .compare input[type=checkbox] {
     display: none;
@@ -226,8 +232,9 @@
     -webkit-border-radius: 0;
     border-radius: 0;
     border: none;
-    font-size: 16px;
-    width: 120px;
+    font-size: 17px;
+    width: 65%;
+    max-width: 145px;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
@@ -251,13 +258,26 @@
         color: #fff;
     }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .device-catalog-item .device-item-buttons .price {
         margin-bottom: 18px;
         line-height: 34px;
     }
 
-    .device-catalog-item .device-item-buttons .more-info{
-    text-align: left;
-}
+    .device-catalog-item .device-item-buttons .more-info {
+        text-align: left;
+    }
+
+    .btn {
+        font-size: 18px;
+        width: 142px;
+    }
+
+    .col-xs-6.col-lg-12.to-cart.button-block.text-right {
+        padding-left: 0;
+    }
+
+    .device-catalog-item .device-item-buttons .to-cart .btn.counter {
+        width: 50px;
+    }
 }
