@@ -36,11 +36,9 @@ namespace NetPing_modern.DAL
         private void BuildNodes()
         {
             _nodes = new List<DeviceTreeNode>();
-
             foreach (Device device in Devices)
             {
-                var devPath = device.Name.Path.Split(';');
-                if (devPath.Length == 2)
+                if (device.Name.Level == 2)
                 {
                     _nodes.Add(new DeviceTreeNode(this, null, device));
                 }
