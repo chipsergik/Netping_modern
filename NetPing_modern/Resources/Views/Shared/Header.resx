@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Category_access" xml:space="preserve">
-    <value>Netping device accessories</value>
+    <value>Accessories for Netping devices</value>
   </data>
   <data name="Category_monitoring" xml:space="preserve">
-    <value>Sensors monitorings, IPsensors</value>
+    <value>Monitoring sensors</value>
   </data>
   <data name="Category_power_control" xml:space="preserve">
-    <value>IP PDU, remote power control units</value>
+    <value>Power supply management</value>
   </data>
   <data name="Category_sensors" xml:space="preserve">
-    <value>Netping devices sensors</value>
+    <value>Sensors for Netping devices</value>
   </data>
   <data name="Category_switch" xml:space="preserve">
     <value>Ethernet switchs and POE devices</value>
@@ -194,5 +194,11 @@
   </data>
   <data name="Logo_Title" xml:space="preserve">
     <value>Devices for monitoring of server rooms and remote power management</value>
+  </data>
+  <data name="Dev" xml:space="preserve">
+    <value>Devices under development</value>
+  </data>
+  <data name="Ready_solutions" xml:space="preserve">
+    <value>Ready solutions</value>
   </data>
 </root>

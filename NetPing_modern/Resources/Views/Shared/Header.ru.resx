@@ -121,16 +121,16 @@
     <value>Аксессуары для устройств Netping</value>
   </data>
   <data name="Category_monitoring" xml:space="preserve">
-    <value>Устройства мониторинга серверных комнат</value>
+    <value>Мониторинг датчиков</value>
   </data>
   <data name="Category_power_control" xml:space="preserve">
-    <value>Устройства удалённого управления электропитанием</value>
+    <value>Управление электропитанием</value>
   </data>
   <data name="Category_sensors" xml:space="preserve">
-    <value>Датчики для устройств Netping</value>
+    <value>Датчики устройств Netping</value>
   </data>
   <data name="Category_switch" xml:space="preserve">
-    <value>Коммутаторы Ethernet POE устройства</value>
+    <value>Коммутаторы Ethernet и POE устройства</value>
   </data>
   <data name="Header_ask" xml:space="preserve">
     <value>Задать вопрос</value>
@@ -194,5 +194,11 @@
   </data>
   <data name="Logo_Title" xml:space="preserve">
     <value>Устройства мониторинга серверных комнат и удаленного управления электропитанием</value>
+  </data>
+  <data name="Dev" xml:space="preserve">
+    <value>Разрабатываемые устройства</value>
+  </data>
+  <data name="Ready_solutions" xml:space="preserve">
+    <value>Готовые решения</value>
   </data>
 </root>
