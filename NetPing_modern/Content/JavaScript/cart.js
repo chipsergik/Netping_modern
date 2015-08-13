@@ -170,6 +170,7 @@ function addProduct(itemcontainer) {
             ID: ID
         }));
     }
+    showPopup($(itemcontainer).find('div.btn.btn-primary.buy-button'));
     updateCartCount();
 }
 
