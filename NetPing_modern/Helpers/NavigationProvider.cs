@@ -36,13 +36,15 @@ namespace NetPing_modern.Helpers
                                                     {
                                                         Title = Index.Sec_sub_sensors,
                                                         Url = "sensors",
-                                                        FullUrl="products/monitoring-servernoj/sensors"
+                                                        FullUrl="products/monitoring-servernoj/sensors",
+                                                        Description = Index.Sec_sub_sensors_descr
                                                     },
                                                     new SectionModel
                                                     {
                                                         Title = Index.Sec_sub_access,
                                                         Url = "accessories",
-                                                        FullUrl="products/monitoring-servernoj/accessories"
+                                                        FullUrl="products/monitoring-servernoj/accessories",
+                                                         Description = Index.Sec_sub_access_descr
                                                     },
                                                     new SectionModel
                                                     {
@@ -71,13 +73,15 @@ namespace NetPing_modern.Helpers
                                                     {
                                                         Title = Index.Sec_sub_sensors,
                                                         Url = "sensors",
-                                                        FullUrl="products/upravljaemye-rozetki-ip-pdu/sensors"
+                                                        FullUrl="products/upravljaemye-rozetki-ip-pdu/sensors",
+                                                        Description = Index.Sec_sub_sensors_descr
                                                     },
                                                     new SectionModel
                                                     {
                                                         Title = Index.Sec_sub_access,
                                                         Url = "accessories",
-                                                        FullUrl="products/upravljaemye-rozetki-ip-pdu/accessories"
+                                                        FullUrl="products/upravljaemye-rozetki-ip-pdu/accessories",
+                                                         Description = Index.Sec_sub_access_descr
                                                     },
                                                     new SectionModel
                                                     {
@@ -93,6 +97,35 @@ namespace NetPing_modern.Helpers
                     Description = Index.Sec_switch_descr,
                     ImageUrl = "../../Content/Images/present_left_img3.png",
                     Title = Index.Sec_switch,
+                    Url = Groups.Switch,
+                    Sections = new List<SectionModel>
+                                                {
+                                                    new SectionModel
+                                                    {
+                                                        Title = Index.Sec_sub_devices,
+                                                        Url = "devices",
+                                                        FullUrl="products/kommutatory-ethernet"
+                                                    },
+                                                    new SectionModel
+                                                    {
+                                                        Title = Index.Sec_sub_access,
+                                                        Url = "accessories",
+                                                        FullUrl= "products/kommutatory-ethernet/accessories"
+                                                    },
+                                                    new SectionModel
+                                                    {
+                                                        Title = Index.Sec_sub_solutions,
+                                                        Url = "re6enija-na-osnove-POE",
+                                                        FullUrl="solutions/kommutatory-ethernet/re6enija-na-osnove-POE",
+                                                        Description = Index.Sec_sub_solutions_descr
+                                                    }
+                                                }
+                });
+                sections.Add(new SectionModel
+                {
+                    Description = Index.Sec_sub_solutions_descr,
+                    ImageUrl = "../../Content/Images/present_left_img3.png",
+                    Title = Index.Sec_sub_solutions,
                     Url = Groups.Switch,
                     Sections = new List<SectionModel>
                                                 {
