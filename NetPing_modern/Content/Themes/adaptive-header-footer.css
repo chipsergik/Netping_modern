@@ -6,9 +6,17 @@
     padding-top: 8px;
     padding-bottom: 16px;
     max-width: 1280px;
-    text-align: center;
-    font-size: 14px;
+    text-align: left;
+    font-size: 14px !important;
     margin: 0 auto;
+}
+
+.header .header_contacts a {
+    font-size: 14px;
+}
+
+.header .header_contacts span {
+    font-size: 14px;
 }
 
 .header.main-header-wrapper {
