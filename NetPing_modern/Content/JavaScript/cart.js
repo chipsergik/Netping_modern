@@ -246,7 +246,9 @@ function showPopup(container) {
         });
 
 
-    $(".shopPopupItem .remove").click(function () {
+    $(".shopPopupItem .remove").click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
@@ -262,8 +264,6 @@ function showPopup(container) {
     $('.closeCart, .overlayCart').click(function () {
         hidePopup();
     });
-
-
 
     function updateCount(ID, count) {
         var p = C.get(ID);
