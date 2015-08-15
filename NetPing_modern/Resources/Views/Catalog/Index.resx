@@ -135,6 +135,12 @@
   <data name="Path_main" xml:space="preserve">
     <value>Netping</value>
   </data>
+  <data name="Sec_archive" xml:space="preserve">
+    <value>Devices archive</value>
+  </data>
+  <data name="Sec_archive_desc" xml:space="preserve">
+    <value>Devices manufactured anymore</value>
+  </data>
   <data name="Sec_dev" xml:space="preserve">
     <value>Devices&lt;br/&gt;under development</value>
   </data>

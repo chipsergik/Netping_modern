@@ -45,6 +45,16 @@ namespace NetPing.Models
 
         public string Long_description { get; set; }
 
+        public bool IsInArchive
+        {
+            get
+            {
+                if (Label != null && Label.OwnNameFromPath == "Archive")
+                    return true;
+                return false;
+            }
+        }
+
         public DevicePhoto GetCoverPhoto(bool isBig)
         {
             DevicePhoto dp=DevicePhotos.FirstOrDefault(p => p.IsBig == isBig && p.IsCover);
