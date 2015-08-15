@@ -18,6 +18,14 @@
     border: none;
 }
 
+.buy-button:hover{
+    text-decoration: underline;
+}
+
+button.compare:hover{
+    text-decoration: underline;
+}
+
 .header .cart {
     text-align: right;
     font-size: 14px;
