@@ -9,6 +9,13 @@
         event.preventDefault();
     });
 
+    $(".to-cart .counter").keypress(function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+
     $(".to-cart .add").on("click", addOneItem);
 
     $(".to-cart .remove").on("click", removeOneItem);
