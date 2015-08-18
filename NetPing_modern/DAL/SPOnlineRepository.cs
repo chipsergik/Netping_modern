@@ -1045,6 +1045,7 @@ namespace NetPing.DAL
 
                 _context = new ClientContext(_config.SPSettings.SiteUrl);
 
+                _context.RequestTimeout = _config.SPSettings.RequestTimeout;
                 _context.Credentials = new SharePointOnlineCredentials(_config.SPSettings.Login, _config.SPSettings.Password.ToSecureString());
                 _context.ExecuteQuery();
 

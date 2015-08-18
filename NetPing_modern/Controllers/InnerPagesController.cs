@@ -48,9 +48,16 @@ namespace NetPing.Controllers
             {
                 return Json(_repository.UpdateAllAsync(dataName));
             }
-            catch (Exception Ex)
+            catch (Exception)
             {
-                return Json(Ex);
+                try
+                {
+                    return Json(_repository.UpdateAllAsync(dataName));
+                }
+                catch (Exception Ex)
+                {
+                    return Json(Ex.ToString());
+                }
             }
         }
 
