@@ -59,5 +59,18 @@ namespace NetPing.Global.Config
                 this["CacheTimeout"] = value;
             }
         }
+
+        [ConfigurationProperty("RequestTimeout", IsRequired = false, DefaultValue = "60000")]
+        public int RequestTimeout
+        {
+            get
+            {
+                return int.Parse(this["RequestTimeout"].ToString());
+            }
+            set
+            {
+                this["RequestTimeout"] = value;
+            }
+        }
     } 
 }
