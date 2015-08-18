@@ -95,15 +95,15 @@
 
     <div class="main-header clearfix">
 
-        <div class="logo-wrapper col-md-12 col-lg-5">
-            <a class="logo" href="/">
+        <div class="logo-wrapper col-sm-12 col-md-5 col-lg-5">
+            <a class="logo col-md-6" href="/">
                 <img src="~/Content/Images/logo_text.png" alt="Netping logo" />
             </a>
-            <div class="logo-text">
+            <div class="logo-text col-md-6">
                 @Header.Logo_Title
             </div>
         </div>
-        <div class="nav col-xs-8  col-lg-5">
+        <div class="nav col-xs-8 col-sm-6 col-md-5 col-lg-5">
             <ul>
                 <li class="nav_li">
                     <a class="@(Request.RawUrl.ToLower().Contains("/products") == true ? "nav_element active" : "nav_element")" href="/products/monitoring-servernoj">@Header.Products</a>
@@ -177,7 +177,7 @@
 
         </div>
         <form class="search" name="search" action="http://www.google.com/cse" target="_blank">
-            <div class="search col-xs-4 col-lg-2">
+            <div class="search col-xs-4 col-sm-3 col-md-2 col-lg-2 pull-right">
                 <input type="text" placeholder="Поиск по сайту" name="q" />
                 <input type="hidden" name="cx" value="006534849235046585456:eqktuqsoi58" />
                 <input name="ie" type="hidden" value="UTF-8" />
