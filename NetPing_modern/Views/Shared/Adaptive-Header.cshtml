@@ -56,7 +56,7 @@
 <div class="header contacts row">
 
     <div class="header_contacts clearfix">
-        <div class="col-md-3 header_contacts_item">
+        <div class="col-sm-5 col-md-4 col-lg-3 header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_to_buy </a>-->
                 @Header.Header_to_buy
@@ -68,7 +68,7 @@
                 <span>e-mail:</span><a href="mailto:@Header.Header_email_sales">@Header.Header_email_sales</a>
             </div>
         </div>
-        <div class="col-md-4 col-md-offset-5 header_contacts_item">
+        <div class="col-sm-6 col-md-5 col-lg-4 @(NetpingHelpers.Helpers.IsCultureEng ? "pull-right" : "") header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_ask</a>-->
                 @Header.Header_ask
