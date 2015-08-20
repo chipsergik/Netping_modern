@@ -98,7 +98,7 @@ body {
                 padding-right: 30px;
             }
 
-                .page .main .steps li:nth-child(1):after {
+                .page .main .steps li.done:after {
                     content: "";
                     background: url("../Images/check.png");
                     display: inline-block;
@@ -123,14 +123,14 @@ body {
                     left: 0;
                 }
 
-                .page .main .steps li:nth-child(2):after {
+                .page .main .steps li:nth-child(3):before {
                     content: "";
                     background: url("../Images/step2_right.png");
                     width: 38px;
                     height: 44px;
                     position: absolute;
                     top: 0;
-                    right: 0;
+                    left: -38px;
                 }
 
             .page .main .steps li:nth-child(3) {

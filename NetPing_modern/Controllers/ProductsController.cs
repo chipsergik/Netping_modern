@@ -74,7 +74,24 @@ namespace NetPing_modern.Controllers
             ViewBag.Title = device.Name.Name;
             ViewBag.Description = device.Name.Name;
             ViewBag.Keywords = device.Name.Name;
-            return View("Device_view",device);
+
+            return View("Device_view", device);
+        }
+
+        public ActionResult Device_in_development(string id)
+        {
+            var device = _repository.Devices.Where(dev => dev.Url == id).FirstOrDefault();
+            
+            ViewBag.Title = device.Name.Name;
+            ViewBag.Description = device.Name.Name;
+            ViewBag.Keywords = device.Name.Name;
+
+            ViewBag.Parameter_groups = _repository.TermsDeviceParameters.Where(par => par.Level == 0).ToList();
+            ViewBag.Files_groups = _repository.TermsFileTypes.Where(type => type.Level == 0).ToList();
+
+            ViewBag.Step = device.Label.OwnNameFromPath;
+
+            return View("Dev", device);
         }
 
         public ActionResult Index(string group, string id)
@@ -85,6 +102,7 @@ namespace NetPing_modern.Controllers
             if (g != null)
             {
                 if (!g.Name.IsGroup()) return Device_view(group);  // Open device page
+                if (g.Name.Path.Contains("Development")) return Device_in_development(group);
                 devices = devices.Where(d => !d.Name.IsGroup() && d.Name.IsUnderOther(g.Name));
             }
             else { return HttpNotFound(); }
@@ -96,9 +114,9 @@ namespace NetPing_modern.Controllers
             var model = new ProductsModel
                         {
                             ActiveSection =
-                                NavigationProvider.GetAllSections().First(m => m.Url == @group)
+                                NavigationProvider.GetAllSections().FirstOrDefault(m => m.Url == @group)
                         };
-            
+
 
             if (!string.IsNullOrEmpty(id))
             {
@@ -112,7 +130,7 @@ namespace NetPing_modern.Controllers
                     ViewBag.Keywords = sub.Name.Name;
                 }
                 else { return HttpNotFound(); }
-                model.ActiveSection.Sections.First(m => m.Url  == id).IsSelected = true;
+                model.ActiveSection.Sections.First(m => m.Url == id).IsSelected = true;
             }
             else
             {
@@ -125,7 +143,7 @@ namespace NetPing_modern.Controllers
             sections.ForEach(m => model.Sections.Add(m));
 
 
- 
+
             return View(model);
         }
     }

@@ -25,7 +25,7 @@ using NetPing_modern.PriceGeneration;
 using NetPing_modern.Resources;
 using NetPing_modern.Resources.Views.Catalog;
 using NetPing_modern.Services.Confluence;
-using TidyManaged;
+//using TidyManaged;
 using Category = NetPing.PriceGeneration.YandexMarker.Category;
 using File = System.IO.File;
 using Group = System.Text.RegularExpressions.Group;
