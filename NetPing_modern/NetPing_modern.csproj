@@ -639,6 +639,7 @@
     <Content Include="Views\Shared\Adaptive-Header.cshtml" />
     <Content Include="Views\Products\Adaptive_Index.cshtml" />
     <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
+    <Content Include="Views\Products\Adaptive_device_view.cshtml" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>

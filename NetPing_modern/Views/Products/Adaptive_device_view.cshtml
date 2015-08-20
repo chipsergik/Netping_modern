@@ -1,0 +1,64 @@
+﻿@using NetPing.Models
+@using NetPing_modern.Resources.Views.Product_item
+@model Device
+
+@{
+    Layout = "~/Views/Shared/Adaptive_master.cshtml";
+}
+
+@section Head_Css{
+    <link href="~/Content/Themes/catalog/style.css" rel="stylesheet" />
+
+    @if (NetpingHelpers.Helpers.IsCultureEng)
+    {
+        <link href="~/Content/Themes/catalog/style.en.css" rel="stylesheet" />
+    }
+}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-12 breadcrumbs">
+            <a href="/" class="root">@Index.Path_main</a>
+            >
+            <a href="@ViewBag.grp_url" class="node">
+                @ViewBag.grp_name
+            </a>
+            >
+            <a href="javascript:void(0)" class="page">
+                @Model.Name.Name
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
+</div>
