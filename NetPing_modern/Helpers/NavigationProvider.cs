@@ -12,6 +12,7 @@ namespace NetPing_modern.Helpers
             public static readonly string Monitoring = "monitoring-servernoj";
             public static readonly string Power = "upravljaemye-rozetki-ip-pdu";
             public static readonly string Switch = "kommutatory-ethernet";
+            public static readonly string Solution = "solutions";
         }
 
         public static List<SectionModel> GetAllSections()
@@ -126,7 +127,7 @@ namespace NetPing_modern.Helpers
                     Description = Index.Sec_sub_solutions_descr,
                     ImageUrl = "../../Content/Images/present_left_img3.png",
                     Title = Index.Sec_sub_solutions,
-                    Url = Groups.Switch,
+                    Url = Groups.Solution,
                     Sections = new List<SectionModel>
                                                 {
                                                     new SectionModel

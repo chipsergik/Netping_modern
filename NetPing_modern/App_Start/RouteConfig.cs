@@ -98,6 +98,13 @@ namespace NetPing
 
             routes.MapRoute(
                name: "Solutions",
+               url: "solutions",
+               defaults: new { controller = "Products", action = "Solutions", id = UrlParameter.Optional },
+               constraints: new { controller = "Products" }
+           );
+
+            routes.MapRoute(
+               name: "SolutionsList",
                url: "solutions/{group}/{id}",
                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional  },
                constraints: new { controller = "Products" }

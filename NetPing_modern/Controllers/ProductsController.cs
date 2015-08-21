@@ -84,7 +84,7 @@ namespace NetPing_modern.Controllers
             var model = new ProductsModel
                       {
                           ActiveSection =
-                             NavigationProvider.GetAllSections().First()
+                             NavigationProvider.GetAllSections().First(s => s.Url == "solutions")
                       };
             var devices = new List<Device>();
             foreach (var solutionName in solutionsNames)
