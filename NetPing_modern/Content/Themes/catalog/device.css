@@ -1,0 +1,78 @@
+﻿.device-catalog-item .breadcrumbs {
+    margin-bottom: 0;
+}
+
+.device-catalog-item .device-item-content p strong {
+    color: #144e5a;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.device-item-menu {
+    background-color: #93ebaa;
+    float: left;
+    width: 100%;
+    margin: 10px -15px 20px;
+    padding: 4px 15px;
+}
+
+    .device-item-menu li {
+        float: left;
+        font-size: 18px;
+    }
+
+        .device-item-menu li + li {
+            margin-left: 10px;
+        }
+
+.device-catalog-item .thumb-image {
+    width: auto;
+}
+
+.connected-device {
+    border: 1px solid #535353;
+    margin-bottom: 15px;
+    height: 256px;
+    text-align: center;
+}
+
+    .connected-device img {
+        height: 100px;
+        width: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .connected-device a {
+        font-size: 16px;
+        color: #144e5a;
+        width: 90%;
+        text-decoration: underline;
+        display: block;
+        margin: 0 auto;
+        height: 65px;
+    }
+
+    .connected-device .device-item-buttons {
+    }
+
+        .connected-device .device-item-buttons .price {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 37px;
+        }
+
+        .connected-device .device-item-buttons .to-cart {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+            .connected-device .device-item-buttons .to-cart .btn.counter {
+                padding: 0;
+            }
+
+        .connected-device .device-item-buttons .buy-button {
+            font-size: 18px;
+            font-weight: 400;
+            width: auto;
+        }
