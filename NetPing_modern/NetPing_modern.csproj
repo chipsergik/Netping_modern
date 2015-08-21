@@ -584,6 +584,7 @@
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\base.css" />
     <Content Include="Content\Themes\cart\cart.css" />
+    <Content Include="Content\Themes\catalog\device.css" />
     <Content Include="Content\Themes\catalog\style.en.css" />
     <Content Include="Content\Themes\CatalogPageStyle.css" />
     <Content Include="Content\Themes\catalog\style.css" />

@@ -61,49 +61,46 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12">
-            <ul class="device-item-menu">
-                <li><a href="">Описание</a></li>
-                <li><a href="">Спецификация</a></li>
-                <li><a href="">Документация и файлы</a></li>
-                <li><a href="">Примеры применения устройства</a></li>
-                <li><a href="">Подключаемые устройства</a></li>
-            </ul>
-        </div>
+        <ul class="device-item-menu col-xs-12">
+            <li><a href=""><span class="device-catalog-item-menu-icon description"></span> Описание</a></li>
+            <li><a href=""><span class="device-catalog-item-menu-icon specs"></span> Спецификация</a></li>
+            <li><a href=""><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</a></li>
+            <li><a href=""><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</a></li>
+            <li><a href=""><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</a></li>
+        </ul>
     </div>
     <div class="row">
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-lg-5 col-md-12">
-                    <div id="slider3-pager-nav">
-                        <ul id="slider3-pager">
-                            @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
+                <div class="col-lg-5 col-md-12 main-info">
+                    <div class="row">
+                        <div id="slider3-pager-nav" class="col-sm-3">
+                            <ul id="slider3-pager">
+                                @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => !p.IsBig))
+                                {
+                                    <li><a href="#"><img class="thumb-image" src="@photo.Url" alt=""></a></li>
+                                }
+                            </ul>
+                        </div>
+                        <ul class="rslides col-sm-9" id="slider3">
+                            @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
                             {
-                                <li><a href="#"><img class="thumb-image" src="@photo.Url" alt=""></a></li>
+                                <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
                             }
                         </ul>
                     </div>
-                    <ul class="rslides" id="slider3">
-                        @foreach (DevicePhoto photo in Model.DevicePhotos.Where(p => p.IsBig))
-                        {
-                            <li><img class="bigImageSize" src="@photo.Url" alt="" title="" /></li>
-                        }
-                    </ul>
+                    <div class="device-item-buttons">
+                        <div class="price">
+                            <span>@GetPrice(Model.Price)</span> @Model.GetCurrency
+                        </div>
 
-                    <div class="col-sm-12 col-lg-5 device-item-buttons">
-                        <div class="row">
-                            <div class="col-xs-6 col-lg-12 price">
-                                <span>@GetPrice(Model.Price)</span> @Model.GetCurrency
+                        <div class="to-cart button-block text-right ">
+                            <input type="text" class="btn btn-info counter" data-device-id="@Model.Name.Id" value="1" />
+                            <div class="add-remove">
+                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button add">+</button>
+                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button remove">-</button>
                             </div>
-
-                            <div class="col-xs-6 col-lg-12 to-cart button-block text-right ">
-                                <input type="text" class="btn btn-info counter" data-device-id="@Model.Name.Id" value="1" />
-                                <div class="add-remove">
-                                    <button data-device-id="@Model.Name.Id" class="btn btn-info count-button add">+</button>
-                                    <button data-device-id="@Model.Name.Id" class="btn btn-info count-button remove">-</button>
-                                </div>
-                                <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@Model.Name.Id" class="btn btn-primary buy-button"></div>
-                            </div>
+                            <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@Model.Name.Id" class="btn btn-primary buy-button"></div>
                         </div>
                     </div>
                 </div>
@@ -120,16 +117,16 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title">Описание</div>
-            <div class="block-content">
+            <div class="block-title"><span class="device-catalog-item-menu-icon description"></span> Описание</div>
+            <div class="block-content long-description">
                 @Html.Raw(Model.Long_description)
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title">Спецификация</div>
-            <div class="block-content">
+            <div class="block-title"><span class="device-catalog-item-menu-icon specs"></span> Спецификация</div>
+            <div class="block-content parameters">
                 @{
                     if (Model.DeviceParameters.Count != 0)
                     {
@@ -140,14 +137,19 @@
                             {
                                 <div class="t-title">@grp.Name.Substring(2)</div>
                             }
-                            <div>
-                                <ul>
-                                    @foreach (DeviceParameter par in parameters.ToList())
-                                    {
-                                        <li>@par.Name.Name <span> @par.Value </span> </li>
-                                    }
-                                </ul>
-                            </div>
+                            <table class="table ">
+                                @foreach (DeviceParameter par in parameters.ToList())
+                                {
+                                    <tr>
+                                        <th>
+                                            @par.Name.Name
+                                        </th>
+                                        <td>
+                                            @par.Value
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
                         }
                     }
                 }
@@ -156,43 +158,35 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title">Документация и файлы</div>
-            <div class="block-content">
-                <ul>
-                    @{
-                        IEnumerable<SFile> user_guides = Model.SFiles.Where(fl => fl.File_type.OwnNameFromPath == "User guide");
-                        if (user_guides.Any())
-                        {
-                            Html.RenderPartial("UserGuides", user_guides);
-                        }
-                    }
-                    @if (Model.SFiles.Count != 0)
+            <div class="block-title"><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</div>
+            <div class="block-content files">
+                @if (Model.SFiles.Count != 0)
+                {
+                    foreach (dynamic grp in ViewBag.Files_groups)
                     {
-                        foreach (dynamic grp in ViewBag.Files_groups)
+                        IEnumerable<SFile> files = Model.SFiles.Where(type => type.File_type.Id == grp.Id);
+                        if (files.Any())
                         {
-                            IEnumerable<SFile> files = Model.SFiles.Where(type => type.File_type.Id == grp.Id);
-                            if (files.Any())
-                            {
-                                <div class="t-title">@grp.Name</div>
-                                <div>
-                                    <ul>
-                                        @foreach (SFile file in files.ToList())
-                                        {
-                                            <li> <a rel="nofollow" target="_blank" href="@file.Url">@file.Name</a></li>
-                                        }
-                                    </ul>
-                                </div>
-                            }
+                            <div class="t-title">@grp.Name</div>
+                            <div>
+                                <ul>
+                                    @foreach (SFile file in files.ToList())
+                                    {
+                                        <li> <a rel="nofollow" target="_blank" href="@file.Url" class="file doc">@file.Name</a></li>
+                                    }
+                                </ul>
+                            </div>
                         }
                     }
-                </ul>
+                }
             </div>
+
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title">Примеры применения устройства</div>
-            <div class="block-content">
+            <div class="block-title"><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</div>
+            <div class="block-content usage">
                 <ul>
                     @{
                         foreach (Post post in Model.Posts)
@@ -208,27 +202,27 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title">Подключаемые устройства</div>
-            <div class="block-content">
+            <div class="block-title"><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</div>
+            <div class="block-content connected-devices">
                 <div class="row">
                     @foreach (Device dev in ViewBag.Connected_devices_sensors)
                     {
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6">
                             <div class="connected-device">
                                 <img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />
                                 <a href="/products/@dev.Url" class="item">@dev.Name.Name</a>
                                 <div class="device-item-buttons">
                                     <div class="row">
                                         <div class="price">
-                                            <span>@GetPrice(Model.Price)</span> @Model.GetCurrency
+                                            <span>@GetPrice(dev.Price)</span> @dev.GetCurrency
                                         </div>
                                         <div class="to-cart button-block text-right ">
-                                            <input type="text" class="btn btn-info counter" data-device-id="@Model.Name.Id" value="1" />
+                                            <input type="text" class="btn btn-info counter" data-device-id="@dev.Name.Id" value="1" />
                                             <div class="add-remove">
-                                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button add">+</button>
-                                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button remove">-</button>
+                                                <button data-device-id="@dev.Name.Id" class="btn btn-info count-button add">+</button>
+                                                <button data-device-id="@dev.Name.Id" class="btn btn-info count-button remove">-</button>
                                             </div>
-                                            <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@Model.Name.Id" class="btn btn-primary buy-button"></div>
+                                            <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@dev.Name.Id" class="btn btn-primary buy-button"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -239,22 +233,22 @@
                     @foreach (Device dev in ViewBag.Connected_devices_accessuars)
                     {
 
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-6">
                             <div class="connected-device">
                                 <img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />
                                 <a href="/products/@dev.Url" class="item">@dev.Name.Name</a>
                                 <div class="device-item-buttons">
                                     <div class="row">
                                         <div class="price">
-                                            <span>@GetPrice(Model.Price)</span> @Model.GetCurrency
+                                            <span>@GetPrice(dev.Price)</span> @dev.GetCurrency
                                         </div>
                                         <div class="to-cart button-block text-right ">
-                                            <input type="text" class="btn btn-info counter" data-device-id="@Model.Name.Id" value="1" />
+                                            <input type="text" class="btn btn-info counter" data-device-id="@dev.Name.Id" value="1" />
                                             <div class="add-remove">
-                                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button add">+</button>
-                                                <button data-device-id="@Model.Name.Id" class="btn btn-info count-button remove">-</button>
+                                                <button data-device-id="@dev.Name.Id" class="btn btn-info count-button add">+</button>
+                                                <button data-device-id="@dev.Name.Id" class="btn btn-info count-button remove">-</button>
                                             </div>
-                                            <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@Model.Name.Id" class="btn btn-primary buy-button"></div>
+                                            <div @(Model.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@dev.Name.Id" class="btn btn-primary buy-button"></div>
                                         </div>
                                     </div>
                                 </div>
