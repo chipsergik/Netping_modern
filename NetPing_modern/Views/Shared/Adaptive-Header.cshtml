@@ -56,7 +56,7 @@
 <div class="header contacts row">
 
     <div class="header_contacts clearfix">
-        <div class="col-md-4 header_contacts_item">
+        <div class="col-sm-5 col-md-4 col-lg-3 header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_to_buy </a>-->
                 @Header.Header_to_buy
@@ -68,7 +68,7 @@
                 <span>e-mail:</span><a href="mailto:@Header.Header_email_sales">@Header.Header_email_sales</a>
             </div>
         </div>
-        <div class="col-md-4 header_contacts_item">
+        <div class="col-sm-6 col-md-5 col-lg-4 @(NetpingHelpers.Helpers.IsCultureEng ? "pull-right" : "") header_contacts_item">
             <div class="header_contacts_title">
                 <!--<a href="/zakaz.aspx">@Header.Header_ask</a>-->
                 @Header.Header_ask
@@ -95,26 +95,28 @@
 
     <div class="main-header clearfix">
 
-        <div class="logo-wrapper col-md-12 col-lg-5">
-            <a class="logo" href="/">
+        <div class="logo-wrapper col-sm-12 col-md-5 col-lg-5">
+            <a class="logo col-md-6" href="/">
                 <img src="~/Content/Images/logo_text.png" alt="Netping logo" />
             </a>
-            <div class="logo-text">
+            <div class="logo-text col-md-6">
                 @Header.Logo_Title
             </div>
         </div>
-        <div class="nav col-xs-8  col-lg-5">
+        <div class="nav col-xs-8 col-sm-7 col-md-5 col-lg-5">
             <ul>
                 <li class="nav_li">
                     <a class="@(Request.RawUrl.ToLower().Contains("/products") == true ? "nav_element active" : "nav_element")" href="/products/monitoring-servernoj">@Header.Products</a>
                     <div class="nav_element_border"></div>
                     <div class="abs">
                         <ul class="down_list">
+                            <li class="item_list"><a href="/solutions/kommutatory-ethernet/re6enija-na-osnove-POE">@Header.Ready_solutions</a></li>
                             <li class="item_list"><a href="/products/monitoring-servernoj">@Header.Category_monitoring</a></li>
                             <li class="item_list"><a href="/products/upravljaemye-rozetki-ip-pdu">@Header.Category_power_control</a></li>
                             <li class="item_list"><a href="/products/kommutatory-ethernet">@Header.Category_switch</a></li>
                             <li class="item_list"><a href="/products/monitoring-servernoj/sensors">@Header.Category_sensors</a></li>
                             <li class="item_list"><a href="/products/monitoring-servernoj/accessories">@Header.Category_access</a></li>
+                            <li class="item_list"><a href="/dev">@Header.Dev</a></li>
                         </ul>
                     </div>
                 </li>
@@ -174,10 +176,14 @@
             </ul>
 
         </div>
-        <div class="search col-xs-4 col-lg-2">
-            <input type="text" placeholder="Поиск по сайту" />
-            <input type="submit" value="Найти" />
-        </div>
-    </div>
+        <form class="search" name="search" action="http://www.google.com/cse" target="_blank">
+            <div class="search col-xs-4 col-sm-3 col-md-2 col-lg-2 pull-right">
+                <input type="text" placeholder="Поиск по сайту" name="q" />
+                <input type="hidden" name="cx" value="006534849235046585456:eqktuqsoi58" />
+                <input name="ie" type="hidden" value="UTF-8" />
+                <input type="submit" value="Найти" />
+            </div>
+        </form>
+</div>
     <div class="clear"></div>
 </div>

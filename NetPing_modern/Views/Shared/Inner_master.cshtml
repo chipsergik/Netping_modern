@@ -31,7 +31,11 @@
 
     <link href="/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/Themes/header-footer.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/Themes/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Themes/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Themes/adaptive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Themes/adaptive-header-footer.css">
     <script src="~/Content/JavaScript/jquery1.8.3min.js" type="text/javascript"></script>
     <script src="~/Content/JavaScript/modernizr.js" type="text/javascript"></script>
     <script src="~/Content/JavaScript/main.js" type="text/javascript"></script>
@@ -48,7 +52,8 @@
 </div>
 <div class="page">
     <div class="main">
-        @RenderPage("Header.cshtml")
+        @*@RenderPage("Header.cshtml")*@
+        @RenderPage("Adaptive-Header.cshtml")
         @RenderSection("Under_menu", false)
 
         <!--content-->
@@ -126,8 +131,22 @@
         @RenderPage("Footer.cshtml")
         @RenderPage("../Shared/cart.cshtml")
 
-
+        
     </div>
 </div>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1032603565;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1032603565/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
 </body>
 </html>

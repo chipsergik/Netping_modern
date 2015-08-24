@@ -17,6 +17,7 @@ namespace NetPing
             routes.MapRoute("vacancy", "vacancy", new { controller = "InnerPages", action = "Vacancy" });
             routes.MapRoute("support", "support", new { controller = "InnerPages", action = "Support" });
             routes.MapRoute("dev", "dev", new { controller = "InnerPages", action = "Dev" });
+            routes.MapRoute("archive", "archive", new { controller = "Products", action = "Archive" });
 
             //routes.MapRoute("buy", "buy", new { controller = "InnerPages", action = "Buy" });
 
@@ -97,6 +98,13 @@ namespace NetPing
 
             routes.MapRoute(
                name: "Solutions",
+               url: "solutions",
+               defaults: new { controller = "Products", action = "Solutions", id = UrlParameter.Optional },
+               constraints: new { controller = "Products" }
+           );
+
+            routes.MapRoute(
+               name: "SolutionsList",
                url: "solutions/{group}/{id}",
                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional  },
                constraints: new { controller = "Products" }

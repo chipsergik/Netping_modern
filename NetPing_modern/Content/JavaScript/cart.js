@@ -9,6 +9,13 @@
         event.preventDefault();
     });
 
+    $(".to-cart .counter").keypress(function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+
     $(".to-cart .add").on("click", addOneItem);
 
     $(".to-cart .remove").on("click", removeOneItem);
@@ -170,6 +177,7 @@ function addProduct(itemcontainer) {
             ID: ID
         }));
     }
+    showPopup($(itemcontainer).find('div.btn.btn-primary.buy-button'));
     updateCartCount();
 }
 
@@ -245,7 +253,9 @@ function showPopup(container) {
         });
 
 
-    $(".shopPopupItem .remove").click(function () {
+    $(".shopPopupItem .remove").click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
@@ -261,8 +271,6 @@ function showPopup(container) {
     $('.closeCart, .overlayCart').click(function () {
         hidePopup();
     });
-
-
 
     function updateCount(ID, count) {
         var p = C.get(ID);

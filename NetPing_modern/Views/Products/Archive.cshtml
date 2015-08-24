@@ -1,9 +1,9 @@
-﻿@model NetPing_modern.Models.ProductsModel
-
-@{
-    ViewBag.Title = "Каталог";
+﻿@{
+    ViewBag.Title = "Архив";
     Layout = "~/Views/Shared/Adaptive_master.cshtml";
 }
+
+@model NetPing_modern.Models.ProductsModel
 
 @using System.Globalization
 @using NetPing.DAL
@@ -12,118 +12,10 @@
 
 @section Head_Css{
     <link href="~/Content/Themes/catalog/style.css" rel="stylesheet" />
-    <link href="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" />
 
     @if (NetpingHelpers.Helpers.IsCultureEng)
     {
         <link href="~/Content/Themes/catalog/style.en.css" rel="stylesheet" />
-    }
-}
-
-@section scripts{
-    <script src="~/Content/JavaScript/fancybox/jquery.easing-1.3.pack.js" type="text/javascript"></script>
-    <script src="~/Content/JavaScript/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("a.gallery").fancybox();
-        });
-    </script>
-}
-
-@helper GetPrice(double? price)
-{
-    if (price != null && price > 0)
-    {
-        string str = string.Format(new CultureInfo(1035), "{0:N0} ", price);
-        @str
-    }
-}
-@{
-    string titTitle = "";
-    string titDesc = "";
-    string[] names = null;
-    string[] links = null;
-    string desc1 = Index.Sec_monitoring_descr;
-    string desc2 = Index.Sec_power_descr;
-    string desc3 = Index.Sec_switch_descr;
-
-    string title1 = Index.Sec_monitoring;
-    string title2 = Index.Sec_power;
-    string title3 = Index.Sec_switch;
-
-    const string _nping_basesURL = "../../Content/Images/present_left_img1.png";
-    const string _nping_powerURL = "../../Content/Images/present_left_img2.png";
-    const string _swtchURL = "../../Content/Images/present_left_img3.png";
-    const string bgURL = "../../Content/Images/present_left.png";
-
-    string selectedSectionImage = "";
-    string section2ImgUrl = "";
-    string section3ImgUrl = "";
-
-    string s1 = "";
-    string l1 = "";
-    string s2 = "";
-    string l2 = "";
-    string t1 = "";
-    string t2 = "";
-
-
-    switch ((string)ViewBag.id)
-    {
-        case "_nping_bases":
-            {
-                selectedSectionImage = _nping_basesURL;
-                section2ImgUrl = _nping_powerURL;
-                section3ImgUrl = _swtchURL;
-
-                titTitle = title1;
-                titDesc = desc1;
-                t1 = title2;
-                t2 = title3;
-                s1 = desc2;
-                s2 = desc3;
-                l1 = "?id=_nping_power";
-                l2 = "?id=_swtch";
-                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
-                links = new[] { "_nping_bases", "_acces_sensr", "_acces_mains", "_solut_sensr" };
-                break;
-            }
-        case "_nping_power":
-            {
-                selectedSectionImage = _nping_powerURL;
-                section2ImgUrl = _nping_basesURL;
-                section3ImgUrl = _swtchURL;
-
-                titTitle = title2;
-                titDesc = desc2;
-                t1 = title1;
-                t2 = title3;
-                s1 = desc1;
-                s2 = desc3;
-                l1 = "?id=_nping_bases";
-                l2 = "?id=_swtch";
-                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_sensors, Index.Sec_sub_access, Index.Sec_sub_solutions };
-                links = new[] { "_nping_power", "_acces_sensr", "_acces_mains", "_solut_power" };
-                break;
-            }
-        case "_swtch":
-            {
-                selectedSectionImage = _swtchURL;
-                section2ImgUrl = _nping_basesURL;
-                section3ImgUrl = _nping_powerURL;
-
-                titTitle = title3;
-                titDesc = desc3;
-                t1 = title1;
-                t2 = title2;
-                s1 = desc1;
-                s2 = desc2;
-                l1 = "?id=_nping_bases";
-                l2 = "?id=_nping_power";
-                names = new[] { Index.Sec_sub_devices, Index.Sec_sub_access, Index.Sec_sub_solutions };
-                links = new[] { "_swtch", "_acces_mains", "_solut_poe" };
-                break;
-            }
     }
 }
 
@@ -148,7 +40,7 @@
     <div class="row">
         <div class="col-xs-5 col-sm-5 col-md-3">
             <div class="catalog-menu">
-                <a href="/solutions">
+                <a href="/solutions/kommutatory-ethernet/re6enija-na-osnove-POE">
                     <div class="menu-item-icon solutions-icon"></div>
                     <div class="menu-item-title">
                         @Html.Raw(Index.Sec_sub_solutions)
@@ -258,56 +150,18 @@
                                 </p>
                             </div>
                             <div class="col-lg-3 col-xs-3">
-                                <a href="@device.GetCoverPhoto(true).Url" class="gallery" title="@device.Name.Name">
-                                    <img src="@device.GetCoverPhoto(true).Url" alt="@device.Name.Name" title="@device.Name.Name" />
-                                </a>
+                                <img src="@device.GetCoverPhoto(true).Url" alt="@device.Name.Name" title="@device.Name.Name" />
                             </div>
 
                             <div class="col-lg-9 device-item-content">
                                 <a href="@link"><h3>@device.Name.Name</h3></a>
-                                @{string className = "new";}
-                                @if (!String.IsNullOrWhiteSpace(device.Label.Name))
-                                {
-                                    switch (device.Label.OwnNameFromPath)
-                                    {
-                                        case "New":
-                                            {
-                                                className = "new";
-                                                break;
-                                            }
-                                        case "EOL":
-                                            {
-                                                className = "eol";
-                                                break;
-                                            }
-                                        case "Archive":
-                                            {
-                                                className = "archive";
-                                                break;
-                                            }
-                                    }
-                                    <span class="label label-@className">@device.Label.Name</span>
-                                }
+                                <span class="label label-archive">@device.Label.Name</span>
 
                                 <div class="row">
                                     <div class="col-lg-7">
                                         @Html.Raw(device.Short_description)
                                     </div>
                                     <div class="col-sm-12 col-lg-5 device-item-buttons">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-lg-12 price">
-                                                <span>@GetPrice(device.Price)</span> @device.GetCurrency
-                                            </div>
-
-                                            <div class="col-xs-8 col-lg-12 to-cart button-block text-right ">
-                                                <input type="text" class="btn btn-info counter" data-device-id="@device.Name.Id" value="1" />
-                                                <div class="add-remove">
-                                                    <button data-device-id="@device.Name.Id" class="btn btn-info count-button add">+</button>
-                                                    <button data-device-id="@device.Name.Id" class="btn btn-info count-button remove">-</button>
-                                                </div>
-                                                <div @(device.Label.OwnNameFromPath == "Archive" ? "disabled" : "") data-device-id="@device.Name.Id" class="btn btn-primary buy-button"></div>
-                                            </div>
-                                        </div>
                                         <div class="row">
                                             <div class="col-xs-6 col-lg-12 button-block more-info">
                                                 <a href="@link" class="btn btn-default">
