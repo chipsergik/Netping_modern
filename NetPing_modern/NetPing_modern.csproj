@@ -223,6 +223,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Tutorial.resx</DependentUpon>
     </Compile>
+<Compile Include="Resources\Views\Catalog\Dev.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dev.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Error\ErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -633,7 +638,7 @@
     <Content Include="Views\Products\UserGuides.cshtml" />
     <Content Include="Views\InnerPages\UCacheAsync.cshtml" />
     <Content Include="Views\Shared\Adaptive_master.cshtml" />
-    <Content Include="Views\InnerPages\Dev.cshtml" />
+    <Content Include="Views\Products\Dev.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Shared\Adaptive-Footer.cshtml" />
     <Content Include="Views\Shared\Adaptive-Header.cshtml" />
@@ -730,12 +735,20 @@
       <LastGenOutput>Compare.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Compare.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\Catalog\Dev.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dev.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Catalog\Index.ru.resx" />
+    <EmbeddedResource Include="Resources\Views\Catalog\Dev.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dev.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Error\ErrorMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>

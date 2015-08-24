@@ -145,7 +145,7 @@ namespace NetPing.Controllers
             return View("InnerPage");
         }
 
-        public ActionResult Dev()
+        public ActionResult Dev(string id)
         {
             return View();
         }
