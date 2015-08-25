@@ -186,4 +186,10 @@
   <data name="Path_main" xml:space="preserve">
     <value>Netping</value>
   </data>
+  <data name="Sec_archive" xml:space="preserve">
+    <value>Архив устройств</value>
+  </data>
+  <data name="Sec_archive_desc" xml:space="preserve">
+    <value>Усройства, снятые с производства</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using WebGrease.Css.Extensions;
 using NetPing_modern.ViewModels;
 using NetPing.Models;
 using System.Collections.Generic;
+using System;
 
 namespace NetPing_modern.Controllers
 {
@@ -83,7 +84,7 @@ namespace NetPing_modern.Controllers
             var model = new ProductsModel
                       {
                           ActiveSection =
-                             NavigationProvider.GetAllSections().First()
+                             NavigationProvider.GetAllSections().First(s => s.Url == "solutions")
                       };
             var devices = new List<Device>();
             foreach (var solutionName in solutionsNames)
@@ -108,7 +109,7 @@ namespace NetPing_modern.Controllers
 
         public ActionResult Index(string group, string id)
         {
-            var devices = _repository.Devices.Where(d => !d.Name.IsGroup());
+            var devices = _repository.Devices.Where(d => !d.Name.IsGroup() && !d.IsInArchive);
             if (group == null) return HttpNotFound();
             var g = _repository.Devices.FirstOrDefault(d => d.Url == @group);
             if (g != null)
@@ -156,6 +157,25 @@ namespace NetPing_modern.Controllers
             //return View(model);
 
             return View("Adaptive_Index", model);
+        }
+
+        public ActionResult Archive()
+        {
+            var devices = _repository.Devices.Where(d => !d.Name.IsGroup() && d.IsInArchive);
+
+            var model = new ProductsModel
+                        {
+                            ActiveSection =
+                                new SectionModel
+                                {
+                                    Title = NetPing_modern.Resources.Views.Catalog.Index.Sec_archive,
+                                    IsSelected = true,
+                                    Description = NetPing_modern.Resources.Views.Catalog.Index.Sec_archive_desc
+                                }
+                        };
+            model.Devices = devices;
+
+            return View(model);
         }
     }
 }

@@ -89,7 +89,11 @@
 }
 
 .device-catalog-item:hover {
-    background: #fafff9;
+    /*background: #fafff9;*/
+}
+
+.device-catalog-item .device-item-content:hover{
+    background: #fafff9 !important;
 }
 
 .device-catalog-item a h3 {
