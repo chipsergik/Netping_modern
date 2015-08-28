@@ -15,6 +15,15 @@
     {
         <link href="~/Content/Themes/catalog/style.en.css" rel="stylesheet" />
     }
+
+    @if (NetpingHelpers.Helpers.IsCultureEng)
+    {
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter_eng.css">
+    }
+    else
+    {
+        <link rel="stylesheet" type="text/css" href="~/Content/Themes/shutter.css">
+    }
 }
 
 @helper GetPrice(double? price)
@@ -26,23 +35,7 @@
     }
 }
 
-<div style="display: none">
-    <p class="Price">
-        @Model.Price
-    </p>
-    <p class="ID">
-        @Model.Name.Id
-    </p>
-    <p class="Name">
-        @Model.Name.Name
-    </p>
-    <p class="Key">
-        @Model.Url
-    </p>
-    <p class="PhotoURL">
-        @Model.GetCoverPhoto(false).Url
-    </p>
-</div>
+
 
 <div class="container-fluid device-catalog-item">
 
@@ -72,7 +65,24 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-lg-5 col-md-12 main-info">
+                <div class="col-lg-5 col-md-12 main-info cat_item">
+                    <div style="display: none">
+                        <p class="Price">
+                            @Model.Price
+                        </p>
+                        <p class="ID">
+                            @Model.Name.Id
+                        </p>
+                        <p class="Name">
+                            @Model.Name.Name
+                        </p>
+                        <p class="Key">
+                            @Model.Url
+                        </p>
+                        <p class="PhotoURL">
+                            @Model.GetCoverPhoto(false).Url
+                        </p>
+                    </div>
                     <div class="row">
                         <div id="slider3-pager-nav" class="col-sm-3">
                             <ul id="slider3-pager">
@@ -189,7 +199,7 @@
             <div class="block-content usage">
                 <ul>
                     @{
-                        foreach (Post post in Model.Posts)
+                        foreach (Post post in Model.Posts.Where(pst => pst.Category.OwnNameFromPath == "Tutorial").Take(15))
                         {
                             <li>
                                 <a href='@post.Url_name'>@post.Title</a>
@@ -208,7 +218,24 @@
                     @foreach (Device dev in ViewBag.Connected_devices_sensors)
                     {
                         <div class="col-lg-3 col-md-6">
-                            <div class="connected-device">
+                            <div class="connected-device cat_item">
+                                <div style="display: none">
+                                    <p class="Price">
+                                        @dev.Price
+                                    </p>
+                                    <p class="ID">
+                                        @dev.Name.Id
+                                    </p>
+                                    <p class="Name">
+                                        @dev.Name.Name
+                                    </p>
+                                    <p class="Key">
+                                        @dev.Url
+                                    </p>
+                                    <p class="PhotoURL">
+                                        @dev.GetCoverPhoto(false).Url
+                                    </p>
+                                </div>
                                 <img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />
                                 <a href="/products/@dev.Url" class="item">@dev.Name.Name</a>
                                 <div class="device-item-buttons">
@@ -234,7 +261,24 @@
                     {
 
                         <div class="col-lg-3 col-md-6">
-                            <div class="connected-device">
+                            <div class="connected-device cat_item">
+                                <div style="display: none">
+                                    <p class="Price">
+                                        @dev.Price
+                                    </p>
+                                    <p class="ID">
+                                        @dev.Name.Id
+                                    </p>
+                                    <p class="Name">
+                                        @dev.Name.Name
+                                    </p>
+                                    <p class="Key">
+                                        @dev.Url
+                                    </p>
+                                    <p class="PhotoURL">
+                                        @dev.GetCoverPhoto(false).Url
+                                    </p>
+                                </div>
                                 <img src="@dev.GetCoverPhoto(false).Url" alt="" title="" />
                                 <a href="/products/@dev.Url" class="item">@dev.Name.Name</a>
                                 <div class="device-item-buttons">

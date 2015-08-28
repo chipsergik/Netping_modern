@@ -245,7 +245,8 @@ function showPopup(container) {
         });
 
 
-    $(".shopPopupItem .remove").click(function () {
+    $(".shopPopupItem .remove").click(function (event) {
+        event.stopPropagation();
         var productContainer = $(this).parents('.shopPopupItem');
         var prID = productContainer.find(".hiddenID")[0].innerHTML;
         C.del(prID);
@@ -338,6 +339,7 @@ function addOneItem(event) {
 
 function removeOneItem(event) {
     event.preventDefault();
+    event.stopPropagation();
     var counter = $(this).parent().parent().find(".counter");
     var counterValue = parseInt(counter.val());
     if (counterValue > 1) {
