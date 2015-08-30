@@ -134,6 +134,10 @@
     display: block;
 }
 
+.long-description h2, .long-description h3{
+    font-size: 18px;
+}
+
 .parameters .t-title, .files .t-title {
     background: #e6f8e5;
     font-size: 16px;
@@ -205,4 +209,17 @@
 
 .rslides_nav.rslides1_nav.prev, .rslides_nav.rslides1_nav.next {
     display: none;
+}
+
+.rslides_tabs li, rslides li{
+    list-style: none !important;
+}
+
+.floating-menu{
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index:2;
+    margin: 0;
 }

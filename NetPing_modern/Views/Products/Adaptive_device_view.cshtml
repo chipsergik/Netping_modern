@@ -26,6 +26,11 @@
     }
 }
 
+@section Head_Scripts{
+<script src="~/Content/JavaScript/device-view/script.js"></script>
+    <script src="~/Content/JavaScript/device-view/navigation.js"></script>
+}
+
 @helper GetPrice(double? price)
 {
     if (price != null && price > 0)
@@ -55,16 +60,19 @@
 
     <div class="row">
         <ul class="device-item-menu col-xs-12">
-            <li><a href=""><span class="device-catalog-item-menu-icon description"></span> Описание</a></li>
-            <li><a href=""><span class="device-catalog-item-menu-icon specs"></span> Спецификация</a></li>
-            <li><a href=""><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</a></li>
-            <li><a href=""><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</a></li>
-            <li><a href=""><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</a></li>
+            <li><a href="#description"><span class="device-catalog-item-menu-icon description"></span> Описание</a></li>
+            <li><a href="#specs"><span class="device-catalog-item-menu-icon specs"></span> Спецификация</a></li>
+            <li><a href="#files"><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</a></li>
+            <li><a href="#usage"><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</a></li>
+            <li><a href="#connected-device"><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</a></li>
         </ul>
     </div>
+
+
+
     <div class="row">
         <div class="col-xs-12">
-            <div class="row">
+            <div class="row" id="main-row">
                 <div class="col-lg-5 col-md-12 main-info cat_item">
                     <div style="display: none">
                         <p class="Price">
@@ -127,7 +135,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title"><span class="device-catalog-item-menu-icon description"></span> Описание</div>
+            <div class="block-title" id="description" data-nav="description"><span class="device-catalog-item-menu-icon description"></span> Описание</div>
             <div class="block-content long-description">
                 @Html.Raw(Model.Long_description)
             </div>
@@ -135,7 +143,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title"><span class="device-catalog-item-menu-icon specs"></span> Спецификация</div>
+            <div class="block-title" id="specs" data-nav="specs"><span class="device-catalog-item-menu-icon specs"></span> Спецификация</div>
             <div class="block-content parameters">
                 @{
                     if (Model.DeviceParameters.Count != 0)
@@ -168,7 +176,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title"><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</div>
+            <div class="block-title" id="files" data-nav="files"><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</div>
             <div class="block-content files">
                 @if (Model.SFiles.Count != 0)
                 {
@@ -195,7 +203,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title"><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</div>
+            <div class="block-title" id="usage" data-nav="usage"><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</div>
             <div class="block-content usage">
                 <ul>
                     @{
@@ -212,7 +220,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="block-title"><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</div>
+            <div class="block-title" id="connected-device" data-nav="connected-device"><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</div>
             <div class="block-content connected-devices">
                 <div class="row">
                     @foreach (Device dev in ViewBag.Connected_devices_sensors)
@@ -303,4 +311,11 @@
             </div>
         </div>
     </div>
+    <ul class="device-item-menu col-xs-12 floating-menu" style="display:none;">
+        <li><a href="#description"><span class="device-catalog-item-menu-icon description"></span> Описание</a></li>
+        <li><a href="#specs"><span class="device-catalog-item-menu-icon specs"></span> Спецификация</a></li>
+        <li><a href="#files"><span class="device-catalog-item-menu-icon files"></span> Документация и файлы</a></li>
+        <li><a href="#usage"><span class="device-catalog-item-menu-icon usage"></span> Примеры применения устройства</a></li>
+        <li><a href="#connected-device"><span class="device-catalog-item-menu-icon connected-device"></span> Подключаемые устройства</a></li>
+    </ul>
 </div>
