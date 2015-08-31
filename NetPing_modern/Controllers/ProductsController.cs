@@ -56,6 +56,8 @@ namespace NetPing_modern.Controllers
 
             if (device == null) return Redirect("/products");  // if key incorrect go to /products
 
+            if (device.Name.Path.Contains("Development")) return Device_in_development(device);
+
             //Create list of connected devices
             var connected_devices = device.Connected_devices.Select(d => _repository.Devices.Where(dv => dv.Name == d).FirstOrDefault()).ToList();
             ViewBag.Connected_devices_accessuars = connected_devices.Where(d => d != null && !d.Name.Path.Contains("Sensors")).ToList();
@@ -106,10 +108,8 @@ namespace NetPing_modern.Controllers
             return View("Adaptive_Index", model);
         }
 
-        public ActionResult Device_in_development(string id)
+        public ActionResult Device_in_development(Device device)
         {
-            var device = _repository.Devices.Where(dev => dev.Url == id).FirstOrDefault();
-            
             ViewBag.Title = device.Name.Name;
             ViewBag.Description = device.Name.Name;
             ViewBag.Keywords = device.Name.Name;
@@ -125,15 +125,16 @@ namespace NetPing_modern.Controllers
         public ActionResult Index(string group, string id)
         {
             var devices = _repository.Devices.Where(d => !d.Name.IsGroup());
+            var groups = _repository.Devices.Where(d => d.Name.IsGroup());
             if (group == null) return HttpNotFound();
             var g = _repository.Devices.FirstOrDefault(d => d.Url == @group);
             if (g != null)
             {
                 if (!g.Name.IsGroup()) return Device_view(group);  // Open device page
-                if (g.Name.Path.Contains("Development")) return Device_in_development(group);
                 devices = devices.Where(d => !d.Name.IsGroup() && d.Name.IsUnderOther(g.Name));
             }
-            else { return HttpNotFound(); }
+            else
+            { return HttpNotFound(); }
 
             ViewBag.Title = g.Name.Name;
             ViewBag.Description = g.Name.Name;

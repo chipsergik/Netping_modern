@@ -223,7 +223,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Tutorial.resx</DependentUpon>
     </Compile>
-<Compile Include="Resources\Views\Catalog\Dev.Designer.cs">
+    <Compile Include="Resources\Views\Catalog\Dev.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dev.resx</DependentUpon>
@@ -579,7 +579,7 @@
     <Content Include="Content\JavaScript\slider1.js" />
     <Content Include="Content\Themes\adaptive-header-footer.css" />
     <Content Include="Content\Themes\adaptive.css" />
-    <Content Include="Content\Themes\adaptive_master.css" />
+    <Content Include="Content\Themes\dev.css" />
     <Content Include="Content\Themes\blog.css" />
     <Content Include="Content\Themes\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Themes\bootstrap\bootstrap-theme.min.css" />
