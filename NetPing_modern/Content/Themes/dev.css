@@ -299,6 +299,7 @@ body {
         text-align: center;
         margin: 12px 0;
         font-weight: 700;
+        white-space: nowrap;
     }
 
         .preorder .preorder-text .preorder-price div {
@@ -448,7 +449,7 @@ img.confluence-embedded-image.image-center {
     display: block;
 }
 
-.text.development > p:first-child > strong{
+.text.development > p:first-child > strong {
     display: inline-block;
     font-size: 18px;
     margin-bottom: 5px;
