@@ -446,3 +446,10 @@ img.confluence-embedded-image.image-center {
     text-align: center;
     margin: 0 auto;
     display: block;
+}
+
+.text.development > p:first-child > strong{
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
