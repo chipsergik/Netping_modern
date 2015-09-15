@@ -23,12 +23,17 @@ body {
     background: #fff;
 }
 
+.development li {
+    list-style: initial;
+    list-style-position: inside;
+}
 
-    .content a {
-        /*color: #4ab27d;*/
-        font-size: 14px;
-        font-weight: 400;
-    }
+
+.content a {
+    /*color: #4ab27d;*/
+    font-size: 14px;
+    font-weight: 400;
+}
 
 .title {
     font-size: 18px;
