@@ -68,7 +68,7 @@ namespace NetPing_modern.Controllers
                 cartId = cartId.Contains('.') ? cartId.Remove(timeStamp.IndexOf('.'), 1) : cartId;
 
                 mail.From = new MailAddress("shop_dev@netping.ru");
-                mail.To.Add("chipsergik@gmail.com");
+                mail.To.Add("sales@netping.ru");
                 mail.ReplyToList.Add(model.Email);
                 mail.Subject = "DEV предварительный заказ № \"" + cartId + "\" на устройство \"" + device.Name.Name + "\"";
                 var cont = String.Format(@"
